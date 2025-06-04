@@ -4,6 +4,7 @@ import FirstNavBar from "./components/Home/first-nav-bar";
 import HeroSection from "./components/Home/hero-section";
 import SubNav from "./components/Home/sub-nav";
 import TextScrollingHorizontally from "./components/Home/text-scrolling-horizontally";
+import Card from "./components/Home/card";
 
 export default function Home() {
   return (
@@ -15,11 +16,16 @@ export default function Home() {
       <div>
         <SubNav />
       </div>
-      <div className="mt-8">
+      <div className="mt-8 m-auto">
         <HeroSection />
       </div>
       <div className="mt-8 px-4 bg-black text-white py-1 font-bold">
         <TextScrollingHorizontally />
+      </div>
+      <div>
+        <Card title={`Card Title`} cardImageSrc={`/images/home/hero-carousel/h1.png`} cardDesc={`Card Description`} />
+        <Card title={`Card Title`} cardImageSrc={`/images/home/hero-carousel/h1.png`} cardDesc={`Card Description`} />
+        <Card title={`Card Title`} cardImageSrc={`/images/home/hero-carousel/h1.png`} cardDesc={`Card Description`} />
       </div>
     </div>
   );

@@ -58,9 +58,12 @@
     display: inline-flex;
     animation: ticker-scroll 10s linear infinite;
   }
+
+  .pause-on-hover:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+  }
 }
-
-
 
 :root {
   --background: #ffffff;

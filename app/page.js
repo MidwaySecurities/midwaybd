@@ -22,9 +22,9 @@ export default function Home() {
         <TextScrollingHorizontally />
       </div>
       <div>
-        <Card title={`Card Title`} cardImageSrc="/images/home/hero-carousel/h1.png" cardDesc={`Card Description`} />
-        <Card title={`Card Title`} cardImageSrc="/images/home/hero-carousel/h1.png" cardDesc={`Card Description`} />
-        <Card title={`Card Title`} cardImageSrc="/images/home/hero-carousel/h1.png" cardDesc={`Card Description`} />
+        <Card title={`Card Title`} cardImageSrc="../public/images/home/hero-carousel/h1.png" cardDesc={`Card Description`} />
+        <Card title={`Card Title`} cardImageSrc="../public/images/home/hero-carousel/h1.png" cardDesc={`Card Description`} />
+        <Card title={`Card Title`} cardImageSrc="../public/images/home/hero-carousel/h1.png" cardDesc={`Card Description`} />
       </div>
     </div>
   );

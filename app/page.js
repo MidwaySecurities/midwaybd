@@ -5,6 +5,7 @@ import HeroSection from "./components/Home/hero-section";
 import SubNav from "./components/Home/sub-nav";
 import TextScrollingHorizontally from "./components/Home/text-scrolling-horizontally";
 import Card from "./components/Home/card";
+import cardImage from '../public/images/home/hero-carousel/h1.png'
 export default function Home() {
   return (
     <div>
@@ -22,9 +23,9 @@ export default function Home() {
         <TextScrollingHorizontally />
       </div>
       <div>
-        <Card title={`Card Title`} cardImageSrc="../public/images/home/hero-carousel/h1.png" cardDesc={`Card Description`} />
-        <Card title={`Card Title`} cardImageSrc="../public/images/home/hero-carousel/h1.png" cardDesc={`Card Description`} />
-        <Card title={`Card Title`} cardImageSrc="../public/images/home/hero-carousel/h1.png" cardDesc={`Card Description`} />
+        <Card title={`Card Title`} cardImageSrc={cardImage} cardDesc={`Card Description`} />
+        <Card title={`Card Title`} cardImageSrc={cardImage} cardDesc={`Card Description`} />
+        <Card title={`Card Title`} cardImageSrc={cardImage} cardDesc={`Card Description`} />
       </div>
     </div>
   );

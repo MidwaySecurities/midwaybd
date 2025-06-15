@@ -5,7 +5,10 @@ import HeroSection from "./components/Home/hero-section";
 import SubNav from "./components/Home/sub-nav";
 import TextScrollingHorizontally from "./components/Home/text-scrolling-horizontally";
 import Card from "./components/Home/card";
-// import cardImage from '/images/home/hero-carousel/h1.png'
+import hero_image1 from '../public/images/home/hero-carousel/H1.png'
+import hero_image2 from '../public/images/home/hero-carousel/H2.png'
+import hero_image3 from '../public/images/home/hero-carousel/H3.png'
+import hero_image4 from '../public/images/home/hero-carousel/H4.png'
 export default function Home() {
   return (
     <>
@@ -25,16 +28,16 @@ export default function Home() {
         </div>
         <div>
           <Card title={`Card Title`} cardDesc={`Card Description`}>
-            <Image src={`../public/images/home/hero-carousel/h1.png`} alt="Card Image" width={200} height={200} className="rounded-lg" />
+            <Image src={hero_image1} alt="Card Image" width={200} height={200} className="rounded-lg" />
           </Card>
           <Card title={`Card Title`} cardDesc={`Card Description`}>
-            <Image src={`../public/images/home/hero-carousel/h2.png`} alt="Card Image" width={200} height={200} className="rounded-lg" />
+            <Image src={hero_image2} alt="Card Image" width={200} height={200} className="rounded-lg" />
           </Card>
           <Card title={`Card Title`} cardDesc={`Card Description`}>
-            <Image src={`../public/images/home/hero-carousel/h3.png`} alt="Card Image" width={200} height={200} className="rounded-lg" />
+            <Image src={hero_image3} alt="Card Image" width={200} height={200} className="rounded-lg" />
           </Card>
           <Card title={`Card Title`} cardDesc={`Card Description`}>
-            <Image src={`../public/images/home/hero-carousel/h4.png`} alt="Card Image" width={200} height={200} className="rounded-lg" />
+            <Image src={hero_image4} alt="Card Image" width={200} height={200} className="rounded-lg" />
           </Card>
         </div>
       </div>

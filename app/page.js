@@ -25,16 +25,16 @@ export default function Home() {
         </div>
         <div>
           <Card title={`Card Title`} cardDesc={`Card Description`}>
-            <Image src={`/images/home/hero-carousel/h1.png`} alt="Card Image" width={200} height={200} className="rounded-lg" />
+            <Image src={`../public/images/home/hero-carousel/h1.png`} alt="Card Image" width={200} height={200} className="rounded-lg" />
           </Card>
           <Card title={`Card Title`} cardDesc={`Card Description`}>
-            <Image src={`/images/home/hero-carousel/h2.png`} alt="Card Image" width={200} height={200} className="rounded-lg" />
+            <Image src={`../public/images/home/hero-carousel/h2.png`} alt="Card Image" width={200} height={200} className="rounded-lg" />
           </Card>
           <Card title={`Card Title`} cardDesc={`Card Description`}>
-            <Image src={`/images/home/hero-carousel/h3.png`} alt="Card Image" width={200} height={200} className="rounded-lg" />
+            <Image src={`../public/images/home/hero-carousel/h3.png`} alt="Card Image" width={200} height={200} className="rounded-lg" />
           </Card>
           <Card title={`Card Title`} cardDesc={`Card Description`}>
-            <Image src={`/images/home/hero-carousel/h4.png`} alt="Card Image" width={200} height={200} className="rounded-lg" />
+            <Image src={`../public/images/home/hero-carousel/h4.png`} alt="Card Image" width={200} height={200} className="rounded-lg" />
           </Card>
         </div>
       </div>

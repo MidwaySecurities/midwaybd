@@ -5,28 +5,44 @@ import HeroSection from "./components/Home/hero-section";
 import SubNav from "./components/Home/sub-nav";
 import TextScrollingHorizontally from "./components/Home/text-scrolling-horizontally";
 import Card from "./components/Home/card";
-import cardImage from '../public/images/home/hero-carousel/h1.png'
+// import cardImage from '/images/home/hero-carousel/h1.png'
 export default function Home() {
   return (
-    <div>
-      <TimeDate />
-      <div>
-        <FirstNavBar />
+    <>
+      <div className="md:hidden">
+        <TimeDate />
+        <div>
+          <FirstNavBar />
+        </div>
+        <div>
+          <SubNav />
+        </div>
+        <div className="mt-8 m-auto">
+          <HeroSection />
+        </div>
+        <div className="mt-8 px-4 bg-black text-white py-1 font-bold">
+          <TextScrollingHorizontally />
+        </div>
+        <div>
+          <Card title={`Card Title`} cardDesc={`Card Description`}>
+            <Image src={`/images/home/hero-carousel/h1.png`} alt="Card Image" width={200} height={200} className="rounded-lg" />
+          </Card>
+          <Card title={`Card Title`} cardDesc={`Card Description`}>
+            <Image src={`/images/home/hero-carousel/h2.png`} alt="Card Image" width={200} height={200} className="rounded-lg" />
+          </Card>
+          <Card title={`Card Title`} cardDesc={`Card Description`}>
+            <Image src={`/images/home/hero-carousel/h3.png`} alt="Card Image" width={200} height={200} className="rounded-lg" />
+          </Card>
+          <Card title={`Card Title`} cardDesc={`Card Description`}>
+            <Image src={`/images/home/hero-carousel/h4.png`} alt="Card Image" width={200} height={200} className="rounded-lg" />
+          </Card>
+        </div>
       </div>
-      <div>
-        <SubNav />
+
+
+      <div className="hidden md:flex md:flex-col md:items-center md:justify-center h-screen font-bold text-2xl">
+        <h1>Use user mobile to see the mobile view.</h1>
       </div>
-      <div className="mt-8 m-auto">
-        <HeroSection />
-      </div>
-      <div className="mt-8 px-4 bg-black text-white py-1 font-bold">
-        <TextScrollingHorizontally />
-      </div>
-      <div>
-        <Card title={`Card Title`} cardImageSrc={cardImage} cardDesc={`Card Description`} />
-        <Card title={`Card Title`} cardImageSrc={cardImage} cardDesc={`Card Description`} />
-        <Card title={`Card Title`} cardImageSrc={cardImage} cardDesc={`Card Description`} />
-      </div>
-    </div>
+    </>
   );
 }

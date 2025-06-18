@@ -11,6 +11,7 @@ import hero_image3 from '../public/images/home/hero-carousel/H3.png'
 import OurService from "./components/Home/our-service";
 import AccountOpenningSteps from "./components/Home/account-openning-step";
 import Platform from "./components/Home/platform";
+import PaymentMethod from "./components/Home/Payment-method";
 export default function Home() {
   return (
     <>
@@ -50,8 +51,12 @@ export default function Home() {
           <AccountOpenningSteps />
         </div>
 
-        <div className="mt-8 px-4 text-white bg-white py-1 font-bold">
+        <div className="mt-8 px-4 text-white bg-white font-bold">
           <Platform />
+        </div>
+
+        <div className="mt-8 px-4 bg-white py-1 font-bold">
+          <PaymentMethod />
         </div>
       </div>
 

@@ -62,18 +62,6 @@
     cursor: pointer;
   }
 
-  .items-center {
-    align-items: center !important;
-  }
-
-  .flex {
-    display: flex !important;
-  }
-
-  .mx-3{
-    margin-left: 0.75rem !important;
-    margin-right: 0.75rem !important;
-  }
 }
 
 :root {

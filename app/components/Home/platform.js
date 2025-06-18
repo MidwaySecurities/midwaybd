@@ -2,7 +2,7 @@ import React from 'react'
 
 const Platform = () => {
     return (
-        <div className='p-6 py-16 bg-blue-500 text-white rounded-lg shadow-md flex flex-col items-start justify-center h-full border'>
+        <div className='p-6 py-24 bg-foreground text-white rounded-lg shadow-md flex flex-col items-start justify-center h-full border'>
             <p>Available on multiple platform</p>
             <h1 className='font-bold text-xl mt-8'>World class platform, Trade without a doubt.</h1>
             <p className='pt-4 text-sm'>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>

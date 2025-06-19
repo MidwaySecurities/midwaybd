@@ -12,6 +12,7 @@ import OurService from "./components/Home/our-service";
 import AccountOpenningSteps from "./components/Home/account-openning-step";
 import Platform from "./components/Home/platform";
 import PaymentMethod from "./components/Home/Payment-method";
+import Footer from "./components/Home/footer";
 export default function Home() {
   return (
     <>
@@ -57,6 +58,10 @@ export default function Home() {
 
         <div className="mt-8 px-4 bg-white py-1 font-bold">
           <PaymentMethod />
+        </div>
+
+        <div className="mt-8 px-4 bg-white py-1 font-bold">
+          <Footer />
         </div>
       </div>
 

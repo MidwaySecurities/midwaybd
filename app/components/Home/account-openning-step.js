@@ -3,10 +3,10 @@ import React from 'react'
 const AccountOpenningSteps = () => {
     return (
         <div className=' bg-green-300 rounded-lg py-12 border-1 border-black relative text-black'>
-            <div className='absolute w-[70%] left-[50%] translate-x-[-50%] text-center bg-white z-[10] top-[-10px]'>
-                <h1 className='text-black'>Three Simple Steps</h1>
+            <div className='absolute w-[70%] left-[50%] translate-x-[-50%] text-center bg-white p-1 z-[10] top-[-10px]'>
+                <h1 className='text-black text-[20px]'>Three Simple Steps</h1>
             </div>
-
+                
             <div>
                 <div>
                     <div className='flex flex-col justify-center items-center md:flex-row gap-12'>

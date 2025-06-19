@@ -29,7 +29,7 @@ const OurServiceCard = () => {
             <motion.div className="slider-container my-8 overflow-hidden lg:hidden text-gray-700">
                 <div className='flex justify-center flex-col' id='service'>
                     <h1 className={`text-[1.3rem] sm:text-2xl md:text-3xl py-0 my-0 mt-20 text-black text-center`}>Multiple Solutions, One App!</h1>
-                    <div className='text-black rounded-full flex justify-center py-2'>
+                    <div className='text-black rounded-full flex justify-center py-8'>
                         <Link href="https://portal.midwaybd.com/bo/portal-login"
                             target='_blank' className={`border-2 bg-[#004990] text-white mt-3  font-bold no-underline p-2 px-4 rounded-full`}>Open BO Account</Link>
                     </div>

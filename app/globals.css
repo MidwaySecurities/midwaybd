@@ -88,3 +88,8 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.slick-track {
+  display: flex !important;
+  align-items: center;
+}

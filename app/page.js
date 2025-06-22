@@ -17,7 +17,7 @@ import Footer from "./components/Home/footer/footer";
 import Navigation from "./components/modal/navigation";
 import { useModalClose } from "./components/close-button-provider";
 export default function Home() {
-  const {isModalOpen, closeModal, openModal} = useModalClose()
+  const { isModalOpen, closeModal, openModal } = useModalClose()
   return (
     <>
       <div className={`h-screen ${isModalOpen ? 'overflow-hidden' : ''}`}>
@@ -33,7 +33,12 @@ export default function Home() {
           <HeroSection />
         </div>
         <div className="mt-8 px-4 bg-black text-white py-1 font-bold">
-          <TextScrollingHorizontally />
+          {/* <TextScrollingHorizontally /> */}
+          <div class="overflow-x-auto whitespace-nowrap bg-gray-100 text-gray-800 text-sm p-2">
+            <marquee behavior="scroll" direction="left" scrollamount="4">
+              📈 DSE Index gains 45 points amid strong investor confidence — 🏦 Midway Securities announces new trading app 'QuickTrade Pro' — 📰 Latest IPO of ABC Textiles oversubscribed by 3.2x — 💼 Market closes higher led by banking and pharma sectors — 📊 Foreign investors show renewed interest in blue-chip stocks — 📢 AGM of XYZ Cement scheduled for July 10th, 2025 — 📉 DSE turnover crosses BDT 950 crore mark — Stay updated with Midway Securities for all market insights.
+            </marquee>
+          </div>
         </div>
         <div>
           <Card title={`Card Title`} cardDesc={`Card Description`}>
@@ -45,23 +50,23 @@ export default function Home() {
           </Card>
         </div>
 
-        <div className="mt-8 px-4 text-white py-1 font-bold">
+        <div className="section-gap px-4 text-white py-1 font-bold">
           <OurService />
         </div>
 
-        <div className="mt-8 px-4 text-white py-1 font-bold">
+        <div className="section-gap px-4 text-white py-1 font-bold">
           <AccountOpenningSteps />
         </div>
 
-        <div className="mt-8 px-4 text-white bg-white font-bold">
+        <div className="section-gap px-4 text-white bg-white font-bold">
           <Platform />
         </div>
 
-        <div className="mt-8 px-4 bg-white py-1 font-bold">
+        <div className="section-gap px-4 bg-white py-1 font-bold">
           <PaymentMethod />
         </div>
 
-        <div className="mt-8 px-4 bg-white py-1 font-bold">
+        <div className="section-gap px-4 bg-white py-1 font-bold">
           <Footer />
         </div>
       </div>

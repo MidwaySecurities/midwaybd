@@ -69,7 +69,9 @@
     line-height: 1.75rem;
     color: var(--color-avocado-500);
   }
-
+  .section-gap {
+    margin-top: 1.5rem;
+  }
 
 }
 

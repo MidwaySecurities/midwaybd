@@ -5,12 +5,11 @@ import { useModalClose } from '../close-button-provider'
 
 const Navigation = () => {
     const { isModalOpen, closeModal, openModal } = useModalClose()
-    const [isOpen, setIsopen] = useState(false)
-    console.log(isModalOpen, closeModal, openModal)
+    const [openService, setOpenService] = useState(false)
     return (
-        <div style={{ backdropFilter: 'blur(20px)' }} className={`fixed ${isModalOpen ? '' : 'hidden'} top-0 bottom-0 flex justify-center items-center left-0 right-0 z-[100] text-foreground text-3xl overflow-scroll`}>
+        <div style={{ backdropFilter: 'blur(20px)' }} className={`fixed ${isModalOpen ? '' : 'hidden'} top-0 bottom-0 flex justify-center left-0 right-0 z-[100] text-foreground text-3xl overflow-scroll`}>
             <CloseButton />
-            <div className='w-full px-8'>
+            <div className='w-full px-8 mt-4'>
                 <div className='flex justify-between items-center flex-col p-4 gap-8 rounded-lg w-full'>
                     <div className='flex space-y-2 flex-col mt-8 w-full'>
                         <a href="#" className='hover:text-gray-300'>Home</a>
@@ -20,7 +19,7 @@ const Navigation = () => {
                         <a href="#" className='hover:text-gray-300'>Branches</a>
                         <div>
                             <div onClick={() => {
-                                alert('Dropdown clicked')
+                                setOpenService(prev => !prev)
                             }} className='flex items-center justify-between gap-2 hover:text-gray-300 cursor-pointer'>
                                 <a href="#" className='hover:text-gray-300'>Services</a>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24" fill="none">
@@ -28,12 +27,11 @@ const Navigation = () => {
                                 </svg>
                             </div>
                             {/* dropdown */}
-                            <div className='absolute bg-white shadow-lg rounded-lg p-4 mt-2 hidden group-hover:block'>
+                            <div className={`shadow-lg ${openService?'p-4 mt-2':'max-h-0 overflow-y-hidden'} px-4 rounded-lg group-hover:block transition-all duration-300 ease-in-out`}>
                                 <a href="#" className='block hover:text-gray-300'>Trading</a>
                                 <a href="#" className='block hover:text-gray-300'>Investment</a>
                                 <a href="#" className='block hover:text-gray-300'>Research</a>
                                 <a href="#" className='block hover:text-gray-300'>Advisory</a>
-
                             </div>
                         </div>
                         <div>

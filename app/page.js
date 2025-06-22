@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import TimeDate from "./components/Home/time-date";
 import FirstNavBar from "./components/Home/first-nav-bar";
@@ -14,11 +15,12 @@ import Platform from "./components/Home/platform";
 import PaymentMethod from "./components/Home/Payment-method";
 import Footer from "./components/Home/footer/footer";
 import Navigation from "./components/modal/navigation";
+import { useModalClose } from "./components/close-button-provider";
 export default function Home() {
-
+  const {isModalOpen, closeModal, openModal} = useModalClose()
   return (
     <>
-      <div className="">
+      <div className={`h-screen ${isModalOpen ? 'overflow-hidden' : ''}`}>
         <Navigation />
         <TimeDate />
         <div>
@@ -40,10 +42,6 @@ export default function Home() {
 
           <Card title={`Card Title`} cardDesc={`Card Description`}>
             <Image src={hero_image2} alt="Card Image" width={200} height={200} className="rounded-lg" />
-          </Card>
-
-          <Card title={`Card Title`} cardDesc={`Card Description`}>
-            <Image src={hero_image3} alt="Card Image" width={200} height={200} className="rounded-lg" />
           </Card>
         </div>
 

@@ -2,8 +2,8 @@ import React from 'react'
 
 const AccountOpenningSteps = () => {
     return (
-        <div className=' bg-background rounded-lg py-12 border-1 border-black relative text-black'>
-            <div className='absolute w-[70%] left-[50%] translate-x-[-50%] text-center bg-white p-1 z-[10] top-[-10px]'>
+        <div className=' bg-background rounded-xl py-12 border-1 border-gray-300 relative text-black'>
+            <div className='absolute w-[70%] left-[50%] translate-x-[-50%] text-center bg-white p-1 z-[10] top-[-15px]'>
                 <h1 className='text-black text-[20px]'>Three Simple Steps</h1>
             </div>
                 

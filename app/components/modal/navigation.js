@@ -6,6 +6,7 @@ import { useModalClose } from '../close-button-provider'
 const Navigation = () => {
     const { isModalOpen, closeModal, openModal } = useModalClose()
     const [openService, setOpenService] = useState(false)
+    const [openPricing, setOpenPricing] = useState(false)
     return (
         <div style={{ backdropFilter: 'blur(20px)' }} className={`fixed ${isModalOpen ? '' : 'hidden'} top-0 bottom-0 flex justify-center left-0 right-0 z-[100] text-foreground text-3xl overflow-scroll`}>
             <CloseButton />
@@ -20,6 +21,7 @@ const Navigation = () => {
                         <div>
                             <div onClick={() => {
                                 setOpenService(prev => !prev)
+                                setOpenPricing(false)
                             }} className='flex items-center justify-between gap-2 hover:text-gray-300 cursor-pointer'>
                                 <a href="#" className='hover:text-gray-300'>Services</a>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24" fill="none">
@@ -27,7 +29,7 @@ const Navigation = () => {
                                 </svg>
                             </div>
                             {/* dropdown */}
-                            <div className={`shadow-lg ${openService?'p-4 mt-2':'max-h-0 overflow-y-hidden'} px-4 rounded-lg group-hover:block transition-all duration-300 ease-in-out`}>
+                            <div className={`text-2xl text-gray-700 shadow-lg ${openService ? 'p-4 mt-2' : 'max-h-0 overflow-y-hidden'} px-4 rounded-lg group-hover:block transition-all duration-300 ease-in-out`}>
                                 <a href="#" className='block hover:text-gray-300'>Trading</a>
                                 <a href="#" className='block hover:text-gray-300'>Investment</a>
                                 <a href="#" className='block hover:text-gray-300'>Research</a>
@@ -36,7 +38,8 @@ const Navigation = () => {
                         </div>
                         <div>
                             <div onClick={() => {
-                                alert('Dropdown clicked')
+                                setOpenPricing(prev => !prev)
+                                setOpenService(false) // Close service dropdown if open
                             }} className='flex items-center justify-between gap-2 hover:text-gray-300 cursor-pointer'>
                                 <a href="#" className='hover:text-gray-300'>Pricing</a>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24" fill="none">
@@ -44,7 +47,7 @@ const Navigation = () => {
                                 </svg>
                             </div>
                             {/* dropdown */}
-                            <div className='absolute bg-white shadow-lg rounded-lg p-4 mt-2 hidden group-hover:block'>
+                            <div className={`text-2xl text-gray-700 shadow-lg ${openPricing ? 'p-4 mt-2' : 'max-h-0 overflow-y-hidden'} px-4 rounded-lg group-hover:block transition-all duration-300 ease-in-out`}>
                                 <a href="#" className='block hover:text-gray-300'>Trading</a>
                                 <a href="#" className='block hover:text-gray-300'>Investment</a>
                                 <a href="#" className='block hover:text-gray-300'>Research</a>

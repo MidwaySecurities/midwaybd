@@ -3,24 +3,29 @@ const nextConfig = {
     reactStrictMode: true,
     images: {
         remotePatterns: [
-        {
-            protocol: 'https',
-            hostname: 'www.midwaybd.com',
-            port: '',
-            pathname: '/uploads/**',
-        },
-        {
-            protocol: 'https',
-            hostname: 'images.unsplash.com',
-            port: '',
-            pathname: '/**',
-        },
-        {
-            protocol: 'https',
-            hostname: 'cdn.pixabay.com',
-            port: '',
-            pathname: '/photo/**',
-        },
+            {
+                protocol: 'https',
+                hostname: 'www.midwaybd.com',
+                port: '',
+                pathname: '/uploads/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
+                port: '',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'cdn.pixabay.com',
+                port: '',
+                pathname: '/photo/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'cdn-icons-png.flaticon.com',
+                port: '',
+            }
         ],
     },
     experimental: {

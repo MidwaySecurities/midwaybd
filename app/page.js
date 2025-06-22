@@ -12,11 +12,14 @@ import OurService from "./components/Home/our-service";
 import AccountOpenningSteps from "./components/Home/account-openning-step";
 import Platform from "./components/Home/platform";
 import PaymentMethod from "./components/Home/Payment-method";
-import Footer from "./components/Home/footer";
+import Footer from "./components/Home/footer/footer";
+import Navigation from "./components/modal/navigation";
 export default function Home() {
+
   return (
     <>
       <div className="">
+        <Navigation />
         <TimeDate />
         <div>
           <FirstNavBar />

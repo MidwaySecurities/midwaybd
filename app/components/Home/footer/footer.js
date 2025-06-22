@@ -1,11 +1,10 @@
 import React from 'react'
+import SearchIcon from './components/search-icon'
 
 const Footer = () => {
   return (
     <div className='bg-gray-800 text-white py-8 px-4 rounded-lg'>
-        <div className='h-8 bg-white my-6 mb-8 rounded-3xl'>
-            <input type="text" placeholder='Search' className='w-full h-full px-4 rounded-3xl text-gray-800' />
-        </div>
+        <SearchIcon />
         <div className='text-center'>
             <h2 className='text-2xl font-bold mb-4'>Stay Connected</h2>
             <p className='mb-4'>Follow us on our social media channels for the latest updates.</p>

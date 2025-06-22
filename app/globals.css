@@ -11,7 +11,7 @@
   --color-avocado-600: oklch(0.53 0.12 118.34);
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
-  
+
 }
 
 
@@ -41,6 +41,7 @@
     0% {
       transform: translateX(0%);
     }
+
     100% {
       transform: translateX(-50%);
     }
@@ -62,10 +63,18 @@
     cursor: pointer;
   }
 
+  .text-custom {
+    font-family: var(--font-display);
+    font-size: 100px;
+    line-height: 1.75rem;
+    color: var(--color-avocado-500);
+  }
+
+
 }
 
 :root {
-  --background: #ffffff;
+  --background: red;
   --foreground: #171717;
 }
 
@@ -76,10 +85,19 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* --text-xl: 100px; */
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #171717;
     --foreground: #ededed;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: white;
+    --foreground: #171717;
   }
 }
 

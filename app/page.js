@@ -40,7 +40,7 @@ export default function Home() {
             </marquee>
           </div>
         </div>
-        <div>
+        <div className="mt-8">
           <Card title={`QuickTrade Pro - The latest trading Mobile App`} cardDesc={`QuickTrade Pro - The latest trading Mobile App
 ​QuickTrade Pro is designed to streamline your trading experience with its powerful, user-friendly platform. Whether you're a seasoned trader or just starting, our features include real-time market data, advanced charting tools, and seamless trade execution.
 

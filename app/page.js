@@ -41,12 +41,16 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <Card title={`Card Title`} cardDesc={`Card Description`}>
-            <Image src={hero_image1} alt="Card Image" width={200} height={200} className="rounded-lg" />
+          <Card title={`QuickTrade Pro - The latest trading Mobile App`} cardDesc={`QuickTrade Pro - The latest trading Mobile App
+​QuickTrade Pro is designed to streamline your trading experience with its powerful, user-friendly platform. Whether you're a seasoned trader or just starting, our features include real-time market data, advanced charting tools, and seamless trade execution.
+
+Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning-fast order execution and stay ahead of the market.`}>
+            <Image src={`https://www.midwaybd.com/uploads/6/0/4/6/60462737/quicktrade-pro-website-1-png-transparent-compressed_orig.png`} alt="Card Image" width={200} height={200} className="rounded-lg py-3" />
           </Card>
 
-          <Card title={`Card Title`} cardDesc={`Card Description`}>
-            <Image src={hero_image2} alt="Card Image" width={200} height={200} className="rounded-lg" />
+          <Card title={`Why Choose us?`} cardDesc={`online BO account opening
+​Open a BO Account with us online. You will never have to visit any of our branches.`}>
+            <Image src={`https://www.midwaybd.com/uploads/6/0/4/6/60462737/midway-portal-live-insta-transparent-1_orig.png`} alt="Card Image" width={200} height={200} className="rounded-lg py-3" />
           </Card>
         </div>
 

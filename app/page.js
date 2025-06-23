@@ -20,7 +20,7 @@ export default function Home() {
   const { isModalOpen, closeModal, openModal } = useModalClose()
   return (
     <>
-      <div className={`h-screen ${isModalOpen ? 'overflow-hidden' : ''}`}>
+      <div className={`h-screen ${isModalOpen ? 'overflow-hidden' : ''} md:hidden`}>
         <Navigation />
         <TimeDate />
         <div>
@@ -76,9 +76,9 @@ Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning
       </div>
 
 
-      {/* <div className="hidden md:flex md:flex-col md:items-center md:justify-center h-screen font-bold text-2xl">
+      <div className="hidden md:flex md:flex-col md:items-center md:justify-center h-screen font-bold text-2xl">
         <h1>Please use your mobile to see the mobile view.</h1>
-      </div> */}
+      </div>
     </>
   );
 }

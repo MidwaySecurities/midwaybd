@@ -44,9 +44,11 @@ const Footer = () => {
       </div>
 
       {/* contact information */}
-      <div>
+      <div className='text-center mt-8 text-[12px]'>
         <p>Dhaka Stock Exchange Building (Room No: 508)</p>
-        <p>9th Floor, 9/F Motijheel C/A, Dhaka-1212, Bangladesh</p>
+        <p>9/F, Motijheel C/A, Dhaka 1000</p>
+        <p>Hotline: 09609 100 142</p>
+        <p>​info@midwaybd.com</p>
       </div>
 
       <div className='mt-8 text-center'>

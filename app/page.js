@@ -32,7 +32,7 @@ export default function Home() {
         <div className="mt-8 m-auto">
           <HeroSection />
         </div>
-        <div className="mt-8 px-4 bg-black text-white py-1 font-bold">
+        <div className="mt-8 px-4 bg-[#e6e6e9] text-white py-1 font-bold">
           {/* <TextScrollingHorizontally /> */}
           <div class="overflow-x-auto whitespace-nowrap bg-gray-100 text-gray-800 text-sm p-2">
             <marquee behavior="scroll" direction="left" scrollamount="4">

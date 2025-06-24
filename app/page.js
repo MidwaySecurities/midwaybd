@@ -1,4 +1,3 @@
-'use client'
 import Image from "next/image";
 import TimeDate from "./components/Home/time-date";
 import FirstNavBar from "./components/Home/first-nav-bar";
@@ -16,11 +15,11 @@ import PaymentMethod from "./components/Home/Payment-method";
 import Footer from "./components/Home/footer/footer";
 import Navigation from "./components/modal/navigation";
 import { useModalClose } from "./components/close-button-provider";
+import Link from "next/link";
 export default function Home() {
-  const { isModalOpen, closeModal, openModal } = useModalClose()
   return (
     <>
-      <div className={`h-screen ${isModalOpen ? 'overflow-hidden' : ''} md:hidden`}>
+      <div className={`h-screen md:hidden`}>
         <Navigation />
         <TimeDate />
         <div>
@@ -41,12 +40,24 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-8">
-          <Card title={`QuickTrade Pro - The latest trading Mobile App`} cardDesc={`QuickTrade Pro - The latest trading Mobile App
+          {/* <Card title={`QuickTrade Pro - The latest trading Mobile App`} cardDesc={`QuickTrade Pro - The latest trading Mobile App
 ​QuickTrade Pro is designed to streamline your trading experience with its powerful, user-friendly platform. Whether you're a seasoned trader or just starting, our features include real-time market data, advanced charting tools, and seamless trade execution.
 
 Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning-fast order execution and stay ahead of the market.`}>
             <Image src={`https://www.midwaybd.com/uploads/6/0/4/6/60462737/quicktrade-pro-website-1-png-transparent-compressed_orig.png`} alt="Card Image" width={200} height={200} className="rounded-lg py-3" />
-          </Card>
+          </Card> */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+            <div className="bg-white card-shadow rounded-lg p-4 py-8 flex flex-col items-center">
+              <h1 className="text-3xl">trade online - using the latest <span className="text-[#d6ad60]">TECHNOLOGIES</span></h1>
+              <div className="flex justify-center items-center py-4">
+                <Image src={`https://www.midwaybd.com/uploads/6/0/4/6/60462737/quicktrade-pro-website-1-png-transparent-compressed_orig.png`} alt="Hero Image 1" width={275} height={200} className="rounded-lg py-3" />
+              </div>
+              <h1 className="text-3xl mb-4"><span className="text-[#5cc2e8]">QuickTrade Pro</span> - The latest trading Mobile App</h1>
+              <p><span className="font-bold">QuickTrade Pro</span> is designed to streamline your trading experience with its powerful, user-friendly platform. Whether you're a seasoned trader or just starting, our features include real-time market data, advanced charting tools, and seamless trade execution.</p>
+
+              <p className="mt-6">Execute trades quickly and efficiently with <span className="text-[#a88d2e]"><Link href={`quicktradepro.com`}>QuickTrade Pro.</Link></span> Experience lightning-fast order execution and stay ahead of the market.</p>
+            </div>
+          </div>
 
           <Card title={`Why Choose us?`} cardDesc={`online BO account opening
 ​Open a BO Account with us online. You will never have to visit any of our branches.`}>

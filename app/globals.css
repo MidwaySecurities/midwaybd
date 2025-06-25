@@ -69,12 +69,17 @@
     line-height: 1.75rem;
     color: var(--color-avocado-500);
   }
+
   .section-gap {
     margin-top: 1.5rem;
   }
 
   .card-shadow {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .cercle-shadow {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   }
 
 }

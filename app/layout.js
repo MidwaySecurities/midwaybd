@@ -1,16 +1,23 @@
-import { Geist, Geist_Mono } from "next/font/google";
+// import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from 'next/font/google';
+
 import "./globals.css";
+
 import { ModalCloseProvider } from "./components/close-button-provider";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const inter = Inter({
+  subsets: ['latin'], // Specify the character sets you need
+  variable: '--font-inter', // Optional: Define a CSS variable for easy access
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata = {
   title: "Midway Securities LTD.",
@@ -22,7 +29,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <ModalCloseProvider>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${inter.className} antialiased`}
         >
           {children}
         </body>

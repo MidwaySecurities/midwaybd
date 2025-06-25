@@ -25,8 +25,8 @@ export default function TimeDate() {
 
     return (
         <div className='flex justify-between py-1 px-4 bg-white'>
-            <p className="font-bold">{time}</p>
-            <p>DSE: <span className="text-green-500 font-bold">OPEN</span></p>
+            <p className="font-bold text-[#FACC15]">{time}</p>
+            <p>DSE: <span className="text-[#22C55E] font-bold">OPEN</span></p>
         </div>
     );
 }

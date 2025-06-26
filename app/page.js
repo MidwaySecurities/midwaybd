@@ -19,13 +19,13 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <div className={`h-screen md:hidden`}>
+      <div className={`md:hidden`}>
         <Navigation />
         <TimeDate />
         <div>
           <FirstNavBar />
         </div>
-        <div>
+        <div className="sticky top-0 z-50 bg-white">
           <SubNav />
         </div>
         <div className="mt-8 m-auto">
@@ -59,10 +59,16 @@ Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning
             </div>
           </div>
 
-          <Card title={`Why Choose us?`} cardDesc={`online BO account opening
-​Open a BO Account with us online. You will never have to visit any of our branches.`}>
-            <Image src={`https://www.midwaybd.com/uploads/6/0/4/6/60462737/midway-portal-live-insta-transparent-1_orig.png`} alt="Card Image" width={200} height={200} className="rounded-lg py-3" />
-          </Card>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+            <div className="bg-white card-shadow rounded-lg p-4 py-8 flex flex-col items-center">
+              <h1 className="text-3xl self-start">Why <span className="text-[#5CBCE0]">Choose</span> us?</h1>
+              <div className="flex justify-center items-center py-4">
+                <Image src={`https://www.midwaybd.com/uploads/6/0/4/6/60462737/midway-portal-live-insta-transparent-1_orig.png`} alt="Hero Image 1" width={275} height={200} className="rounded-lg py-3" />
+              </div>
+              <h1 className="text-2xl mb-4 uppercase">online BO account opening</h1>
+              <p>​Open a BO Account with us online. You will never have to visit any of our branches.</p>
+            </div>
+          </div>
         </div>
 
         <div className="section-gap px-4 text-white py-1 font-bold">

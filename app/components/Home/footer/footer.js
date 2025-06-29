@@ -12,7 +12,7 @@ const Footer = () => {
         <div className='flex justify-center space-x-4'>
           <Link href="https://www.facebook.com/people/QuickTrade-Pro/61565577787784/?mibextid=wwXIfr" target='_blank' className='text-blue-400 hover:text-blue-600'>Facebook</Link>
           <Link href="#" className='text-blue-400 hover:text-blue-600'>Instagram</Link>
-          <Link href="https://www.youtube.com/@QuickTrade-Pro" className='text-blue-400 hover:text-blue-600'>Youtube</Link>
+          <Link href="https://www.youtube.com/@QuickTrade-Pro" target='_blank' className='text-blue-400 hover:text-blue-600'>Youtube</Link>
         </div>
       </div>
 

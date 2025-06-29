@@ -1,5 +1,6 @@
 import React from 'react'
 import SearchIcon from './components/search-icon'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -9,9 +10,9 @@ const Footer = () => {
         <h2 className='text-2xl font-bold mb-4'>Stay Connected</h2>
         <p className='mb-4'>Follow us on our social media channels for the latest updates.</p>
         <div className='flex justify-center space-x-4'>
-          <a href="#" className='text-blue-400 hover:text-blue-600'>Facebook</a>
-          <a href="#" className='text-blue-400 hover:text-blue-600'>Twitter</a>
-          <a href="#" className='text-blue-400 hover:text-blue-600'>Instagram</a>
+          <Link href="https://www.facebook.com/people/QuickTrade-Pro/61565577787784/?mibextid=wwXIfr" target='_blank' className='text-blue-400 hover:text-blue-600'>Facebook</Link>
+          <Link href="#" className='text-blue-400 hover:text-blue-600'>Instagram</Link>
+          <Link href="https://www.youtube.com/@QuickTrade-Pro" className='text-blue-400 hover:text-blue-600'>Youtube</Link>
         </div>
       </div>
 

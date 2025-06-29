@@ -34,7 +34,7 @@ const NavigationBar = () => {
 
     return (
         // <nav className={`bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'} ${isMobileMenuOpen ? 'overflow-hidden' : ''}`}>
-        <nav className={`bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-[106px]'} ${isMobileMenuOpen ? 'overflow-hidden' : ''}`}>
+        <>
             <Navigation />
             <TimeDate />
             <div>
@@ -43,7 +43,7 @@ const NavigationBar = () => {
             <div className="sticky top-0 z-50">
                 <SubNav />
             </div>
-        </nav>
+        </>
     )
 }
 

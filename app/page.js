@@ -20,14 +20,7 @@ export default function Home() {
   return (
     <>
       <div className={`md:hidden`}>
-        <Navigation />
-        <TimeDate />
-        <div>
-          <FirstNavBar />
-        </div>
-        <div className="sticky top-0 z-50 bg-white">
-          <SubNav />
-        </div>
+        
         <div className="mt-8 m-auto">
           <HeroSection />
         </div>

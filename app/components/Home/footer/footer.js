@@ -52,7 +52,7 @@ const Footer = () => {
       </div>
 
       <div className='mt-8 text-center'>
-        <p>&copy; 2025 Your Company. All rights reserved.</p>
+        <p>&copy; Midway Securities LTD. All rights reserved.</p>
       </div>
     </div>
   )

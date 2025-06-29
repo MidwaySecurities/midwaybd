@@ -4,6 +4,10 @@ import { Inter } from 'next/font/google';
 import "./globals.css";
 
 import { ModalCloseProvider } from "./components/close-button-provider";
+import Navigation from './components/modal/navigation';
+import TimeDate from './components/Home/time-date';
+import FirstNavBar from './components/Home/first-nav-bar';
+import SubNav from './components/Home/sub-nav';
 const inter = Inter({
   subsets: ['latin'], // Specify the character sets you need
   variable: '--font-inter', // Optional: Define a CSS variable for easy access
@@ -31,6 +35,14 @@ export default function RootLayout({ children }) {
         <body
           className={`${inter.className} antialiased`}
         >
+            <Navigation />
+            <TimeDate />
+            <div>
+              <FirstNavBar />
+            </div>
+            <div className="sticky top-0 z-50">
+              <SubNav />
+            </div>
           {children}
         </body>
       </ModalCloseProvider>

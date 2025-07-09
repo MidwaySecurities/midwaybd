@@ -13,6 +13,7 @@ const Regulators = () => {
     slidesToScroll: 1,
     variableWidth: true
   };
+  
   return (
     <div className="text-black mb-12 mt-12">
       <h1 className="text-center text-black pb-4 text-2xl mt-8">Our regulators</h1>

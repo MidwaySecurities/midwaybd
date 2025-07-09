@@ -18,7 +18,7 @@ import { useModalClose } from "./components/close-button-provider";
 import Link from "next/link";
 import Whatsapp from "./components/whatsapp-button";
 import ShiftToUs from "./components/Home/ShiftToUs";
-import Regulators from "./components/Home/regulators";
+import Regulators from "./components/Home/Regulators";
 export default function Home() {
   return (
     <>

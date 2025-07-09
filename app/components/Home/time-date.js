@@ -26,8 +26,8 @@ export default function TimeDate() {
 
     return (
         <div className='flex justify-between py-1 px-4 bg-white'>
-            <div className="font-bold text-[#FACC15] flex justify-center items-center">
-                <Image src={bangladeshFlag}  alt='bangladesh' height={15} width={15} className='w-[50px]' />{time}
+            <div className="font-bold text-[#FACC15] flex gap-2 justify-center items-center">
+                <Image src={bangladeshFlag}  alt='bangladesh' height={15} width={15} className='w-[20px]' />{time}
             </div>
             <p>DSE: <span className="text-[#22C55E] font-bold">OPEN</span></p>
         </div>

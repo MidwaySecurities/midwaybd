@@ -20,6 +20,7 @@ import Whatsapp from "./components/whatsapp-button";
 import ShiftToUs from "./components/Home/ShiftToUs";
 import Regulators from "./components/Home/Regulators";
 export default function Home() {
+  
   return (
     <>
       <div className={`md:hidden`}>

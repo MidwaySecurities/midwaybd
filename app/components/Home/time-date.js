@@ -1,7 +1,8 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
-
+import bangladeshFlag from '../../../public/images/bangladesh.png'
 export default function TimeDate() {
     const [time, setTime] = useState('');
 
@@ -25,7 +26,9 @@ export default function TimeDate() {
 
     return (
         <div className='flex justify-between py-1 px-4 bg-white'>
-            <p className="font-bold text-[#FACC15]">{time}</p>
+            <div className="font-bold text-[#FACC15] flex justify-center items-center">
+                <Image src={bangladeshFlag}  alt='bangladesh' height={15} width={15} className='w-[50px]' />{time}
+            </div>
             <p>DSE: <span className="text-[#22C55E] font-bold">OPEN</span></p>
         </div>
     );

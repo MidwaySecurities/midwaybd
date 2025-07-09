@@ -20,11 +20,9 @@ import Whatsapp from "./components/whatsapp-button";
 import ShiftToUs from "./components/Home/ShiftToUs";
 import Regulators from "./components/Home/Regulators";
 export default function Home() {
-  
   return (
     <>
       <div className={`md:hidden`}>
-        
         <div className="mt-8 m-auto">
           <HeroSection />
         </div>
@@ -87,10 +85,6 @@ Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning
         
         <div className="section-gap px-4 text-white bg-white font-bold">
           <ShiftToUs />
-        </div>
-
-        <div className="section-gap px-4 bg-white py-1 font-bold">
-          <PaymentMethod />
         </div>
 
         <div className="section-gap px-4 bg-white py-1 font-bold">

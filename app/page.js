@@ -16,6 +16,9 @@ import Footer from "./components/Home/footer/footer";
 import Navigation from "./components/modal/navigation";
 import { useModalClose } from "./components/close-button-provider";
 import Link from "next/link";
+import Whatsapp from "./components/whatsapp-button";
+import ShiftToUs from "./components/Home/ShiftToUs";
+import Regulators from "./components/Home/Regulators";
 export default function Home() {
   return (
     <>
@@ -77,12 +80,23 @@ Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning
           <Platform />
         </div>
 
+        <div>
+            <Regulators />
+        </div>  
+        
+        <div className="section-gap px-4 text-white bg-white font-bold">
+          <ShiftToUs />
+        </div>
+
         <div className="section-gap px-4 bg-white py-1 font-bold">
           <PaymentMethod />
         </div>
 
         <div className="section-gap px-4 bg-white py-1 font-bold">
           <Footer />
+        </div>
+        <div>
+          <Whatsapp />
         </div>
       </div>
 

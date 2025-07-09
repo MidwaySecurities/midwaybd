@@ -14,7 +14,7 @@ const AccountOpenningSteps = () => {
                             <div className='bg-white p-4 rounded-full cercle-shadow w-18 h-18 md:w-1/3 flex items-center justify-center'>
                                 <h2 className='text-xl font-bold'>1</h2>
                             </div>
-                            <h1>Register account</h1>
+                            <h1>Open BO account</h1>
                         </div>
                         <div className='flex flex-col items-center gap-4'>
                             <div className='bg-white p-4 rounded-full cercle-shadow w-18 h-18 md:w-1/3 flex items-center justify-center'>

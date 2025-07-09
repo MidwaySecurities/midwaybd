@@ -10,10 +10,10 @@ const Navigation = () => {
     const [openDeposit, setOpenDeposit] = useState(false)
     const [openBo, setOpenBo] = useState(false)
     return (
-        <div style={{ backdropFilter: 'blur(20px)' }} className={`fixed ${isModalOpen ? '' : 'hidden'} top-0 bottom-0 flex justify-center left-0 right-0 z-[100] h-screen text-foreground text-3xl overflow-scroll`}>
+        <div style={{ backdropFilter: 'blur(20px)' }} className={`fixed ${isModalOpen ? '' : 'hidden'} top-0 bottom-0 justify-center left-0 right-0 z-[100] h-screen text-foreground text-3xl overflow-scroll`}>
             <CloseButton />
-            <div className='w-full px-8 mt-4'>
-                <div className='flex justify-between items-center flex-col p-4 gap-8 rounded-lg w-full'>
+            <div className='w-full px-8 mt-2'>
+                <div className='flex justify-between items-center flex-col px-4 gap-8 rounded-lg w-full'>
                     <div className='flex space-y-2 flex-col mt-8 w-full'>
                         <a href="#" className='hover:text-gray-300'>Home</a>
                         <div>

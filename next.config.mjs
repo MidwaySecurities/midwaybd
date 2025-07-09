@@ -11,6 +11,24 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
+                hostname: 'cdbl.com.bd',
+                port: '',
+                pathname: '/assets/img/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.dsebd.org',
+                port: '',
+                pathname: '/assets/images/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'sec.gov.bd',
+                port: '',
+                pathname: '/images/**',
+            },
+            {
+                protocol: 'https',
                 hostname: 'images.unsplash.com',
                 port: '',
                 pathname: '/**',

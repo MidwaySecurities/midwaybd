@@ -18,7 +18,7 @@ import { useModalClose } from "./components/close-button-provider";
 import Link from "next/link";
 import Whatsapp from "./components/whatsapp-button";
 import ShiftToUs from "./components/Home/ShiftToUs";
-import Regulators from "./components/Home/Regulators";
+import Regulators from "./components/Home/regulators";
 export default function Home() {
   return (
     <>
@@ -80,7 +80,7 @@ Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning
           <Platform />
         </div>
 
-        <div>
+        <div className="section-gap px-4 my-16 text-white bg-white font-bold h-36">
             <Regulators />
         </div>  
         

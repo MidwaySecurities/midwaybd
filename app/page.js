@@ -19,6 +19,7 @@ import Link from "next/link";
 import Whatsapp from "./components/whatsapp-button";
 import ShiftToUs from "./components/Home/ShiftToUs";
 import Regulators from "./components/Home/Regulators";
+import FirstApproachModal from "./components/firstApproachModal";
 export default function Home() {
   return (
     <>
@@ -99,6 +100,8 @@ Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning
       <div className="hidden md:flex md:flex-col md:items-center md:justify-center h-screen font-bold text-2xl">
         <h1>Please use your mobile to see the mobile view.</h1>
       </div>
+
+      <FirstApproachModal />
     </>
   );
 }

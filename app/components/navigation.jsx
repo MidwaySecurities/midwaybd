@@ -9,7 +9,6 @@ const NavigationBar = () => {
     const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    console.log(lastScrollY)
     const handleScroll = () => {
         if (typeof window !== 'undefined') {
             const currentScrollY = window.scrollY;

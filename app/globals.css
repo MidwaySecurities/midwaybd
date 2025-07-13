@@ -69,15 +69,15 @@
 
   .csr116 {
     color: #FFFFFF;
-    border: 1px solid #007CFF;
+    /* border: 1px solid #007CFF; */
     display: flex;
     padding: .5rem 1.3rem;
     font-size: 13px;
-    background: #007CFF;
+    /* background: #007CFF; */
     min-height: 38px;
     text-align: center;
     align-items: center;
-    font-family: OpenSans-Semibold;
+    /* font-family: OpenSans-Semibold; */
     margin-right: 2px;
     border-radius: 19px;
     justify-content: center;
@@ -150,6 +150,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-qtp_btn_bg_color: var(--qtp_btn_bg_color);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

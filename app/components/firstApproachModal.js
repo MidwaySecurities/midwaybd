@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-
+import Logo from '../../public/./qtp_logo.webp'
 const FirstApproachModal = () => {
     return (
         // <div className='fixed bottom-0 left-0 right-0 bg-black/50 z-50'>
@@ -10,8 +10,8 @@ const FirstApproachModal = () => {
         //     </div>
         // </div>
         <>
-            <div className="csr112">
-                <Image src="" alt="" className="csr115" />
+            <div className="csr112 p-8 z-[5000000]">
+                <Image src={Logo} alt="" className="csr115 p-2 py-3" />
                 <div className="csr114 text-sm">Invest in Stocks, ETFs, Options
                     All Commission Free
                 </div>

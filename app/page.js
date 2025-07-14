@@ -29,7 +29,7 @@ export default function Home() {
         <div className="mt-8 m-auto">
           <HeroSection />
         </div>
-        
+
         <div className="mt-8 px-4 bg-[#e6e6e9] text-white py-1 font-bold">
           {/* <TextScrollingHorizontally /> */}
           <div class="whitespace-nowrap bg-gray-100 text-gray-800 text-sm p-2">
@@ -58,7 +58,7 @@ Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
             <div className="bg-white card-shadow rounded-lg p-4 py-8 flex flex-col items-center">
               <h1 className="text-3xl self-start">Why <span className="text-[#5CBCE0]">Choose</span> us?</h1>
               <div className="flex justify-center items-center py-4">
@@ -67,6 +67,10 @@ Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning
               <h1 className="text-2xl mb-4 uppercase">online BO account opening</h1>
               <p>​Open a BO Account with us online. You will never have to visit any of our branches.</p>
             </div>
+          </div> */}
+          <div className="section-gap">
+            <h1 className="text-2xl text-center mb-4">Stock area chart</h1>
+            <IndexGraph />
           </div>
         </div>
 
@@ -89,9 +93,7 @@ Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning
         <div className="section-gap px-4 text-white bg-white font-bold">
           <ShiftToUs />
         </div>
-        <div className="">
-          <IndexGraph />
-        </div>
+
         <div className="section-gap px-4 bg-white py-1 font-bold">
           <Footer />
         </div>

@@ -20,6 +20,7 @@ import Whatsapp from "./components/whatsapp-button";
 import ShiftToUs from "./components/Home/ShiftToUs";
 import Regulators from "./components/Home/Regulators";
 import FirstApproachModal from "./components/firstApproachModal";
+import IndexGraph from "./components/Home/index-graph";
 
 export default function Home() {
   return (
@@ -28,7 +29,7 @@ export default function Home() {
         <div className="mt-8 m-auto">
           <HeroSection />
         </div>
-
+        
         <div className="mt-8 px-4 bg-[#e6e6e9] text-white py-1 font-bold">
           {/* <TextScrollingHorizontally /> */}
           <div class="whitespace-nowrap bg-gray-100 text-gray-800 text-sm p-2">
@@ -88,7 +89,9 @@ Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning
         <div className="section-gap px-4 text-white bg-white font-bold">
           <ShiftToUs />
         </div>
-
+        <div className="">
+          <IndexGraph />
+        </div>
         <div className="section-gap px-4 bg-white py-1 font-bold">
           <Footer />
         </div>

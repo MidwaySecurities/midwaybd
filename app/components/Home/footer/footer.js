@@ -69,7 +69,7 @@ const Footer = () => {
       </div>
 
       <div className='mt-8 text-center'>
-        <p>&copy; Midway Securities LTD. All rights reserved.</p>
+        <p>&copy; Midway Securities Ltd. All rights reserved.</p>
       </div>
     </div>
   )

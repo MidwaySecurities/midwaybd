@@ -161,6 +161,7 @@
   :root {
     --background: white;
     --foreground: #171717;
+    --qtp_btn_bg_color: #004990;
   }
 }
 

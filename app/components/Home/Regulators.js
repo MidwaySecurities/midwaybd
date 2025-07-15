@@ -35,10 +35,6 @@ const Regulators = () => {
           </div>
         </div>
 
-
-
-
-
         <div className="mx-2 inline-block">
           <div className='w-[100px] h-[100px] py-3 rounded-full bg-[#F8F7F5] hover:bg-[#DBEAFE] hover:drop-shadow-lg duration-500 flex justify-center items-center flex-col'>
             <Link href={`https://www.bb.org.bd/`} target="_blank">

@@ -16,7 +16,7 @@ const Regulators = () => {
   };
 
   return (
-    <div className="text-black mb-12 mt-12">
+    <div className="text-black mb-12 mt-12 w-[92%] m-auto">
       <h1 className="text-center text-black pb-4 text-2xl mt-8">Our Regulators</h1>
       <Slider {...settings}>
         <div className="mx-2 inline-block">

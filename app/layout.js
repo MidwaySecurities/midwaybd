@@ -6,6 +6,7 @@ import "./globals.css";
 import { ModalCloseProvider } from "./components/close-button-provider";
 import NavigationBar from './components/navigation';
 import { BottomModalCloseProvider } from './context/firstApproachModalContext';
+import { DeviceDetectContextProvider } from './context/deviceDetectContext';
 const inter = Inter({
   subsets: ['latin'], // Specify the character sets you need
   variable: '--font-inter', // Optional: Define a CSS variable for easy access
@@ -32,12 +33,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <ModalCloseProvider>
         <BottomModalCloseProvider>
-          <body
-            className={`${inter.className} antialiased`}
-          >
-            <NavigationBar />
-            {children}
-          </body>
+          <DeviceDetectContextProvider>
+            <body
+              className={`${inter.className} antialiased`}
+            >
+              <NavigationBar />
+              {children}
+            </body>
+          </DeviceDetectContextProvider>
         </BottomModalCloseProvider>
       </ModalCloseProvider>
     </html>

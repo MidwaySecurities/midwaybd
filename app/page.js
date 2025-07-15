@@ -32,7 +32,7 @@ export default function Home() {
 
         <div className="mt-8 px-4 bg-[#e6e6e9] text-white py-1 font-bold">
           {/* <TextScrollingHorizontally /> */}
-          <div class="whitespace-nowrap bg-gray-100 text-gray-800 text-sm p-2">
+          <div className="whitespace-nowrap bg-gray-100 text-gray-800 text-sm p-2">
             <marquee behavior="scroll" direction="left" scrollamount="4">
               📈 DSE Index gains 45 points amid strong investor confidence — 🏦 Midway Securities announces new trading app 'QuickTrade Pro' — 📰 Latest IPO of ABC Textiles oversubscribed by 3.2x — 💼 Market closes higher led by banking and pharma sectors — 📊 Foreign investors show renewed interest in blue-chip stocks — 📢 AGM of XYZ Cement scheduled for July 10th, 2025 — 📉 DSE turnover crosses BDT 950 crore mark — Stay updated with Midway Securities for all market insights.
             </marquee>

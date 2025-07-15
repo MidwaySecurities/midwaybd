@@ -21,17 +21,23 @@ const Regulators = () => {
       <Slider {...settings}>
         <div className="mx-2 inline-block">
           <div className='w-[100px] h-[100px] py-3 rounded-full bg-[#F8F7F5] hover:bg-[#DBEAFE] hover:drop-shadow-lg duration-500 flex justify-center items-center flex-col'>
-            <Link href={`https://cdbl.com.bd`} target="_blank"><Image src={`https://cdbl.com.bd/assets/img/CDBL%20Logo.png`} alt="cdbl image" width={80} height={80} className="w-[70px]" /></Link>
-          </div>
-        </div>
-
-        <div className="mx-2 inline-block">
-          <div className='w-[100px] h-[100px] py-3 rounded-full bg-[#F8F7F5] hover:bg-[#DBEAFE] hover:drop-shadow-lg duration-500 flex justify-center items-center flex-col'>
             <Link href={`https://www.dsebd.org/`} target="_blank">
               <Image src={`https://www.dsebd.org/assets/images/plc-logo.png`} alt="cdbl image" width={80} height={80} className="w-[70px]" />
             </Link>
           </div>
         </div>
+
+        <div className="mx-2 inline-block">
+          <div className='w-[100px] h-[100px] py-3 rounded-full bg-[#F8F7F5] hover:bg-[#DBEAFE] hover:drop-shadow-lg duration-500 flex justify-center items-center flex-col'>
+            <Link href={`https://cdbl.com.bd`} target="_blank">
+              <Image src={`https://cdbl.com.bd/assets/img/CDBL%20Logo.png`} alt="cdbl image" width={80} height={80} className="w-[70px]" />
+            </Link>
+          </div>
+        </div>
+
+
+
+
 
         <div className="mx-2 inline-block">
           <div className='w-[100px] h-[100px] py-3 rounded-full bg-[#F8F7F5] hover:bg-[#DBEAFE] hover:drop-shadow-lg duration-500 flex justify-center items-center flex-col'>
@@ -41,6 +47,13 @@ const Regulators = () => {
           </div>
         </div>
 
+        <div className="mx-2 inline-block">
+          <div className='w-[100px] h-[100px] py-3 rounded-full bg-[#F8F7F5] hover:bg-[#DBEAFE] hover:drop-shadow-lg duration-500 flex justify-center items-center flex-col'>
+            <Link href={`https://sec.gov.bd/`} target="_blank">
+              <Image src={`https://sec.gov.bd/images/BSEC-LOGO.png`} alt="bsec logo" width={80} height={80} className="w-[70px]" />
+            </Link>
+          </div>
+        </div>
       </Slider>
     </div>
   )

@@ -62,7 +62,7 @@
     padding: 0 .8rem 0 .4rem;
     font-size: 1.3rem;
     text-align: left;
-    font-family: OpenSans-Regular;
+    /* font-family: OpenSans-Regular; */
     line-height: 1.8rem;
     white-space: pre-line;
   }

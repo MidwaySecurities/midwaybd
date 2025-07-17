@@ -94,9 +94,7 @@ Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning
           <ShiftToUs />
         </div>
 
-        <div className="section-gap px-4 bg-white py-1 font-bold">
-          <Footer />
-        </div>
+
         <div>
           <Whatsapp />
         </div>

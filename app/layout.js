@@ -7,6 +7,7 @@ import { ModalCloseProvider } from "./components/close-button-provider";
 import NavigationBar from './components/navigation';
 import { BottomModalCloseProvider } from './context/firstApproachModalContext';
 import { DeviceDetectContextProvider } from './context/deviceDetectContext';
+import Footer from './components/Home/footer/footer';
 const inter = Inter({
   subsets: ['latin'], // Specify the character sets you need
   variable: '--font-inter', // Optional: Define a CSS variable for easy access
@@ -39,6 +40,9 @@ export default function RootLayout({ children }) {
             >
               <NavigationBar />
               {children}
+              <div className="section-gap px-4 bg-white py-1 font-bold">
+                <Footer />
+              </div>
             </body>
           </DeviceDetectContextProvider>
         </BottomModalCloseProvider>

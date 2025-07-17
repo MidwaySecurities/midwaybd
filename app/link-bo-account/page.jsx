@@ -17,9 +17,6 @@ const LinkBoAccount = () => {
       <div className='p-4'>
         <Link className='inline-block p-2 rounded-lg bg-qtp_btn_bg_color text-white' href = {`https://portal.midwaybd.com/bo/portal-login`} target='_blank'>Link Account (​লিংক অ্যাকাউন্ট)</Link>
       </div>
-      <div className='h-96'>
-
-      </div>
     </div>
   )
 }

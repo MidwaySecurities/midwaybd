@@ -26,7 +26,7 @@ const SubNav = () => {
             <div onClick={() => {
                 openModal()
             }} className="inline-block px-4 py-2 bg-white rounded-lg shadow-md mr-2">
-                <Link href={`/`}>More</Link>
+                More
             </div>
         </div>
     );

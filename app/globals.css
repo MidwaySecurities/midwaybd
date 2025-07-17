@@ -92,6 +92,10 @@
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASBAMAAACgFUNZAAAAFVBMVEUAAADPz8/Ozs7Ozs7Pz8/Y2NjOzs5u62RnAAAABnRSTlMA1BXXQA1zGmmoAAAASUlEQVQI12OAA5YAEMnqwOAmBGIopjAEJiowMDCJiQKxEFAAyAMRYA5ICMgGK0w2AwqAhMySFRAMuBRCMVw73EC4FXBLEc6AAQAI6gzBqKuLXAAAAABJRU5ErkJggg==) center center no-repeat;
     background-size: 100% 100%;
   }
+
+  .button_shadow {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
 }
 
 @layer utilities {

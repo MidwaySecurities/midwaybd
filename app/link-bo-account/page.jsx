@@ -19,7 +19,7 @@ const LinkBoAccount = () => {
 
       <div className='p-4 flex justify-center pt-1 items-center'>
 
-        <Link className='flex gap-1 p-2 rounded-lg bg-qtp_btn_bg_color text-white' href={`https://portal.midwaybd.com/bo/portal-login`} target='_blank'>
+        <Link className='flex button_shadow gap-1 p-2 rounded-lg bg-qtp_btn_bg_color text-white' href={`https://portal.midwaybd.com/bo/portal-login`} target='_blank'>
           <span>Share Transmission Form</span>
           <Image src={download_icon} width={100} height={100} className='w-5' />
         </Link>

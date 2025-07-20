@@ -13,14 +13,14 @@ export default function AccordionFlush() {
         }
     };
     return (
-        <>
-            <div style={{margin:'0px 16px', border:'1px solid gray', borderRadius:'10px'}} id="accordionExample px-4 w-[80%]">
-                <div className="border rounded-xl border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800">
-                    <h2 className="mb-0" id="headingOne">
+        <div className="mx-4  mt-4">
+            <div className="card-shadow rounded-2xl">
+                <div className="rounded-xl border-neutral-200">
+                    <h2 className="mb-0">
                         <button
                             className={`${activeElement === "element1" &&
                                 `text-primary [box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:!text-primary-400 dark:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]`
-                                } group relative flex w-full items-center rounded-none border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white px-4`}
+                                } group relative flex w-full items-center rounded-none border-0 bg-white py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none px-4`}
                             type="button"
                             onClick={() => handleClick("element1")}
                             aria-expanded="true"
@@ -62,6 +62,6 @@ export default function AccordionFlush() {
                     </TECollapse>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

@@ -7,7 +7,7 @@ const FirstNavBar = () => {
             <Link href={`/`}>
                 <Logo />
             </Link>
-            <p className="bg-[#1E293B] p-2 px-3 rounded-md">Login</p>
+            <p className="bg-[#1E293B] p-2 px-3 rounded-md"><Link href={`https://portal.midwaybd.com/bo/portal-login`}>Login</Link></p>
         </div>
     )
 }

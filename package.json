@@ -18,7 +18,8 @@
     "react-dom": "^19.0.0",
     "react-floating-whatsapp": "^5.0.8",
     "react-slick": "^0.30.3",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "tw-elements-react": "^1.0.0-alpha-end"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

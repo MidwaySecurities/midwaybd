@@ -4,6 +4,7 @@ import LinkBo from '../../public/images/link-bo/Link-BO-2.jpg'
 import Link from 'next/link'
 import download_icon from '../../public/images/icons/download_button.png';
 import DownloadTransmissionForm from './components/transmission-form-download';
+import Accordion from './components/link-bo-accordion';
 const LinkBoAccount = () => {
   return (
     <div>
@@ -22,6 +23,8 @@ const LinkBoAccount = () => {
 
         <DownloadTransmissionForm />
       </div>
+
+      <Accordion />
     </div>
   )
 }

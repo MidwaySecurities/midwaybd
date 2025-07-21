@@ -89,10 +89,10 @@ Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning
         <div className="section-gap px-4 my-16 text-white bg-white font-bold h-36">
           <Regulators />
         </div>
-
+{/* 
         <div className="section-gap px-4 text-white bg-white font-bold">
           <ShiftToUs />
-        </div>
+        </div> */}
 
         <div>
           <Whatsapp />

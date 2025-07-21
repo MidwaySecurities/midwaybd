@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className='mt-4 px-8'>
+      <div className='mt-4 px-4'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
           <ul>
             <li className='mt-4'><a href="#" className='text-gray-300 hover:text-white'>Privacy Policy</a></li>

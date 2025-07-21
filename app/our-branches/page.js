@@ -7,7 +7,7 @@ const OurBranches = () => {
             <div className='bg-[url(https://www.midwaybd.com/uploads/6/0/4/6/60462737/background-images/358471256.jpg)] min-h-[300px] bg-cover bg-center'>
 
             </div>
-            <div className='p-8'>
+            <div className='p-8 px-4'>
                 <h1 className='text-3xl text-center font-bold'>Our Branches</h1>
 
                 <div className='mt-6 card-shadow rounded-xl p-4'>

@@ -65,7 +65,7 @@ const OurBranches = () => {
                     <p>​Tel: 41040008, 41040009</p>
                 </div>
                 
-                <div className='mt-10 card-shadow rounded-xl p-2'>
+                <div className='mt-10 card-shadow rounded-xl p-4'>
                     <h1 className='mb-4 text-3xl font-semibold text-center'>Digital Booth</h1>
                     <h2 className='mb-2 text-xl font-semibold'>Kalapara Digital Booth</h2>
                     <p><strong>DSE TOWER</strong> (Room 219)</p>

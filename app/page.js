@@ -45,7 +45,7 @@ export default function Home() {
 Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning-fast order execution and stay ahead of the market.`}>
             <Image src={`https://www.midwaybd.com/uploads/6/0/4/6/60462737/quicktrade-pro-website-1-png-transparent-compressed_orig.png`} alt="Card Image" width={200} height={200} className="rounded-lg py-3" />
           </Card> */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 px-2">
             <div className="bg-white card-shadow rounded-lg p-4 py-8 flex flex-col items-center">
               <h1 className="text-3xl">trade online - using the latest <span className="text-[#d6ad60]">TECHNOLOGIES</span></h1>
               <div className="flex justify-center items-center py-4">
@@ -74,15 +74,15 @@ Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning
           </div>
         </div>
 
-        <div className="section-gap px-4 text-white py-1 font-bold">
+        <div className="section-gap px-2 text-white py-1 font-bold">
           <OurService />
         </div>
 
-        <div className="section-gap px-4 text-white py-1 font-bold">
+        <div className="section-gap px-2 text-white py-1 font-bold">
           <AccountOpenningSteps />
         </div>
 
-        <div className="section-gap px-4 text-white bg-white font-bold">
+        <div className="section-gap px-2 text-white bg-white font-bold">
           <Platform />
         </div>
 
@@ -90,7 +90,7 @@ Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning
           <Regulators />
         </div>
 {/* 
-        <div className="section-gap px-4 text-white bg-white font-bold">
+        <div className="section-gap px-2 text-white bg-white font-bold">
           <ShiftToUs />
         </div> */}
 

@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
             >
               <NavigationBar />
               {children}
-              <div className="section-gap px-4 bg-white py-1 font-bold">
+              <div className="section-gap px-2 bg-white py-1 font-bold">
                 <Footer />
               </div>
             </body>

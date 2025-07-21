@@ -26,7 +26,7 @@ export default function AccordionFlush() {
                             aria-expanded="true"
                             aria-controls="collapseOne"
                         >
-                            Accordion Title?
+                            Switch to Midway?
                             <span
                                 className={`${activeElement === "element1"
                                         ? `rotate-[-180deg] -mr-1`

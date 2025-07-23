@@ -55,7 +55,7 @@ const Navigation = () => {
                             </div>
                         </div>
 
-                        <a href="#" className='hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Client Services</a>
+                        <Link onClick={() => closeModal()} href="/client-services" className='hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Client Services</Link>
                         <Link onClick={() => closeModal()} href="/our-branches" className='hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Branches</Link>
                         <a href="#" className='block hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Form download</a>
                         <a href="#" className='block hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Visual research</a>

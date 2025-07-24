@@ -25,6 +25,36 @@ const ClientServices = () => {
                 <Image src={``} />
                 <p>All our services are available online. Get full control of your BO Account. Trade Online, deposit funds, withdraw funds, IPO, SME, ATB and so on. </p>
             </div>
+
+            <div className='mt-8 px-2'>
+                <h1 className='text-2xl font-semibold mb-4'>BO Account Opening</h1>
+                <Image src={``} />
+                <p>Open a BO Account with us through one of our convenient locations in many parts of the country. Or you can start the process online.</p>
+            </div>
+
+            <div className='mt-8 px-2'>
+                <h1 className='text-2xl font-semibold mb-4'>Apply for IPO</h1>
+                <Image src={``} />
+                <p>You can now apply for any IPO through us via this website. We even offer an IPO membership club.</p>
+            </div>
+
+            <div className='mt-8 px-2'>
+                <h1 className='text-2xl font-semibold mb-4'>Share Trading</h1>
+                <Image src={``} />
+                <p>Buy and Sell shares through us over the phone, the internet or visiting any of our offices.</p>
+            </div>
+
+            <div className='mt-8 px-2'>
+                <h1 className='text-2xl font-semibold mb-4'>IPO Membership Club</h1>
+                <Image src={``} />  
+                <p>​Join our IPO membership club and you will never have to worry about missing an IPO application. We will automatically apply for all the IPOs for you (depending on your available balance). Please be aware, we will not automatically apply for Mutual Funds. Call or visit us to find out more. </p>
+            </div>
+
+            <div className='mt-8 px-2'>
+                <h1 className='text-2xl font-semibold mb-4'>Easy Deposits</h1>
+                <Image src={``} />  
+                <p>​Join our IPO membership club and you will never have to worry about missing an IPO application. We will automatically apply for all the IPOs for you (depending on your available balance). Please be aware, we will not automatically apply for Mutual Funds. Call or visit us to find out more. </p>
+            </div>
         </div>
     )
 }

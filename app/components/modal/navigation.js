@@ -63,9 +63,7 @@ const Navigation = () => {
 
                         <a href="#" className='hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>FAQ</a>
                         <a href="#" className='hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Contact us</a>
-                        <a href="#" className='hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Foreigh Investor</a>
-
-                        
+                        <Link onClick={() => closeModal()} href="/foreign-investors" className='hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Foreign Investor</Link>
                     </div>
                 </div>
             </div>

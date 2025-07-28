@@ -41,11 +41,18 @@ const ForeignInvestor = () => {
                     <li>We sell research data to our specific foreign clients on demand basis.</li>
                 </ol>
             </div>
-            
+
             <div className='mt-8'>
                 <h1 className='font-bold text-xl'>Required Link</h1>
                 <Link className='font-bold underline' href={`http://www.dsebd.org/pdf/facilities%20for%20for%20foreign%20investors.pdf`}>http://www.dsebd.org/pdf/facilities%20for%20for%20foreign%20investors.pdf</Link>
             </div>
+
+            <div className='mt-8'>
+                <h1 className='font-bold text-xl'>International Broker</h1>
+                <p>As a leading of broker of Dhaka Stock Exchange , we welcome the international broker as partnership basis for mutual benefit . We hope your effort with us will be benefited for your clients' and investors' interest .</p>
+            </div>
+
+            <p className='font-semibold mt-16 italic text-gray-500'><blockquote className='bg-[url(https://www.midwaybd.com/files/theme/images/quotes.png?1753622919)] bg-no-repeat pl-[30px] text-'>We have several lucrative product design to satisfy our foreign individual or institutional investors .</blockquote></p>
 
         </div>
     )

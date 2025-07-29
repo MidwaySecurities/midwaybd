@@ -71,7 +71,7 @@ const ClientServices = () => {
 
             <div className='mt-8 px-2'>
                 <h1 className='text-2xl font-semibold mb-4'>Easy Withdrawal: BEFTN</h1>
-                <Image src={`https://www.midwaybd.com/uploads/6/0/4/6/60462737/published/bangladesh-bank-logo-vector-tranparent.png?1617383868`} className='w-full pb-6' width={500} height={500} />
+                <Image src={`https://www.midwaybd.com/uploads/6/0/4/6/60462737/published/bangladesh-bank-logo-vector-tranparent.png?1617383868`} className='w-2/3 pb-6 m-auto' width={500} height={500} />
                 <p>​Withdraw your funds from the convenience of your home. Email us your signed Cheque Requisition Form and we will directly deposit your funds in your bank account through the approved Bangladesh Electronic Fund Transfer Network (BEFTN). </p>
             </div>
 
@@ -109,9 +109,10 @@ const ClientServices = () => {
 
             <div className='mt-8 px-2'>
                 <h1 className='text-2xl font-semibold mb-4 uppercase'>​​DSE Info App </h1>
-                <Image src={`https://www.midwaybd.com/uploads/6/0/4/6/60462737/published/dse-info-app-1.png?1559838881`} className='w-full pb-6' width={500} height={500} />
+                <Image src={`https://www.midwaybd.com/uploads/6/0/4/6/60462737/published/dse-info-app-1.png?1559838881`} className='w-2/3 pb-6 m-auto' width={500} height={500} />
                 <p>​​​​Download the <strong>DSE INFO App</strong> for your Android devices from the Google Play Store to stay up to date on the Market. This app is developed jointly by the <strong>Dhaka Stock Exchange</strong> and the <strong>ICT Division</strong> of the <strong>Government of Bangladesh</strong>. You can create your own portfolio, track individual stocks, view latest exchange news or look at the daily market snapshot. Download now by clicking <Link href={`https://play.google.com/store/apps/details?id=com.mcc.dhakastockexchangeinfo`}>here.</Link></p>
             </div>
+
         </div>
     )
 }

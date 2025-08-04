@@ -27,7 +27,7 @@ export default function TimeDate() {
             const minutes = dhakaTime.getMinutes();
 
             // Check if time is after 2:30 PM
-            setIsAfterTwoThirty(hours > 14 || (hours === 14 && minutes >= 30));
+            setIsAfterTwoThirty((hours > 14 || (hours === 14 && minutes >= 30)) || hours < 9 || (hours === 9 && minutes < 30));
         };
 
         updateTime();

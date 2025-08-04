@@ -31,6 +31,31 @@ const ContactUs = () => {
                     </ul>
                 </div>
             </div>
+
+            <div>
+                <h1 className='font-semibold text-2xl uppercase mt-8 px-2'>Contact Form</h1>
+                <form className='px-2'>
+                    <div className='mb-4'>
+                        <label className='block mb-2' htmlFor="name">Name:</label>
+                        <input type="text" id="name" name="name" className='w-full p-2 border border-gray-300 rounded' required />
+                    </div>
+
+                    <div className='mb-4'>
+                        <label className='block mb-2' htmlFor="phone">Phone:</label>
+                        <input type="telephone" id="phone" name="phone" className='w-full p-2 border border-gray-300 rounded' required />
+                    </div>
+
+                    <div className='mb-4'>
+                        <label className='block mb-2' htmlFor="email">Email:</label>
+                        <input type="email" id="email" name="email" className='w-full p-2 border border-gray-300 rounded' required />
+                    </div>
+                    <div className='mb-4'>
+                        <label className='block mb-2' htmlFor="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" className='w-full p-2 border border-gray-300 rounded' required></textarea>
+                    </div>
+                    <button type="submit" className='bg-[#a88d2e] text-white px-4 py-2 rounded'>Submit</button>
+                </form>
+            </div>
         </div>
     )
 }

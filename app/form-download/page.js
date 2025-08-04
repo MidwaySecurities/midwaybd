@@ -4,7 +4,7 @@ import React from 'react'
 const FormDownload = () => {
     return (
         <div>
-            <div className='bg-[url(https://www.midwaybd.com/uploads/6/0/4/6/60462737/background-images/1286135119.jpg)] h-[350px] bg-bg-cover bg-center' >
+            <div className='bg-[url(https://www.midwaybd.com/uploads/6/0/4/6/60462737/background-images/1286135119.jpg)] h-[350px] bg-cover bg-center' >
                 
             </div>
             <div>

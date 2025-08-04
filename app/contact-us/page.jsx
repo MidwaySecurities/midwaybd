@@ -54,7 +54,7 @@ const ContactUs = () => {
                             <label className='block mb-2' htmlFor="message">Message:</label>
                             <textarea id="message" name="message" rows="4" className='w-full p-2 border border-gray-300 rounded' required></textarea>
                         </div>
-                        <button type="submit" className='bg-[#a88d2e] text-white px-4 py-2 rounded'>Submit</button>
+                        <button type="submit" className='bg-qtp_btn_bg_color text-white px-4 py-2 rounded'>Submit</button>
                     </form>
                 </div>
 

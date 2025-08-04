@@ -43,6 +43,12 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'cdn-icons-png.flaticon.com',
                 port: '',
+            },
+            {
+                protocol: 'https',
+                hostname: 'upload.wikimedia.org',
+                port: '',
+                pathname: '/wikipedia/commons/**',
             }
         ],
     },

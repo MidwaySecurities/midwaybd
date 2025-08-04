@@ -4,6 +4,9 @@ import React from 'react'
 const FormDownload = () => {
     return (
         <div>
+            <div className='bg-[url(https://www.midwaybd.com/uploads/6/0/4/6/60462737/background-images/1286135119.jpg)] h-[350px] bg-bg-cover bg-center' >
+                
+            </div>
             <div>
                 <h1 className='text-2xl font-bold mb-6 mt-8 px-8'>BO Account</h1>
                 <div className='grid grid-cols-1 gap-4 px-8'>
@@ -19,7 +22,7 @@ const FormDownload = () => {
                     <button className='p-3 bg-gray-300 text-gray-800 font-semibold uppercase rounded-lg'><Link href={`/`}>​​Change Email Address</Link></button>
                 </div>
             </div>
-            
+
             <div>
                 <h1 className='text-2xl font-bold mb-6 mt-8 px-8'>Link BO Account</h1>
                 <div className='grid grid-cols-1 gap-4 px-8'>

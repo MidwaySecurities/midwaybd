@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import CloseButton from './components/cross-button'
 import { useModalClose } from '../close-button-provider'
 import Link from 'next/link'
+import BodyScrollLock from '../BodyScrollLock'
 
 const Navigation = () => {
     const { isModalOpen, closeModal, openModal } = useModalClose()
@@ -12,6 +13,7 @@ const Navigation = () => {
     const [openBo, setOpenBo] = useState(false)
     return (
         <div style={{ backdropFilter: 'blur(20px)' }} className={`fixed ${isModalOpen ? '' : 'hidden'} top-0 bottom-0 justify-center left-0 right-0 z-[100]  text-foreground text-2xl overflow-scroll`}>
+            <BodyScrollLock lock={isModalOpen} />
             <CloseButton />
             <div className='w-full px-8 mt-2'>
                 <div className='flex justify-between items-center flex-col px-2 gap-8 rounded-lg w-full'>

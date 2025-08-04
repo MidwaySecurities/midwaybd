@@ -23,6 +23,7 @@ import FirstApproachModal from "./components/firstApproachModal";
 import IndexGraph from "./components/Home/index-graph";
 
 export default function Home() {
+  
   return (
     <>
       <div className={`md:hidden`}>

@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 
 import "./globals.css";
 
-import { ModalCloseProvider } from "./components/close-button-provider";
+import { ModalCloseProvider, useModalClose } from "./components/close-button-provider";
 import NavigationBar from './components/navigation';
 import { BottomModalCloseProvider } from './context/firstApproachModalContext';
 import { DeviceDetectContextProvider } from './context/deviceDetectContext';
@@ -30,6 +30,7 @@ export const metadata = {
 
 
 export default function RootLayout({ children }) {
+  
   return (
     <html lang="en">
       <ModalCloseProvider>

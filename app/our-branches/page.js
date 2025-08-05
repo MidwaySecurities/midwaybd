@@ -1,7 +1,13 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { Suspense } from 'react'
+import Loading from './loading'
 
 const OurBranches = () => {
+    let i = 0;
+    while (200 > i) {
+        i++;
+        console.log(i);
+    }
     return (
         <div>
             <div className='bg-[url(https://www.midwaybd.com/uploads/6/0/4/6/60462737/background-images/358471256.jpg)] min-h-[300px] bg-cover bg-center'>
@@ -64,7 +70,7 @@ const OurBranches = () => {
                     <p>Nikunja 2, Level 11</p>
                     <p>​Tel: 41040008, 41040009</p>
                 </div>
-                
+
                 <div className='mt-10 card-shadow rounded-xl p-4'>
                     <h1 className='mb-4 text-3xl font-semibold text-center'>Digital Booth</h1>
                     <h2 className='mb-2 text-xl font-semibold'>Kalapara Digital Booth</h2>

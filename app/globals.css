@@ -162,6 +162,8 @@
   --color-qtp_btn_bg_color: var(--qtp_btn_bg_color);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-inter: var(--font-inter);
+  --dancing-script: var(--font-dancing-script);
 }
 
 /* --text-xl: 100px; */
@@ -171,6 +173,7 @@
     --background: white;
     --foreground: #171717;
     --qtp_btn_bg_color: #004990;
+    --font-dancing-script: var(--font-dancing-script);
   }
 }
 
@@ -179,13 +182,15 @@
     --background: white;
     --foreground: #171717;
     --qtp_btn_bg_color: #004990;
+    --font-dancing-script: var(--font-dancing-script);
+
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-dancing-script)
 }
 
 .slick-track {

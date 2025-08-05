@@ -1,6 +1,6 @@
 // import { Geist, Geist_Mono } from "next/font/google";
-import { Inter } from 'next/font/google';
-
+import { Inter, Roboto, Dancing_Script } from 'next/font/google';
+import {GoogleTagManager} from '@next/third-parties/google'
 import "./globals.css";
 
 import { ModalCloseProvider, useModalClose } from "./components/close-button-provider";
@@ -13,6 +13,15 @@ const inter = Inter({
   variable: '--font-inter', // Optional: Define a CSS variable for easy access
 });
 
+const dancingScript = Dancing_Script({
+  subsets: ['latin'], // Specify the character sets you need
+  variable: '--font-dancing-script', // Optional: Define a CSS variable for easy access
+})
+
+const roboto = Roboto({
+  subsets: ['latin'], // Specify the character sets you need
+  variable: '--font-roboto', // Optional: Define a CSS variable for easy access
+})
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -33,11 +42,12 @@ export default function RootLayout({ children }) {
   
   return (
     <html lang="en">
+      <GoogleTagManager gtmId='' />
       <ModalCloseProvider>
         <BottomModalCloseProvider>
           <DeviceDetectContextProvider>
             <body
-              className={`${inter.className} antialiased`}
+              className={`${roboto.className} ${inter.className} ${dancingScript.className} antialiased`}
             >
               <NavigationBar />
               {children}

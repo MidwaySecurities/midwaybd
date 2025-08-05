@@ -3,11 +3,6 @@ import React, { Suspense } from 'react'
 import Loading from './loading'
 
 const OurBranches = () => {
-    let i = 0;
-    while (200 > i) {
-        i++;
-        console.log(i);
-    }
     return (
         <div>
             <div className='bg-[url(https://www.midwaybd.com/uploads/6/0/4/6/60462737/background-images/358471256.jpg)] min-h-[300px] bg-cover bg-center'>

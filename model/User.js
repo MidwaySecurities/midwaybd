@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcrypt from "bcryptjs";
 const UserSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -37,7 +38,14 @@ const UserSchema = new mongoose.Schema({
         default: []
     }
 })
-// ⨯ OverwriteModelError: Cannot overwrite `User` model once compiled.
+
+UserSchema.pre('save', function(next) {
+    if (this.isModified('password')) {
+        this.password = bcrypt.hashSync(this.password, 10);
+    }
+    next();
+})
+
 if (mongoose.models.User) {
     mongoose.deleteModel('User');
 }

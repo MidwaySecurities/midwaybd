@@ -18,7 +18,7 @@ const AccountOpenningSteps = () => {
                                 </div>
                             </Link>
                             <Link href={`https://portal.midwaybd.com/bo/portal-login`}>
-                                <h1>Open BO/AC</h1>
+                                <h1>Open BO A/C</h1>
                             </Link>
                         </div>
                         <div className='flex flex-col items-center gap-4'>

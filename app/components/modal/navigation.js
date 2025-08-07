@@ -18,8 +18,8 @@ const Navigation = () => {
             <div className='w-full px-8 mt-2 mb-8'>
                 <div className='flex justify-between items-center flex-col px-2 gap-8 rounded-lg w-full'>
                     <div className='flex space-y-2 flex-col mt-8 w-full'>
-                        <Link onClick={() => closeModal()} href="/" className='hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Home</Link>
-                        <div className='border-2 border-yellow-500 rounded-lg px-3'>
+                        <Link onClick={() => closeModal()} href="/" className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Home</Link>
+                        <div className='border-2 border-[#004990] rounded-lg px-3'>
                             <div onClick={() => {
                                 setOpenBo(prev => !prev)
                                 setOpenService(false)
@@ -30,10 +30,10 @@ const Navigation = () => {
                             </div>
 
                         </div>
-                        <a href="#" className='hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Mobile app</a>
-                        <Link onClick={() => closeModal()} href="/link-bo-account" className='hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Link BO A/C</Link>
+                        <a href="#" className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Mobile app</a>
+                        <Link onClick={() => closeModal()} href="/link-bo-account" className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Link BO A/C</Link>
 
-                        <div className='border-2 border-yellow-500 rounded-lg px-3'>
+                        <div className='border-2 border-[#004990] rounded-lg px-3'>
                             <div onClick={() => {
                                 setOpenService(prev => !prev)
                                 setOpenPricing(false)
@@ -57,18 +57,19 @@ const Navigation = () => {
                             </div>
                         </div>
 
-                        <Link onClick={() => closeModal()} href="/client-services" className='hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Client Services</Link>
-                        <Link onClick={() => closeModal()} href="/our-branches" className='hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Branches</Link>
-                        <Link onClick={() => closeModal()} href="/form-download" className='block hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Form download</Link>
-                        <a href="#" className='block hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Visual research</a>
-                        <a href="#" className='block hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Learn about share market</a>
+                        <Link onClick={() => closeModal()} href="/client-services" className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Client Services</Link>
+                        <Link onClick={() => closeModal()} href="/our-branches" className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Branches</Link>
+                        <Link onClick={() => closeModal()} href="/form-download" className='block hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Form download</Link>
+                        <a href="#" className='block hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Visual research</a>
+                        <a href="#" className='block hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Learn about share market</a>
 
-                        <a href="#" className='hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>FAQ</a>
-                        <Link onClick={() => closeModal()} href="contact-us" className='hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Contact us</Link>
-                        <Link onClick={() => closeModal()} href="/foreign-investors" className='hover:text-green-500 border-2 border-yellow-500 rounded-lg px-3'>Foreign Investor</Link>
+                        <a href="#" className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>FAQ</a>
+                        <Link onClick={() => closeModal()} href="contact-us" className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Contact us</Link>
+                        <Link onClick={() => closeModal()} href="/foreign-investors" className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Foreign Investor</Link>
                     </div>
                 </div>
             </div>
+            <div className="sticky bottom-0 flex justify-center bg-white text-lg gap-4 py-2 border-t border-t-gray-300 "><button className="p-1 px-2 rounded border-2 w-[100px]">Sign up</button><button className="p-1 px-2 rounded-lg w-[100px] border-2 bg-qtp_btn_bg_color text-white font-semibold">Log in</button></div>
         </div>
     )
 }

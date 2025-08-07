@@ -12,7 +12,7 @@ const Navigation = () => {
     const [openDeposit, setOpenDeposit] = useState(false)
     const [openBo, setOpenBo] = useState(false)
     return (
-        <div style={{ backdropFilter: 'blur(20px)' }} className={`fixed ${isModalOpen ? '' : 'hidden'} top-0 bottom-0 justify-center left-0 right-0 z-[100]  text-foreground text-2xl overflow-scroll`}>
+        <div style={{ backdropFilter: 'blur(20px)' }} className={`fixed ${isModalOpen ? '' : 'hidden'} top-0 bottom-0 justify-center left-0 right-0 z-[100]  text-foreground text-2xl overflow-scroll uppercase`}>
             <BodyScrollLock lock={isModalOpen} />
             <CloseButton />
             <div className='w-full px-4 mt-2 mb-8'>

@@ -15,7 +15,7 @@ const Navigation = () => {
         <div style={{ backdropFilter: 'blur(20px)' }} className={`fixed ${isModalOpen ? '' : 'hidden'} top-0 bottom-0 justify-center left-0 right-0 z-[100]  text-foreground text-2xl overflow-scroll`}>
             <BodyScrollLock lock={isModalOpen} />
             <CloseButton />
-            <div className='w-full px-8 mt-2 mb-8'>
+            <div className='w-full px-4 mt-2 mb-8'>
                 <div className='flex justify-between items-center flex-col px-2 gap-8 rounded-lg w-full'>
                     <div className='flex space-y-2 flex-col mt-8 w-full'>
                         <Link onClick={() => closeModal()} href="/" className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Home</Link>
@@ -69,7 +69,7 @@ const Navigation = () => {
                     </div>
                 </div>
             </div>
-            <div className="sticky bottom-0 flex justify-center bg-white text-lg gap-4 py-2 border-t border-t-gray-300 "><button className="p-1 px-2 rounded border-2 w-[100px]">Sign up</button><button className="p-1 px-2 rounded-lg w-[100px] border-2 bg-qtp_btn_bg_color text-white font-semibold">Log in</button></div>
+            <div className="sticky bottom-0 flex justify-center bg-white text-lg gap-4 py-3 border-t border-t-gray-300 "><button className="p-1 px-2 rounded-lg border-1 w-[100px] font-semibold">Sign up</button><button className="p-1 px-2 rounded-lg w-[100px] bg-qtp_btn_bg_color text-white font-semibold">Log in</button></div>
         </div>
     )
 }

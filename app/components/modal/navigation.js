@@ -69,7 +69,7 @@ const Navigation = () => {
                     </div>
                 </div>
             </div>
-            <div className="sticky bottom-0 flex justify-center bg-white text-lg gap-4 py-3 border-t border-t-gray-300 "><button className="p-1 px-2 rounded-lg border-1 w-[100px] font-semibold">Sign up</button><button className="p-1 px-2 rounded-lg w-[100px] bg-qtp_btn_bg_color text-white font-semibold">Log in</button></div>
+            <div className="sticky bottom-0 flex justify-center bg-white text-lg gap-4 py-3 border-t border-t-gray-300 "><Link className="p-1 px-2 rounded-lg border-1 w-[100px] font-semibold flex justify-center" href={`https://portal.midwaybd.com/register`}><button >Sign up</button></Link><Link className="p-1 px-2 rounded-lg w-[100px] bg-qtp_btn_bg_color text-white font-semibold flex justify-center" href={`https://portal.midwaybd.com/`}><button>Log in</button></Link></div>
         </div>
     )
 }

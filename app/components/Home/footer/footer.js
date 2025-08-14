@@ -44,27 +44,27 @@ const Footer = () => {
       <div className='mt-4 px-4'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
           <ul>
-            <li className='mt-4'><a href="#" className='text-gray-300 hover:text-white'>Privacy Policy</a></li>
+            <li className='mt-4'><a href="#" className='text-gray-300 hover:text-white'>​Open BO Account</a></li>
             <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Terms of Service</a></li>
-            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Contact Us</a></li>
-            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Support</a></li>
-            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Careers</a></li>
+            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>​Link Account</a></li>
+            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>IPO</a></li>
+            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Mobile App</a></li>
           </ul>
 
           <ul>
-            <li className='mt-4'><a href="#" className='text-gray-300 hover:text-white'>Privacy Policy</a></li>
-            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Terms of Service</a></li>
-            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Contact Us</a></li>
-            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Support</a></li>
-            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Careers</a></li>
+            <li className='mt-4'><a href="#" className='text-gray-300 hover:text-white'>Pricing</a></li>
+            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Withdraw</a></li>
+            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Deposit</a></li>
+            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Branches</a></li>
+            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>FAQ</a></li>
           </ul>
 
           <ul>
-            <li className='mt-4'><a href="#" className='text-gray-300 hover:text-white'>Privacy Policy</a></li>
-            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Terms of Service</a></li>
-            <li className='mt-2'><Link href="/contact-us" className='text-gray-300 hover:text-white'>Contact Us</Link></li>
-            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Support</a></li>
-            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Careers</a></li>
+            <li className='mt-4'><a href="#" className='text-gray-300 hover:text-white'>Contact Us</a></li>
+            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Our Services</a></li>
+            <li className='mt-2'><Link href="/contact-us" className='text-gray-300 hover:text-white'>About Us</Link></li>
+            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Blog</a></li>
+            <li className='mt-2'><a href="#" className='text-gray-300 hover:text-white'>Market News</a></li>
           </ul>
         </div>
       </div>

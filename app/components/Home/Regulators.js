@@ -16,8 +16,7 @@ const Regulators = () => {
   };
 
   return (
-    <div className="text-black mb-12 mt-12 w-[92%] m-auto">
-      <h1 className="text-center text-black pb-4 text-3xl mt-8">Our Regulators</h1>
+    <div className="text-black mb-12 mt-6 w-[92%] m-auto">
       <Slider {...settings}>
         <div className="mx-2 inline-block">
           <div className='w-[100px] h-[100px] py-3 rounded-full bg-[#F8F7F5] hover:bg-[#DBEAFE] hover:drop-shadow-lg duration-500 flex justify-center items-center flex-col'>

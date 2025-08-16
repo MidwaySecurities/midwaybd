@@ -21,11 +21,17 @@ import ShiftToUs from "./components/Home/ShiftToUs";
 import Regulators from "./components/Home/Regulators";
 import FirstApproachModal from "./components/firstApproachModal";
 import IndexGraph from "./components/Home/index-graph";
+import Tabs from "./components/Tabs";
+import styles from "./components/Tabs.module.css"
 
-
-
-export default function Home() {
-
+const tabs = [
+  { id: "london", label: "London", content: "London is the capital city of England." },
+  { id: "paris", label: "Paris", content: "Paris is the capital of France." },
+  { id: "tokyo", label: "Tokyo", content: "Tokyo is the capital of Japan." },
+];
+export default function Home({ searchParams }) {
+  const activeCity = searchParams.tab?.toLowerCase() || "london";
+  const activeTab = tabs.find((t) => t.id === activeCity) || tabs[0];
   return (
     <>
       <div className={`md:hidden`}>
@@ -92,6 +98,13 @@ Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning
         <div className="section-gap px-4 my-16 text-white bg-white font-bold h-36">
           <h1 className="text-center text-black pb-2 text-3xl mt-8 uppercase">Our Regulators</h1>
           <Regulators />
+        </div>
+        <div style={{ fontFamily: "Arial" }}>
+          <Tabs activeCity={activeTab.id} />
+          <div className={styles.tabcontent}>
+            <h3>{activeTab.label}</h3>
+            <p>{activeTab.content}</p>
+          </div>
         </div>
         {/* 
         <div className="section-gap px-2 text-white bg-white font-bold">

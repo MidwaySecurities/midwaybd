@@ -33,13 +33,21 @@ const UserSchema = new mongoose.Schema({
         enum: ['user', 'admin'],
         default: 'user'
     },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
+    updatedAt: {
+        type: Date,
+        default: Date.now
+    },
     permissions: {
         type: [String],
         default: []
     }
 })
 
-UserSchema.pre('save', function(next) {
+UserSchema.pre('save', function (next) {
     if (this.isModified('password')) {
         this.password = bcrypt.hashSync(this.password, 10);
     }

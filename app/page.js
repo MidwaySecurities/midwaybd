@@ -25,7 +25,7 @@ import Tabs from "./components/Tabs";
 import styles from "./components/Tabs.module.css"
 
 const tabs = [
-  { id: "london", label: "London", content: "London is the capital city of England." },
+  { id: "blog", label: "Blog Title", content: "Latest blog displayed here" },
   { id: "paris", label: "Paris", content: "Paris is the capital of France." },
   { id: "tokyo", label: "Tokyo", content: "Tokyo is the capital of Japan." },
 ];

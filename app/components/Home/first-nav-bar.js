@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Logo from "./logo";
-
+import style from './first-nav-bar.module.css'
 const FirstNavBar = () => {
     return (
         <div className="flex justify-between items-center bg-[#9999a1] p-4 text-white">
-            <Link className="flex items-center gap-2 font-bold text-gray-800 text-[14px] " href={`/`}>
+            <Link className={`${style.logoZoom} flex items-center gap-2 font-bold text-gray-800 text-[14px]`} href={`/`}>
                 <Logo />
                 {/* <h1>Midway Securities Ltd.</h1> */}
                 <h1 className="flex flex-col leading-5 justify-center uppercase"><span className="tracking-[12.4px]">Midway</span><span className="tracking-[.9px]">Securities Ltd.</span></h1>

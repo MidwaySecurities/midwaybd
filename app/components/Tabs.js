@@ -4,9 +4,9 @@ import { useRouter, useSearchParams } from "next/navigation";
 import styles from "./Tabs.module.css";
 
 const tabs = [
-  { id: "london", label: "London" },
-  { id: "paris", label: "Paris" },
-  { id: "tokyo", label: "Tokyo" },
+  { id: "blog", label: "blog" },
+  { id: "paris", label: "paris" },
+  { id: "tokyo", label: "tokyo" },
 ];
 
 export default function Tabs({ activeCity }) {

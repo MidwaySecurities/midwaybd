@@ -4,8 +4,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import styles from "./Tabs.module.css";
 
 const tabs = [
-  { id: "blog", label: "blog" },
-  { id: "paris", label: "paris" },
+  { id: "blog", label: "Latest blog" },
+  { id: "visual", label: "Visual Research" },
   { id: "tokyo", label: "tokyo" },
 ];
 

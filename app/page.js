@@ -23,6 +23,7 @@ import FirstApproachModal from "./components/firstApproachModal";
 import IndexGraph from "./components/Home/index-graph";
 import Tabs from "./components/Tabs";
 import styles from "./components/Tabs.module.css"
+import Tickers from "./components/tickers";
 
 const tabs = [
   { id: "blog", label: "Navigating the Evolving Bangladesh Capital Market: Key Trends for Q3 2025", content: "In this post, we explore the latest movements in Bangladesh’s capital market as of Q3 2025. Covering top-performing brokerage firms, emerging investor preferences, and innovative service models like mobile trading and digital onboarding, this article offers actionable insights for investors, analysts, and industry stakeholders—backed by data on turnover rankings and technology-driven changes in brokerage offerings." },
@@ -46,14 +47,9 @@ export default function Home({ searchParams }) {
               📈 DSE Index gains 45 points amid strong investor confidence — 🏦 Midway Securities announces new trading app 'QuickTrade Pro' — 📰 Latest IPO of ABC Textiles oversubscribed by 3.2x — 💼 Market closes higher led by banking and pharma sectors — 📊 Foreign investors show renewed interest in blue-chip stocks — 📢 AGM of XYZ Cement scheduled for July 10th, 2025 — 📉 DSE turnover crosses BDT 950 crore mark — Stay updated with Midway Securities for all market insights.
             </marquee>
           </div>
+          <Tickers />
         </div>
         <div className="mt-8">
-          {/* <Card title={`QuickTrade Pro - The latest trading Mobile App`} cardDesc={`QuickTrade Pro - The latest trading Mobile App
-​QuickTrade Pro is designed to streamline your trading experience with its powerful, user-friendly platform. Whether you're a seasoned trader or just starting, our features include real-time market data, advanced charting tools, and seamless trade execution.
-
-Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning-fast order execution and stay ahead of the market.`}>
-            <Image src={`https://www.midwaybd.com/uploads/6/0/4/6/60462737/quicktrade-pro-website-1-png-transparent-compressed_orig.png`} alt="Card Image" width={200} height={200} className="rounded-lg py-3" />
-          </Card> */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 px-2">
             <div className="bg-white card-shadow rounded-lg p-4 py-8 flex flex-col items-center">
               <h1 className={`text-3xl uppercase`} >trade online - using the latest <span className="text-[#d6ad60]">TECHNOLOGIES</span></h1>
@@ -67,16 +63,6 @@ Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning
             </div>
           </div>
 
-          {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-            <div className="bg-white card-shadow rounded-lg p-4 py-8 flex flex-col items-center">
-              <h1 className="text-3xl self-start">Why <span className="text-[#5CBCE0]">Choose</span> us?</h1>
-              <div className="flex justify-center items-center py-4">
-                <Image src={`https://www.midwaybd.com/uploads/6/0/4/6/60462737/midway-portal-live-insta-transparent-1_orig.png`} alt="Hero Image 1" width={275} height={200} className="rounded-lg py-3" />
-              </div>
-              <h1 className="text-2xl mb-4 uppercase">online BO account opening</h1>
-              <p>​Open a BO Account with us online. You will never have to visit any of our branches.</p>
-            </div>
-          </div> */}
           <div className="section-gap">
             <h1 className="text-2xl text-center mb-4 uppercase">Stock area chart</h1>
             <IndexGraph />

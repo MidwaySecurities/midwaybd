@@ -1,0 +1,25 @@
+.carousel {
+    display: flex;
+    flex: 0 0 100%;
+    /* ... */
+    &:hover .group {
+        animation-play-state: paused;
+    }
+}
+
+.group {
+    display:flex;
+    /* ... */
+    will-change: transform;
+    animation: scrolling 10s linear infinite;
+}
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

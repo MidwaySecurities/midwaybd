@@ -27,7 +27,7 @@ import styles from "./components/Tabs.module.css"
 const tabs = [
   { id: "blog", label: "Navigating the Evolving Bangladesh Capital Market: Key Trends for Q3 2025", content: "In this post, we explore the latest movements in Bangladesh’s capital market as of Q3 2025. Covering top-performing brokerage firms, emerging investor preferences, and innovative service models like mobile trading and digital onboarding, this article offers actionable insights for investors, analysts, and industry stakeholders—backed by data on turnover rankings and technology-driven changes in brokerage offerings." },
   { id: "visual", label: "Bangladesh Capital Market Outlook: Key Investment Insights for 2025", content: "Stay ahead of the curve with our in-depth research on Bangladesh’s capital market. This report highlights the latest market trends, sector performance, and policy changes shaping investment opportunities in 2025. Backed by data and expert analysis, it provides valuable guidance for retail and institutional investors to make informed trading decisions." },
-  { id: "tokyo", label: "Tokyo", content: "Tokyo is the capital of Japan." },
+  { id: "news", label: "DSE and CSE Market Update – August 2025", content: "Daily highlights of trading activity from Dhaka and Chittagong Stock Exchanges, including index performance, top gainers, and turnover leaders." },
 ];
 export default function Home({ searchParams }) {
   const activeCity = searchParams.tab?.toLowerCase() || "london";

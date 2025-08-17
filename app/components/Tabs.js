@@ -6,7 +6,7 @@ import styles from "./Tabs.module.css";
 const tabs = [
   { id: "blog", label: "Latest blog" },
   { id: "visual", label: "Visual Research" },
-  { id: "tokyo", label: "tokyo" },
+  { id: "news", label: "News" },
 ];
 
 export default function Tabs({ activeCity }) {

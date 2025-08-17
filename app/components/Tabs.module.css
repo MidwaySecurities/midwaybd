@@ -9,9 +9,9 @@
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 12px 14px;
   transition: 0.3s;
-  font-size: 17px;
+  font-size: 14px;
 }
 .tab button:hover {
   background-color: #ddd;

@@ -26,7 +26,7 @@ import styles from "./components/Tabs.module.css"
 
 const tabs = [
   { id: "blog", label: "Navigating the Evolving Bangladesh Capital Market: Key Trends for Q3 2025", content: "In this post, we explore the latest movements in Bangladesh’s capital market as of Q3 2025. Covering top-performing brokerage firms, emerging investor preferences, and innovative service models like mobile trading and digital onboarding, this article offers actionable insights for investors, analysts, and industry stakeholders—backed by data on turnover rankings and technology-driven changes in brokerage offerings." },
-  { id: "visual", label: "Visual Research", content: "Visual Research Content" },
+  { id: "visual", label: "Bangladesh Capital Market Outlook: Key Investment Insights for 2025", content: "Stay ahead of the curve with our in-depth research on Bangladesh’s capital market. This report highlights the latest market trends, sector performance, and policy changes shaping investment opportunities in 2025. Backed by data and expert analysis, it provides valuable guidance for retail and institutional investors to make informed trading decisions." },
   { id: "tokyo", label: "Tokyo", content: "Tokyo is the capital of Japan." },
 ];
 export default function Home({ searchParams }) {
@@ -99,7 +99,7 @@ Execute trades quickly and efficiently with QuickTrade Pro. Experience lightning
           <h1 className="text-center text-black pb-2 text-3xl mt-8 uppercase">Our Regulators</h1>
           <Regulators />
         </div>
-        <div style={{ fontFamily: "Arial" }}>
+        <div className="section-gap px-2 text-black bg-white rounded-lg">
           <Tabs activeCity={activeTab.id} />
           <div className={`${styles.tabcontent}`}>
             <h3 className="font-bold mb-2">{activeTab.label}</h3>

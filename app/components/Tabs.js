@@ -20,7 +20,7 @@ export default function Tabs({ activeCity }) {
   };
 
   return (
-    <div className={styles.tab}>
+    <div className={`${styles.tab} rounded-t-lg`}>
       {tabs.map((tab) => (
         <button
           key={tab.id}

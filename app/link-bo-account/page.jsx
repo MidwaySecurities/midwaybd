@@ -12,7 +12,7 @@ const LinkBoAccount = () => {
         <img className='w-full rounded-lg' src={`images/link-bo/Link-BO-2.jpg`} alt='Link BO account' width={100} height={100} />
       </div>
       <p className='px-4 mt-4'>
-        You can easily transfer your BO account from any Dhaka Stock Exchange (DSE) or Chittagong Stock Exchange (CSE) through a Free Link BO Account. You do not need to sell your shares.
+        You can easily transfer your BO account from any Dhaka Stock Exchange (DSE) through a Free Link BO Account. You do not need to sell your shares.
       </p>
 
       <div className='p-4 flex justify-center'>

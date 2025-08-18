@@ -3,7 +3,7 @@ import React from 'react'
 import style from './tickers.module.css';
 const Tickers = () => {
     return (
-        <div className=''>
+        <div className='uppercase text-sm'>
             <div className={`${style.carousel} text-black`}>
                 <div className={`${style.group}`}>
                     <div className={`${style.card}`}>Brac Bank<span className='flex justify-center w-16 bg-qtp_btn_bg_color text-white mx-2 rounded-md'>100000</span></div>

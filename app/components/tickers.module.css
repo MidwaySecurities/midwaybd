@@ -1,19 +1,35 @@
 .carousel {
     display: flex;
     flex: 0 0 100%;
+    overflow: hidden;
+    position: relative;
+    color:black;
     /* ... */
-    &:hover .group {
+    /* &:hover .group {
         animation-play-state: paused;
-    }
+    } */
 }
+
+.carousel:hover .group {
+    animation-play-state: paused;
+}   
 
 .group {
     display:flex;
     /* ... */
     will-change: transform;
-    animation: scrolling 10s linear infinite;
+    animation: scrolling 20s linear infinite;
 }
-
+.card{
+    display: flex;
+    width: 200px;
+    flex: 0 0 auto;
+    padding: 5px 0;
+    margin: 0 0;
+    border-radius: 5px;
+    text-align: center;
+    justify-content: center;
+}
 @keyframes scrolling {
     0% {
         transform: translateX(0);

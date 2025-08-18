@@ -47,6 +47,8 @@ export default function Home({ searchParams }) {
               📈 DSE Index gains 45 points amid strong investor confidence — 🏦 Midway Securities announces new trading app 'QuickTrade Pro' — 📰 Latest IPO of ABC Textiles oversubscribed by 3.2x — 💼 Market closes higher led by banking and pharma sectors — 📊 Foreign investors show renewed interest in blue-chip stocks — 📢 AGM of XYZ Cement scheduled for July 10th, 2025 — 📉 DSE turnover crosses BDT 950 crore mark — Stay updated with Midway Securities for all market insights.
             </marquee>
           </div>
+        </div>
+        <div className="mt-4 px-4">
           <Tickers />
         </div>
         <div className="mt-8">

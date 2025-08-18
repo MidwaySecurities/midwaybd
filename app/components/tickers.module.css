@@ -1,9 +1,11 @@
 .carousel {
     display: flex;
     flex: 0 0 100%;
+    /* gap:150px; */
     overflow: hidden;
     position: relative;
     color:black;
+    
     /* ... */
     /* &:hover .group {
         animation-play-state: paused;
@@ -18,13 +20,13 @@
     display:flex;
     /* ... */
     will-change: transform;
-    animation: scrolling 20s linear infinite;
+    animation: scrolling 10s linear infinite;
 }
 .card{
     display: flex;
     width: 200px;
     flex: 0 0 auto;
-    padding: 5px 0;
+    /* padding: 5px 0; */
     margin: 0 0;
     border-radius: 5px;
     text-align: center;

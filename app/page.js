@@ -48,7 +48,7 @@ export default function Home({ searchParams }) {
             </marquee>
           </div>
         </div>
-        <div className="mt-4 px-4">
+        <div className="mt-8 px-4">
           <Tickers />
         </div>
         <div className="mt-8">

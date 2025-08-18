@@ -1,6 +1,6 @@
 .carousel {
     display: flex;
-    flex: 0 0 100%;
+    /* flex: 0 0 100%; */
     /* gap:150px; */
     overflow: hidden;
     position: relative;
@@ -21,6 +21,7 @@
     /* ... */
     will-change: transform;
     animation: scrolling 10s linear infinite;
+    gap:10px;
 }
 .card{
     display: flex;
@@ -31,6 +32,7 @@
     border-radius: 5px;
     text-align: center;
     justify-content: center;
+
 }
 @keyframes scrolling {
     0% {

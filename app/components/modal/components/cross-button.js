@@ -9,7 +9,9 @@ const CloseButton = () => {
     return (
         <div style={{ backdropFilter: 'blur(20px)' }} className='z-[100] h-[50px] sticky top-0 w-full bg-gray-100 flex justify-between items-center border-b-[.5px] border-b-gray-200'>
             <div>
-                <Image src={`https://www.midwaybd.com/uploads/6/0/4/6/60462737/midway-logo-moto.png`} alt='midway logo' className='mx-6 box-border' height={30} width={30} />
+                <div className='flex gap-2'>
+                    <Image src={`https://www.midwaybd.com/uploads/6/0/4/6/60462737/midway-logo-moto.png`} alt='midway logo' className='mx-6 box-border' height={30} width={30} />
+                </div>
             </div>
             <button onClick={() => {
                 closeModal()

@@ -5,6 +5,8 @@ import Image from 'next/image'
 import facebook from '../../../../public/images/social-media-icons/facebook.png'
 import instagram from '../../../../public/images/social-media-icons/Instragram.png'
 import youtube from '../../../../public/images/social-media-icons/youtube.png'
+import linkedIn from '../../../../public/images/social-media-icons/linkedin.png'
+import email from '../../../../public/images/social-media-icons/email.png'
 
 const Footer = () => {
   return (
@@ -22,22 +24,34 @@ const Footer = () => {
               <Image src={facebook} width={100} height={100} className='w-[40px]' />
             </Link>
           </div>
-
           <div className='flex items-center space-x-2'>
-
-            <Link href="https://www.instagram.com/midwaytrec142" className='text-blue-400 hover:text-blue-600'>
-              {/* <svg style={{ stroke: 'white' }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">    <path d="M 8 3 C 5.239 3 3 5.239 3 8 L 3 16 C 3 18.761 5.239 21 8 21 L 16 21 C 18.761 21 21 18.761 21 16 L 21 8 C 21 5.239 18.761 3 16 3 L 8 3 z M 18 5 C 18.552 5 19 5.448 19 6 C 19 6.552 18.552 7 18 7 C 17.448 7 17 6.552 17 6 C 17 5.448 17.448 5 18 5 z M 12 7 C 14.761 7 17 9.239 17 12 C 17 14.761 14.761 17 12 17 C 9.239 17 7 14.761 7 12 C 7 9.239 9.239 7 12 7 z M 12 9 A 3 3 0 0 0 9 12 A 3 3 0 0 0 12 15 A 3 3 0 0 0 15 12 A 3 3 0 0 0 12 9 z" /></svg> */}
-              <Image src={instagram} width={100} height={100} className='w-[40px]' />
-            </Link>
-
-          </div>
-          <div className='flex items-center space-x-2'>
-
             <Link href="https://www.youtube.com/c/MidwaySecuritiesLtd" target='_blank' className='text-blue-400 hover:text-blue-600'>
               {/* <svg style={{ stroke: 'white' }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">    <path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z" /></svg> */}
               <Image src={youtube} width={100} height={100} className='w-[40px]' />
             </Link>
           </div>
+          <div className='flex items-center space-x-2'>
+            <Link href="mailto:info@midwaybd.com" target='_blank' className='text-blue-400 hover:text-blue-600'>
+              <Image src={email} width={100} height={100} className='w-[35px]' />
+            </Link>
+          </div>
+          <div className='flex items-center space-x-2'>
+            <Link href="https://www.linkedin.com/company/midway-securities-ltd-?trk=biz-companies-cym" target='_blank' className='text-blue-400 hover:text-blue-600'>
+              {/* <svg style={{ stroke: 'white' }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">    <path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z" /></svg> */}
+              <Image src={linkedIn} width={92} height={92} className='w-[35px]' />
+            </Link>
+          </div>
+          <div className='flex items-center space-x-2'>
+
+            <Link href="https://www.instagram.com/midwaytrec142" className='text-blue-400 hover:text-blue-600'>
+              <Image src={instagram} width={100} height={100} className='w-[40px]' />
+            </Link>
+
+          </div>
+          
+
+          
+          
         </div>
       </div>
 

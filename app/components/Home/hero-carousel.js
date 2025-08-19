@@ -1,6 +1,5 @@
 'use client'
-// import "react-responsive-carousel/lib/styles/carousel.css"; // requires a loader
-// import { Carousel } from 'react-responsive-carousel';
+
 import mobile_app1 from '../../../public/images/home/hero-carousel/H1.png'
 import mobile_app2 from '../../../public/images/home/hero-carousel/H2.png'
 import hero_image2 from '../../../public/images/home/hero-carousel/H3.png'

@@ -40,7 +40,7 @@ export default function TimeDate() {
                 <Image src={bangladeshFlag} alt='bangladesh' height={15} width={15} className='w-[20px]' />
                 {time}
             </div>
-            <p className='font-bold'>DSE: <span className={`${isAfterTwoThirty ? 'text-black' : 'text-[#22C55E]'}`}>{isAfterTwoThirty?'CLOSE':'OPENE'}</span></p>
+            <p className='font-bold'>DSE: <span className={`${isAfterTwoThirty ? 'text-black' : 'text-[#22C55E]'}`}>{isAfterTwoThirty?'CLOSE':'OPEN'}</span></p>
         </div>
     );
 }

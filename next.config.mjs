@@ -49,6 +49,18 @@ const nextConfig = {
                 hostname: 'upload.wikimedia.org',
                 port: '',
                 pathname: '/wikipedia/commons/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.bracbank.com',
+                port: '',
+                pathname: '/client_end/img/bb/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.squarepharma.com.bd',
+                port: '',
+                pathname: '/images/**',
             }
         ],
     },

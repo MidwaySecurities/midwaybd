@@ -61,6 +61,12 @@ const nextConfig = {
                 hostname: 'www.squarepharma.com.bd',
                 port: '',
                 pathname: '/images/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'platform.biniyog.com.bd',
+                port: '',
+                pathname: '/assets/logo/company/**',
             }
         ],
     },

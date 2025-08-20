@@ -73,7 +73,7 @@ const Tickers = async () => {
                         return (
                             <div key={index} className={`${style.card}`}>
                                 <Image src={`https://platform.biniyog.com.bd/assets/logo/company/${item.MKISTAT_INSTRUMENT_CODE}.png`} alt='brac bank' width={45} height={25} className='w-[45px] px-2' />
-                                <span className='flex gap-1 justify-center w-16 bg-qtp_btn_bg_color items-center text-white mx-0 rounded-md px-1'>
+                                <span className='flex gap-2 justify-center w-24 bg-qtp_btn_bg_color items-center text-white mx-0 rounded-md'>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="12"
@@ -96,7 +96,7 @@ const Tickers = async () => {
                         return (
                             <div key={index} className={`${style.card}`}>
                                 <Image src={`https://platform.biniyog.com.bd/assets/logo/company/${item.MKISTAT_INSTRUMENT_CODE}.png`} alt='brac bank' width={45} height={25} className='w-[45px] px-2' />
-                                <span className='flex gap-1 justify-center w-16 bg-qtp_btn_bg_color items-center text-white mx-0 rounded-md px-1'>
+                                <span className='flex gap-2 justify-center w-24 bg-qtp_btn_bg_color items-center text-white mx-0 rounded-md '>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="12"

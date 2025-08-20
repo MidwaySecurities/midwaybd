@@ -73,34 +73,18 @@ const Tickers = async () => {
                         return (
                             <div key={index} className={`${style.card}`}>
                                 <Image src={`https://platform.biniyog.com.bd/assets/logo/company/${item.MKISTAT_INSTRUMENT_CODE}.png`} alt='brac bank'width = {45} height = {25} className='w-[45px] px-2' />
-                                <span className='flex justify-center w-16 bg-qtp_btn_bg_color items-center text-white mx-2 rounded-md'>{Number(item.MKISTAT_PUB_LAST_TRADED_PRICE).toFixed(2)}</span>
+                                <span className='flex justify-center w-16 bg-qtp_btn_bg_color items-center text-white mx-0 rounded-md'>{Number(item.MKISTAT_PUB_LAST_TRADED_PRICE).toFixed(2)}</span>
                             </div>
                         )
                     })}
-                    {/* <div className={`${style.card}`}>
-                        <Image src={`https://www.bracbank.com/client_end/img/bb/Bracbank-sm-logo.png`} alt='brac bank' height={50} width={50} className='w-[45px]' />
-                        <span className='flex justify-center w-16 bg-qtp_btn_bg_color items-center text-white mx-2 rounded-md'>100000</span></div>
-                    <div className={`${style.card}`}>
-                        <Image src={`https://www.squarepharma.com.bd/images/squarelogo.png`} alt='brac bank' height={50} width={50} className='w-[45px] bg-black' />
-                        <span className='flex justify-center w-16 bg-qtp_btn_bg_color items-center text-white mx-2 rounded-md'>300000</span></div>
-                    <div className={`${style.card}`}>{refineData[0].MKISTAT_INSTRUMENT_CODE}<span className='flex justify-center w-16 bg-qtp_btn_bg_color items-center text-white mx-2 rounded-md'>150000</span></div>
-                    <div className={`${style.card}`}>{refineData[3].MKISTAT_INSTRUMENT_CODE}<span className='flex justify-center w-16 bg-qtp_btn_bg_color items-center text-white mx-2 rounded-md'>{Number(refineData[3].MKISTAT_HIGH_PRICE).toFixed(2)}</span></div> */}
                 </div>
 
                 <div aria-hidden className={`${style.group}`}>
-                    {/* <div className={`${style.card}`}>
-                        <Image src={`https://www.bracbank.com/client_end/img/bb/Bracbank-sm-logo.png`} alt='brac bank' height={50} width={50} className='w-[45px]' />
-                        <span className='flex justify-center w-16 bg-qtp_btn_bg_color items-center text-white mx-2 rounded-md'>100000</span></div>
-                    <div className={`${style.card}`}>
-                        <Image src={`https://www.squarepharma.com.bd/images/squarelogo.png`} alt='brac bank' height={50} width={50} className='w-[45px]' />
-                        <span className='flex justify-center w-16 bg-qtp_btn_bg_color items-center text-white mx-2 rounded-md'>300000</span></div>
-                    <div className={`${style.card}`}>{refineData[0].MKISTAT_INSTRUMENT_CODE}<span className='flex justify-center w-16 bg-qtp_btn_bg_color items-center text-white mx-2 rounded-md'>150000</span></div>
-                    <div className={`${style.card}`}>{refineData[3].MKISTAT_INSTRUMENT_CODE}<span className='flex justify-center w-16 bg-qtp_btn_bg_color items-center text-white mx-2 rounded-md'>{Number(refineData[3].MKISTAT_HIGH_PRICE).toFixed(2)}</span></div> */}
                     {refineData.map((item, index) => {
                         return (
                             <div key={index} className={`${style.card}`}>
                                 <Image src={`https://platform.biniyog.com.bd/assets/logo/company/${item.MKISTAT_INSTRUMENT_CODE}.png`} alt='brac bank' width = {45} height = {25} className='w-[45px] px-2' />
-                                <span className='flex justify-center w-16 bg-qtp_btn_bg_color items-center text-white mx-2 rounded-md'>{Number(item.MKISTAT_PUB_LAST_TRADED_PRICE).toFixed(2)}</span>
+                                <span className='flex justify-center w-16 bg-qtp_btn_bg_color items-center text-white mx-0 rounded-md'>{Number(item.MKISTAT_PUB_LAST_TRADED_PRICE).toFixed(2)}</span>
                             </div>
                         )
                     })}

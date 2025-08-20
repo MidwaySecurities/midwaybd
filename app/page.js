@@ -35,6 +35,7 @@ const tabs = [
 
 export default async function Home({ searchParams }) {
 
+  
   const activeCity = searchParams.tab?.toLowerCase() || "london";
   const activeTab = tabs.find((t) => t.id === activeCity) || tabs[0];
   return (

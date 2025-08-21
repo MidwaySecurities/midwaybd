@@ -12,7 +12,7 @@ const SubNav = () => {
                 <Link href={`https://portal.midwaybd.com/bo/portal-login`} target="_blank" className="">Open BO A/C</Link>
             </div>
             <div className="inline-block px-4 py-2 bg-white rounded-lg shadow-md mr-2 cursor-pointer">
-                <Link href={'/'}>Deposits</Link>
+                <Link href={'/deposit'}>Deposits</Link>
             </div>
             <div className="inline-block px-4 py-2 bg-white rounded-lg shadow-md mr-2">
                 <Link href={`/`}>Withdrawals</Link>

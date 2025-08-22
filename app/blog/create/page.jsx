@@ -29,14 +29,9 @@ const BlogCreate = () => {
         <form onSubmit={handleSubmit}>
             <input type="text" name="title" placeholder="Title" required />
             <input type="text" name="slug" placeholder="Slug" required />
-            {/* <textarea name="content" placeholder="Content" required></textarea> */}
+            <textarea name="content" placeholder="Content" required></textarea>
             {/* content should be a rich text editor */}
-            <div>
-                <label htmlFor="content">Content</label>
-                <div id="content-editor">
-                    {/* Implement your rich text editor here */}
-                </div>
-            </div>
+            
             <input type="text" name="excerpt" placeholder="Excerpt" required />
             <input type="text" name="coverImage" placeholder="Cover Image URL" required />
             <select name="category" required>

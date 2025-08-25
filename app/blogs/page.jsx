@@ -13,9 +13,7 @@ const Blogs = async () => {
                 return (
                     <div key={blog._id} className='border p-4 m-4 rounded-lg shadow-lg'>
                         <h2 className='text-2xl font-bold mb-2'>{blog.title}</h2>
-                        {/* <p className='text-gray-600 mb-4'>{blog.excerpt} excerpt</p> */}
                         <img src={blog.coverImage} alt={blog.title} className='w-full h-auto object-cover mb-4' />
-                        {/* <div className='text-gray-800' dangerouslySetInnerHTML={{ __html: blog.content }}></div> */}
                         <div className='text-gray-800'>{blog.excerpt}</div>
                         <Link href={`/blogs/${blog.slug}`} className='text-blue-500 hover:underline mt-4 inline-block'>Read More</Link>
                     </div>

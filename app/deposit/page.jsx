@@ -17,7 +17,7 @@ const Deposit = () => {
             </div>
             <div className='mt-8 mb-8 mx-4'>
                 <h1 className='text-2xl mb-3'>FUND DEPOSIT</h1>
-                <p className='mb-6'>মিডওয়ে পোর্টাল ব্যবহার করে ডিপোজিট করুন</p>
+                <p className='mb-6'><Link href = 'https://portal.midwaybd.com/' target='_blank' className='underline text-qtp_btn_bg_color'>মিডওয়ে পোর্টাল</Link> ব্যবহার করে ডিপোজিট করুন</p>
                 <p>For bKash, Nagad, Rocket: Click here</p>
                 <div>
                     <form>

@@ -22,16 +22,17 @@ const EditorComponent = ({ placeholder }) => {
     setLoading(true);
     event.preventDefault();
     const formData = new FormData(event.target);
+    const coverImgae = formData.get('coverImage');
+    console.log("coverImgae", coverImgae);
     formData.append('content', description);
     const response = await createBlog(formData);
-    console.log(response);
     if (response?.error) {
       setError(response.error);
       setSuccess(false);
     } else {
       setError(null);
       setSuccess(true);
-      event.target.reset(); // Reset form on success
+      event.target.reset();
     }
     setLoading(false);
   }
@@ -43,6 +44,8 @@ const EditorComponent = ({ placeholder }) => {
         <div className='flex flex-col gap-8'>
           <input type="text" name="title" placeholder="Title" required />
           <input type="text" name="slug" placeholder="Slug" required />
+          {/* coverImage */}
+          <input type = 'file' name = 'coverImage' placeholder = 'Cover Image' required />
           <JoditEditor
             ref={editor}
             value={description}
@@ -51,7 +54,7 @@ const EditorComponent = ({ placeholder }) => {
             onBlur={newContent => setDescription(newContent)}
             onChange={() => { }}
           />
-
+          
           <input type="text" name="excerpt" placeholder="Excerpt" required />
           <input type="text" name="coverImage" placeholder="Cover Image URL" required />
           <select name="category" required>

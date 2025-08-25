@@ -12,7 +12,7 @@ const blogSchema = new mongoose.Schema(
       required: true,
       unique: true,
       lowercase: true,
-      index: true, // for SEO-friendly URLs
+      index: true, 
     },
     content: {
       type: String,
@@ -21,10 +21,10 @@ const blogSchema = new mongoose.Schema(
     excerpt: {
       type: String,
       trim: true,
-      maxLength: 300, // short preview text
+      maxLength: 300, 
     },
     coverImage: {
-      type: String, // URL or file path
+      type: String,
     },
     category: {
       type: String,
@@ -50,7 +50,7 @@ const blogSchema = new mongoose.Schema(
     seoTitle: {
       type: String,
       trim: true,
-      maxLength: 60, // SEO best practice
+      maxLength: 60, 
     },
     seoDescription: {
       type: String,
@@ -68,6 +68,10 @@ const blogSchema = new mongoose.Schema(
   },
   { timestamps: true } // auto adds createdAt, updatedAt
 );
+
+if (mongoose.models.Blog) {
+    mongoose.deleteModel('Blog');
+}
 
 const Blog = mongoose.model("Blog", blogSchema);
 

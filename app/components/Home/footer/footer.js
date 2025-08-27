@@ -44,7 +44,7 @@ const Footer = () => {
           <div className='flex items-center space-x-2'>
 
             <Link href="https://www.instagram.com/midwaytrec142" className='text-blue-400 hover:text-blue-600'>
-              <Image src={instagram} width={100} height={100} className='w-[40px]' />
+              <Image src={instagram} width={100} height={100} className='w-[40px]' alt='instagram' />
             </Link>
 
           </div>

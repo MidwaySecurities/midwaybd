@@ -17,7 +17,7 @@ export default function TimeDate() {
                 second: '2-digit',
                 hour12: true,
             };
-
+            // hello this is test comment
             const bangladeshTime = now.toLocaleTimeString('en-US', options);
             setTime(bangladeshTime);
 

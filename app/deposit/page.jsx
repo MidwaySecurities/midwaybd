@@ -1,23 +1,24 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-
 const Deposit = () => {
     return (
-        <div>
-            <div className='bg-[url(https://www.midwaybd.com/uploads/6/0/4/6/60462737/background-images/883223583.jpg)] bg-cover bg-center h-[300px] flex flex-col gap-3 items-center justify-center relative'>
-                <button className='bg-qtp_btn_bg_color text-white rounded-lg p-1 px-3 block uppercase'>Bkash, Nagad, Rocket</button>
+        <div className='pt-4'>
+            <div className={`bg-[url('/images/deposit/deposit.png')] hidden bg-contain bg-no-repeat bg-center h-[300px] flex flex-col gap-3 items-center justify-center relative`}>
+                {/* <button className='bg-qtp_btn_bg_color text-white rounded-lg p-1 px-3 block uppercase'>Bkash, Nagad, Rocket</button>
                 <button className='bg-qtp_btn_bg_color text-white rounded-lg p-1 px-3 block uppercase'>Credit Card</button>
-                <button className='bg-qtp_btn_bg_color text-white rounded-lg p-1 px-3 block uppercase'><Link href="tel:09609100142">09609100142</Link></button>
+                <button className='bg-qtp_btn_bg_color text-white rounded-lg p-1 px-3 block uppercase'><Link href="tel:09609100142">09609100142</Link></button> */}
             </div>
-            <div className='bg-[url(https://www.midwaybd.com/uploads/6/0/4/6/60462737/background-images/1201520934.png)] bg-cover bg-center h-[200px] flex flex-col gap-3 items-center justify-center relative'>
+            <img src={`/images/deposit/deposit.png`} width={100} height={100} className='w-screen h-auto' alt='deposit'/>
+            {/* <div className='bg-[url(https://www.midwaybd.com/uploads/6/0/4/6/60462737/background-images/1201520934.png)] bg-cover bg-center h-[200px] flex flex-col gap-3 items-center justify-center relative'>
                 <div className='flex justify-center items-center flex-col gap-4 bg-[#3387a24d] p-4 rounded-lg mx-4'>
                     <h1 className='text-2xl text-center font-semibold text-white'>Make your deposits using Midway Portal</h1>
                     <Link href={`https://portal.midwaybd.com/register`} target='_blank'><button className='bg-qtp_btn_bg_color text-white rounded-lg p-1 px-3 block uppercase'>Register</button></Link>
                 </div>
-            </div>
+            </div>  */}
             <div className='mt-8 mb-8 mx-4'>
                 <h1 className='text-2xl mb-3'>FUND DEPOSIT</h1>
-                <p className='mb-6'>মিডওয়ে পোর্টাল ব্যবহার করে ডিপোজিট করুন</p>
+                <p className='mb-6'><Link href = 'https://portal.midwaybd.com/' target='_blank' className='underline text-qtp_btn_bg_color'>মিডওয়ে পোর্টাল</Link> ব্যবহার করে ডিপোজিট করুন</p>
                 <p>For bKash, Nagad, Rocket: Click here</p>
                 <div>
                     <form>

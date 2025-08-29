@@ -21,30 +21,30 @@ const Footer = () => {
 
             <Link href="https://www.facebook.com/midwaytrec142" target='_blank' className='text-blue-400 hover:text-blue-600'>
               {/* <svg style={{ stroke: 'white' }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">    <path d="M12,2C6.477,2,2,6.477,2,12c0,5.013,3.693,9.153,8.505,9.876V14.65H8.031v-2.629h2.474v-1.749 c0-2.896,1.411-4.167,3.818-4.167c1.153,0,1.762,0.085,2.051,0.124v2.294h-1.642c-1.022,0-1.379,0.969-1.379,2.061v1.437h2.995 l-0.406,2.629h-2.588v7.247C18.235,21.236,22,17.062,22,12C22,6.477,17.523,2,12,2z" /></svg> */}
-              <Image src={facebook} width={100} height={100} className='w-[40px]' />
+              <Image src={facebook} width={100} height={100} className='w-[40px]' alt='midway facebook' />
             </Link>
           </div>
           <div className='flex items-center space-x-2'>
             <Link href="https://www.youtube.com/c/MidwaySecuritiesLtd" target='_blank' className='text-blue-400 hover:text-blue-600'>
               {/* <svg style={{ stroke: 'white' }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">    <path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z" /></svg> */}
-              <Image src={youtube} width={100} height={100} className='w-[40px]' />
+              <Image src={youtube} width={100} height={100} className='w-[40px]' alt = 'midway youtube' />
             </Link>
           </div>
           <div className='flex items-center space-x-2'>
             <Link href="mailto:info@midwaybd.com" target='_blank' className='text-blue-400 hover:text-blue-600'>
-              <Image src={email} width={100} height={100} className='w-[35px]' />
+              <Image src={email} width={100} height={100} className='w-[35px]' alt = 'midway mail' />
             </Link>
           </div>
           <div className='flex items-center space-x-2'>
             <Link href="https://www.linkedin.com/company/midway-securities-ltd-?trk=biz-companies-cym" target='_blank' className='text-blue-400 hover:text-blue-600'>
               {/* <svg style={{ stroke: 'white' }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">    <path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z" /></svg> */}
-              <Image src={linkedIn} width={92} height={92} className='w-[35px]' />
+              <Image src={linkedIn} width={92} height={92} className='w-[35px]' alt = 'midway linkedin' />
             </Link>
           </div>
           <div className='flex items-center space-x-2'>
 
             <Link href="https://www.instagram.com/midwaytrec142" className='text-blue-400 hover:text-blue-600'>
-              <Image src={instagram} width={100} height={100} className='w-[40px]' />
+              <Image src={instagram} width={100} height={100} className='w-[40px]' alt='instagram' />
             </Link>
 
           </div>

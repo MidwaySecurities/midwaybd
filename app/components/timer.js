@@ -1,8 +1,8 @@
+'use client'
 import { useEffect, useState } from 'react';
 
 const Timer = () => {
     const [time, setTime] = useState('');
-    const [isAfterTwoThirty, setIsAfterTwoThirty] = useState(false);
     useEffect(() => {
         const updateTime = () => {
             const now = new Date();
@@ -21,9 +21,8 @@ const Timer = () => {
             const hours = dhakaTime.getHours();   // 24-hour format
             const minutes = dhakaTime.getMinutes();
 
-            setIsAfterTwoThirty((hours > 14 || (hours === 14 && minutes >= 30)) || hours < 9 || (hours === 9 && minutes < 30));
+            // setIsAfterTwoThirty((hours > 14 || (hours === 14 && minutes >= 30)) || hours < 9 || (hours === 9 && minutes < 30));
         };
-
         updateTime();
         const interval = setInterval(updateTime, 1000);
         return () => clearInterval(interval);

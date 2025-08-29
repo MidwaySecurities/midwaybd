@@ -59,6 +59,7 @@ const Tickers = async () => {
 
     const response = await fetch(`https://platform.biniyog.com.bd/core/sharemarket/getPriceDataTableByAllSector`);
     const data = await response.json();
+    console.log(data)
     const refineData = data.filter(item => {
         if (item.MKISTAT_INSTRUMENT_CODE === 'BRACBANK' || item.MKISTAT_INSTRUMENT_CODE === 'SQURPHARMA' || item.MKISTAT_INSTRUMENT_CODE === 'GP' || item.MKISTAT_INSTRUMENT_CODE === 'MARICO') {
             return true;
@@ -69,7 +70,7 @@ const Tickers = async () => {
         <div className='uppercase text-sm'>
             <div className={`${style.carousel} text-black`}>
                 <div className={`${style.group}`}>
-                    {refineData.map((item, index) => {
+                    {refineData&&refineData.map((item, index) => {
                         return (
                             <div key={index} className={`${style.card}`}>
                                 <Image src={`https://platform.biniyog.com.bd/assets/logo/company/${item.MKISTAT_INSTRUMENT_CODE}.png`} alt='brac bank' width={45} height={25} className='w-[45px] px-2' />

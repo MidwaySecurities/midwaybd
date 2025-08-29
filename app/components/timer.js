@@ -1,12 +1,8 @@
-'use client';
-
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import bangladeshFlag from '../../../public/images/bangladesh.png';
-import Timer from '../timer';
 
-export default function TimeDate() {
-    
+const Timer = () => {
+    const [time, setTime] = useState('');
+    const [isAfterTwoThirty, setIsAfterTwoThirty] = useState(false);
     useEffect(() => {
         const updateTime = () => {
             const now = new Date();
@@ -33,26 +29,11 @@ export default function TimeDate() {
         return () => clearInterval(interval);
         
     }, []);
-    
-    useEffect(() => {
-        const marketStatus = () => {
-            fetch(`https://www.amarstock.com/info/market/status-ex`).then(res => {
-                return res.json()
-            }).then(data => {
-                console.log(data)
-            })
-            
-        }
-        marketStatus()
-    }, [])
-    
     return (
-        <div className='flex justify-between py-1 px-4 bg-white'>
-            <div>
-                <Image src={bangladeshFlag} alt='bangladesh' height={15} width={15} className='w-[20px]' />
-                <Timer />
-            </div>
-            {/* <p className='font-bold'>DSE: <span className={`${isAfterTwoThirty ? 'text-black' : 'text-[#22C55E]'}`}>{isAfterTwoThirty?'CLOSE':'OPEN'}</span></p> */}
-        </div>
-    );
+        <>
+            {time}
+        </>
+    )
 }
+
+export default Timer

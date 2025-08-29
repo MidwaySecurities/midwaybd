@@ -1,5 +1,6 @@
 'use client'
 
+import Editor from "@/app/components/textEditor/Editor";
 import { useState } from "react";
 
 const { createBlog } = require("@/lib/actions/blog/createBlog");
@@ -31,7 +32,7 @@ const BlogCreate = () => {
             <input type="text" name="slug" placeholder="Slug" required />
             <textarea name="content" placeholder="Content" required></textarea>
             {/* content should be a rich text editor */}
-            
+            <Editor />
             <input type="text" name="excerpt" placeholder="Excerpt" required />
             <input type="text" name="coverImage" placeholder="Cover Image URL" required />
             <select name="category" required>

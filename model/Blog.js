@@ -69,6 +69,10 @@ const blogSchema = new mongoose.Schema(
   { timestamps: true } // auto adds createdAt, updatedAt
 );
 
+if(mongoose.models.Blog){
+    mongoose.deleteModel("Blog");
+}
+
 const Blog = mongoose.model("Blog", blogSchema);
 
 export default Blog;

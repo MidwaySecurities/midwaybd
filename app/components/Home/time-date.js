@@ -63,7 +63,7 @@ export default function TimeDate() {
                 <Image src={bangladeshFlag} alt='bangladesh' height={15} width={15} className='w-[20px]' />
                 {time === null ? <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-gray-900"></div> : time}
             </div>
-            <div className='font-bold w-24 gap-2 flex items-center'><span>DSE:</span> <span className={` ${(isAfterTwoThirty === null || dseStatus === null)?'':''} text-right ${isAfterTwoThirty || dseStatus === 'Closed' ? 'text-black' : 'text-[#22C55E]'}`}>{isAfterTwoThirty || dseStatus === 'Closed' ? 'CLOSE' : (isAfterTwoThirty === null || dseStatus === null) ? <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-gray-900"></div> : 'OPEN'}</span></div>
+            <div className={`font-bold w-[5.3rem] flex ${(isAfterTwoThirty === null || dseStatus === null)?'justify-start gap-2':'justify-between'} items-center`}><span>DSE:</span> <span className={`${(isAfterTwoThirty === null || dseStatus === null)?'':''} text-right ${isAfterTwoThirty || dseStatus === 'Closed' ? 'text-black' : 'text-[#22C55E]'}`}>{isAfterTwoThirty || dseStatus === 'Closed' ? 'CLOSE' : (isAfterTwoThirty === null || dseStatus === null) ? <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-gray-900"></div> : 'OPEN'}</span></div>
         </div>
     );
 }

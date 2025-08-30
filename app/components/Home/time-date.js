@@ -1,85 +1,69 @@
-
-// import Image from 'next/image';
-// import { useEffect, useState } from 'react';
-// import bangladeshFlag from '../../../public/images/bangladesh.png';
-// import Timer from '../timer';
-
-// export default function TimeDate() {
-    
-//     useEffect(() => {
-//         const marketStatus = () => {
-//             fetch(`https://www.amarstock.com/info/market/status-ex`).then(res => {
-//                 return res.json()
-//             }).then(data => {
-//                 console.log(data)
-//             })
-            
-//         }
-//         marketStatus()
-//     }, [])
-    
-//     return (
-//         <div className='flex justify-between py-1 px-4 bg-white'>
-//             <div className='flex gap-1'>
-//                 <Image src={bangladeshFlag} alt='bangladesh' height={15} width={15} className='w-[20px]' />
-//                 <Timer />
-//             </div>
-//             {/* <p className='font-bold'>DSE: <span className={`${isAfterTwoThirty ? 'text-black' : 'text-[#22C55E]'}`}>{isAfterTwoThirty?'CLOSE':'OPEN'}</span></p> */}
-//         </div>
-//     );
-// }
-
-
-
 'use client';
-import { useEffect, useState } from 'react';
+
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import bangladeshFlag from '../../../public/images/bangladesh.png';
-import Timer from '../timer';
 
 export default function TimeDate() {
-  const [isMarketOpen, setIsMarketOpen] = useState(null);
+    const [time, setTime] = useState(null);
+    const [dseStatus, setDseStatus] = useState(null)
 
-  useEffect(() => {
-    async function fetchStatus() {
-      const res = await fetch(`https://www.amarstock.com/info/market/status-ex`);
-      const status = await res.json();
-      setIsMarketOpen(status?.status?.toLowerCase() === 'open');
-    }
+    const [isAfterTwoThirty, setIsAfterTwoThirty] = useState(null);
 
-    fetchStatus();
-    const interval = setInterval(fetchStatus, 30000); // refresh every 30s
-    return () => clearInterval(interval);
-  }, []);
+    useEffect(() => {
+        const fetchDseStatus = async () => {
+            const data = await fetch(`https://www.amarstock.com/info/market/status-ex`)
+            const res = await data.json()
+            console.log('haha ', res)
+            setDseStatus(res.status)
+        }
+        fetchDseStatus()
+        const updateTime = () => {
+            const now = new Date();
+            const options = {
+                timeZone: 'Asia/Dhaka',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true,
+            };
 
-  return (
-    <div className="flex justify-between py-1 px-4 bg-white">
-      <div className="flex gap-1 items-center">
-        <Image
-          src={bangladeshFlag}
-          alt="bangladesh"
-          height={15}
-          width={15}
-          className="w-[20px]"
-        />
-        <Timer />
-      </div>
+            const bangladeshTime = now.toLocaleTimeString('en-US', options);
+            setTime(bangladeshTime);
 
-      <p className="font-bold">
-        DSE:{' '}
-        <span
-          className={
-            isMarketOpen === null
-              ? 'text-gray-400'
-              : isMarketOpen
-              ? 'text-[#22C55E]'
-              : 'text-black'
-          }
-        >
-          {isMarketOpen === null ? 'Loading...' : isMarketOpen ? 'OPEN' : 'CLOSE'}
-        </span>
-      </p>
-    </div>
-  );
+            const dhakaTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Dhaka' }));
+            const hours = dhakaTime.getHours();   // 24-hour format
+            const minutes = dhakaTime.getMinutes();
+
+            setIsAfterTwoThirty((hours > 14 || (hours === 14 && minutes >= 30)) || hours < 9 || (hours === 9 && minutes < 30));
+        };
+
+        updateTime();
+        const interval = setInterval(updateTime, 1000);
+        return () => clearInterval(interval);
+
+    }, []);
+
+
+    useEffect(() => {
+        const marketStatus = () => {
+            fetch(`https://www.amarstock.com/info/market/status-ex`).then(res => {
+                return res.json()
+            }).then(data => {
+                console.log(data)
+            })
+
+        }
+        marketStatus()
+    }, [])
+
+    return (
+        <div className='flex justify-between py-1 px-4 bg-white'>
+            <div className={`font-bold flex gap-2 justify-center items-center ${isAfterTwoThirty ? 'text-black' : 'text-[#22C55E]'}`}>
+                <Image src={bangladeshFlag} alt='bangladesh' height={15} width={15} className='w-[20px]' />
+                {time === null ? <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-gray-900"></div> : time}
+            </div>
+            <div className='font-bold w-24 gap-2 flex items-center'><span>DSE:</span> <span className={` ${(isAfterTwoThirty === null || dseStatus === null)?'':''} text-right ${isAfterTwoThirty || dseStatus === 'Closed' ? 'text-black' : 'text-[#22C55E]'}`}>{isAfterTwoThirty || dseStatus === 'Closed' ? 'CLOSE' : (isAfterTwoThirty === null || dseStatus === null) ? <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-gray-900"></div> : 'OPEN'}</span></div>
+        </div>
+    );
 }
-

@@ -4,6 +4,7 @@ import CloseButton from './components/cross-button'
 import { useModalClose } from '../close-button-provider'
 import Link from 'next/link'
 import BodyScrollLock from '../BodyScrollLock'
+import { useRouter } from 'next/navigation'
 
 const Navigation = () => {
     const { isModalOpen, closeModal, openModal } = useModalClose()
@@ -11,6 +12,15 @@ const Navigation = () => {
     const [openPricing, setOpenPricing] = useState(false)
     const [openDeposit, setOpenDeposit] = useState(false)
     const [openBo, setOpenBo] = useState(false)
+    const router = useRouter()
+
+    const handleNavigate = (path) => {
+        router.push(path)
+        setTimeout(() => {
+            closeModal()   // ensures modal closes after navigation
+        }, 1000)
+    }
+
     return (
         <div style={{ backdropFilter: 'blur(20px)' }} className={`fixed ${isModalOpen ? '' : 'hidden'} top-0 bottom-0 justify-center left-0 right-0 z-[100]  text-foreground text-2xl overflow-scroll uppercase`}>
             <BodyScrollLock lock={isModalOpen} />
@@ -63,9 +73,22 @@ const Navigation = () => {
                         <a href="#" className='block hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Visual research</a>
                         <a href="#" className='block hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Learn about share market</a>
 
-                        <Link onClick={() => closeModal()} href="/frequently-asked-question" className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>FAQ</Link>
+                        {/* <Link href="/frequently-asked-question" onClick={() => closeModal()} className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>FAQ</Link> */}
+                        {/* <Link href="/frequently-asked-question" onClick={() => closeModal()} className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>FAQ</Link> */}
+                        <button
+                            onClick={() => handleNavigate("/frequently-asked-question")}
+                            className="hover:text-green-500 border-2 border-[#004990] rounded-lg px-3"
+                        >
+                            FAQ
+                        </button>
                         <Link onClick={() => closeModal()} href="/contact-us" className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Contact us</Link>
-                        <Link onClick={() => closeModal()} href="/blogs" className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Blogs</Link>
+                        {/* <Link onClick={() => closeModal()} href="/blogs" className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Blogs</Link> */}
+                        <button
+                            onClick={() => handleNavigate("/blogs")}
+                            className="hover:text-green-500 border-2 border-[#004990] rounded-lg px-3"
+                        >
+                            Blogs
+                        </button>
                         <Link onClick={() => closeModal()} href="/foreign-investors" className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Foreign Investor</Link>
                     </div>
                 </div>

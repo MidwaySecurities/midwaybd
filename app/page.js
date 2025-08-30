@@ -24,18 +24,25 @@ import IndexGraph from "./components/Home/index-graph";
 import Tabs from "./components/Tabs";
 import styles from "./components/Tabs.module.css"
 import Tickers from "./components/tickers";
+import { getABlog } from "@/lib/actions/blog/getABlog";
+import { Suspense } from "react";
 
-const tabs = [
-  { id: "blog", label: "Navigating the Evolving Bangladesh Capital Market: Key Trends for Q3 2025", content: "In this post, we explore the latest movements in Bangladesh’s capital market as of Q3 2025. Covering top-performing brokerage firms, emerging investor preferences, and innovative service models like mobile trading and digital onboarding, this article offers actionable insights for investors, analysts, and industry stakeholders—backed by data on turnover rankings and technology-driven changes in brokerage offerings.", createdAt: "2025-08-01" },
-  { id: "visual", label: "Bangladesh Capital Market Outlook: Key Investment Insights for 2025", content: "Stay ahead of the curve with our in-depth research on Bangladesh’s capital market. This report highlights the latest market trends, sector performance, and policy changes shaping investment opportunities in 2025. Backed by data and expert analysis, it provides valuable guidance for retail and institutional investors to make informed trading decisions.", createdAt: "2025-08-02" },
-  { id: "news", label: "DSE Market Update – August 2025", content: "Daily highlights of trading activity from Dhaka and Chittagong Stock Exchanges, including index performance, top gainers, and turnover leaders.", createdAt: "2025-08-03" },
-];
 
 
 
 export default async function Home({ searchParams }) {
 
-  
+  const data = await getABlog(`what-is-drib-quantity-and-its-benefits`)
+  console.log(data)
+  console.log(JSON.stringify(data?.blog?.createdAt))
+  const news = await fetch(`https://www.amarstock.com/info/News`)
+  const newsData = await news.json()
+  console.log(newsData)
+  const tabs = [
+    { id: "blog", label: data?.blog?.title, content: data?.blog?.excerpt, createdAt: JSON.stringify(data?.blog?.createdAt).slice(1, 11) },
+    { id: "visual", label: "Bangladesh Capital Market Outlook: Key Investment Insights for 2025", content: "Stay ahead of the curve with our in-depth research on Bangladesh’s capital market. This report highlights the latest market trends, sector performance, and policy changes shaping investment opportunities in 2025. Backed by data and expert analysis, it provides valuable guidance for retail and institutional investors to make informed trading decisions.", createdAt: "2025-08-02" },
+    { id: "news", label: "DSE Market Update – August 2025", content: "Daily highlights of trading activity from Dhaka and Chittagong Stock Exchanges, including index performance, top gainers, and turnover leaders.", createdAt: "2025-08-03" },
+  ];
   const activeCity = searchParams.tab?.toLowerCase() || "london";
   const activeTab = tabs.find((t) => t.id === activeCity) || tabs[0];
   return (
@@ -94,13 +101,15 @@ export default async function Home({ searchParams }) {
         </div>
         <div className="section-gap px-2 text-black bg-white rounded-lg">
           <Tabs activeCity={activeTab.id} />
-          <div className={`${styles.tabcontent}`}>
-            <h3 className="font-bold mb-2">{activeTab.label}</h3>
-            <p className="text-sm text-gray-500 mb-2">
-              Created on: {activeTab.createdAt}
-            </p>
-            <p>{activeTab.content}</p>
-          </div>
+          {/* <Suspense fallback='Loading'> */}
+            <div className={`${styles.tabcontent}`}>
+              <h3 className="font-bold mb-2">{activeTab.label}</h3>
+              <p className="text-sm text-gray-500 mb-2">
+                Created on: {activeTab.createdAt}
+              </p>
+              <p>{activeTab.content}</p>
+            </div>
+          {/* </Suspense> */}
 
         </div>
         {/* 

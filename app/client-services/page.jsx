@@ -1,8 +1,10 @@
+
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const ClientServices = () => {
+const ClientServices = async () => {
+
     return (
         <>
             <div className='bg-[url(https://www.midwaybd.com/uploads/6/0/4/6/60462737/background-images/1991781394.jpg)] min-h-[350px] bg-cover bg-center relative'>

@@ -6,10 +6,11 @@ import BlogCategoryDropDown from '../components/blogCategoryDropDown';
 
 const Blogs = async ({ searchParams }) => {
     const activeCity = searchParams.tab?.toLowerCase() || "beginner";
-    const activeCategory = searchParams.category?.toLowerCase() || "Market News";
-    console.log(activeCity)
+    const activeCategory = searchParams.category || "Others";
+    console.log(activeCity, activeCategory)
 
-    const blogs = await getBlogs({ tag: activeCity });
+    const blogs = await getBlogs({ tag: activeCity, category: activeCategory });
+    console.log(blogs)
     return (
         <div>
             <div className='m-4'>

@@ -5,8 +5,8 @@ import styles from "./Tabs.module.css";
 
 const tabs = [
   { id: "beginner", label: "Beginner" },
-  { id: "regular", label: "Regular" },
-  { id: "advance", label: "Advance" },
+  { id: "latest", label: "Latest" },
+  { id: "category", label: "Category" },
 ];
 
 export default function Tabs({ activeCity }) {

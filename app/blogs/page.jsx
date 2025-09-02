@@ -6,6 +6,7 @@ import BlogCategoryDropDown from '../components/blogCategoryDropDown';
 
 const Blogs = async ({ searchParams }) => {
     const activeCity = searchParams.tab?.toLowerCase() || "beginner";
+    const activeCategory = searchParams.category?.toLowerCase() || "Market News";
     console.log(activeCity)
 
     const blogs = await getBlogs({ tag: activeCity });
@@ -15,7 +16,7 @@ const Blogs = async ({ searchParams }) => {
                 <Tabs activeCity={activeCity} />
             </div>
             <div className='m-4'>
-                <BlogCategoryDropDown />
+                <BlogCategoryDropDown activeCategory={activeCategory} />
             </div>
             {blogs?.blogs?.map((blog) => {
                 return (

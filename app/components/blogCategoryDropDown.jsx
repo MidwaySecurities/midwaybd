@@ -48,7 +48,7 @@ export default function Dropdown({activeCategory}) {
         router.push(`/blogs/?${params.toString()}`, { scroll: false });
     }, [selected]);
     return (
-        <div className="w-[200px] z-[100] h-full">
+        <div className="w-[200px] h-full">
             <Listbox value={selected} onChange={setSelected}>
                 <div className="relative mt-1">
                     {/* Button */}

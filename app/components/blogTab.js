@@ -2,11 +2,12 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import styles from "./Tabs.module.css";
+import Dropdown from "./blogCategoryDropDown";
 
 const tabs = [
   { id: "beginner", label: "Beginner" },
-  { id: "regular" , label: "Latest" },
-  { id: "category", label: "Category" },
+  { id: "regular", label: "Latest" },
+  // { id: "category", label: "Category" },
 ];
 
 export default function Tabs({ activeCity }) {
@@ -20,16 +21,20 @@ export default function Tabs({ activeCity }) {
   };
 
   return (
-    <div className={`${styles.tab} rounded-t-lg font-semibold`}>
-      {tabs.map((tab) => (
-        <button
-          key={tab.id}
-          className={activeCity === tab.id ? styles.active : ""}
-          onClick={() => changeTab(tab.id)}
-        >
-          {tab.label}
-        </button>
-      ))}
+    <div className="">
+      <div className={`${styles.tab} font-semibold flex`}>
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            className={activeCity === tab.id ? styles.active : ""}
+            onClick={() => changeTab(tab.id)}
+          >
+            {tab.label}
+          </button>
+        ))}
+
+      </div>
+      {/* <Dropdown /> */}
     </div>
-  );  
+  );
 }

@@ -13,10 +13,12 @@ const Blogs = async ({ searchParams }) => {
     return (
         <div>
             <div className='m-4'>
-                <Tabs activeCity={activeCity === 'latest'?'regular':activeCity} />
+                <div className='flex justify-start items-center border-2 border-[#ccc] rounded-t-lg'>
+                    <Tabs activeCity={activeCity === 'latest' ? 'regular' : activeCity} />
+                    <BlogCategoryDropDown activeCategory={activeCategory} />
+                </div>
             </div>
             <div className='m-4'>
-                <BlogCategoryDropDown activeCategory={activeCategory} />
             </div>
             {blogs?.blogs?.map((blog) => {
                 return (

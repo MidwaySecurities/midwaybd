@@ -291,11 +291,11 @@ export default function Dropdown({activeCategory}) {
         router.push(`/blogs/?${params.toString()}`, { scroll: false });
     }, [selected]);
     return (
-        <div className="w-full z-10">
+        <div className="w-[200px] z-[100] h-full">
             <Listbox value={selected} onChange={setSelected}>
                 <div className="relative mt-1">
                     {/* Button */}
-                    <Listbox.Button className="relative w-full cursor-pointer rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm">
+                    <Listbox.Button className="relative w-full cursor-pointer  focus:outline-none focus:ring-indigo-500 sm:text-sm">
                         <span className="flex items-center">
                             {/* <img
                                 src={selected.img}
@@ -310,7 +310,7 @@ export default function Dropdown({activeCategory}) {
                     </Listbox.Button>
 
                     {/* Options */}
-                    <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
+                    <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
                         {people.map((person) => (
                             <Listbox.Option
                                 key={person.id}

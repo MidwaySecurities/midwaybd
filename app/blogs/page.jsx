@@ -20,7 +20,7 @@ const Blogs = async ({ searchParams }) => {
             </div>
             <div className='m-4'>
             </div>
-            {blogs?.blogs?.map((blog) => {
+            {blogs?.blogs?.length>0?blogs?.blogs?.map((blog) => {
                 return (
                     <div key={blog._id} className='border p-4 m-4 rounded-lg shadow-lg'>
 
@@ -30,7 +30,9 @@ const Blogs = async ({ searchParams }) => {
                         <Link href={`/blogs/${blog.slug}`} className='text-blue-500 hover:underline mt-4 inline-block'>Read More</Link>
                     </div>
                 )
-            })}
+            }):(
+                <div className='text-center text-gray-500 my-20'>No blogs found.</div>
+            )}
         </div>
     )
 }

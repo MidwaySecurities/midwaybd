@@ -22,7 +22,7 @@ export default function Tabs({ activeCity }) {
 
   return (
     <div className="">
-      <div className={`${styles.tab} font-semibold flex`}>
+      <div className={`${styles.tab} font-semibold flex rounded-tl-md h-full`}>
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -34,7 +34,6 @@ export default function Tabs({ activeCity }) {
         ))}
 
       </div>
-      {/* <Dropdown /> */}
     </div>
   );
 }

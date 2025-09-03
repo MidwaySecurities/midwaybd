@@ -5,7 +5,7 @@ import styles from "./Tabs.module.css";
 
 const tabs = [
   { id: "beginner", label: "Beginner" },
-  { id: "latest", label: "Latest" },
+  { id: "regular" , label: "Latest" },
   { id: "category", label: "Category" },
 ];
 

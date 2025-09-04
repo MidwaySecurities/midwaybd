@@ -4,9 +4,7 @@ import React from 'react'
 
 const BlogPage = async ({ params }) => {
     const { slug } = params;
-    const blog = await getABlog(slug, {
-        caches: 'no-store'
-    });
+    const blog = await getABlog(slug);
     console.log(blog)
     return (
         <div className='m-auto mt-4 p-4'>

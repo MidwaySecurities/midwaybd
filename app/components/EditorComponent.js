@@ -1,11 +1,12 @@
-'use client';
-import React, { useState, useRef, useMemo } from 'react';
+
+'use client'
+import React, { useState, useRef, useMemo, useEffect } from 'react';
 import JoditEditor from 'jodit-react';
 import { createBlog } from '@/lib/actions/blog/createBlog';
+import { getBlogs } from '@/lib/actions/blog/getBlogs';
+const EditorComponent = async ({ placeholder }) => {
 
-const EditorComponent = ({ placeholder }) => {
   const editor = useRef(null);
-  const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -20,10 +21,11 @@ const EditorComponent = ({ placeholder }) => {
     setLoading(true);
     event.preventDefault();
     const formData = new FormData(event.target);
-    const coverImage = formData.get('coverImage');
+    // const coverImage = formData.get('coverImage');
     formData.append('content', description);
 
     const response = await createBlog(formData);
+    console.log(response)
     if (response?.error) {
       setError(response.error);
       setSuccess(false);
@@ -34,12 +36,38 @@ const EditorComponent = ({ placeholder }) => {
     }
     setLoading(false);
   };
+  useEffect(() => {
+    // fetch blogs to get the latest slug and set it as default value of slug input field
+    const fetchLatestSlug = async () => {
+      try {  
+        console.log('Fetching latest slug...');
+        const blogs = await getBlogs();
+        if (blogs?.blogs?.length > 0) {
+          const latestSlug = blogs.blogs[0].slug;
+          const latestBlogId = blogs.blogs[0]._id;
+          console.log('Latest slug:', latestSlug);
+          const slugInput = document.querySelector('input[name="related_blogs"]');
+          const slugInputId = document.querySelector('input[name="relatedBlogs"]');
+          if (slugInput) {
+            slugInput.value = latestSlug;
+            slugInput.readOnly = true;
+          }
+          if (slugInputId) {
+            slugInputId.value = latestBlogId;
+          }
+        }
+       }catch (error) {
+        console.error('Error fetching latest slug:', error);
+      }
+    };
+    fetchLatestSlug();
+  }, [])
 
   return (
     <div className="max-w-3xl mx-auto mt-8 px-4">
       <div className="bg-white shadow-lg rounded-2xl p-6 sm:p-10">
         <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Create a New Blog</h2>
-        
+
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           {/* Title */}
           <input
@@ -56,6 +84,22 @@ const EditorComponent = ({ placeholder }) => {
             name="slug"
             placeholder="Slug"
             required
+            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          
+          {/* Slug */}
+          <input
+            type="text"
+            name="related_blogs"
+            placeholder="related blogs"
+            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+
+          <input
+            type="text"
+            name="relatedBlogs"
+            hidden
+            placeholder="related blogs"
             className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
@@ -75,7 +119,7 @@ const EditorComponent = ({ placeholder }) => {
               config={config}
               tabIndex={1}
               onBlur={(newContent) => setDescription(newContent)}
-              onChange={() => {}}
+              onChange={() => { }}
             />
           </div>
 

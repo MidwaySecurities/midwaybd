@@ -10,6 +10,7 @@ const Blogs = async ({ searchParams }) => {
     console.log(activeCity, activeCategory)
 
     const blogs = await getBlogs({ tag: activeCity, category: activeCategory });
+    console.log(blogs);
     return (
         <div>
             <div className='m-4'>

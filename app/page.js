@@ -39,7 +39,7 @@ export default async function Home({ searchParams }) {
   const newsData = await news.json()
   console.log(newsData)
   const tabs = [
-    { id: "blog", blog_id: data?.blog?.slug, label: data?.blog?.title, content: data?.blog?.excerpt, createdAt: JSON.stringify(data?.blog?.createdAt).slice(1, 11) },
+    { id: "blog", blog_id: data?.blog?.slug, label: data?.blog?.title, content: data?.blog?.excerpt, createdAt: JSON.stringify(data?.blog?.createdAt)?.slice(1, 11) },
     { id: "visual", label: "Bangladesh Capital Market Outlook: Key Investment Insights for 2025", content: "Stay ahead of the curve with our in-depth research on Bangladesh’s capital market. This report highlights the latest market trends, sector performance, and policy changes shaping investment opportunities in 2025. Backed by data and expert analysis, it provides valuable guidance for retail and institutional investors to make informed trading decisions.", createdAt: "2025-08-02" },
     { id: "news", label: "DSE Market Update – August 2025", content: "Daily highlights of trading activity from Dhaka and Chittagong Stock Exchanges, including index performance, top gainers, and turnover leaders.", createdAt: "2025-08-03" },
   ];

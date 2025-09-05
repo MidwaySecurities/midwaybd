@@ -1,8 +1,6 @@
 import mongoose from "mongoose";
 
-if (mongoose.models.Blog) {
-  mongoose.deleteModel('Blog');
-}
+
 const blogSchema = new mongoose.Schema(
   {
     title: {
@@ -82,12 +80,21 @@ const blogSchema = new mongoose.Schema(
   }, // auto adds createdAt, updatedAt
 );
 
-blogSchema.pre(/^find/, function (next) {
-  this.populate('relatedBlogs', 'title slug coverImage');
-  next();
-});
 
+// blogSchema.pre(/^find/, function (next) {
+//   this.populate({
+//     path: "relatedBlogs",
+//     select: "title slug coverImage",
+//     options: { limit: 5 }, // optional safeguard
+//     // prevent recursive population
+//     populate: []
+//   });
+//   next();
+// });
 
+if (mongoose.models.Blog) {
+  mongoose.deleteModel('Blog');
+}
 const Blog = mongoose.model("Blog", blogSchema);
 
 export default Blog;

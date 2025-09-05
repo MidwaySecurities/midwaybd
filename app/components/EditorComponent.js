@@ -1,19 +1,45 @@
 
 'use client'
 import React, { useState, useRef, useMemo, useEffect } from 'react';
+
+import FroalaEditor from "react-froala-wysiwyg";
+import Froalaeditor from "froala-editor";
+// Require Editor CSS files.
+import "froala-editor/css/froala_style.min.css";
+import "froala-editor/css/froala_editor.pkgd.min.css";
+// Require Editor JS files.
+import "froala-editor/js/froala_editor.pkgd.min.js";
+import "froala-editor/js/plugins.pkgd.min.js";
+
+let replyEditor = "";
+
 import JoditEditor from 'jodit-react';
 import { createBlog } from '@/lib/actions/blog/createBlog';
 import { getBlogs } from '@/lib/actions/blog/getBlogs';
 const EditorComponent = async ({ placeholder }) => {
 
-  const editor = useRef(null);
+  // const editor = useRef(null);
   const [description, setDescription] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
-
+  const [content, setContent] = useState("");
+  console.log(content)
   const config = useMemo(() => ({
+
     readonly: false,
+    uploader: {
+      url: "http://localhost:3000/upload", // your backend API
+      insertImageAsBase64URI: false,
+      imagesExtensions: ["jpg", "png", "jpeg", "gif"],
+      filesVariableName: () => "file", // field name in your backend
+      withCredentials: false,
+    },
+    filebrowser: {
+      ajax: {
+        url: "http://localhost:3000/files", // optional: browse files API
+      },
+    },
     placeholder: placeholder || 'Start typing...',
   }), [placeholder]);
 
@@ -22,7 +48,7 @@ const EditorComponent = async ({ placeholder }) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     // const coverImage = formData.get('coverImage');
-    formData.append('content', description);
+    formData.append('content', content);
 
     const response = await createBlog(formData);
     console.log(response)
@@ -39,7 +65,7 @@ const EditorComponent = async ({ placeholder }) => {
   useEffect(() => {
     // fetch blogs to get the latest slug and set it as default value of slug input field
     const fetchLatestSlug = async () => {
-      try {  
+      try {
         console.log('Fetching latest slug...');
         const blogs = await getBlogs();
         if (blogs?.blogs?.length > 0) {
@@ -56,12 +82,32 @@ const EditorComponent = async ({ placeholder }) => {
             slugInputId.value = latestBlogId;
           }
         }
-       }catch (error) {
+      } catch (error) {
         console.error('Error fetching latest slug:', error);
       }
     };
     fetchLatestSlug();
   }, [])
+
+  useEffect(() => {
+    console.log(content)
+    // get files from content
+    const files = content.match(/<img [^>]*src="([^"]*)"[^>]*>/g);
+    if (files) {
+      files.forEach(async (file) => {
+        const src = file.match(/src="([^"]*)"/);
+        if (src) {
+          console.log(src[1]);
+          // upload this src to server
+          // replace the src in content with the uploaded file url
+          //   const uploadedUrl = await uploadFile(src[1]);
+          //   setContent((prevContent) =>
+          //     prevContent.replace(src[1], uploadedUrl)
+          //   );
+        }
+      });
+    }
+  }, [content]);
 
   return (
     <div className="max-w-3xl mx-auto mt-8 px-4">
@@ -86,7 +132,7 @@ const EditorComponent = async ({ placeholder }) => {
             required
             className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          
+
           {/* Slug */}
           <input
             type="text"
@@ -113,14 +159,79 @@ const EditorComponent = async ({ placeholder }) => {
 
           {/* Rich Text Editor */}
           <div className="border border-gray-300 rounded-xl overflow-hidden">
-            <JoditEditor
+            {/* <JoditEditor
               ref={editor}
               value={description}
               config={config}
               tabIndex={1}
               onBlur={(newContent) => setDescription(newContent)}
               onChange={() => { }}
-            />
+            /> */}
+            <div className="App">
+              <FroalaEditor
+                onModelChange={setContent}
+
+                config={{
+                  enter: Froalaeditor.ENTER_BR,
+                  tableStyles: {
+                    "no-border": "No border"
+                  },
+                  useClasses: false,
+                  attribution: false,
+                  toolbarSticky: false,
+                  charCounterCount: false,
+                  fontFamilySelection: true,
+                  fontSizeSelection: true,
+                  paragraphFormatSelection: true,
+                  heightMin: 200,
+                  heightMax: 550,
+                  linkInsertButtons: [],
+                  toolbarButtons: [
+                    "bold",
+                    "italic",
+                    "underline",
+                    "strikeThrough",
+                    "subscript",
+                    "superscript",
+                    "fontFamily",
+                    "fontSize",
+                    "textColor",
+                    "paragraphFormat",
+                    "lineHeight",
+                    "align",
+                    "formatOL",
+                    "formatUL",
+                    "outdent",
+                    "indent",
+                    "leftToRight",
+                    "rightToLeft",
+                    "insertLink",
+                    "insertImage",
+                    "insertTable",
+                    "emoticons",
+                    "personalize",
+                    "insertButton",
+                    "clearFormatting",
+                    "selectAll",
+                    "insertHR",
+                    "undo",
+                    "redo",
+                    "fullscreen",
+                    "html"
+                  ],
+                  linkList: [],
+                  events: {
+                    initialized: function () {
+                      replyEditor = this;
+                    },
+                    blur: () => {
+                      console.log(replyEditor.html.get(true));
+                    }
+                  }
+                }}
+                model={content}
+              />
+            </div>
           </div>
 
           {/* Excerpt */}

@@ -9,8 +9,13 @@ const Blogs = async ({ searchParams }) => {
     const activeCategory = searchParams.category || "Others";
     console.log(activeCity, activeCategory)
 
-    const blogs = await getBlogs({ tag: activeCity, category: activeCategory });
-    console.log(blogs);
+    // const blogs = await getBlogs({ tag: activeCity, category: activeCategory });
+    const blogs = await fetch(`http://localhost:3000/api/blogs`, {
+        next: {
+            revalidate: 60
+        }
+    }).then(res => res.json());
+    console.log('haha', blogs)
     return (
         <div>
             <div className='m-4'>

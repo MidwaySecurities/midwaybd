@@ -54,7 +54,7 @@ const Blogs = async ({ searchParams }) => {
     const activeCity = tab?.toLowerCase() || 'beginner'
     const activeCategory = category || 'Others'
 
-    const blogs = await fetch(`http://localhost:3000/api/blogs?tab=${activeCity}&category=${activeCategory}`, {
+    const blogs = await fetch(`/api/blogs?tab=${activeCity}&category=${activeCategory}`, {
         next: { revalidate: 60 },
     }).then((res) => res.json())
 

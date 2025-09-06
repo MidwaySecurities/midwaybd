@@ -50,9 +50,8 @@ import Tabs from '../components/blogTab'
 import BlogCategoryDropDown from '../components/blogCategoryDropDown'
 
 const Blogs = async ({ searchParams }) => {
-    const { tab } = await searchParams || 'latest'
+    const { tab, category } = await searchParams
     const activeCity = tab?.toLowerCase() || 'beginner'
-    const { category } = await searchParams || 'Others'
     const activeCategory = category || 'Others'
 
     const blogs = await fetch(`http://localhost:3000/api/blogs?tab=${activeCity}&category=${activeCategory}`, {

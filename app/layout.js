@@ -1,6 +1,6 @@
 // import { Geist, Geist_Mono } from "next/font/google";
 import { Inter, Roboto, Dancing_Script } from 'next/font/google';
-import {GoogleTagManager} from '@next/third-parties/google'
+import { GoogleTagManager } from '@next/third-parties/google'
 import "./globals.css";
 
 import { ModalCloseProvider, useModalClose } from "./components/close-button-provider";
@@ -8,6 +8,7 @@ import NavigationBar from './components/navigation';
 import { BottomModalCloseProvider } from './context/firstApproachModalContext';
 import { DeviceDetectContextProvider } from './context/deviceDetectContext';
 import Footer from './components/Home/footer/footer';
+import { BlogTabProvider } from './context/blogTabContext';
 const inter = Inter({
   subsets: ['latin'], // Specify the character sets you need
   variable: '--font-inter', // Optional: Define a CSS variable for easy access
@@ -39,22 +40,24 @@ export const metadata = {
 
 
 export default function RootLayout({ children }) {
-  
+
   return (
     <html lang="en">
       <GoogleTagManager gtmId='' />
       <ModalCloseProvider>
         <BottomModalCloseProvider>
           <DeviceDetectContextProvider>
-            <body
-              className={`${roboto.className} ${inter.className} ${dancingScript.className} antialiased`}
-            >
-              <NavigationBar />
-              {children}
-              <div className="section-gap px-2 bg-white py-1 font-bold">
-                <Footer />
-              </div>
-            </body>
+            <BlogTabProvider>
+              <body
+                className={`${roboto.className} ${inter.className} ${dancingScript.className} antialiased`}
+              >
+                <NavigationBar />
+                {children}
+                <div className="section-gap px-2 bg-white py-1 font-bold">
+                  <Footer />
+                </div>
+              </body>
+            </BlogTabProvider>
           </DeviceDetectContextProvider>
         </BottomModalCloseProvider>
       </ModalCloseProvider>

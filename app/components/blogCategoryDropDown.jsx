@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Listbox } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useBlogTab } from "../context/blogTabContext";
 
 
 const people = [
@@ -35,6 +36,7 @@ const people = [
 ];
 
 export default function Dropdown({activeCategory}) {
+    const { currentTab, setCurrentTab } = useBlogTab();
     console.log("searchParams", activeCategory)
     const search = useSearchParams();
     const router = useRouter();
@@ -42,8 +44,10 @@ export default function Dropdown({activeCategory}) {
     useEffect(() => {
         const params = new URLSearchParams(search.toString());
         params.set("category", selected.name);
+        console.log('activeCategory', activeCategory, selected.name)
         if(activeCategory !== selected.name){
             params.set("tab", 'beginner');
+            setCurrentTab('beginner');
         }
         router.push(`/blogs/?${params.toString()}`, { scroll: false });
     }, [selected]);

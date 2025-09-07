@@ -20,34 +20,23 @@ export default function Tabs({ activeTab }) {
 
   const changeTab = (tabId) => {
     const params = new URLSearchParams(searchParams.toString());
-    if (currentTab) {
-      params.set("tab", currentTab);
-    } 
+    params.set("tab", tabId);
     router.push(`/blogs/?${params.toString()}`);
   };
 
-  useEffect(() => {
-    if (currentTab) {
-      changeTab(currentTab);
-    }
-  }, [currentTab]);
   return (
     <div className="">
       <div className={`${styles.tab} font-semibold flex rounded-tl-md h-full`}>
         {tabs.map((tab) => (
-          // <Link key={tab.id} href={{
-          //   pathname: '/blogs',
-          //   query: { ...Object.fromEntries(searchParams.entries()), tab: tab.id },
-          // }} scroll={false}>
+
           <button
-            className={currentTab.toLowerCase() === tab.id.toLocaleLowerCase() ? styles.active : ""}
+            className={activeTab.toLowerCase() === tab.id.toLocaleLowerCase() ? styles.active : ""}
             onClick={() => {
-              setCurrentTab(tab.id);
+              changeTab(tab.id);
             }}
           >
             {tab.label}
           </button>
-          // </Link>
         ))}
 
       </div>

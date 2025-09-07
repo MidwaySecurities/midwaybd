@@ -14,13 +14,12 @@ const tabs = [
 ];
 
 export default function Tabs({ activeTab }) {
-  const { currentTab, setCurrentTab } = useBlogTab();
   const router = useRouter();
   const searchParams = useSearchParams();
 
   const changeTab = (tabId) => {
     const params = new URLSearchParams(searchParams.toString());
-    params.set("tab", tabId);
+    params.set("tab", tabId === 'latest' ? 'regular' : tabId);
     router.push(`/blogs/?${params.toString()}`);
   };
 
@@ -30,7 +29,7 @@ export default function Tabs({ activeTab }) {
         {tabs.map((tab) => (
 
           <button
-            className={activeTab.toLowerCase() === tab.id.toLocaleLowerCase() ? styles.active : ""}
+            className={activeTab?.toLowerCase() === tab.id.toLocaleLowerCase() ? styles.active : ""}
             onClick={() => {
               changeTab(tab.id);
             }}

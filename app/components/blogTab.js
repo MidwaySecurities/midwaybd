@@ -20,6 +20,7 @@ export default function Tabs({ activeCity }) {
     router.push(`/blogs/?${params.toString()}`, { scroll: false });
   };
 
+  // sub 1 branch
   return (
     <div className="">
       <div className={`${styles.tab} font-semibold flex rounded-tl-md h-full`}>

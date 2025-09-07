@@ -5,7 +5,6 @@ import React from 'react'
 const BlogPage = async ({ params }) => {
     const { slug } = params;
     const blog = await getABlog(slug);
-    console.log(blog)
     return (
         <div className='m-auto mt-4 p-4'>
             <h1 className='text-2xl font-bold mb-4'>{blog?.blog?.title}</h1>
@@ -18,7 +17,9 @@ const BlogPage = async ({ params }) => {
             {blog?.blog?.relatedBlogs && blog?.blog?.relatedBlogs.length > 0 ? (
                 blog?.blog?.relatedBlogs.map((relatedBlog) => (
                     <div key={relatedBlog._id} className='border p-4 m-4 rounded-lg shadow-lg'>
-                        <h2 className='text-2xl font-bold mb-2'>{relatedBlog.title}</h2>
+                        <Link href={`/blogs/${relatedBlog.slug}`}>
+                            <h1 className='text-2xl font-bold mb-2'>{relatedBlog.title}</h1>
+                        </Link>
                         <img src={relatedBlog.coverImage} alt={relatedBlog.title} className='w-full h-auto object-cover mb-4' />
                         <div className='text-gray-800'>{relatedBlog.excerpt}</div>
                         <Link href={`/blogs/${relatedBlog.slug}`} className='text-blue-500 hover:underline mt-4 inline-block'>Read More</Link>

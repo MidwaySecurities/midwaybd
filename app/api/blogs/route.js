@@ -1,3 +1,4 @@
+import { NextResponse } from "next/server";
 import { getBlogs } from "@/lib/actions/blog/getBlogs";
 
 export async function GET(req) {

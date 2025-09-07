@@ -130,9 +130,10 @@ import Link from 'next/link';
 import React from 'react'
 import Tabs from '../components/blogTab';
 import BlogCategoryDropDown from '../components/blogCategoryDropDown';
+import BlogPagination from '../components/blogPagination';
 
 const Blogs = async ({ searchParams }) => {
-    const { tab, category, page, limit } = searchParams;
+    const { tab, category, page, limit } = await searchParams;
 
     const activeCategory = category || 'Select Category';
     const activeTab = tab || 'beginner';
@@ -151,7 +152,6 @@ const Blogs = async ({ searchParams }) => {
 
     return (
         <div>
-            {/* Top Filters */}
             <div className='m-4'>
                 <div className='flex justify-start items-center border-2 border-[#ccc] rounded-t-lg'>
                     <Tabs activeTab={tab === 'latest' ? 'regular' : tab} />
@@ -159,7 +159,6 @@ const Blogs = async ({ searchParams }) => {
                 </div>
             </div>
 
-            {/* Blog List */}
             {blogs.length > 0 ? (
                 blogs.map((blog) => (
                     <div key={blog._id} className='border p-4 m-4 rounded-lg shadow-lg'>
@@ -176,29 +175,7 @@ const Blogs = async ({ searchParams }) => {
             ) : (
                 <div className='text-center text-gray-500 my-20'>No blogs found.</div>
             )}
-
-            {/* Pagination Controls */}
-            {pagination.totalPages > 1 && (
-                <div className="flex justify-center gap-4 my-6">
-                    {currentPage > 1 && (
-                        <Link
-                            href={`/blogs?tab=${activeTab}&category=${activeCategory}&page=${currentPage - 1}&limit=${perPage}`}
-                            className="px-4 py-2 border rounded-md bg-gray-200 hover:bg-gray-300"
-                        >
-                            Previous
-                        </Link>
-                    )}
-                    <span className="px-4 py-2">Page {currentPage} of {pagination.totalPages}</span>
-                    {currentPage < pagination.totalPages && (
-                        <Link
-                            href={`/blogs?tab=${activeTab}&category=${activeCategory}&page=${currentPage + 1}&limit=${perPage}`}
-                            className="px-4 py-2 border rounded-md bg-gray-200 hover:bg-gray-300"
-                        >
-                            Next
-                        </Link>
-                    )}
-                </div>
-            )}
+            <BlogPagination currentPage={currentPage} totalPages={pagination.totalPages} activeTab={activeTab} activeCategory={activeCategory} perPage={perPage} />
         </div>
     )
 }

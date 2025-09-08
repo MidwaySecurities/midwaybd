@@ -60,7 +60,7 @@ export default async function Home({ searchParams }) {
 
           {/* <TextScrollingHorizontally /> */}
           <div className="mt-6 flex overflow-hidden border-y border-zinc-700 bg-zinc-900 px-4">
-            <ul className="animate-home-scroll hover:animate-home-scroll-slow flex gap-10 whitespace-nowrap py-2 px-4 text-white">
+            <ul className="animate-home-scroll hover:animate-home-scroll-slow flex gap-5 whitespace-nowrap py-2 px-4 text-white">
               {[...messages, ...messages, ...messages, ...messages].map(
                 (message, index) => {
                   const splitMessage = message.split(" ");

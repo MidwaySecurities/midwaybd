@@ -197,3 +197,32 @@ body {
   display: flex !important;
   align-items: center;
 }
+
+
+@keyframes home-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes home-scroll-slow {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-home-scroll {
+  animation: home-scroll 80s linear infinite;
+}
+
+.animate-home-scroll-slow {
+  animation: home-scroll-slow 40s linear infinite;
+}

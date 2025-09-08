@@ -25,19 +25,25 @@ import Tabs from "./components/Tabs";
 import styles from "./components/Tabs.module.css"
 import Tickers from "./components/tickers";
 import { getABlog } from "@/lib/actions/blog/getABlog";
-import { Suspense } from "react";
-
+import style from './components/tickers.module.css';
 
 
 
 export default async function Home({ searchParams }) {
+  const messages = [
+    "The Dhaka Stock Exchange closed today on a mixed note as investors showed cautious optimism ahead of corporate earnings disclosures.",
+    "The DSEX index gained modestly, supported by banking and telecom sectors, while turnover slightly increased compared to the previous session",
+    `Market sentiment remained divided, with selective buying dominating trading activity`,
+    "Analysts advised focusing on fundamentally strong stocks amid ongoing economic uncertainties.",
 
+  ];
   const data = await getABlog(`what-is-drib-quantity-and-its-benefits`)
-  console.log(data)
-  console.log(JSON.stringify(data?.blog?.createdAt))
-  const news = await fetch(`https://www.amarstock.com/info/News`)
+  const news = await fetch(`https://www.amarstock.com/info/News`, {
+    next: {
+      revalidate: 60
+    }
+  })
   const newsData = await news.json()
-  console.log(newsData)
   const tabs = [
     { id: "blog", blog_id: data?.blog?.slug, label: data?.blog?.title, content: data?.blog?.excerpt, createdAt: JSON.stringify(data?.blog?.createdAt)?.slice(1, 11) },
     { id: "visual", label: "Bangladesh Capital Market Outlook: Key Investment Insights for 2025", content: "Stay ahead of the curve with our in-depth research on Bangladesh’s capital market. This report highlights the latest market trends, sector performance, and policy changes shaping investment opportunities in 2025. Backed by data and expert analysis, it provides valuable guidance for retail and institutional investors to make informed trading decisions.", createdAt: "2025-08-02" },
@@ -52,14 +58,28 @@ export default async function Home({ searchParams }) {
           <HeroSection />
         </div>
 
-        <div className="mt-8 px-4 bg-[#e6e6e9] text-white py-1 font-bold">
           {/* <TextScrollingHorizontally /> */}
-          <div className="whitespace-nowrap bg-gray-100 text-gray-800 text-sm p-2">
-            <marquee behavior="scroll" direction="left" scrollamount="4">
-              📈 DSE Index gains 45 points amid strong investor confidence — 🏦 Midway Securities announces new trading app 'QuickTrade Pro' — 📰 Latest IPO of ABC Textiles oversubscribed by 3.2x — 💼 Market closes higher led by banking and pharma sectors — 📊 Foreign investors show renewed interest in blue-chip stocks — 📢 AGM of XYZ Cement scheduled for July 10th, 2025 — 📉 DSE turnover crosses BDT 950 crore mark — Stay updated with Midway Securities for all market insights.
-            </marquee>
+          <div className="mt-6 flex overflow-hidden border-y border-zinc-700 bg-zinc-900 px-4">
+            <ul className="animate-home-scroll hover:animate-home-scroll-slow flex gap-10 whitespace-nowrap py-2 px-4 text-white">
+              {[...messages, ...messages, ...messages, ...messages].map(
+                (message, index) => {
+                  const splitMessage = message.split(" ");
+
+                  return (
+                    <li key={message} className={'gap-2 text-white transition-colors duration-200 ease-in-out'}>
+                      <Link
+                        href={'/'}
+                        target="_blank"
+                        className="flex items-center gap-1"
+                      >
+                        <p>{splitMessage.slice(0, -1).join(" ")}</p>
+                      </Link>
+                    </li>
+                  );
+                },
+              )}
+            </ul>
           </div>
-        </div>
         <div className="mt-8 px-4">
           <Tickers />
         </div>
@@ -102,13 +122,13 @@ export default async function Home({ searchParams }) {
         <div className="section-gap px-2 text-black bg-white rounded-lg">
           <Tabs activeCity={activeTab.id} />
           {/* <Suspense fallback='Loading'> */}
-            <div className={`${styles.tabcontent}`}>
-              <h3 className="font-bold mb-2">{activeTab.label}</h3>
-              <p className="text-sm text-gray-500 mb-2">
-                Created on: {activeTab.createdAt}
-              </p>
-              <p>{activeTab.content}...<Link href={`blogs/${activeTab.blog_id}`} className="text-qtp_btn_bg_color underline">more</Link></p>
-            </div>
+          <div className={`${styles.tabcontent}`}>
+            <h3 className="font-bold mb-2">{activeTab.label}</h3>
+            <p className="text-sm text-gray-500 mb-2">
+              Created on: {activeTab.createdAt}
+            </p>
+            <p>{activeTab.content}...<Link href={`blogs/${activeTab.blog_id}`} className="text-qtp_btn_bg_color underline">more</Link></p>
+          </div>
           {/* </Suspense> */}
 
         </div>

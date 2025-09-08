@@ -4,14 +4,34 @@ import React, { Suspense } from 'react'
 import DepositTab from '../components/deposit/depositTab'
 const tabs = [
     { id: "online", label: "Navigating the Evolving Bangladesh Capital Market: Key Trends for Q3 2025", content: "In this post, we explore the latest movements in Bangladesh’s capital market as of Q3 2025. Covering top-performing brokerage firms, emerging investor preferences, and innovative service models like mobile trading and digital onboarding, this article offers actionable insights for investors, analysts, and industry stakeholders—backed by data on turnover rankings and technology-driven changes in brokerage offerings.", createdAt: "2025-08-01" },
-    { id: "mobile", label: "Bangladesh Capital Market Outlook: Key Investment Insights for 2025", content: "Stay ahead of the curve with our in-depth research on Bangladesh’s capital market. This report highlights the latest market trends, sector performance, and policy changes shaping investment opportunities in 2025. Backed by data and expert analysis, it provides valuable guidance for retail and institutional investors to make informed trading decisions.", createdAt: "2025-08-02" },
+    {
+        id: "mobile", label: "Bangladesh Capital Market Outlook: Key Investment Insights for 2025", content: <>
+            <div>Dear Midway Client: Select any of the Mobile Money below to deposit into your BO account. Please include your Midway Client Code in the Reference/Remarks/Comments sections of your bKash, Nagad or Rocket account.</div>
+            <div className='ml-4 mt-2 mb-2`'>
+                <ul className='list-disc mt-2 ml-4'>
+                    <li>bKash Account No: <strong>01845222333</strong></li>
+                    <li>Nagad Account No: <strong>01776106410</strong></li>
+                    <li>Rocket Account No: <strong>017761064101</strong></li>
+                    <li>Reference : <strong>Your Midway Client Code</strong></li>
+                    <li>Counter no : <strong>01</strong></li>
+                </ul>
+            </div>
+            <div className='mt-4'>
+                <ul>
+                    <li>Email: <strong>accounts@midwaybd.com</strong></li>
+                    <li>Phone: <strong>09609 100 142</strong></li>
+                    <li>​Facebook: <strong><Link href={`http://m.me/midwaytrec142`} target='_blank'>Facebook</Link></strong></li>
+                </ul>
+            </div>
+        </>, createdAt: "2025-08-02"
+    },
     { id: "credit", label: "DSE Market Update – August 2025", content: "Daily highlights of trading activity from Dhaka and Chittagong Stock Exchanges, including index performance, top gainers, and turnover leaders.", createdAt: "2025-08-03" },
 ];
-const Deposit =  ({searchParams}) => {
+const Deposit = ({ searchParams }) => {
     console.log(searchParams)
     const activeCity = searchParams.tab?.toLowerCase() || "Hello";
     const activeTab = tabs.find((t) => t.id === activeCity) || tabs[0];
-    console.log('haha',activeCity)
+    console.log('haha', activeCity)
     return (
         <div className='pt-4'>
             <div className={`bg-[url('/images/deposit/deposit.png')]  bg-contain bg-no-repeat bg-center h-[300px] flex flex-col gap-3 items-center justify-center relative`}>
@@ -26,6 +46,12 @@ const Deposit =  ({searchParams}) => {
                     <Link href={`https://portal.midwaybd.com/register`} target='_blank'><button className='bg-qtp_btn_bg_color text-white rounded-lg p-1 px-3 block uppercase'>Register</button></Link>
                 </div>
             </div>  */}
+            <div className='m-4'>
+                <DepositTab activeCity={activeTab.id} />
+                <div className='mt-4 p-4 border border-gray-300 rounded-lg'>
+                    {activeTab.content}
+                </div>
+            </div>
             <div className='mt-8 mb-8 mx-4'>
                 <h1 className='text-2xl mb-3'>FUND DEPOSIT</h1>
                 <p className='mb-6'><Link href='https://portal.midwaybd.com/' target='_blank' className='underline text-qtp_btn_bg_color'>মিডওয়ে পোর্টাল</Link> ব্যবহার করে ডিপোজিট করুন</p>
@@ -53,14 +79,7 @@ const Deposit =  ({searchParams}) => {
                     </form>
                 </div>
             </div>
-            <div className='m-4'>
-                <DepositTab activeCity={activeTab.id} />
-                <div>
-                    <Suspense fallback = 'Hello world'>
-                        {activeTab.label}
-                    </Suspense>
-                </div>
-            </div>
+
         </div>
     )
 }

@@ -4,13 +4,12 @@ import { useRouter, useSearchParams } from "next/navigation";
 import styles from "../../components/Tabs.module.css";
 
 const tabs = [
-  { id: "online", label: "Online" },
+  { id: "online", label: "Online Bank" },
   { id: "mobile", label: "Mobile" },
   { id: "credit", label: "Credit card" },
 ];
 
 export default function DepositTab({ activeCity }) {
-console.log('active city',activeCity)
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -21,11 +20,11 @@ console.log('active city',activeCity)
   };
 
   return (
-    <div className={`${styles.tab} rounded-t-lg font-semibold`}>
+    <div className={`${styles.tab} rounded-t-lg font-semibold text-xl`}>
       {tabs.map((tab) => (
         <button
           key={tab.id}
-          className={activeCity === tab.id ? 'bg-green-500 underline' : ""}
+          className={activeCity === tab.id ? 'bg-qtp_btn_bg_color text-white' : ""}
           onClick={() => changeTab(tab.id)}
         >
           {tab.label}

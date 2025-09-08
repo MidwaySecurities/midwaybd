@@ -3,7 +3,23 @@ import Link from 'next/link'
 import React, { Suspense } from 'react'
 import DepositTab from '../components/deposit/depositTab'
 const tabs = [
-    { id: "online", label: "Navigating the Evolving Bangladesh Capital Market: Key Trends for Q3 2025", content: "In this post, we explore the latest movements in Bangladesh’s capital market as of Q3 2025. Covering top-performing brokerage firms, emerging investor preferences, and innovative service models like mobile trading and digital onboarding, this article offers actionable insights for investors, analysts, and industry stakeholders—backed by data on turnover rankings and technology-driven changes in brokerage offerings.", createdAt: "2025-08-01" },
+    {
+        id: "online", label: "Navigating the Evolving Bangladesh Capital Market: Key Trends for Q3 2025", content: <>
+            <div>
+                <div>Dear Midway Client: Select any of the Banks  below to deposit into your BO account. Please include your Midway Client Code in the Reference/Remarks/Comments sections of your Bank.</div>
+                <div className='mt-2 mb-2 font-bold'>
+                    Midway Securities Limited<br />
+                    The City Bank (Principal Office Branch)<br />
+                    A/C: 3101093011001, Routing: 225275357
+                </div>
+                <div className='mt-2 mb-2 font-bold'>
+                    Midway Securities Limited<br />
+                    Dutch Bangla Bank (Local Office Branch)<br />
+                    A/C: 1011200006385, Routing: 090273889
+                </div>
+            </div>
+        </>, createdAt: "2025-08-01"
+    },
     {
         id: "mobile", label: "Bangladesh Capital Market Outlook: Key Investment Insights for 2025", content: <>
             <div>Dear Midway Client: Select any of the Mobile Money below to deposit into your BO account. Please include your Midway Client Code in the Reference/Remarks/Comments sections of your bKash, Nagad or Rocket account.</div>
@@ -25,7 +41,17 @@ const tabs = [
             </div>
         </>, createdAt: "2025-08-02"
     },
-    { id: "credit", label: "DSE Market Update – August 2025", content: "Daily highlights of trading activity from Dhaka and Chittagong Stock Exchanges, including index performance, top gainers, and turnover leaders.", createdAt: "2025-08-03" },
+    {
+        id: "credit", label: "DSE Market Update – August 2025", content: <>
+            <div>
+                <h1 className='text-xl font-semibold mb-2'>Credit Card fees:</h1>
+                <ul>
+                    <li><strong>2.2%</strong> for <strong>Visa, MasterCard</strong> other payment channels</li>
+                    <li><strong>3.5% for <strong>American Express</strong></strong></li>
+                </ul>
+            </div>
+        </>, createdAt: "2025-08-03"
+    },
 ];
 const Deposit = ({ searchParams }) => {
     console.log(searchParams)
@@ -51,6 +77,9 @@ const Deposit = ({ searchParams }) => {
                 <div className='mt-4 p-4 border border-gray-300 rounded-lg'>
                     {activeTab.content}
                 </div>
+            </div>
+            <div className='mt-8 mb-8 mx-4'>
+                <img src='/images/deposit/sslcommerz-pay-with-logo-all-size-05_orig.png' alt='sslcommerz' className='w-full mx-auto' />
             </div>
             <div className='mt-8 mb-8 mx-4'>
                 <h1 className='text-2xl mb-3'>FUND DEPOSIT</h1>

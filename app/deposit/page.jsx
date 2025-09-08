@@ -107,6 +107,16 @@ const Deposit = ({ searchParams }) => {
                         <button type="submit" className='bg-qtp_btn_bg_color text-white rounded-lg p-1 px-3 block uppercase'>Submit Deposit</button>
                     </form>
                 </div>
+
+                {/* <div>
+                    <video width="320" height="240" controls className='mt-4 w-full'>
+                        <source src="/videos/deposit.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div> */}
+                <div className='mt-8 flex justify-center'>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/KkBCBNHRL2A?si=v4UhTaSbcuCBIagM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
             </div>
 
         </div>

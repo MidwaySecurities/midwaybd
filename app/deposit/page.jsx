@@ -6,7 +6,7 @@ const tabs = [
     {
         id: "online", label: "Navigating the Evolving Bangladesh Capital Market: Key Trends for Q3 2025", content: <>
             <div>
-                <div>Dear Midway Client: Select any of the Banks  below to deposit into your BO account. Please include your Midway Client Code in the Reference/Remarks/Comments sections of your Bank.</div>
+                <div>Dear <strong>Midway Client</strong> Select any of the Banks  below to deposit into your <strong>BO account.</strong> Please include your <strong>Midway Client Code</strong> in the <strong>Reference/Remarks/Comments</strong> sections of your Bank.</div>
                 <div className='mt-2 mb-2 font-bold'>
                     Midway Securities Limited<br />
                     The City Bank (Principal Office Branch)<br />
@@ -22,13 +22,13 @@ const tabs = [
     },
     {
         id: "mobile", label: "Bangladesh Capital Market Outlook: Key Investment Insights for 2025", content: <>
-            <div>Dear Midway Client: Select any of the Mobile Money below to deposit into your BO account. Please include your Midway Client Code in the Reference/Remarks/Comments sections of your bKash, Nagad or Rocket account.</div>
+            <div>Dear <strong>Midway Client</strong> Select any of the <strong>Mobile Money</strong> below to deposit into your <strong>BO account.</strong> Please include your <strong>Midway Client Code</strong> in the <strong>Reference/Remarks/Comments</strong> sections of your bKash, Nagad or Rocket account.</div>
             <div className='ml-4 mt-2 mb-2`'>
                 <ul className='list-disc mt-2 ml-4'>
                     <li>bKash Account No: <strong>01845222333</strong></li>
                     <li>Nagad Account No: <strong>01776106410</strong></li>
                     <li>Rocket Account No: <strong>017761064101</strong></li>
-                    <li>Reference : <strong>Your Midway Client Code</strong></li>
+                    <li>Reference : <strong>Your <strong>Midway Client Code</strong></strong></li>
                     <li>Counter no : <strong>01</strong></li>
                 </ul>
             </div>

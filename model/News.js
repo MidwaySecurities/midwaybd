@@ -23,10 +23,11 @@ const newsSchema = new mongoose.Schema(
       enum: ["Market", "Trading", "Company", "IPO", "Economy", "Others"],
       default: "Others",
     },
-    tags: {
-      type: [String],
-      index: true,
-    },
+
+    // tags: {
+    //   type: [String],
+    //   index: true,
+    // },
     // author: {
     //   type: String, // or mongoose.Schema.Types.ObjectId if linking to a User collection
     //   default: "Admin",
@@ -59,7 +60,7 @@ const newsSchema = new mongoose.Schema(
 );
 
 // Indexes for fast searching
-newsSchema.index({ title: "text", content: "text", tags: 1 });
+newsSchema.index({ title: "text", content: "text" });
 
 const News = mongoose.models.News || mongoose.model("News", newsSchema);
 

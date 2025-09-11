@@ -31,11 +31,7 @@ import style from './components/tickers.module.css';
 
 export default async function Home({ searchParams }) {
   const messages = [
-    "The Dhaka Stock Exchange closed today on a mixed note as investors showed cautious optimism ahead of corporate earnings disclosures.",
-    "The DSEX index gained modestly, supported by banking and telecom sectors, while turnover slightly increased compared to the previous session",
-    `Market sentiment remained divided, with selective buying dominating trading activity`,
-    "Analysts advised focusing on fundamentally strong stocks amid ongoing economic uncertainties.",
-
+    "The Dhaka Stock Exchange closed today on a mixed note as investors showed cautious optimism ahead of corporate earnings disclosures test good.",
   ];
   const data = await getABlog(`what-is-drib-quantity-and-its-benefits`)
   const news = await fetch(`https://www.amarstock.com/info/News`, {

@@ -70,7 +70,7 @@ const Navigation = () => {
                         <Link onClick={() => closeModal()} href="/client-services" className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Client Services</Link>
                         <Link onClick={() => closeModal()} href="/our-branches" className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Branches</Link>
                         <Link onClick={() => closeModal()} href="/form-download" className='block hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Form download</Link>
-                        <a href="#" className='block hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Visual research</a>
+                        <Link onClick={() => closeModal()} href="/visual-research" className='block hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Visual research</Link>
                         <a href="#" className='block hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Learn about share market</a>
 
                         {/* <Link href="/frequently-asked-question" onClick={() => closeModal()} className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>FAQ</Link> */}

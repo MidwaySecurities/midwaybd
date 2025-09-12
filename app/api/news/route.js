@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createNews } from "@/lib/actions/news/createNews";
+import { getNews } from "@/lib/actions/news/getNews";
 
 export async function POST(req) {
   try {
@@ -24,4 +25,11 @@ export async function POST(req) {
       { status: 500 }
     );
   }
+}
+
+export async function GET(){
+  // fetch news from database
+  const news = await getNews();
+  console.log("Fetched news:", news);
+  return NextResponse.json({ news }, { status: 200 });
 }

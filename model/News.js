@@ -8,7 +8,7 @@ const newsSchema = new mongoose.Schema(
       trim: true,
     },
     slug: {
-      type: String,
+      type: String, 
       required: true,
       unique: true,
       lowercase: true,

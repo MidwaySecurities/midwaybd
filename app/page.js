@@ -196,7 +196,7 @@ export default async function Home({ searchParams }) {
   }
   const messages = [
     newsData?.news?.[0]?.content ||
-    "The Dhaka Stock Exchange closed today on a mixed note as investors showed cautious optimism ahead of corporate earnings disclosures test good.",
+    `The Dhaka Stock Exchange closed today on a mixed note as investors showed cautious optimism ahead of corporate earnings disclosures test good.`,
   ];
 
   // ✅ Blog fetch
@@ -254,7 +254,7 @@ export default async function Home({ searchParams }) {
                       target="_blank"
                       className="flex items-center gap-1"
                     >
-                      <p>{splitMessage.slice(0, -1).join(" ")}</p>
+                      <p>{newsData?.news?.[0]?.title}: {splitMessage.slice(0, -1).join(" ")}</p>
                     </Link>
                   </li>
                 );

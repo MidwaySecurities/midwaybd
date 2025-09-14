@@ -220,7 +220,7 @@ body {
 }
 
 .animate-home-scroll {
-  animation: home-scroll 5s linear infinite;
+  animation: home-scroll 30s linear infinite;
 }
 
 .animate-home-scroll-slow {

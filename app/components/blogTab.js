@@ -7,13 +7,14 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useBlogTab } from "../context/blogTabContext";
 
-const tabs = [
-  { id: "beginner", label: "Beginner" },
-  { id: "regular", label: "Latest" },
-  // { id: "category", label: "Category" },
-];
 
 export default function Tabs({ activeTab }) {
+  const tabs = [
+    { id: "beginner", label: "Beginner" },
+    { id: "regular", label: "Latest" },
+    // { id: "category", label: "Category" },
+  ];
+
   const router = useRouter();
   const searchParams = useSearchParams();
 

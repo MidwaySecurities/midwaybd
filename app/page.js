@@ -34,7 +34,7 @@ export default async function Home({ searchParams }) {
     "The Dhaka Stock Exchange closed today on a mixed note as investors showed cautious optimism ahead of corporate earnings disclosures test good.",
   ];
   const data = await getABlog(`what-is-drib-quantity-and-its-benefits`)
-  const news = await fetch(`http://localhost:3000/api/news`, {
+  const news = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/news`, {
     next: {
       revalidate: 60
     }

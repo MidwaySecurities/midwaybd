@@ -22,6 +22,8 @@ const Deposit = ({ searchParams }) => {
                         Dutch Bangla Bank (Local Office Branch)<br />
                         A/C: 1011200006385, Routing: 090273889
                     </div>
+                    <p>Want to deposit now?</p>
+
                     <DepositForm />
                 </div>
             </>, createdAt: "2025-08-01"
@@ -45,6 +47,7 @@ const Deposit = ({ searchParams }) => {
                         <li>​Facebook: <strong><Link href={`http://m.me/midwaytrec142`} target='_blank'>Facebook</Link></strong></li>
                     </ul>
                 </div>
+                <p>Want to deposit now?</p>
                 <DepositForm />
             </>, createdAt: "2025-08-02"
         },
@@ -57,6 +60,7 @@ const Deposit = ({ searchParams }) => {
                         <li><strong>3.5% for <strong>American Express</strong></strong></li>
                     </ul>
                 </div>
+                <p>Want to deposit now?</p>
                 <DepositForm />
             </>, createdAt: "2025-08-03"
         },

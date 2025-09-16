@@ -4,6 +4,8 @@ import Link from 'next/link'
 import React, { Suspense } from 'react'
 import DepositTab from '../components/deposit/depositTab'
 import DepositForm from '../components/depositForm'
+import MobileDeposit from '../components/mobileDeposit'
+import CreditCardDeposit from '../components/creditCardDeposit'
 
 const Deposit = ({ searchParams }) => {
 
@@ -48,7 +50,7 @@ const Deposit = ({ searchParams }) => {
                     </ul>
                 </div>
                 <p>Want to deposit now?</p>
-                <DepositForm />
+                <MobileDeposit />
             </>, createdAt: "2025-08-02"
         },
         {
@@ -61,7 +63,7 @@ const Deposit = ({ searchParams }) => {
                     </ul>
                 </div>
                 <p>Want to deposit now?</p>
-                <DepositForm />
+                <CreditCardDeposit />
             </>, createdAt: "2025-08-03"
         },
     ];
@@ -91,38 +93,6 @@ const Deposit = ({ searchParams }) => {
                 <img src='/images/deposit/sslcommerz-pay-with-logo-all-size-05_orig.png' alt='sslcommerz' className='w-full mx-auto' />
             </div>
             <div className='mt-8 mb-8 mx-4'>
-                <h1 className='text-2xl mb-3'>FUND DEPOSIT</h1>
-                <p className='mb-6'><Link href='https://portal.midwaybd.com/' target='_blank' className='underline text-qtp_btn_bg_color'>মিডওয়ে পোর্টাল</Link> ব্যবহার করে ডিপোজিট করুন</p>
-                <p>For bKash, Nagad, Rocket: Click here</p>
-                <div>
-                    <form>
-                        <div className='mb-4'>
-                            <label htmlFor="name" className='block mb-2'>Name</label>
-                            <input type="text" id="name" name="name" className='border border-gray-300 p-2 w-full' required />
-                        </div>
-                        <div className='mb-4'>
-                            <label htmlFor="amount" className='block mb-2'>Deposit Amount</label>
-                            <input type="number" id="amount" name="amount" className='border border-gray-300 p-2 w-full' required />
-                        </div>
-                        <div className='mb-4'>
-                            <label htmlFor="method" className='block mb-2'>Payment Method</label>
-                            <select id="method" name="method" className='border border-gray-300 p-2 w-full' required>
-                                <option value="">Select Method</option>
-                                <option value="bkash">bKash</option>
-                                <option value="nagad">Nagad</option>
-                                <option value="rocket">Rocket</option>
-                            </select>
-                        </div>
-                        <button type="submit" className='bg-qtp_btn_bg_color text-white rounded-lg p-1 px-3 block uppercase'>Submit Deposit</button>
-                    </form>
-                </div>
-
-                {/* <div>
-                    <video width="320" height="240" controls className='mt-4 w-full'>
-                        <source src="/videos/deposit.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                </div> */}
                 <div className='mt-8 flex justify-center'>
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/KkBCBNHRL2A?si=v4UhTaSbcuCBIagM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DepositForm = () => {
+const MobileDeposit = () => {
     return (
         <div className='mt-4 mb-4 p-4 border border-gray-300 rounded-lg'>
             <form>
@@ -11,6 +11,19 @@ const DepositForm = () => {
                 <div className='mb-4'>
                     <label htmlFor="name" className='block mb-2'>Name</label>
                     <input type="text" id="name" name="name" className='border border-gray-300 p-2 w-full' required />
+                </div>
+                <div className='mb-4'>
+                    <label htmlFor="method" className='block mb-2'>Payment Method</label>
+                    <select id="method" name="method" className='border border-gray-300 p-2 w-full' required>
+                        <option value="">Select Method</option>
+                        <option value="bkash">bKash</option>
+                        <option value="nagad">Nagad</option>
+                        <option value="rocket">Rocket</option>
+                    </select>
+                </div>
+                <div className='mb-4'>
+                    <label htmlFor="transactionId" className='block mb-2'>Transaction Id</label>
+                    <input type="text" id="transactionId" name="transactionId" className='border border-gray-300 p-2 w-full' required />
                 </div>
                 <div className='mb-4'>
                     <label htmlFor="amount" className='block mb-2'>Deposit Amount</label>
@@ -26,4 +39,4 @@ const DepositForm = () => {
     )
 }
 
-export default DepositForm
+export default MobileDeposit

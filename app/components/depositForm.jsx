@@ -20,6 +20,14 @@ const DepositForm = () => {
                     <label htmlFor="depositSlip" className='block mb-2'>Deposit Slip</label>
                     <input type="file" id="depositSlip" name="depositSlip" className='border border-gray-300 p-2 w-full' required />
                 </div>
+                <div className='mb-4'>
+                    <label htmlFor="method" className='block mb-2'>Payment Method</label>
+                    <select id="method" name="method" className='border border-gray-300 p-2 w-full' required>
+                        <option value="">Select Bank</option>
+                        <option value="bkash">City Bank</option>
+                        <option value="nagad">Dutch Bangla</option>
+                    </select>
+                </div>
                 <button type="submit" className='bg-qtp_btn_bg_color text-white rounded-lg p-1 px-3 block uppercase'>Submit Deposit</button>
             </form>
         </div>

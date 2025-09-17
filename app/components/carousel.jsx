@@ -49,7 +49,8 @@ export default function Carousel({images}) {
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full ${
-              index === current ? "bg-blue-600" : "bg-qtp_btn_bg_color"
+              index === current ? "bg-qtp_btn_bg_color" : "bg-gray-300"
+            //   "bg-blue-600" : "bg-gray-300"
             }`}
           />
         ))}

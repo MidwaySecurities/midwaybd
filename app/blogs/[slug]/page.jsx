@@ -7,7 +7,6 @@ import React from 'react'
 const BlogPage = async ({ params }) => {
     const { slug } = params;
     const blog = await getABlog(slug);
-    console.log(blog)
     return (
         <div className='m-auto mt-4 p-4'>
             <div className='my-2 mb-12'>
@@ -16,7 +15,8 @@ const BlogPage = async ({ params }) => {
                 )}
             </div>
 
-            <h1 className='text-2xl font-bold mb-4'>{blog?.blog?.title}</h1>
+            <h1 className='text-xl font-bold mb-1'>{blog?.blog?.title}</h1>
+            <button className='bg-qtp_btn_bg_color text-white text-[.7rem] rounded-lg p-1 px-2 mb-4'>{blog?.blog?.category}</button>
             {blog?.blog.images.length === 0 && (
                 <img src={blog?.blog?.coverImage} alt={blog?.blog?.title} className='w-full h-auto object-cover mb-4' />
             )}
@@ -25,11 +25,12 @@ const BlogPage = async ({ params }) => {
             {/* return to all blogs page */}
             {/* related blog */}
             <h1 className='text-2xl font-bold mt-8'>Related Blog</h1>
+            
             {blog?.blog?.relatedBlogs && blog?.blog?.relatedBlogs.length > 0 ? (
                 blog?.blog?.relatedBlogs.map((relatedBlog) => (
                     <div key={relatedBlog._id} className='border p-4 m-4 rounded-lg shadow-lg'>
                         <Link href={`/blogs/${relatedBlog.slug}`}>
-                            <h1 className='text-2xl font-bold mb-2'>{relatedBlog.title}</h1>
+                            <h1 className='text-xl font-bold mb-2'>{relatedBlog.title}</h1>
                         </Link>
                         <img src={relatedBlog.coverImage} alt={relatedBlog.title} className='w-full h-auto object-cover mb-4' />
                         <div className='text-gray-800'>{relatedBlog.excerpt}</div>

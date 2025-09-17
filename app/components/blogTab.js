@@ -26,11 +26,12 @@ export default function Tabs({ activeTab }) {
 
   return (
     <div className="">
-      <div className={`${styles.tab} font-semibold flex rounded-tl-md h-full`}>
+      <div className={`${styles.tab} font-semibold text-sm flex rounded-tl-md h-full`}>
         {tabs.map((tab) => (
 
           <button
-            className={activeTab?.toLowerCase() === tab.id.toLocaleLowerCase() ? styles.active : ""}
+            key={tab.id}
+            className={`${activeTab?.toLowerCase() === tab.id.toLocaleLowerCase() ? styles.active : ""}`}
             onClick={() => {
               changeTab(tab.id);
             }}

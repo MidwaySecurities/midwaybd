@@ -5,7 +5,7 @@
 
 // const Blogs = async ({ searchParams }) => {
 //     const {tab, category} = await searchParams
-//     const activeCategory = category || 'Select Category';
+//     const activeCategory = category || 'Category';
 //     const activeTab = tab || 'beginner';
 //     const blogs = await fetch(`http://localhost:3000/api/blogs?tab=${activeTab}&category=${activeCategory}`, {
 //         next: {
@@ -53,7 +53,7 @@
 // const Blogs = async ({ searchParams }) => {
 //     const { tab, category, page, limit } = searchParams;
 
-//     const activeCategory = category || 'Select Category';
+//     const activeCategory = category || 'Category';
 //     const activeTab = tab || 'beginner';
 //     const currentPage = parseInt(page) || 1;
 //     const perPage = parseInt(limit) || 5; // default 5 blogs per page
@@ -135,7 +135,7 @@ import BlogPagination from '../components/blogPagination';
 const Blogs = async ({ searchParams }) => {
     const { tab, category, page, limit } = await searchParams;
 
-    const activeCategory = category || 'Select Category';
+    const activeCategory = category || 'Category';
     const activeTab = tab || 'beginner';
     const currentPage = parseInt(page) || 1;
     const perPage = parseInt(limit) || 2; // default 5 blogs per page
@@ -163,7 +163,7 @@ const Blogs = async ({ searchParams }) => {
                 blogs.map((blog) => (
                     <div key={blog._id} className='border p-4 m-4 rounded-lg shadow-lg'>
                         <Link href={`/blogs/${blog.slug}`}>
-                            <h2 className='text-2xl font-bold mb-2'>{blog.title}</h2>
+                            <h2 className='text-xl font-bold mb-2'>{blog.title}</h2>
                         </Link>
                         <img src={blog.coverImage} alt={blog.title} className='w-full h-auto object-cover mb-4' />
                         <div className='text-gray-800'>{blog.excerpt}</div>

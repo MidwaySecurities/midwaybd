@@ -20,7 +20,7 @@ export default function DepositTab({ activeCity }) {
   };
 
   return (
-    <div className={`${styles.tab} rounded-t-lg font-semibold text-lg`}>
+    <div className={`${styles.tab} rounded-t-lg font-semibold text-sm`}>
       {tabs.map((tab) => (
         <button
           key={tab.id}

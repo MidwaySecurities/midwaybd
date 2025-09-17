@@ -8,7 +8,7 @@ import BlogPagination from '../components/blogPagination';
 const Blogs = async ({ searchParams }) => {
     const { tab, category, page, limit } = await searchParams;
 
-    const activeCategory = category || 'Select Category';
+    const activeCategory = category || 'Category';
     const activeTab = tab || 'beginner';
     const currentPage = parseInt(page) || 1;
     const perPage = parseInt(limit) || 2; // default 5 blogs per page

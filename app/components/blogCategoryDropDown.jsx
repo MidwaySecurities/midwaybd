@@ -10,7 +10,7 @@ import { useBlogTab } from "../context/blogTabContext";
 const people = [
     {
         id: 1,
-        name: "Select Category",
+        name: "Category",
         img: "https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     },
     {
@@ -52,7 +52,7 @@ export default function Dropdown({activeCategory}) {
         router.push(`/blogs/?${params.toString()}`, { scroll: false });
     }, [selected]);
     return (
-        <div className="w-[200px] h-full">
+        <div className="w-[200px] h-full text-[12px] font-semibold">
             <Listbox value={selected} onChange={setSelected}>
                 <div className="relative mt-1">
                     {/* Button */}

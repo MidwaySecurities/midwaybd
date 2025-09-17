@@ -172,7 +172,7 @@ const EditorComponent = ({ placeholder }) => {
             required
             className="w-full px-4 py-3 border border-gray-300 rounded-xl"
           >
-            <option value="">Select Category</option>
+            <option value="">Category</option>
             <option value="Market News">Market News</option>
             <option value="Investment Tips">Investment Tips</option>
             <option value="Trading Strategies">Trading Strategies</option>

@@ -199,7 +199,6 @@ export default async function Home({ searchParams }) {
     `The Dhaka Stock Exchange closed today on a mixed note as investors showed cautious optimism ahead of corporate earnings disclosures test good.`,
   ];
 
-  // ✅ Blog fetch
 
 
   const tabs = [

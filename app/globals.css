@@ -172,7 +172,7 @@
   :root {
     --background: white;
     --foreground: #171717;
-    --qtp_btn_bg_color: #004990;
+    --qtp_btn_bg_color: #4a82d8;
     --font-dancing-script: var(--font-dancing-script);
   }
 }
@@ -181,7 +181,7 @@
   :root {
     --background: white;
     --foreground: #171717;
-    --qtp_btn_bg_color: #004990;
+    --qtp_btn_bg_color: #4a82d8;
     --font-dancing-script: var(--font-dancing-script);
 
   }

@@ -31,7 +31,7 @@ export default function Tabs({ activeTab }) {
 
           <button
             key={tab.id}
-            className={`${activeTab?.toLowerCase() === tab.id.toLocaleLowerCase() ? styles.active : ""}`}
+            className={`${tab.id ==='regular'?'w-[90px]':''} ${activeTab?.toLowerCase() === tab.id.toLocaleLowerCase() ? styles.active : ""}`}
             onClick={() => {
               changeTab(tab.id);
             }}

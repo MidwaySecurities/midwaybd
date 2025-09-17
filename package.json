@@ -24,6 +24,7 @@
     "i": "^0.3.7",
     "jodit-react": "^5.2.19",
     "mongoose": "^8.17.0",
+    "multer": "^2.0.2",
     "next": "^15.5.1-canary.4",
     "npm": "^11.5.2",
     "react": "^19.0.0",
@@ -33,6 +34,7 @@
     "react-froala-wysiwyg": "^4.6.2",
     "react-share": "^5.2.2",
     "react-slick": "^0.30.3",
+    "sharp": "^0.34.3",
     "slick-carousel": "^1.8.1",
     "tw-elements-react": "^1.0.0-alpha-end"
   },

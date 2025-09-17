@@ -1,4 +1,5 @@
 import BlogPost from '@/app/components/blogShare';
+import Carousel from '@/app/components/carousel';
 import { getABlog } from '@/lib/actions/blog/getABlog';
 import Link from 'next/link';
 import React from 'react'
@@ -6,10 +7,19 @@ import React from 'react'
 const BlogPage = async ({ params }) => {
     const { slug } = params;
     const blog = await getABlog(slug);
+    console.log(blog)
     return (
         <div className='m-auto mt-4 p-4'>
+            <div className='my-2 mb-12'>
+                {blog?.blog.images.length > 0 && (
+                    <Carousel images={blog?.blog.images} />
+                )}
+            </div>
+
             <h1 className='text-2xl font-bold mb-4'>{blog?.blog?.title}</h1>
-            <img src={blog?.blog?.coverImage} alt={blog?.blog?.title} className='w-full h-auto object-cover mb-4' />
+            {blog?.blog.images.length === 0 && (
+                <img src={blog?.blog?.coverImage} alt={blog?.blog?.title} className='w-full h-auto object-cover mb-4' />
+            )}
             <div className='text-gray-800 w-full overflow-x-hidden' dangerouslySetInnerHTML={{ __html: blog?.blog?.content }}></div>
             <BlogPost postUrl={`${process.env.NEXT_PUBLIC_SITE_URL}/blogs/${blog?.blog?.slug}`} postTitle={blog?.blog?.title} />
             {/* return to all blogs page */}

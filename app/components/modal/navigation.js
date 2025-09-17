@@ -33,7 +33,7 @@ const Navigation = () => {
             <CloseButton />
             <div className='w-full px-4 mt-2 mb-8'>
                 <div className='flex justify-between items-center flex-col px-2 gap-8 rounded-lg w-full'>
-                    <div className='flex space-y-2 flex-col mt-8 w-full'>
+                    <div className='flex space-y-2 flex-col mt-6 w-full'>
                         <button onClick={() => handleNavigate("/")} className={linkClass('/')}>Home</button>
 
                         {/* <div className='border-2 border-[#004990] rounded-lg px-3'>

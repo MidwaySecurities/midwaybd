@@ -170,6 +170,117 @@ const AccountOpenningSteps = () => {
     };
 
     return (
+        // <div className="max-w-7xl mx-auto px-4 py-16">
+        //     {/* Header */}
+        //     <div className="text-center mb-16">
+        //         <div className="inline-flex items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium text-sm mb-6">
+        //             <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
+        //             Simple Process
+        //         </div>
+
+        //         <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+        //             Start Trading in 
+        //             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"> Three Simple Steps</span>
+        //         </h2>
+
+        //         <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        //             Join thousands of successful traders with our streamlined account opening process. 
+        //             Get started in minutes and begin your investment journey today.
+        //         </p>
+        //     </div>
+
+        //     {/* Steps */}
+        //     <div className="relative">
+        //         {/* Desktop Layout */}
+        //         <div className="hidden lg:grid lg:grid-cols-3 lg:gap-8 lg:items-start">
+        //             {steps.map((step, index) => (
+        //                 <StepCard 
+        //                     key={index} 
+        //                     step={step} 
+        //                     index={index} 
+        //                     isLast={index === steps.length - 1}
+        //                 />
+        //             ))}
+        //         </div>
+
+        //         {/* Mobile Layout */}
+        //         <div className="lg:hidden space-y-0">
+        //             {steps.map((step, index) => (
+        //                 <StepCard 
+        //                     key={index} 
+        //                     step={step} 
+        //                     index={index} 
+        //                     isLast={index === steps.length - 1}
+        //                 />
+        //             ))}
+        //         </div>
+        //     </div>
+
+        //     {/* Call to Action */}
+        //     <div className="text-center mt-16 pt-12 border-t border-gray-200">
+        //         <div className="space-y-6">
+        //             <h3 className="text-2xl font-bold text-gray-800">
+        //                 Ready to Get Started?
+        //             </h3>
+        //             <p className="text-gray-600 max-w-2xl mx-auto">
+        //                 Open your BO account today and join the growing community of successful traders in Bangladesh's capital market.
+        //             </p>
+        //             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        //                 <Link href="https://portal.midwaybd.com/bo/portal-login">
+        //                     <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+        //                         Open Account Now
+        //                     </button>
+        //                 </Link>
+        //                 <button className="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 font-bold px-8 py-4 rounded-full transition-all duration-300">
+        //                     Contact Support
+        //                 </button>
+        //             </div>
+        //         </div>
+        //     </div>
+
+        //     {/* Features */}
+        //     <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        //         <div className="text-center p-4">
+        //             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+        //                 <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        //                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        //                 </svg>
+        //             </div>
+        //             <h4 className="font-semibold text-gray-800">Fast Process</h4>
+        //             <p className="text-sm text-gray-600">Account opening in minutes</p>
+        //         </div>
+
+        //         <div className="text-center p-4">
+        //             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+        //                 <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        //                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        //                 </svg>
+        //             </div>
+        //             <h4 className="font-semibold text-gray-800">Secure & Safe</h4>
+        //             <p className="text-sm text-gray-600">Bank-level security</p>
+        //         </div>
+
+        //         <div className="text-center p-4">
+        //             <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+        //                 <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        //                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+        //                 </svg>
+        //             </div>
+        //             <h4 className="font-semibold text-gray-800">24/7 Support</h4>
+        //             <p className="text-sm text-gray-600">Always here to help</p>
+        //         </div>
+
+        //         <div className="text-center p-4">
+        //             <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3">
+        //                 <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        //                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+        //                 </svg>
+        //             </div>
+        //             <h4 className="font-semibold text-gray-800">Low Fees</h4>
+        //             <p className="text-sm text-gray-600">Competitive pricing</p>
+        //         </div>
+        //     </div>
+        // </div>
         <div className="max-w-7xl mx-auto px-4 py-16">
             {/* Header */}
             <div className="text-center mb-16">
@@ -179,13 +290,15 @@ const AccountOpenningSteps = () => {
                 </div>
 
                 <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
-                    Start Trading in
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"> Three Simple Steps</span>
+                    Start Trading in{" "}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                        Three Simple Steps
+                    </span>
                 </h2>
 
-                <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    Join thousands of successful traders with our streamlined account opening process.
-                    Get started in minutes and begin your investment journey today.
+                <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Join thousands of successful traders with our streamlined account opening
+                    process. Get started in minutes and begin your investment journey today.
                 </p>
             </div>
 
@@ -204,7 +317,7 @@ const AccountOpenningSteps = () => {
                 </div>
 
                 {/* Mobile Layout */}
-                <div className="lg:hidden space-y-0">
+                <div className="lg:hidden space-y-8">
                     {steps.map((step, index) => (
                         <StepCard
                             key={index}
@@ -219,19 +332,21 @@ const AccountOpenningSteps = () => {
             {/* Call to Action */}
             <div className="text-center mt-16 pt-12 border-t border-gray-200">
                 <div className="space-y-6">
-                    <h3 className="text-2xl font-bold text-gray-800">
+                    <h3 className="text-2xl lg:text-3xl font-bold text-gray-800">
                         Ready to Get Started?
                     </h3>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
-                        Open your BO account today and join the growing community of successful traders in Bangladesh's capital market.
+                    <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                        Open your BO account today and join the growing community of successful
+                        traders in Bangladesh's capital market.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link href="https://portal.midwaybd.com/bo/portal-login">
-                            <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                                Open Account Now
-                            </button>
+                        <Link
+                            href="https://portal.midwaybd.com/bo/portal-login"
+                            className="inline-block bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+                        >
+                            Open Account Now
                         </Link>
-                        <button className="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 font-bold px-8 py-4 rounded-full transition-all duration-300">
+                        <button className="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 font-bold px-8 py-4 rounded-full transition-all duration-300 hover:bg-blue-50">
                             Contact Support
                         </button>
                     </div>
@@ -240,40 +355,80 @@ const AccountOpenningSteps = () => {
 
             {/* Features */}
             <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="text-center p-4">
+                <div className="text-center p-6 rounded-xl shadow-sm hover:shadow-md transition">
                     <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        <svg
+                            className="w-7 h-7 text-blue-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"
+                            />
                         </svg>
                     </div>
                     <h4 className="font-semibold text-gray-800">Fast Process</h4>
                     <p className="text-sm text-gray-600">Account opening in minutes</p>
                 </div>
 
-                <div className="text-center p-4">
+                <div className="text-center p-6 rounded-xl shadow-sm hover:shadow-md transition">
                     <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        <svg
+                            className="w-7 h-7 text-green-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                            />
                         </svg>
                     </div>
                     <h4 className="font-semibold text-gray-800">Secure & Safe</h4>
                     <p className="text-sm text-gray-600">Bank-level security</p>
                 </div>
 
-                <div className="text-center p-4">
+                <div className="text-center p-6 rounded-xl shadow-sm hover:shadow-md transition">
                     <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                        <svg
+                            className="w-7 h-7 text-purple-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+                            />
                         </svg>
                     </div>
                     <h4 className="font-semibold text-gray-800">24/7 Support</h4>
                     <p className="text-sm text-gray-600">Always here to help</p>
                 </div>
 
-                <div className="text-center p-4">
+                <div className="text-center p-6 rounded-xl shadow-sm hover:shadow-md transition">
                     <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                        <svg
+                            className="w-7 h-7 text-yellow-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                            />
                         </svg>
                     </div>
                     <h4 className="font-semibold text-gray-800">Low Fees</h4>
@@ -281,6 +436,7 @@ const AccountOpenningSteps = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 

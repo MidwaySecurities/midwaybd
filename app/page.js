@@ -375,7 +375,7 @@ export default async function Home({ searchParams }) {
       {/* Live News Ticker */}
       <div className="bg-gray-900 border-y border-gray-700">
         <div className="flex overflow-hidden">
-          <div className="flex items-center bg-red-600 px-4 py-3 min-w-fit">
+          <div className="flex items-center bg-red-600 px-4 py-3 min-w-fit z-10">
             <span className="text-white font-bold text-sm uppercase tracking-wide">Breaking News</span>
           </div>
           <ul className="animate-home-scroll hover:animate-home-scroll-slow flex gap-8 whitespace-nowrap py-3 px-4 text-white">

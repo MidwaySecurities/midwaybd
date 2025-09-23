@@ -35,7 +35,7 @@ const people = [
     },
 ];
 
-export default function Dropdown({activeCategory}) {
+export default function Dropdown({activeCategory, }) {
     const { currentTab, setCurrentTab } = useBlogTab();
     console.log("searchParams", activeCategory)
     const search = useSearchParams();
@@ -47,6 +47,7 @@ export default function Dropdown({activeCategory}) {
         console.log('activeCategory', activeCategory, selected.name)
         if(activeCategory !== selected.name){
             params.set("tab", 'beginner');
+            params.set('page', 1)
             setCurrentTab('beginner');
         }
         router.push(`/blogs/?${params.toString()}`, { scroll: false });

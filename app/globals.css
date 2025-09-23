@@ -99,7 +99,7 @@
 }
 
 @layer utilities {
-  @keyframes ticker-scroll {
+  /* @keyframes ticker-scroll {
     0% {
       transform: translateX(0%);
     }
@@ -147,6 +147,45 @@
 
   .card-padding {
     padding: 0 8px;
+  } */
+
+  @keyframes scroll-horizontal {
+    0% {
+      transform: translateX(100vw);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-scroll-horizontal {
+    animation: scroll-horizontal 45s linear infinite;
+  }
+
+  .pause-animation:hover .animate-scroll-horizontal {
+    animation-play-state: paused;
+  }
+
+  /* Responsive timing */
+  @media (max-width: 640px) {
+    .animate-scroll-horizontal {
+      animation-duration: 30s;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .animate-scroll-horizontal {
+      animation-duration: 60s;
+    }
+  }
+
+  /* Respect user preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-scroll-horizontal {
+      animation: none;
+      transform: none;
+    }
   }
 
 }

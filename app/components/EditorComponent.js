@@ -22,7 +22,7 @@ const EditorComponent = ({ placeholder }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
-
+  console.log(content)
   const replyEditor = useRef(null);
 
   // Editor config
@@ -37,7 +37,7 @@ const EditorComponent = ({ placeholder }) => {
       try {
         const data = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/blogs`);
         const blogs = await data.json()
-        
+
         if (blogs?.blogs?.length > 0) {
           const latest = blogs.blogs[0];
           setRelatedSlug(latest.slug);
@@ -51,16 +51,59 @@ const EditorComponent = ({ placeholder }) => {
   }, []);
 
   // ✅ Submit handler
+
+  async function replaceBlobImages(content) {
+    console.log(content)
+    const div = document.createElement("div");
+    div.innerHTML = content;
+
+    const imgs = div.querySelectorAll("img");
+    console.log(imgs)
+    for (let i = 0; i < imgs.length; i++) {
+      const img = imgs[i];
+      const src = img.getAttribute("src");
+      console.log(src)
+      if (src && src.startsWith("blob:")) {
+        // Get blob data
+        const blob = await fetch(src).then(r => r.blob());
+
+        // Create form data with custom renamed file
+        const formData = new FormData();
+        formData.append(
+          "file",
+          blob,
+          `editor-${Date.now()}-${i}.png` // ✅ custom renamed filename
+        );
+
+        // Upload to your backend
+        const res = await fetch("/api/upload", {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await res.json();
+        console.log(data)
+        if (data.link) {
+          // Replace src in HTML
+          img.setAttribute("src", data.link);
+        }
+      }
+    }
+    console.log(div.innerHTML)
+    return div.innerHTML;
+  }
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
     setError(null);
     setSuccess(false);
-
     try {
+      const cleanedContent = await replaceBlobImages(content);
+      console.log(cleanedContent)
       const form = new FormData(event.target);
-      form.append("content", content);
-
+      form.append("content", cleanedContent);
       const res = await fetch("/api/blogs", {
         method: "POST",
         body: form,
@@ -82,6 +125,7 @@ const EditorComponent = ({ placeholder }) => {
       setLoading(false);
     }
   };
+
 
   return (
     <div className="max-w-3xl mx-auto mt-8 px-4">
@@ -144,12 +188,24 @@ const EditorComponent = ({ placeholder }) => {
                 attribution: false,
                 heightMin: 200,
                 heightMax: 550,
+
+                // ✅ Enable server-side image upload
+                // imageUploadURL: "/api/upload",   // our Next.js route
+                imageUploadParam: "file",        // field name expected in backend
+                imageUploadMethod: "POST",
+                imageAllowedTypes: ["jpeg", "jpg", "png", "gif", "webp"],
+
+                // (optional) disable drag-to-replace
+                imageDefaultWidth: 300,
                 events: {
                   initialized: function () {
                     replyEditor.current = this;
                   },
-                  blur: () => {
-                    console.log(replyEditor.current.html.get(true));
+                  "image.uploaded": function (response) {
+                    console.log("Image uploaded:", response);
+                  },
+                  "image.error": function (error, response) {
+                    console.error("Upload error:", error, response);
                   }
                 }
               }}

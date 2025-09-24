@@ -40,7 +40,6 @@ export async function GET(req) {
 export async function POST(req) {
   try {
     const formData = await req.formData();
-
     // Call your createBlog server function
     const result = await createBlog(formData);
 

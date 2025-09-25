@@ -516,7 +516,7 @@ const Deposit = ({ searchParams }) => {
             </div>
 
             {/* Payment Methods Section */}
-            <div className="bg-white py-12">
+            {/* <div className="bg-white py-12">
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-8">
                         Secure Payment Processing
@@ -532,7 +532,7 @@ const Deposit = ({ searchParams }) => {
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Tutorial Video Section */}
             <div className="bg-gradient-to-br from-gray-900 to-gray-800 py-16">

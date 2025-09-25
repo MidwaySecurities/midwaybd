@@ -6,7 +6,7 @@ import { ChevronUpDownIcon, CheckIcon } from "@heroicons/react/20/solid";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useBlogTab } from "../context/blogTabContext";
 
-const categories = [
+export const categories = [
   {
     id: 1,
     name: "All Categories",

@@ -1,26 +1,3 @@
-// 'use client';
-// import Image from 'next/image';
-// import { FacebookShareButton, TwitterShareButton } from 'react-share';
-
-// function BlogPost({ postUrl, postTitle }) {
-//     return (
-//         <div>
-//             {/* Blog post content */}
-//             <div className='my-4 bg-green-500 text-white w-[50px] py-1 flex justify-center items-center text-center rounded-lg'>
-//                 <FacebookShareButton url={postUrl} quote={postTitle}>
-//                     <Image src={`/images/icons/arrow.png`} width={50} height={50} className='w-[1.5rem]' alt='share on facebook' />
-//                 </FacebookShareButton>
-//             </div>
-//             {/* <div className='my-4 bg-qtp_btn_bg_color text-white py-2 w-[200px] text-center rounded-lg'>
-//                 <TwitterShareButton url={postUrl} title={postTitle}>
-//                     Share on Twitter
-//                 </TwitterShareButton>
-//             </div> */}
-//         </div>
-//     );
-// }
-// export default BlogPost;
-
 'use client';
 import { FacebookShareButton, TwitterShareButton, LinkedinShareButton, WhatsappShareButton } from 'react-share';
 import { useState } from 'react';
@@ -61,17 +38,17 @@ function BlogPost({ postUrl, postTitle }) {
             label: 'Twitter',
             color: 'bg-sky-500 hover:bg-sky-600',
         },
-        {
-            component: LinkedinShareButton,
-            props: { url: postUrl, title: postTitle },
-            icon: (
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-            ),
-            label: 'LinkedIn',
-            color: 'bg-blue-700 hover:bg-blue-800',
-        },
+        // {
+        //     component: LinkedinShareButton,
+        //     props: { url: postUrl, title: postTitle },
+        //     icon: (
+        //         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        //             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        //         </svg>
+        //     ),
+        //     label: 'LinkedIn',
+        //     color: 'bg-blue-700 hover:bg-blue-800',
+        // },
         {
             component: WhatsappShareButton,
             props: { url: postUrl, title: postTitle },

@@ -130,11 +130,11 @@ const BlogPage = async ({ params }) => {
           {blog?.blog.images?.length > 0 ? (
             <Carousel images={blog?.blog.images} />
           ) : (
-            <div className="relative w-full flex justify-center">
+            <div className="relative mt-1 w-full flex justify-center items-center">
               <img
                 src={blog?.blog?.coverImage}
                 alt={blog?.blog?.title}
-                className="w-[70%] object-cover"
+                className="w-[80%] object-cover"
               />
               <div className="absolute inset-0 bg-transparent bg-opacity-30"></div>
             </div>
@@ -162,7 +162,7 @@ const BlogPage = async ({ params }) => {
         {/* Blog Meta Info */}
         <div className="bg-white rounded-xl p-6 mb-8 shadow-sm border border-gray-200">
           <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-gray-600">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 text-[12px] md:text-sm">
               <div className="flex items-center">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -259,7 +259,7 @@ const BlogPage = async ({ params }) => {
                         alt={relatedBlog.title}
                         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                      <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
                     </div>
                   </Link>
                   

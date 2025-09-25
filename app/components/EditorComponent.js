@@ -11,6 +11,7 @@ import "froala-editor/js/froala_editor.pkgd.min.js";
 import "froala-editor/js/plugins.pkgd.min.js";
 
 import { getBlogs } from '@/lib/actions/blog/getBlogs';
+import { categories } from './blogCategoryDropDown';
 
 const EditorComponent = ({ placeholder }) => {
   const [title, setTitle] = useState('');
@@ -53,7 +54,6 @@ const EditorComponent = ({ placeholder }) => {
   // ✅ Submit handler
 
   async function replaceBlobImages(content) {
-    console.log(content)
     const div = document.createElement("div");
     div.innerHTML = content;
 
@@ -177,7 +177,7 @@ const EditorComponent = ({ placeholder }) => {
           <input type="file" name="coverImage" required className="w-full" />
 
           {/* Multiple Images */}
-          <input type="file" name="images" multiple required className="w-full" />
+          <input type="file" name="images" multiple className="w-full" />
 
           {/* Froala Editor */}
           <div className="border border-gray-300 rounded-xl overflow-hidden">
@@ -228,12 +228,12 @@ const EditorComponent = ({ placeholder }) => {
             required
             className="w-full px-4 py-3 border border-gray-300 rounded-xl"
           >
-            <option value="">Category</option>
-            <option value="Market News">Market News</option>
-            <option value="Investment Tips">Investment Tips</option>
-            <option value="Trading Strategies">Trading Strategies</option>
-            <option value="Company Updates">Company Updates</option>
-            <option value="Others">Others</option>
+            <option hidden>Select Category</option>
+            {categories?.map(item => {
+              return (
+                <option hidden = {item.name === 'Select Category'}>{item.name}</option>
+              )
+            })}
           </select>
 
           {/* Tags */}

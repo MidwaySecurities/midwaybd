@@ -4,11 +4,12 @@ import React from 'react'
 import Tabs from '../components/blogTab';
 import BlogCategoryDropDown from '../components/blogCategoryDropDown';
 import BlogPagination from '../components/blogPagination';
+import { BlogFilters } from '../components/blogFilter';
 
 const Blogs = async ({ searchParams }) => {
     const { tab, category, page, limit } = await searchParams;
-
-    const activeCategory = category || 'Category';
+    console.log(category)
+    const activeCategory = category;
     const activeTab = tab || 'beginner';
     const currentPage = parseInt(page) || 1;
     const perPage = parseInt(limit) || 2; // default 5 blogs per page
@@ -26,10 +27,10 @@ const Blogs = async ({ searchParams }) => {
     return (
         <div className="px-4 sm:px-6 lg:px-12 py-10">
             {/* ✅ Header */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border border-gray-200 rounded-xl p-4 shadow-sm bg-white">
-                <Tabs activeTab={tab === 'latest' ? 'regular' : tab} />
-                <BlogCategoryDropDown activeCategory={category} />
-            </div>
+            <BlogFilters
+                activeTab={tab === 'latest' ? 'regular' : tab}
+                activeCategory={category}
+            />
 
             {/* ✅ Blogs Grid */}
             {blogs.length > 0 ? (

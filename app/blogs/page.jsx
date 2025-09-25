@@ -8,7 +8,6 @@ import { BlogFilters } from '../components/blogFilter';
 
 const Blogs = async ({ searchParams }) => {
     const { tab, category, page, limit } = await searchParams;
-    console.log(category)
     const activeCategory = category;
     const activeTab = tab || 'beginner';
     const currentPage = parseInt(page) || 1;

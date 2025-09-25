@@ -14,7 +14,6 @@ const BlogCreate = () => {
         event.preventDefault();
         const formData = new FormData(event.target);
         const response = await createBlog(formData);
-        console.log(response);
         if (response?.error) {
             setError(response.error);
             setSuccess(false);

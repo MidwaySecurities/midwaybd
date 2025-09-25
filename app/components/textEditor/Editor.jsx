@@ -37,7 +37,6 @@ export default function Editor() {
             <EditorContent editor={editor} />
             <button
                 onClick={() => {
-                    console.log(editor.getHTML()) // 👈 raw HTML output
                     alert(editor.getHTML())
                 }}
             >

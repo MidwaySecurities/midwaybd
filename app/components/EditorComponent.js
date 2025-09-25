@@ -23,7 +23,6 @@ const EditorComponent = ({ placeholder }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
-  console.log(content)
   const replyEditor = useRef(null);
 
   // Editor config
@@ -58,11 +57,9 @@ const EditorComponent = ({ placeholder }) => {
     div.innerHTML = content;
 
     const imgs = div.querySelectorAll("img");
-    console.log(imgs)
     for (let i = 0; i < imgs.length; i++) {
       const img = imgs[i];
       const src = img.getAttribute("src");
-      console.log(src)
       if (src && src.startsWith("blob:")) {
         // Get blob data
         const blob = await fetch(src).then(r => r.blob());

@@ -7,7 +7,6 @@ import Link from 'next/link'
 
 const CloseButton = () => {
     const { isModalOpen, closeModal, openModal } = useModalClose()
-    console.log(isModalOpen)
     return (
         <div style={{ backdropFilter: 'blur(20px)' }} className='z-[100] py-2 pr-2 sticky top-0 w-full bg-gray-100 flex justify-between items-center border-b-[.5px] border-b-gray-200'>
             <div>

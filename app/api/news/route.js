@@ -6,7 +6,6 @@ export async function POST(req) {
   try {
     // Parse body as JSON
     const body = await req.json();
-    console.log("Received body:", body);
 
     const result = await createNews(body);
 
@@ -30,6 +29,5 @@ export async function POST(req) {
 export async function GET(){
   // fetch news from database
   const news = await getNews();
-  console.log("Fetched news:", news);
   return NextResponse.json({ news }, { status: 200 });
 }

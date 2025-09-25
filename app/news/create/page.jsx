@@ -24,7 +24,6 @@ const CreateNews = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('formData ',formData)
     try {
       const response = await fetch("/api/news", {
         method: "POST",

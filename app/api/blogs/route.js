@@ -26,7 +26,6 @@ export async function GET(req) {
     const page = parseInt(searchParams.get("page") || "1", 10);
     const limit = parseInt(searchParams.get("limit") || "10", 10);
 
-    console.log("Fetching blogs:", { tab, category, page, limit });
 
     const blogs = await getBlogs({ tag: tab, category, page, limit });
     return NextResponse.json(blogs);
@@ -40,7 +39,6 @@ export async function GET(req) {
 export async function POST(req) {
   try {
     const formData = await req.formData();
-
     // Call your createBlog server function
     const result = await createBlog(formData);
 

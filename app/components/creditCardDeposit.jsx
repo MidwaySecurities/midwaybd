@@ -2,7 +2,6 @@ import React from 'react'
 
 const CreditCardDeposit = () => {
     return (
-        <div className='mt-4 mb-4 p-4 border border-gray-300 rounded-lg'>
             <form>
                 <div className='mb-4'>
                     <label htmlFor="clientCode" className='block mb-2'>Client Code</label>
@@ -26,7 +25,6 @@ const CreditCardDeposit = () => {
                 </div>
                 <button type="submit" className='bg-qtp_btn_bg_color text-white rounded-lg p-1 px-3 block uppercase'>Submit Deposit</button>
             </form>
-        </div>
     )
 }
 

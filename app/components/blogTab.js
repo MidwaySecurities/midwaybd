@@ -1,58 +1,12 @@
-// "use client";
-
-// import { useRouter, useSearchParams } from "next/navigation";
-// import styles from "./Tabs.module.css";
-// import Dropdown from "./blogCategoryDropDown";
-// import Link from "next/link";
-// import { useEffect, useState } from "react";
-// import { useBlogTab } from "../context/blogTabContext";
-
-
-// export default function Tabs({ activeTab }) {
-//   const tabs = [
-//     { id: "beginner", label: "Beginner" },
-//     { id: "regular", label: "Latest" },
-//     // { id: "category", label: "Category" },
-//   ];
-
-//   const router = useRouter();
-//   const searchParams = useSearchParams();
-
-//   const changeTab = (tabId) => {
-//     const params = new URLSearchParams(searchParams.toString());
-//     params.set("tab", tabId === 'latest' ? 'regular' : tabId);
-//     router.push(`/blogs/?${params.toString()}`);
-//   };
-
-//   return (
-//     <div className="">
-//       <div className={`${styles.tab} font-semibold text-sm flex rounded-tl-md h-full`}>
-//         {tabs.map((tab) => (
-
-//           <button
-//             key={tab.id}
-//             className={`${tab.id ==='regular'?'w-[90px]':''} ${activeTab?.toLowerCase() === tab.id.toLocaleLowerCase() ? styles.active : ""}`}
-//             onClick={() => {
-//               changeTab(tab.id);
-//             }}
-//           >
-//             {tab.label}
-//           </button>
-//         ))}
-
-//       </div>
-//     </div>
-//   );
-// }
-
+// BlogTabs.js
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
 
-export default function Tabs({ activeTab }) {
+export default function BlogTabs({ activeTab }) {
   const tabs = [
-    { id: "beginner", label: "Beginner" },
-    { id: "regular", label: "Latest" },
+    { id: "beginner", label: "Beginner", icon: "📚", description: "Start your journey" },
+    { id: "regular", label: "Latest", icon: "⚡", description: "Recent updates" },
   ];
 
   const router = useRouter();
@@ -61,25 +15,31 @@ export default function Tabs({ activeTab }) {
   const changeTab = (tabId) => {
     const params = new URLSearchParams(searchParams.toString());
     params.set("tab", tabId === "latest" ? "regular" : tabId);
-    router.push(`/blogs/?${params.toString()}`);
+    params.set("page", 1); // Reset to first page when changing tabs
+    router.push(`/blogs/?${params.toString()}`, { scroll: false });
   };
 
   return (
-    <div className="w-full bg-gray-50 border-b border-gray-200">
-      <div className="max-w-6xl mx-auto flex justify-start md:justify-center space-x-2 md:space-x-6 px-2 py-2">
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => changeTab(tab.id)}
-            className={`px-4 py-2 rounded-md text-sm md:text-base font-semibold transition-all duration-200 ${activeTab?.toLowerCase() === tab.id.toLowerCase()
-                ? "bg-blue-600 text-white shadow-md"
-                : "bg-white text-gray-700 hover:bg-blue-100 hover:text-blue-600"
-              }`}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
+    <div className="flex space-x-1 bg-gray-100 rounded-xl p-1">
+      {tabs.map((tab) => (
+        <button
+          key={tab.id}
+          onClick={() => changeTab(tab.id)}
+          className={`relative flex-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 min-w-[120px] ${
+            activeTab?.toLowerCase() === tab.id.toLowerCase()
+              ? "bg-white text-blue-600 shadow-sm"
+              : "text-gray-600 hover:text-gray-900"
+          }`}
+        >
+          <div className="flex items-center justify-center space-x-2">
+            <span className="text-lg">{tab.icon}</span>
+            <span>{tab.label}</span>
+          </div>
+          {activeTab?.toLowerCase() === tab.id.toLowerCase() && (
+            <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-blue-600 rounded-full"></div>
+          )}
+        </button>
+      ))}
     </div>
   );
 }

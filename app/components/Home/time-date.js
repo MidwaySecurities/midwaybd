@@ -14,7 +14,6 @@ export default function TimeDate() {
         const fetchDseStatus = async () => {
             const data = await fetch(`https://www.amarstock.com/info/market/status-ex`)
             const res = await data.json()
-            console.log('haha ', res)
             setDseStatus(res.status)
         }
         fetchDseStatus()
@@ -50,7 +49,7 @@ export default function TimeDate() {
             fetch(`https://www.amarstock.com/info/market/status-ex`).then(res => {
                 return res.json()
             }).then(data => {
-                console.log(data)
+                // log
             })
 
         }

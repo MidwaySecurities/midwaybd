@@ -23,7 +23,6 @@ export default function CreateNews() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setMessage("News created successfully (demo only)");
-    console.log("Form Submitted:", formData);
 
     // reset form
     setFormData({

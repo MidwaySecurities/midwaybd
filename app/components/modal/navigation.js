@@ -478,19 +478,8 @@ const Navigation = () => {
             }`}>
                 
                 {/* Header */}
-                <div className="bg-white p-6 shadow-sm">
+                <div className="bg-white shadow-sm">
                     <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-3">
-                            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center shadow-lg">
-                                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h1 className="font-bold text-lg text-gray-900">Midway Securities</h1>
-                                <p className="text-sm text-gray-500">Investment Platform</p>
-                            </div>
-                        </div>
                         <CloseButton />
                     </div>
                 </div>

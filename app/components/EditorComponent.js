@@ -11,6 +11,7 @@ import "froala-editor/js/froala_editor.pkgd.min.js";
 import "froala-editor/js/plugins.pkgd.min.js";
 
 import { getBlogs } from '@/lib/actions/blog/getBlogs';
+import { categories } from './blogCategoryDropDown';
 
 const EditorComponent = ({ placeholder }) => {
   const [title, setTitle] = useState('');
@@ -22,7 +23,6 @@ const EditorComponent = ({ placeholder }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
-
   const replyEditor = useRef(null);
 
   // Editor config
@@ -37,7 +37,7 @@ const EditorComponent = ({ placeholder }) => {
       try {
         const data = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/blogs`);
         const blogs = await data.json()
-        
+
         if (blogs?.blogs?.length > 0) {
           const latest = blogs.blogs[0];
           setRelatedSlug(latest.slug);
@@ -51,16 +51,56 @@ const EditorComponent = ({ placeholder }) => {
   }, []);
 
   // ✅ Submit handler
+
+  async function replaceBlobImages(content) {
+    const div = document.createElement("div");
+    div.innerHTML = content;
+
+    const imgs = div.querySelectorAll("img");
+    for (let i = 0; i < imgs.length; i++) {
+      const img = imgs[i];
+      const src = img.getAttribute("src");
+      if (src && src.startsWith("blob:")) {
+        // Get blob data
+        const blob = await fetch(src).then(r => r.blob());
+
+        // Create form data with custom renamed file
+        const formData = new FormData();
+        formData.append(
+          "file",
+          blob,
+          `editor-${Date.now()}-${i}.png` // ✅ custom renamed filename
+        );
+
+        // Upload to your backend
+        const res = await fetch("/api/upload", {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await res.json();
+        console.log(data)
+        if (data.link) {
+          // Replace src in HTML
+          img.setAttribute("src", data.link);
+        }
+      }
+    }
+    console.log(div.innerHTML)
+    return div.innerHTML;
+  }
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
     setError(null);
     setSuccess(false);
-
     try {
+      const cleanedContent = await replaceBlobImages(content);
+      console.log(cleanedContent)
       const form = new FormData(event.target);
-      form.append("content", content);
-
+      form.append("content", cleanedContent);
       const res = await fetch("/api/blogs", {
         method: "POST",
         body: form,
@@ -82,6 +122,7 @@ const EditorComponent = ({ placeholder }) => {
       setLoading(false);
     }
   };
+
 
   return (
     <div className="max-w-3xl mx-auto mt-8 px-4">
@@ -133,7 +174,7 @@ const EditorComponent = ({ placeholder }) => {
           <input type="file" name="coverImage" required className="w-full" />
 
           {/* Multiple Images */}
-          <input type="file" name="images" multiple required className="w-full" />
+          <input type="file" name="images" multiple className="w-full" />
 
           {/* Froala Editor */}
           <div className="border border-gray-300 rounded-xl overflow-hidden">
@@ -144,12 +185,24 @@ const EditorComponent = ({ placeholder }) => {
                 attribution: false,
                 heightMin: 200,
                 heightMax: 550,
+
+                // ✅ Enable server-side image upload
+                // imageUploadURL: "/api/upload",   // our Next.js route
+                imageUploadParam: "file",        // field name expected in backend
+                imageUploadMethod: "POST",
+                imageAllowedTypes: ["jpeg", "jpg", "png", "gif", "webp"],
+
+                // (optional) disable drag-to-replace
+                imageDefaultWidth: 300,
                 events: {
                   initialized: function () {
                     replyEditor.current = this;
                   },
-                  blur: () => {
-                    console.log(replyEditor.current.html.get(true));
+                  "image.uploaded": function (response) {
+                    console.log("Image uploaded:", response);
+                  },
+                  "image.error": function (error, response) {
+                    console.error("Upload error:", error, response);
                   }
                 }
               }}
@@ -172,12 +225,12 @@ const EditorComponent = ({ placeholder }) => {
             required
             className="w-full px-4 py-3 border border-gray-300 rounded-xl"
           >
-            <option value="">Category</option>
-            <option value="Market News">Market News</option>
-            <option value="Investment Tips">Investment Tips</option>
-            <option value="Trading Strategies">Trading Strategies</option>
-            <option value="Company Updates">Company Updates</option>
-            <option value="Others">Others</option>
+            <option hidden>Select Category</option>
+            {categories?.map(item => {
+              return (
+                <option hidden = {item.name === 'Select Category'}>{item.name}</option>
+              )
+            })}
           </select>
 
           {/* Tags */}

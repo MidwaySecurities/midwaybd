@@ -9,13 +9,11 @@ const CloseButton = () => {
     const { isModalOpen, closeModal, openModal } = useModalClose()
     console.log(isModalOpen)
     return (
-        <div style={{ backdropFilter: 'blur(20px)' }} className='z-[100] h-[50px] sticky top-0 w-full bg-gray-100 flex justify-between items-center border-b-[.5px] border-b-gray-200'>
+        <div style={{ backdropFilter: 'blur(20px)' }} className='z-[100] py-2 pr-2 sticky top-0 w-full bg-gray-100 flex justify-between items-center border-b-[.5px] border-b-gray-200'>
             <div>
                 <div className='flex gap-3'>
                     <Image src={`https://www.midwaybd.com/uploads/6/0/4/6/60462737/midway-logo-moto.png`} alt='midway logo' className='ml-6 box-border' height={30} width={30} />
                     <Link className={`${style.logoZoom} flex items-center font-bold text-gray-800 text-[14px]`} href={`/`}>
-                        {/* <h1 className="">Midway Securities Ltd.</h1> */}
-                        {/* <h1 className="flex flex-col leading-5 justify-center uppercase"><span className="tracking-[12.4px]">Midway</span><span className="tracking-[.9px]">Securities Ltd.</span></h1> */}
                         <h1 className="flex flex-col leading-0 justify-center uppercase mt-[-.30rem]"><span className="text-lg tracking-[2px]">Midway</span><span className="tracking-[.93px] text-[.6rem] leading-2">Securities Ltd.</span></h1>
                     </Link>
                 </div>

@@ -40,7 +40,7 @@ export function BlogFilters({ activeTab, activeCategory }) {
 
       {/* Active Filters Display */}
       <div className="flex items-center justify-between mt-6 pt-4 border-t border-gray-100">
-        <div className="flex items-center space-x-2 text-sm text-gray-600">
+        {/* <div className="flex items-center space-x-2 text-sm text-gray-600">
           <span>Active filters:</span>
           <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
             {activeTab === 'regular' ? 'Latest' : 'Beginner'}
@@ -48,7 +48,7 @@ export function BlogFilters({ activeTab, activeCategory }) {
           <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
             {activeCategory === 'all' ? 'All Categories' : activeCategory}
           </span>
-        </div>
+        </div> */}
         
         <button 
           onClick={() => {

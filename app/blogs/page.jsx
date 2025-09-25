@@ -12,7 +12,7 @@ const Blogs = async ({ searchParams }) => {
     const activeCategory = category;
     const activeTab = tab || 'beginner';
     const currentPage = parseInt(page) || 1;
-    const perPage = parseInt(limit) || 2; // default 5 blogs per page
+    const perPage = parseInt(limit) || 5; // default 5 blogs per page
 
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 

@@ -2,7 +2,7 @@
 import Navigation from './modal/navigation'
 import TimeDate from './Home/time-date'
 import FirstNavBar from './Home/first-nav-bar'
-import SubNav from './Home/sub-nav'
+import { SubNav } from './Home/sub-nav'
 
 const NavigationBar = () => {
     // const [showNavbar, setShowNavbar] = useState(true);

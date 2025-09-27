@@ -34,7 +34,7 @@ const blogSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
-      enum: ["ATB", "Bonds", "Devidend", "IPO", "Learn About Share Market", "Margin Loan", "Mobile App", "Mutual Fund", "Portfolio Transfer", "Security", "SME"],
+      enum: ["ATB", "Bonds", "Dividend", "IPO", "Learn About Share Market", "Margin Loan", "Mobile App", "Mutual Fund", "Portfolio Transfer", "Security", "SME"],
     },
     relatedBlogs: [
       {

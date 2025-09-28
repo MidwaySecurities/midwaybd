@@ -41,6 +41,7 @@ const OurServiceCard = () => {
                             <h6 className='font-poppins text-lg text-inherit mt-6'>Stocks</h6>
                         </div>
                     </div>
+                    
                     <div className="mx-2 inline-block">
                         <div className='w-[240px] py-3 rounded-xl bg-[#F8F7F5] hover:bg-[#DBEAFE] hover:drop-shadow-lg duration-500 flex justify-center items-center flex-col'>
                             <Image src={ipo_image} alt='ipos' className='w-[50%]' width={180} />

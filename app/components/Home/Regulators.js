@@ -84,7 +84,7 @@ const Regulators = () => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
           centerMode: true,
         }
@@ -92,7 +92,7 @@ const Regulators = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           slidesToScroll: 1,
           centerMode: true,
           variableWidth: true,
@@ -131,7 +131,7 @@ const Regulators = () => {
   return (
     <>
       {/* Desktop and Tablet View */}
-      <div className="hidden sm:block">
+      <div className="sm:block">
         <div className="max-w-6xl mx-auto px-4">
           <Slider {...settings}>
             {regulators.map((regulator, index) => (
@@ -167,37 +167,7 @@ const Regulators = () => {
         </div>
       </div>
 
-      {/* Mobile View - Grid Layout */}
-      <div className="sm:hidden">
-        <div className="grid grid-cols-2 gap-6 px-4 max-w-sm mx-auto">
-          {regulators.map((regulator, index) => (
-            <div key={index} className="group">
-              <Link 
-                href={regulator.url} 
-                target="_blank"
-                className="block"
-              >
-                <div className="w-24 h-24 mx-auto rounded-full bg-white shadow-lg hover:shadow-xl border border-gray-100 transition-all duration-500 flex justify-center items-center group-hover:scale-105 group-hover:bg-gradient-to-br group-hover:from-blue-50 group-hover:to-indigo-50">
-                  <div className="relative w-16 h-16">
-                    <Image 
-                      src={regulator.logo} 
-                      alt={regulator.alt} 
-                      fill
-                      className="object-contain filter group-hover:brightness-110 transition-all duration-300"
-                      sizes="64px"
-                    />
-                  </div>
-                </div>
-                <div className="text-center mt-3">
-                  <h3 className="text-xs font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-300 leading-tight">
-                    {regulator.name}
-                  </h3>
-                </div>
-              </Link>
-            </div>
-          ))}
-        </div>
-      </div>
+      
 
       {/* Trust Indicators */}
       <div className="mt-8 text-center">

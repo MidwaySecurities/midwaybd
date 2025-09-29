@@ -1,61 +1,42 @@
 'use client'
-import React from 'react';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Filler,
-  Legend,
-} from 'chart.js';
-import { Line } from 'react-chartjs-2';
-// import faker from 'faker';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer, PieChart as RechartsPieChart, Cell, AreaChart, Area, BarChart, Bar } from 'recharts'
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Filler,
-  Legend
-);
+const websiteTraffic = [
+  { name: 'Mon', visitors: 1240, pageviews: 3420, bounceRate: 35 },
+  { name: 'Tue', visitors: 1180, pageviews: 3200, bounceRate: 32 },
+  { name: 'Wed', visitors: 1420, pageviews: 4100, bounceRate: 28 },
+  { name: 'Thu', visitors: 1650, pageviews: 4650, bounceRate: 25 },
+  { name: 'Fri', visitors: 1890, pageviews: 5320, bounceRate: 22 },
+  { name: 'Sat', visitors: 980, pageviews: 2100, bounceRate: 45 },
+  { name: 'Sun', visitors: 720, pageviews: 1650, bounceRate: 52 }
+]
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'top',
-    },
-    title: {
-      display: false,
-      text: 'Stocked Area Chart',
-    },
-  },
-};
-
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      fill: true,
-    //   label: 'Dataset 2',
-    //   data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
-      data: labels.map(() => Math.floor(Math.random() * 100)),
-      borderColor: 'rgb(53, 162, 235)',
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    },
-  ],
-};
-
-function IndexGraph() {
-  return <Line options={options} data={data} />;
+const IndexGraph = () => {
+  return (
+    <div className="h-64">
+      <ResponsiveContainer width="100%" height="100%">
+        <AreaChart data={websiteTraffic}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <defs>
+            <linearGradient id="colorVisitors" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#3B82F6" stopOpacity={0.3} />
+              <stop offset="95%" stopColor="#3B82F6" stopOpacity={0} />
+            </linearGradient>
+          </defs>
+          <Area
+            type="monotone"
+            dataKey="visitors"
+            stroke="#3B82F6"
+            strokeWidth={2}
+            fillOpacity={1}
+            fill="url(#colorVisitors)"
+          />
+        </AreaChart>
+      </ResponsiveContainer>
+    </div>
+  )
 }
 
 export default IndexGraph;

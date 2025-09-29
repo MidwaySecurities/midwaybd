@@ -36,6 +36,7 @@
     "react-froala-wysiwyg": "^4.6.2",
     "react-share": "^5.2.2",
     "react-slick": "^0.30.3",
+    "recharts": "^3.2.1",
     "sharp": "^0.34.3",
     "slick-carousel": "^1.8.1",
     "tw-elements-react": "^1.0.0-alpha-end"

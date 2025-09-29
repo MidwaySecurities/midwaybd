@@ -78,6 +78,15 @@ export default async function Home({ searchParams }) {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <section className="bg-white py-6 shadow-sm">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl font-bold text-gray-800">Live Market Data</h2>
+            {/* <TimeDate /> */}
+          </div>
+          <Tickers />
+        </div>
+      </section>
       <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="lg:hidden relative px-4 py-12">
@@ -97,15 +106,7 @@ export default async function Home({ searchParams }) {
       {/* <NewsTicker /> */}
 
       {/* Market Tickers */}
-      <section className="bg-white py-6 shadow-sm">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-bold text-gray-800">Live Market Data</h2>
-            {/* <TimeDate /> */}
-          </div>
-          <Tickers />
-        </div>
-      </section>
+      
 
       {/* QuickTrade Pro Showcase */}
       <section className="py-16 lg:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
@@ -215,14 +216,6 @@ export default async function Home({ searchParams }) {
       {/* Account Opening Steps */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-              Start Trading in 3 Simple Steps
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Open your trading account quickly and securely with our streamlined process
-            </p>
-          </div>
           <AccountOpenningSteps />
         </div>
       </section>

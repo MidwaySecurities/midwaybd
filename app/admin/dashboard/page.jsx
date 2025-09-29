@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
+import {useRouter} from 'next/navigation'
 import { 
   Users, 
   FileText, 
@@ -130,7 +131,7 @@ const BrokerageDashboard = () => {
       {subtitle && <p className="text-xs text-gray-500 mt-1">{subtitle}</p>}
     </div>
   )
-
+  const router = useRouter()
   return (
     <div className="min-h-screen bg-gray-50 p-4 md:p-6">
       {/* Header */}
@@ -334,7 +335,9 @@ const BrokerageDashboard = () => {
                   <Filter className="w-4 h-4" />
                   Filter
                 </button>
-                <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-2">
+                <button onClick={() => {
+                  router.push('/blogs/create')
+                }} className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-2">
                   <Plus className="w-4 h-4" />
                   New Blog
                 </button>

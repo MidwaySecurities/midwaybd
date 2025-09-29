@@ -52,6 +52,7 @@ const EditorComponent = ({ placeholder }) => {
         console.log(blogs)
         if (blogs?.blogs?.length > 0) {
           const latest = blogs.blogs[0];
+          setContent(latest.content)
           console.log(latest)
           setRelatedSlug(latest.slug);
           setRelatedBlogId(latest._id);

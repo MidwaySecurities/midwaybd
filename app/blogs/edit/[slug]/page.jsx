@@ -1,13 +1,16 @@
 'use client'
 import dynamic from 'next/dynamic';
+import { useParams } from 'next/navigation';
 
 // Dynamically import the editor with SSR disabled
 const EditorComponent = dynamic(() => import('../../../components/EditBlog'), { ssr: false });
 
 export default function EditBlog() {
+  const params = useParams()
+  console.log(params)
   return (
     <main>
-      <EditorComponent placeholder="Edit your blog here..." />
+      <EditorComponent slug = {params.slug} placeholder="Edit your blog here..." />
     </main>
   );
 }

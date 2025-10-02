@@ -16,9 +16,9 @@ export async function GET(req, {params}){
 }
 
 export async function PUT(req, { params }) {
-  console.log('hello world')
   try {
     const formData = await req.formData();
+    console.log(formData.get('images'))
     const result = await updateBlog(params.slug, formData);
     if (result.error) {
       return NextResponse.json({ error: result.error }, { status: 400 });

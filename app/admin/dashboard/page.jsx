@@ -35,7 +35,8 @@ const BrokerageDashboard = () => {
   const [selectedPeriod, setSelectedPeriod] = useState('7D')
   const [currentTime, setCurrentTime] = useState('')
   const [activeTab, setActiveTab] = useState('overview')
-
+  const [blogs, setBlogs] = useState([])
+  const [blogsInfo, setBlogsInfo] = useState({ total: 0, page: 1, pages: 1 })
   // Website Analytics Data
   const websiteTraffic = [
     { name: 'Mon', visitors: 1240, pageviews: 3420, bounceRate: 35 },
@@ -57,18 +58,26 @@ const BrokerageDashboard = () => {
   ]
 
   const contentPerformance = [
-    { name: 'Blog Posts', published: 24, views: 45200, engagement: 4.2 },
+    { name: 'Blog Posts', published: blogsInfo.total, views: 45200, engagement: 4.2 },
     { name: 'Research Reports', published: 12, views: 18600, engagement: 6.8 },
     { name: 'News Articles', published: 156, views: 92400, engagement: 3.1 },
     { name: 'Video Content', published: 8, views: 12800, engagement: 5.9 }
   ]
 
-  const recentBlogs = [
-    { title: 'Market Outlook 2024: Key Sectors to Watch', author: 'John Smith', status: 'published', views: 2340, date: '2024-12-20' },
-    { title: 'IPO Analysis: Upcoming Opportunities', author: 'Sarah Johnson', status: 'draft', views: 0, date: '2024-12-19' },
-    { title: 'Dividend Investing Strategies', author: 'Mike Chen', status: 'published', views: 1890, date: '2024-12-18' },
-    { title: 'Technical Analysis Guide', author: 'Lisa Wang', status: 'review', views: 0, date: '2024-12-17' }
-  ]
+  // const recentBlogs = [
+  //   { title: 'Market Outlook 2024: Key Sectors to Watch', author: 'John Smith', status: 'published', views: 2340, date: '2024-12-20' },
+  //   { title: 'IPO Analysis: Upcoming Opportunities', author: 'Sarah Johnson', status: 'draft', views: 0, date: '2024-12-19' },
+  //   { title: 'Dividend Investing Strategies', author: 'Mike Chen', status: 'published', views: 1890, date: '2024-12-18' },
+  //   { title: 'Technical Analysis Guide', author: 'Lisa Wang', status: 'review', views: 0, date: '2024-12-17' }
+  // ]
+  const recentBlogs = blogs.map(blog => ({
+    title: blog.title,
+    type: blog.category || 'General',
+    author: blog.author || 'Admin',
+    status: blog.status || 'published',
+    views: blog.views || 0,
+    date: new Date(blog.createdAt).toLocaleDateString('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' })
+  }))
 
   const researchReports = [
     { title: 'Banking Sector Analysis Q4 2024', type: 'Sector Report', downloads: 456, rating: 4.8, date: '2024-12-20' },
@@ -111,6 +120,16 @@ const BrokerageDashboard = () => {
     return () => clearInterval(interval)
   }, [])
 
+  useEffect(() => {
+    async function fetchBlogs(){
+      const res = await fetch('/api/blogs')
+      const data = await res.json()
+      setBlogs(data.blogs || [])
+      setBlogsInfo(data.pagination || { total: 0, page: 1, pages: 1 })
+    }
+    fetchBlogs()
+  }, [])
+  console.log(blogs, blogsInfo)
   const StatCard = ({ title, value, change, icon: Icon, color = "blue", subtitle }) => (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
       <div className="flex items-center justify-between mb-4">

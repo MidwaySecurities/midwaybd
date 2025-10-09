@@ -1,10 +1,10 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import {useRouter} from 'next/navigation'
-import { 
-  Users, 
-  FileText, 
-  TrendingUp, 
+import { useRouter } from 'next/navigation'
+import {
+  Users,
+  FileText,
+  TrendingUp,
   Eye,
   MessageSquare,
   DollarSign,
@@ -16,6 +16,7 @@ import {
   BarChart3,
   PieChart,
   Globe,
+  Trash2,
   UserCheck,
   CreditCard,
   NewspaperIcon,
@@ -30,6 +31,7 @@ import {
   Search
 } from 'lucide-react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer, PieChart as RechartsPieChart, Cell, AreaChart, Area, BarChart, Bar } from 'recharts'
+import Link from 'next/link'
 
 const BrokerageDashboard = () => {
   const [selectedPeriod, setSelectedPeriod] = useState('7D')
@@ -37,6 +39,7 @@ const BrokerageDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview')
   const [blogs, setBlogs] = useState([])
   const [blogsInfo, setBlogsInfo] = useState({ total: 0, page: 1, pages: 1 })
+  const [isOpenDeleteBlog, setIsOpenDeleteBlog] = useState(false)
   // Website Analytics Data
   const websiteTraffic = [
     { name: 'Mon', visitors: 1240, pageviews: 3420, bounceRate: 35 },
@@ -71,10 +74,12 @@ const BrokerageDashboard = () => {
   //   { title: 'Technical Analysis Guide', author: 'Lisa Wang', status: 'review', views: 0, date: '2024-12-17' }
   // ]
   const recentBlogs = blogs.map(blog => ({
+    id: blog._id,
     title: blog.title,
     type: blog.category || 'General',
     author: blog.author || 'Admin',
     status: blog.status || 'published',
+    slug: blog.slug,
     views: blog.views || 0,
     date: new Date(blog.createdAt).toLocaleDateString('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' })
   }))
@@ -114,14 +119,14 @@ const BrokerageDashboard = () => {
         minute: '2-digit'
       }))
     }
-    
+
     updateTime()
     const interval = setInterval(updateTime, 60000)
     return () => clearInterval(interval)
   }, [])
 
   useEffect(() => {
-    async function fetchBlogs(){
+    async function fetchBlogs() {
       const res = await fetch('/api/blogs')
       const data = await res.json()
       setBlogs(data.blogs || [])
@@ -137,9 +142,8 @@ const BrokerageDashboard = () => {
           <Icon className={`w-6 h-6 text-${color}-600`} />
         </div>
         {change && (
-          <div className={`flex items-center gap-1 px-2 py-1 rounded-full text-sm font-medium ${
-            change >= 0 ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
-          }`}>
+          <div className={`flex items-center gap-1 px-2 py-1 rounded-full text-sm font-medium ${change >= 0 ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+            }`}>
             {change >= 0 ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
             {Math.abs(change)}%
           </div>
@@ -151,8 +155,47 @@ const BrokerageDashboard = () => {
     </div>
   )
   const router = useRouter()
+  const DeleteModal = () => {
+    if (!isOpenDeleteBlog) return null
+    return (
+      <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+        <div className="bg-white rounded-lg shadow-lg p-6 w-96">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">Confirm Deletion</h2>
+          <p className="text-gray-700 mb-6">Are you sure you want to delete this blog post? This action cannot be undone.</p>
+          <div className="flex justify-end gap-3">
+            <button onClick={() => setIsOpenDeleteBlog(false)} className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300">
+              Cancel
+            </button>
+            <button onClick={async () => {
+              try {
+                const res = await fetch(`/api/blogs/68da672c1f65b605b221a1e0`, {
+                  method: 'DELETE'
+                })
+                const data = await res.json()
+                if (data.error) {
+                  alert(`Error: ${data.error}`)
+                }
+                else {
+                  alert('Blog deleted successfully')
+                  setIsOpenDeleteBlog(false)
+                  // router.refresh()
+                  // Optionally, remove the deleted blog from state to update UI immediately
+                  setBlogs(blogs.filter(blog => blog._id !== isOpenDeleteBlog))
+                }
+              } catch (err) {
+                alert(`Error: ${err.message}`)
+              }
+            }} className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
   return (
     <div className="min-h-screen bg-gray-50 p-4 md:p-6">
+      <DeleteModal />
       {/* Header */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -190,11 +233,10 @@ const BrokerageDashboard = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-                activeTab === tab.id 
-                  ? 'bg-blue-100 text-blue-700 border border-blue-200' 
-                  : 'text-gray-600 hover:bg-gray-100'
-              }`}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${activeTab === tab.id
+                ? 'bg-blue-100 text-blue-700 border border-blue-200'
+                : 'text-gray-600 hover:bg-gray-100'
+                }`}
             >
               <tab.icon className="w-4 h-4" />
               {tab.label}
@@ -248,7 +290,7 @@ const BrokerageDashboard = () => {
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-semibold text-gray-900">Website Traffic</h3>
-                <select 
+                <select
                   value={selectedPeriod}
                   onChange={(e) => setSelectedPeriod(e.target.value)}
                   className="text-sm border border-gray-300 rounded-lg px-3 py-1"
@@ -266,8 +308,8 @@ const BrokerageDashboard = () => {
                     <YAxis />
                     <defs>
                       <linearGradient id="colorVisitors" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#3B82F6" stopOpacity={0.3}/>
-                        <stop offset="95%" stopColor="#3B82F6" stopOpacity={0}/>
+                        <stop offset="5%" stopColor="#3B82F6" stopOpacity={0.3} />
+                        <stop offset="95%" stopColor="#3B82F6" stopOpacity={0} />
                       </linearGradient>
                     </defs>
                     <Area
@@ -290,7 +332,7 @@ const BrokerageDashboard = () => {
                 {userSegments.map((segment) => (
                   <div key={segment.name} className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50">
                     <div className="flex items-center gap-3">
-                      <div 
+                      <div
                         className="w-4 h-4 rounded-full"
                         style={{ backgroundColor: segment.color }}
                       ></div>
@@ -299,9 +341,8 @@ const BrokerageDashboard = () => {
                         <p className="text-sm text-gray-500">{segment.count} users</p>
                       </div>
                     </div>
-                    <div className={`text-sm font-medium ${
-                      segment.growth >= 0 ? 'text-green-600' : 'text-red-600'
-                    }`}>
+                    <div className={`text-sm font-medium ${segment.growth >= 0 ? 'text-green-600' : 'text-red-600'
+                      }`}>
                       {segment.growth >= 0 ? '+' : ''}{segment.growth}%
                     </div>
                   </div>
@@ -380,19 +421,25 @@ const BrokerageDashboard = () => {
                       <td className="py-3 font-medium text-gray-900">{blog.title}</td>
                       <td className="py-3 text-gray-600">{blog.author}</td>
                       <td className="py-3">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          blog.status === 'published' ? 'bg-green-100 text-green-700' :
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${blog.status === 'published' ? 'bg-green-100 text-green-700' :
                           blog.status === 'draft' ? 'bg-yellow-100 text-yellow-700' :
-                          'bg-blue-100 text-blue-700'
-                        }`}>
+                            'bg-blue-100 text-blue-700'
+                          }`}>
                           {blog.status.toUpperCase()}
                         </span>
                       </td>
                       <td className="py-3 text-gray-900">{blog.views.toLocaleString()}</td>
                       <td className="py-3 text-gray-600">{blog.date}</td>
                       <td className="py-3">
-                        <button className="p-1 text-gray-400 hover:text-blue-600">
-                          <Edit className="w-4 h-4" />
+                        <Link href={`/blogs/edit/${blog.slug}`}>
+                          <button className="p-1 text-gray-400 hover:text-blue-600">
+                            <Edit className="w-4 h-4" />
+                          </button>
+                        </Link>
+                        <button onClick={() => {
+                          setIsOpenDeleteBlog(true)
+                        }} className="p-1 text-gray-400 hover:text-blue-600">
+                          <Trash2 className="w-4 h-4 ml-2 hover:text-red-600" />
                         </button>
                       </td>
                     </tr>

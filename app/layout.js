@@ -41,6 +41,7 @@ export default function RootLayout({ children }) {
             </DeviceDetectContextProvider>
           </BottomModalCloseProvider>
         </ModalCloseProvider>
+        <div id="delete-modal"></div>
       </body>
     </html>
   );

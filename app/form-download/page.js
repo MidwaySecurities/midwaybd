@@ -114,7 +114,7 @@ const FormDownload = () => {
       icon: Link2,
       color: 'green',
       forms: [
-        { name: 'DPA 6 (CDBL)', url: '/', popular: true }
+        { name: 'DPA 6 (CDBL)', url: '/forms/dpa6_share_holding_request_form.pdf', popular: true }
       ]
     },
     {
@@ -137,16 +137,6 @@ const FormDownload = () => {
       forms: [
         { name: 'IPO Membership Club Form', url: '/', popular: true },
         { name: 'IPO Application Form', url: '/' }
-      ]
-    },
-    {
-      id: 'dse-mobile',
-      title: 'DSE Mobile',
-      icon: Smartphone,
-      color: 'indigo',
-      forms: [
-        { name: 'DSE Mobile App Registration', url: '/' },
-        { name: 'DSE Mobile User Manual', url: '/', type: 'manual' }
       ]
     },
     {

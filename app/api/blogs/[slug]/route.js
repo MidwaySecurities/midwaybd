@@ -44,9 +44,9 @@ export async function DELETE(req, { params }) {
       return matches.map((m) => m.match(/src="([^">]+)"/)[1]);
     };
     const allImages = [blogCoverImage, ...blogImages, ...extractImgSrcs(blogContentImages)];
-    console.log(allImages)
+    console.log(allImages, allImages.length);
 
-    blogImages.forEach((imgPath) => {
+    allImages.forEach((imgPath) => {
       fs.unlink(path.join(process.cwd(), 'public', imgPath), (err) => {
         if (err) console.error(`Error deleting image: ${err.message}`);
         else console.log(`Deleted image: ${imgPath}`);

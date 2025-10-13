@@ -29,7 +29,7 @@ const MobileAppPage = () => {
     },
     {
       id: 'research',
-      title: 'Market Research',
+      title: 'Market Analysis',
       description: 'Access expert analysis, company reports, and market insights',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -74,11 +74,6 @@ const MobileAppPage = () => {
       title: 'News & Analysis',
       description: 'Real-time market news, earnings reports, and expert insights',
       icon: '📰'
-    },
-    {
-      title: 'Multi-Language',
-      description: 'Available in Bengali and English for your convenience',
-      icon: '🌐'
     }
   ]
 

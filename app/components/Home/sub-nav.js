@@ -306,7 +306,7 @@ const SubNav = () => {
                     className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-gray-300 hover:border-green-500 transition-all duration-200 shadow-sm"
                 >
                     <div className="w-5 h-5 bg-green-600 rounded-sm flex items-center justify-center">
-                        <span className="text-white text-xs font-bold">BD</span>
+                        <span className="text-red-500 text-xs font-bold">BD</span>
                     </div>
                     <span className="text-gray-700">বাংলা</span>
                 </Link>

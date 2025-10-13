@@ -38,6 +38,7 @@ const BrokerageDashboard = () => {
   const [currentTime, setCurrentTime] = useState('')
   const [activeTab, setActiveTab] = useState('overview')
   const [blogs, setBlogs] = useState([])
+  const [selectedBlogId, setSelectedBlogId] = useState(null)
   const [blogsInfo, setBlogsInfo] = useState({ total: 0, page: 1, pages: 1 })
   const [isOpenDeleteBlog, setIsOpenDeleteBlog] = useState(false)
   // Website Analytics Data
@@ -134,7 +135,6 @@ const BrokerageDashboard = () => {
     }
     fetchBlogs()
   }, [])
-  console.log(blogs, blogsInfo)
   const StatCard = ({ title, value, change, icon: Icon, color = "blue", subtitle }) => (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
       <div className="flex items-center justify-between mb-4">
@@ -168,7 +168,7 @@ const BrokerageDashboard = () => {
             </button>
             <button onClick={async () => {
               try {
-                const res = await fetch(`/api/blogs/68da672c1f65b605b221a1e0`, {
+                const res = await fetch(`/api/blogs/${selectedBlogId}`, {
                   method: 'DELETE'
                 })
                 const data = await res.json()
@@ -438,6 +438,7 @@ const BrokerageDashboard = () => {
                         </Link>
                         <button onClick={() => {
                           setIsOpenDeleteBlog(true)
+                          setSelectedBlogId(blog.id)
                         }} className="p-1 text-gray-400 hover:text-blue-600">
                           <Trash2 className="w-4 h-4 ml-2 hover:text-red-600" />
                         </button>

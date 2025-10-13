@@ -215,7 +215,7 @@ const BlogPage = async ({ params }) => {
             </div>
             
             <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-full transition-colors">
-              Subscribe to Newsletter
+              Open BO Account Now
             </button>
           </div>
         </div>

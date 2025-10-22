@@ -2,9 +2,8 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-
 export default function FAQClient({ faqData, categories }) {
-    const [activeCategory, setActiveCategory] = useState('getting-started')
+    const [activeCategory, setActiveCategory] = useState('started')
     const [openItems, setOpenItems] = useState({})
     const [searchTerm, setSearchTerm] = useState('')
 
@@ -97,7 +96,7 @@ export default function FAQClient({ faqData, categories }) {
                                 </Link>
 
                                 <Link
-                                    id={`${deviceWidth<1024?activeCategory:''}`}
+                                    id={`${deviceWidth < 1024 ? activeCategory : ''}`}
                                     href="/contact-us"
                                     className="flex items-center space-x-3 text-sm text-gray-600 hover:text-blue-600 transition-colors"
                                 >
@@ -116,7 +115,7 @@ export default function FAQClient({ faqData, categories }) {
                 <main className="lg:col-span-3">
                     <article className="bg-white rounded-2xl shadow-lg overflow-hidden">
                         {/* Category Header */}
-                        <div className="bg-gray-50 px-8 py-6 border-b border-gray-200 flex justify-between items-center">
+                        <div className="bg-gray-50 px-8 py-6 border-b border-gray-200 flex flex-col gap-4">
                             <div className="flex items-center space-x-3">
                                 <div className="text-blue-600">
                                     {categories.find(cat => cat.id === activeCategory)?.icon}
@@ -130,8 +129,10 @@ export default function FAQClient({ faqData, categories }) {
                                     </p>
                                 </div>
                             </div>
-                            <div className={deviceWidth<1024?"":"hidden"}>
-                                <Link href={'#categories'}>FAQ CATEGORIES</Link>
+                            <div className={deviceWidth < 1024 ? "block self-center" : "hidden"}>
+                                <Link href={'#categories'}>
+                                    <svg className='w-8 h-8 rotate-180' xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" style={{pointerEvents: 'none', display: 'inherit'}}><path d="M12 2a1 1 0 00-1 1v11.586l-4.293-4.293a1 1 0 10-1.414 1.414L12 18.414l6.707-6.707a1 1 0 10-1.414-1.414L13 14.586V3a1 1 0 00-1-1Zm7 18H5a1 1 0 000 2h14a1 1 0 000-2Z"></path></svg>
+                                </Link>
                             </div>
                         </div>
 

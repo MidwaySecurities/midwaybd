@@ -2,7 +2,7 @@
 
 export const categories = [
   {
-    id: 'getting-started',
+    id: 'started',
     name: 'Getting Started',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,7 +59,7 @@ export const categories = [
 ]
 
 export const faqData = {
-  'getting-started': [
+  'started': [
     {
       id: 'dep4',
       question: 'How do I withdraw funds from my account?',

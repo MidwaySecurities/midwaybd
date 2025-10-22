@@ -282,7 +282,7 @@ body {
 
 @media only screen and (min-width: 600px){
   .marquee div {
-    animation: marquee 10s linear infinite;
+    animation: marquee 17s linear infinite;
   }
 }
 @keyframes marquee {

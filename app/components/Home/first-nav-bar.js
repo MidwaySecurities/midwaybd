@@ -1,7 +1,18 @@
+'use client'
 import Link from "next/link";
 import Logo from "./logo";
 import style from './first-nav-bar.module.css'
+import { useEffect } from "react";
 const FirstNavBar = () => {
+    useEffect(() => {
+        fetch('http://midway-app.test/api/check-auth', {
+        method: 'GET',
+        credentials: 'include'
+    })
+        .then(res => res.json())
+        .then(data => console.log(data));
+        console.log('Auth check initiated');
+    }, [])
     return (
         <div className="flex justify-between items-center bg-[#9999a1] p-4 text-white">
             <Link className={`${style.logoZoom} flex items-center gap-2 font-bold text-gray-800 text-[14px]`} href={`/`}>

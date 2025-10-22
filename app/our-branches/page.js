@@ -80,29 +80,41 @@ const OurBranches = () => {
             mobile: [],
             coordinates: { lat: 23.8103, lng: 90.4125 },
             services: ["Account Opening", "Trading Support"]
-        }
-    ]
-
-    const digitalBooths = [
+        },
         {
             id: 7,
             name: "Kalapara Digital Booth",
-            type: "digital",
+            type: "branch",
             building: "Digital Service Center",
             room: "Ground Floor",
             address: "Main Road, Kalapara, Patuakhali",
             tel: ["41040008"],
             mobile: ["01711148727"],
-            coordinates: { lat: 21.8313, lng: 90.2265 },
+            coordinates: { lat: 21.985203260962965, lng: 90.23216196353128 },
             services: ["Digital Account Opening", "Online Support", "Document Verification"]
         }
     ]
 
-    const allLocations = [...branches, ...digitalBooths]
-    const filteredLocations = activeFilter === 'all' ? allLocations : 
-                             activeFilter === 'digital' ? digitalBooths :
-                             activeFilter === 'head' ? branches.filter(b => b.type === 'head') :
-                             branches.filter(b => b.type === 'branch')
+    // const digitalBooths = [
+    //     {
+    //         id: 7,
+    //         name: "Kalapara Digital Booth",
+    //         type: "digital",
+    //         building: "Digital Service Center",
+    //         room: "Ground Floor",
+    //         address: "Main Road, Kalapara, Patuakhali",
+    //         tel: ["41040008"],
+    //         mobile: ["01711148727"],
+    //         coordinates: { lat: 21.8313, lng: 90.2265 },
+    //         services: ["Digital Account Opening", "Online Support", "Document Verification"]
+    //     }
+    // ]
+
+    const allLocations = [...branches]
+    const filteredLocations = activeFilter === 'all' ? allLocations :
+        activeFilter === 'digital' ? digitalBooths :
+            activeFilter === 'head' ? branches.filter(b => b.type === 'head') :
+                branches.filter(b => b.type === 'branch')
 
     const handleCall = (number) => {
         window.open(`tel:${number}`, '_self')
@@ -151,24 +163,24 @@ const OurBranches = () => {
                 <title>Midway Securities Branch Locations | Stock Broker Offices in Bangladesh</title>
                 <meta name="description" content="Find Midway Securities branch locations across Bangladesh. Visit our head office in Motijheel, Dhaka or branches in Uttara, Comilla, Chowk Bazar. Get contact details and directions." />
                 <meta name="keywords" content="Midway Securities branches, stock broker offices Bangladesh, DSE member locations, trading office addresses, Motijheel head office, Uttara branch, Comilla branch" />
-                
+
                 {/* Open Graph */}
                 <meta property="og:title" content="Midway Securities Branch Locations | Stock Broker Offices in Bangladesh" />
                 <meta property="og:description" content="Find Midway Securities branch locations across Bangladesh. Get contact details and directions to our offices." />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://midwaybd.com/our-branches" />
                 <meta property="og:image" content="https://midwaybd.com/images/branches-og.jpg" />
-                
+
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Midway Securities Branch Locations" />
                 <meta name="twitter:description" content="Find our branch locations across Bangladesh with contact details and directions." />
-                
+
                 {/* SEO */}
                 <meta name="robots" content="index, follow" />
                 <meta name="author" content="Midway Securities Limited" />
                 <link rel="canonical" href="https://midwaybd.com/our-branches" />
-                
+
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -178,7 +190,7 @@ const OurBranches = () => {
             <div className="min-h-screen bg-gray-50">
                 {/* Hero Section */}
                 <header className="relative">
-                    <div 
+                    <div
                         className="bg-[url('https://www.midwaybd.com/uploads/6/0/4/6/60462737/background-images/358471256.jpg')] min-h-[400px] bg-cover bg-center relative"
                         role="img"
                         aria-label="Midway Securities office building"
@@ -196,9 +208,9 @@ const OurBranches = () => {
                                     <div className="bg-white bg-opacity-20 text-black backdrop-blur-sm rounded-full px-6 py-3">
                                         <span className="font-semibold">{branches.length} Branches Nationwide</span>
                                     </div>
-                                    <div className="bg-white bg-opacity-20 text-black backdrop-blur-sm rounded-full px-6 py-3">
+                                    {/* <div className="bg-white bg-opacity-20 text-black backdrop-blur-sm rounded-full px-6 py-3">
                                         <span className="font-semibold">{digitalBooths.length} Digital Service Centers</span>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>
@@ -224,16 +236,15 @@ const OurBranches = () => {
                                 { id: 'all', label: 'All Locations', count: allLocations.length },
                                 { id: 'head', label: 'Head Office', count: 1 },
                                 { id: 'branch', label: 'Branches', count: branches.length - 1 },
-                                { id: 'digital', label: 'Digital Booths', count: digitalBooths.length }
+                                // { id: 'digital', label: 'Digital Booths', count: digitalBooths.length }
                             ].map((tab) => (
                                 <button
                                     key={tab.id}
                                     onClick={() => setActiveFilter(tab.id)}
-                                    className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
-                                        activeFilter === tab.id
+                                    className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${activeFilter === tab.id
                                             ? 'bg-blue-600 text-white shadow-lg'
                                             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                                    }`}
+                                        }`}
                                 >
                                     {tab.label} ({tab.count})
                                 </button>
@@ -245,22 +256,21 @@ const OurBranches = () => {
                 {/* Main Content */}
                 <main className="max-w-6xl mx-auto px-4 py-8">
                     <div className="grid lg:grid-cols-3 gap-8">
-                        
+
                         {/* Branches List */}
                         <section className="lg:col-span-2">
                             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                                {activeFilter === 'all' ? 'All Locations' : 
-                                 activeFilter === 'head' ? 'Head Office' :
-                                 activeFilter === 'digital' ? 'Digital Service Centers' : 'Branch Locations'}
+                                {activeFilter === 'all' ? 'All Locations' :
+                                    activeFilter === 'head' ? 'Head Office' :
+                                        activeFilter === 'digital' ? 'Digital Service Centers' : 'Branch Locations'}
                             </h2>
-                            
+
                             <div className="space-y-6">
                                 {filteredLocations.map((location) => (
-                                    <article 
+                                    <article
                                         key={location.id}
-                                        className={`bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 ${
-                                            location.type === 'head' ? 'border-l-4 border-yellow-500' : ''
-                                        }`}
+                                        className={`bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 ${location.type === 'head' ? 'border-l-4 border-yellow-500' : ''
+                                            }`}
                                         itemScope
                                         itemType="https://schema.org/LocalBusiness"
                                     >
@@ -275,19 +285,19 @@ const OurBranches = () => {
                                                             HEAD OFFICE
                                                         </span>
                                                     )}
-                                                    {location.type === 'digital' && (
+                                                    {/* {location.type === 'digital' && (
                                                         <span className="ml-3 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">
                                                             DIGITAL BOOTH
                                                         </span>
-                                                    )}
+                                                    )} */}
                                                 </div>
-                                                
+
                                                 <div className="space-y-1 text-gray-700" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
                                                     <p><strong itemProp="name">{location.building}</strong> {location.room && `(${location.room})`}</p>
                                                     <p itemProp="streetAddress">{location.address}</p>
                                                 </div>
                                             </div>
-                                            
+
                                             <button
                                                 onClick={() => handleDirections(location.coordinates)}
                                                 className="mt-4 lg:mt-0 bg-blue-100 hover:bg-blue-200 text-blue-700 p-3 rounded-full transition-colors"
@@ -337,7 +347,7 @@ const OurBranches = () => {
                                                     ))}
                                                 </div>
                                             </div>
-                                            
+
                                             {/* Services */}
                                             <div>
                                                 <h4 className="font-semibold text-gray-800 mb-3">Available Services</h4>
@@ -372,7 +382,7 @@ const OurBranches = () => {
                                             <p className="text-sm text-gray-600">09609 100 142</p>
                                         </div>
                                     </Link>
-                                    
+
                                     <Link href="/contact-us" className="flex items-center p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors">
                                         <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mr-3">
                                             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -446,14 +456,14 @@ const OurBranches = () => {
                             <div>
                                 <h3 className="font-semibold text-gray-800 mb-2">Where is the head office located?</h3>
                                 <p className="text-gray-600 text-sm mb-4">Our head office is at Dhaka Stock Exchange Building, Room 508, 9/F Motijheel C/A, Dhaka 1000.</p>
-                                
+
                                 <h3 className="font-semibold text-gray-800 mb-2">What services are available at branches?</h3>
                                 <p className="text-gray-600 text-sm">All branches offer account opening, trading support, and customer service. Select locations provide investment advisory.</p>
                             </div>
                             <div>
                                 <h3 className="font-semibold text-gray-800 mb-2">How many branches do you have?</h3>
                                 <p className="text-gray-600 text-sm mb-4">We have {branches.length} branches across Bangladesh plus digital service centers.</p>
-                                
+
                                 <h3 className="font-semibold text-gray-800 mb-2">What are the operating hours?</h3>
                                 <p className="text-gray-600 text-sm">Most branches operate Sunday-Thursday 9:00 AM - 5:00 PM. Closed on weekends.</p>
                             </div>

@@ -265,14 +265,14 @@ const FormDownload = () => {
             {filteredCategories.map((category) => (
               <div key={category.id} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 {/* Category Header */}
-                <div className={`bg-gradient-to-r from-${category.color}-600 to-${category.color}-700 p-6`}>
+                <div className={`bg-[#004990]/90 from-${category.color}-600 to-${category.color}-700 p-6`}>
                   <div className="flex items-center gap-3 text-white">
                     <div className={`p-3 bg-white/20 rounded-lg backdrop-blur-sm`}>
                       <category.icon className="w-6 h-6" />
                     </div>
                     <div>
                       <h2 className="text-2xl font-bold">{category.title}</h2>
-                      <p className="text-white/80">{category.forms.length} form{category.forms.length !== 1 ? 's' : ''} available</p>
+                      <p className="text-white">{category.forms.length} form{category.forms.length !== 1 ? 's' : ''} available</p>
                     </div>
                   </div>
                 </div>

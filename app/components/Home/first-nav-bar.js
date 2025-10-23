@@ -5,7 +5,7 @@ import style from './first-nav-bar.module.css'
 import { useEffect } from "react";
 const FirstNavBar = () => {
     useEffect(() => {
-        fetch('http://midway-app.test/api/check-auth', {
+        fetch('https://portal.midwaybd.com/api/check-auth', {
         method: 'GET',
         credentials: 'include'
     })

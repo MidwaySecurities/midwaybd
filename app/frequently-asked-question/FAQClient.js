@@ -9,7 +9,6 @@ export default function FAQClient({ faqData, categories }) {
 
     // need to know the device width to handle scroll into view for smaller devices
     const deviceWidth = typeof window !== 'undefined' ? window.innerWidth : 1024
-    console.log('Device Width:', deviceWidth)
 
     const toggleItem = (id) => {
         setOpenItems(prev => ({
@@ -47,28 +46,53 @@ export default function FAQClient({ faqData, categories }) {
                     <nav className="bg-white rounded-2xl shadow-lg p-6 sticky top-8">
                         <h2 className="text-lg font-semibold text-gray-800 mb-6">Categories</h2>
                         <div className="space-y-2">
-                            {categories.map((category) => (
-                                <Link href={`#${category.id}`} key={category.id}>
-                                    <button
-                                        onClick={() => {
-                                            setActiveCategory(category.id)
-                                            setSearchTerm('')
-                                        }}
+                            {categories.map((category) => {
+                                if (deviceWidth < 1024) {
+                                    return (
+                                        <Link href={`#${category.id}`} key={category.id}>
+                                            <button
+                                                onClick={() => {
+                                                    setActiveCategory(category.id)
+                                                    setSearchTerm('')
+                                                }}
 
-                                        className={`w-full flex items-center space-x-3 p-3 rounded-xl transition-all duration-200 text-left ${activeCategory === category.id
-                                            ? 'bg-blue-100 text-blue-700 font-medium'
-                                            : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
-                                            }`}
-                                    >
-                                        <div className={`${activeCategory === category.id ? 'text-blue-600' : 'text-gray-500'}`}>
-                                            {category.icon}
-                                        </div>
-                                        <span className="text-sm">{category.name}</span>
-                                        <div className={`ml-auto w-2 h-2 rounded-full ${activeCategory === category.id ? 'bg-blue-600' : ''
-                                            }`}></div>
-                                    </button>
-                                </Link>
-                            ))}
+                                                className={`w-full flex items-center space-x-3 p-3 rounded-xl transition-all duration-200 text-left ${activeCategory === category.id
+                                                    ? 'bg-blue-100 text-blue-700 font-medium'
+                                                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                                                    }`}
+                                            >
+                                                <div className={`${activeCategory === category.id ? 'text-blue-600' : 'text-gray-500'}`}>
+                                                    {category.icon}
+                                                </div>
+                                                <span className="text-sm">{category.name}</span>
+                                                <div className={`ml-auto w-2 h-2 rounded-full ${activeCategory === category.id ? 'bg-blue-600' : ''
+                                                    }`}></div>
+                                            </button>
+                                        </Link>
+                                    )
+                                } else {
+                                    return (
+                                        <button
+                                            onClick={() => {
+                                                setActiveCategory(category.id)
+                                                setSearchTerm('')
+                                            }}
+
+                                            className={`w-full flex items-center space-x-3 p-3 rounded-xl transition-all duration-200 text-left ${activeCategory === category.id
+                                                ? 'bg-blue-100 text-blue-700 font-medium'
+                                                : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                                                }`}
+                                        >
+                                            <div className={`${activeCategory === category.id ? 'text-blue-600' : 'text-gray-500'}`}>
+                                                {category.icon}
+                                            </div>
+                                            <span className="text-sm">{category.name}</span>
+                                            <div className={`ml-auto w-2 h-2 rounded-full ${activeCategory === category.id ? 'bg-blue-600' : ''
+                                                }`}></div>
+                                        </button>
+                                    )
+                                }
+                            })}
                         </div>
 
                         {/* Contact Support */}
@@ -131,7 +155,7 @@ export default function FAQClient({ faqData, categories }) {
                             </div>
                             <div className={deviceWidth < 1024 ? "block self-center" : "hidden"}>
                                 <Link href={'#categories'}>
-                                    <svg className='w-8 h-8 rotate-180' xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" style={{pointerEvents: 'none', display: 'inherit'}}><path d="M12 2a1 1 0 00-1 1v11.586l-4.293-4.293a1 1 0 10-1.414 1.414L12 18.414l6.707-6.707a1 1 0 10-1.414-1.414L13 14.586V3a1 1 0 00-1-1Zm7 18H5a1 1 0 000 2h14a1 1 0 000-2Z"></path></svg>
+                                    <svg className='w-8 h-8 rotate-180' xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" style={{ pointerEvents: 'none', display: 'inherit' }}><path d="M12 2a1 1 0 00-1 1v11.586l-4.293-4.293a1 1 0 10-1.414 1.414L12 18.414l6.707-6.707a1 1 0 10-1.414-1.414L13 14.586V3a1 1 0 00-1-1Zm7 18H5a1 1 0 000 2h14a1 1 0 000-2Z"></path></svg>
                                 </Link>
                             </div>
                         </div>

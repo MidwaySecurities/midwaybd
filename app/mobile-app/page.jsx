@@ -48,7 +48,8 @@ const MobileAppPage = () => {
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-5 5v-5zM9 7h3a2 2 0 012 2v11a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a2 2 0 012-2h.01M14 7V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h7" />
         </svg>
-      )
+      ),
+      image: '/images/qtp/smart_alert.jpeg'
     }
   ]
 
@@ -138,7 +139,7 @@ const MobileAppPage = () => {
 
               {/* Download Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="#" className="group">
+                <Link href="https://play.google.com/store/apps/details?id=com.midwaybd.quick_trade_pro&hl=en" className="group">
                   <div className="bg-black hover:bg-gray-800 transition-all duration-300 rounded-2xl p-4 flex items-center space-x-4 transform group-hover:scale-105">
                     <div className="w-12 h-12 p-1">
                       <svg viewBox="30 336.7 120.9 129.2" class="w-full h-full"><path fill="#FFD400" d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7  c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z"></path><path fill="#FF3333" d="M99.1,401.1l-64.2,64.7c1.5,0.2,3.2-0.2,5.2-1.3  c4.2-2.3,48.8-26.7,79.1-43.3L99.1,401.1L99.1,401.1z"></path><path fill="#48FF48" d="M99.1,401.1l20.1-20.2c0,0-74.6-40.7-79.1-43.1  c-1.7-1-3.6-1.3-5.3-1L99.1,401.1z"></path><path fill="#3BCCFF" d="M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6  c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z"></path></svg>
@@ -150,7 +151,7 @@ const MobileAppPage = () => {
                   </div>
                 </Link>
 
-                <Link href="#" className="group">
+                <Link href="https://apps.apple.com/us/app/quicktrade-pro/id6740322022" className="group">
                   <div className="bg-black hover:bg-gray-800 transition-all duration-300 rounded-2xl p-4 flex items-center space-x-4 transform group-hover:scale-105">
                     <div className="w-12 h-12">
                       <svg viewBox="0 0 24 24" className="w-full h-full text-white">
@@ -435,7 +436,7 @@ const MobileAppPage = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <Link href="#" className="group">
+            <Link href="https://play.google.com/store/apps/details?id=com.midwaybd.quick_trade_pro&hl=en" className="group">
               <div className="bg-white hover:bg-gray-100 text-gray-900 transition-all duration-300 rounded-2xl p-4 flex items-center space-x-4 transform group-hover:scale-105">
                 <div className="w-12 h-12 p-1">
                   <svg viewBox="30 336.7 120.9 129.2" class="w-full h-full"><path fill="#FFD400" d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7  c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z"></path><path fill="#FF3333" d="M99.1,401.1l-64.2,64.7c1.5,0.2,3.2-0.2,5.2-1.3  c4.2-2.3,48.8-26.7,79.1-43.3L99.1,401.1L99.1,401.1z"></path><path fill="#48FF48" d="M99.1,401.1l20.1-20.2c0,0-74.6-40.7-79.1-43.1  c-1.7-1-3.6-1.3-5.3-1L99.1,401.1z"></path><path fill="#3BCCFF" d="M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6  c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z"></path></svg>
@@ -447,7 +448,7 @@ const MobileAppPage = () => {
               </div>
             </Link>
 
-            <Link href="#" className="group">
+            <Link href="https://apps.apple.com/us/app/quicktrade-pro/id6740322022" className="group">
               <div className="bg-white hover:bg-gray-100 text-gray-900 transition-all duration-300 rounded-2xl p-4 flex items-center space-x-4 transform group-hover:scale-105">
                 <div className="w-12 h-12">
                   <svg viewBox="0 0 24 24" className="w-full h-full">

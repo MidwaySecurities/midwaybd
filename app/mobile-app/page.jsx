@@ -15,7 +15,8 @@ const MobileAppPage = () => {
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
         </svg>
-      )
+      ),
+      image: '/images/qtp/trading-tab.jpg'
     },
     {
       id: 'portfolio',
@@ -25,7 +26,8 @@ const MobileAppPage = () => {
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
         </svg>
-      )
+      ),
+      image: '/images/qtp/portfolio_management-tab.jpg'
     },
     {
       id: 'research',
@@ -35,7 +37,8 @@ const MobileAppPage = () => {
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
         </svg>
-      )
+      ),
+      image: '/images/qtp/research-tab.jpg'
     },
     {
       id: 'alerts',
@@ -102,7 +105,7 @@ const MobileAppPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      
+
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden relative">
         <div className="absolute inset-0">
@@ -110,10 +113,10 @@ const MobileAppPage = () => {
           <div className="absolute top-40 right-10 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
           <div className="absolute -bottom-32 left-20 w-80 h-80 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-500"></div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            
+
             {/* Content */}
             <div className="space-y-8">
               <div className="space-y-6">
@@ -121,26 +124,24 @@ const MobileAppPage = () => {
                   <span className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></span>
                   Now Available on Mobile
                 </div>
-                
+
                 <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
                   QuickTrade Pro
                   <span className="block text-yellow-400">Mobile App</span>
                 </h1>
-                
+
                 <p className="text-xl text-blue-100 leading-relaxed max-w-lg">
-                  Trade stocks on-the-go with Bangladesh's most advanced mobile trading platform. 
+                  Trade stocks on-the-go with Bangladesh's most advanced mobile trading platform.
                   Real-time data, instant execution, and professional tools in your pocket.
                 </p>
               </div>
-              
+
               {/* Download Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="#" className="group">
                   <div className="bg-black hover:bg-gray-800 transition-all duration-300 rounded-2xl p-4 flex items-center space-x-4 transform group-hover:scale-105">
-                    <div className="w-12 h-12">
-                      <svg viewBox="0 0 24 24" className="w-full h-full text-white">
-                        <path fill="currentColor" d="M17.523 15.3414c-.4906-.8136-1.0455-1.5618-1.6637-2.2345-.6181-.6726-1.2994-1.2698-2.0438-1.7916-.7443-.5217-1.5515-.9682-2.4217-1.3394-.8701-.3712-1.8029-.6271-2.7985-.7676v-1.824h-1.2V9.237c-.9956.1405-1.9284.3964-2.7985.7676-.8702.3712-1.6774.8177-2.4217 1.3394-.7444.5218-1.4257 1.119-2.0438 1.7916-.6182.6727-1.1731 1.4209-1.6637 2.2345L12 21.35l11.523-6.0086z"/>
-                      </svg>
+                    <div className="w-12 h-12 p-1">
+                      <svg viewBox="30 336.7 120.9 129.2" class="w-full h-full"><path fill="#FFD400" d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7  c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z"></path><path fill="#FF3333" d="M99.1,401.1l-64.2,64.7c1.5,0.2,3.2-0.2,5.2-1.3  c4.2-2.3,48.8-26.7,79.1-43.3L99.1,401.1L99.1,401.1z"></path><path fill="#48FF48" d="M99.1,401.1l20.1-20.2c0,0-74.6-40.7-79.1-43.1  c-1.7-1-3.6-1.3-5.3-1L99.1,401.1z"></path><path fill="#3BCCFF" d="M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6  c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z"></path></svg>
                     </div>
                     <div className="text-left">
                       <div className="text-xs text-gray-300">Download on the</div>
@@ -148,12 +149,12 @@ const MobileAppPage = () => {
                     </div>
                   </div>
                 </Link>
-                
+
                 <Link href="#" className="group">
                   <div className="bg-black hover:bg-gray-800 transition-all duration-300 rounded-2xl p-4 flex items-center space-x-4 transform group-hover:scale-105">
                     <div className="w-12 h-12">
                       <svg viewBox="0 0 24 24" className="w-full h-full text-white">
-                        <path fill="currentColor" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        <path fill="currentColor" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
                       </svg>
                     </div>
                     <div className="text-left">
@@ -163,7 +164,7 @@ const MobileAppPage = () => {
                   </div>
                 </Link>
               </div>
-              
+
               {/* Stats */}
               <div className="grid grid-cols-3 gap-8 pt-8">
                 <div className="text-center">
@@ -180,7 +181,7 @@ const MobileAppPage = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* App Mockup */}
             <div className="relative">
               <div className="relative z-10 flex justify-center">
@@ -189,7 +190,7 @@ const MobileAppPage = () => {
                     <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative">
                       {/* Phone mockup content */}
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col">
-                        <div className="flex-1 p-6 space-y-4">
+                        {/* <div className="flex-1 p-6 space-y-4">
                           <div className="flex items-center justify-between">
                             <div className="w-20 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                               <span className="text-white text-xs font-bold">QTP</span>
@@ -223,7 +224,8 @@ const MobileAppPage = () => {
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </div> */}
+                        <img src={`/images/qtp/portfolio.png`} />
                       </div>
                     </div>
                   </div>
@@ -242,40 +244,36 @@ const MobileAppPage = () => {
               Everything You Need to Trade Smart
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              QuickTrade Pro brings the power of professional trading to your mobile device with 
+              QuickTrade Pro brings the power of professional trading to your mobile device with
               cutting-edge features and intuitive design.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            
+
             {/* Feature Tabs */}
             <div className="space-y-6">
               {features.map((feature) => (
                 <button
                   key={feature.id}
                   onClick={() => setActiveFeature(feature.id)}
-                  className={`w-full text-left p-6 rounded-2xl border-2 transition-all duration-300 ${
-                    activeFeature === feature.id
-                      ? 'border-blue-500 bg-blue-50 shadow-lg'
-                      : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
-                  }`}
+                  className={`w-full text-left p-6 rounded-2xl border-2 transition-all duration-300 ${activeFeature === feature.id
+                    ? 'border-blue-500 bg-blue-50 shadow-lg'
+                    : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                    }`}
                 >
                   <div className="flex items-start space-x-4">
-                    <div className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center ${
-                      activeFeature === feature.id ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-600'
-                    }`}>
+                    <div className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center ${activeFeature === feature.id ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-600'
+                      }`}>
                       {feature.icon}
                     </div>
                     <div>
-                      <h3 className={`text-xl font-bold mb-2 ${
-                        activeFeature === feature.id ? 'text-blue-900' : 'text-gray-900'
-                      }`}>
+                      <h3 className={`text-xl font-bold mb-2 ${activeFeature === feature.id ? 'text-blue-900' : 'text-gray-900'
+                        }`}>
                         {feature.title}
                       </h3>
-                      <p className={`${
-                        activeFeature === feature.id ? 'text-blue-700' : 'text-gray-600'
-                      }`}>
+                      <p className={`${activeFeature === feature.id ? 'text-blue-700' : 'text-gray-600'
+                        }`}>
                         {feature.description}
                       </p>
                     </div>
@@ -286,9 +284,11 @@ const MobileAppPage = () => {
 
             {/* Feature Visual */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl p-8 shadow-xl">
-                <div className="aspect-square bg-white rounded-2xl flex items-center justify-center">
-                  <div className="text-center">
+              <div className="bg-gradient-to-br from-gray-400 to-gray-300 rounded-3xl p-8 shadow-xl">
+                <div style={{
+                  backgroundImage: `url(${features.find(f => f.id === activeFeature)?.image})`
+                }} className={`aspect-square bg-white rounded-2xl flex items-center justify-center bg-cover bg-top`}>
+                  {/* <div className="text-center">
                     <div className="w-24 h-24 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                       {features.find(f => f.id === activeFeature)?.icon}
                     </div>
@@ -298,7 +298,8 @@ const MobileAppPage = () => {
                     <p className="text-gray-600">
                       {features.find(f => f.id === activeFeature)?.description}
                     </p>
-                  </div>
+                  </div> */}
+                  {/* <img src={features.find(f => f.id === activeFeature)?.image} className="w-full h-full object-cover rounded-2xl" /> */}
                 </div>
               </div>
             </div>
@@ -429,17 +430,15 @@ const MobileAppPage = () => {
             Start Trading Today
           </h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Download QuickTrade Pro and join thousands of successful traders who trust 
+            Download QuickTrade Pro and join thousands of successful traders who trust
             Midway Securities for their investment journey.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
             <Link href="#" className="group">
               <div className="bg-white hover:bg-gray-100 text-gray-900 transition-all duration-300 rounded-2xl p-4 flex items-center space-x-4 transform group-hover:scale-105">
-                <div className="w-12 h-12">
-                  <svg viewBox="0 0 24 24" className="w-full h-full">
-                    <path fill="currentColor" d="M17.523 15.3414c-.4906-.8136-1.0455-1.5618-1.6637-2.2345-.6181-.6726-1.2994-1.2698-2.0438-1.7916-.7443-.5217-1.5515-.9682-2.4217-1.3394-.8701-.3712-1.8029-.6271-2.7985-.7676v-1.824h-1.2V9.237c-.9956.1405-1.9284.3964-2.7985.7676-.8702.3712-1.6774.8177-2.4217 1.3394-.7444.5218-1.4257 1.119-2.0438 1.7916-.6182.6727-1.1731 1.4209-1.6637 2.2345L12 21.35l11.523-6.0086z"/>
-                  </svg>
+                <div className="w-12 h-12 p-1">
+                  <svg viewBox="30 336.7 120.9 129.2" class="w-full h-full"><path fill="#FFD400" d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7  c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z"></path><path fill="#FF3333" d="M99.1,401.1l-64.2,64.7c1.5,0.2,3.2-0.2,5.2-1.3  c4.2-2.3,48.8-26.7,79.1-43.3L99.1,401.1L99.1,401.1z"></path><path fill="#48FF48" d="M99.1,401.1l20.1-20.2c0,0-74.6-40.7-79.1-43.1  c-1.7-1-3.6-1.3-5.3-1L99.1,401.1z"></path><path fill="#3BCCFF" d="M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6  c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z"></path></svg>
                 </div>
                 <div className="text-left">
                   <div className="text-xs text-gray-600">Download on</div>
@@ -447,12 +446,12 @@ const MobileAppPage = () => {
                 </div>
               </div>
             </Link>
-            
+
             <Link href="#" className="group">
               <div className="bg-white hover:bg-gray-100 text-gray-900 transition-all duration-300 rounded-2xl p-4 flex items-center space-x-4 transform group-hover:scale-105">
                 <div className="w-12 h-12">
                   <svg viewBox="0 0 24 24" className="w-full h-full">
-                    <path fill="currentColor" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                    <path fill="currentColor" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
                   </svg>
                 </div>
                 <div className="text-left">
@@ -498,7 +497,7 @@ const MobileAppPage = () => {
                 <p>Storage: 50MB free space</p>
               </div>
             </div>
-            
+
             <div>
               <h3 className="font-semibold text-gray-900 mb-4">Support</h3>
               <div className="space-y-2 text-sm text-gray-600">
@@ -507,7 +506,7 @@ const MobileAppPage = () => {
                 <p>Live Chat: Available 24/7</p>
               </div>
             </div>
-            
+
             <div>
               <h3 className="font-semibold text-gray-900 mb-4">Legal</h3>
               <div className="space-y-2 text-sm">
@@ -517,7 +516,7 @@ const MobileAppPage = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="border-t border-gray-200 mt-8 pt-8 text-center text-sm text-gray-600">
             <p>&copy; 2024 Midway Securities Limited. All rights reserved. Licensed by BSEC.</p>
           </div>

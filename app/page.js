@@ -29,8 +29,8 @@ import style from "./components/tickers.module.css";
 import NewsTicker from "./components/newsTicker";
 
 export default async function Home({ searchParams }) {
-  const data = await getABlog(`what-is-drib-quantity-and-its-benefits`);
-
+  const data = await getABlog(`get-your-dividend-statement-using-our-midway-portal`);
+  console.log(data);
   // ✅ Safe News fetch with fallback
   let newsData = { news: [] };
   try {

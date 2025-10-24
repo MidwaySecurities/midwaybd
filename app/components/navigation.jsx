@@ -38,7 +38,7 @@ const NavigationBar = () => {
             <div>
                 <FirstNavBar />
             </div>
-            <div className="sticky top-0 z-50">
+            <div className="sticky top-0 z-[9]">
                 <SubNav />
             </div>
         </>

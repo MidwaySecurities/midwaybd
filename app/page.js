@@ -81,7 +81,7 @@ export default async function Home({ searchParams }) {
       <section className="bg-white py-6 shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-bold text-gray-800">Live Market Data</h2>
+            <h2 className="text-xl font-bold text-gray-800 z-[9]">Live Market Data</h2>
             {/* <TimeDate /> */}
           </div>
           <Tickers />

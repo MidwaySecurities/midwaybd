@@ -272,7 +272,7 @@ const SubNav = () => {
     }
 
     return (
-        <div className="bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
+        <div className="bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200 z-[9]">
             <div className="flex items-center gap-3 p-4 overflow-x-auto">
                 {navItems.map((item) => (
                     item.external ? (

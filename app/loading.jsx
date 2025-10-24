@@ -1,6 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { TrendingUp } from 'lucide-react'
+import Image from 'next/image'
+import Logo from './components/Home/logo'
 
 const SimpleLoader = () => {
   const [progress, setProgress] = useState(0)
@@ -20,12 +22,13 @@ const SimpleLoader = () => {
   }, [])
 
   return (
-    <div className="fixed inset-0 bg-white flex items-center justify-center">
+    <div className="fixed inset-0 bg-white flex items-center justify-center z-10">
       {/* Simple centered content */}
       <div className="text-center">
         {/* Logo */}
-        <div className="w-16 h-16 mx-auto mb-6 bg-blue-600 rounded-xl flex items-center justify-center">
-          <TrendingUp className="w-8 h-8 text-white" />
+        <div className="mx-auto mb-6 rounded-xl flex items-center justify-center">
+          {/* <TrendingUp className="w-8 h-8 text-white" /> */}
+          <Logo width = {40} height={40} />
         </div>
 
         {/* Company Name */}

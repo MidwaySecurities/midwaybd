@@ -96,7 +96,7 @@ const SmoothTickerClient = ({ tickerData, hasError }) => {
     return (
         <div className='marquee w-full'>
             <div className='flex gap-2'>{tripleData?.length>0&&tripleData.map(item => {
-                return <span className='inline-block px-2'>{item.MKISTAT_INSTRUMENT_CODE}</span>
+                return <span key={item.MKISTAT_INSTRUMENT_CODE} className='inline-block px-2'>{item.MKISTAT_INSTRUMENT_CODE}</span>
             })}</div>
         </div>
     );

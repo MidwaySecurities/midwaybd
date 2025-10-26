@@ -31,7 +31,6 @@ import NewsTicker from "./components/newsTicker";
 export default async function Home({ searchParams }) {
   const data = await getABlog(`get-your-dividend-statement-using-our-midway-portal`);
   console.log(data);
-  // ✅ Safe News fetch with fallback
   let newsData = { news: [] };
   try {
     const news = await fetch(`https://midwaybd.vercel.app/api/news`, {
@@ -201,7 +200,7 @@ export default async function Home({ searchParams }) {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-blue-900 to-indigo-900 text-white">
+      <section className="py-16 lg:py-24 bg-gradient-to-br from-blue-900 to-indigo-900 text-white md:hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">Our Services</h2>

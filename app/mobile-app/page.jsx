@@ -184,7 +184,7 @@ const MobileAppPage = () => {
             </div>
 
             {/* App Mockup */}
-            <div className="relative">
+            <div className="relative z-0">
               <div className="relative z-10 flex justify-center">
                 <div className="relative">
                   <div className="w-80 h-[600px] bg-gray-900 rounded-[3rem] p-2 shadow-2xl">

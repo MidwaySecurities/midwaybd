@@ -19,39 +19,111 @@ const DseDsexChart = () => {
         const res = await fetch('/api/dsex')
         const data = await res.json()
 
-        // Convert time string to timestamp and visitors to value
+        // Format API data
         const formattedData = data.map((d) => ({
           timestamp: new Date(d.time).getTime(),
           value: d.value,
         }))
 
-        setDsexData(formattedData)
+        // Cutoff from 9:59 AM (today)
+        const now = new Date()
+        const cutoff = new Date(
+          now.getFullYear(),
+          now.getMonth(),
+          now.getDate(),
+          9,
+          59,
+          0
+        ).getTime()
+
+        // Filter out earlier data
+        const filteredData = formattedData.filter((d) => d.timestamp >= cutoff)
+
+        setDsexData(filteredData)
       } catch (err) {
         console.error(err)
       }
     }
+
     fetchDSEX()
   }, [])
+
   if (!dsexData.length) return <p>Loading DSEX data...</p>
 
   const yMin = Math.min(...dsexData.map((d) => d.value)) * 0.999
   const yMax = Math.max(...dsexData.map((d) => d.value)) * 1.001
 
+  // Calculate X-axis domain: start at 9:59, end at last data point
+  const firstTimestamp = new Date()
+  firstTimestamp.setHours(9, 59, 0, 0)
+  const startDomain = firstTimestamp.getTime()
+  const endDomain = Math.max(...dsexData.map((d) => d.timestamp))
+
+  const generateFiveMinuteTicks = (start, end) => {
+    const ticks = []
+    const interval = 5 * 60 * 1000 // 5 minutes in ms
+    let current = start
+
+    // Round up to the next 5-minute mark (e.g., 9:59 → 10:00)
+    const remainder = current % interval
+    if (remainder !== 0) {
+      current += interval - remainder
+    }
+
+    while (current <= end) {
+      ticks.push(current)
+      current += interval
+    }
+
+    return ticks
+  }
+
+  const step = 5;
+
+  // Start at one step below the floored value to ensure it covers first data point
+  const yStart = Math.floor(dsexData[0].value / step) * step - step; // 5125 - 5 = 5120
+
+  // End at the nearest upper multiple of 5
+  const yEnd = Math.ceil(Math.max(...dsexData.map(d => d.value)) / step) * step;
+
+  // Generate ticks
+  const generateYAxisTicks = (start, end, step = 5) => {
+    const ticks = []
+    for (let i = start; i <= end; i += step) {
+      ticks.push(i)
+    }
+    return ticks
+  }
+
   return (
     <div className="h-64">
       <ResponsiveContainer width="100%" height="100%">
-        <AreaChart data={dsexData} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
+        <AreaChart
+          data={dsexData}
+          margin={{ top: 10, right: 20, left: 0, bottom: 0 }}
+        >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis
             dataKey="timestamp"
             type="number"
-            domain={['auto', 'auto']}
+            domain={[startDomain, endDomain]}
+            ticks={generateFiveMinuteTicks(startDomain, endDomain)}
             tickFormatter={(ts) => {
               const d = new Date(ts)
-              return `${d.getHours()}:${d.getMinutes().toString().padStart(2, '0')}`
+              const h = d.getHours()
+              const m = d.getMinutes().toString().padStart(2, '0')
+              return `${h}:${m}`
             }}
           />
-          <YAxis domain={[Math.ceil(yMin), Math.ceil(yMax)]} />
+          <YAxis
+            domain={[yStart, yEnd]}
+            ticks={generateYAxisTicks(yStart, yEnd, step)}
+            interval={0}
+            allowDecimals={false}
+            tickFormatter={(v) => v.toLocaleString()}
+          />
+
+
           <Tooltip
             labelFormatter={(ts) => new Date(ts).toLocaleTimeString()}
             formatter={(value) => [value, 'DSEX']}

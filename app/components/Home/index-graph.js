@@ -80,13 +80,15 @@ const DseDsexChart = () => {
 
   const step = 5;
 
-  // Start at one step below the floored value to ensure it covers first data point
-  const yStart = Math.floor(dsexData[0].value / step) * step - step; // 5125 - 5 = 5120
+  // Find min and max from your data
+  const minValue = Math.min(...dsexData.map(d => d.value))
+  const maxValue = Math.max(...dsexData.map(d => d.value))
 
-  // End at the nearest upper multiple of 5
-  const yEnd = Math.ceil(Math.max(...dsexData.map(d => d.value)) / step) * step;
+  // Start Y-axis a bit below the first value
+  const yStart = Math.floor(minValue / step) * step - step  // leaves 1-step room below
+  const yEnd = Math.ceil(maxValue / step) * step            // top aligned
 
-  // Generate ticks
+  // Generate ticks array
   const generateYAxisTicks = (start, end, step = 5) => {
     const ticks = []
     for (let i = start; i <= end; i += step) {
@@ -118,8 +120,8 @@ const DseDsexChart = () => {
           <YAxis
             domain={[yStart, yEnd]}
             ticks={generateYAxisTicks(yStart, yEnd, step)}
-            interval={0}
-            allowDecimals={false}
+            interval={0}          // ensures all ticks show
+            allowDecimals={false} // no decimal ticks
             tickFormatter={(v) => v.toLocaleString()}
           />
 

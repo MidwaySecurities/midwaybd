@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
               <BlogTabProvider>
                 <NavigationBar />
                 {children}
-                <div className="section-gap px-2 bg-white py-1 font-bold">
+                <div className="section-gap bg-white font-bold">
                   <Footer />
                 </div>
               </BlogTabProvider>

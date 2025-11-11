@@ -18,6 +18,7 @@ const OurBranches = () => {
             address: "9/F, Motijheel C/A, Dhaka 1000",
             tel: ["9559925", "9576291", "9551960"],
             mobile: ["01874444816"],
+            link:'https://maps.app.goo.gl/CejsjTizDFiYTRne8',
             coordinates: { lat: 23.7332, lng: 90.4203 },
             services: ["Account Opening", "Trading Support", "Investment Advisory", "Corporate Services"]
         },
@@ -30,11 +31,23 @@ const OurBranches = () => {
             address: "9/I, Motijheel C/A, Dhaka 1000",
             tel: ["47115806", "47115761", "47115318"],
             mobile: ["01845222333", "01874444815"],
+            link:'https://maps.app.goo.gl/3EfzNxo9LjRqS72Q8',
             coordinates: { lat: 23.7331, lng: 90.4199 },
             services: ["Account Opening", "Trading Support", "Customer Service"]
         },
         {
             id: 3,
+            name: "Gulshan Branch",
+            type: "branch",
+            building: "Jabbar Tower",
+            room: "9th Floor, Plot-42, Road-135 Gulshan Avenue",
+            address: "Gulshan-1, Dhaka-1212",
+            tel: ["58815077", "58815078"],
+            mobile: ["01841778806", "01841778807"],
+            link: 'https://maps.app.goo.gl/ybF7DHFnz6pNeQcF7',
+        },
+        {
+            id: 4,
             name: "Uttara Branch",
             type: "branch",
             building: "HM Plaza",
@@ -42,11 +55,12 @@ const OurBranches = () => {
             address: "Sector 3, Uttara, Dhaka 1230",
             tel: [],
             mobile: ["01971227340", "01715325978"],
+            link: 'https://maps.app.goo.gl/QeCuCQAQFhZTQ42J8',
             coordinates: { lat: 23.8759, lng: 90.3795 },
             services: ["Account Opening", "Trading Support", "Investment Advisory"]
         },
         {
-            id: 4,
+            id: 5,
             name: "Chowk Bazar Branch",
             type: "branch",
             building: "Shahjahan Imam Tower",
@@ -54,11 +68,12 @@ const OurBranches = () => {
             address: "Chawkbazar, Dhaka-1211",
             tel: ["7342560", "7342561"],
             mobile: ["01857777529", "01823416181"],
+            link: 'https://maps.app.goo.gl/V9HxeuESvzKhujVa9',
             coordinates: { lat: 23.7104, lng: 90.4074 },
             services: ["Account Opening", "Trading Support", "Customer Service"]
         },
         {
-            id: 5,
+            id: 6,
             name: "COMILLA BRANCH",
             type: "branch",
             building: "Makka Tower",
@@ -66,11 +81,12 @@ const OurBranches = () => {
             address: "AK Fazlul Haq Rd, Rajgong, Comilla 3500",
             tel: ["+8802334400508", "+8802334400509"],
             mobile: ["01711148727"],
+            link: 'https://maps.app.goo.gl/FLvBNGfNyQem2H6JA',
             coordinates: { lat: 23.4607, lng: 91.1809 },
             services: ["Account Opening", "Trading Support", "Investment Advisory"]
         },
         {
-            id: 6,
+            id: 7,
             name: "NiKunjA 2 Branch",
             type: "branch",
             building: "DSE TOWER",
@@ -78,11 +94,12 @@ const OurBranches = () => {
             address: "Plot 46, Road 21, Nikunja 2, Level 11",
             tel: ["41040008", "41040009"],
             mobile: [],
+            link: 'https://maps.app.goo.gl/JouBCqzRK38NezC66',
             coordinates: { lat: 23.8103, lng: 90.4125 },
             services: ["Account Opening", "Trading Support"]
         },
         {
-            id: 7,
+            id: 8,
             name: "Kalapara Digital Booth",
             type: "branch",
             building: "Digital Service Center",
@@ -90,6 +107,7 @@ const OurBranches = () => {
             address: "Main Road, Kalapara, Patuakhali",
             tel: ["41040008"],
             mobile: ["01711148727"],
+            link: 'https://maps.app.goo.gl/LzyoZrtrFRCTDW6t8',
             coordinates: { lat: 21.985203260962965, lng: 90.23216196353128 },
             services: ["Digital Account Opening", "Online Support", "Document Verification"]
         }
@@ -149,11 +167,11 @@ const OurBranches = () => {
             },
             "telephone": location.tel.concat(location.mobile),
             "openingHours": "Mo-Th 09:00-17:00",
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": location.coordinates.lat,
-                "longitude": location.coordinates.lng
-            }
+            // "geo": {
+            //     "@type": "GeoCoordinates",
+            //     "latitude": location.coordinates.lat,
+            //     "longitude": location.coordinates.lng
+            // }
         }))
     }
 
@@ -298,8 +316,9 @@ const OurBranches = () => {
                                                 </div>
                                             </div>
 
-                                            <button
-                                                onClick={() => handleDirections(location.coordinates)}
+                                            <a href = {location.link} target='_blank' rel='noopener noreferrer'>
+                                                <button
+                                                // onClick={() => handleDirections(location.coordinates)}
                                                 className="mt-4 lg:mt-0 bg-blue-100 hover:bg-blue-200 text-blue-700 p-3 rounded-full transition-colors"
                                                 title={`Get directions to ${location.name}`}
                                             >
@@ -307,6 +326,7 @@ const OurBranches = () => {
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                                 </svg>
                                             </button>
+                                            </a>
                                         </div>
 
                                         <div className="grid md:grid-cols-2 gap-6">
@@ -350,14 +370,14 @@ const OurBranches = () => {
 
                                             {/* Services */}
                                             <div>
-                                                <h4 className="font-semibold text-gray-800 mb-3">Available Services</h4>
-                                                <div className="flex flex-wrap gap-2">
+                                                {/* <h4 className="font-semibold text-gray-800 mb-3">Available Services</h4> */}
+                                                {/* <div className="flex flex-wrap gap-2">
                                                     {location.services.map((service, index) => (
                                                         <span key={index} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">
                                                             {service}
                                                         </span>
                                                     ))}
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                     </article>

@@ -282,6 +282,7 @@
 // export default AccountOpenningSteps;
 
 
+import Link from 'next/link';
 import React from 'react';
 
 const AccountOpeningSteps = () => {
@@ -389,7 +390,7 @@ const AccountOpeningSteps = () => {
                         <CardContent />
                     </div>
                 )}
-                
+
                 {/* Mobile Connecting Line */}
                 {!isLast && (
                     <div className="lg:hidden flex justify-center mt-8 mb-8">
@@ -405,7 +406,7 @@ const AccountOpeningSteps = () => {
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium text-sm mb-6">
+                    <div className="inline-flex items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium text-sm mb-6 text-xl">
                         <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
                         Simple Process
                     </div>
@@ -469,9 +470,11 @@ const AccountOpeningSteps = () => {
                             >
                                 Open Account Now
                             </a>
-                            <button className="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 font-bold px-8 py-4 rounded-full transition-all duration-300 hover:bg-blue-50">
-                                Contact Support
-                            </button>
+                            <Link href="/contact-us">
+                                <button className="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 font-bold px-8 py-4 rounded-full transition-all duration-300 hover:bg-blue-50">
+                                    Contact Support
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

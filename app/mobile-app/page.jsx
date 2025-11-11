@@ -167,7 +167,7 @@ const MobileAppPage = () => {
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-8 pt-8">
+              {/* <div className="grid grid-cols-3 gap-8 pt-8">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-yellow-400">50K+</div>
                   <div className="text-blue-200 text-sm">Downloads</div>
@@ -180,7 +180,7 @@ const MobileAppPage = () => {
                   <div className="text-3xl font-bold text-yellow-400">99.9%</div>
                   <div className="text-blue-200 text-sm">Uptime</div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* App Mockup */}

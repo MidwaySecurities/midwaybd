@@ -137,20 +137,20 @@ const ContactUs = () => {
     },
     {
       icon: Headphones,
-      title: 'IPO Hotline',
+      title: 'Hotline',
       details: '09609 100 142',
       color: 'text-orange-600'
     }
   ]
 
   const branches = [
-    { name: 'Head Office', location: 'Motijheel', type: 'main' },
-    { name: 'Swantex Branch', location: 'Motijheel', type: 'branch' },
-    { name: 'DSE Tower', location: 'Nikunja 2', type: 'branch' },
-    { name: 'Jabbar Tower', location: 'Gulshan', type: 'branch' },
-    { name: 'Chowk Bazar Office', location: 'Chowk Bazar', type: 'branch' },
-    { name: 'HM Plaza', location: 'Uttara', type: 'branch' },
-    { name: 'Comilla Office', location: 'Comilla', type: 'branch' }
+    { name: 'Head Office', location: 'Motijheel', type: 'main', link:'https://maps.app.goo.gl/CejsjTizDFiYTRne8' },
+    { name: 'Swantex Branch', location: 'Motijheel', type: 'branch', link:'https://maps.app.goo.gl/3EfzNxo9LjRqS72Q8' },
+    { name: 'DSE Tower', location: 'Nikunja 2', type: 'branch', link: 'https://maps.app.goo.gl/JouBCqzRK38NezC66' },
+    { name: 'Jabbar Tower', location: 'Gulshan', type: 'branch', link: 'https://maps.app.goo.gl/ybF7DHFnz6pNeQcF7' },
+    { name: 'Chowk Bazar Office', location: 'Chowk Bazar', type: 'branch', link: 'https://maps.app.goo.gl/V9HxeuESvzKhujVa9' },
+    { name: 'HM Plaza', location: 'Uttara', type: 'branch', link: 'https://maps.app.goo.gl/QeCuCQAQFhZTQ42J8', },
+    { name: 'Comilla Office', location: 'Comilla', type: 'branch', link: 'https://maps.app.goo.gl/FLvBNGfNyQem2H6JA' }
   ]
 
   return (
@@ -334,9 +334,11 @@ const ContactUs = () => {
 
               <div className="space-y-4">
                 {branches.map((branch, index) => (
-                  <Link
+                  <a
                     key={index}
-                    href="/our-branches"
+                    href={branch.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center justify-between p-4 rounded-lg border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-200 group"
                   >
                     <div className="flex items-center gap-3">
@@ -351,7 +353,7 @@ const ContactUs = () => {
                       </div>
                     </div>
                     <MapPin className="w-4 h-4 text-gray-400 group-hover:text-blue-600" />
-                  </Link>
+                  </a>
                 ))}
               </div>
             </div>
@@ -384,7 +386,7 @@ const ContactUs = () => {
                     <Phone className="w-5 h-5 text-green-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">DSE Mobile App Support</h4>
+                    <h4 className="font-semibold text-gray-900">Mobile App Support</h4>
                     <p className="text-sm text-gray-600">09609 100 142, +88 01874444816</p>
                   </div>
                 </div>

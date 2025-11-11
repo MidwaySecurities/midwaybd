@@ -105,7 +105,7 @@ export default async function Home({ searchParams }) {
       {/* <NewsTicker /> */}
 
       {/* Market Tickers */}
-      
+
 
       {/* QuickTrade Pro Showcase */}
       <section className="py-16 lg:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
@@ -309,12 +309,16 @@ export default async function Home({ searchParams }) {
               Join thousands of successful traders who trust Midway Securities for their investment needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Open Trading Account
-              </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-bold px-8 py-4 rounded-full transition-all duration-300">
-                Contact Us
-              </button>
+              <a href='https://portal.midwaybd.com/bo/portal-login' target='_blank' rel='noopener noreferrer'>
+                <button className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  Open Trading Account
+                </button>
+              </a>
+              <Link href="/contact-us">
+                <button className="bg-white hover:bg-gray-100 text-blue-600 font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  Contact Us
+                </button>
+              </Link>
             </div>
           </div>
         </div>

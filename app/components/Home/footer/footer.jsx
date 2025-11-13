@@ -168,7 +168,7 @@ const Footer = () => {
       <div className='border-t border-slate-700 bg-slate-900/50'>
         <div className='max-w-7xl mx-auto px-6 py-6'>
           <div className='flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400'>
-            <p>&copy; {new Date().getFullYear()} Midway Securities Ltd. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Midway Securities Ltd. All rights reserved. Licensed by BSEC.</p>
             <div className='flex gap-6'>
               <a href="#" className='hover:text-white transition-colors duration-200'>Privacy Policy</a>
               <a href="#" className='hover:text-white transition-colors duration-200'>Terms & Conditions</a>

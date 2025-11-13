@@ -1,14 +1,16 @@
 import { TrendingUp, Shield, Zap, Clock, ArrowRight, Bell, Users, Wallet } from 'lucide-react'
 import IpoTab from './components/ipoTab'
+import NagadLogo from './logoComponents/Nagad'
+import RocketLogo from './logoComponents/Rocket'
 
 
 
 
 export default function IPOApplicationPage() {
     const paymentMethods = [
-        { name: 'bKash', icon: '📱', fee: '1%', color: 'from-pink-100 to-rose-100 border-pink-300' },
-        { name: 'Nagad', icon: '💳', fee: '1%', color: 'from-orange-100 to-amber-100 border-orange-300' },
-        { name: 'Rocket', icon: '🚀', fee: '1%', color: 'from-purple-100 to-violet-100 border-purple-300' },
+        { name: 'bKash', icon: <svg xmlns="http://www.w3.org/2000/svg" height="800" width="1200" viewBox="-6.6741 -11.07275 57.8422 66.4365"><g fill="none"><path fill="#DF146E" d="M42.31 44.291H2.182C.981 44.291 0 43.308 0 42.107V2.186C0 .982.981 0 2.182 0H42.31c1.203 0 2.184.982 2.184 2.186v39.921c0 1.201-.981 2.184-2.184 2.184"/><path fill="#FFF" d="M31.894 24.251l-14.107-2.246 1.909 8.329zm.572-.682L21.374 8.16l-3.623 13.106zm-15.402-2.482L5.441 6.239l15.221 1.819zm-5.639-6.154l-6.449-6.08h1.695zm24.504 1.15L33.2 23.486l-4.426-6.118zM21.417 30.232l10.71-4.3.454-1.365zm-8.933 7.821l4.589-16.102 2.326 10.479zm24.099-21.914l-1.128 3.056 4.059-.07z"/></g></svg>, fee: '1%', color: 'from-pink-100 to-rose-100 border-pink-300' },
+        { name: 'Nagad', icon: <NagadLogo /> , fee: '1%', color: 'from-orange-100 to-amber-100 border-orange-300' },
+        { name: 'Rocket', icon: <RocketLogo />, fee: '1%', color: 'from-purple-100 to-violet-100 border-purple-300' },
         { name: 'Bank Transfer', icon: '🏦', fee: 'Free', color: 'from-blue-100 to-cyan-100 border-blue-300' }
     ]
 
@@ -90,7 +92,7 @@ export default function IPOApplicationPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {paymentMethods.map((method, index) => (
                         <div key={index} className="group p-6 bg-white border border-slate-200 rounded-2xl hover:border-blue-300 hover:shadow-lg transition-all duration-300 cursor-pointer">
-                            <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} border flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform shadow-md`}>
+                            <div className={`w-16 h-16 p-2 rounded-2xl bg-gradient-to-br flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform`}>
                                 {method.icon}
                             </div>
                             <h3 className="text-xl font-bold text-slate-800 mb-2">{method.name}</h3>
@@ -134,13 +136,6 @@ export default function IPOApplicationPage() {
                 </div>
             </div>
 
-            {/* Footer Info */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t border-slate-200">
-                <div className="text-center text-slate-600 text-sm">
-                    <p>© 2025 Midway Securities Limited. All rights reserved.</p>
-                    <p className="mt-2">Licensed by Bangladesh Securities and Exchange Commission (BSEC)</p>
-                </div>
-            </div>
         </div>
     )
 }

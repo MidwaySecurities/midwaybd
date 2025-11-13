@@ -126,7 +126,7 @@ const MobileAppPage = () => {
                   Now Available on Mobile
                 </div>
 
-                <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+                <h1 style={{ fontFamily: 'Mokoto' }} className="text-5xl lg:text-6xl font-bold leading-tight">
                   QuickTrade Pro
                   <span className="block text-yellow-400">Mobile App</span>
                 </h1>
@@ -516,10 +516,6 @@ const MobileAppPage = () => {
                 <Link href="/user-agreement" className="text-blue-600 hover:underline block">User Agreement</Link>
               </div>
             </div>
-          </div>
-
-          <div className="border-t border-gray-200 mt-8 pt-8 text-center text-sm text-gray-600">
-            <p>&copy; 2024 Midway Securities Limited. All rights reserved. Licensed by BSEC.</p>
           </div>
         </div>
       </div>

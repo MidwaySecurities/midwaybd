@@ -301,3 +301,12 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+@font-face {
+  font-family: 'Mokoto';
+  src: url('../public/fonts/mokoto-mokoto-regular-400.ttf') format('truetype');
+  font-weight: normal;
+  /* Adjust if you have bold/italic variations */
+  font-style: normal;
+  /* Adjust if you have bold/italic variations */
+}

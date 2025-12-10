@@ -1,0 +1,352 @@
+{
+  "date": "December 8, 2025",
+  "indices": {
+    "dsex": {
+      "value": 4906.29,
+      "change": 33.65,
+      "changePercent": 0.69,
+      "high": 4925.83,
+      "low": 4874.75,
+      "open": 4872.64,
+      "previousClose": 4872.64
+    },
+    "dses": {
+      "value": 1027.53,
+      "change": 6.63,
+      "changePercent": 0.65
+    },
+    "ds30": {
+      "value": 1892.95,
+      "change": 6.83,
+      "changePercent": 0.36
+    }
+  },
+  "technicalLevels": {
+    "dma20": 4959.80,
+    "dma50": 5128.30,
+    "dma200": 5120.60,
+    "rsi14": 45.20,
+    "support": 4702.69,
+    "resistance": 5197.27,
+    "week52High": 5636.15,
+    "week52Low": 4615.41
+  },
+  "ytdPerformance": {
+    "startValue": 5218.16,
+    "currentValue": 4906.29,
+    "returnPercent": -5.98
+  },
+  "marketSummary": {
+    "totalVolume": 135257653,
+    "totalValueMn": 3646.50,
+    "issuesAdvanced": 287,
+    "issuesDeclined": 53,
+    "issuesUnchanged": 51
+  },
+  "marketBreadth": {
+    "gainers": {
+      "count": 275,
+      "percent": 72.4
+    },
+    "losers": {
+      "count": 55,
+      "percent": 14.5
+    },
+    "unchanged": {
+      "count": 50,
+      "percent": 13.2
+    },
+    "advanceDeclineRatio": 5.00
+  },
+  "categoryBreadth": [
+    {
+      "category": "A",
+      "gainers": 140,
+      "losers": 20,
+      "unchanged": 0,
+      "turnoverMn": 2097.52
+    },
+    {
+      "category": "B",
+      "gainers": 68,
+      "losers": 7,
+      "unchanged": 0,
+      "turnoverMn": 1215.13
+    },
+    {
+      "category": "Z",
+      "gainers": 61,
+      "losers": 19,
+      "unchanged": 0,
+      "turnoverMn": 161.73
+    }
+  ],
+  "circuitBreakers": {
+    "upper": [
+      {
+        "symbol": "RAHIMAFOOD",
+        "close": 138.60,
+        "change": 10.00
+      },
+      {
+        "symbol": "ZEALBANGLA",
+        "close": 159.80,
+        "change": 9.98
+      }
+    ],
+    "lower": []
+  },
+  "volumeSpikes": {
+    "totalCount": 106,
+    "top5": [
+      {
+        "symbol": "TAKAFULINS",
+        "spike": 845.1,
+        "close": 34.20,
+        "change": -1.74
+      },
+      {
+        "symbol": "ORYZAAGRO",
+        "spike": 596.9,
+        "close": 7.80,
+        "change": 5.48
+      },
+      {
+        "symbol": "CRAFTSMAN",
+        "spike": 168.0,
+        "close": 26.50,
+        "change": -7.89
+      },
+      {
+        "symbol": "MASTERAGRO",
+        "spike": 114.7,
+        "close": 4.20,
+        "change": 0.00
+      },
+      {
+        "symbol": "APEXWEAV",
+        "spike": 42.0,
+        "close": 5.10,
+        "change": 0.00
+      }
+    ]
+  },
+  "sectorPerformance": [
+    {
+      "sector": "Pharma & Chemicals",
+      "valueMn": 707.15,
+      "percent": 20.29
+    },
+    {
+      "sector": "Textile",
+      "valueMn": 545.85,
+      "percent": 15.66
+    },
+    {
+      "sector": "Engineering",
+      "valueMn": 386.79,
+      "percent": 11.10
+    },
+    {
+      "sector": "Food and Allied",
+      "valueMn": 378.35,
+      "percent": 10.85
+    },
+    {
+      "sector": "Fuel and Power",
+      "valueMn": 299.73,
+      "percent": 8.60
+    }
+  ],
+  "topGainers": [
+    {
+      "symbol": "RAHIMAFOOD",
+      "close": 138.60,
+      "change": 10.00
+    },
+    {
+      "symbol": "ZEALBANGLA",
+      "close": 159.80,
+      "change": 9.98
+    },
+    {
+      "symbol": "MEGHNAPET",
+      "close": 22.40,
+      "change": 9.80
+    },
+    {
+      "symbol": "INTECH",
+      "close": 28.20,
+      "change": 9.73
+    },
+    {
+      "symbol": "HIMADRI",
+      "close": 680.00,
+      "change": 8.78
+    }
+  ],
+  "topLosers": [
+    {
+      "symbol": "WONDERTOYS",
+      "close": 17.60,
+      "change": -9.74
+    },
+    {
+      "symbol": "FASFIN",
+      "close": 0.74,
+      "change": -8.64
+    },
+    {
+      "symbol": "FAMILYTEX",
+      "close": 1.10,
+      "change": -8.33
+    },
+    {
+      "symbol": "CRAFTSMAN",
+      "close": 26.50,
+      "change": -7.89
+    },
+    {
+      "symbol": "BDTHAIFOOD",
+      "close": 15.20,
+      "change": -7.32
+    }
+  ],
+  "topValue": [
+    {
+      "symbol": "ORIONINFU",
+      "valueMn": 232.78,
+      "close": 391.50,
+      "change": 3.41
+    },
+    {
+      "symbol": "ASIATICCLAB",
+      "valueMn": 196.69,
+      "close": 54.60,
+      "change": 8.12
+    },
+    {
+      "symbol": "SIMTEX",
+      "valueMn": 196.53,
+      "close": 24.00,
+      "change": 0.84
+    },
+    {
+      "symbol": "KBPPWBIL",
+      "valueMn": 134.97,
+      "close": 53.80,
+      "change": -2.00
+    },
+    {
+      "symbol": "DOMINAGE",
+      "valueMn": 117.00,
+      "close": 26.80,
+      "change": 2.29
+    },
+    {
+      "symbol": "ACMEPL",
+      "valueMn": 115.93,
+      "close": 17.90,
+      "change": 4.68
+    },
+    {
+      "symbol": "BDTHAIFOOD",
+      "valueMn": 115.75,
+      "close": 15.20,
+      "change": -7.32
+    },
+    {
+      "symbol": "MONNOFABR",
+      "valueMn": 77.40,
+      "close": 21.00,
+      "change": 4.48
+    },
+    {
+      "symbol": "FINEFOODS",
+      "valueMn": 68.61,
+      "close": 341.70,
+      "change": 1.21
+    },
+    {
+      "symbol": "MPETROLEUM",
+      "valueMn": 64.19,
+      "close": 210.00,
+      "change": -1.13
+    }
+  ],
+  "blockMarket": {
+    "summary": {
+      "totalTrades": 56,
+      "totalScrips": 22,
+      "totalValueMn": 125.26
+    },
+    "top5": [
+      {
+        "symbol": "FINEFOODS",
+        "quantity": 135020,
+        "price": 330.00,
+        "valueMn": 44.53
+      },
+      {
+        "symbol": "DOMINAGE",
+        "quantity": 664902,
+        "price": 25.24,
+        "valueMn": 16.79
+      },
+      {
+        "symbol": "ASIATICCLAB",
+        "quantity": 387990,
+        "price": 50.50,
+        "valueMn": 19.74
+      },
+      {
+        "symbol": "SHYAMPSUG",
+        "quantity": 39686,
+        "price": 192.10,
+        "valueMn": 7.69
+      },
+      {
+        "symbol": "SIMTEX",
+        "quantity": 244111,
+        "price": 25.59,
+        "valueMn": 6.25
+      }
+    ]
+  },
+  "intraday": [
+    { "time": "10:00", "value": 4900 },
+    { "time": "10:05", "value": 4915 },
+    { "time": "10:10", "value": 4928 },
+    { "time": "10:15", "value": 4925 },
+    { "time": "10:20", "value": 4918 },
+    { "time": "10:25", "value": 4920 },
+    { "time": "10:30", "value": 4926 },
+    { "time": "10:35", "value": 4925 },
+    { "time": "10:40", "value": 4923 },
+    { "time": "10:45", "value": 4926 },
+    { "time": "10:50", "value": 4924 },
+    { "time": "10:55", "value": 4922 },
+    { "time": "11:00", "value": 4921 },
+    { "time": "11:10", "value": 4922 },
+    { "time": "11:20", "value": 4923 },
+    { "time": "11:30", "value": 4924 },
+    { "time": "11:40", "value": 4923 },
+    { "time": "11:50", "value": 4922 },
+    { "time": "12:00", "value": 4920 },
+    { "time": "12:10", "value": 4918 },
+    { "time": "12:20", "value": 4915 },
+    { "time": "12:30", "value": 4912 },
+    { "time": "12:40", "value": 4910 },
+    { "time": "12:50", "value": 4907 },
+    { "time": "13:00", "value": 4905 },
+    { "time": "13:10", "value": 4903 },
+    { "time": "13:20", "value": 4901 },
+    { "time": "13:30", "value": 4900 },
+    { "time": "13:40", "value": 4903 },
+    { "time": "13:50", "value": 4907 },
+    { "time": "14:00", "value": 4912 },
+    { "time": "14:10", "value": 4910 },
+    { "time": "14:20", "value": 4908 },
+    { "time": "14:30", "value": 4906.29 }
+  ]
+}

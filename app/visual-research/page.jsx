@@ -4,12 +4,12 @@
 ================================================================================
   Version: 1.9
   Client: Midway Securities Ltd.
-  Report Date: December 8, 2025
+  Report Date: December 10, 2025
   
-  MARKET DATA: End of Day - December 8, 2025
+  MARKET DATA: End of Day - December 10, 2025
   
-  STRONG REVERSAL: Broke 4-session losing streak with conviction
-  Both breadth AND volume surged - institutions returned
+  FAILED BREAKOUT: Bull trap at 5,000 resistance
+  Distribution day with breadth collapse
 
 ================================================================================
 */
@@ -24,27 +24,27 @@ import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer, Tooltip, ReferenceL
 
 const DAILY_DATA = {
   
-  date: 'December 8, 2025',
+  date: 'December 10, 2025',
   
   indices: {
     dsex: {
-      value: 4906.29,
-      change: 33.65,
-      changePercent: 0.69,
-      high: 4925.83,
-      low: 4874.75,
-      open: 4872.64,
-      previousClose: 4872.64,
+      value: 4941.84,
+      change: -21.06,
+      changePercent: -0.42,
+      high: 4994.54,
+      low: 4941.84,
+      open: 4962.90,
+      previousClose: 4962.90,
     },
     dses: {
-      value: 1027.53,
-      change: 6.63,
-      changePercent: 0.65,
+      value: 1031.73,
+      change: -7.50,
+      changePercent: -0.72,
     },
     ds30: {
-      value: 1892.95,
-      change: 6.83,
-      changePercent: 0.36,
+      value: 1899.10,
+      change: -8.67,
+      changePercent: -0.45,
     },
   },
   
@@ -52,8 +52,8 @@ const DAILY_DATA = {
     dma20: 4959.80,
     dma50: 5128.30,
     dma200: 5120.60,
-    rsi14: 45.20,
-    support: 4702.69,
+    rsi14: 52.10,
+    support: 4872.64,
     resistance: 5197.27,
     week52High: 5636.15,
     week52Low: 4615.41,
@@ -61,13 +61,11 @@ const DAILY_DATA = {
   
   ytdPerformance: {
     startValue: 5218.16,
-    currentValue: 4906.29,
-    returnPercent: -5.98,
+    currentValue: 4941.84,
+    returnPercent: -5.30,
   },
   
   historicalData: [
-    { date: 'Oct 30', value: 5122.22 },
-    { date: 'Nov 2', value: 5115.88 },
     { date: 'Nov 3', value: 5061.01 },
     { date: 'Nov 4', value: 5019.07 },
     { date: 'Nov 5', value: 4986.89 },
@@ -94,37 +92,38 @@ const DAILY_DATA = {
     { date: 'Dec 4', value: 4886.57 },
     { date: 'Dec 7', value: 4872.64 },
     { date: 'Dec 8', value: 4906.29 },
+    { date: 'Dec 9', value: 4962.90 },
+    { date: 'Dec 10', value: 4941.84 },
   ],
   
   marketSummary: {
-    totalVolume: 135257653,
-    totalValueMn: 3646.50,
-    issuesAdvanced: 287,
-    issuesDeclined: 53,
-    issuesUnchanged: 51,
+    totalVolume: 170335930,
+    totalValueMn: 5339.07,
+    issuesAdvanced: 114,
+    issuesDeclined: 227,
+    issuesUnchanged: 53,
   },
   
   marketBreadth: {
-    gainers: { count: 275, percent: 72.4 },
-    losers: { count: 55, percent: 14.5 },
+    gainers: { count: 105, percent: 27.6 },
+    losers: { count: 221, percent: 58.2 },
     unchanged: { count: 50, percent: 13.2 },
     commentary: {
-      en: "Market breadth exploded to its strongest reading in weeks. Gainers surged from 28.4% (Sunday) to 72.4% while losers collapsed from 52.6% to 14.5%. The A/D ratio skyrocketed from 0.54:1 to 5.00:1 (275 advancing vs 55 declining) - a decisive shift from bearish to bullish territory. All categories participated: Category A showed 140 gainers vs 20 losers (7:1 ratio), Category B had 68 gainers vs 7 losers (9.7:1 ratio), and even Category Z turned bullish with 61 gainers vs 19 losers (3.2:1 ratio). Circuit breakers reflected the strength: 2 upper circuits (RAHIMAFOOD +10%, ZEALBANGLA +9.98%) and zero lower circuits. Critically, this breadth explosion came with strong volume confirmation - turnover surged 36.3% to BDT 3,646M and volume jumped 34.4% to 135.3M. This is the opposite of Sunday's low-volume bounce. Institutions returned, and retail followed. This is conviction buying.",
-      bn: "Market breadth সপ্তাহের সবচেয়ে শক্তিশালী reading-এ পৌঁছেছে। Gainer শুক্রবারের 28.4% থেকে 72.4%-এ বেড়েছে আর loser 52.6% থেকে 14.5%-এ কমেছে। A/D ratio 0.54:1 থেকে লাফিয়ে 5.00:1 হয়েছে (275টি বাড়া বনাম 55টি কমা) - bearish থেকে bullish territory-তে decisive shift। সব category অংশ নিয়েছে: Category A-তে 140টি gainer বনাম 20টি loser (7:1 ratio), Category B-তে 68টি gainer বনাম 7টি loser (9.7:1 ratio), এমনকি Category Z bullish হয়েছে 61টি gainer বনাম 19টি loser (3.2:1 ratio) নিয়ে। Circuit breaker শক্তি প্রতিফলিত করেছে: 2টি upper circuit (RAHIMAFOOD +10%, ZEALBANGLA +9.98%) এবং শূন্য lower circuit। গুরুত্বপূর্ণভাবে, এই breadth explosion শক্তিশালী volume confirmation সহ এসেছে - turnover 36.3% বেড়ে BDT 3,646M হয়েছে এবং volume 34.4% বেড়ে 135.3M হয়েছে। এটা শুক্রবারের low-volume bounce-এর উল্টো। Institution ফিরেছে, এবং retail অনুসরণ করেছে। এটা conviction buying।"
+      en: "Market breadth collapsed in a classic distribution pattern. Gainers plunged to just 27.6% (105 stocks) while losers surged to 58.2% (221 stocks), producing a bearish 0.48:1 A/D ratio - a complete reversal from yesterday's euphoric 8.50:1. This represents one of the most dramatic one-day breadth reversals in recent months. Category participation turned decisively negative: Category A showed 48 gainers vs 108 losers (2.25:1 loser ratio), Category B had only 13 gainers vs 59 losers (4.5:1 loser ratio), and even Category Z weakened with 39 gainers vs 44 losers. Circuit breakers reflected the shift with only 2 upper circuits (FASFIN +10.26%, NORTHERN +9.93%) and zero lower circuits. The critical warning: this breadth collapse came with RISING volume - turnover jumped 16.6% to BDT 5,339M and volume increased 9.5% to 170.3M. High volume on a down day with collapsing breadth is the textbook definition of institutional distribution. Smart money was selling into yesterday's euphoria. The failed attempt to clear 5,000 psychological resistance (reached 4,995 intraday) combined with the loss of 20 DMA support at 4,960 confirms this was a bull trap. The two-day rally from Dec 7-9 has now been rejected, with institutions using the bounce to distribute holdings to retail buyers who chased the breakout.",
+      bn: "বাজারের ব্রেডথ একটি ক্লাসিক বিতরণ প্যাটার্নে ভেঙে পড়েছে। লাভবান শেয়ার মাত্র 27.6% (105টি)-এ নেমে এসেছে যেখানে ক্ষতিগ্রস্ত শেয়ার 58.2% (221টি)-এ বেড়েছে, তৈরি হয়েছে নেতিবাচক 0.48:1 A/D ratio - গতকালের উৎসাহব্যঞ্জক 8.50:1 থেকে সম্পূর্ণ বিপরীত। এটি সাম্প্রতিক মাসগুলোর মধ্যে সবচেয়ে নাটকীয় একদিনের ব্রেডথ পরিবর্তন। সব category-তে অংশগ্রহণ স্পষ্টভাবে নেতিবাচক হয়েছে: Category A দেখিয়েছে 48টি লাভবান বনাম 108টি ক্ষতিগ্রস্ত (2.25:1 ক্ষতির অনুপাত), Category B-তে ছিল মাত্র 13টি লাভবান বনাম 59টি ক্ষতিগ্রস্ত (4.5:1 ক্ষতির অনুপাত), এবং এমনকি Category Z-ও দুর্বল হয়েছে 39টি লাভবান বনাম 44টি ক্ষতিগ্রস্ত নিয়ে। Circuit breaker এই পরিবর্তন প্রতিফলিত করেছে - মাত্র 2টি upper circuit (FASFIN +10.26%, NORTHERN +9.93%) এবং কোনো lower circuit নেই। মূল সতর্কতা: এই ব্রেডথ সংকোচন ঘটেছে ক্রমবর্ধমান ভলিউমের সাথে - টার্নওভার 16.6% বেড়ে BDT 5,339M এবং ভলিউম 9.5% বৃদ্ধি পেয়ে 170.3M হয়েছে। পতনশীল দিনে উচ্চ ভলিউম ও ব্রেডথ সংকোচন হলো প্রাতিষ্ঠানিক বিতরণের পাঠ্যপুস্তকের সংজ্ঞা। বুদ্ধিমান অর্থ গতকালের উচ্ছ্বাসে বিক্রয় করছিল। 5,000 মানসিক resistance অতিক্রমের ব্যর্থ চেষ্টা (intraday 4,995 স্পর্শ করেছিল), এবং 20 DMA support 4,960-এ হারানো নিশ্চিত করে যে এটি ছিল একটি bull trap। Dec 7-9-এর দুই দিনের উত্থান এখন প্রত্যাখ্যাত হয়েছে, প্রতিষ্ঠানগুলো এই bounce ব্যবহার করেছে খুচরা ক্রেতাদের কাছে হোল্ডিং বিতরণে যারা breakout-এর পেছনে ছুটেছিল।"
     },
   },
   
   categoryBreadth: [
-    { category: 'A', gainers: 140, losers: 20, unchanged: 0, turnoverMn: 2097.52 },
-    { category: 'B', gainers: 68, losers: 7, unchanged: 0, turnoverMn: 1215.13 },
-    { category: 'N', gainers: 0, losers: 0, unchanged: 0, turnoverMn: 0 },
-    { category: 'Z', gainers: 61, losers: 19, unchanged: 0, turnoverMn: 161.73 },
+    { category: 'A', gainers: 48, losers: 108, unchanged: 0, turnoverMn: 2737.94 },
+    { category: 'B', gainers: 13, losers: 59, unchanged: 0, turnoverMn: 1620.42 },
+    { category: 'Z', gainers: 39, losers: 44, unchanged: 0, turnoverMn: 225.38 },
   ],
   
   circuitBreakers: {
     upper: [
-      { symbol: 'RAHIMAFOOD', close: 138.60, change: 10.00 },
-      { symbol: 'ZEALBANGLA', close: 159.80, change: 9.98 },
+      { symbol: 'FASFIN', close: 0.86, change: 10.26 },
+      { symbol: 'NORTHERN', close: 112.90, change: 9.93 },
     ],
     upperCount: 2,
     lower: [],
@@ -132,113 +131,113 @@ const DAILY_DATA = {
   },
   
   volumeSpikes: {
-    totalCount: 106,
+    totalCount: 56,
     top5: [
-      { symbol: 'TAKAFULINS', volume: 84510000, prevVolume: 100, spike: 845.1, close: 34.20, change: -1.74 },
-      { symbol: 'ORYZAAGRO', volume: 59690000, prevVolume: 100, spike: 596.9, close: 7.80, change: 5.48 },
-      { symbol: 'CRAFTSMAN', volume: 16800, prevVolume: 100, spike: 168.0, close: 26.50, change: -7.89 },
-      { symbol: 'MASTERAGRO', volume: 11470000, prevVolume: 100, spike: 114.7, close: 4.20, change: 0.00 },
-      { symbol: 'APEXWEAV', volume: 4200, prevVolume: 100, spike: 42.0, close: 5.10, change: 0.00 },
+      { symbol: 'KBSEED', volume: 950000, prevVolume: 100, spike: 9500.0, close: 6.30, change: -2.99 },
+      { symbol: 'BENGALBISC', volume: 37250, prevVolume: 100, spike: 372.5, close: 52.00, change: -9.88 },
+      { symbol: 'KFL', volume: 13760, prevVolume: 100, spike: 137.6, close: 7.50, change: -6.25 },
+      { symbol: 'NIALCO', volume: 5380, prevVolume: 100, spike: 53.8, close: 21.50, change: -6.05 },
+      { symbol: 'SKTRIMS', volume: 2920, prevVolume: 100, spike: 29.2, close: 8.00, change: 5.26 },
     ],
   },
   
   sectorPerformance: [
-    { sector: 'Pharma & Chemicals', valueMn: 707.15, percent: 20.29 },
-    { sector: 'Textile', valueMn: 545.85, percent: 15.66 },
-    { sector: 'Engineering', valueMn: 386.79, percent: 11.10 },
-    { sector: 'Food and Allied', valueMn: 378.35, percent: 10.85 },
-    { sector: 'Fuel and Power', valueMn: 299.73, percent: 8.60 },
+    { sector: 'Pharma & Chemicals', valueMn: 664.36, percent: 14.46 },
+    { sector: 'Engineering', valueMn: 605.90, percent: 13.18 },
+    { sector: 'Textile', valueMn: 546.17, percent: 11.88 },
+    { sector: 'Food and Allied', valueMn: 490.82, percent: 10.68 },
+    { sector: 'Insurance', valueMn: 370.38, percent: 8.06 },
   ],
   
   sectorCommentary: {
-    en: "Pharma surged back to leadership with BDT 707M (20.29%, +103% vs Sunday), showing institutions favoring defensive quality names. ASIATICCLAB dominated the sector with BDT 197M turnover (+8.12%). Textile held second place at BDT 546M (15.66%, +70% vs Sunday) as SIMTEX stabilized at BDT 197M (+0.84%). Engineering fell to third at BDT 387M (11.10%, +3% vs Sunday), maintaining steady participation. Food & Allied was fourth at BDT 378M (10.85%, +35% vs Sunday) despite BDTHAIFOOD plunging 7.32%. The rotation into Pharma and away from Sunday's panic stocks (SIMTEX, BDTHAIFOOD) signals a flight to quality. This sector distribution is healthier and more sustainable than last week's concentration.",
-    bn: "Pharma leadership-এ ফিরে এসেছে BDT 707M (20.29%, শুক্রবার থেকে +103%) নিয়ে, দেখাচ্ছে institution defensive quality name পছন্দ করছে। ASIATICCLAB sector-এ আধিপত্য করেছে BDT 197M turnover নিয়ে (+8.12%)। Textile দ্বিতীয় স্থানে থেকেছে BDT 546M (15.66%, শুক্রবার থেকে +70%) নিয়ে কারণ SIMTEX স্থিতিশীল হয়েছে BDT 197M-এ (+0.84%)। Engineering তৃতীয় স্থানে নেমেছে BDT 387M (11.10%, শুক্রবার থেকে +3%) নিয়ে, steady participation বজায় রেখে। Food & Allied চতুর্থ ছিল BDT 378M (10.85%, শুক্রবার থেকে +35%) নিয়ে যদিও BDTHAIFOOD 7.32% পড়েছে। Pharma-তে rotation এবং শুক্রবারের panic stock (SIMTEX, BDTHAIFOOD) থেকে সরে যাওয়া flight to quality signal করছে। এই sector distribution গত সপ্তাহের concentration থেকে স্বাস্থ্যকর এবং আরও টেকসই।"
+    en: "Sector performance showed defensive rotation as the breakout failed. Pharma regained leadership with BDT 664M (14.46%, +15% vs Monday), as money moved back to defensive plays. Engineering held second at BDT 606M (13.18%, +6% vs Monday) but lost momentum. Textile remained third with BDT 546M (11.88%, -1% vs Monday). Food & Allied surged to fourth place with BDT 491M (10.68%, +38% vs Monday) led by BDTHAIFOOD's BDT 128M turnover (+7.14%). Insurance jumped into the top 5 with BDT 370M (8.06%), replacing Fuel & Power. The rotation back to defensive Pharma and the emergence of Food & Allied signals risk-off positioning. DOMINAGE led all stocks with BDT 189M turnover despite flat performance, while ORIONINFU held second at BDT 142M (+0.16%). The shift from cyclical sectors (Engineering, Power) back to defensives (Pharma, Food) confirms institutions are reducing risk exposure after the failed breakout attempt. Volume spikes were notably on declining stocks (BENGALBISC -9.88%, KFL -6.25%, NIALCO -6.05%), indicating panic selling rather than accumulation.",
+    bn: "Breakout ব্যর্থ হওয়ার সাথে সাথে খাতের কর্মক্ষমতা প্রতিরক্ষামূলক ঘূর্ণন দেখিয়েছে। Pharma নেতৃত্ব পুনরুদ্ধার করেছে BDT 664M (14.46%, রবিবার থেকে +15%) নিয়ে, কারণ অর্থ প্রতিরক্ষামূলক খাতে ফিরে গেছে। Engineering দ্বিতীয় স্থানে টিকে আছে BDT 606M (13.18%, রবিবার থেকে +6%) নিয়ে কিন্তু গতি হারিয়েছে। Textile তৃতীয় স্থানে রয়েছে BDT 546M (11.88%, রবিবার থেকে -1%) নিয়ে। Food & Allied চতুর্থ স্থানে লাফিয়ে এসেছে BDT 491M (10.68%, রবিবার থেকে +38%) নিয়ে, যার নেতৃত্বে রয়েছে BDTHAIFOOD-এর BDT 128M টার্নওভার (+7.14%)। Insurance শীর্ষ 5-এ প্রবেশ করেছে BDT 370M (8.06%) নিয়ে, Fuel & Power-কে প্রতিস্থাপন করেছে। প্রতিরক্ষামূলক Pharma-তে ঘূর্ণন এবং Food & Allied-এর উত্থান ঝুঁকি-বিমুখ অবস্থানের সংকেত দেয়। DOMINAGE সব শেয়রকে এগিয়ে রেখেছে BDT 189M টার্নওভার নিয়ে যদিও দাম অপরিবর্তিত, আর ORIONINFU দ্বিতীয় অবস্থানে রয়েছে BDT 142M (+0.16%) নিয়ে। চক্রাকার খাত (Engineering, Power) থেকে প্রতিরক্ষামূলক (Pharma, Food)-এ এই পরিবর্তন নিশ্চিত করে যে প্রতিষ্ঠানগুলো ব্যর্থ breakout প্রচেষ্টার পর ঝুঁকি এক্সপোজার কমাচ্ছে। ভলিউম স্পাইক উল্লেখযোগ্যভাবে পতনশীল শেয়ারে ছিল (BENGALBISC -9.88%, KFL -6.25%, NIALCO -6.05%), যা জমা করার পরিবর্তে আতঙ্কজনক বিক্রয় নির্দেশ করে।"
   },
   
   intradayData: [
-    { time: '10:00', value: 4900 },
-    { time: '10:05', value: 4915 },
-    { time: '10:10', value: 4928 },
-    { time: '10:15', value: 4925 },
-    { time: '10:20', value: 4918 },
-    { time: '10:25', value: 4920 },
-    { time: '10:30', value: 4926 },
-    { time: '10:35', value: 4925 },
-    { time: '10:40', value: 4923 },
-    { time: '10:45', value: 4926 },
-    { time: '10:50', value: 4924 },
-    { time: '10:55', value: 4922 },
-    { time: '11:00', value: 4921 },
-    { time: '11:10', value: 4922 },
-    { time: '11:20', value: 4923 },
-    { time: '11:30', value: 4924 },
-    { time: '11:40', value: 4923 },
-    { time: '11:50', value: 4922 },
-    { time: '12:00', value: 4920 },
-    { time: '12:10', value: 4918 },
-    { time: '12:20', value: 4915 },
-    { time: '12:30', value: 4912 },
-    { time: '12:40', value: 4910 },
-    { time: '12:50', value: 4907 },
-    { time: '13:00', value: 4905 },
-    { time: '13:10', value: 4903 },
-    { time: '13:20', value: 4901 },
-    { time: '13:30', value: 4900 },
-    { time: '13:40', value: 4903 },
-    { time: '13:50', value: 4907 },
-    { time: '14:00', value: 4912 },
-    { time: '14:10', value: 4910 },
-    { time: '14:20', value: 4908 },
-    { time: '14:30', value: 4906.29 },
+    { time: '10:00', value: 4990 },
+    { time: '10:05', value: 4993 },
+    { time: '10:10', value: 4995 },
+    { time: '10:15', value: 4992 },
+    { time: '10:20', value: 4990 },
+    { time: '10:25', value: 4988 },
+    { time: '10:30', value: 4985 },
+    { time: '10:35', value: 4985 },
+    { time: '10:40', value: 4986 },
+    { time: '10:45', value: 4987 },
+    { time: '10:50', value: 4986 },
+    { time: '10:55', value: 4985 },
+    { time: '11:00', value: 4983 },
+    { time: '11:10', value: 4980 },
+    { time: '11:20', value: 4978 },
+    { time: '11:30', value: 4975 },
+    { time: '11:40', value: 4973 },
+    { time: '11:50', value: 4972 },
+    { time: '12:00', value: 4970 },
+    { time: '12:10', value: 4973 },
+    { time: '12:20', value: 4975 },
+    { time: '12:30', value: 4978 },
+    { time: '12:40', value: 4975 },
+    { time: '12:50', value: 4973 },
+    { time: '13:00', value: 4970 },
+    { time: '13:10', value: 4968 },
+    { time: '13:20', value: 4965 },
+    { time: '13:30', value: 4963 },
+    { time: '13:40', value: 4960 },
+    { time: '13:50', value: 4958 },
+    { time: '14:00', value: 4955 },
+    { time: '14:10', value: 4948 },
+    { time: '14:20', value: 4945 },
+    { time: '14:30', value: 4941.84 },
   ],
   
   topGainers: [
-    { symbol: 'RAHIMAFOOD', close: 138.60, change: 10.00 },
-    { symbol: 'ZEALBANGLA', close: 159.80, change: 9.98 },
-    { symbol: 'MEGHNAPET', close: 22.40, change: 9.80 },
-    { symbol: 'INTECH', close: 28.20, change: 9.73 },
-    { symbol: 'HIMADRI', close: 680.00, change: 8.78 },
+    { symbol: 'FASFIN', close: 0.86, change: 10.26 },
+    { symbol: 'NORTHERN', close: 112.90, change: 9.93 },
+    { symbol: 'TILIL', close: 46.20, change: 9.74 },
+    { symbol: 'HRTEX', close: 18.40, change: 8.88 },
+    { symbol: 'MEGHNACE M', close: 31.50, change: 8.25 },
   ],
   
   topLosers: [
-    { symbol: 'WONDERTOYS', close: 17.60, change: -9.74 },
-    { symbol: 'FASFIN', close: 0.74, change: -8.64 },
+    { symbol: 'BENGALBISC', close: 52.00, change: -9.88 },
     { symbol: 'FAMILYTEX', close: 1.10, change: -8.33 },
-    { symbol: 'CRAFTSMAN', close: 26.50, change: -7.89 },
-    { symbol: 'BDTHAIFOOD', close: 15.20, change: -7.32 },
+    { symbol: 'WONDERTOYS', close: 18.20, change: -6.52 },
+    { symbol: 'SHYAMPSUG', close: 209.70, change: -6.47 },
+    { symbol: 'KFL', close: 7.50, change: -6.25 },
   ],
   
   topValue: [
-    { symbol: 'ORIONINFU', valueMn: 232.78, close: 391.50, change: 3.41 },
-    { symbol: 'ASIATICCLAB', valueMn: 196.69, close: 54.60, change: 8.12 },
-    { symbol: 'SIMTEX', valueMn: 196.53, close: 24.00, change: 0.84 },
-    { symbol: 'KBPPWBIL', valueMn: 134.97, close: 53.80, change: -2.00 },
-    { symbol: 'DOMINAGE', valueMn: 117.00, close: 26.80, change: 2.29 },
-    { symbol: 'ACMEPL', valueMn: 115.93, close: 17.90, change: 4.68 },
-    { symbol: 'BDTHAIFOOD', valueMn: 115.75, close: 15.20, change: -7.32 },
-    { symbol: 'MONNOFABR', valueMn: 77.40, close: 21.00, change: 4.48 },
-    { symbol: 'FINEFOODS', valueMn: 68.61, close: 341.70, change: 1.21 },
-    { symbol: 'MPETROLEUM', valueMn: 64.19, close: 210.00, change: -1.13 },
+    { symbol: 'DOMINAGE', valueMn: 188.75, close: 27.10, change: 0.00 },
+    { symbol: 'ORIONINFU', valueMn: 142.37, close: 383.60, change: 0.16 },
+    { symbol: 'BDTHAIFOOD', valueMn: 127.65, close: 16.50, change: 7.14 },
+    { symbol: 'ASIATICCLAB', valueMn: 126.40, close: 55.70, change: 2.20 },
+    { symbol: 'ACMEPL', valueMn: 110.38, close: 16.80, change: -4.00 },
+    { symbol: 'SIMTEX', valueMn: 109.87, close: 22.90, change: -1.29 },
+    { symbol: 'MONNOFABR', valueMn: 106.99, close: 20.90, change: -0.48 },
+    { symbol: 'TILIL', valueMn: 97.95, close: 46.20, change: 9.74 },
+    { symbol: 'SQURPHARMA', valueMn: 95.54, close: 201.40, change: -0.25 },
+    { symbol: 'RUPALILIFE', valueMn: 91.86, close: 82.40, change: 4.17 },
   ],
   
   blockMarket: {
     summary: {
-      totalTrades: 56,
-      totalScrips: 22,
-      totalValueMn: 125.26,
+      totalTrades: 97,
+      totalScrips: 42,
+      totalValueMn: 519.84,
     },
     top5: [
-      { symbol: 'FINEFOODS', quantity: 135020, price: 330.00, valueMn: 44.53 },
-      { symbol: 'DOMINAGE', quantity: 664902, price: 25.24, valueMn: 16.79 },
-      { symbol: 'ASIATICCLAB', quantity: 387990, price: 50.50, valueMn: 19.74 },
-      { symbol: 'SHYAMPSUG', quantity: 39686, price: 192.10, valueMn: 7.69 },
-      { symbol: 'SIMTEX', quantity: 244111, price: 25.59, valueMn: 6.25 },
+      { symbol: 'PTL', quantity: 400000, price: 50.95, valueMn: 20.38 },
+      { symbol: 'SQURPHARMA', quantity: 144830, price: 201.78, valueMn: 29.29 },
+      { symbol: 'PRIMEBANK', quantity: 250000, price: 27.98, valueMn: 6.99 },
+      { symbol: 'ASIATICCLAB', quantity: 184807, price: 54.98, valueMn: 10.16 },
+      { symbol: 'GP', quantity: 282259, price: 246.96, valueMn: 69.70 },
     ],
   },
   
   commentary: {
-    en: `The DSEX delivered a decisive reversal, surging 33.65 points (+0.69%) to close at 4,906.29, breaking a four-session losing streak. This was not Sunday's low-volume bounce - both breadth and liquidity exploded in tandem. The market opened around 4,900 and rallied sharply in the first 20 minutes to reach an intraday high of 4,928. The index held elevated levels around 4,920-4,925 until 11:00 AM, then began a gradual, orderly decline throughout the afternoon session, touching the session low of 4,900 by 1:30 PM. Late buying in the final hour supported a modest recovery to close at 4,906. Market breadth showed institutional conviction: gainers surged to 72.4% (vs 28.4% Sunday) while the A/D ratio rocketed from 0.54:1 to 5.00:1 (275 vs 55). Critically, turnover jumped 36.3% to BDT 3,646M and volume surged 34.4% to 135.3M - institutions returned after sitting out Sunday's bounce. All categories participated: Category A had a 7:1 gainer-to-loser ratio, Category B showed 9.7:1, and Category Z turned bullish at 3.2:1. Circuit breakers flipped positive with 2 upper circuits and zero lower circuits. Pharma surged to leadership with BDT 707M (20.29%, +103% vs Sunday) as ASIATICCLAB dominated with BDT 197M turnover. The index now sits just 54 points below the 20 DMA (4,960) and 204 points above critical November 13 support (4,703). RSI improved to 45.2, moving away from oversold. The reversal from Thursday's panic (8.9% gainers, 78.8% losers) to today's strength (72.4% gainers, 14.5% losers) marks a potential trend shift. A break above 4,960 (20 DMA) would target 5,000-5,050.`,
-    bn: `DSEX decisive reversal দিয়েছে, 33.65 পয়েন্ট (+0.69%) বেড়ে 4,906.29-এ বন্ধ হয়েছে, চার-session-এর losing streak ভেঙে। এটা রবিবারের low-volume bounce ছিল না - breadth এবং liquidity একসাথে বিস্ফোরিত হয়েছে। বাজার প্রায় 4,900-এ খুলেছে এবং প্রথম 20 মিনিটে দ্রুত rally করে 4,928 intraday high স্পর্শ করেছে। Index 11:00 AM পর্যন্ত 4,920-4,925 এর উচ্চ level-এ ছিল, তারপর বিকেলের session জুড়ে ধীরে ধীরে, সুশৃঙ্খলভাবে decline করে 1:30 PM-এ 4,900 session low স্পর্শ করেছে। শেষ ঘন্টায় late buying একটি সামান্য recovery support করে 4,906-এ বন্ধ হয়েছে। Market breadth institutional conviction দেখিয়েছে: gainer 72.4%-এ বেড়েছে (রবিবার 28.4% ছিল) আর A/D ratio 0.54:1 থেকে 5.00:1-এ (275 বনাম 55) rocket করেছে। গুরুত্বপূর্ণভাবে, turnover 36.3% বেড়ে BDT 3,646M হয়েছে এবং volume 34.4% বেড়ে 135.3M হয়েছে - institution রবিবারের bounce বসে থাকার পর ফিরেছে। সব category অংশ নিয়েছে: Category A-তে 7:1 gainer-to-loser ratio ছিল, Category B দেখিয়েছে 9.7:1, এবং Category Z bullish হয়েছে 3.2:1-এ। Circuit breaker positive flip করেছে 2টি upper circuit এবং শূন্য lower circuit নিয়ে। Pharma leadership-এ surge করেছে BDT 707M (20.29%, রবিবার থেকে +103%) নিয়ে কারণ ASIATICCLAB আধিপত্য করেছে BDT 197M turnover নিয়ে। Index এখন 20 DMA (4,960) থেকে মাত্র 54 পয়েন্ট নিচে এবং critical November 13 support (4,703) থেকে 204 পয়েন্ট উপরে। RSI 45.2-এ উন্নত হয়েছে, oversold থেকে সরে গেছে। বৃহস্পতিবারের panic (8.9% gainer, 78.8% loser) থেকে আজকের strength (72.4% gainer, 14.5% loser)-এ reversal একটি সম্ভাব্য trend shift চিহ্নিত করে। 4,960 (20 DMA) উপরে break 5,000-5,050 target করবে।`
+    en: `The DSEX delivered a textbook failed breakout, falling 21.06 points (-0.42%) to close at 4,941.84, erasing yesterday's euphoric gains and confirming a classic bull trap. The market opened at 4,963 (yesterday's close) and made an early attempt to clear the psychologically critical 5,000 level, reaching an intraday high of 4,995 by 10:10 AM - just 5 points shy of this major resistance. However, sellers aggressively defended this level, and the index began a steady, relentless decline throughout the entire session. The selling pressure intensified in the final hour, driving the index below the 20 DMA (4,960) and closing at the session low of 4,942. Market breadth collapsed catastrophically: gainers plunged from yesterday's euphoric 81.0% to just 27.6% (105 stocks), while the A/D ratio flipped from a bullish 8.50:1 to a bearish 0.48:1 - one of the most dramatic one-day reversals in recent memory. This represents 221 declining stocks overwhelming just 105 advancing stocks. The distribution pattern was evident across all categories: Category A showed a 2.25:1 loser ratio, Category B had a brutal 4.5:1 loser ratio, and even Category Z weakened. Circuit breakers reflected the shift with only 2 upper circuits versus yesterday's 9. The critical warning sign: this breadth collapse came with RISING volume and turnover - volume increased 9.5% to 170.3M and turnover surged 16.6% to BDT 5,339M. High volume on a down day with collapsing breadth is institutional distribution - smart money selling into yesterday's retail-driven euphoria. Sector rotation turned defensive as Pharma regained leadership (+15%) while cyclical Engineering and Power lost momentum. The failed attempt at 5,000, combined with losing the 20 DMA support, confirms the Dec 7-9 rally was a bull trap used by institutions to distribute holdings. RSI declined to 52.1, losing bullish momentum. The index now faces immediate support at 4,900, with critical support at the Dec 7 low of 4,873.`,
+    bn: `DSEX একটি ক্লাসিক ব্যর্থ breakout-এর উদাহরণ দেখিয়েছে, 21.06 পয়েন্ট (-0.42%) কমে 4,941.84-এ বন্ধ হয়েছে, যা গতকালের উচ্ছ্বাসপূর্ণ লাভ মুছে দিয়ে একটি bull trap নিশ্চিত করেছে। বাজার 4,963-এ খুলেছিল (গতকালের সমাপনী) এবং মানসিকভাবে গুরুত্বপূর্ণ 5,000 লেভেল অতিক্রমের চেষ্টা করেছিল, সকাল 10:10 AM-এ 4,995-এ পৌঁছেছিল - এই বড় resistance থেকে মাত্র 5 পয়েন্ট দূরে। কিন্তু বিক্রেতারা আক্রমণাত্মকভাবে এই স্তর রক্ষা করেছে এবং সূচক পুরো session জুড়ে ক্রমাগত নিম্নমুখী হয়েছে। শেষ ঘণ্টায় বিক্রয়ের চাপ তীব্র হয়ে index-কে 20 DMA (4,960)-এর নিচে ঠেলে দিয়ে 4,942-এ session-এর সর্বনিম্ন পর্যায়ে বন্ধ করেছে। বাজারের প্রশস্ততা মারাত্মকভাবে ধসে পড়েছে: লাভবান শেয়ার গতকালের উচ্ছ্বাসপূর্ণ 81.0% থেকে মাত্র 27.6% (105টি)-এ নেমে এসেছে, আর A/D ratio ইতিবাচক 8.50:1 থেকে নেতিবাচক 0.48:1-এ পরিণত হয়েছে - সাম্প্রতিক সময়ের সবচেয়ে নাটকীয় একদিনের উল্টাপাল্টা। এর অর্থ হলো 221টি পতনশীল শেয়ার মাত্র 105টি ঊর্ধ্বমুখী শেয়রকে ছাপিয়ে গেছে। সব category জুড়ে বিতরণের ধরন স্পষ্ট ছিল: Category A-তে 2.25:1 হারে ক্ষতিগ্রস্ত, Category B-তে কঠোর 4.5:1 হারে ক্ষতি, এমনকি Category Z-ও দুর্বল হয়েছে। Circuit breaker এই পরিবর্তন প্রতিফলিত করেছে - মাত্র 2টি upper circuit, যেখানে গতকাল ছিল 9টি। সবচেয়ে গুরুত্বপূর্ণ সতর্কতা: এই ব্রেডথ সংকোচন ঘটেছে ক্রমবর্ধমান ভলিউম ও টার্নওভারের সাথে - ভলিউম 9.5% বেড়ে 170.3M এবং টার্নওভার 16.6% লাফ দিয়ে BDT 5,339M হয়েছে। নিম্নমুখী দিনে উচ্চ ভলিউম ও ব্রেডথ সংকোচনের অর্থ হলো প্রাতিষ্ঠানিক বিতরণ - বড় বিনিয়োগকারীরা গতকালের খুচরা-চালিত উচ্ছ্বাসে বিক্রয় করছিল। খাত ঘূর্ণন প্রতিরক্ষামূলক হয়েছে যখন Pharma নেতৃত্ব ফিরে পেয়েছে (+15%), আর চক্রাকার Engineering ও Power গতি হারিয়েছে। 5,000-এ ব্যর্থ প্রচেষ্টা এবং 20 DMA support হারানো নিশ্চিত করে যে Dec 7-9-এর উত্থান ছিল একটি bull trap যা প্রতিষ্ঠানগুলো তাদের হোল্ডিং বিতরণে ব্যবহার করেছে। RSI 52.1-এ নেমেছে, ইতিবাচক গতি হারিয়েছে। সূচক এখন 4,900-এ তাৎক্ষণিক support-এর মুখোমুখি, Dec 7-এর 4,873 low-এ গুরুত্বপূর্ণ support রয়েছে।`
   },
 
 };
@@ -294,13 +293,13 @@ const CustomTooltip = ({ active, payload, label }) => {
     return (
       <div style={{
         background: 'rgba(255, 255, 255, 0.95)',
-        border: '1px solid rgba(34, 197, 94, 0.3)',
+        border: '1px solid rgba(220, 38, 38, 0.3)',
         borderRadius: '8px',
         padding: '12px 16px',
         boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',
       }}>
         <p style={{ color: '#64748b', fontSize: '12px', margin: 0 }}>{label}</p>
-        <p style={{ color: '#16a34a', fontSize: '18px', fontWeight: 600, margin: '4px 0 0' }}>
+        <p style={{ color: '#dc2626', fontSize: '18px', fontWeight: 600, margin: '4px 0 0' }}>
           {payload[0].value.toLocaleString()}
         </p>
       </div>
@@ -353,7 +352,7 @@ const SectorBar = ({ sector, valueMn, percent, maxPercent }) => {
           <div style={{
             width: `${barWidth}%`,
             height: '100%',
-            background: 'linear-gradient(90deg, #16a34a 0%, #22c55e 100%)',
+            background: 'linear-gradient(90deg, #dc2626 0%, #ef4444 100%)',
             borderRadius: '4px',
           }} />
         </div>
@@ -689,7 +688,7 @@ export default function DSEMarketAnalysis() {
               { label: 'Volume', value: formatVolume(marketSummary.totalVolume), color: '#0f172a' },
               { label: 'Advanced', value: marketSummary.issuesAdvanced, color: '#16a34a' },
               { label: 'Declined', value: marketSummary.issuesDeclined, color: '#dc2626' },
-              { label: 'A/D Ratio', value: advanceDeclineRatio, color: '#16a34a' },
+              { label: 'A/D Ratio', value: advanceDeclineRatio, color: '#dc2626' },
             ].map((item, i) => (
               <div key={i} style={{ textAlign: 'center' }}>
                 <p style={{ color: '#64748b', fontSize: '9px', margin: '0 0 4px', textTransform: 'uppercase' }}>{item.label}</p>

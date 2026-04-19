@@ -463,7 +463,7 @@ export default function DSEMarketAnalysis() {
 
 
     useEffect(() => {
-        fetch(`/api/visual-research/DSE-Market-Data-Dec-01-2025.json`)
+        fetch(`/api/visual-research/DSE-Market-Data-Dec-10-2025.json`)
             .then(response => response.json())
             .then(data => {
                 console.log("Fetched DSE Market Data:", data);
@@ -475,7 +475,7 @@ export default function DSEMarketAnalysis() {
             });
     }, []);
     return (
-        <div style={{
+        <div className='font-poppins' style={{
             minHeight: '100vh',
             background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
             padding: '24px',

@@ -77,10 +77,10 @@ export default async function Home({ searchParams }) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <section className="bg-white py-6 shadow-sm">
+      <section className=" py-6 shadow-sm z-[-100]">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-bold text-gray-800 z-[9]">Live Market Data</h2>
+            <h2 className="text-xl font-bold text-gray-800">Live Market Data</h2>
             {/* <TimeDate /> */}
           </div>
           <Tickers />

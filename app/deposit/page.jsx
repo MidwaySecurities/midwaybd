@@ -273,7 +273,6 @@
 // export default Deposit;
 
 
-'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { Suspense } from 'react'
@@ -282,7 +281,7 @@ import DepositForm from '../components/depositForm'
 import MobileDeposit from '../components/mobileDeposit'
 import CreditCardDeposit from '../components/creditCardDeposit'
 
-const Deposit = ({ searchParams }) => {
+const Deposit = async ({ searchParams }) => {
 
     const tabs = [
         {
@@ -356,7 +355,7 @@ const Deposit = ({ searchParams }) => {
                                 </div>
                                 <p className="text-sm text-gray-600">
                                     <span className="font-medium">Account:</span><br />
-                                    <span className="font-mono bg-gray-100 px-2 py-1 rounded text-lg">01845222333</span>
+                                    <span className="font-mono bg-gray-100 px-2 py-1 rounded text-lg"><a href="tel:01845222333">01845222333</a></span>
                                 </p>
                             </div>
                             
@@ -369,7 +368,7 @@ const Deposit = ({ searchParams }) => {
                                 </div>
                                 <p className="text-sm text-gray-600">
                                     <span className="font-medium">Account:</span><br />
-                                    <span className="font-mono bg-gray-100 px-2 py-1 rounded text-lg">01776106410</span>
+                                    <span className="font-mono bg-gray-100 px-2 py-1 rounded text-lg"><a href="tel:01776106410">01776106410</a></span>
                                 </p>
                             </div>
                             
@@ -382,7 +381,7 @@ const Deposit = ({ searchParams }) => {
                                 </div>
                                 <p className="text-sm text-gray-600">
                                     <span className="font-medium">Account:</span><br />
-                                    <span className="font-mono bg-gray-100 px-2 py-1 rounded text-lg">017761064101</span>
+                                    <span className="font-mono bg-gray-100 px-2 py-1 rounded text-lg"><a href="tel:017761064101">017761064101</a></span>
                                 </p>
                             </div>
                         </div>
@@ -405,7 +404,7 @@ const Deposit = ({ searchParams }) => {
                             </div>
                             <div className="flex items-center space-x-2">
                                 <span className="text-green-500">📞</span>
-                                <span>09609 100 142</span>
+                                <span><a href="tel:09609100142">09609 100 142</a></span>
                             </div>
                             <div className="flex items-center space-x-2">
                                 <span className="text-blue-600">📘</span>
@@ -467,9 +466,12 @@ const Deposit = ({ searchParams }) => {
         },
     ];
     
-    const activeCity = searchParams.tab?.toLowerCase() || "online";
-    const activeTab = tabs.find((t) => t.id === activeCity) || tabs[0];
-    
+    const params = await searchParams;
+
+    const activeCity = params.tab?.toLowerCase() || "online";
+    console.log("Active Tab from URL:", activeCity);
+
+    const activeTab = tabs.find((t) => t.id === activeCity) || tabs[0];    
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Hero Section */}

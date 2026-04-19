@@ -16,7 +16,9 @@ export default function DepositTab({ activeCity }) {
   const changeTab = (tabId) => {
     const params = new URLSearchParams(searchParams.toString());
     params.set("tab", tabId);
-    router.push(`deposit/?${params.toString()}`, { scroll: false });
+
+    // ✅ FIXED path
+    router.push(`/deposit?${params.toString()}`, { scroll: false });
   };
 
   return (
@@ -24,12 +26,16 @@ export default function DepositTab({ activeCity }) {
       {tabs.map((tab) => (
         <button
           key={tab.id}
-          className={activeCity === tab.id ? 'bg-qtp_btn_bg_color text-white' : ""}
+          className={
+            activeCity === tab.id
+              ? "bg-qtp_btn_bg_color text-white"
+              : ""
+          }
           onClick={() => changeTab(tab.id)}
         >
           {tab.label}
         </button>
       ))}
     </div>
-  );  
+  );
 }

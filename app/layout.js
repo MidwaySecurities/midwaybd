@@ -24,7 +24,7 @@ export const metadata = {
   description:
     "Trade shares seamlessly at Dhaka Stock Exchange with Midway Securities Ltd. Use our own Mobile Trading App - QuickTrade Pro. Open BO accounts online, fund via bKash/Nagad/Rocket, enjoy fast withdrawals, and expert support.",
   verification: {
-    google: "G-KoiPPm-SFpGFvHuzsWb5abIC06CgA4zSqnd2oB_nM",
+    google: "google343367b96d01cfa8.html",
   },
 };
 

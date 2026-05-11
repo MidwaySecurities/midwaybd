@@ -1,6 +1,5 @@
 import localFont from 'next/font/local';
 import { Poppins, Roboto } from "next/font/google";
-import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 
 import { ModalCloseProvider } from "./components/close-button-provider";
@@ -9,7 +8,7 @@ import { BottomModalCloseProvider } from "./context/firstApproachModalContext";
 import { DeviceDetectContextProvider } from "./context/deviceDetectContext";
 import Footer from "./components/Home/footer/footer";
 import { BlogTabProvider } from "./context/blogTabContext";
-
+import Script from "next/script";
 
 
 const poppins = Poppins({
@@ -30,9 +29,33 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <GoogleTagManager gtmId="GTM-XXXXXXX" />
       </head>
       <body className={`${poppins.className} antialiased`}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+      (function(w,d,s,l,i){w[l]=w[l]||[];
+      w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-XXXXXXX');
+    `,
+          }}
+        />
         <ModalCloseProvider>
           <BottomModalCloseProvider>
             <DeviceDetectContextProvider>

@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    async redirects(){
+    async redirects() {
         return [
+
             {
                 source: '/blogs.html',
                 destination: '/blogs',

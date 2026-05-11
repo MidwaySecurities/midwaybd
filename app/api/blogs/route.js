@@ -6,11 +6,6 @@ import { getBlogs } from "@/lib/actions/blog/getBlogs";
 import { createBlog } from "@/lib/actions/blog/createBlog";
 
 // Disable Next.js body parsing for multipart/form-data
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
 
 // Ensure upload directory exists
 const uploadDir = path.join(process.cwd(), "public/uploads");

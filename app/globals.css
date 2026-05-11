@@ -310,3 +310,12 @@ html {
   font-style: normal;
   /* Adjust if you have bold/italic variations */
 }
+
+@font-face {
+  font-family: 'ShonarBangla';
+  src: url('../public/fonts/ShonarBangla.ttf') format('truetype');
+}
+
+.font_sonar_bangla{
+  font-family: 'ShonarBangla', sans-serif;
+}

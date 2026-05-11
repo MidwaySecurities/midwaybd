@@ -25,7 +25,7 @@ export default function FAQClient({ faqData, categories }) {
     return (
         <div className="max-w-6xl mx-auto px-4 py-12">
             {/* Search Bar */}
-            <div id='categories' className="max-w-2xl mx-auto mb-12 -mt-24 relative z-10">
+            <div id='categories' className="max-w-2xl mx-auto mb-12 -mt-24 relative z-5">
                 <div className="relative mt-5">
                     <input
                         type="text"

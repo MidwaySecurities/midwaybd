@@ -1,4 +1,5 @@
-import { Poppins } from "next/font/google";
+import localFont from 'next/font/local';
+import { Poppins, Roboto } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 
@@ -9,11 +10,15 @@ import { DeviceDetectContextProvider } from "./context/deviceDetectContext";
 import Footer from "./components/Home/footer/footer";
 import { BlogTabProvider } from "./context/blogTabContext";
 
+
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
+
+// use sonarbangla font like className={sonarBangla.className} in any element to apply the font
 
 export const metadata = {
   title: "Midway Securities Ltd.",

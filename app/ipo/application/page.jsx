@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AlertCircle, CheckCircle2, FileText, Building2, User, Phone, Mail, CreditCard, Wallet } from 'lucide-react';
 
 export default function IPOApplicationForm() {
@@ -26,7 +26,7 @@ export default function IPOApplicationForm() {
 
   const validateForm = () => {
     const newErrors = {};
-    
+
     if (!formData.ipoName.trim()) newErrors.ipoName = 'IPO name is required';
     if (!formData.applicantName.trim()) newErrors.applicantName = 'Applicant name is required';
     if (!formData.boAccountNo.trim()) newErrors.boAccountNo = 'BO account number is required';
@@ -62,7 +62,16 @@ export default function IPOApplicationForm() {
       setErrors(prev => ({ ...prev, [name]: '' }));
     }
   };
-
+  useEffect(() => {
+    const upcommingIpos = fetch('http://midway-app.test/api/ipos')
+      .then(response => response.json())
+      .then(data => data.data)
+      .catch(error => {
+        console.error('Error fetching IPOs:', error);
+        return [];
+      });
+    console.log(upcommingIpos);
+  }, [])
   const ipos = [
     'Techno Drugs Limited',
     'Select IPO Company',
@@ -133,9 +142,8 @@ export default function IPOApplicationForm() {
                 name="ipoName"
                 value={formData.ipoName}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition ${
-                  errors.ipoName ? 'border-red-500' : 'border-gray-300'
-                }`}
+                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition ${errors.ipoName ? 'border-red-500' : 'border-gray-300'
+                  }`}
               >
                 <option value="">Choose IPO Company</option>
                 {ipos.map((ipo) => (
@@ -166,9 +174,8 @@ export default function IPOApplicationForm() {
                     name="applicantName"
                     value={formData.applicantName}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition ${
-                      errors.applicantName ? 'border-red-500' : 'border-gray-300'
-                    }`}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition ${errors.applicantName ? 'border-red-500' : 'border-gray-300'
+                      }`}
                     placeholder="Enter your full name"
                   />
                   {errors.applicantName && (
@@ -216,9 +223,8 @@ export default function IPOApplicationForm() {
                     name="nid"
                     value={formData.nid}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition ${
-                      errors.nid ? 'border-red-500' : 'border-gray-300'
-                    }`}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition ${errors.nid ? 'border-red-500' : 'border-gray-300'
+                      }`}
                     placeholder="National ID number"
                   />
                   {errors.nid && (
@@ -247,9 +253,8 @@ export default function IPOApplicationForm() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition ${
-                      errors.email ? 'border-red-500' : 'border-gray-300'
-                    }`}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition ${errors.email ? 'border-red-500' : 'border-gray-300'
+                      }`}
                     placeholder="your@email.com"
                   />
                   {errors.email && (
@@ -269,9 +274,8 @@ export default function IPOApplicationForm() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition ${
-                      errors.phone ? 'border-red-500' : 'border-gray-300'
-                    }`}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition ${errors.phone ? 'border-red-500' : 'border-gray-300'
+                      }`}
                     placeholder="01XXXXXXXXX"
                   />
                   {errors.phone && (
@@ -300,9 +304,8 @@ export default function IPOApplicationForm() {
                     name="boAccountNo"
                     value={formData.boAccountNo}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition ${
-                      errors.boAccountNo ? 'border-red-500' : 'border-gray-300'
-                    }`}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition ${errors.boAccountNo ? 'border-red-500' : 'border-gray-300'
+                      }`}
                     placeholder="BO Account Number"
                   />
                   {errors.boAccountNo && (
@@ -367,11 +370,10 @@ export default function IPOApplicationForm() {
                 {depositMethods.map((method) => (
                   <label
                     key={method.value}
-                    className={`flex items-center p-4 border-2 rounded-lg cursor-pointer transition ${
-                      formData.depositMethod === method.value
-                        ? 'border-blue-600 bg-blue-50'
-                        : 'border-gray-200 hover:border-blue-300'
-                    }`}
+                    className={`flex items-center p-4 border-2 rounded-lg cursor-pointer transition ${formData.depositMethod === method.value
+                      ? 'border-blue-600 bg-blue-50'
+                      : 'border-gray-200 hover:border-blue-300'
+                      }`}
                   >
                     <input
                       type="radio"
@@ -409,9 +411,8 @@ export default function IPOApplicationForm() {
                     value={formData.numberOfLots}
                     onChange={handleChange}
                     min="1"
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition ${
-                      errors.numberOfLots ? 'border-red-500' : 'border-gray-300'
-                    }`}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition ${errors.numberOfLots ? 'border-red-500' : 'border-gray-300'
+                      }`}
                     placeholder="Enter number of lots"
                   />
                   {errors.numberOfLots && (

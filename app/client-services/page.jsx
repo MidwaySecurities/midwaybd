@@ -176,8 +176,8 @@ const services = [
       'Desktop version also available',
     ],
     links: [
-      { text: 'Download for iOS', href: '#', external: false },
-      { text: 'Download for Android', href: '#', external: false },
+      { text: 'Download for Android', href: 'https://play.google.com/store/apps/details?id=com.midwaybd.quick_trade_pro&hl=en', external: false },
+      { text: 'Download for iOS', href: 'https://apps.apple.com/us/app/quicktrade-pro/id6740322022', external: false },
     ],
   },
   {
@@ -208,7 +208,7 @@ const services = [
       'Dedicated support throughout',
     ],
     links: [
-      { text: 'Open a BO Account Online', href: 'https://www.midwaybd.com/open-a-bo-account.html', external: true },
+      { text: 'Open a BO Account Online', href: 'https://portal.midwaybd.com/bo/portal-login', external: true },
     ],
   },
   {
@@ -337,15 +337,12 @@ const services = [
       'Available to all BO account holders',
       'Easy online registration',
     ],
-    links: [
-      { text: 'Register for CDBL SMS Alerts', href: 'https://www.cdbl.com.bd/sms_balance.php', external: true },
-    ],
   },
   {
     id: 'daily-alerts',
     title: 'Daily Emails & SMS Alerts',
     description:
-      'Stay completely informed with free daily email updates on your portfolio, ledger, and trade confirmations, plus instant SMS alerts every time you buy or sell shares.',
+      'Stay completely informed with free daily email updates on your portfolio, ledger.',
     image: 'https://www.midwaybd.com/uploads/6/0/4/6/60462737/email-sms-alert_orig.jpg',
     imageAlt: 'Daily email and SMS trading alert service from Midway Securities',
     features: [
@@ -384,26 +381,9 @@ const services = [
     ],
     links: [
       { text: 'View Monthly Schedule', href: 'https://www.dsebd.org/Training_Academy_2.b.php', external: true },
-      { text: 'Register for a Course', href: 'https://main.dsebd.org/online_login.php', external: true },
+      // { text: 'Register for a Course', href: 'https://main.dsebd.org/online_login.php', external: true },
     ],
-  },
-  {
-    id: 'dse-app',
-    title: 'DSE Info App',
-    description:
-      'Download the DSE Info App for Android — developed jointly by the Dhaka Stock Exchange and the ICT Division of the Government of Bangladesh. Track your portfolio, view exchange news, and get daily market snapshots.',
-    image: 'https://www.midwaybd.com/uploads/6/0/4/6/60462737/published/dse-info-app-1.png?1559838881',
-    imageAlt: 'DSE Info App download for Android from Google Play Store',
-    features: [
-      'Create and monitor custom portfolios',
-      'Track individual DSE-listed stocks',
-      'Latest Dhaka Stock Exchange news',
-      'Daily market snapshot',
-    ],
-    links: [
-      { text: 'Download on Google Play', href: 'https://play.google.com/store/apps/details?id=com.mcc.dhakastockexchangeinfo', external: true },
-    ],
-  },
+  }
 ]
 
 // ─── Sub-components ────────────────────────────────────────────────────────────
@@ -581,7 +561,7 @@ export default function ClientServicesPage() {
             services — from mobile trading to IPO applications and beyond.
           </p>
           <Link
-            href="https://www.midwaybd.com/open-a-bo-account.html"
+            href="https://portal.midwaybd.com/bo/portal-login"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-sans text-xs font-bold tracking-widest uppercase bg-amber-500 text-[#0d2b4e] px-8 py-3 rounded-sm hover:bg-amber-400 transition-colors no-underline"

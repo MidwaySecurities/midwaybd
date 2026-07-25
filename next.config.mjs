@@ -2,7 +2,6 @@
 const nextConfig = {
     async redirects() {
         return [
-
             {
                 source: '/blogs.html',
                 destination: '/blogs',

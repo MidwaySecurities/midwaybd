@@ -103,9 +103,7 @@ const FormDownload = () => {
         { name: 'Change সঞ্চয় to Active', url: '/forms/change_sanchay_to_active.pdf' },
         { name: 'Change Address', url: '/forms/change_address_form.pdf' },
         { name: 'Change Mobile Number', url: '/forms/change_phone_number_form.pdf' },
-        { name: 'Change Email Address', url: '/forms/change_email_form.pdf' },
-        { name: 'Nominee Information Update', url: '/' },
-        { name: 'Joint Account Opening', url: '/' }
+        { name: 'Change Email Address', url: '/forms/change_email_form.pdf' }
       ]
     },
     {

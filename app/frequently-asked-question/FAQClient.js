@@ -2,13 +2,11 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+
 export default function FAQClient({ faqData, categories }) {
     const [activeCategory, setActiveCategory] = useState('started')
     const [openItems, setOpenItems] = useState({})
     const [searchTerm, setSearchTerm] = useState('')
-
-    // need to know the device width to handle scroll into view for smaller devices
-    const deviceWidth = typeof window !== 'undefined' ? window.innerWidth : 1024
 
     const toggleItem = (id) => {
         setOpenItems(prev => ({
@@ -17,15 +15,17 @@ export default function FAQClient({ faqData, categories }) {
         }))
     }
 
-    const filteredFAQs = faqData[activeCategory]?.filter(faq =>
+    const matchesSearch = (faq) =>
         faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
         faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
-    ) || []
+
+    const activeCategoryMeta = categories.find(cat => cat.id === activeCategory)
+    const activeCount = (faqData[activeCategory] || []).filter(matchesSearch).length
 
     return (
         <div className="max-w-6xl mx-auto px-4 py-12">
             {/* Search Bar */}
-            <div id='categories' className="max-w-2xl mx-auto mb-12 -mt-24 relative z-5">
+            <div id="categories" className="max-w-2xl mx-auto mb-12 -mt-24 relative z-5">
                 <div className="relative mt-5">
                     <input
                         type="text"
@@ -46,53 +46,30 @@ export default function FAQClient({ faqData, categories }) {
                     <nav className="bg-white rounded-2xl shadow-lg p-6 sticky top-8">
                         <h2 className="text-lg font-semibold text-gray-800 mb-6">Categories</h2>
                         <div className="space-y-2">
-                            {categories.map((category) => {
-                                if (deviceWidth < 1024) {
-                                    return (
-                                        <Link href={`#${category.id}`} key={category.id}>
-                                            <button
-                                                onClick={() => {
-                                                    setActiveCategory(category.id)
-                                                    setSearchTerm('')
-                                                }}
-
-                                                className={`w-full flex items-center space-x-3 p-3 rounded-xl transition-all duration-200 text-left ${activeCategory === category.id
-                                                    ? 'bg-blue-100 text-blue-700 font-medium'
-                                                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
-                                                    }`}
-                                            >
-                                                <div className={`${activeCategory === category.id ? 'text-blue-600' : 'text-gray-500'}`}>
-                                                    {category.icon}
-                                                </div>
-                                                <span className="text-sm">{category.name}</span>
-                                                <div className={`ml-auto w-2 h-2 rounded-full ${activeCategory === category.id ? 'bg-blue-600' : ''
-                                                    }`}></div>
-                                            </button>
-                                        </Link>
-                                    )
-                                } else {
-                                    return (
-                                        <button
-                                            onClick={() => {
-                                                setActiveCategory(category.id)
-                                                setSearchTerm('')
-                                            }}
-
-                                            className={`w-full flex items-center space-x-3 p-3 rounded-xl transition-all duration-200 text-left ${activeCategory === category.id
-                                                ? 'bg-blue-100 text-blue-700 font-medium'
-                                                : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
-                                                }`}
-                                        >
-                                            <div className={`${activeCategory === category.id ? 'text-blue-600' : 'text-gray-500'}`}>
-                                                {category.icon}
-                                            </div>
-                                            <span className="text-sm">{category.name}</span>
-                                            <div className={`ml-auto w-2 h-2 rounded-full ${activeCategory === category.id ? 'bg-blue-600' : ''
-                                                }`}></div>
-                                        </button>
-                                    )
-                                }
-                            })}
+                            {categories.map((category) => (
+                                // Real anchor links work even without JS (progressive
+                                // enhancement) and let crawlers/users jump straight to
+                                // a section id that always exists in the DOM.
+                                <Link href={`#faq-${category.id}`} key={category.id}>
+                                    <button
+                                        onClick={() => {
+                                            setActiveCategory(category.id)
+                                            setSearchTerm('')
+                                        }}
+                                        className={`w-full flex items-center space-x-3 p-3 rounded-xl transition-all duration-200 text-left ${activeCategory === category.id
+                                            ? 'bg-blue-100 text-blue-700 font-medium'
+                                            : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                                            }`}
+                                    >
+                                        <div className={`${activeCategory === category.id ? 'text-blue-600' : 'text-gray-500'}`}>
+                                            {category.icon}
+                                        </div>
+                                        <span className="text-sm">{category.name}</span>
+                                        <div className={`ml-auto w-2 h-2 rounded-full ${activeCategory === category.id ? 'bg-blue-600' : ''
+                                            }`}></div>
+                                    </button>
+                                </Link>
+                            ))}
                         </div>
 
                         {/* Contact Support */}
@@ -120,7 +97,6 @@ export default function FAQClient({ faqData, categories }) {
                                 </Link>
 
                                 <Link
-                                    id={`${deviceWidth < 1024 ? activeCategory : ''}`}
                                     href="/contact-us"
                                     className="flex items-center space-x-3 text-sm text-gray-600 hover:text-blue-600 transition-colors"
                                 >
@@ -135,71 +111,88 @@ export default function FAQClient({ faqData, categories }) {
                     </nav>
                 </aside>
 
-                {/* FAQ Content */}
+                {/* FAQ Content — every category is rendered; only the active one
+                    is visually shown. This keeps the exact same look/behavior
+                    while ensuring 100% of the Q&A content is in the HTML that
+                    ships to search engines and AI crawlers on first load. */}
                 <main className="lg:col-span-3">
-                    <article className="bg-white rounded-2xl shadow-lg overflow-hidden">
-                        {/* Category Header */}
-                        <div className="bg-gray-50 px-8 py-6 border-b border-gray-200 flex flex-col gap-4">
-                            <div className="flex items-center space-x-3">
-                                <div className="text-blue-600">
-                                    {categories.find(cat => cat.id === activeCategory)?.icon}
-                                </div>
-                                <div>
-                                    <h2 className="text-2xl font-bold text-gray-800">
-                                        {categories.find(cat => cat.id === activeCategory)?.name}
-                                    </h2>
-                                    <p className="text-gray-600 mt-1">
-                                        {filteredFAQs.length} {filteredFAQs.length === 1 ? 'question' : 'questions'} available
-                                    </p>
-                                </div>
-                            </div>
-                            <div className={deviceWidth < 1024 ? "block self-center" : "hidden"}>
-                                <Link href={'#categories'}>
-                                    <svg className='w-8 h-8 rotate-180' xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" style={{ pointerEvents: 'none', display: 'inherit' }}><path d="M12 2a1 1 0 00-1 1v11.586l-4.293-4.293a1 1 0 10-1.414 1.414L12 18.414l6.707-6.707a1 1 0 10-1.414-1.414L13 14.586V3a1 1 0 00-1-1Zm7 18H5a1 1 0 000 2h14a1 1 0 000-2Z"></path></svg>
-                                </Link>
-                            </div>
-                        </div>
+                    {categories.map((category) => {
+                        const items = (faqData[category.id] || []).filter(matchesSearch)
+                        const isActive = activeCategory === category.id
 
-                        {/* FAQ Items */}
-                        <div className="divide-y divide-gray-200">
-                            {filteredFAQs.length > 0 ? (
-                                filteredFAQs.map((faq) => (
-                                    <div key={faq.id} className="p-8">
-                                        <button
-                                            onClick={() => toggleItem(faq.id)}
-                                            className="w-full flex items-center justify-between text-left group"
-                                            aria-expanded={openItems[faq.id]}
-                                        >
-                                            <h3 className="text-lg font-semibold text-gray-800 group-hover:text-blue-600 transition-colors pr-4">
-                                                {faq.question}
-                                            </h3>
-                                            <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 group-hover:bg-blue-100 flex items-center justify-center transition-all duration-200 ${openItems[faq.id] ? 'rotate-180 bg-blue-100' : ''
-                                                }`}>
-                                                <svg className="w-4 h-4 text-gray-600 group-hover:text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                                                </svg>
-                                            </div>
-                                        </button>
-
-                                        <div className={`mt-4 transition-all duration-300 overflow-hidden ${openItems[faq.id] ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                                            }`}>
-                                            <div className="text-gray-600 leading-relaxed bg-gray-50 p-6 rounded-xl">
-                                                {faq.answer}
-                                            </div>
+                        return (
+                            <article
+                                key={category.id}
+                                id={`faq-${category.id}`}
+                                className={`bg-white rounded-2xl shadow-lg overflow-hidden ${isActive ? '' : 'hidden'}`}
+                                aria-hidden={!isActive}
+                            >
+                                {/* Category Header */}
+                                <div className="bg-gray-50 px-8 py-6 border-b border-gray-200 flex flex-col gap-4">
+                                    <div className="flex items-center space-x-3">
+                                        <div className="text-blue-600">
+                                            {category.icon}
+                                        </div>
+                                        <div>
+                                            <h2 className="text-2xl font-bold text-gray-800">
+                                                {category.name}
+                                            </h2>
+                                            <p className="text-gray-600 mt-1">
+                                                {items.length} {items.length === 1 ? 'question' : 'questions'} available
+                                            </p>
                                         </div>
                                     </div>
-                                ))
-                            ) : (
-                                <div className="p-8 text-center">
-                                    <svg className="mx-auto w-16 h-16 text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 20.4a7.962 7.962 0 01-8-7.109c0-1.864.613-3.584 1.645-4.973L12 20.4l6.355-12.082A7.963 7.963 0 0120 12.291z" />
-                                    </svg>
-                                    <h3 className="text-xl font-medium text-gray-800 mb-2">No results found</h3>
-                                    <p className="text-gray-600">Try adjusting your search terms or browse other categories.</p>
+                                    <Link href="#categories" className="block self-center lg:hidden">
+                                        <svg className="w-8 h-8 rotate-180" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" style={{ pointerEvents: 'none', display: 'inherit' }}><path d="M12 2a1 1 0 00-1 1v11.586l-4.293-4.293a1 1 0 10-1.414 1.414L12 18.414l6.707-6.707a1 1 0 10-1.414-1.414L13 14.586V3a1 1 0 00-1-1Zm7 18H5a1 1 0 000 2h14a1 1 0 000-2Z"></path></svg>
+                                    </Link>
                                 </div>
-                            )}
-                        </div>
-                    </article>
+
+                                {/* FAQ Items */}
+                                <div className="divide-y divide-gray-200">
+                                    {items.length > 0 ? (
+                                        items.map((faq) => (
+                                            <div key={faq.id} className="p-8">
+                                                <button
+                                                    onClick={() => toggleItem(faq.id)}
+                                                    className="w-full flex items-center justify-between text-left group"
+                                                    aria-expanded={!!openItems[faq.id]}
+                                                    aria-controls={`answer-${faq.id}`}
+                                                >
+                                                    <h3 className="text-lg font-semibold text-gray-800 group-hover:text-blue-600 transition-colors pr-4">
+                                                        {faq.question}
+                                                    </h3>
+                                                    <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 group-hover:bg-blue-100 flex items-center justify-center transition-all duration-200 ${openItems[faq.id] ? 'rotate-180 bg-blue-100' : ''
+                                                        }`}>
+                                                        <svg className="w-4 h-4 text-gray-600 group-hover:text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                                        </svg>
+                                                    </div>
+                                                </button>
+
+                                                <div
+                                                    id={`answer-${faq.id}`}
+                                                    className={`mt-4 transition-all duration-300 overflow-hidden ${openItems[faq.id] ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                                                        }`}
+                                                >
+                                                    <div className="text-gray-600 leading-relaxed bg-gray-50 p-6 rounded-xl">
+                                                        {faq.answer}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))
+                                    ) : (
+                                        <div className="p-8 text-center">
+                                            <svg className="mx-auto w-16 h-16 text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 20.4a7.962 7.962 0 01-8-7.109c0-1.864.613-3.584 1.645-4.973L12 20.4l6.355-12.082A7.963 7.963 0 0120 12.291z" />
+                                            </svg>
+                                            <h3 className="text-xl font-medium text-gray-800 mb-2">No results found</h3>
+                                            <p className="text-gray-600">Try adjusting your search terms or browse other categories.</p>
+                                        </div>
+                                    )}
+                                </div>
+                            </article>
+                        )
+                    })}
 
                     {/* Quick Links */}
                     <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">

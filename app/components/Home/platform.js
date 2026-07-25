@@ -31,7 +31,7 @@
 //                     </div>
 //                     <h1 className='text-center mt-2'>Web</h1>
 //                 </div>
-                
+
 //             </div>
 //         </div>
 //     )
@@ -41,6 +41,7 @@
 
 
 import React from 'react'
+import Link from "next/link";
 
 const Platform = () => {
     const platforms = [
@@ -103,14 +104,14 @@ const Platform = () => {
                                 <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
                                 Multi-Platform Access
                             </div>
-                            
+
                             <h2 className="text-4xl font-bold text-gray-800 leading-tight">
                                 World-class platform,<br />
                                 <span className="text-blue-600">Trade without a doubt</span>
                             </h2>
-                            
+
                             <p className="text-lg text-gray-600 leading-relaxed">
-                                Experience seamless trading across all your devices with our cutting-edge technology. 
+                                Experience seamless trading across all your devices with our cutting-edge technology.
                                 Whether you're on mobile, desktop, or web - your trading experience remains consistent and powerful.
                             </p>
                         </div>
@@ -130,10 +131,15 @@ const Platform = () => {
                         </div>
 
                         {/* CTA Button */}
+
                         <div className="pt-4">
-                            <button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            <Link
+                                href="https://oms.midwaybd.com"
+                                target="_blank"
+                                className="inline-block bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+                            >
                                 Start Trading Now
-                            </button>
+                            </Link>
                         </div>
                     </div>
 
@@ -173,12 +179,12 @@ const Platform = () => {
                             <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
                             Available on Multiple Platforms
                         </div>
-                        
+
                         <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
                             World-class platform,<br />
                             <span className="text-blue-600">Trade without a doubt</span>
                         </h2>
-                        
+
                         <p className="text-gray-600 mb-6">
                             Experience seamless trading across all your devices with our cutting-edge technology.
                         </p>

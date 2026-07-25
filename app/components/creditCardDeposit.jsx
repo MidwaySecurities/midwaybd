@@ -1,8 +1,22 @@
+'use client'
 import React from 'react'
 
 const CreditCardDeposit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = {
+            clientCode: formData.get('clientCode'),
+            name: formData.get('name'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            amount: formData.get('amount'),
+        };
+        console.log(data);
+        // Here you would typically send the data to your server or API
+    }
     return (
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className='mb-4'>
                     <label htmlFor="clientCode" className='block mb-2'>Client Code</label>
                     <input type="text" id="clientCode" name="clientCode" className='border border-gray-300 p-2 w-full' required />

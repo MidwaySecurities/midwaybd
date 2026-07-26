@@ -21,7 +21,6 @@ export async function GET(req, { params }) {
 export async function PUT(req, { params }) {
   try {
     const formData = await req.formData();
-    console.log(formData.get('images'))
     const result = await updateBlog(params.slug, formData);
     if (result.error) {
       return NextResponse.json({ error: result.error }, { status: 400 });
@@ -44,7 +43,6 @@ export async function DELETE(req, { params }) {
       return matches.map((m) => m.match(/src="([^">]+)"/)[1]);
     };
     const allImages = [blogCoverImage, ...blogImages, ...extractImgSrcs(blogContentImages)];
-    console.log(allImages, allImages.length);
 
     allImages.forEach((imgPath) => {
       fs.unlink(path.join(process.cwd(), 'public', imgPath), (err) => {

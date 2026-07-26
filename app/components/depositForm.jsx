@@ -129,7 +129,6 @@ const DepositForm = () => {
                     'Content-Type': 'multipart/form-data',
                 }
             });
-            console.log('Deposit Response:', response);
             const result = await response.data;
 
             setAlert({ type: 'success', message: result.message });

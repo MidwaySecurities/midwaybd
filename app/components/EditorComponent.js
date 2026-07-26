@@ -12,6 +12,10 @@ import "froala-editor/js/plugins.pkgd.min.js";
 
 import { categories } from './blogCategoryDropDown';
 
+// Laravel API base — point everything at the same host as /api/uploadz.
+const API_BASE =
+  process.env.PORTAL_URL || 'http://midway-app.test';
+
 const EditorComponent = ({ placeholder }) => {
   const [formData, setFormData] = useState({
     title: '',
@@ -30,10 +34,11 @@ const EditorComponent = ({ placeholder }) => {
   const [success, setSuccess] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [isDirty, setIsDirty] = useState(false);
-  
+
   const replyEditor = useRef(null);
 
-  // Auto-generate slug from title
+  // Auto-generate slug from title (display only — the backend generates
+  // and enforces its own unique slug via Blog::generateUniqueSlug()).
   const generateSlug = (title) => {
     return title
       .toLowerCase()
@@ -47,14 +52,15 @@ const EditorComponent = ({ placeholder }) => {
   useEffect(() => {
     const fetchLatestSlug = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/blogs`);
-        const blogs = await response.json();
-        console.log(blogs)
-        if (blogs?.blogs?.length > 0) {
-          const latest = blogs.blogs[0];
-          console.log(latest)
+        const response = await fetch(`${API_BASE}/api/blogs?limit=1`);
+        const data = await response.json();
+        const list = Array.isArray(data?.blogs)
+          ? data.blogs
+          : data?.blogs?.data ?? [];
+        if (list.length > 0) {
+          const latest = list[0];
           setRelatedSlug(latest.slug);
-          setRelatedBlogId(latest._id);
+          setRelatedBlogId(latest.id);
         }
       } catch (error) {
         console.error('Error fetching latest blog:', error);
@@ -63,7 +69,6 @@ const EditorComponent = ({ placeholder }) => {
     fetchLatestSlug();
   }, []);
 
-  // Handle form input changes
   const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     setIsDirty(true);
@@ -96,38 +101,42 @@ const EditorComponent = ({ placeholder }) => {
     setIsDirty(true);
   };
 
-  console.log(formData)
-  // Enhanced image replacement function
+  // Enhanced image replacement function — uploads any blob: images pasted
+  // directly into the Froala editor body so the saved HTML has real URLs.
   async function replaceBlobImages(content) {
     const div = document.createElement("div");
     div.innerHTML = content;
     const imgs = div.querySelectorAll("img");
-    
+
     for (let i = 0; i < imgs.length; i++) {
       const img = imgs[i];
       const src = img.getAttribute("src");
-      
+
       if (src && src.startsWith("blob:")) {
         try {
           const blob = await fetch(src).then(r => r.blob());
           const formData = new FormData();
-          formData.append("file", blob, `editor-${Date.now()}-${i}.png`);
+          // Reuses the same gallery-upload endpoint so these end up on the
+          // same disk/bucket as everything else. Adjust if you have a
+          // dedicated single-image upload route on the Laravel side.
+          formData.append("images[]", blob, `editor-${Date.now()}-${i}.png`);
 
-          const response = await fetch("/api/upload", {
+          const response = await fetch(`${API_BASE}/api/upload`, {
             method: "POST",
             body: formData,
           });
 
           const data = await response.json();
-          if (data.link) {
-            img.setAttribute("src", data.link);
+          const uploadedUrl = data?.image_urls?.[0] || data?.link;
+          if (uploadedUrl) {
+            img.setAttribute("src", uploadedUrl);
           }
         } catch (error) {
           console.error(`Error uploading image ${i}:`, error);
         }
       }
     }
-    
+
     return div.innerHTML;
   }
 
@@ -172,47 +181,49 @@ const EditorComponent = ({ placeholder }) => {
       const cleanedContent = await replaceBlobImages(content);
       setUploadProgress(30);
 
-      // Create form data
+      // Create form data — field names must match BlogController@store exactly.
       const form = new FormData();
       form.append("title", formData.title);
-      form.append("slug", generateSlug(formData.title));
       form.append("excerpt", formData.excerpt);
       form.append("category", formData.category);
-      form.append("tags", formData.tags);
+      form.append("tags", formData.tags); // backend splits this string on commas
       form.append("content", cleanedContent);
       form.append("related_blogs", relatedSlug);
       form.append("relatedBlogs", relatedBlogId);
-      
+
       if (coverImage) {
-        form.append("coverImage", coverImage);
+        form.append("cover_image", coverImage); // was "coverImage" — backend reads cover_image
       }
-      
-      additionalImages.forEach((file, index) => {
-        form.append("images", file);
+
+      additionalImages.forEach((file) => {
+        form.append("images[]", file); // bracketed key so PHP builds a real array
       });
 
       setUploadProgress(60);
 
-      const response = await fetch("/api/blogs", {
+      const response = await fetch(`${API_BASE}/api/upload`, {
         method: "POST",
         body: form,
+        // no manual Content-Type — the browser sets the multipart boundary
       });
 
       setUploadProgress(90);
 
       const data = await response.json();
-      if (!response.ok) throw new Error(data.error || "Failed to create blog");
+      if (!response.ok || data?.status === 'error') {
+        throw new Error(data.message || data.error || "Failed to create blog");
+      }
 
       setUploadProgress(100);
       setSuccess(true);
       setIsDirty(false);
-      
+
       // Reset form
       setFormData({ title: '', excerpt: '', tags: '', category: '' });
       setContent('');
       setCoverImage(null);
       setAdditionalImages([]);
-      
+
       // Reset file inputs
       const fileInputs = document.querySelectorAll('input[type="file"]');
       fileInputs.forEach(input => input.value = '');
@@ -232,7 +243,7 @@ const EditorComponent = ({ placeholder }) => {
     heightMax: 600,
     placeholder: placeholder || 'Write your blog content here...',
     enter: Froalaeditor.ENTER_BR,
-    
+
     // Toolbar customization
     toolbarButtons: [
       'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript',
@@ -242,17 +253,18 @@ const EditorComponent = ({ placeholder }) => {
       '|', 'emoticons', 'specialCharacters', 'insertFile', 'html',
       '|', 'undo', 'redo', 'fullscreen', 'selectAll', 'clearFormatting'
     ],
-    
+
     // Image upload settings
-    imageUploadParam: "file",
+    imageUploadParam: "images[]",
+    imageUploadURL: `${API_BASE}/api/upload`,
     imageUploadMethod: "POST",
     imageAllowedTypes: ["jpeg", "jpg", "png", "gif", "webp"],
     imageDefaultWidth: 300,
-    
+
     // Link settings
     linkAutoPrefix: 'https://',
     linkAlwaysBlank: true,
-    
+
     events: {
       initialized: function () {
         replyEditor.current = this;
@@ -297,8 +309,8 @@ const EditorComponent = ({ placeholder }) => {
           {/* Progress Bar */}
           {loading && (
             <div className="w-full bg-gray-200 h-1">
-              <div 
-                className="bg-blue-600 h-1 transition-all duration-300" 
+              <div
+                className="bg-blue-600 h-1 transition-all duration-300"
                 style={{ width: `${uploadProgress}%` }}
               ></div>
             </div>
@@ -306,7 +318,7 @@ const EditorComponent = ({ placeholder }) => {
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="p-8 space-y-8">
-            
+
             {/* Title & Slug Section */}
             <div className="space-y-4">
               <h2 className="text-lg font-semibold text-gray-800 flex items-center">
@@ -315,7 +327,7 @@ const EditorComponent = ({ placeholder }) => {
                 </svg>
                 Basic Information
               </h2>
-              
+
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -330,7 +342,7 @@ const EditorComponent = ({ placeholder }) => {
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     URL Slug (Auto-generated)
@@ -354,7 +366,7 @@ const EditorComponent = ({ placeholder }) => {
                 </svg>
                 Content
               </h2>
-              
+
               <div className="border-2 border-gray-200 rounded-xl overflow-hidden focus-within:border-blue-500 transition-colors">
                 <FroalaEditor
                   model={content}
@@ -382,7 +394,7 @@ const EditorComponent = ({ placeholder }) => {
                   {formData.excerpt.length}/200 characters
                 </p>
               </div>
-              
+
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -405,7 +417,7 @@ const EditorComponent = ({ placeholder }) => {
                     })}
                   </select>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Tags
@@ -429,7 +441,7 @@ const EditorComponent = ({ placeholder }) => {
                 </svg>
                 Images
               </h2>
-              
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -459,7 +471,7 @@ const EditorComponent = ({ placeholder }) => {
                     )}
                   </div>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Additional Images (Optional)
@@ -531,7 +543,7 @@ const EditorComponent = ({ placeholder }) => {
               >
                 Reset Form
               </button>
-              
+
               <button
                 type="submit"
                 disabled={loading}

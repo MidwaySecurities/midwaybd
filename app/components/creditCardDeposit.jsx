@@ -12,7 +12,6 @@ const CreditCardDeposit = () => {
             phone: formData.get('phone'),
             amount: formData.get('amount'),
         };
-        console.log(data);
         // Here you would typically send the data to your server or API
     }
     return (

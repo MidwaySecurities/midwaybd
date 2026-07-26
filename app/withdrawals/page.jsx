@@ -80,12 +80,10 @@ export default function WithdrawClient() {
 
   const handlePortalSubmit = async () => {
     if (!validatePortal()) return;
-    console.log("Portal withdrawal data:", portalData);
     setSubmitting(true);
     // setTimeout(() => { setSubmitting(false); setStep("success"); }, 1500);
     // API INTEGRATION POINT: Here you would send `portalData` to your server for processing.
     const {data} = await axios.post("http://midway-app.test/api/web/withdraw/request", { ...portalData });
-    console.log("Server response:", data);
     setSubmitting(false);
     if(data.status==='success') {
       setStep("success");

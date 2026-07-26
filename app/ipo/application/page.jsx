@@ -50,7 +50,6 @@ export default function IPOApplicationForm() {
     e.preventDefault();
     if (validateForm()) {
       setSubmitted(true);
-      console.log('Form submitted:', formData);
       setTimeout(() => setSubmitted(false), 5000);
     }
   };
@@ -70,7 +69,6 @@ export default function IPOApplicationForm() {
         console.error('Error fetching IPOs:', error);
         return [];
       });
-    console.log(upcommingIpos);
   }, [])
   const ipos = [
     'Techno Drugs Limited',

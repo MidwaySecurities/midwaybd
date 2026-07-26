@@ -23,6 +23,7 @@
     "froala-editor": "^4.6.2",
     "from": "^0.1.7",
     "html-dom-parser": "^5.1.1",
+    "https": "^1.0.0",
     "i": "^0.3.7",
     "import": "^0.0.6",
     "jodit-react": "^5.2.19",

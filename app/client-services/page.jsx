@@ -340,7 +340,7 @@ const services = [
   },
   {
     id: 'daily-alerts',
-    title: 'Daily Emails & SMS Alerts',
+    title: 'Daily Emails',
     description:
       'Stay completely informed with free daily email updates on your portfolio, ledger.',
     image: 'https://www.midwaybd.com/uploads/6/0/4/6/60462737/email-sms-alert_orig.jpg',

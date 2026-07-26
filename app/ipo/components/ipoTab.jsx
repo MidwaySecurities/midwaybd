@@ -10,7 +10,6 @@ const IpoTab = () => {
         const res = await ipos.json()
         setIpos(res.data.data)
     }, [fetch])
-    console.log(ipos)
     // const upcomingIPOs = [
     //     {
     //         company: 'Techno Drugs Limited',

@@ -466,7 +466,6 @@ export default function DSEMarketAnalysis() {
         fetch(`/api/visual-research/DSE-Market-Data-Dec-10-2025.json`)
             .then(response => response.json())
             .then(data => {
-                console.log("Fetched DSE Market Data:", data);
                 setDailyData(data.content);
                 setDate(data?.content?.reportInfo?.date);
             })

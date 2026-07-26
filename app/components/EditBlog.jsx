@@ -126,8 +126,7 @@ const EditBlogComponent = ({ slug }) => {
     setNewImages(prev => prev.filter((_, i) => i !== index));
     setPreviews(prev => prev.filter((_, i) => i !== index));
   };
-  console.log(newImages)
-  console.log(previews)
+
   async function replaceBlobImages(content) {
     const div = document.createElement("div");
     div.innerHTML = content;
@@ -314,7 +313,6 @@ const EditBlogComponent = ({ slug }) => {
         setIsDirty(true);
       },
       'image.uploaded': function (response) {
-        console.log("Image uploaded:", response);
       },
       'image.error': function (error, response) {
         console.error("Upload error:", error, response);

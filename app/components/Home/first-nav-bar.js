@@ -11,7 +11,6 @@ const FirstNavBar = () => {
     })
         .then(res => res.json())
         .then(data => console.log(data));
-        console.log('Auth check initiated');
     }, [])
     return (
         <div className="flex justify-between items-center bg-[#9999a1] p-4 text-white">

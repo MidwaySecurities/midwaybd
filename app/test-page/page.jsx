@@ -14,7 +14,6 @@ const TestPage = () => {
         fetchData()
         
     }, [value])
-    console.log(info)
     return (
         <div>
             <h1>number count {value}</h1>

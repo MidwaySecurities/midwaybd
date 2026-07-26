@@ -19,9 +19,9 @@ const Tickers = async () => {
         refineData = data.filter(item => {
             return ['BRACBANK', 'SQURPHARMA', 'GP', 'MARICO', 'BATBC', 'CITYBANK', 'EBL', 'ISLAMIBANK'].includes(item.MKISTAT_INSTRUMENT_CODE);
         });
-        console.log('Fetched Ticker Data:', refineData);
     } catch (error) {
-        
+        console.error("Error fetching ticker data:", error);
+        hasError = true;
     }
 
     return <TickerClient tickerData={refineData} hasError={hasError} />;

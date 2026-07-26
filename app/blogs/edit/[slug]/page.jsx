@@ -7,7 +7,6 @@ const EditorComponent = dynamic(() => import('../../../components/EditBlog'), { 
 
 export default function EditBlog() {
   const params = useParams()
-  console.log(params)
   return (
     <main>
       <EditorComponent slug = {params.slug} placeholder="Edit your blog here..." />

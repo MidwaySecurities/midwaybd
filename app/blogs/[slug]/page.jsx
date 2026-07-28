@@ -110,7 +110,7 @@ const BlogPage = async ({ params }) => {
             <div className="flex items-center space-x-2">
               <span className="text-gray-500">Share:</span>
               <BlogPost
-                postUrl={`${process.env.NEXT_PUBLIC_SITE_URL}/blogs/${blog?.slug}`}
+                postUrl={`${API_BASE_URL}/blogs/${blog?.slug}`}
                 postTitle={blog?.title}
               />
             </div>

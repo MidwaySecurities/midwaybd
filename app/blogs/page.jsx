@@ -126,7 +126,7 @@ const BlogsInner = () => {
                             className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col"
                         >
                             {/* Cover Image */}
-                            <Link href={`${blog.slug}`}>
+                            <Link href={`/blogs/${blog.slug}`}>
                                 <img
                                     src={blog.cover_image}
                                     alt={blog.title}

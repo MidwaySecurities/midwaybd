@@ -83,9 +83,9 @@ export default function WithdrawClient() {
     setSubmitting(true);
     // setTimeout(() => { setSubmitting(false); setStep("success"); }, 1500);
     // API INTEGRATION POINT: Here you would send `portalData` to your server for processing.
-    const {data} = await axios.post("http://midway-app.test/api/web/withdraw/request", { ...portalData });
+    const { data } = await axios.post("https://midway-wip.tanbinislam.com/api/web/withdraw/request", { ...portalData });
     setSubmitting(false);
-    if(data.status==='success') {
+    if (data.status === 'success') {
       setStep("success");
     } else {
       setErrors({ form: data.message || "An error occurred. Please try again." });
@@ -106,7 +106,7 @@ export default function WithdrawClient() {
   };
 
   return (
-    <div  style={{ minHeight: "100vh", background: LIGHT_BG }}>
+    <div style={{ minHeight: "100vh", background: LIGHT_BG }}>
       {/* ── Header ── */}
       {/* <header style={{ background: PRIMARY, padding: "0 32px", borderBottom: `3px solid ${ACCENT}` }}>
         <div style={{ maxWidth: 960, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", height: 64 }}>

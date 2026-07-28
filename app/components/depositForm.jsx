@@ -124,7 +124,7 @@ const DepositForm = () => {
         };
 
         try {
-            const response = await axios.post('http://midway-app.test/api/web/deposit/request', data, {
+            const response = await axios.post('https://midway-wip.tanbinislam.com/api/web/deposit/request', data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 }

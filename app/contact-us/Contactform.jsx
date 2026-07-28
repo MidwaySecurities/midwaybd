@@ -5,7 +5,7 @@ import { Send, CheckCircle, AlertCircle } from 'lucide-react'
 // Update this if your API is served from a different host in production.
 // Falls back to the local dev URL if the env var isn't set.
 const CONTACT_API_URL =
-  process.env.NEXT_PUBLIC_CONTACT_API_URL || 'http://midway-app.test/api/contact-support'
+  process.env.NEXT_PUBLIC_CONTACT_API_URL || 'https://midway-wip.tanbinislam.com/api/contact-support'
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -134,9 +134,8 @@ const ContactForm = () => {
               name="full_name"
               value={formData.full_name}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-blue-500 transition-colors ${
-                fieldErrors.full_name ? 'border-red-400 focus:ring-red-200' : 'border-gray-300 focus:ring-blue-500'
-              }`}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-blue-500 transition-colors ${fieldErrors.full_name ? 'border-red-400 focus:ring-red-200' : 'border-gray-300 focus:ring-blue-500'
+                }`}
               required
             />
             <FieldError name="full_name" />
@@ -152,9 +151,8 @@ const ContactForm = () => {
               name="phone_number"
               value={formData.phone_number}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-blue-500 transition-colors ${
-                fieldErrors.phone_number ? 'border-red-400 focus:ring-red-200' : 'border-gray-300 focus:ring-blue-500'
-              }`}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-blue-500 transition-colors ${fieldErrors.phone_number ? 'border-red-400 focus:ring-red-200' : 'border-gray-300 focus:ring-blue-500'
+                }`}
             />
             <FieldError name="phone_number" />
           </div>
@@ -170,9 +168,8 @@ const ContactForm = () => {
             name="email"
             value={formData.email}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-blue-500 transition-colors ${
-              fieldErrors.email ? 'border-red-400 focus:ring-red-200' : 'border-gray-300 focus:ring-blue-500'
-            }`}
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-blue-500 transition-colors ${fieldErrors.email ? 'border-red-400 focus:ring-red-200' : 'border-gray-300 focus:ring-blue-500'
+              }`}
             required
           />
           <FieldError name="email" />
@@ -187,9 +184,8 @@ const ContactForm = () => {
             name="subject"
             value={formData.subject}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-blue-500 transition-colors ${
-              fieldErrors.subject ? 'border-red-400 focus:ring-red-200' : 'border-gray-300 focus:ring-blue-500'
-            }`}
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-blue-500 transition-colors ${fieldErrors.subject ? 'border-red-400 focus:ring-red-200' : 'border-gray-300 focus:ring-blue-500'
+              }`}
             required
           >
             <option value="">Select a subject</option>
@@ -213,9 +209,8 @@ const ContactForm = () => {
             onChange={handleInputChange}
             rows="6"
             maxLength={5000}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-blue-500 transition-colors resize-none ${
-              fieldErrors.message ? 'border-red-400 focus:ring-red-200' : 'border-gray-300 focus:ring-blue-500'
-            }`}
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-blue-500 transition-colors resize-none ${fieldErrors.message ? 'border-red-400 focus:ring-red-200' : 'border-gray-300 focus:ring-blue-500'
+              }`}
             placeholder="Please describe how we can help you..."
             required
           ></textarea>

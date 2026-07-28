@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { BlogFilters } from '../components/blogFilter';
 import BlogPagination from '../components/blogPagination';
 
-const API_BASE_URL = process.env.PORTAL_URL || 'http://midway-app.test/api';
+const API_BASE_URL = process.env.PORTAL_URL || 'https://midway-wip.tanbinislam.com/api';
 
 const BlogsInner = () => {
     const searchParams = useSearchParams();

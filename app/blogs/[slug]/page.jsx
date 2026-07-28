@@ -57,12 +57,12 @@ const BlogPage = async ({ params }) => {
       {/* Hero Section with Image */}
       <div className="relative">
         <div className="w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
-          {blog?.image_urls?.length > 0 ? (
-            <Carousel images={blog.image_urls} />
+          {blog?.images?.length > 0 ? (
+            <Carousel images={blog.images} />
           ) : (
             <div className="relative mt-1 w-full flex justify-center items-center">
               <img
-                src={blog?.cover_image_url}
+                src={blog?.cover_image}
                 alt={blog?.title}
                 className="w-[80%] object-cover"
               />

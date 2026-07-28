@@ -14,7 +14,7 @@ import { categories } from './blogCategoryDropDown';
 
 // Laravel API base — point everything at the same host as /api/uploadz.
 const API_BASE =
-  process.env.PORTAL_URL || 'https://midway-wip.tanbinislam.com';
+  process.env.PORTAL_URL || 'https://midway-wip.tanbinislam.com/api';
 
 const EditorComponent = ({ placeholder }) => {
   const [formData, setFormData] = useState({
@@ -52,7 +52,7 @@ const EditorComponent = ({ placeholder }) => {
   useEffect(() => {
     const fetchLatestSlug = async () => {
       try {
-        const response = await fetch(`${API_BASE}/api/blogs?limit=1`);
+        const response = await fetch(`${API_BASE}/blogs?limit=1`);
         const data = await response.json();
         const list = Array.isArray(data?.blogs)
           ? data.blogs
@@ -121,7 +121,7 @@ const EditorComponent = ({ placeholder }) => {
           // dedicated single-image upload route on the Laravel side.
           formData.append("images[]", blob, `editor-${Date.now()}-${i}.png`);
 
-          const response = await fetch(`${API_BASE}/api/upload`, {
+          const response = await fetch(`${API_BASE}/blogs/upload`, {
             method: "POST",
             body: formData,
           });
@@ -201,7 +201,7 @@ const EditorComponent = ({ placeholder }) => {
 
       setUploadProgress(60);
 
-      const response = await fetch(`${API_BASE}/api/upload`, {
+      const response = await fetch(`${API_BASE}/blogs/upload`, {
         method: "POST",
         body: form,
         // no manual Content-Type — the browser sets the multipart boundary
@@ -256,7 +256,7 @@ const EditorComponent = ({ placeholder }) => {
 
     // Image upload settings
     imageUploadParam: "images[]",
-    imageUploadURL: `${API_BASE}/api/upload`,
+    imageUploadURL: `${API_BASE}/blogs/upload`,
     imageUploadMethod: "POST",
     imageAllowedTypes: ["jpeg", "jpg", "png", "gif", "webp"],
     imageDefaultWidth: 300,
@@ -407,11 +407,12 @@ const EditorComponent = ({ placeholder }) => {
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   >
                     <option value="">Select a category</option>
+                    {console.log(categories)}
                     {categories?.map((item, index) => {
-                      if (item.name === 'Select Category' || item.name === 'All Categories') return null;
+                      if (item.name === 'Select Category' || item.label === 'All Categories') return null;
                       return (
-                        <option key={index} value={item.name}>
-                          {item.icon} {item.name}
+                        <option key={index} value={item.value}>
+                          {item.icon} {item.value}
                         </option>
                       );
                     })}

@@ -7,7 +7,7 @@ import { BlogFilters } from '../components/blogFilter';
 import BlogPagination from '../components/blogPagination';
 
 const API_BASE_URL = process.env.PORTAL_URL || 'https://midway-wip.tanbinislam.com/api';
-
+console.log('API_BASE_URL:', API_BASE_URL);
 const BlogsInner = () => {
     const searchParams = useSearchParams();
 

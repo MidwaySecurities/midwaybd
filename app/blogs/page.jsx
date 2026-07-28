@@ -128,7 +128,7 @@ const BlogsInner = () => {
                             {/* Cover Image */}
                             <Link href={`/blogs/${blog.slug}`}>
                                 <img
-                                    src={blog.cover_image_url}
+                                    src={blog.cover_image}
                                     alt={blog.title}
                                     className="w-full h-52 object-cover hover:scale-105 transition-transform duration-300"
                                 />

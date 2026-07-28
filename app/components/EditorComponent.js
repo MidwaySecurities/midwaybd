@@ -203,6 +203,10 @@ const EditorComponent = ({ placeholder }) => {
 
       const response = await fetch(`${API_BASE}/blogs/upload`, {
         method: "POST",
+        headers: {
+          'Accept': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest',
+        },
         body: form,
         // no manual Content-Type — the browser sets the multipart boundary
       });

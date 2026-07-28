@@ -15,8 +15,8 @@ export default function BlogTabs({ activeTab }) {
   const changeTab = (tabId) => {
     const params = new URLSearchParams(searchParams.toString());
     params.set("tab", tabId === "latest" ? "regular" : tabId);
-    params.set("page", 1); // Reset to first page when changing tabs
-    router.push(`/blogs/?${params.toString()}`, { scroll: false });
+    params.set("page", "1"); // Reset to first page when changing tabs
+    router.push(`/blogs?${params.toString()}`, { scroll: false }); // fixed: no trailing slash before "?"
   };
 
   return (

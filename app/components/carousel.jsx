@@ -31,7 +31,7 @@ export default function Carousel({images}) {
               index === current ? "opacity-100" : "opacity-0"
             }`}
           >
-            <Image
+            <img
               src={src}
               alt={`Slide ${index + 1}`}
               fill

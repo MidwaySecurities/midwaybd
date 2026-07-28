@@ -1,48 +1,134 @@
-import { getBlogs } from '@/lib/actions/blog/getBlogs'
-import Link from 'next/link';
-import React from 'react'
-import Tabs from '../components/blogTab';
-import BlogCategoryDropDown from '../components/blogCategoryDropDown';
-import BlogPagination from '../components/blogPagination';
-import { BlogFilters } from '../components/blogFilter';
+'use client'
 
-const Blogs = async ({ searchParams }) => {
-    const { tab, category, page, limit } = await searchParams;
+import { useEffect, useState, useRef, Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
+import Link from 'next/link'
+import { BlogFilters } from '../components/blogFilter';
+import BlogPagination from '../components/blogPagination';
+
+const API_BASE_URL = process.env.PORTAL_URL || 'http://midway-app.test/api';
+
+const BlogsInner = () => {
+    const searchParams = useSearchParams();
+
+    const tab = searchParams.get('tab');
+    const category = searchParams.get('category');
+    const page = searchParams.get('page');
+    const limit = searchParams.get('limit');
+
     const activeCategory = category;
     const activeTab = tab || 'beginner';
     const currentPage = parseInt(page) || 1;
-    const perPage = parseInt(limit) || 5; // default 5 blogs per page
+    const perPage = parseInt(limit) || 5;
 
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+    const [blogs, setBlogs] = useState([]);
+    const [pagination, setPagination] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    const data = await fetch(
-        `${baseUrl}/api/blogs?tab=${activeTab}&category=${activeCategory}&page=${currentPage}&limit=${perPage}`,
-        { next: { revalidate: 60 } }
-    ).then(res => res.json());
+    // Guard against duplicate/looping fetches for the same params
+    const lastKeyRef = useRef(null);
 
-    const blogs = data?.blogs || [];
-    const pagination = data?.pagination || {};
+    useEffect(() => {
+        const key = `${activeTab}|${activeCategory}|${currentPage}|${perPage}`;
+        if (lastKeyRef.current === key) return;
+        lastKeyRef.current = key;
+
+        const controller = new AbortController();
+
+        const fetchBlogs = async () => {
+            setIsLoading(true);
+            setError(null);
+
+            const params = new URLSearchParams({
+                tab: activeTab,
+                page: String(currentPage),
+                limit: String(perPage),
+            });
+            if (activeCategory) params.set('category', activeCategory);
+
+            try {
+                const res = await fetch(`${API_BASE_URL}/blogs?${params.toString()}`, {
+                    signal: controller.signal,
+                });
+
+                if (!res.ok) throw new Error(`Failed to fetch blogs: ${res.status}`);
+
+                const json = await res.json();
+                if (json?.status !== 'success' || !json?.blogs) {
+                    throw new Error('Unexpected response from blogs API');
+                }
+
+                const blogsPayload = json.blogs;
+                setBlogs(blogsPayload.data || []);
+                setPagination({
+                    currentPage: blogsPayload.current_page,
+                    totalPages: blogsPayload.last_page,
+                    total: blogsPayload.total,
+                    perPage: blogsPayload.per_page,
+                });
+            } catch (err) {
+                if (err.name === 'AbortError') return;
+                console.error('Error fetching blogs from Midway API:', err);
+                setError(err.message);
+                setBlogs([]);
+                setPagination({});
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchBlogs();
+
+        return () => controller.abort();
+    }, [activeTab, activeCategory, currentPage, perPage]);
 
     return (
         <div className="px-4 sm:px-6 lg:px-12 py-10">
-            {/* ✅ Header */}
+            {/* Header / Filters */}
             <BlogFilters
                 activeTab={tab === 'latest' ? 'regular' : tab}
                 activeCategory={category}
             />
 
-            {/* ✅ Blogs Grid */}
-            {blogs.length > 0 ? (
+            {/* Loading Skeleton */}
+            {isLoading && (
+                <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    {Array.from({ length: perPage }).map((_, idx) => (
+                        <div
+                            key={idx}
+                            className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col animate-pulse"
+                        >
+                            <div className="w-full h-52 bg-gray-200" />
+                            <div className="p-5 flex flex-col flex-1 gap-3">
+                                <div className="h-4 bg-gray-200 rounded w-3/4" />
+                                <div className="h-3 bg-gray-200 rounded w-full" />
+                                <div className="h-3 bg-gray-200 rounded w-5/6" />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            )}
+
+            {/* Error State */}
+            {!isLoading && error && (
+                <div className="text-center text-red-500 my-20 text-lg">
+                    Something went wrong while loading blogs. Please try again later.
+                </div>
+            )}
+
+            {/* Blogs Grid */}
+            {!isLoading && !error && blogs.length > 0 && (
                 <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {blogs.map((blog) => (
                         <div
-                            key={blog._id}
+                            key={blog.id}
                             className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col"
                         >
                             {/* Cover Image */}
                             <Link href={`/blogs/${blog.slug}`}>
                                 <img
-                                    src={blog.coverImage}
+                                    src={blog.cover_image_url}
                                     alt={blog.title}
                                     className="w-full h-52 object-cover hover:scale-105 transition-transform duration-300"
                                 />
@@ -68,22 +154,39 @@ const Blogs = async ({ searchParams }) => {
                         </div>
                     ))}
                 </div>
-            ) : (
+            )}
+
+            {/* Empty State */}
+            {!isLoading && !error && blogs.length === 0 && (
                 <div className="text-center text-gray-500 my-20 text-lg">No blogs found.</div>
             )}
 
-            {/* ✅ Pagination */}
-            <div className="mt-10">
-                <BlogPagination
-                    currentPage={currentPage}
-                    totalPages={pagination.totalPages}
-                    activeTab={activeTab}
-                    activeCategory={activeCategory}
-                    perPage={perPage}
-                />
-            </div>
+            {/* Pagination */}
+            {!isLoading && !error && blogs.length > 0 && (
+                <div className="mt-10">
+                    <BlogPagination
+                        currentPage={pagination.currentPage || currentPage}
+                        totalPages={pagination.totalPages}
+                        activeTab={activeTab}
+                        activeCategory={activeCategory}
+                        perPage={perPage}
+                    />
+                </div>
+            )}
         </div>
     )
 }
+
+const Blogs = () => (
+    <Suspense
+        fallback={
+            <div className="px-4 sm:px-6 lg:px-12 py-10 text-center text-gray-500">
+                Loading...
+            </div>
+        }
+    >
+        <BlogsInner />
+    </Suspense>
+);
 
 export default Blogs

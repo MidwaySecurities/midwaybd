@@ -1,14 +1,42 @@
 import BlogPost from '@/app/components/blogShare';
 import Carousel from '@/app/components/carousel';
-import { getABlog } from '@/lib/actions/blog/getABlog';
 import Link from 'next/link';
 import React from 'react';
 
+const API_BASE_URL = process.env.PORTAL_URL || 'http://midway-app.test/api';
+
+async function getABlog(slug) {
+  try {
+    const res = await fetch(`${API_BASE_URL}/blogs/${slug}`, {
+      next: { revalidate: 60 },
+    });
+
+    if (res.status === 404) {
+      return null;
+    }
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch blog: ${res.status} ${res.statusText}`);
+    }
+
+    const json = await res.json();
+
+    if (json?.status !== 'success' || !json?.blog) {
+      return null;
+    }
+
+    return json.blog;
+  } catch (error) {
+    console.error('Error fetching blog from Midway API:', error);
+    return null;
+  }
+}
+
 const BlogPage = async ({ params }) => {
-  const { slug } = params;
+  const { slug } = await params;
   const blog = await getABlog(slug);
 
-  if (!blog?.blog) {
+  if (!blog) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
@@ -21,25 +49,28 @@ const BlogPage = async ({ params }) => {
     );
   }
 
+  const wordCount = blog?.content?.replace(/<[^>]*>/g, '').split(' ').length || 0;
+  const readMinutes = Math.max(1, Math.ceil(wordCount / 200));
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section with Image */}
       <div className="relative">
         <div className="w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
-          {blog?.blog.images?.length > 0 ? (
-            <Carousel images={blog?.blog.images} />
+          {blog?.image_urls?.length > 0 ? (
+            <Carousel images={blog.image_urls} />
           ) : (
             <div className="relative mt-1 w-full flex justify-center items-center">
               <img
-                src={blog?.blog?.coverImage}
-                alt={blog?.blog?.title}
+                src={blog?.cover_image_url}
+                alt={blog?.title}
                 className="w-[80%] object-cover"
               />
               <div className="absolute inset-0 bg-transparent bg-opacity-30"></div>
             </div>
           )}
         </div>
-        
+
         {/* Overlay Content */}
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/50 to-transparent text-white p-6 lg:p-8">
           <div className="max-w-4xl mx-auto">
@@ -47,10 +78,10 @@ const BlogPage = async ({ params }) => {
               <svg className="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
               </svg>
-              {blog?.blog?.category}
+              {blog?.category}
             </div>
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
-              {blog?.blog?.title}
+              {blog?.title}
             </h1>
           </div>
         </div>
@@ -66,21 +97,21 @@ const BlogPage = async ({ params }) => {
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                Published on {new Date(blog?.blog?.createdAt).toLocaleDateString()}
+                Published on {blog?.created_at ? new Date(blog.created_at).toLocaleDateString() : '—'}
               </div>
               <div className="flex items-center">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                {Math.ceil(blog?.blog?.content?.replace(/<[^>]*>/g, '').split(' ').length / 200)} min read
+                {readMinutes} min read
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-2">
               <span className="text-gray-500">Share:</span>
               <BlogPost
-                postUrl={`${process.env.NEXT_PUBLIC_SITE_URL}/blogs/${blog?.blog?.slug}`}
-                postTitle={blog?.blog?.title}
+                postUrl={`${process.env.NEXT_PUBLIC_SITE_URL}/blogs/${blog?.slug}`}
+                postTitle={blog?.title}
               />
             </div>
           </div>
@@ -102,7 +133,7 @@ const BlogPage = async ({ params }) => {
                      prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded
                      prose-pre:bg-gray-900 prose-pre:text-gray-100
                      prose-img:rounded-lg prose-img:shadow-md"
-            dangerouslySetInnerHTML={{ __html: blog?.blog?.content }}
+            dangerouslySetInnerHTML={{ __html: blog?.content }}
           ></div>
         </article>
 
@@ -118,10 +149,10 @@ const BlogPage = async ({ params }) => {
                 <p className="text-gray-600 text-sm">Investment Research Team</p>
               </div>
             </div>
-            
-            {blog?.blog?.tags && (
+
+            {blog?.tags && blog.tags.length > 0 && (
               <div className="flex flex-wrap gap-2">
-                {blog.blog.tags.map((tag, index) => (
+                {blog.tags.map((tag, index) => (
                   <span key={index} className="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">
                     #{tag}
                   </span>
@@ -133,7 +164,7 @@ const BlogPage = async ({ params }) => {
       </div>
 
       {/* Related Blogs Section */}
-      {blog?.blog?.relatedBlogs && blog?.blog?.relatedBlogs.length > 0 && (
+      {blog?.related_blogs && blog.related_blogs.length > 0 && (
         <div className="bg-white py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -146,36 +177,36 @@ const BlogPage = async ({ params }) => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blog.blog.relatedBlogs.map((relatedBlog) => (
+              {blog.related_blogs.map((relatedBlog) => (
                 <article
-                  key={relatedBlog._id}
+                  key={relatedBlog.id}
                   className="group bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 overflow-hidden"
                 >
                   <Link href={`/blogs/${relatedBlog.slug}`} className="block">
                     <div className="relative overflow-hidden">
                       <img
-                        src={relatedBlog.coverImage}
+                        src={relatedBlog.cover_image_url}
                         alt={relatedBlog.title}
                         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
                     </div>
                   </Link>
-                  
+
                   <div className="p-6">
                     <Link href={`/blogs/${relatedBlog.slug}`}>
                       <h3 className="text-lg font-bold text-gray-800 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
                         {relatedBlog.title}
                       </h3>
                     </Link>
-                    
+
                     <p className="text-gray-600 text-sm mb-4 line-clamp-3 leading-relaxed">
                       {relatedBlog.excerpt}
                     </p>
-                    
+
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-gray-500">
-                        {new Date(relatedBlog.createdAt).toLocaleDateString()}
+                        {relatedBlog.created_at ? new Date(relatedBlog.created_at).toLocaleDateString() : ''}
                       </span>
                       <Link
                         href={`/blogs/${relatedBlog.slug}`}
@@ -208,12 +239,12 @@ const BlogPage = async ({ params }) => {
               </svg>
               Back to all blogs
             </Link>
-            
+
             <div className="text-center">
               <h3 className="font-semibold text-gray-800 mb-2">Stay Updated</h3>
               <p className="text-gray-600 text-sm">Get the latest market insights delivered to your inbox</p>
             </div>
-            
+
             <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-full transition-colors">
               Open BO Account Now
             </button>

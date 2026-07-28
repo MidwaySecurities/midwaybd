@@ -3,7 +3,7 @@
 import { useRouter, useSearchParams } from "next/navigation";
 
 // Adjust this list to match the categories your API actually returns
-const CATEGORIES = [
+export const categories = [
   { value: "", label: "All Categories" },
   { value: "Portfolio Transfer", label: "Portfolio Transfer" },
 ];
@@ -33,7 +33,7 @@ const BlogCategoryDropdown = ({ activeCategory }) => {
       onChange={handleChange}
       className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
     >
-      {CATEGORIES.map((c) => (
+      {categories.map((c) => (
         <option key={c.value} value={c.value}>
           {c.label}
         </option>

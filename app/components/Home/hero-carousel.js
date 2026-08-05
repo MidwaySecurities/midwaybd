@@ -1,6 +1,6 @@
 'use client'
 
-import mobile_app1 from '../../../public/images/home/hero-carousel/H1.png'
+import mobile_app1 from '../../../public/images/home/hero-carousel/H1.jpeg'
 import mobile_app2 from '../../../public/images/home/hero-carousel/H2.png'
 import hero_image2 from '../../../public/images/home/hero-carousel/H3.png'
 import hero_image4 from '../../../public/images/home/hero-carousel/H4.png'
@@ -73,7 +73,7 @@ function HeroCarousol() {
         <div className="slider-container">
             <Slider {...settings}>
                 <div>
-                    <SliderTitle title={`Slider title one`} />
+                    <SliderTitle title={``} />
                     <Image className="w-full" src={mobile_app1} width={320} alt='QuickTrade Pro 1' />
                 </div>
                 <div>

@@ -5,7 +5,7 @@ import HeroSection from "./components/Home/hero-section";
 import SubNav from "./components/Home/sub-nav";
 import TextScrollingHorizontally from "./components/Home/text-scrolling-horizontally";
 import Card from "./components/Home/card";
-import hero_image1 from "../public/images/home/hero-carousel/H1.png";
+import hero_image1 from "../public/images/home/hero-carousel/H1.jpeg";
 import hero_image2 from "../public/images/home/hero-carousel/H2.png";
 import hero_image3 from "../public/images/home/hero-carousel/H3.png";
 import OurService from "./components/Home/our-service";
@@ -186,10 +186,10 @@ export default async function Home() {
       </section>
 
       <main>
-        <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden">
+        <section className="relative text-white overflow-hidden">
           <div className="absolute inset-0 bg-black/20"></div>
-          <div className="lg:hidden relative px-4 py-12">
-            <div className="text-center space-y-6 mb-8">
+          <div className="lg:hidden relative py-6 pt-0">
+            <div className="text-center bg-[#004990] space-y-6 mb-8 p-6">
               <h1 className="text-3xl sm:text-4xl font-bold leading-tight">
                 Trade Online with
                 <span className="block text-yellow-400">Latest Technologies</span>
@@ -297,20 +297,6 @@ export default async function Home() {
             </div>
           </div>
         </section>
-
-        {/* Services Section */}
-        <section className="py-16 lg:py-24 bg-gradient-to-br from-blue-900 to-indigo-900 text-white md:hidden" aria-labelledby="services-heading">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 id="services-heading" className="text-3xl lg:text-4xl font-bold mb-4">Our Services</h2>
-              <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-                Comprehensive trading solutions designed to meet all your investment needs
-              </p>
-            </div>
-            <OurService />
-          </div>
-        </section>
-
         {/* Account Opening Steps */}
         <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
           <div className="container mx-auto px-4">

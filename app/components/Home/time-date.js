@@ -57,7 +57,7 @@ export default function TimeDate() {
     }, [])
 
     return (
-        <div className='flex justify-between py-1 px-4 bg-white'>
+        <div className='flex justify-between py-1 px-4 bg-[#d0deea]'>
             <div className={`font-bold flex gap-2 justify-center items-center ${isAfterTwoThirty || dseStatus === 'Closed' ? 'text-black' : 'text-[#22C55E]'}`}>
                 <Image src={bangladeshFlag} alt='bangladesh' height={15} width={15} className='w-[20px]' />
                 {time === null ? <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-gray-900"></div> : time}

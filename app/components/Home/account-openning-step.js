@@ -250,7 +250,7 @@
 //                             />
 //                         </svg>
 //                     </div>
-//                     <h4 className="font-semibold text-gray-800">24/7 Support</h4>
+//                     <h4 className="font-semibold text-gray-800">24/7 Access</h4>
 //                     <p className="text-sm text-gray-600">Always here to help</p>
 //                 </div>
 
@@ -356,17 +356,6 @@ const AccountOpeningSteps = () => {
                                 {step.description}
                             </p>
                         </div>
-
-                        {step.link && (
-                            <div className="pt-4">
-                                <span className="inline-flex items-center text-blue-600 font-medium group-hover:text-blue-700 transition-colors duration-300">
-                                    Get Started
-                                    <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                    </svg>
-                                </span>
-                            </div>
-                        )}
                     </div>
                 </div>
 
@@ -507,7 +496,7 @@ const AccountOpeningSteps = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
                             </svg>
                         </div>
-                        <h4 className="font-semibold text-gray-800 mb-1">24/7 Support</h4>
+                        <h4 className="font-semibold text-gray-800 mb-1">24/7 Access</h4>
                         <p className="text-sm text-gray-600">Always here to help</p>
                     </div>
 

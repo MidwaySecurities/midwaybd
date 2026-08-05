@@ -1,13 +1,50 @@
 'use client'
 
-import { useEffect, useState, useRef, Suspense } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { BlogFilters } from '../components/blogFilter';
 import BlogPagination from '../components/blogPagination';
 
-const API_BASE_URL = process.env.PORTAL_URL || 'https://midway-wip.tanbinislam.com/api';
-console.log('API_BASE_URL:', API_BASE_URL);
+const API_BASE_URL = process.env.NEXT_PUBLIC_PORTAL_URL || 'https://midway-wip.tanbinislam.com/api';
+
+async function fetchWithRetry(url, options = {}, retries = 2, backoff = 300) {
+    for (let attempt = 0; attempt <= retries; attempt++) {
+        const timeoutController = new AbortController();
+        const timeoutId = setTimeout(() => timeoutController.abort(), 8000);
+
+        const externalSignal = options.signal;
+        const onExternalAbort = () => timeoutController.abort();
+        if (externalSignal) {
+            if (externalSignal.aborted) timeoutController.abort();
+            else externalSignal.addEventListener('abort', onExternalAbort);
+        }
+
+        try {
+            const res = await fetch(url, { ...options, signal: timeoutController.signal });
+            clearTimeout(timeoutId);
+            if (externalSignal) externalSignal.removeEventListener('abort', onExternalAbort);
+
+            if (!res.ok) {
+                throw new Error(`Failed to fetch blogs: ${res.status}`);
+            }
+            return res;
+        } catch (error) {
+            clearTimeout(timeoutId);
+            if (externalSignal) externalSignal.removeEventListener('abort', onExternalAbort);
+
+            if (externalSignal?.aborted) {
+                throw error; // real cancellation (unmount/param change/strict-mode cleanup) — don't retry
+            }
+
+            if (attempt === retries) {
+                throw error;
+            }
+            await new Promise((r) => setTimeout(r, backoff * (attempt + 1)));
+        }
+    }
+}
+
 const BlogsInner = () => {
     const searchParams = useSearchParams();
 
@@ -26,14 +63,12 @@ const BlogsInner = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    // Guard against duplicate/looping fetches for the same params
-    const lastKeyRef = useRef(null);
-
     useEffect(() => {
-        const key = `${activeTab}|${activeCategory}|${currentPage}|${perPage}`;
-        if (lastKeyRef.current === key) return;
-        lastKeyRef.current = key;
-
+        // "ignore" only protects against a STALE response landing after
+        // this effect has been superseded (unmount, param change, or the
+        // Strict-Mode dev double-invoke) — it never blocks a fresh fetch
+        // from starting, unlike the old lastKeyRef guard did.
+        let ignore = false;
         const controller = new AbortController();
 
         const fetchBlogs = async () => {
@@ -48,13 +83,14 @@ const BlogsInner = () => {
             if (activeCategory) params.set('category', activeCategory);
 
             try {
-                const res = await fetch(`${API_BASE_URL}/blogs?${params.toString()}`, {
-                    signal: controller.signal,
-                });
-
-                if (!res.ok) throw new Error(`Failed to fetch blogs: ${res.status}`);
+                const res = await fetchWithRetry(
+                    `${API_BASE_URL}/blogs?${params.toString()}`,
+                    { signal: controller.signal }
+                );
 
                 const json = await res.json();
+                if (ignore) return; // a newer effect run has already taken over
+
                 if (json?.status !== 'success' || !json?.blogs) {
                     throw new Error('Unexpected response from blogs API');
                 }
@@ -68,19 +104,23 @@ const BlogsInner = () => {
                     perPage: blogsPayload.per_page,
                 });
             } catch (err) {
-                if (err.name === 'AbortError') return;
-                console.error('Error fetching blogs from Midway API:', err);
+                if (ignore) return;
+                if (err.name === 'AbortError') return; // real cancellation, next effect run will handle it
+                console.error('Error fetching blogs from Midway API after retries:', err);
                 setError(err.message);
                 setBlogs([]);
                 setPagination({});
             } finally {
-                setIsLoading(false);
+                if (!ignore) setIsLoading(false);
             }
         };
 
         fetchBlogs();
 
-        return () => controller.abort();
+        return () => {
+            ignore = true;
+            controller.abort();
+        };
     }, [activeTab, activeCategory, currentPage, perPage]);
 
     return (
@@ -125,7 +165,6 @@ const BlogsInner = () => {
                             key={blog.id}
                             className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col"
                         >
-                            {/* Cover Image */}
                             <Link href={`/blogs/${blog.slug}`}>
                                 <img
                                     src={blog.cover_image}
@@ -134,7 +173,6 @@ const BlogsInner = () => {
                                 />
                             </Link>
 
-                            {/* Blog Content */}
                             <div className="p-5 flex flex-col flex-1">
                                 <Link href={`/blogs/${blog.slug}`}>
                                     <h2 className="text-lg font-semibold text-gray-800 line-clamp-2 hover:text-blue-600 transition-colors duration-200">

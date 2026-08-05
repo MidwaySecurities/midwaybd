@@ -103,7 +103,7 @@ export default async function Home() {
 
   let newsData = [];
   try {
-    const news = await fetch(`${process.env.PORTAL_URL}/api/public-web-news`, {
+    const news = await fetch(`${process.env.NEXT_PUBLIC_PORTAL_URL}/api/public-web-news`, {
       next: { revalidate: 60 },
     });
     if (news.status === 200) {
@@ -205,7 +205,7 @@ export default async function Home() {
         {/* <NewsTicker /> */}
 
         {/* QuickTrade Pro Showcase */}
-        <section className="py-16 lg:py-16 bg-gradient-to-br from-gray-50 to-blue-50" aria-labelledby="quicktrade-heading">
+        <section className="pb-8 pt-8 md:pt-0 bg-gradient-to-br from-gray-50 to-blue-50" aria-labelledby="quicktrade-heading">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
@@ -263,7 +263,7 @@ export default async function Home() {
                 </div>
               </div>
 
-              <div className="order-1 lg:order-2 text-center">
+              <div className="hidden md:block order-1 lg:order-2 text-center">
                 <div className="relative inline-block">
                   <Image
                     src="https://www.midwaybd.com/uploads/6/0/4/6/60462737/quicktrade-pro-website-1-png-transparent-compressed_orig.png"

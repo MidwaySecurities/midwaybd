@@ -56,7 +56,7 @@ const DseDsexChart = () => {
           0
         ).getTime()
 
-        const filtered = formatted.filter(d => d.timestamp >= marketOpen)
+        const filtered = formatted
 
         if (filtered.length === 0) {
           throw new Error('No DSEX data available for today yet')

@@ -27,10 +27,10 @@ const SmoothTickerClient = ({ tickerData, hasError }) => {
 
         return (
             <div
-                className="inline-flex items-center gap-3 px-5 py-3 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md rounded-xl border border-white/20 hover:border-white/40 hover:from-white/15 hover:to-white/8 transition-all duration-300 cursor-pointer flex-shrink-0 mx-2 shadow-lg hover:shadow-xl hover:scale-105 group"
+                className="inline-flex items-center gap-3 px-5 py-3 backdrop-blur-md rounded-xl border border-white/20 hover:border-white/40 hover:from-white/15 hover:to-white/8 transition-all duration-300 cursor-pointer flex-shrink-0 mx-2 shadow-lg hover:shadow-xl hover:scale-105 group"
             >
                 {/* Company Logo */}
-                <div className="relative w-8 h-8 rounded-full overflow-hidden bg-white/90 flex-shrink-0 flex justify-center items-center shadow-md group-hover:shadow-lg transition-shadow">
+                <div className="relative w-8 h-8 rounded-full overflow-hidden flex-shrink-0 flex justify-center items-center shadow-md group-hover:shadow-lg transition-shadow">
                     <img
                         src={`https://platform.biniyog.com.bd/assets/logo/company/${item.MKISTAT_INSTRUMENT_CODE}.png`}
                         alt={`${item.MKISTAT_INSTRUMENT_CODE} logo`}
@@ -89,18 +89,18 @@ const SmoothTickerClient = ({ tickerData, hasError }) => {
 
     return (
         <div 
-            className="relative w-full overflow-hidden bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 py-4"
+            className="relative w-full overflow-hidden bg-black"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
             {/* Gradient overlays for fade effect */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-32  z-10 pointer-events-none"></div>
             
             {/* Error indicator */}
             {hasError && (
                 <div className="absolute top-1 left-1/2 -translate-x-1/2 z-20">
-                    <span className="text-xs text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full border border-amber-400/30">
+                    <span className="text-xs text-amber-400 px-2 py-0.5 rounded-full border border-amber-400/30">
                         Using cached data
                     </span>
                 </div>

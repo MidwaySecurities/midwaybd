@@ -3,32 +3,43 @@ import Carousel from '@/app/components/carousel';
 import Link from 'next/link';
 import React from 'react';
 
-const API_BASE_URL = process.env.PORTAL_URL || 'https://midway-wip.tanbinislam.com/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_PORTAL_URL || 'https://midway-wip.tanbinislam.com/api';
 
-async function getABlog(slug) {
-  try {
-    const res = await fetch(`${API_BASE_URL}/blogs/${slug}`, {
-      next: { revalidate: 60 },
-    });
+async function getABlog(slug, retries = 2) {
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 8000); // 8s timeout
 
-    if (res.status === 404) {
-      return null;
+      const res = await fetch(`${API_BASE_URL}/blogs/${slug}`, {
+        next: { revalidate: 60 },
+        signal: controller.signal,
+      });
+
+      clearTimeout(timeout);
+
+      if (res.status === 404) {
+        return null; // genuine "not found" — don't retry
+      }
+
+      if (!res.ok) {
+        throw new Error(`Failed to fetch blog: ${res.status} ${res.statusText}`);
+      }
+
+      const json = await res.json();
+
+      if (json?.status !== 'success' || !json?.blog) {
+        return null;
+      }
+
+      return json.blog;
+    } catch (error) {
+      console.error(`Error fetching blog (attempt ${attempt + 1}/${retries + 1}):`, error);
+      if (attempt === retries) {
+        return null;
+      }
+      await new Promise((r) => setTimeout(r, 300 * (attempt + 1))); // small backoff
     }
-
-    if (!res.ok) {
-      throw new Error(`Failed to fetch blog: ${res.status} ${res.statusText}`);
-    }
-
-    const json = await res.json();
-
-    if (json?.status !== 'success' || !json?.blog) {
-      return null;
-    }
-
-    return json.blog;
-  } catch (error) {
-    console.error('Error fetching blog from Midway API:', error);
-    return null;
   }
 }
 

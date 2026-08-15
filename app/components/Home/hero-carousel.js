@@ -1,9 +1,8 @@
 'use client'
 
-import mobile_app1 from '../../../public/images/home/hero-carousel/H1.jpeg'
-import mobile_app2 from '../../../public/images/home/hero-carousel/H2.png'
-import hero_image2 from '../../../public/images/home/hero-carousel/H3.png'
-import hero_image4 from '../../../public/images/home/hero-carousel/H4.png'
+import mobile_app1 from '../../../public/images/home/hero-carousel/H1.gif'
+import mobile_app2 from '../../../public/images/home/hero-carousel/H2.gif'
+import hero_image2 from '../../../public/images/home/hero-carousel/H3.gif'
 import Image from "next/image";
 
 
@@ -15,12 +14,12 @@ import SliderTitle from './slider-title'
 
 function HeroCarousol() {
     var settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 5000,
         focusOnSelect: false,
         pauseOnHover: false,
         fade: false,
@@ -76,16 +75,13 @@ function HeroCarousol() {
                     <SliderTitle title={``} />
                     <Image className="w-full" src={mobile_app1} width={320} alt='QuickTrade Pro 1' />
                 </div>
+
                 <div>
-                    <SliderTitle title={`Slider title two`} />
-                    <Image className="w-full transform" src={hero_image4} width={320} alt='QuickTrade Pro 4' />
-                </div>
-                <div>
-                    <SliderTitle title={`Slider title three`} />
+                    <SliderTitle title={``} />
                     <Image className="w-full" src={mobile_app2} width={320} alt='QuickTrade Pro 2' />
                 </div>
                 <div>
-                    <SliderTitle title={`Slider title four`} />
+                    <SliderTitle title={``} />
                     <Image className="w-full transform" src={hero_image2} width={320} alt='QuickTrade Pro 3' />
                 </div>
 

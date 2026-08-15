@@ -319,3 +319,7 @@ html {
 .font_sonar_bangla{
   font-family: 'ShonarBangla', sans-serif;
 }
+
+.slick-next, .slick-prev{
+  display:none !important;
+}

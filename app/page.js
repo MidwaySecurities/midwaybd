@@ -5,9 +5,9 @@ import HeroSection from "./components/Home/hero-section";
 import SubNav from "./components/Home/sub-nav";
 import TextScrollingHorizontally from "./components/Home/text-scrolling-horizontally";
 import Card from "./components/Home/card";
-import hero_image1 from "../public/images/home/hero-carousel/H1.jpeg";
-import hero_image2 from "../public/images/home/hero-carousel/H2.png";
-import hero_image3 from "../public/images/home/hero-carousel/H3.png";
+import hero_image1 from "../public/images/home/hero-carousel/H1.gif";
+import hero_image2 from "../public/images/home/hero-carousel/H2.gif";
+import hero_image3 from "../public/images/home/hero-carousel/H3.gif";
 import OurService from "./components/Home/our-service";
 import AccountOpenningSteps from "./components/Home/account-openning-step";
 import Platform from "./components/Home/platform";
@@ -188,8 +188,8 @@ export default async function Home() {
       <main>
         <section className="relative text-white overflow-hidden">
           <div className="absolute inset-0 bg-black/20"></div>
-          <div className="lg:hidden relative py-6 pt-0">
-            <div className="text-center bg-[#004990] space-y-6 mb-8 p-6">
+          <div className="lg:hidden relative py-0 md:py-6 pt-0">
+            <div className="text-center bg-[#004990] space-y-6 mb-0 p-6">
               <h1 className="text-3xl sm:text-4xl font-bold leading-tight">
                 Trade Online with
                 <span className="block text-yellow-400">Latest Technologies</span>

@@ -117,14 +117,16 @@ const DepositForm = () => {
         const formData = new FormData(e.target);
         const data = {
             client_code: formData.get('clientCode'),
-            name: formData.get('name'),
+            client_name: formData.get('client_name'),
+            email: formData.get('email'),
+            phone_number: formData.get('phone_number'),
             amount: formData.get('amount'),
-            payment_method: formData.get('method'),
+            bank_name: formData.get('bank_name'),
             deposit_slip: formData.get('depositSlip'),
         };
 
         try {
-            const response = await axios.post('https://midway-wip.tanbinislam.com/api/web/deposit/request', data, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_PORTAL_URL}/web/deposit/bank/request`, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 }
@@ -155,8 +157,16 @@ const DepositForm = () => {
                     <input type="text" id="clientCode" name="clientCode" className='border border-gray-300 p-2 w-full' required />
                 </div>
                 <div className='mb-4'>
-                    <label htmlFor="name" className='block mb-2'>Name</label>
-                    <input type="text" id="name" name="name" className='border border-gray-300 p-2 w-full' required />
+                    <label htmlFor="client_name" className='block mb-2'>Name</label>
+                    <input type="text" id="client_name" name="client_name" className='border border-gray-300 p-2 w-full' required />
+                </div>
+                <div className='mb-4'>
+                    <label htmlFor="email" className='block mb-2'>Email</label>
+                    <input type="text" id="email" name="email" className='border border-gray-300 p-2 w-full' required />
+                </div>
+                <div className='mb-4'>
+                    <label htmlFor="phone_number" className='block mb-2'>Phone</label>
+                    <input type="phone_number" id="phone_number" name="phone_number" className='border border-gray-300 p-2 w-full' required />
                 </div>
                 <div className='mb-4'>
                     <label htmlFor="amount" className='block mb-2'>Deposit Amount</label>
@@ -167,11 +177,11 @@ const DepositForm = () => {
                     <input type="file" id="depositSlip" name="depositSlip" className='border border-gray-300 p-2 w-full' required />
                 </div>
                 <div className='mb-4'>
-                    <label htmlFor="method" className='block mb-2'>Payment Method</label>
-                    <select id="method" name="method" className='border border-gray-300 p-2 w-full' required>
+                    <label htmlFor="bank_name" className='block mb-2'>Select Midway Bank Account</label>
+                    <select id="bank_name" name="bank_name" className='border border-gray-300 p-2 w-full' required>
                         <option value="">Select Bank</option>
-                        <option value="bkash">City Bank</option>
-                        <option value="nagad">Dutch Bangla</option>
+                        <option value="City Bank">City Bank</option>
+                        <option value="Dutch Bangla">Dutch Bangla</option>
                     </select>
                 </div>
 

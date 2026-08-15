@@ -184,6 +184,7 @@ const Regulators = () => {
           display: flex;
           align-items: center;
         }
+        
         .slick-slide {
           height: auto;
         }

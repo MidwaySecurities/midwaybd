@@ -176,11 +176,7 @@ export default async function Home() {
       />
 
       <section className=" py-6 shadow-sm z-[-100]" aria-label="Live market data">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-bold text-gray-800">Live Market Data</h2>
-            {/* <TimeDate /> */}
-          </div>
+        <div className="container mx-auto px-0 lg:px-4">
           <Tickers />
         </div>
       </section>
@@ -198,9 +194,12 @@ export default async function Home() {
                 Professional trading platform for Bangladesh's capital market
               </p>
             </div>
-            <HeroSection />
           </div>
         </section>
+
+        <div className="lg:hidden">
+          <HeroSection />
+        </div>
 
         {/* <NewsTicker /> */}
 
@@ -263,7 +262,7 @@ export default async function Home() {
                 </div>
               </div>
 
-              <div className="hidden md:block order-1 lg:order-2 text-center">
+              <div className="hidden lg:block order-1 lg:order-2 text-center">
                 <div className="relative inline-block">
                   <Image
                     src="https://www.midwaybd.com/uploads/6/0/4/6/60462737/quicktrade-pro-website-1-png-transparent-compressed_orig.png"

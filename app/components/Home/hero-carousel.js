@@ -1,8 +1,9 @@
 'use client'
 
-import mobile_app1 from '../../../public/images/home/hero-carousel/H1.gif'
-import mobile_app2 from '../../../public/images/home/hero-carousel/H2.gif'
-import hero_image2 from '../../../public/images/home/hero-carousel/H3.gif'
+import mobile_app1 from '../../../public/images/home/hero-carousel/H1.gif';
+import mobile_app2 from '../../../public/images/home/hero-carousel/H2.gif';
+import hero_image2 from '../../../public/images/home/hero-carousel/H3.gif';
+
 import Image from "next/image";
 
 

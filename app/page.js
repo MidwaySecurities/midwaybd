@@ -103,7 +103,7 @@ export default async function Home() {
 
   let newsData = [];
   try {
-    const news = await fetch(`${process.env.NEXT_PUBLIC_PORTAL_URL}/api/public-web-news`, {
+    const news = await fetch(`${process.env.PORTAL_URL}/api/public-web-news`, {
       next: { revalidate: 60 },
     });
     if (news.status === 200) {

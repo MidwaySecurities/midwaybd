@@ -14,7 +14,7 @@ import { categories } from './blogCategoryDropDown';
 
 // Laravel API base — point everything at the same host as /api/uploadz.
 const API_BASE =
-  process.env.NEXT_PUBLIC_PORTAL_URL || 'https://midway-wip.tanbinislam.com/api';
+  process.env.PORTAL_URL || 'https://midway-wip.tanbinislam.com/api';
 
 const EditorComponent = ({ placeholder }) => {
   const [formData, setFormData] = useState({

@@ -5,16 +5,16 @@ const Tickers = async () => {
     let hasError = false;
 
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_PORTAL_URL}/ds30`, {
+        const response = await fetch(`${process.env.PORTAL_URL}/ds30`, {
             next: {
                 revalidate: 60
             }
         });
-        
+
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         const data = await response.json();
         refineData = data?.data?.filter(item => {
             return ['BRACBANK', 'SQURPHARMA', 'GP', 'MARICO', 'BATBC', 'CITYBANK', 'EBL', 'ISLAMIBANK'].includes(item.MKISTAT_INSTRUMENT_CODE);

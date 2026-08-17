@@ -12,7 +12,7 @@ export default function TimeDate() {
 
     useEffect(() => {
         const fetchDseStatus = async () => {
-            const data = await fetch(`${NEXT_PUBLIC_PORTAL_URL}/api/getmktstatus`)
+            const data = await fetch(`${PORTAL_URL}/api/getmktstatus`)
             const res = await data.json()
             console.log(res)
             setDseStatus(res.data)
@@ -63,7 +63,7 @@ export default function TimeDate() {
                 <Image src={bangladeshFlag} alt='bangladesh' height={15} width={15} className='w-[20px]' />
                 {time === null ? <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-gray-900"></div> : time}
             </div>
-            <div className={`font-bold w-[5.3rem] flex ${(isAfterTwoThirty === null || dseStatus === null)?'justify-start gap-2':'justify-between'} items-center`}><span>DSE:</span> <span className={`${(isAfterTwoThirty === null || dseStatus === null)?'':''} text-right ${isAfterTwoThirty || dseStatus === 'CLOSED' ? 'text-black' : 'text-[#22C55E]'}`}>{isAfterTwoThirty || dseStatus === 'CLOSED' ? 'CLOSE' : (isAfterTwoThirty === null || dseStatus === null) ? <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-gray-900"></div> : 'OPEN'}</span></div>
+            <div className={`font-bold w-[5.3rem] flex ${(isAfterTwoThirty === null || dseStatus === null) ? 'justify-start gap-2' : 'justify-between'} items-center`}><span>DSE:</span> <span className={`${(isAfterTwoThirty === null || dseStatus === null) ? '' : ''} text-right ${isAfterTwoThirty || dseStatus === 'CLOSED' ? 'text-black' : 'text-[#22C55E]'}`}>{isAfterTwoThirty || dseStatus === 'CLOSED' ? 'CLOSE' : (isAfterTwoThirty === null || dseStatus === null) ? <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-gray-900"></div> : 'OPEN'}</span></div>
         </div>
     );
 }

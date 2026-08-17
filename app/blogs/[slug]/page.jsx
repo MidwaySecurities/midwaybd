@@ -3,7 +3,7 @@ import Carousel from '@/app/components/carousel';
 import Link from 'next/link';
 import React from 'react';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_PORTAL_URL || 'https://midway-wip.tanbinislam.com/api';
+const API_BASE_URL = process.env.PORTAL_URL || 'https://midway-wip.tanbinislam.com/api';
 
 async function getABlog(slug, retries = 2) {
   for (let attempt = 0; attempt <= retries; attempt++) {

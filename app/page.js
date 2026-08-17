@@ -37,7 +37,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.midwaybd.com";
 
 export async function generateMetadata() {
   const title =
-    "Midway Securities | Online Stock Trading Platform in Bangladesh";
+    "Upcoming website | Midway Securities | Online Stock Trading Platform in Bangladesh";
   const description =
     "Trade online with Midway Securities — a DSE & CSE registered brokerage offering real-time market data, advanced charting, QuickTrade Pro mobile trading, and secure online account opening in Bangladesh.";
 

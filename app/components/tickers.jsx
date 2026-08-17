@@ -5,7 +5,7 @@ const Tickers = async () => {
     let hasError = false;
 
     try {
-        const response = await fetch(`https://platform.biniyog.com.bd/core/sharemarket/getPriceDataTableByAllSector`, {
+        const response = await fetch(`http://midway-app.test/api/ds30`, {
             next: {
                 revalidate: 60
             }
@@ -16,7 +16,7 @@ const Tickers = async () => {
         }
         
         const data = await response.json();
-        refineData = data.filter(item => {
+        refineData = data?.data?.filter(item => {
             return ['BRACBANK', 'SQURPHARMA', 'GP', 'MARICO', 'BATBC', 'CITYBANK', 'EBL', 'ISLAMIBANK'].includes(item.MKISTAT_INSTRUMENT_CODE);
         });
     } catch (error) {

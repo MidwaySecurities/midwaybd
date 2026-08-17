@@ -5,7 +5,7 @@ const Tickers = async () => {
     let hasError = false;
 
     try {
-        const response = await fetch(`http://midway-app.test/api/ds30`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_PORTAL_URL}/ds30`, {
             next: {
                 revalidate: 60
             }

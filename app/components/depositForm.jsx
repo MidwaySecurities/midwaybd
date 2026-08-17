@@ -126,10 +126,10 @@ const DepositForm = () => {
         };
 
         try {
-            const response = await axios.post(`${process.env.PORTAL_URL}/web/deposit/bank/request`, data, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_PORTAL_URL}/web/deposit/bank/request`, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
-                    'Authorization': `Bearer ${process.env.PORTAL_API_BEARER_TOKEN}`
+                    'Authorization': `Bearer ${process.env.NEXT_PUBLIC_PORTAL_API_BEARER_TOKEN}`
                 }
             });
             const result = await response.data;

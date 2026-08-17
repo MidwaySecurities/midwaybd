@@ -12,7 +12,7 @@ export default function TimeDate() {
 
     useEffect(() => {
         const fetchDseStatus = async () => {
-            const data = await fetch(`${PORTAL_URL}/api/getmktstatus`)
+            const data = await fetch(`${process.env.NEXT_PUBLIC_PORTAL_URL}/getmktstatus`)
             const res = await data.json()
             console.log(res)
             setDseStatus(res.data)

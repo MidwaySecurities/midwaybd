@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { BlogFilters } from '../components/blogFilter';
 import BlogPagination from '../components/blogPagination';
 
-const API_BASE_URL = process.env.PORTAL_URL || 'https://midway-wip.tanbinislam.com/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_PORTAL_URL || 'https://midway-wip.tanbinislam.com/api';
 
 async function fetchWithRetry(url, options = {}, retries = 2, backoff = 300) {
     for (let attempt = 0; attempt <= retries; attempt++) {

@@ -117,17 +117,21 @@ const MobileDeposit = () => {
         const formData = new FormData(e.target);
         const data = {
             client_code: formData.get('clientCode'),
-            name: formData.get('name'),
-            amount: formData.get('amount'),
-            payment_method: formData.get('method'),
-            transaction_id: formData.get('transactionId'),
+            client_name: formData.get('name'),
+            email: formData.get('email'),
+            phone_number: formData.get('phone_number'),
+            deposit_amount: formData.get('amount'),
+            remarks:formData.get('remarks'),
+            mobile_money: formData.get('method'),
+            trx_id: formData.get('transactionId'),
             deposit_slip: formData.get('depositSlip'),
         };
 
         try {
-            const response = await axios.post('https://midway-wip.tanbinislam.com/api/web/deposit/request', data, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_PORTAL_URL}/web/deposit/mobile/request`, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
+                    'Authorization': `Bearer ${process.env.NEXT_PUBLIC_PORTAL_API_BEARER_TOKEN}`
                 }
             });
             const result = await response.data;
@@ -157,6 +161,14 @@ const MobileDeposit = () => {
                 <div className='mb-4'>
                     <label htmlFor="name" className='block mb-2'>Name</label>
                     <input type="text" id="name" name="name" className='border border-gray-300 p-2 w-full' required />
+                </div>
+                <div className='mb-4'>
+                    <label htmlFor="email" className='block mb-2'>Email</label>
+                    <input type="text" id="email" name="email" className='border border-gray-300 p-2 w-full' required />
+                </div>
+                <div className='mb-4'>
+                    <label htmlFor="phone_number" className='block mb-2'>Phone Number</label>
+                    <input type="text" id="phone_number" name="phone_number" className='border border-gray-300 p-2 w-full' required />
                 </div>
                 <div className='mb-4'>
                     <label htmlFor="method" className='block mb-2'>Payment Method</label>

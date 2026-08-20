@@ -369,12 +369,12 @@ export default function WithdrawClient() {
                 <div style={fieldStyle}>
                   <label htmlFor="f-phone" style={labelStyle}>Phone / ফোন নম্বর *</label>
                   <input
-                    id="f-phone" name="phone" type="tel" autoComplete="tel"
-                    style={{ ...inputStyle, ...getFocusStyle("phone") }}
+                    id="f-phone" name="phone_number" type="tel" autoComplete="tel"
+                    style={{ ...inputStyle, ...getFocusStyle("phone_number") }}
                     placeholder="+880 17XXXXXXXX"
-                    value={formData.phone}
-                    onChange={(e) => setFormData((p) => ({ ...p, phone: e.target.value }))}
-                    onFocus={() => setFocusedField("phone")}
+                    value={formData.phone_number}
+                    onChange={(e) => setFormData((p) => ({ ...p, phone_number: e.target.value }))}
+                    onFocus={() => setFocusedField("phone_number")}
                     onBlur={() => setFocusedField(null)}
                     aria-required="true"
                     aria-invalid={!!errors.phone}
@@ -411,9 +411,9 @@ export default function WithdrawClient() {
                     id="f-comment" name="comment"
                     style={{ ...inputStyle, height: 80, resize: "vertical", ...getFocusStyle("comment") }}
                     placeholder="Any additional instructions…"
-                    value={formData.comment}
+                    value={formData.remarks}
                     onChange={(e) => setFormData((p) => ({ ...p, remarks: e.target.value }))}
-                    onFocus={() => setFocusedField("comment")}
+                    onFocus={() => setFocusedField("remarks")}
                     onBlur={() => setFocusedField(null)}
                   />
                 </div>

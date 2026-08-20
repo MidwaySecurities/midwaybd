@@ -109,7 +109,7 @@ export default function WithdrawClient() {
     setSubmitting(true);
     try {
       const { data } = await axios.post(
-        "https://midway-wip.tanbinislam.com/api/web/withdraw/request",
+        `${process.env.NEXT_PUBLIC_PORTAL_URL}/api/web/withdraw/request`,
         { ...portalData }
       );
 
@@ -151,13 +151,36 @@ export default function WithdrawClient() {
     manualFormData.append('amount', formData.amount);
     manualFormData.append('remarks', formData.remarks);
     manualFormData.append('signature', formData.signature);
-    const data = await axios.post(`${process.env.NEXT_PUBLIC_PORTAL_URL}/web/withdraw/manual/request`, {
-      data: manualFormData
-    })
-    console.log(data)
-    if (!validateForm()) return;
-    if(data.status === 'success'){
-      setStep('success')
+
+    try {
+      const { data } = await axios.post(`${process.env.NEXT_PUBLIC_PORTAL_URL}/web/withdraw/manual/request`, {
+        manualFormData
+      })
+
+      if (data.status === "success") {
+        setStep("success");
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Withdrawal Failed",
+          text: data.message || "An error occurred. Please try again.",
+          confirmButtonColor: PRIMARY,
+        });
+        setErrors({ form: data.message || "An error occurred. Please try again." });
+      }
+    } catch (error) {
+      console.error("Withdrawal submit error:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Something went wrong",
+        text:
+          error?.response?.data?.message ||
+          "Could not submit your withdrawal request. Please check your connection and try again.",
+        confirmButtonColor: PRIMARY,
+      });
+      setErrors({ form: "Failed to submit withdrawal request." });
+    } finally {
+      setSubmitting(false);
     }
     // setTimeout(() => { setSubmitting(false); setStep("success"); }, 1500);
   };

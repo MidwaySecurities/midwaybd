@@ -153,8 +153,12 @@ export default function WithdrawClient() {
     manualFormData.append('signature', formData.signature);
 
     try {
-      const { data } = await axios.post(`${process.env.NEXT_PUBLIC_PORTAL_URL}/web/withdraw/manual/request`, {
-        manualFormData
+      const { data } = await axios.post(`${process.env.NEXT_PUBLIC_PORTAL_URL}/web/withdraw/manual/request`, manualFormData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          'Accept': 'application/json',
+          'Authorization' : `Bearer ${process.env.NEXT_PUBLIC_PORTAL_API_BEARER_TOKEN}`
+        },
       })
 
       if (data.status === "success") {

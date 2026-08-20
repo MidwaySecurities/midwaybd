@@ -107,7 +107,7 @@ export const faqData = {
     {
       id: 'tech3',
       question: 'Do you provide market data and research reports?',
-      answer: 'Yes, we provide real-time market data, daily market analysis, company research reports, sector analysis, and investment recommendations. Premium research is available for active traders.'
+      answer: 'Yes, we provide Real-time market trading, daily market analysis, company research reports, sector analysis, and investment recommendations. Premium research is available for active traders.'
     },
     {
       id: 'tech4',

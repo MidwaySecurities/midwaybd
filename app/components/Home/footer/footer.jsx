@@ -13,7 +13,7 @@ const Footer = () => {
               Midway Securities Ltd.
             </h2>
             <p className='text-slate-300 text-lg mb-4'>
-              Your trusted partner in investment and securities trading
+              Investing, Simplified!
             </p>
             <p className='text-slate-400 text-sm'>
               Follow us for the latest market updates and insights

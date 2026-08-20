@@ -39,7 +39,7 @@ export async function generateMetadata() {
   const title =
     "Upcoming website | Midway Securities | Online Stock Trading Platform in Bangladesh";
   const description =
-    "Trade online with Midway Securities — a DSE & CSE registered brokerage offering real-time market data, advanced charting, QuickTrade Pro mobile trading, and secure online account opening in Bangladesh.";
+    "Trade online with Midway Securities — a DSE & CSE registered brokerage offering Real-time market trading, advanced charting, QuickTrade Pro mobile trading, and secure online account opening in Bangladesh.";
 
   return {
     title,
@@ -154,7 +154,7 @@ export default async function Home() {
         image:
           "https://www.midwaybd.com/uploads/6/0/4/6/60462737/quicktrade-pro-website-1-png-transparent-compressed_orig.png",
         description:
-          "DSE & CSE registered brokerage offering online stock trading, real-time market data, and account opening in Bangladesh.",
+          "DSE & CSE registered brokerage offering online stock trading, Real-time market trading, and account opening in Bangladesh.",
         areaServed: "BD",
       },
       {
@@ -221,7 +221,7 @@ export default async function Home() {
                     </h2>
 
                     <p className="text-lg text-gray-600 leading-relaxed">
-                      <strong>QuickTrade Pro</strong> is designed to streamline your trading experience with its powerful, user-friendly platform. Whether you're a seasoned trader or just starting, our features include real-time market data, advanced charting tools, and seamless trade execution.
+                      <strong>QuickTrade Pro</strong> is designed to streamline your trading experience with its powerful, user-friendly platform. Whether you're a seasoned trader or just starting, our features include Real-time market trading, advanced charting tools, and seamless trade execution.
                     </p>
 
                     <ul className="space-y-4 list-none">
@@ -229,7 +229,7 @@ export default async function Home() {
                         <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center" aria-hidden="true">
                           <span className="text-green-600 text-sm">✓</span>
                         </div>
-                        <span className="text-gray-700">Real-time market data & analytics</span>
+                        <span className="text-gray-700">Real-time market trading & analytics</span>
                       </li>
                       <li className="flex items-center space-x-3">
                         <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center" aria-hidden="true">
@@ -284,11 +284,11 @@ export default async function Home() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 id="analytics-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-                Live Market Analytics
+                DSEX INDEX: LIVE
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Stay informed with real-time market data, interactive charts, and comprehensive analysis tools
-              </p>
+              {/* <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Stay informed with Real-time market trading, interactive charts, and comprehensive analysis tools
+              </p> */}
             </div>
 
             <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 lg:p-8 shadow-xl border border-gray-200">
@@ -326,7 +326,7 @@ export default async function Home() {
                 Regulated & Trusted
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-                We are regulated by leading financial authorities ensuring your investments are safe and secure
+                We are regulated by multiple Bangladesh financial authorities ensuring your investments are safe and secure.
               </p>
             </div>
             <div className="max-w-4xl mx-auto">
@@ -365,12 +365,12 @@ export default async function Home() {
                 Ready to Start Your Trading Journey?
               </h2>
               <p className="text-xl text-blue-100">
-                Join thousands of successful traders who trust Midway Securities for their investment needs
+                Join thousands of successful investors who trust Midway Securities for their investment needs
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href='https://portal.midwaybd.com/bo/portal-login' target='_blank' rel='noopener noreferrer'>
                   <button className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    Open Trading Account
+                    Open BO Account
                   </button>
                 </a>
                 <Link href="/contact-us">

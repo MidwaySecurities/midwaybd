@@ -315,7 +315,7 @@ const AccountOpeningSteps = () => {
         },
         {
             number: "3",
-            title: "Start Trading",
+            title: "Start Investing",
             description: "Begin your investment journey with our advanced trading platforms and tools",
             link: "https://oms.midwaybd.com",
             icon: (
@@ -401,7 +401,7 @@ const AccountOpeningSteps = () => {
                     </div>
 
                     <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
-                        Start Trading in{" "}
+                        Start Investing In{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                             Three Simple Steps
                         </span>

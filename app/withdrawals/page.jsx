@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Poppins, Roboto } from "next/font/google";
+import Swal from "sweetalert2";
+import { data } from "autoprefixer";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -48,8 +50,32 @@ export default function WithdrawClient() {
   const [step, setStep] = useState("check"); // "check" | "portal" | "form" | "success"
   const [portalData, setPortalData] = useState({ client_code: "", password: "", amount: "" });
   const [formData, setFormData] = useState({
-    name: "", client_code: "", amount: "", email: "", phone: "", comment: "",
+    client_name: "", client_code: "", amount: "", email: "", phone_number: "", remarks: "", signature:"",
   });
+  const [ledgerBalance, setLedgerBalance] = useState(null)
+  useEffect(() => {
+    if (!portalData.client_code || !portalData.password) {
+      return;
+    }
+
+    const timer = setTimeout(async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_PORTAL_URL}/check-ledger/${portalData.client_code}/${portalData.password}`
+        );
+
+        console.log(response.data);
+        setLedgerBalance(response.data['ledger_balance'])
+      } catch (error) {
+        console.error("Error checking ledger:", error);
+        setLedgerBalance(null)
+      }
+    }, 400);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [portalData.client_code, portalData.password]);
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
   const [focusedField, setFocusedField] = useState(null);
@@ -81,18 +107,46 @@ export default function WithdrawClient() {
   const handlePortalSubmit = async () => {
     if (!validatePortal()) return;
     setSubmitting(true);
-    // setTimeout(() => { setSubmitting(false); setStep("success"); }, 1500);
-    // API INTEGRATION POINT: Here you would send `portalData` to your server for processing.
-    const { data } = await axios.post("https://midway-wip.tanbinislam.com/api/web/withdraw/request", { ...portalData });
-    setSubmitting(false);
-    if (data.status === 'success') {
-      setStep("success");
-    } else {
-      setErrors({ form: data.message || "An error occurred. Please try again." });
+    try {
+      const { data } = await axios.post(
+        "https://midway-wip.tanbinislam.com/api/web/withdraw/request",
+        { ...portalData }
+      );
+
+      if (data.status === "success") {
+        setStep("success");
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Withdrawal Failed",
+          text: data.message || "An error occurred. Please try again.",
+          confirmButtonColor: PRIMARY,
+        });
+        setErrors({ form: data.message || "An error occurred. Please try again." });
+      }
+    } catch (error) {
+      console.error("Withdrawal submit error:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Something went wrong",
+        text:
+          error?.response?.data?.message ||
+          "Could not submit your withdrawal request. Please check your connection and try again.",
+        confirmButtonColor: PRIMARY,
+      });
+      setErrors({ form: "Failed to submit withdrawal request." });
+    } finally {
+      setSubmitting(false);
     }
   };
 
-  const handleFormSubmit = () => {
+  const handleFormSubmit = async() => {
+    console.log(formData)
+    const data = await axios.post(`${process.env.NEXT_PUBLIC_PORTAL_URL}/web/withdraw/manual/request`, {
+      data: formData
+    })
+    console.log(data)
+    return;
     if (!validateForm()) return;
     setSubmitting(true);
     setTimeout(() => { setSubmitting(false); setStep("success"); }, 1500);
@@ -101,37 +155,14 @@ export default function WithdrawClient() {
   const resetAll = () => {
     setStep("check");
     setPortalData({ client_code: "", password: "", amount: "" });
-    setFormData({ name: "", client_code: "", amount: "", email: "", phone: "", comment: "" });
+    setFormData({ client_name: "", client_code: "", amount: "", email: "", phone_number: "", remarks: "" });
     setErrors({});
   };
 
   return (
     <div style={{ minHeight: "100vh", background: LIGHT_BG }}>
-      {/* ── Header ── */}
-      {/* <header style={{ background: PRIMARY, padding: "0 32px", borderBottom: `3px solid ${ACCENT}` }}>
-        <div style={{ maxWidth: 960, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", height: 64 }}>
-          <a href="/" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
-            <div style={{ width: 36, height: 36, borderRadius: "50%", background: ACCENT, display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={PRIMARY} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" />
-              </svg>
-            </div>
-            <span style={{ color: WHITE, fontWeight: 700, fontSize: 18, letterSpacing: "0.04em" }}>Midway Securities</span>
-          </a>
-          <nav aria-label="Breadcrumb">
-            <ol style={{ display: "flex", gap: 6, listStyle: "none", margin: 0, padding: 0, fontSize: 13, color: `${WHITE}88` }}>
-              <li><a href="/" style={{ color: `${WHITE}88`, textDecoration: "none" }}>Home</a></li>
-              <li aria-hidden="true" style={{ margin: "0 2px" }}>›</li>
-              <li style={{ color: ACCENT }}>Withdraw Funds</li>
-            </ol>
-          </nav>
-        </div>
-      </header> */}
-
-      {/* ── Main ── */}
       <main id="main-content" style={{ maxWidth: 960, margin: "0 auto", padding: "40px 24px 60px" }}>
 
-        {/* Page heading — visible, crawlable, matches H1 in metadata */}
         <header style={{ marginBottom: 36, textAlign: "center" }}>
           <h1 style={{ fontSize: 28, fontWeight: 700, color: PRIMARY, margin: "0 0 8px", letterSpacing: "-0.01em" }}>
             Withdraw Funds — টাকা উত্তোলন
@@ -143,7 +174,6 @@ export default function WithdrawClient() {
           </p>
         </header>
 
-        {/* ── Step: Choose method ── */}
         {step === "check" && (
           <section aria-label="Choose withdrawal method">
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, maxWidth: 640, margin: "0 auto" }}>
@@ -161,7 +191,6 @@ export default function WithdrawClient() {
               />
             </div>
 
-            {/* Static FAQ — always visible, crawlable, adds topical depth for AI SEO */}
             <section aria-labelledby="faq-heading" style={{ maxWidth: 640, margin: "48px auto 0" }}>
               <h2 id="faq-heading" style={{ fontSize: 16, fontWeight: 700, color: PRIMARY, marginBottom: 16, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                 Frequently Asked Questions
@@ -175,7 +204,6 @@ export default function WithdrawClient() {
           </section>
         )}
 
-        {/* ── Step: Portal withdrawal ── */}
         {step === "portal" && (
           <section aria-label="Portal withdrawal form">
             <FormCard title="Quick Withdrawal" subtitle="Authenticated via Midway Portal">
@@ -214,6 +242,7 @@ export default function WithdrawClient() {
                 />
                 {errors.password && <ErrorMsg id="err-password">{errors.password}</ErrorMsg>}
               </div>
+              {ledgerBalance !== null ? <div className={`mb-5 font-bold ${ledgerBalance > 0 ? 'text-green-500' : 'text-red-500'}`}>Your ledger balance is {ledgerBalance}</div> : ''}
               <div style={fieldStyle}>
                 <label htmlFor="portal-amount" style={labelStyle}>Withdrawal Amount (৳)</label>
                 <input
@@ -233,7 +262,7 @@ export default function WithdrawClient() {
               </div>
               <div style={{ display: "flex", gap: 12, marginTop: 8 }}>
                 <BackButton onClick={() => { setStep("check"); setErrors({}); }} />
-                <SubmitButton onClick={handlePortalSubmit} loading={submitting}>
+                <SubmitButton ledgerBalance={ledgerBalance} onClick={handlePortalSubmit} loading={submitting}>
                   {submitting ? "Processing…" : "Submit Withdrawal"}
                 </SubmitButton>
               </div>
@@ -258,17 +287,17 @@ export default function WithdrawClient() {
                 <div style={fieldStyle}>
                   <label htmlFor="f-name" style={labelStyle}>Full Name / নাম *</label>
                   <input
-                    id="f-name" name="name" autoComplete="name"
+                    id="f-name" name="client_name" autoComplete="client_name"
                     style={{ ...inputStyle, ...getFocusStyle("name") }}
                     placeholder="Your full name"
-                    value={formData.name}
-                    onChange={(e) => setFormData((p) => ({ ...p, name: e.target.value }))}
-                    onFocus={() => setFocusedField("name")}
+                    value={formData.client_name}
+                    onChange={(e) => setFormData((p) => ({ ...p, client_name: e.target.value }))}
+                    onFocus={() => setFocusedField("client_name")}
                     onBlur={() => setFocusedField(null)}
                     aria-required="true"
-                    aria-invalid={!!errors.name}
+                    aria-invalid={!!errors.client_name}
                   />
-                  {errors.name && <ErrorMsg>{errors.name}</ErrorMsg>}
+                  {errors.name && <ErrorMsg>{errors.client_name}</ErrorMsg>}
                 </div>
                 <div style={fieldStyle}>
                   <label htmlFor="f-client_code" style={labelStyle}>Client Code / ক্লায়েন্ট কোড *</label>
@@ -328,13 +357,25 @@ export default function WithdrawClient() {
                   />
                 </div>
                 <div style={{ ...fieldStyle, gridColumn: "1 / -1" }}>
+                  <label htmlFor="f-email" style={labelStyle}>Your Signature</label>
+                  <input
+                    type = {'file'}
+                    id="f-email" name="signature" autoComplete="signature"
+                    style={{ ...inputStyle }}
+                    // value={formData.signature}
+                    onChange={(e) => setFormData((p) => ({ ...p, signature: e.target.files[0] }))}
+                    onFocus={() => setFocusedField("signature")}
+                    onBlur={() => setFocusedField(null)}
+                  />
+                </div>
+                <div style={{ ...fieldStyle, gridColumn: "1 / -1" }}>
                   <label htmlFor="f-comment" style={labelStyle}>Comment (optional)</label>
                   <textarea
                     id="f-comment" name="comment"
                     style={{ ...inputStyle, height: 80, resize: "vertical", ...getFocusStyle("comment") }}
                     placeholder="Any additional instructions…"
                     value={formData.comment}
-                    onChange={(e) => setFormData((p) => ({ ...p, comment: e.target.value }))}
+                    onChange={(e) => setFormData((p) => ({ ...p, remarks: e.target.value }))}
                     onFocus={() => setFocusedField("comment")}
                     onBlur={() => setFocusedField(null)}
                   />
@@ -342,7 +383,7 @@ export default function WithdrawClient() {
               </div>
               <div style={{ display: "flex", gap: 12, marginTop: 4 }}>
                 <BackButton onClick={() => { setStep("check"); setErrors({}); }} />
-                <SubmitButton onClick={handleFormSubmit} loading={submitting}>
+                <SubmitButton onClick={handleFormSubmit} loading={submitting} type = "manual">
                   {submitting ? "Submitting…" : "Submit Request"}
                 </SubmitButton>
               </div>
@@ -539,17 +580,30 @@ function BackButton({ onClick }) {
   );
 }
 
-function SubmitButton({ onClick, loading, children }) {
-  return (
-    <button onClick={onClick} disabled={loading} aria-busy={loading} style={{
-      flex: 1, background: loading ? MUTED : PRIMARY,
-      border: "none", borderRadius: 8, padding: "12px 24px",
-      fontSize: 15, color: WHITE, cursor: loading ? "not-allowed" : "pointer",
-      fontWeight: 700, fontFamily: "inherit", transition: "background 0.2s",
-    }}>
-      {children}
-    </button>
-  );
+function SubmitButton({ onClick, loading, children, ledgerBalance, type }) {
+  if(type !== 'manual'){
+    return (
+      <button onClick={onClick} disabled={loading || ledgerBalance < 0 || ledgerBalance == null} aria-busy={loading} style={{
+        flex: 1, background: loading || ledgerBalance < 0 || ledgerBalance == null ? MUTED : PRIMARY,
+        border: "none", borderRadius: 8, padding: "12px 24px",
+        fontSize: 15, color: WHITE, cursor: loading || ledgerBalance < 0 || ledgerBalance == null ? "not-allowed" : "pointer",
+        fontWeight: 700, fontFamily: "inherit", transition: "background 0.2s",
+      }}>
+        {children}
+      </button>
+    );
+  }else {
+    return (
+      <button onClick={onClick} disabled={loading} aria-busy={loading} style={{
+        flex: 1, background: loading ? MUTED : PRIMARY,
+        border: "none", borderRadius: 8, padding: "12px 24px",
+        fontSize: 15, color: WHITE, cursor: loading ? "not-allowed" : "pointer",
+        fontWeight: 700, fontFamily: "inherit", transition: "background 0.2s",
+      }}>
+        {children}
+      </button>
+    )
+  }
 }
 
 function LockIcon() {

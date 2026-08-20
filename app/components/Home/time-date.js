@@ -14,7 +14,6 @@ export default function TimeDate() {
         const fetchDseStatus = async () => {
             const data = await fetch(`${process.env.NEXT_PUBLIC_PORTAL_URL}/getmktstatus`)
             const res = await data.json()
-            console.log(res)
             setDseStatus(res.data)
         }
         fetchDseStatus()
@@ -43,20 +42,7 @@ export default function TimeDate() {
         return () => clearInterval(interval);
 
     }, []);
-    console.log(dseStatus)
-
-    // useEffect(() => {
-    //     const marketStatus = () => {
-    //         fetch(`https://www.amarstock.com/info/market/status-ex`).then(res => {
-    //             return res.json()
-    //         }).then(data => {
-    //             // log
-    //         })
-
-    //     }
-    //     marketStatus()
-    // }, [])
-
+    
     return (
         <div className='flex justify-between py-1 px-4 bg-[#d0deea]'>
             <div className={`font-bold flex gap-2 justify-center items-center ${isAfterTwoThirty || dseStatus === 'CLOSED' ? 'text-black' : 'text-[#22C55E]'}`}>

@@ -84,12 +84,12 @@ const Platform = () => {
     ];
 
     const features = [
-        "Real-time market data",
-        "Advanced charting tools",
+        "Real-time market trading",
+        "Stop Loss & Take Profit",
         "Lightning-fast execution",
-        "Portfolio management",
-        "Risk management tools",
-        "24/7 customer support"
+        "Offline Market Orders",
+        "Technical Chart Analysis",
+        "24/7 Access"
     ];
 
     return (

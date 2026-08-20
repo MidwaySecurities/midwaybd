@@ -50,7 +50,7 @@ export default function WithdrawClient() {
   const [step, setStep] = useState("check"); // "check" | "portal" | "form" | "success"
   const [portalData, setPortalData] = useState({ client_code: "", password: "", amount: "" });
   const [formData, setFormData] = useState({
-    client_name: "", client_code: "", amount: "", email: "", phone_number: "", remarks: "", signature:"",
+    client_name: "", client_code: "", amount: "", email: "", phone_number: "", remarks: "", signature: "",
   });
   const [ledgerBalance, setLedgerBalance] = useState(null)
   useEffect(() => {
@@ -140,16 +140,26 @@ export default function WithdrawClient() {
     }
   };
 
-  const handleFormSubmit = async() => {
+  const handleFormSubmit = async () => {
+    setSubmitting(true);
     console.log(formData)
+    const manualFormData = new FormData()
+    manualFormData.append('client_code', formData.client_code);
+    manualFormData.append('client_name', formData.client_name);
+    manualFormData.append('email', formData.email);
+    manualFormData.append('phone_number', formData.phone_number);
+    manualFormData.append('amount', formData.amount);
+    manualFormData.append('remarks', formData.remarks);
+    manualFormData.append('signature', formData.signature);
     const data = await axios.post(`${process.env.NEXT_PUBLIC_PORTAL_URL}/web/withdraw/manual/request`, {
-      data: formData
+      data: manualFormData
     })
     console.log(data)
-    return;
     if (!validateForm()) return;
-    setSubmitting(true);
-    setTimeout(() => { setSubmitting(false); setStep("success"); }, 1500);
+    if(data.status === 'success'){
+      setStep('success')
+    }
+    // setTimeout(() => { setSubmitting(false); setStep("success"); }, 1500);
   };
 
   const resetAll = () => {
@@ -359,7 +369,7 @@ export default function WithdrawClient() {
                 <div style={{ ...fieldStyle, gridColumn: "1 / -1" }}>
                   <label htmlFor="f-email" style={labelStyle}>Your Signature</label>
                   <input
-                    type = {'file'}
+                    type={'file'}
                     id="f-email" name="signature" autoComplete="signature"
                     style={{ ...inputStyle }}
                     // value={formData.signature}
@@ -383,7 +393,7 @@ export default function WithdrawClient() {
               </div>
               <div style={{ display: "flex", gap: 12, marginTop: 4 }}>
                 <BackButton onClick={() => { setStep("check"); setErrors({}); }} />
-                <SubmitButton onClick={handleFormSubmit} loading={submitting} type = "manual">
+                <SubmitButton onClick={handleFormSubmit} loading={submitting} type="manual">
                   {submitting ? "Submitting…" : "Submit Request"}
                 </SubmitButton>
               </div>
@@ -581,7 +591,7 @@ function BackButton({ onClick }) {
 }
 
 function SubmitButton({ onClick, loading, children, ledgerBalance, type }) {
-  if(type !== 'manual'){
+  if (type !== 'manual') {
     return (
       <button onClick={onClick} disabled={loading || ledgerBalance < 0 || ledgerBalance == null} aria-busy={loading} style={{
         flex: 1, background: loading || ledgerBalance < 0 || ledgerBalance == null ? MUTED : PRIMARY,
@@ -592,7 +602,7 @@ function SubmitButton({ onClick, loading, children, ledgerBalance, type }) {
         {children}
       </button>
     );
-  }else {
+  } else {
     return (
       <button onClick={onClick} disabled={loading} aria-busy={loading} style={{
         flex: 1, background: loading ? MUTED : PRIMARY,

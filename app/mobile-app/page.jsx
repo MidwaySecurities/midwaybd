@@ -95,7 +95,7 @@ const MobileAppPage = () => {
     {
       id: 3,
       title: 'Portfolio',
-      image: '/images/qtp/portfolio.png'
+      image: '/images/qtp/portfolio.gif'
     },
     {
       id: 4,
@@ -108,11 +108,11 @@ const MobileAppPage = () => {
     <div className="min-h-screen bg-gray-50">
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden relative">
+      <div className="bg-[#004990] text-white overflow-hidden relative">
         <div className="absolute inset-0">
-          <div className="absolute top-10 left-4 w-40 h-40 sm:top-20 sm:left-10 sm:w-72 sm:h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+          {/* <div className="absolute top-10 left-4 w-40 h-40 sm:top-20 sm:left-10 sm:w-72 sm:h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
           <div className="absolute top-24 right-4 w-52 h-52 sm:top-40 sm:right-10 sm:w-96 sm:h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-          <div className="absolute -bottom-16 left-10 w-44 h-44 sm:-bottom-32 sm:left-20 sm:w-80 sm:h-80 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-500"></div>
+          <div className="absolute -bottom-16 left-10 w-44 h-44 sm:-bottom-32 sm:left-20 sm:w-80 sm:h-80 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-500"></div> */}
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
@@ -121,7 +121,7 @@ const MobileAppPage = () => {
             {/* Content */}
             <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
               <div className="space-y-4 sm:space-y-6">
-                <div className="inline-flex items-center bg-blue-800 bg-opacity-50 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium">
+                <div className="inline-flex items-center bg-[#1da1f2] bg-opacity-50 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium">
                   <span className="w-2 h-2 bg-green-400 rounded-full mr-2 sm:mr-3 animate-pulse"></span>
                   Now Available on Mobile
                 </div>
@@ -169,13 +169,13 @@ const MobileAppPage = () => {
 
             {/* App Mockup */}
             <div className="relative z-0">
-              <div className="relative z-10 flex justify-center">
+              <div className="relative flex justify-center">
                 <div className="relative">
-                  <div className="w-56 h-[420px] sm:w-72 sm:h-[540px] lg:w-80 lg:h-[600px] bg-gray-900 rounded-[2.5rem] sm:rounded-[3rem] p-2 shadow-2xl">
-                    <div className="w-full h-full bg-white rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden relative">
+                  <div className="w-75 h-137.5 sm:w-72 sm:h-135 lg:w-80 lg:h-150 p-2">
+                    <div className="w-full h-full relative">
                       {/* Phone mockup content */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col">
-                        <img src={`/images/qtp/portfolio.png`} className="w-full h-full object-cover" />
+                      <div className="absolute inset-0  flex flex-col">
+                        <img src={`/images/qtp/portfolio.gif`} className="w-full h-full" />
                       </div>
                     </div>
                   </div>

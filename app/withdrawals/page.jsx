@@ -109,7 +109,7 @@ export default function WithdrawClient() {
     setSubmitting(true);
     try {
       const { data } = await axios.post(
-        `${process.env.NEXT_PUBLIC_PORTAL_URL}/api/web/withdraw/request`,
+        `${process.env.NEXT_PUBLIC_PORTAL_URL}/web/withdraw/request`,
         { ...portalData }
       );
 

@@ -68,14 +68,15 @@ export const faqData = {
     {
       id: 'dep5',
       question: 'Are there any charges for deposits or withdrawals?',
-      answer: 'Bank transfers: Free. Mobile banking: 1% fee. Credit cards: 2.2% (Visa/MasterCard), 3.5% (American Express). Withdrawal fees: BDT 50 for amounts below BDT 50,000, free for higher amounts.'
+      // answer: <div>Bank transfers: Free. Mobile banking: 1% fee. Credit cards: 2.2% (Visa/MasterCard), 3.5% (American Express).</div>
+      answer: <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300"><li>Bank transfers: Free.</li> <li>Mobile banking: 1% fee.</li><li>Credit cards: 2.2% (Visa/MasterCard), 3.5% (American Express).</li><li>Withdraw: free</li></ul>
     }
   ],
   'fees': [
     {
       id: 'fee1',
       question: 'What is your brokerage commission structure?',
-      answer: 'Our brokerage commission is 0.50% for equity transactions, 0.10% for government securities, and 0.25% for corporate bonds. Volume-based discounts are available for high-frequency traders.'
+      answer: 'Our brokerage commission is 0.40% for equity transactions, 0.10% for government securities, and 0.25% for corporate bonds. Volume-based discounts are available for high-frequency traders.'
     },
     {
       id: 'fee2',

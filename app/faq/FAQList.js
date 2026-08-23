@@ -37,6 +37,7 @@ export default function FAQList({ faqs }) {
                 className="mt-3 text-gray-700"
               >
                 <p>{faq.answer}</p>
+                
               </motion.div>
             )}
           </AnimatePresence>

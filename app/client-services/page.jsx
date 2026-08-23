@@ -443,7 +443,7 @@ export default function ClientServicesPage() {
           />
           <div className="relative max-w-4xl mx-auto">
             <p className="font-sans text-[11px] font-semibold tracking-[0.12em] uppercase text-sky-300 mb-5">
-              Midway Securities Ltd. · DSE-Authorized Broker
+              Midway Securities Ltd. · DSE-Authorized Brokerage Firm
             </p>
             {/* h1 — primary keyword: "client services" + brand + location */}
             <h1 id="hero-heading" className="text-4xl md:text-6xl font-normal leading-tight tracking-tight text-white mb-5">

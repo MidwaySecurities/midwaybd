@@ -174,7 +174,7 @@ const MobileAppPage = () => {
                   <div className="w-75 h-137.5 sm:w-72 sm:h-135 lg:w-80 lg:h-150 p-2">
                     <div className="w-full h-full relative">
                       {/* Phone mockup content */}
-                      <div className="absolute inset-0  flex flex-col">
+                      <div className="absolute inset-0 flex flex-col">
                         <img src={`/images/qtp/portfolio.gif`} className="w-full h-full" />
                       </div>
                     </div>

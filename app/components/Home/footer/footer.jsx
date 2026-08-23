@@ -9,7 +9,7 @@ const Footer = () => {
         <div className='border-b border-slate-700 pb-12 mb-12 text-center'>
           {/* Brand Section */}
           <div className='mb-8'>
-            <h2 className='text-3xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent'>
+            <h2 className='text-3xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-white'>
               Midway Securities Ltd.
             </h2>
             <p className='text-slate-300 text-lg mb-4'>

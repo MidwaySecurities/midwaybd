@@ -8,16 +8,6 @@ const features = [
   {
     icon: (
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <circle cx="8" cy="8" r="5.5" stroke="#85B7EB" strokeWidth="1.4" />
-        <path d="M5.5 8l2 2 3-3" stroke="#85B7EB" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-    title: 'Completely free',
-    desc: 'No transfer fees or hidden charges at any step',
-  },
-  {
-    icon: (
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <rect x="3" y="5" width="10" height="7" rx="1.5" stroke="#85B7EB" strokeWidth="1.4" />
         <path d="M6 5V4a2 2 0 014 0v1" stroke="#85B7EB" strokeWidth="1.4" strokeLinecap="round" />
       </svg>
@@ -31,8 +21,8 @@ const features = [
         <path d="M3 8h10M8 3v10" stroke="#85B7EB" strokeWidth="1.4" strokeLinecap="round" />
       </svg>
     ),
-    title: 'Any DSE broker',
-    desc: 'Transfer from any registered DSE brokerage',
+    title: 'Any DSE & CSE broker',
+    desc: 'Transfer from any registered DSE & CSE brokerage',
   },
 ]
 
@@ -72,32 +62,26 @@ const steps = [
 const faqs = [
   {
     q: 'What is a Link BO Account?',
-    a: 'A Link BO Account lets you transfer your Beneficiary Owner (BO) account from any DSE-registered broker to Midway Securities without liquidating your portfolio. Your holdings move intact.',
-  },
-  {
-    q: 'Is there any cost to transfer?',
-    a: 'No. Linking your BO account is entirely free. There are no transfer fees, processing charges, or hidden costs at any stage of the process.',
+    a: 'A Link BO Account lets you electronically transfer your Beneficiary Owner (BO) account from any DSE & CSE-registered broker to Midway Securities without selling any shares in your portfolio. Your shares remain intact.',
   },
   {
     q: 'Do I need to sell my shares first?',
-    a: 'No. You can transfer all existing holdings directly. You do not need to sell or liquidate any position before or during the link process.',
+    a: 'No. You can transfer all existing shares directly. You do not need to sell or liquidate any position before or during the link process.',
   },
   {
     q: 'Which brokers are eligible?',
-    a: "Any account held at a DSE-registered brokerage is eligible for transfer. Contact our support team if you are unsure about your current broker's eligibility.",
+    a: "Any BO account held at a DSE & CSE registered brokerage is eligible for transfer.",
   },
   {
     q: 'How long does the transfer take?',
-    a: 'Processing times follow standard DSE guidelines. Once your form is submitted and verified, the transfer is typically completed within a few business days.',
+    a: 'Processing times follow standard CDBL guidelines. Once your form is submitted and verified, the transfer is typically completed within a two business days.',
   },
 ]
 
 const transferDetails = [
-  { label: 'Transfer fee', value: 'Free', badge: 'green' },
+  { label: 'Link BO A/C fee', value: 'Free', badge: 'green' },
   { label: 'Sell shares required', value: 'No', badge: 'green' },
-  { label: 'Eligible exchanges', value: 'DSE', badge: 'blue' },
-  { label: 'Form format', value: 'PDF', badge: null },
-  { label: 'Submission', value: 'Online portal', badge: null },
+  { label: 'Eligible exchanges', value: 'DSE & CSE', badge: 'blue' },
 ]
 
 const Badge = ({ type, children }) => {
@@ -139,7 +123,7 @@ const LinkBoAccount = () => {
         <div>
           <div className="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 rounded-full px-3.5 py-1 text-[11px] font-medium text-[#B5D4F4] tracking-wide uppercase mb-5">
             <span className="w-1.5 h-1.5 bg-[#85B7EB] rounded-full" />
-            DSE Registered Service
+            CDBL Registered Service
           </div>
           <h1 className="font-serif text-4xl font-semibold text-white leading-tight mb-4">
             Link Your BO Account
@@ -242,11 +226,11 @@ const LinkBoAccount = () => {
               Log in to the Midway portal to link your BO account or download the transmission form.
             </p>
             <Link
-              href="https://portal.midwaybd.com/bo/portal-login"
+              href="https://portal.midwaybd.com/link-bo/portal-login"
               target="_blank"
               className="block text-center bg-white text-[#185FA5] rounded-lg px-4 py-2.5 text-sm font-semibold hover:opacity-90 transition-opacity"
             >
-              Open portal →
+              Create Link BO A/C →
             </Link>
             <div className="mt-2">
               <DownloadTransmissionForm className="block text-center bg-white/10 border border-white/30 text-white rounded-lg px-4 py-2.5 text-sm font-medium hover:bg-white/20 transition-colors w-full" />

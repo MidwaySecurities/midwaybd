@@ -291,11 +291,37 @@ export default async function Home() {
               </p> */}
             </div>
 
-            <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 lg:p-8 shadow-xl border border-gray-200">
+            <div className="bg-linear-to-br from-gray-50 to-white rounded-2xl p-6 lg:p-8 shadow-xl border border-gray-200">
               <IndexGraph />
             </div>
           </div>
         </section>
+
+        <section className="py-16 bg-linear-to-br from-gray-100 to-blue-50 lg:hidden" aria-labelledby="regulators-heading">
+          <div className="container mx-auto px-4">
+            <div className="mt-8 text-center py-3">
+              <div className="inline-flex items-start lg:items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full">
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+                {/* inline-flex items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium */}
+                <span className="text-sm font-medium">Regulated & Licensed</span>
+              </div>
+            </div>
+            <div className="text-center mb-12">
+              <h2 id="regulators-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                Regulated & Trusted
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                We are regulated by multiple Bangladesh financial authorities ensuring your investments are safe and secure.
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto lg:hidden">
+              <Regulators />
+            </div>
+          </div>
+        </section>
+
         {/* Account Opening Steps */}
         <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
           <div className="container mx-auto px-4">
@@ -319,8 +345,16 @@ export default async function Home() {
         </section>
 
         {/* Regulators Section */}
-        <section className="py-16 bg-gradient-to-br from-gray-100 to-blue-50" aria-labelledby="regulators-heading">
+        <section className="py-16 bg-gradient-to-br from-gray-100 to-blue-50 hidden lg:block" aria-labelledby="regulators-heading">
           <div className="container mx-auto px-4">
+            <div className="mt-8 text-center py-3">
+              <div className="inline-flex items-center bg-green-50 text-green-700 px-4 py-2 rounded-full border border-green-200">
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+                <span className="text-sm font-medium">Regulated & Licensed</span>
+              </div>
+            </div>
             <div className="text-center mb-12">
               <h2 id="regulators-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
                 Regulated & Trusted
@@ -329,7 +363,7 @@ export default async function Home() {
                 We are regulated by multiple Bangladesh financial authorities ensuring your investments are safe and secure.
               </p>
             </div>
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto hidden lg:block">
               <Regulators />
             </div>
           </div>
@@ -362,10 +396,10 @@ export default async function Home() {
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-3xl mx-auto space-y-8">
               <h2 className="text-3xl lg:text-5xl font-bold leading-tight">
-                Ready to Start Your Trading Journey?
+                Ready to Start Your Investment Journey?
               </h2>
               <p className="text-xl text-blue-100">
-                Join thousands of successful investors who trust Midway Securities for their investment needs
+                Join thousands of successful investors who trust Midway Securities for their investment needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href='https://portal.midwaybd.com/bo/portal-login' target='_blank' rel='noopener noreferrer'>

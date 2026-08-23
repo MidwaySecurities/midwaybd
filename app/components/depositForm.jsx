@@ -181,7 +181,7 @@ const DepositForm = () => {
                     <label htmlFor="bank_name" className='block mb-2'>Select Midway Bank Account</label>
                     <select id="bank_name" name="bank_name" className='border border-gray-300 p-2 w-full' required>
                         <option value="">Select Bank</option>
-                        <option value="City Bank">City Bank</option>
+                        <option value="The City Bank">The City Bank</option>
                         <option value="Dutch Bangla">Dutch Bangla</option>
                     </select>
                 </div>

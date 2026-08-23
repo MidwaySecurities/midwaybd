@@ -131,6 +131,7 @@ const Regulators = () => {
   return (
     <>
       {/* Desktop and Tablet View */}
+      
       <div className="sm:block">
         <div className="max-w-6xl mx-auto px-4">
           <Slider {...settings}>
@@ -170,14 +171,7 @@ const Regulators = () => {
       
 
       {/* Trust Indicators */}
-      <div className="mt-8 text-center">
-        <div className="inline-flex items-center bg-green-50 text-green-700 px-4 py-2 rounded-full border border-green-200">
-          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-          </svg>
-          <span className="text-sm font-medium">Regulated & Licensed</span>
-        </div>
-      </div>
+      
 
       <style jsx>{`
         .slick-track {

@@ -12,9 +12,9 @@ import CityBank from './Assets/Svg/cityBank'
 import DutchBangla from './Assets/Svg/dutchBangla'
 import { Poppins, Roboto } from "next/font/google";
 const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
+    subsets: ["latin"],
+    weight: ["400", "500", "600", "700"],
+    display: "swap",
 });
 // ─── SEO Metadata (Next.js App Router) ───────────────────────────────────────
 // Place this in the same file or a sibling layout.js for shared metadata.
@@ -25,7 +25,7 @@ export const metadata = {
     metadataBase: new URL(BASE_URL),
     title: 'Deposit | Midway Securities Limited — Bank, Mobile & Card',
     description:
-        'Deposit funds into your Midway Securities BO account easily via bank transfer (City Bank, Dutch Bangla Bank), mobile banking (bKash, Nagad, Rocket), or credit card (Visa, MasterCard, Amex). Fast, secure, paperless.',
+        'Deposit funds into your Midway Securities BO account easily via bank transfer (The City Bank, Dutch Bangla Bank), mobile banking (bKash, Nagad, Rocket), or credit card (Visa, MasterCard, Amex). Fast, secure, paperless.',
     keywords: [
         'Midway Securities deposit',
         'BO account deposit Bangladesh',
@@ -133,7 +133,7 @@ function JsonLd() {
                         name: 'How do I deposit money into my Midway Securities BO account?',
                         acceptedAnswer: {
                             '@type': 'Answer',
-                            text: 'You can deposit via bank transfer to City Bank (A/C: 3101093011001) or Dutch Bangla Bank (A/C: 1011200006385), mobile banking through bKash (01845222333), Nagad (01776106410), or Rocket (017761064101), or by credit/debit card online. Always include your Midway Client Code in the reference field.',
+                            text: 'You can deposit via bank transfer to The City Bank (A/C: 3101093011001) or Dutch Bangla Bank (A/C: 1011200006385), mobile banking through bKash (01845222333), Nagad (01776106410), or Rocket (017761064101), or by credit/debit card online. Always include your Midway Client Code in the reference field.',
                         },
                     },
                     {
@@ -149,7 +149,7 @@ function JsonLd() {
                         name: 'What bank account details are needed to deposit into Midway Securities?',
                         acceptedAnswer: {
                             '@type': 'Answer',
-                            text: 'For City Bank: Account Name — Midway Securities Limited, A/C: 3101093011001, Branch: Principal Branch, Dhaka South, Routing: 225275357. For Dutch Bangla Bank: A/C: 1011200006385, Branch: Local Branch, Dhaka South, Routing: 090273889.',
+                            text: 'For The City Bank: Account Name — Midway Securities Limited, A/C: 3101093011001, Branch: Principal Branch, Dhaka South, Routing: 225275357. For Dutch Bangla Bank: A/C: 1011200006385, Branch: Local Branch, Dhaka South, Routing: 090273889.',
                         },
                     },
                     {
@@ -181,7 +181,7 @@ function JsonLd() {
                         '@type': 'HowToStep',
                         position: 1,
                         name: 'Choose your payment method',
-                        text: 'Select from bank transfer (City Bank or Dutch Bangla Bank), mobile banking (bKash, Nagad, Rocket), or credit card.',
+                        text: 'Select from bank transfer (The City Bank or Dutch Bangla Bank), mobile banking (bKash, Nagad, Rocket), or credit card.',
                     },
                     {
                         '@type': 'HowToStep',
@@ -374,7 +374,7 @@ function FaqSection() {
     const faqs = [
         {
             q: 'How do I deposit into my Midway Securities BO account?',
-            a: 'Choose any of the three methods: bank transfer to City Bank or Dutch Bangla Bank, mobile banking via bKash / Nagad / Rocket, or online credit/debit card payment. Always include your Midway Client Code in the reference field.',
+            a: 'Choose any of the three methods: bank transfer to The City Bank or Dutch Bangla Bank, mobile banking via bKash / Nagad / Rocket, or online credit/debit card payment. Always include your Midway Client Code in the reference field.',
         },
         {
             q: 'What is the bKash number for Midway Securities?',
@@ -425,7 +425,7 @@ function BankTransferContent() {
         {
             initials: <CityBank width={30} height={30} />,
             colorClass: 'bg-blue-50 text-blue-800',
-            name: 'The City Bank',
+            name: 'The The City Bank',
             fields: [
                 { label: 'Account name', value: 'Midway Securities Limited', mono: false },
                 { label: 'Account no.', value: '3101093011001', mono: true },

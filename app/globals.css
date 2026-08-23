@@ -45,7 +45,7 @@
     padding: 0 1.5rem 0 .5rem;
     z-index: 10;
     position: fixed;
-    background: #FFFFFF;
+    background: transparent;
     box-shadow: 0 -4px 20px 0 rgba(0, 77, 165, 0.07);
     align-items: center;
   }
@@ -85,11 +85,10 @@
 
   .csr113 {
     top: 6px;
-    right: 6px;
-    width: 12px;
-    height: 13px;
+    right: 1rem;
+    width: 8px;
+    height: 8px;
     position: absolute;
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASBAMAAACgFUNZAAAAFVBMVEUAAADPz8/Ozs7Ozs7Pz8/Y2NjOzs5u62RnAAAABnRSTlMA1BXXQA1zGmmoAAAASUlEQVQI12OAA5YAEMnqwOAmBGIopjAEJiowMDCJiQKxEFAAyAMRYA5ICMgGK0w2AwqAhMySFRAMuBRCMVw73EC4FXBLEc6AAQAI6gzBqKuLXAAAAABJRU5ErkJggg==) center center no-repeat;
     background-size: 100% 100%;
   }
 

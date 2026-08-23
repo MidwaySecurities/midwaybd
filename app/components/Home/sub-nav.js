@@ -301,7 +301,7 @@ const SubNav = () => {
                 ))}
 
                 {/* Language Switcher */}
-                <Link
+                {/* <Link
                     href="/"
                     className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-gray-300 hover:border-green-500 transition-all duration-200 shadow-sm"
                 >
@@ -309,7 +309,7 @@ const SubNav = () => {
                         <span className="text-red-500 text-xs font-bold">BD</span>
                     </div>
                     <span className="text-gray-700">বাংলা</span>
-                </Link>
+                </Link> */}
 
                 {/* More Menu */}
                 <button

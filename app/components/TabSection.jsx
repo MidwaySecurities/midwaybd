@@ -9,7 +9,7 @@ import styles from "./Tabs.module.css";
 // for the clickable buttons themselves.
 const TAB_NAV = [
   { id: "blog", navLabel: "Blog" },
-  { id: "visual", navLabel: "Market Outlook" },
+  // { id: "visual", navLabel: "Market Outlook" },
   { id: "news", navLabel: "News" },
 ];
 

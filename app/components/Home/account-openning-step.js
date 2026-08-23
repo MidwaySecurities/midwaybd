@@ -297,7 +297,7 @@ const AccountOpeningSteps = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
             ),
-            bgColor: "from-blue-500 to-blue-600",
+            bgColor: "bg-[#1da1f2]",
             hoverColor: "hover:from-blue-600 hover:to-blue-700"
         },
         {
@@ -310,7 +310,7 @@ const AccountOpeningSteps = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                 </svg>
             ),
-            bgColor: "from-green-500 to-green-600",
+            bgColor: "bg-gradient-to-br from-green-500 to-green-600",
             hoverColor: "hover:from-green-600 hover:to-green-700"
         },
         {
@@ -323,7 +323,7 @@ const AccountOpeningSteps = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
             ),
-            bgColor: "from-purple-500 to-purple-600",
+            bgColor: "bg-[#004990]",
             hoverColor: "hover:from-purple-600 hover:to-purple-700"
         }
     ];
@@ -334,7 +334,7 @@ const AccountOpeningSteps = () => {
                 <div className="text-center space-y-6 h-full flex flex-col">
                     {/* Step Number Circle */}
                     <div className="relative mx-auto">
-                        <div className={`w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-gradient-to-br ${step.bgColor} ${step.hoverColor} shadow-lg group-hover:shadow-xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110`}>
+                        <div className={`w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-gradient-to-br'} ${step.bgColor} ${step.hoverColor} shadow-lg group-hover:shadow-xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110`}>
                             <span className="text-2xl lg:text-3xl font-bold text-white">
                                 {step.number}
                             </span>
@@ -349,9 +349,7 @@ const AccountOpeningSteps = () => {
                     {/* Content */}
                     <div className="space-y-3 flex-grow flex flex-col justify-between">
                         <div>
-                            <h3 className="text-xl lg:text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
-                                {step.title}
-                            </h3>
+                            <button className='bg-[#004990] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'>{step.title}</button>
                             <p className="text-gray-600 leading-relaxed max-w-xs mx-auto mt-3">
                                 {step.description}
                             </p>
@@ -402,7 +400,7 @@ const AccountOpeningSteps = () => {
 
                     <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
                         Start Investing In{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                        <span className="text-[#1da1f2]">
                             Three Simple Steps
                         </span>
                     </h2>

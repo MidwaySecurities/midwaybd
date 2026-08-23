@@ -297,7 +297,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="py-16 bg-linear-to-br from-gray-100 to-blue-50 lg:hidden" aria-labelledby="regulators-heading">
+        <section className="py-8 lg:py-16 bg-linear-to-br from-gray-100 to-blue-50 lg:hidden" aria-labelledby="regulators-heading">
           <div className="container mx-auto px-4">
             <div className="mt-8 text-center py-3">
               <div className="inline-flex items-start lg:items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full">

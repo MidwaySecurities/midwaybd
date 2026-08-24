@@ -1,5 +1,5 @@
 import localFont from 'next/font/local';
-import { Poppins, Roboto } from "next/font/google";
+import { Poppins, Architects_Daughter } from "next/font/google";
 import "./globals.css";
 
 import { ModalCloseProvider } from "./components/close-button-provider";
@@ -15,6 +15,12 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
+});
+
+const architectsDaughter = Architects_Daughter({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-architects-daughter",
 });
 
 // use sonarbangla font like className={sonarBangla.className} in any element to apply the font

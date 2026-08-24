@@ -64,8 +64,8 @@ const contactInfo = [
   },
   {
     icon: Headphones,
-    title: 'Hotline',
-    details: '09609 100 142',
+    title: 'Whatsapp',
+    details: '+8801874444816',
     color: 'text-orange-600'
   }
 ]
@@ -138,28 +138,25 @@ export default function ContactUs() {
       <nav className="sr-only" aria-label="Breadcrumb">
         <ol>
           <li><Link href="/">Home</Link></li>
-          <li aria-current="page">Contact Us</li>
+          <li aria-current="page">Contact Uss</li>
         </ol>
       </nav>
 
       {/* Hero Section */}
-      <div className="relative h-80 bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <div className="relative h-105 overflow-hidden">
+        <div className="absolute inset-0"></div>
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{
-            backgroundImage: "url('https://www.midwaybd.com/uploads/6/0/4/6/60462737/background-images/338544438.jpg')"
-          }}
+          className="absolute bg-[url(/images/contact-us/contact-us--Mobile.jpg)] lg:bg-[url(/images/contact-us/contact-us.jpg)] inset-0 bg-cover bg-bottom bg-no-repeat"
           role="img"
           aria-label="Midway Securities office"
         ></div>
 
-        <div className="relative z-10 flex items-center justify-center h-full">
+        {/* <div className="relative z-10 flex items-center justify-center h-full">
           <div className="text-center text-white">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">Contact Us</h1>
             <p className="text-xl md:text-2xl font-light">We&apos;re here to help you succeed</p>
           </div>
-        </div>
+        </div> */}
 
         {/* Decorative elements */}
         <div className="absolute bottom-0 left-0 right-0">
@@ -216,9 +213,8 @@ export default function ContactUs() {
                     className="flex items-center justify-between p-4 rounded-lg border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-200 group"
                   >
                     <div className="flex items-center gap-3">
-                      <div className={`w-2 h-2 rounded-full ${
-                        branch.type === 'main' ? 'bg-blue-600' : 'bg-gray-400'
-                      }`}></div>
+                      <div className={`w-2 h-2 rounded-full ${branch.type === 'main' ? 'bg-blue-600' : 'bg-gray-400'
+                        }`}></div>
                       <div>
                         <h3 className="font-semibold text-gray-900 group-hover:text-blue-600">
                           {branch.name}

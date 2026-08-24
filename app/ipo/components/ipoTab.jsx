@@ -6,7 +6,7 @@ const IpoTab = () => {
     const [activeTab, setActiveTab] = useState('upcoming')
     const [ipos, setIpos] = useState([])
     useEffect(async () => {
-        const ipos = await fetch('https://midway-wip.tanbinislam.com/api/ipos')
+        const ipos = await fetch('https://portal.midwaybd.com/api/ipos')
         const res = await ipos.json()
         setIpos(res.data.data)
     }, [fetch])

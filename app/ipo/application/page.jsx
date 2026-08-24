@@ -62,7 +62,7 @@ export default function IPOApplicationForm() {
     }
   };
   useEffect(() => {
-    const upcommingIpos = fetch('https://midway-wip.tanbinislam.com/api/ipos')
+    const upcommingIpos = fetch('https://portal.midwaybd.com/api/ipos')
       .then(response => response.json())
       .then(data => data.data)
       .catch(error => {

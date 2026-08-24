@@ -1,38 +1,16 @@
 import Image from "next/image";
-import TimeDate from "./components/Home/time-date";
-import FirstNavBar from "./components/Home/first-nav-bar";
 import HeroSection from "./components/Home/hero-section";
-import SubNav from "./components/Home/sub-nav";
-import TextScrollingHorizontally from "./components/Home/text-scrolling-horizontally";
-import Card from "./components/Home/card";
-import hero_image1 from "../public/images/home/hero-carousel/H1.gif";
-import hero_image2 from "../public/images/home/hero-carousel/H2.gif";
-import hero_image3 from "../public/images/home/hero-carousel/H3.gif";
-import OurService from "./components/Home/our-service";
 import AccountOpenningSteps from "./components/Home/account-openning-step";
 import Platform from "./components/Home/platform";
-import PaymentMethod from "./components/Home/Payment-method";
-import Footer from "./components/Home/footer/footer";
-import Navigation from "./components/modal/navigation";
-import { useModalClose } from "./components/close-button-provider";
 import Link from "next/link";
 import Whatsapp from "./components/whatsapp-button";
-import ShiftToUs from "./components/Home/ShiftToUs";
 import Regulators from "./components/Home/Regulators";
 import FirstApproachModal from "./components/firstApproachModal";
 import IndexGraph from "./components/Home/index-graph";
 import Tickers from "./components/tickers";
 import { getABlog } from "@/lib/actions/blog/getABlog";
-import style from "./components/tickers.module.css";
-import NewsTicker from "./components/newsTicker";
 import TabsSection from "./components/TabSection";
-// All tab interactivity (state, click handlers, sanitized rich-text
-// rendering) now lives in this client component. page.js stays a plain
-// server component that only fetches data and passes it down as props.
 
-// ---------------------------------------------------------------------------
-// SEO CONFIG
-// ---------------------------------------------------------------------------
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.midwaybd.com";
 
 export async function generateMetadata() {
@@ -96,8 +74,6 @@ export async function generateMetadata() {
   };
 }
 
-// No `searchParams` here anymore — with tab switching handled entirely on
-// the client, the server component never needs the URL's query string.
 export default async function Home() {
   const data = await getABlog(`get-your-dividend-statement-using-our-midway-portal`);
 
@@ -115,8 +91,6 @@ export default async function Home() {
     console.error("Error fetching news:", err);
   }
 
-  // Fetched/assembled once on the server, then handed to the client
-  // component as a plain prop. TabsSection owns which one is "active".
   const tabs = [
     {
       id: "blog",
@@ -141,8 +115,6 @@ export default async function Home() {
     },
   ];
 
-  // JSON-LD structured data: helps Google understand this is a regulated
-  // financial services brokerage and can surface rich results.
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -169,7 +141,6 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Structured data for search engines */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -216,7 +187,7 @@ export default async function Home() {
                     </div>
 
                     <h2 id="quicktrade-heading" className="text-3xl lg:text-4xl font-bold text-gray-800">
-                      <span className="text-blue-600">QuickTrade Pro</span> -
+                      <span className="text-[#1da1f2]">QuickTrade Pro</span> -
                       <br />The Ultimate Trading App
                     </h2>
 
@@ -348,7 +319,7 @@ export default async function Home() {
         <section className="py-16 bg-gradient-to-br from-gray-100 to-blue-50 hidden lg:block" aria-labelledby="regulators-heading">
           <div className="container mx-auto px-4">
             <div className="mt-8 text-center py-3">
-              <div className="inline-flex items-center bg-green-50 text-green-700 px-4 py-2 rounded-full border border-green-200">
+              <div className="inline-flex items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                 </svg>

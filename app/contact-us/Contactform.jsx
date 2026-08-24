@@ -5,7 +5,7 @@ import { Send, CheckCircle, AlertCircle } from 'lucide-react'
 // Update this if your API is served from a different host in production.
 // Falls back to the local dev URL if the env var isn't set.
 const CONTACT_API_URL =
-  process.env.NEXT_PUBLIC_CONTACT_API_URL || 'https://midway-wip.tanbinislam.com/api/contact-support'
+  process.env.NEXT_PUBLIC_CONTACT_API_URL || 'https://portal.midwaybd.com/api/contact-support'
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({

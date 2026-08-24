@@ -68,7 +68,7 @@ const Platform = () => {
 
                             <h2 className="text-4xl font-bold text-gray-800 leading-tight">
                                 World-class platform,<br />
-                                <span className="text-blue-600">Trade without a doubt</span>
+                                <span className="text-[#1da1f2]">Trade without a doubt</span>
                             </h2>
 
                             <p className="text-lg text-gray-600 leading-relaxed">
@@ -97,7 +97,7 @@ const Platform = () => {
                             <Link
                                 href="https://oms.midwaybd.com"
                                 target="_blank"
-                                className="inline-block bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+                                className="inline-block bg-[#1da1f2] hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
                             >
                                 Start Trading Now
                             </Link>
@@ -145,7 +145,7 @@ const Platform = () => {
 
                         <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
                             World-class platform,<br />
-                            <span className="text-blue-600">Trade without a doubt</span>
+                            <span className="text-[#1da1f2]">Trade without a doubt</span>
                         </h2>
 
                         <p className="text-gray-600 mb-6">

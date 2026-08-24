@@ -1,15 +1,18 @@
-// app/client-services/page.jsx
-
 import Image from 'next/image'
 import Link from 'next/link'
-import { Poppins, Roboto } from "next/font/google";
+import { Poppins, Architects_Daughter } from "next/font/google";
+import DownloadAppbutton from '../components/DownloadAppbutton';
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
-// ─── SEO: Metadata ─────────────────────────────────────────────────────────────
 
+const architectsDaughter = Architects_Daughter({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-architects-daughter",
+});
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.midwaybd.com'
 const PAGE_URL = `${BASE_URL}/client-services`
 
@@ -179,6 +182,7 @@ const services = [
       { text: 'Download for Android', href: 'https://play.google.com/store/apps/details?id=com.midwaybd.quick_trade_pro&hl=en', external: false },
       { text: 'Download for iOS', href: 'https://apps.apple.com/us/app/quicktrade-pro/id6740322022', external: false },
     ],
+    buttons:<DownloadAppbutton />
   },
   {
     id: 'portal',
@@ -395,7 +399,7 @@ const Tag = ({ children }) => (
 )
 
 const CheckIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-amber-500 shrink-0 mt-0.5" aria-hidden="true">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#004990" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-amber-500 shrink-0 mt-0.5" aria-hidden="true">
     <polyline points="20 6 9 17 4 12" />
   </svg>
 )
@@ -422,41 +426,37 @@ export default function ClientServicesPage() {
       <main id="main-content" className={` text-slate-900 bg-white ${poppins.className}`}>
 
         {/* ── Breadcrumb ── */}
-        <nav aria-label="Breadcrumb" className="px-8 md:px-12 py-3 bg-stone-100 border-b border-stone-200">
+        {/* <nav aria-label="Breadcrumb" className="px-8 md:px-12 py-3 bg-stone-100 border-b border-stone-200">
           <ol className="flex items-center gap-2 font-sans text-xs text-slate-500 list-none p-0 m-0">
             <li><Link href="/" className="hover:text-slate-800 transition-colors">Home</Link></li>
             <li aria-hidden="true" className="text-slate-300">/</li>
             <li className="text-slate-800 font-medium" aria-current="page">Client Services</li>
           </ol>
-        </nav>
+        </nav> */}
 
         {/* ── Hero ── */}
         <section
-          className="relative bg-[#0d2b4e] px-8 md:px-12 py-20 md:py-28 overflow-hidden"
+          className="relative bg-[#004990] px-8 md:px-12 py-20 md:py-28 overflow-hidden"
           aria-labelledby="hero-heading"
         >
           {/* Decorative background image — aria-hidden so screen readers skip it */}
           <div
             className="absolute inset-0 bg-cover bg-center opacity-10"
-            style={{ backgroundImage: "url('https://www.midwaybd.com/uploads/6/0/4/6/60462737/background-images/1991781394.jpg')" }}
             aria-hidden="true"
           />
           <div className="relative max-w-4xl mx-auto">
-            <p className="font-sans text-[11px] font-semibold tracking-[0.12em] uppercase text-sky-300 mb-5">
-              Midway Securities Ltd. · DSE-Authorized Brokerage Firm
-            </p>
             {/* h1 — primary keyword: "client services" + brand + location */}
             <h1 id="hero-heading" className="text-4xl md:text-6xl font-normal leading-tight tracking-tight text-white mb-5">
               Client Services<br />
-              <span className="text-2xl md:text-3xl text-sky-200 font-light">Investing, Simplified.</span>
+              <span className={`${architectsDaughter.className} text-2xl md:text-3xl text-white font-light tracking-wide`}>Investing, Simplified.</span>
             </h1>
-            <p className="font-sans text-base leading-relaxed text-sky-200 max-w-xl mb-8">
+            <p className="font-sans text-base leading-relaxed text-white max-w-xl mb-8">
               Everything you need to invest on the Dhaka Stock Exchange — mobile
               trading, BO account opening, IPO applications, fund management,
               research, and more.
             </p>
             {/* Keyword chip list — visible content, not decorative */}
-            <ul className="flex flex-wrap gap-2 list-none p-0 m-0" aria-label="Services overview">
+            {/* <ul className="flex flex-wrap gap-2 list-none p-0 m-0" aria-label="Services overview">
               {['Mobile Trading', 'BO Accounts', 'IPO Applications', 'Share Trading', 'BEFTN Withdrawals', 'Research', 'SMS Alerts'].map((item) => (
                 <li key={item}>
                   <span className="font-sans text-xs px-3 py-1 bg-white/10 border border-white/20 rounded-full text-sky-100">
@@ -464,7 +464,7 @@ export default function ClientServicesPage() {
                   </span>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
         </section>
 
@@ -496,7 +496,7 @@ export default function ClientServicesPage() {
 
                 {/* Content */}
                 <div className={index % 2 !== 0 ? 'md:order-1' : ''}>
-                  <Tag>Service {String(index + 1).padStart(2, '0')}</Tag>
+                  {/* <Tag>Service {String(index + 1).padStart(2, '0')}</Tag> */}
                   {/* h2 — one per service, keyword-rich */}
                   <h2 id={`${service.id}-heading`} className="text-2xl md:text-3xl font-normal text-[#0d2b4e] leading-snug mb-4">
                     {service.title}
@@ -523,7 +523,7 @@ export default function ClientServicesPage() {
                   )}
 
                   {/* CTA links */}
-                  {service.links && (
+                  {!service.buttons&&service.links ? (
                     <div className="flex flex-wrap gap-3">
                       {service.links.map((link) => (
                         <Link
@@ -538,7 +538,7 @@ export default function ClientServicesPage() {
                         </Link>
                       ))}
                     </div>
-                  )}
+                  ):service.buttons}
                 </div>
               </article>
 
@@ -551,12 +551,12 @@ export default function ClientServicesPage() {
         </ol>
 
         {/* ── Bottom CTA ── */}
-        <section aria-labelledby="cta-heading" className="bg-[#0d2b4e] px-8 md:px-12 py-16 text-center">
+        {/* <section aria-labelledby="cta-heading" className="bg-[#0d2b4e] px-8 md:px-12 py-16 text-center">
           <Tag>Get Started</Tag>
           <h2 id="cta-heading" className="text-3xl md:text-4xl font-normal text-white leading-tight mb-4">
             Ready to start investing?
           </h2>
-          <p className="font-sans text-sm leading-relaxed text-sky-200 max-w-lg mx-auto mb-8">
+          <p className="font-sans text-sm leading-relaxed text-white max-w-lg mx-auto mb-8">
             Open a BO account today and access the full suite of Midway Securities
             services — from mobile trading to IPO applications and beyond.
           </p>
@@ -569,7 +569,7 @@ export default function ClientServicesPage() {
             Open a BO Account
             <ExternalArrow />
           </Link>
-        </section>
+        </section> */}
 
       </main>
     </>

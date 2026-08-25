@@ -178,8 +178,8 @@ const Platform = () => {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                             {features.map((feature, index) => (
                                 <div key={index} className="flex items-center space-x-2">
-                                    <div className="w-4 h-4 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-2.5 h-2.5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div className="w-4 h-4  justify-center flex-shrink-0">
+                                        <svg className="w-3 h-3 text-green-600" fill="none" stroke="#004990" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>

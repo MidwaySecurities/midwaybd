@@ -341,7 +341,7 @@ export default async function Home() {
         </section>
 
         {/* News & Insights Section */}
-        <section className="py-16 lg:py-24 bg-white" aria-labelledby="insights-heading">
+        <section className="py-4 lg:py-24 bg-white" aria-labelledby="insights-heading">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 id="insights-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">

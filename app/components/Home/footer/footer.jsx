@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Footer = () => {
@@ -88,10 +89,10 @@ const Footer = () => {
           <div className='text-center'>
             <h3 className='text-lg font-semibold mb-4 text-blue-400'>Services</h3>
             <ul className='space-y-2.5'>
-              <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Open BO Account</a></li>
-              <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Link Account</a></li>
-              <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>IPO</a></li>
-              <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Mobile App</a></li>
+              <li><a href="https://portal.midwaybd.com/bo/portal-login" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Open BO Account</a></li>
+              <li><a href="https://portal.midwaybd.com/link-bo/portal-login" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Link Account</a></li>
+              {/* <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>IPO</a></li> */}
+              <li><Link href="/mobile-app" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Mobile App</Link></li>
             </ul>
           </div>
 
@@ -100,9 +101,9 @@ const Footer = () => {
             <h3 className='text-lg font-semibold mb-4 text-blue-400'>Operations</h3>
             <ul className='space-y-2.5'>
               <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Pricing</a></li>
-              <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Withdraw</a></li>
-              <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Deposit</a></li>
-              <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Branches</a></li>
+              <li><Link href="/withdrawals" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Withdraw</Link></li>
+              <li><Link href="/deposit" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Deposit</Link></li>
+              <li><Link href="/our-branches" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Branches</Link></li>
             </ul>
           </div>
 

@@ -118,7 +118,7 @@ export default function OurBranchesPage() {
                             priority
                             className="object-cover object-center"
                         />
-                        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                        <div className="absolute inset-0 bg-[#004990] bg-opacity-50"></div>
                         <div className="relative flex items-center justify-center h-[400px] text-white">
                             <div className="text-center px-4">
                                 <h1 className="text-4xl lg:text-6xl font-bold mb-4">

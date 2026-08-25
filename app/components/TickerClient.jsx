@@ -30,7 +30,7 @@ const SmoothTickerClient = ({ tickerData, hasError }) => {
                 className="inline-flex items-center gap-3 px-5 py-3 backdrop-blur-md rounded-xl border border-[#D9E5F0] hover:border-white/40 hover:from-white/15 hover:to-white/8 transition-all duration-300 cursor-pointer flex-shrink-0 mx-1 hover:scale-105 group"
             >
                 {/* Company Logo */}
-                <div className="relative w-8 h-8 rounded-full overflow-hidden flex-shrink-0 flex justify-center items-center shadow-md group-hover:shadow-lg transition-shadow">
+                <div className="relative w-10 h-10 overflow-hidden flex-shrink-0 flex justify-center items-center rounded-lg bg-white shadow-md group-hover:shadow-lg transition-shadow">
                     <img
                         src={`https://platform.biniyog.com.bd/assets/logo/company/${item.MKISTAT_INSTRUMENT_CODE}.png`}
                         alt={`${item.MKISTAT_INSTRUMENT_CODE} logo`}
@@ -60,8 +60,8 @@ const SmoothTickerClient = ({ tickerData, hasError }) => {
                         ৳{formatPrice(item.MKISTAT_PUB_LAST_TRADED_PRICE)}
                     </span>
                     <div className={`flex items-center gap-1.5 ${change.isPositive
-                        ? 'text-emerald-300'
-                        : 'text-rose-300'
+                        ? 'text-green-500'
+                        : 'text-red-500/75'
                         }`}>
                         <svg
                             width="12"

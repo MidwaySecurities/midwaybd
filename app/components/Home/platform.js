@@ -61,11 +61,6 @@ const Platform = () => {
                     {/* Content Side */}
                     <div className="space-y-8">
                         <div className="space-y-4">
-                            <div className="inline-flex items-center bg-blue-100 text-[#004990] px-4 py-2 rounded-full font-medium text-sm">
-                                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
-                                Multi-Platform Access
-                            </div>
-
                             <h2 className="text-4xl font-bold text-gray-800 leading-tight">
                                 World-class platform,<br />
                                 <span className="text-[#1da1f2]">Trade without a doubt</span>
@@ -138,10 +133,7 @@ const Platform = () => {
             <div className="lg:hidden">
                 <div className="bg-white rounded-2xl p-6 shadow-xl border border-gray-200">
                     <div className="text-center mb-8">
-                        <div className="inline-flex items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium text-sm mb-4">
-                            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
-                            Available on Multiple Platforms
-                        </div>
+                        
 
                         <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
                             World-class platform,<br />

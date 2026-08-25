@@ -20,7 +20,7 @@ const FirstNavBar = () => {
                 {/* <h1 className="flex flex-col leading-5 justify-center uppercase"><span className="tracking-[12.4px]">Midway</span><span className="tracking-[.9px]">Securities Ltd.</span></h1> */}
                 <h1 className="flex flex-col leading-0 justify-center uppercase mt-[-.25rem]"><span className="text-xl tracking-[2px]">Midway</span><span className="tracking-[.93px] text-[.6rem] leading-2">Securities Ltd.</span></h1>
             </Link>
-            <p className="bg-[#1E293B] p-2 px-3 rounded-md"><Link href={`https://portal.midwaybd.com/bo/portal-login`}>Login</Link></p>
+            <p className="bg-[#1da1f2] p-2 px-3 rounded-md"><Link href={`https://portal.midwaybd.com/bo/portal-login`}>Login</Link></p>
         </div>
     )
 }

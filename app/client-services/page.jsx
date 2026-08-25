@@ -531,7 +531,7 @@ export default function ClientServicesPage() {
                           href={link.href}
                           target={link.external ? '_blank' : undefined}
                           rel={link.external ? 'noopener noreferrer' : undefined}
-                          className="inline-flex items-center gap-2 font-sans text-xs font-bold tracking-widest uppercase bg-[#0d2b4e] text-white px-5 py-2.5 rounded-sm hover:bg-[#0a2240] transition-colors no-underline"
+                          className="inline-flex items-center gap-2 font-sans text-xs font-bold tracking-widest uppercase bg-[#1da1f2] text-white px-5 py-2.5 rounded-sm hover:bg-[#0a2240] transition-colors no-underline"
                         >
                           {link.text}
                           <ExternalArrow />

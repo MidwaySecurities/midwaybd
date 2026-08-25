@@ -54,7 +54,7 @@ export default function OurBranchesPage() {
     const branchListSchema = {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "itemListElement": branches.map((b, i) => ({
+        "itemListElement": branches.sort((a,b)=>a.id-b.id).map((b, i) => ({
             "@type": "ListItem",
             "position": i + 1,
             "item": {
@@ -122,23 +122,23 @@ export default function OurBranchesPage() {
                         <div className="relative flex items-center justify-center h-[400px] text-white">
                             <div className="text-center px-4">
                                 <h1 className="text-4xl lg:text-6xl font-bold mb-4">
-                                    Our <span className="text-yellow-400">Branches</span>
+                                    Our <span className="text-[#1da1f2]">Branches</span>
                                 </h1>
                                 <p className="text-xl lg:text-2xl mb-6 max-w-3xl">
                                     Visit us at convenient locations across Bangladesh for professional trading services
                                 </p>
-                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                     <div className="bg-white bg-opacity-20 text-black backdrop-blur-sm rounded-full px-6 py-3">
                                         <span className="font-semibold">{branches.length} Branches Nationwide</span>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
                 </header>
 
                 {/* Breadcrumb */}
-                <nav className="bg-white border-b py-3" aria-label="Breadcrumb">
+                {/* <nav className="bg-white border-b py-3" aria-label="Breadcrumb">
                     <div className="max-w-6xl mx-auto px-4">
                         <ol className="flex items-center space-x-2 text-sm">
                             <li><Link href="/" className="text-blue-600 hover:underline">Home</Link></li>
@@ -146,7 +146,7 @@ export default function OurBranchesPage() {
                             <li className="text-gray-700 font-medium" aria-current="page">Our Branches</li>
                         </ol>
                     </div>
-                </nav>
+                </nav> */}
 
                 {/* Interactive filter + branch list (Client Component) */}
                 <BranchesFilter branches={branches} />

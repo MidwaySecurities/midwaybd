@@ -51,7 +51,7 @@ export const branches = [
         services: ["Account Opening", "Trading Support", "Customer Service"]
     },
     {
-        id: 4,
+        id: 6,
         name: "Uttara Branch",
         type: "branch",
         building: "HM Plaza",
@@ -81,7 +81,7 @@ export const branches = [
         services: ["Account Opening", "Trading Support", "Customer Service"]
     },
     {
-        id: 6,
+        id: 7,
         name: "COMILLA BRANCH",
         type: "branch",
         building: "Makka Tower",
@@ -96,7 +96,7 @@ export const branches = [
         services: ["Account Opening", "Trading Support", "Investment Advisory"]
     },
     {
-        id: 7,
+        id: 4,
         name: "NiKunjA 2 Branch",
         type: "branch",
         building: "DSE TOWER",

@@ -2,12 +2,23 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import MobileAppTabSection from '../components/MobileAppTabSection'
 
 const MobileAppPage = () => {
   const [activeFeature, setActiveFeature] = useState('trading')
 
-  const features = [
+  const tabs = [
     {
+      id: "blog",
+      blog_id: 1,
+      label: 'HAHA',
+      content: 'hELLO WORLD',
+      createdAt: '2026-08-25',
+    }
+  ];
+
+  const features = [
+    { 
       id: 'trading',
       title: 'Real-Time Trading',
       description: 'Execute trades instantly with live market data and advanced order types',
@@ -186,6 +197,8 @@ const MobileAppPage = () => {
         </div>
       </div>
 
+      <MobileAppTabSection tabs={tabs} />
+      
       {/* Features Section */}
       <div className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -234,7 +247,7 @@ const MobileAppPage = () => {
 
             {/* Feature Visual */}
             <div className="relative order-1 lg:order-2">
-              <div className="bg-gradient-to-br from-gray-400 to-gray-300 rounded-3xl p-4 sm:p-8 shadow-xl">
+              <div className="bg-gradient-to-br from-gray-400 to-gray-300 rounded-3xl p-1 sm:p-1 shadow-xl">
                 <div style={{
                   backgroundImage: `url(${features.find(f => f.id === activeFeature)?.image})`
                 }} className={`aspect-square bg-white rounded-2xl flex items-center justify-center bg-cover bg-top`}>

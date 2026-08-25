@@ -31,7 +31,7 @@ const BranchesFilter = ({ branches }) => {
                                 aria-selected={activeFilter === tab.id}
                                 onClick={() => setActiveFilter(tab.id)}
                                 className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${activeFilter === tab.id
-                                        ? 'bg-blue-600 text-white shadow-lg'
+                                        ? 'bg-[#1da1f2] text-white shadow-lg'
                                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                     }`}
                             >

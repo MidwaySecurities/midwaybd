@@ -191,7 +191,7 @@ const Platform = () => {
 
                     {/* Mobile CTA */}
                     <div className="text-center">
-                        <button className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        <button className="w-full sm:w-auto bg-[#1da1f2] text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
                             Start Trading Now
                         </button>
                     </div>

@@ -146,7 +146,7 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className=" py-6 shadow-sm z-[-100]" aria-label="Live market data">
+      <section className="my-3" aria-label="Live market data">
         <div className="container mx-auto px-0 lg:px-4">
           <Tickers />
         </div>
@@ -181,13 +181,13 @@ export default async function Home() {
               <div className="order-2 lg:order-1">
                 <div className="bg-white rounded-2xl shadow-2xl p-8 lg:p-12">
                   <div className="space-y-6">
-                    <div className="inline-flex items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
+                    <div className="inline-flex items-center bg-blue-100 text-[#004990] px-4 py-2 rounded-full font-medium">
+                      <span className="w-2 h-2 bg-[#004990] rounded-full mr-2 animate-pulse"></span>
                       Latest Technology
                     </div>
 
                     <h2 id="quicktrade-heading" className="text-3xl lg:text-4xl font-bold text-gray-800">
-                      <span className="text-[#1da1f2]">QuickTrade Pro</span> -
+                      <span className="text-[#004990]">QuickTrade Pro</span> -
                       <br />The Ultimate Trading App
                     </h2>
 
@@ -255,7 +255,7 @@ export default async function Home() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 id="analytics-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-                DSEX INDEX: LIVE
+                DSEX INDEX: <span className="text-[#1da1f2]">LIVE</span>
               </h2>
               {/* <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Stay informed with Real-time market trading, interactive charts, and comprehensive analysis tools
@@ -271,7 +271,7 @@ export default async function Home() {
         <section className="py-8 lg:py-16 bg-linear-to-br from-gray-100 to-blue-50 lg:hidden" aria-labelledby="regulators-heading">
           <div className="container mx-auto px-4">
             <div className="mt-8 text-center py-3">
-              <div className="inline-flex items-start lg:items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full">
+              <div className="inline-flex items-start lg:items-center bg-blue-100 text-[#004990] px-4 py-2 rounded-full">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                 </svg>
@@ -305,7 +305,7 @@ export default async function Home() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 id="platforms-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-                Trading Platforms
+                Trading <span className="text-[#1da1f2]">Platforms</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Choose from our range of professional trading platforms designed for every trader
@@ -319,7 +319,7 @@ export default async function Home() {
         <section className="py-16 bg-gradient-to-br from-gray-100 to-blue-50 hidden lg:block" aria-labelledby="regulators-heading">
           <div className="container mx-auto px-4">
             <div className="mt-8 text-center py-3">
-              <div className="inline-flex items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full">
+              <div className="inline-flex items-center bg-blue-100 text-[#004990] px-4 py-2 rounded-full">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                 </svg>
@@ -374,7 +374,7 @@ export default async function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href='https://portal.midwaybd.com/bo/portal-login' target='_blank' rel='noopener noreferrer'>
-                  <button className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  <button className="bg-[#004990] hover:bg-yellow-400 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
                     Open BO Account
                   </button>
                 </a>

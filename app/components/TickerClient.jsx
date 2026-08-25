@@ -27,7 +27,7 @@ const SmoothTickerClient = ({ tickerData, hasError }) => {
 
         return (
             <div
-                className="inline-flex items-center gap-3 px-5 py-3 backdrop-blur-md rounded-xl border border-white/20 hover:border-white/40 hover:from-white/15 hover:to-white/8 transition-all duration-300 cursor-pointer flex-shrink-0 mx-2 shadow-lg hover:shadow-xl hover:scale-105 group"
+                className="inline-flex items-center gap-3 px-5 py-3 backdrop-blur-md rounded-xl border border-[#D9E5F0] hover:border-white/40 hover:from-white/15 hover:to-white/8 transition-all duration-300 cursor-pointer flex-shrink-0 mx-1 hover:scale-105 group"
             >
                 {/* Company Logo */}
                 <div className="relative w-8 h-8 rounded-full overflow-hidden flex-shrink-0 flex justify-center items-center shadow-md group-hover:shadow-lg transition-shadow">
@@ -43,7 +43,7 @@ const SmoothTickerClient = ({ tickerData, hasError }) => {
 
                 {/* Company Code */}
                 <div className="flex flex-col">
-                    <span className="text-sm font-bold text-white tracking-wider">
+                    <span className="text-sm font-bold text-black tracking-wider">
                         {item.MKISTAT_INSTRUMENT_CODE}
                     </span>
                     <span className="text-xs text-white/60">
@@ -56,7 +56,7 @@ const SmoothTickerClient = ({ tickerData, hasError }) => {
 
                 {/* Price Section */}
                 <div className="flex flex-col items-end">
-                    <span className="text-base font-bold text-white">
+                    <span className="text-base font-bold text-black">
                         ৳{formatPrice(item.MKISTAT_PUB_LAST_TRADED_PRICE)}
                     </span>
                     <div className={`flex items-center gap-1.5 ${change.isPositive
@@ -89,7 +89,7 @@ const SmoothTickerClient = ({ tickerData, hasError }) => {
 
     return (
         <div 
-            className="relative w-full overflow-hidden bg-black"
+            className="relative w-full overflow-hidden bg-[#F4F8FC]"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >

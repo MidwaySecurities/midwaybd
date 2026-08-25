@@ -27,7 +27,6 @@ const DseDsexChart = () => {
         }
 
         const data = await res.json()
-        console.log("Raw DSEX data fetched:", data)
         if (!Array.isArray(data)) {
           throw new Error('Unexpected response format from /api/dsex')
         }

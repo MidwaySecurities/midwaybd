@@ -12,8 +12,8 @@ const Platform = () => {
                 </svg>
             ),
             color: "from-green-400 to-green-600",
-            bgColor: "bg-green-50 group-hover:bg-green-100",
-            textColor: "text-green-600",
+            bgColor: "bg-[#004990]/5 group-hover:bg-green-100",
+            textColor: "text-[#004990]",
             url: 'https://play.google.com/store/apps/details?id=com.midwaybd.quick_trade_pro&hl=en'
         },
         {
@@ -39,7 +39,7 @@ const Platform = () => {
             ),
             color: "from-blue-500 to-blue-700",
             bgColor: "bg-blue-50 group-hover:bg-blue-100",
-            textColor: "text-blue-600",
+            textColor: "text-[#1da1f2]",
             url: 'https://oms.midwaybd.com'
         }
     ];
@@ -61,7 +61,7 @@ const Platform = () => {
                     {/* Content Side */}
                     <div className="space-y-8">
                         <div className="space-y-4">
-                            <div className="inline-flex items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium text-sm">
+                            <div className="inline-flex items-center bg-blue-100 text-[#004990] px-4 py-2 rounded-full font-medium text-sm">
                                 <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
                                 Multi-Platform Access
                             </div>
@@ -81,8 +81,8 @@ const Platform = () => {
                         <div className="grid grid-cols-2 gap-3">
                             {features.map((feature, index) => (
                                 <div key={index} className="flex items-center space-x-2">
-                                    <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg className="w-4 h-4 text-green-600" fill="none" stroke="#004990" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>

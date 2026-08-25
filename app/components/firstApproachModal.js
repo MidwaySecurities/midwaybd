@@ -16,7 +16,7 @@ const FirstApproachModal = () => {
                 <div className="csr116 bg-qtp_btn_bg_color">
                     <Link target='_blank' href={`${(os === 'iOS' || os === 'macOS') ? 'https://apps.apple.com/us/app/quicktrade-pro/id6740322022' : 'https://play.google.com/store/apps/details?id=com.midwaybd.quick_trade_pro&hl=en'}`}>Download</Link>
                 </div>
-                <i onClick={() => closeModal()} className="csr113">
+                <i onClick={() => closeModal()} className="csr113 cursor-pointer">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20 20L4 4.00003M20 4L4.00002 20" stroke="black" stroke-width="2" stroke-linecap="round" />
                     </svg>

@@ -197,20 +197,20 @@ export default async function Home() {
 
                     <ul className="space-y-4 list-none">
                       <li className="flex items-center space-x-3">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center" aria-hidden="true">
-                          <span className="text-green-600 text-sm">✓</span>
+                        <div className="w-6 h-6 text-[#004990] items-center justify-center" aria-hidden="true">
+                          <span className="text-sm font-bold">✓</span>
                         </div>
                         <span className="text-gray-700">Real-time market trading & analytics</span>
                       </li>
                       <li className="flex items-center space-x-3">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center" aria-hidden="true">
-                          <span className="text-green-600 text-sm">✓</span>
+                        <div className="w-6 h-6 text-[#004990] items-center justify-center" aria-hidden="true">
+                          <span className="text-sm font-bold">✓</span>
                         </div>
                         <span className="text-gray-700">Lightning-fast order execution</span>
                       </li>
                       <li className="flex items-center space-x-3">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center" aria-hidden="true">
-                          <span className="text-green-600 text-sm">✓</span>
+                        <div className="w-6 h-6 text-[#004990] items-center justify-center" aria-hidden="true">
+                          <span className="text-sm font-bold">✓</span>
                         </div>
                         <span className="text-gray-700">Advanced charting & technical indicators</span>
                       </li>
@@ -221,7 +221,7 @@ export default async function Home() {
                         href="https://quicktradepro.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+                        className="inline-flex items-center bg-[#1da1f2] hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
                       >
                         Get QuickTrade Pro
                         <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -363,7 +363,7 @@ export default async function Home() {
         </section>
 
         {/* Call to Action Section */}
-        <section className="py-16 lg:py-24 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+        <section className="py-16 lg:py-24 bg-[#1da1f2] text-white">
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-3xl mx-auto space-y-8">
               <h2 className="text-3xl lg:text-5xl font-bold leading-tight">

@@ -1,4 +1,5 @@
 import { Fraunces, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Architects_Daughter } from "next/font/google";
 
 // ─── Type tokens ───────────────────────────────────────────────────────────
 // Display face — a serif with the gravitas of an old brokerage ledger.
@@ -26,7 +27,11 @@ export const metadata = {
   description:
     "Midway Securities Ltd. (TREC 142) has been a part of Bangladesh's Capital Market since 1975, offering brokerage services through the Dhaka Stock Exchange.",
 };
-
+const architectsDaughter = Architects_Daughter({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-architects-daughter",
+});
 // Color + type tokens live in tailwind.config.js:
 //   ledger-navy #0F2B3D · ledger-navy-deep #0B2230 · paper #F1ECDD
 //   ledger-green #21634A · brass #B98A3E · ink #17191C · ink-soft #55606A
@@ -98,13 +103,12 @@ export default function AboutUsPage() {
     >
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-ledger-navy text-paper bg-[#004990] text-white">
-        <div className="mx-auto max-w-6xl px-6 pt-24 pb-16 sm:px-10 sm:pt-32 sm:pb-20">
-          <p className="font-mono text-[11px] tracking-[0.35em] text-brass uppercase">
+        <div className="mx-auto max-w-6xl px-6 pt-24 pb-16 sm:px-10 sm:pt-16 sm:pb-20">
+          {/* <p className="font-mono text-[11px] tracking-[0.35em] text-brass uppercase">
             About Midway Securities Ltd. — Since 1975
-          </p>
-          <h1 className="mt-6 max-w-3xl text-5xl leading-[1.05] sm:text-7xl">
+          </p> */}
+          <h1 className={`${architectsDaughter.className} mt-6 max-w-3xl text-3xl tracking-wide leading-[1.05] sm:text-7xl`}>
             Investing,
-            <br />
             <span className="italic text-brass">simplified.</span>
           </h1>
           <p className="mt-8 max-w-xl text-[15px] leading-relaxed text-paper/80 sm:text-base">
@@ -116,7 +120,7 @@ export default function AboutUsPage() {
         </div>
 
         {/* Ticker rail — the stock-floor detail carried through the page */}
-        <div className="relative border-t border-paper/15 bg-ledger-navy-deep">
+        {/* <div className="relative border-t border-paper/15 bg-ledger-navy-deep">
           <div className="mx-auto flex max-w-6xl flex-wrap gap-x-10 gap-y-3 px-6 py-4 text-[11px] tracking-[0.15em] text-brass sm:px-10">
             {tickerItems.map((item) => (
               <span key={item} className="whitespace-nowrap">
@@ -124,7 +128,7 @@ export default function AboutUsPage() {
               </span>
             ))}
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* ── NARRATIVE ────────────────────────────────────────────────── */}

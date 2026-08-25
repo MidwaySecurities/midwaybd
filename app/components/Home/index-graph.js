@@ -134,7 +134,7 @@ const DseDsexChart = () => {
                 minute: '2-digit',
               })
             }
-            tick={{ fontSize: 11, fill: '#6B7280' }}
+            tick={{ fontSize: 11, fill: '#004990' }}
             axisLine={false}
             tickLine={false}
           />
@@ -142,7 +142,7 @@ const DseDsexChart = () => {
           <YAxis
             domain={[yStart - padding, yEnd + padding]}
             tickFormatter={(v) => v.toLocaleString()}
-            tick={{ fontSize: 11, fill: '#6B7280' }}
+            tick={{ fontSize: 11, fill: '#004990' }}
             axisLine={false}
             tickLine={false}
             allowDecimals={false}
@@ -164,7 +164,7 @@ const DseDsexChart = () => {
               })
             }
             formatter={(value) => [
-              value.toLocaleString(),
+              value.toFixed(0).toLocaleString(),
               'DSEX',
             ]}
           />
@@ -179,9 +179,9 @@ const DseDsexChart = () => {
           <Area
             type="linear"
             dataKey="value"
-            stroke="#2563EB"
+            stroke="#004990"
             strokeWidth={2}
-            fill="url(#dsexGradient)"
+            fill="url('#dsexGradient')"
             dot={false}
             activeDot={{ r: 4 }}
           />

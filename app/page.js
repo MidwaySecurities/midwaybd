@@ -303,8 +303,8 @@ export default async function Home() {
         {/* Platform Section */}
         <section className="py-16 lg:py-24 bg-white" aria-labelledby="platforms-heading flex">
           <div className="flex justify-center">
-            <div className="inline-flex items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium mb-4">
-              <span className="w-2 h-2 bg-[#004990] rounded-full mr-2 animate-pulse text-xl"></span>
+            <div className="inline-flex items-center bg-blue-100 text-[#004990] px-4 py-2 rounded-full font-medium mb-4">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse text-xl"></span>
               Multiple Platforms
             </div>
           </div>

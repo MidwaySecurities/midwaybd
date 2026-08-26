@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 
 import ContactForm from './Contactform'
+import Image from 'next/image'
 
 // ── SEO metadata ────────────────────────────────────────────────
 // Replaces `next/head` (which is a no-op in the App Router). This can only
@@ -147,10 +148,14 @@ export default function ContactUs() {
       <div className="relative h-105 overflow-hidden">
         <div className="absolute inset-0"></div>
         <div
-          className="absolute bg-[url(/images/contact-us/contact-us--Mobile.jpg)] lg:bg-[url(/images/contact-us/contact-us.jpg)] inset-0 bg-cover bg-bottom bg-no-repeat"
+          className="flex items-center absolute bg-[url(/images/contact-us/contact-us--Mobile.png)] lg:bg-[url(/images/contact-us/contact-us.jpg)] inset-0 bg-cover bg-bottom bg-no-repeat"
           role="img"
           aria-label="Midway Securities office"
-        ></div>
+        >
+          <div className='h-full w-full flex items-end justify-start'>
+            <Image src="/images/contact-us/contact-us-forground.png" width={600} height={200} className='w-3/4 sm:w-auto mb-26 sm:mb-25 ml-8 md:ml-18 lg:ml-50 xl:ml-62.5' />
+          </div>
+        </div>
 
         {/* <div className="relative z-10 flex items-center justify-center h-full">
           <div className="text-center text-white">

@@ -9,12 +9,19 @@ const MobileAppPage = () => {
 
   const tabs = [
     {
-      id: "blog",
+      id: "invest",
       blog_id: 1,
-      label: 'HAHA',
+      label: 'blog',
       content: 'hELLO WORLD',
       createdAt: '2026-08-25',
-    }
+    },
+    {
+      id: "news",
+      blog_id: 2,
+      label: 'news',
+      content: 'News',
+      createdAt: '2026-08-25',
+    },
   ];
 
   const features = [

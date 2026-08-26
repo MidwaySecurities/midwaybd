@@ -9,8 +9,12 @@ import styles from "./Tabs.module.css";
 // for the clickable buttons themselves.
 const TAB_NAV = [
   { 
-    id: "blog", 
-    navLabel: "Blog",
+    id: "invest", 
+    navLabel: "Invest",
+  },
+  { 
+    id: "news", 
+    navLabel: "News page",
   },
 ];
 
@@ -21,7 +25,7 @@ const TAB_NAV = [
  * server in page.js and passed down as a plain serializable prop.
  */
 export default function MobileAppTabSection({ tabs }) {
-  const [activeTabId, setActiveTabId] = useState(tabs[0]?.id || "blog");
+  const [activeTabId, setActiveTabId] = useState(tabs[0]?.id || "invest");
   const activeTab = tabs.find((t) => t.id === activeTabId) || tabs[0];
 
   return (

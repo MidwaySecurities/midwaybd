@@ -2,8 +2,6 @@
 import { useState } from 'react'
 import { Send, CheckCircle, AlertCircle } from 'lucide-react'
 
-// Update this if your API is served from a different host in production.
-// Falls back to the local dev URL if the env var isn't set.
 const CONTACT_API_URL =
   process.env.NEXT_PUBLIC_CONTACT_API_URL || 'https://portal.midwaybd.com/api/contact-support'
 
@@ -17,9 +15,7 @@ const ContactForm = () => {
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
-  // 'success' | 'error' | null
   const [submitStatus, setSubmitStatus] = useState(null)
-  // Server-side/Laravel validation errors, keyed by field name
   const [fieldErrors, setFieldErrors] = useState({})
   const [generalError, setGeneralError] = useState('')
 
@@ -30,7 +26,6 @@ const ContactForm = () => {
       [name]: value
     }))
 
-    // Clear the error for this field as soon as the user edits it
     if (fieldErrors[name]) {
       setFieldErrors(prev => {
         const next = { ...prev }

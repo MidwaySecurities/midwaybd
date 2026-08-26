@@ -70,12 +70,12 @@ const BranchesFilter = ({ branches }) => {
                                                     {location.name}
                                                 </h3>
                                                 {location.type === 'head' && (
-                                                    <span className="ml-3 bg-[#003875]/75 text-white px-3 py-1 rounded-full text-xs font-medium">
+                                                    <span className="ml-3 w-37.5 bg-[#003875]/75 text-white text-center mr-2 px-3 py-1 rounded-full text-sm font-medium">
                                                         HEAD OFFICE
                                                     </span>
                                                 )}
                                                 {location.type === 'digital' && (
-                                                    <span className="ml-3 bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">
+                                                    <span className="w-50 text-center mr-2 ml-3 bg-[#004990]/75 text-white px-3 py-1 rounded-full text-sm font-medium">
                                                         DIGITAL BOOTH
                                                     </span>
                                                 )}
@@ -108,7 +108,7 @@ const BranchesFilter = ({ branches }) => {
                                                     <a
                                                         key={index}
                                                         href={`tel:${tel}`}
-                                                        className="flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+                                                        className="flex items-center text-[#1da1f2] hover:text-blue-800 transition-colors"
                                                         itemProp="telephone"
                                                     >
                                                         <svg className="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -121,7 +121,7 @@ const BranchesFilter = ({ branches }) => {
                                                     <a
                                                         key={index}
                                                         href={`tel:${mobile}`}
-                                                        className="flex items-center text-green-600 hover:text-green-800 transition-colors"
+                                                        className="flex items-center text-[#004990] hover:text-green-800 transition-colors"
                                                         itemProp="telephone"
                                                     >
                                                         <svg className="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

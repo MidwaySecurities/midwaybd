@@ -99,7 +99,7 @@ const ContactForm = () => {
   return (
     <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8">
       <div className="flex items-center mb-6">
-        <Send className="w-6 h-6 text-blue-600 mr-3" aria-hidden="true" />
+        <Send className="w-6 h-6 text-[#1da1f2] mr-3" aria-hidden="true" />
         <h2 className="text-2xl font-bold text-gray-900">Send us a Message</h2>
       </div>
 
@@ -215,7 +215,7 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
+          className="w-full bg-[#1da1f2] hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
         >
           {isSubmitting ? (
             <>

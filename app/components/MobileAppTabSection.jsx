@@ -4,9 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import styles from "./Tabs.module.css";
 
-// Static nav labels for the tab strip. `tabs` (passed in as a prop from the
-// server) drives the actual content — this just controls display order/text
-// for the clickable buttons themselves.
 const TAB_NAV = [
   { 
     id: "invest", 
@@ -18,12 +15,7 @@ const TAB_NAV = [
   },
 ];
 
-/**
- * All tab interactivity lives here as client-side React state — no
- * ?tab= query param, no route change, no server round-trip on click.
- * `tabs` is the fully-resolved array (blog/visual/news) fetched on the
- * server in page.js and passed down as a plain serializable prop.
- */
+
 export default function MobileAppTabSection({ tabs }) {
   const [activeTabId, setActiveTabId] = useState(tabs[0]?.id || "invest");
   const activeTab = tabs.find((t) => t.id === activeTabId) || tabs[0];

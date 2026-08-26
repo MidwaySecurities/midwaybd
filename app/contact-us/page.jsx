@@ -59,6 +59,7 @@ const contactInfo = [
   },
   {
     icon: Mail,
+    icon_color: 'text-[#004990]',
     title: 'Email Support',
     details: 'info@midwaybd.com',
     color: 'text-purple-600',
@@ -66,6 +67,7 @@ const contactInfo = [
   },
   {
     icon: Headphones,
+    icon_color: 'text-green-500',
     title: 'Whatsapp',
     details: '+8801874444816',
     color: 'text-orange-600'
@@ -179,7 +181,7 @@ export default function ContactUs() {
             <div key={index} className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center mb-4">
                 <div className={`p-3 rounded-lg bg-gray-50 ${info.color}`}>
-                  <info.icon className="w-6 h-6" aria-hidden="true" />
+                  <info.icon className={`w-6 h-6 ${info.icon_color}`} aria-hidden="true" />
                 </div>
                 <h2 className="text-lg font-semibold text-gray-900 ml-3">{info.title}</h2>
               </div>
@@ -203,7 +205,7 @@ export default function ContactUs() {
           {/* Branch Locations & Additional Info */}
           <div className="space-y-8">
             {/* Branch Locations */}
-            <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8">
+            {/* <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8">
               <div className="flex items-center mb-6">
                 <Building2 className="w-6 h-6 text-blue-600 mr-3" aria-hidden="true" />
                 <h2 className="text-2xl font-bold text-gray-900">Our Locations</h2>
@@ -232,7 +234,7 @@ export default function ContactUs() {
                   </a>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             {/* Social Media & Additional Support */}
             <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8">

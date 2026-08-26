@@ -35,7 +35,7 @@ const BranchesFilter = ({ branches }) => {
                                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                     }`}
                             >
-                                {tab.label} ({tab.count})
+                                {tab.label}
                             </button>
                         ))}
                     </div>

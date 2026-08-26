@@ -586,13 +586,20 @@ function CreditCardContent() {
                     Credit card{' '}
                     <span className="text-base font-normal text-gray-400">— ক্রেডিট কার্ড</span>
                 </h2>
-                <p className="mt-1 text-sm text-gray-500">
+                {/* <p className="mt-1 text-sm text-gray-500">
                     Deposit online using Visa, MasterCard, or American Express.
                     Visa, MasterCard বা American Express দিয়ে জমা দিন।
+                </p> */}
+                <p>
+                    To deposit via credit card, please log in to the{' '}
+                    <Link className="underline text-blue-500 font-semibold" href="https://portal.midwaybd.com">
+                        Midway Portal
+                    </Link>
+                    , where you'll find the deposit option under your account.
                 </p>
             </header>
 
-            <div className="bg-white border border-gray-200 rounded-xl p-4">
+            {/* <div className="bg-white border border-gray-200 rounded-xl p-4">
                 <p className="text-xs font-medium text-gray-400 mb-3">Processing fees</p>
                 <dl>
                     {fees.map((f, i) => (
@@ -623,7 +630,7 @@ function CreditCardContent() {
             <div className="bg-white border border-gray-200 rounded-xl p-5">
                 <h3 className="text-sm font-semibold text-gray-800 mb-4">Proceed to payment</h3>
                 <CreditCardDeposit />
-            </div>
+            </div> */}
         </section>
     )
 }

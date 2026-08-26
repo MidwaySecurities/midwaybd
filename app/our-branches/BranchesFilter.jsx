@@ -6,9 +6,9 @@ const BranchesFilter = ({ branches }) => {
 
     const filteredLocations =
         activeFilter === 'all' ? branches :
-        activeFilter === 'digital' ? branches.filter(b => b.type === 'digital') :
-        activeFilter === 'head' ? branches.filter(b => b.type === 'head') :
-        branches.filter(b => b.type === 'branch')
+            activeFilter === 'digital' ? branches.filter(b => b.type === 'digital') :
+                activeFilter === 'head' ? branches.filter(b => b.type === 'head') :
+                    branches.filter(b => b.type === 'branch')
 
     const digitalCount = branches.filter(b => b.type === 'digital').length
     const branchCount = branches.filter(b => b.type === 'branch').length
@@ -31,8 +31,8 @@ const BranchesFilter = ({ branches }) => {
                                 aria-selected={activeFilter === tab.id}
                                 onClick={() => setActiveFilter(tab.id)}
                                 className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${activeFilter === tab.id
-                                        ? 'bg-[#1da1f2] text-white shadow-lg'
-                                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                    ? 'bg-[#1da1f2] text-white shadow-lg'
+                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                     }`}
                             >
                                 {tab.label} ({tab.count})
@@ -58,7 +58,7 @@ const BranchesFilter = ({ branches }) => {
                             {filteredLocations.map((location) => (
                                 <article
                                     key={location.id}
-                                    className={`bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 ${location.type === 'head' ? 'border-l-4 border-yellow-500' : ''
+                                    className={`bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 ${location.type === 'head' ? 'border-l-4 border-[#004990]' : ''
                                         }`}
                                     itemScope
                                     itemType="https://schema.org/LocalBusiness"
@@ -70,7 +70,7 @@ const BranchesFilter = ({ branches }) => {
                                                     {location.name}
                                                 </h3>
                                                 {location.type === 'head' && (
-                                                    <span className="ml-3 bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-medium">
+                                                    <span className="ml-3 bg-[#003875]/75 text-white px-3 py-1 rounded-full text-xs font-medium">
                                                         HEAD OFFICE
                                                     </span>
                                                 )}
@@ -89,19 +89,9 @@ const BranchesFilter = ({ branches }) => {
                                                 <meta itemProp="addressCountry" content="BD" />
                                             </div>
                                         </div>
-
-                                        <a
-                                            href={location.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="mt-4 lg:mt-0 inline-flex bg-blue-100 hover:bg-blue-200 text-blue-700 p-3 rounded-full transition-colors"
-                                            title={`Get directions to ${location.name}`}
-                                            aria-label={`Get directions to ${location.name}`}
-                                        >
-                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                            </svg>
-                                        </a>
+                                        <div className='my-4 lg:my-0'>
+                                            {location.link}
+                                        </div>
                                     </div>
 
                                     <div className="grid md:grid-cols-2 gap-6">
@@ -144,7 +134,7 @@ const BranchesFilter = ({ branches }) => {
                                         </div>
 
                                         {/* Services */}
-                                        <div>
+                                        {/* <div>
                                             {location.services?.length > 0 && (
                                                 <>
                                                     <h4 className="font-semibold text-gray-800 mb-3">Available Services</h4>
@@ -157,7 +147,7 @@ const BranchesFilter = ({ branches }) => {
                                                     </div>
                                                 </>
                                             )}
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </article>
                             ))}
@@ -169,7 +159,7 @@ const BranchesFilter = ({ branches }) => {
                         {/* Contact Support */}
                         <div className="bg-white rounded-xl shadow-lg p-6">
                             <h3 className="text-xl font-bold text-gray-900 mb-4">Need Help?</h3>
-                            <div className="space-y-3">
+                            {/* <div className="space-y-3">
                                 <a href="tel:09609100142" className="flex items-center p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-colors">
                                     <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center mr-3">
                                         <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -193,6 +183,55 @@ const BranchesFilter = ({ branches }) => {
                                         <p className="text-sm text-gray-600">Send us a message</p>
                                     </div>
                                 </a>
+                            </div> */}
+                            <div className="space-y-3">
+                                <a href="tel:09609100142" className="flex items-center p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-colors">
+                                    <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center mr-3">
+                                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold">Call Support</h4>
+                                        <p className="text-sm text-gray-600">09609 100 142</p>
+                                    </div>
+                                </a>
+
+                                <a href="https://wa.me/8809609100142" target="_blank" rel="noopener noreferrer" className="flex items-center p-3 bg-emerald-50 hover:bg-emerald-100 rounded-lg transition-colors">
+                                    <div className="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center mr-3">
+                                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.79 14.02c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.97 0-1.41.74-2.1 1-2.39.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.29.29-.12.57.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.44.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.65.78 1.94.92.29.14.48.21.55.33.07.12.07.68-.17 1.36z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold">WhatsApp</h4>
+                                        <p className="text-sm text-gray-600">Chat with us on WhatsApp</p>
+                                    </div>
+                                </a>
+
+                                <a href="https://m.me/yourpagename" target="_blank" rel="noopener noreferrer" className="flex items-center p-3 bg-indigo-50 hover:bg-indigo-100 rounded-lg transition-colors">
+                                    <div className="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center mr-3">
+                                        <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M12 2C6.48 2 2 6.13 2 11.5c0 3.03 1.43 5.72 3.68 7.48V22l3.37-1.85c.9.25 1.85.38 2.95.38 5.52 0 10-4.13 10-9.5S17.52 2 12 2zm1.01 12.79l-2.55-2.72-4.98 2.72 5.48-5.82 2.61 2.72 4.92-2.72-5.48 5.82z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold">Messenger</h4>
+                                        <p className="text-sm text-gray-600">Chat with us on Messenger</p>
+                                    </div>
+                                </a>
+
+                                <a href="/contact-us" className="flex items-center p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors">
+                                    <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mr-3">
+                                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold">Contact Form</h4>
+                                        <p className="text-sm text-gray-600">Send us a message</p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
 
@@ -202,7 +241,7 @@ const BranchesFilter = ({ branches }) => {
                             <div className="space-y-2 text-sm">
                                 <div className="flex justify-between">
                                     <span>Sunday - Thursday</span>
-                                    <span className="font-medium text-green-600">9:00 AM - 5:00 PM</span>
+                                    <span className="font-medium text-green-600">9:30 AM - 5:30 PM</span>
                                 </div>
                                 <div className="flex justify-between">
                                     <span>Friday</span>

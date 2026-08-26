@@ -110,21 +110,22 @@ export default function OurBranchesPage() {
             <div className="min-h-screen bg-gray-50">
                 {/* Hero Section */}
                 <header className="relative">
-                    <div className="relative min-h-[400px]">
+                    <div className="relative min-h-[280px] sm:min-h-[340px] lg:min-h-[400px]">
                         <Image
                             src="https://www.midwaybd.com/uploads/6/0/4/6/60462737/background-images/358471256.jpg"
                             alt="Midway Securities office building exterior"
                             fill
                             priority
+                            sizes="100vw"
                             className="object-cover object-center"
                         />
                         <div className="absolute inset-0 bg-[#004990] bg-opacity-50"></div>
-                        <div className="relative flex items-center justify-center h-[400px] text-white">
-                            <div className="text-center px-4">
-                                <h1 className="text-4xl lg:text-6xl font-bold mb-4">
+                        <div className="relative flex items-center justify-center min-h-[280px] sm:min-h-[340px] lg:min-h-[400px] text-white">
+                            <div className="text-center px-4 sm:px-6">
+                                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight">
                                     Our <span className="text-[#1da1f2]">Branches</span>
                                 </h1>
-                                <p className="text-xl lg:text-2xl mb-6 max-w-3xl">
+                                <p className="text-base sm:text-lg lg:text-2xl mb-6 max-w-3xl mx-auto">
                                     Visit us at convenient locations across Bangladesh for professional trading services
                                 </p>
                                 {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -152,13 +153,13 @@ export default function OurBranchesPage() {
                 <BranchesFilter branches={branches} />
 
                 {/* FAQ Section — static, server-rendered, mirrors the FAQPage JSON-LD above */}
-                <section className="max-w-6xl mx-auto px-4 pb-12">
-                    <div className="bg-white rounded-xl shadow-lg p-8">
-                        <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
-                        <div className="grid md:grid-cols-2 gap-6">
+                <section className="max-w-6xl mx-auto px-3 sm:px-4 pb-8 sm:pb-12">
+                    <div className="bg-white rounded-xl shadow-lg p-4 sm:p-8">
+                        <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Frequently Asked Questions</h2>
+                        <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
                             {faqs.map((faq, i) => (
                                 <div key={i}>
-                                    <h3 className="font-semibold text-gray-800 mb-2">{faq.question}</h3>
+                                    <h3 className="font-semibold text-gray-800 mb-2 text-sm sm:text-base">{faq.question}</h3>
                                     <p className="text-gray-600 text-sm mb-4">{faq.answer}</p>
                                 </div>
                             ))}

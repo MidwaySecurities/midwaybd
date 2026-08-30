@@ -31,7 +31,7 @@ const BranchesFilter = ({ branches }) => {
                                 aria-selected={activeFilter === tab.id}
                                 onClick={() => setActiveFilter(tab.id)}
                                 className={`px-3 py-2 sm:px-6 sm:py-3 rounded-full font-medium text-xs sm:text-base transition-all duration-200 whitespace-nowrap ${activeFilter === tab.id
-                                    ? 'bg-[#1da1f2] text-white shadow-lg'
+                                    ? 'bg-secondary_color text-white shadow-lg'
                                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                     }`}
                             >
@@ -108,7 +108,7 @@ const BranchesFilter = ({ branches }) => {
                                                     <a
                                                         key={index}
                                                         href={`tel:${tel}`}
-                                                        className="flex items-center text-[#1da1f2] hover:text-blue-800 transition-colors text-sm sm:text-base break-all"
+                                                        className="flex items-center text-secondary_color hover:text-blue-800 transition-colors text-sm sm:text-base break-all"
                                                         itemProp="telephone"
                                                     >
                                                         <svg className="w-3 h-3 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -161,7 +161,7 @@ const BranchesFilter = ({ branches }) => {
                             <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">Need Help?</h3>
                             <div className="space-y-3">
                                 <a href="tel:09609100142" className="flex items-center p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-colors">
-                                    <div className="w-10 h-10 bg-[#1da1f2] rounded-full flex items-center justify-center mr-3 shrink-0">
+                                    <div className="w-10 h-10 bg-secondary_color rounded-full flex items-center justify-center mr-3 shrink-0">
                                         <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                         </svg>

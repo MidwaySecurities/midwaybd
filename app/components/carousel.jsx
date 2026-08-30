@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 
-export default function Carousel({images}) {
+export default function Carousel({ images }) {
   const [current, setCurrent] = useState(0);
   const length = images.length;
 
@@ -27,9 +27,8 @@ export default function Carousel({images}) {
         {images.map((src, index) => (
           <div
             key={index}
-            className={`absolute w-full h-full transition-opacity duration-700 ease-in-out ${
-              index === current ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute w-full h-full transition-opacity duration-700 ease-in-out ${index === current ? "opacity-100" : "opacity-0"
+              }`}
           >
             <img
               src={src}
@@ -48,10 +47,9 @@ export default function Carousel({images}) {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full ${
-              index === current ? "bg-qtp_btn_bg_color" : "bg-gray-300"
-            //   "bg-blue-600" : "bg-gray-300"
-            }`}
+            className={`w-3 h-3 rounded-full ${index === current ? "bg-secondary_color" : "bg-gray-300"
+              //   "bg-blue-600" : "bg-gray-300"
+              }`}
           />
         ))}
       </div>
@@ -69,7 +67,7 @@ export default function Carousel({images}) {
             fill="none"
             viewBox="0 0 6 10"
           >
-            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 1 1 5l4 4"/>
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 1 1 5l4 4" />
           </svg>
         </span>
       </button>
@@ -86,7 +84,7 @@ export default function Carousel({images}) {
             fill="none"
             viewBox="0 0 6 10"
           >
-            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4" />
           </svg>
         </span>
       </button>

@@ -12,7 +12,7 @@ const AccountOpeningSteps = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
             ),
-            bgColor: "bg-[#1da1f2]",
+            bgColor: "bg-secondary_color",
             hoverColor: "hover:from-blue-600 hover:to-blue-700"
         },
         {
@@ -115,7 +115,7 @@ const AccountOpeningSteps = () => {
 
                     <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
                         Start Investing In{" "}
-                        <span className="text-[#1da1f2]">
+                        <span className="text-secondary_color">
                             Three Simple Steps
                         </span>
                     </h2>

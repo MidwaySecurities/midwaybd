@@ -24,7 +24,7 @@
 //     const isActive = (path) => pathname === path
 
 //     const linkClass = (path) =>
-//         `hover:text-green-500 border-2 border-primary_color rounded-lg px-3 text-left ${isActive(path) ? 'bg-qtp_btn_bg_color text-white' : 'bg-white'
+//         `hover:text-green-500 border-2 border-primary_color rounded-lg px-3 text-left ${isActive(path) ? 'bg-secondary_color text-white' : 'bg-white'
 //         }`
 
 //     return (
@@ -109,7 +109,7 @@
 //                 <Link href={`https://portal.midwaybd.com/register`} className="p-1 px-2 rounded-lg border-1 w-[100px] font-semibold flex justify-center">
 //                     <button>Sign up</button>
 //                 </Link>
-//                 <Link href={`https://portal.midwaybd.com/`} className="p-1 px-2 rounded-lg w-[100px] bg-qtp_btn_bg_color text-white font-semibold flex justify-center">
+//                 <Link href={`https://portal.midwaybd.com/`} className="p-1 px-2 rounded-lg w-[100px] bg-secondary_color text-white font-semibold flex justify-center">
 //                     <button>Log in</button>
 //                 </Link>
 //             </div>

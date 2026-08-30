@@ -39,7 +39,7 @@ const Platform = () => {
             ),
             color: "from-blue-500 to-blue-700",
             bgColor: "bg-blue-50 group-hover:bg-blue-100",
-            textColor: "text-[#1da1f2]",
+            textColor: "text-secondary_color",
             url: 'https://oms.midwaybd.com'
         }
     ];
@@ -63,7 +63,7 @@ const Platform = () => {
                         <div className="space-y-4">
                             <h2 className="text-4xl font-bold text-gray-800 leading-tight">
                                 World-class platform,<br />
-                                <span className="text-[#1da1f2]">Trade without a doubt</span>
+                                <span className="text-secondary_color">Trade without a doubt</span>
                             </h2>
 
                             <p className="text-lg text-gray-600 leading-relaxed">
@@ -92,7 +92,7 @@ const Platform = () => {
                             <Link
                                 href="https://oms.midwaybd.com"
                                 target="_blank"
-                                className="inline-block bg-[#1da1f2] hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+                                className="inline-block bg-secondary_color hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
                             >
                                 Start Trading Now
                             </Link>
@@ -137,7 +137,7 @@ const Platform = () => {
 
                         <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
                             World-class platform,<br />
-                            <span className="text-[#1da1f2]">Trade without a doubt</span>
+                            <span className="text-secondary_color">Trade without a doubt</span>
                         </h2>
 
                         <p className="text-gray-600 mb-6">
@@ -183,7 +183,7 @@ const Platform = () => {
 
                     {/* Mobile CTA */}
                     <div className="text-center">
-                        <button className="w-full sm:w-auto bg-[#1da1f2] text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        <button className="w-full sm:w-auto bg-secondary_color text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
                             Start Trading Now
                         </button>
                     </div>

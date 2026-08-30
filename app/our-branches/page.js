@@ -123,7 +123,7 @@ export default function OurBranchesPage() {
                         <div className="relative flex items-center justify-center min-h-[280px] sm:min-h-[340px] lg:min-h-[400px] text-white">
                             <div className="text-center px-4 sm:px-6">
                                 <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight">
-                                    Our <span className="text-[#1da1f2]">Branches</span>
+                                    Our <span className="text-secondary_color">Branches</span>
                                 </h1>
                                 <p className="text-base sm:text-lg lg:text-2xl mb-6 max-w-3xl mx-auto">
                                     Visit us at convenient locations across Bangladesh for professional trading services

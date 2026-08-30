@@ -28,7 +28,7 @@ export default function DepositTab({ activeCity }) {
           key={tab.id}
           className={
             activeCity === tab.id
-              ? "bg-qtp_btn_bg_color text-white"
+              ? "bg-secondary_color text-white"
               : ""
           }
           onClick={() => changeTab(tab.id)}

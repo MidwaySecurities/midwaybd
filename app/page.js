@@ -221,7 +221,7 @@ export default async function Home() {
                         href="https://quicktradepro.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center bg-[#1da1f2] hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+                        className="inline-flex items-center bg-secondary_color hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
                       >
                         Get QuickTrade Pro
                         <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -255,7 +255,7 @@ export default async function Home() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 id="analytics-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-                DSEX INDEX: <span className="text-[#1da1f2]">LIVE</span>
+                DSEX INDEX: <span className="text-secondary_color">LIVE</span>
               </h2>
               {/* <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Stay informed with Real-time market trading, interactive charts, and comprehensive analysis tools
@@ -311,7 +311,7 @@ export default async function Home() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 id="platforms-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-                Trading <span className="text-[#1da1f2]">Platforms</span>
+                Trading <span className="text-secondary_color">Platforms</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Choose from our range of professional trading platforms designed for every trader
@@ -369,7 +369,7 @@ export default async function Home() {
         </section>
 
         {/* Call to Action Section */}
-        <section className="py-16 lg:py-24 bg-[#1da1f2] text-white">
+        <section className="py-16 lg:py-24 bg-secondary_color text-white">
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-3xl mx-auto space-y-8">
               <h2 className="text-3xl lg:text-5xl font-bold leading-tight">

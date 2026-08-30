@@ -121,7 +121,7 @@ const MobileDeposit = () => {
             email: formData.get('email'),
             phone_number: formData.get('phone_number'),
             deposit_amount: formData.get('amount'),
-            remarks:formData.get('remarks'),
+            remarks: formData.get('remarks'),
             mobile_money: formData.get('method'),
             trx_id: formData.get('transactionId'),
             deposit_slip: formData.get('depositSlip'),
@@ -196,7 +196,7 @@ const MobileDeposit = () => {
                     type="submit"
                     disabled={loading}
                     className={`
-                        bg-qtp_btn_bg_color text-white rounded-lg p-1 px-3 uppercase
+                        bg-secondary_color text-white rounded-lg p-1 px-3 uppercase
                         inline-flex items-center gap-2
                         transition-opacity duration-200
                         ${loading ? 'opacity-60 cursor-not-allowed' : 'opacity-100 cursor-pointer'}

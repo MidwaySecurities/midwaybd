@@ -38,7 +38,7 @@
 //           prefetch = {false}
 //           className={`inline-block px-4 py-2 rounded-lg shadow-md mr-2 ${
 //             isActive(item.href)
-//               ? "bg-qtp_btn_bg_color text-white"
+//               ? "bg-secondary_color text-white"
 //               : "bg-white"
 //           }`}
 //         >
@@ -102,7 +102,7 @@ const Navigation = () => {
 
     const linkClass = (path) =>
         `block w-full text-left py-3 px-4 rounded-lg border transition-all duration-200 hover:border-green-500 hover:text-green-500 ${isActive(path)
-            ? 'bg-qtp_btn_bg_color text-white border-qtp_btn_bg_color'
+            ? 'bg-secondary_color text-white border-qtp_btn_bg_color'
             : 'bg-white text-gray-700 border-gray-300'
         }`
 
@@ -219,7 +219,7 @@ const Navigation = () => {
                                 </Link>
                                 <Link
                                     href="https://portal.midwaybd.com/"
-                                    className="flex-1 py-2 px-4 bg-qtp_btn_bg_color text-white rounded-lg text-center hover:bg-opacity-90 transition-all duration-200"
+                                    className="flex-1 py-2 px-4 bg-secondary_color text-white rounded-lg text-center hover:bg-opacity-90 transition-all duration-200"
                                     onClick={closeModal}
                                 >
                                     Log In
@@ -263,8 +263,8 @@ const SubNav = () => {
         }
 
         return `${baseClass} ${isActive(item.href)
-                ? "bg-qtp_btn_bg_color text-white shadow-md"
-                : "bg-white text-gray-700 border border-gray-300 hover:border-green-500 hover:text-green-500 shadow-sm"
+            ? "bg-secondary_color text-white shadow-md"
+            : "bg-white text-gray-700 border border-gray-300 hover:border-green-500 hover:text-green-500 shadow-sm"
             }`
     }
 

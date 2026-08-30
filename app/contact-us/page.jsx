@@ -6,6 +6,7 @@ import {
   Clock,
   MapPin,
   Facebook,
+  MessageCircle,
   Building2,
   Users,
   Headphones
@@ -186,7 +187,7 @@ export default function ContactUs() {
                 <h2 className="text-lg font-semibold text-gray-900 ml-3">{info.title}</h2>
               </div>
               {info.link ? (
-                <a href={info.link} className="text-blue-600 hover:text-blue-800 font-medium">
+                <a href={info.link} className="text-secondary_color hover:text-blue-800 font-medium">
                   {info.details}
                 </a>
               ) : (
@@ -256,6 +257,21 @@ export default function ContactUs() {
                   <div>
                     <h3 className="font-semibold text-gray-900">Facebook</h3>
                     <p className="text-sm text-gray-600">Follow us for updates</p>
+                  </div>
+                </a>
+
+                <a
+                  href="https://wa.me/8801874444816"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-green-300 hover:bg-green-50 transition-all duration-200 group"
+                >
+                  <div className="p-2 bg-secondary_color/25 rounded-lg group-hover:bg-green-200">
+                    <MessageCircle className="w-5 h-5 text-green-600" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">WhatsApp</h3>
+                    <p className="text-sm text-gray-600">+880 1874-444816</p>
                   </div>
                 </a>
 

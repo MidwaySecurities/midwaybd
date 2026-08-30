@@ -190,7 +190,7 @@ const DepositForm = () => {
                     type="submit"
                     disabled={loading}
                     className={`
-                        bg-qtp_btn_bg_color text-white rounded-lg p-1 px-3 block uppercase
+                        bg-secondary_color text-white rounded-lg p-1 px-3 block uppercase
                         inline-flex items-center gap-2
                         transition-opacity duration-200
                         ${loading ? 'opacity-60 cursor-not-allowed' : 'opacity-100 cursor-pointer'}

@@ -54,7 +54,7 @@ export default function OurBranchesPage() {
     const branchListSchema = {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "itemListElement": branches.sort((a,b)=>a.id-b.id).map((b, i) => ({
+        "itemListElement": branches.sort((a, b) => a.id - b.id).map((b, i) => ({
             "@type": "ListItem",
             "position": i + 1,
             "item": {
@@ -119,7 +119,7 @@ export default function OurBranchesPage() {
                             sizes="100vw"
                             className="object-cover object-center"
                         />
-                        <div className="absolute inset-0 bg-[#004990] bg-opacity-50"></div>
+                        <div className="absolute inset-0 bg-primary_color bg-opacity-50"></div>
                         <div className="relative flex items-center justify-center min-h-[280px] sm:min-h-[340px] lg:min-h-[400px] text-white">
                             <div className="text-center px-4 sm:px-6">
                                 <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight">

@@ -128,22 +128,22 @@ const jsonLd = {
       description: 'Full list of investment and trading services offered by Midway Securities Ltd.',
       numberOfItems: 16,
       itemListElement: [
-        { '@type': 'ListItem', position: 1,  name: 'QuickTrade Pro Mobile App',   url: `${PAGE_URL}#quicktrade` },
-        { '@type': 'ListItem', position: 2,  name: 'Midway Portal',               url: `${PAGE_URL}#portal` },
-        { '@type': 'ListItem', position: 3,  name: 'BO Account Opening',          url: `${PAGE_URL}#bo-account` },
-        { '@type': 'ListItem', position: 4,  name: 'Apply for IPO',               url: `${PAGE_URL}#ipo` },
-        { '@type': 'ListItem', position: 5,  name: 'Share Trading',               url: `${PAGE_URL}#trading` },
-        { '@type': 'ListItem', position: 6,  name: 'IPO Membership Club',         url: `${PAGE_URL}#ipo-club` },
-        { '@type': 'ListItem', position: 7,  name: 'Easy Deposits',               url: `${PAGE_URL}#deposits` },
-        { '@type': 'ListItem', position: 8,  name: 'Tax Report',                  url: `${PAGE_URL}#tax-report` },
-        { '@type': 'ListItem', position: 9,  name: 'Daily Emails',                url: `${PAGE_URL}#emails` },
-        { '@type': 'ListItem', position: 10, name: 'Easy Withdrawal via BEFTN',   url: `${PAGE_URL}#withdrawal` },
-        { '@type': 'ListItem', position: 11, name: 'Dividend Statement',          url: `${PAGE_URL}#dividend` },
-        { '@type': 'ListItem', position: 12, name: 'CDBL SMS Alert',              url: `${PAGE_URL}#cdbl-sms` },
-        { '@type': 'ListItem', position: 13, name: 'Daily Emails & SMS Alert',    url: `${PAGE_URL}#daily-alerts` },
-        { '@type': 'ListItem', position: 14, name: 'Professional Staff',          url: `${PAGE_URL}#staff` },
-        { '@type': 'ListItem', position: 15, name: 'DSE Training Academy',        url: `${PAGE_URL}#dse-training` },
-        { '@type': 'ListItem', position: 16, name: 'DSE Info App',                url: `${PAGE_URL}#dse-app` },
+        { '@type': 'ListItem', position: 1, name: 'QuickTrade Pro Mobile App', url: `${PAGE_URL}#quicktrade` },
+        { '@type': 'ListItem', position: 2, name: 'Midway Portal', url: `${PAGE_URL}#portal` },
+        { '@type': 'ListItem', position: 3, name: 'BO Account Opening', url: `${PAGE_URL}#bo-account` },
+        { '@type': 'ListItem', position: 4, name: 'Apply for IPO', url: `${PAGE_URL}#ipo` },
+        { '@type': 'ListItem', position: 5, name: 'Share Trading', url: `${PAGE_URL}#trading` },
+        { '@type': 'ListItem', position: 6, name: 'IPO Membership Club', url: `${PAGE_URL}#ipo-club` },
+        { '@type': 'ListItem', position: 7, name: 'Easy Deposits', url: `${PAGE_URL}#deposits` },
+        { '@type': 'ListItem', position: 8, name: 'Tax Report', url: `${PAGE_URL}#tax-report` },
+        { '@type': 'ListItem', position: 9, name: 'Daily Emails', url: `${PAGE_URL}#emails` },
+        { '@type': 'ListItem', position: 10, name: 'Easy Withdrawal via BEFTN', url: `${PAGE_URL}#withdrawal` },
+        { '@type': 'ListItem', position: 11, name: 'Dividend Statement', url: `${PAGE_URL}#dividend` },
+        { '@type': 'ListItem', position: 12, name: 'CDBL SMS Alert', url: `${PAGE_URL}#cdbl-sms` },
+        { '@type': 'ListItem', position: 13, name: 'Daily Emails & SMS Alert', url: `${PAGE_URL}#daily-alerts` },
+        { '@type': 'ListItem', position: 14, name: 'Professional Staff', url: `${PAGE_URL}#staff` },
+        { '@type': 'ListItem', position: 15, name: 'DSE Training Academy', url: `${PAGE_URL}#dse-training` },
+        { '@type': 'ListItem', position: 16, name: 'DSE Info App', url: `${PAGE_URL}#dse-app` },
       ],
     },
 
@@ -182,7 +182,7 @@ const services = [
       { text: 'Download for Android', href: 'https://play.google.com/store/apps/details?id=com.midwaybd.quick_trade_pro&hl=en', external: false },
       { text: 'Download for iOS', href: 'https://apps.apple.com/us/app/quicktrade-pro/id6740322022', external: false },
     ],
-    buttons:<DownloadAppbutton />
+    buttons: <DownloadAppbutton />
   },
   {
     id: 'portal',
@@ -436,7 +436,7 @@ export default function ClientServicesPage() {
 
         {/* ── Hero ── */}
         <section
-          className="relative bg-[#004990] px-8 md:px-12 py-20 md:py-28 overflow-hidden"
+          className="relative bg-primary_color px-8 md:px-12 py-20 md:py-28 overflow-hidden"
           aria-labelledby="hero-heading"
         >
           {/* Decorative background image — aria-hidden so screen readers skip it */}
@@ -523,7 +523,7 @@ export default function ClientServicesPage() {
                   )}
 
                   {/* CTA links */}
-                  {!service.buttons&&service.links ? (
+                  {!service.buttons && service.links ? (
                     <div className="flex flex-wrap gap-3">
                       {service.links.map((link) => (
                         <Link
@@ -538,7 +538,7 @@ export default function ClientServicesPage() {
                         </Link>
                       ))}
                     </div>
-                  ):service.buttons}
+                  ) : service.buttons}
                 </div>
               </article>
 

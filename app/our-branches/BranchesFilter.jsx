@@ -58,7 +58,7 @@ const BranchesFilter = ({ branches }) => {
                             {filteredLocations.map((location) => (
                                 <article
                                     key={location.id}
-                                    className={`bg-white rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-xl transition-all duration-300 ${location.type === 'head' ? 'border-l-4 border-[#004990]' : ''
+                                    className={`bg-white rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-xl transition-all duration-300 ${location.type === 'head' ? 'border-l-4 border-primary_color' : ''
                                         }`}
                                     itemScope
                                     itemType="https://schema.org/LocalBusiness"
@@ -75,7 +75,7 @@ const BranchesFilter = ({ branches }) => {
                                                     </span>
                                                 )}
                                                 {location.type === 'digital' && (
-                                                    <span className="text-center bg-[#004990]/75 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap">
+                                                    <span className="text-center bg-primary_color/75 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap">
                                                         DIGITAL BOOTH
                                                     </span>
                                                 )}
@@ -121,7 +121,7 @@ const BranchesFilter = ({ branches }) => {
                                                     <a
                                                         key={index}
                                                         href={`tel:${mobile}`}
-                                                        className="flex items-center text-[#004990] hover:text-green-800 transition-colors text-sm sm:text-base break-all"
+                                                        className="flex items-center text-primary_color hover:text-green-800 transition-colors text-sm sm:text-base break-all"
                                                         itemProp="telephone"
                                                     >
                                                         <svg className="w-3 h-3 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

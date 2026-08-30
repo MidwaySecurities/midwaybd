@@ -120,7 +120,7 @@ export default function AboutUsPage() {
       className={`${fraunces.variable} ${plexSans.variable} ${plexMono.variable} font-body bg-paper text-ink`}
     >
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-[#004990] text-white">
+      <section className="relative overflow-hidden bg-primary_color text-white">
         <div className="mx-auto max-w-6xl px-6 pt-24 pb-16 sm:px-10 sm:pt-28 sm:pb-20">
           <p className="font-mono text-[11px] tracking-[0.35em] text-brass uppercase">
             About Midway Securities Ltd. — Since 1975

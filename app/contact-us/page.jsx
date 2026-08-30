@@ -59,7 +59,7 @@ const contactInfo = [
   },
   {
     icon: Mail,
-    icon_color: 'text-[#004990]',
+    icon_color: 'text-primary_color',
     title: 'Email Support',
     details: 'info@midwaybd.com',
     color: 'text-purple-600',

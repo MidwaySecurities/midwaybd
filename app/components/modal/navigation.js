@@ -24,7 +24,7 @@
 //     const isActive = (path) => pathname === path
 
 //     const linkClass = (path) =>
-//         `hover:text-green-500 border-2 border-[#004990] rounded-lg px-3 text-left ${isActive(path) ? 'bg-qtp_btn_bg_color text-white' : 'bg-white'
+//         `hover:text-green-500 border-2 border-primary_color rounded-lg px-3 text-left ${isActive(path) ? 'bg-qtp_btn_bg_color text-white' : 'bg-white'
 //         }`
 
 //     return (
@@ -36,7 +36,7 @@
 //                     <div className='flex space-y-2 flex-col mt-6 w-full'>
 //                         <button onClick={() => handleNavigate("/")} className={linkClass('/')}>Home</button>
 
-//                         {/* <div className='border-2 border-[#004990] rounded-lg px-3'>
+//                         {/* <div className='border-2 border-primary_color rounded-lg px-3'>
 //                             <div
 //                                 onClick={() => {
 //                                     setOpenBo(prev => !prev)
@@ -52,13 +52,13 @@
 //                         <button onClick={() => handleNavigate("/about-us")} className={linkClass('/about-us')}>About Us</button>
 
 
-//                         {/* <a href="#" className='hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Mobile app</a> */}
+//                         {/* <a href="#" className='hover:text-green-500 border-2 border-primary_color rounded-lg px-3'>Mobile app</a> */}
 //                         <button onClick={() => handleNavigate("/mobile-app")} className={linkClass('/mobile-app')}>Mobile App</button>
 
 //                         <button onClick={() => handleNavigate("/link-bo-account")} className={linkClass('/link-bo-account')}>Link BO A/C</button>
 
 
-//                         <div className='border-2 border-[#004990] rounded-lg px-3'>
+//                         <div className='border-2 border-primary_color rounded-lg px-3'>
 //                             <div
 //                                 onClick={() => {
 //                                     setOpenService(prev => !prev)
@@ -94,7 +94,7 @@
 //                         {/* <Link href="/visual-research" className={linkClass('/visual-research')}>Visual research</Link> */}
 //                         <button onClick={() => handleNavigate("/visual-research")} className={linkClass('/visual-research')}>Visual research</button>
 
-//                         {/* <a href="#" className='block hover:text-green-500 border-2 border-[#004990] rounded-lg px-3'>Learn about share market</a> */}
+//                         {/* <a href="#" className='block hover:text-green-500 border-2 border-primary_color rounded-lg px-3'>Learn about share market</a> */}
 //                         <button onClick={() => handleNavigate("/learn-about-share-market")} className={linkClass('/learn-about-share-market')}>Learn about share market</button>
 //                         <button onClick={() => handleNavigate("/frequently-asked-question")} className={linkClass('/frequently-asked-question')}>FAQ</button>
 //                         <Link href="/contact-us" className={linkClass('/contact-us')}>Contact us</Link>
@@ -401,8 +401,8 @@ const Navigation = () => {
                 <button
                     onClick={handleClick}
                     className={`w-full flex items-center justify-between p-4 rounded-2xl transition-all duration-200 group ${isActiveItem
-                            ? 'bg-blue-600 text-white shadow-lg scale-[0.98]'
-                            : 'bg-white hover:bg-gray-50 text-gray-700 hover:text-blue-600 hover:shadow-md active:scale-[0.98]'
+                        ? 'bg-blue-600 text-white shadow-lg scale-[0.98]'
+                        : 'bg-white hover:bg-gray-50 text-gray-700 hover:text-blue-600 hover:shadow-md active:scale-[0.98]'
                         }`}
                 >
                     <div className="flex items-center space-x-4">
@@ -444,8 +444,8 @@ const Navigation = () => {
         <button
             onClick={() => handleNavigate(path)}
             className={`w-full flex items-center space-x-3 p-3 rounded-xl text-sm transition-all duration-200 ${isActive(path)
-                    ? 'bg-blue-100 text-blue-700 font-semibold'
-                    : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
+                ? 'bg-blue-100 text-blue-700 font-semibold'
+                : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
                 }`}
         >
             {icon && <div className="w-5 h-5 flex-shrink-0">{icon}</div>}

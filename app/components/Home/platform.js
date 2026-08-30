@@ -12,8 +12,8 @@ const Platform = () => {
                 </svg>
             ),
             color: "from-green-400 to-green-600",
-            bgColor: "bg-[#004990]/5 group-hover:bg-green-100",
-            textColor: "text-[#004990]",
+            bgColor: "bg-primary_color/5 group-hover:bg-green-100",
+            textColor: "text-primary_color",
             url: 'https://play.google.com/store/apps/details?id=com.midwaybd.quick_trade_pro&hl=en'
         },
         {
@@ -133,7 +133,7 @@ const Platform = () => {
             <div className="lg:hidden">
                 <div className="bg-white rounded-2xl p-6 shadow-xl border border-gray-200">
                     <div className="text-center mb-8">
-                        
+
 
                         <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
                             World-class platform,<br />

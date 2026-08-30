@@ -19,13 +19,13 @@
 
 //   return (
 //     <div className="flex overflow-x-auto whitespace-nowrap p-4 bg-gray-100">
-      
+
 //       {/* External link → use <a>, not Next.js Link */}
 //       <a
 //         href="https://portal.midwaybd.com/bo/portal-login"
 //         target="_blank"
 //         rel="noopener noreferrer"
-//         className="inline-block px-4 py-2 rounded-lg shadow-md mr-2 bg-[#004990] text-white"
+//         className="inline-block px-4 py-2 rounded-lg shadow-md mr-2 bg-primary_color text-white"
 //       >
 //         Open BO A/C
 //       </a>
@@ -101,10 +101,9 @@ const Navigation = () => {
     }
 
     const linkClass = (path) =>
-        `block w-full text-left py-3 px-4 rounded-lg border transition-all duration-200 hover:border-green-500 hover:text-green-500 ${
-            isActive(path) 
-                ? 'bg-qtp_btn_bg_color text-white border-qtp_btn_bg_color' 
-                : 'bg-white text-gray-700 border-gray-300'
+        `block w-full text-left py-3 px-4 rounded-lg border transition-all duration-200 hover:border-green-500 hover:text-green-500 ${isActive(path)
+            ? 'bg-qtp_btn_bg_color text-white border-qtp_btn_bg_color'
+            : 'bg-white text-gray-700 border-gray-300'
         }`
 
     const dropdownClass = `border rounded-lg bg-white border-gray-300 transition-all duration-200`
@@ -143,7 +142,7 @@ const Navigation = () => {
 
     return (
         <>
-            <div 
+            <div
                 className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-[100]"
                 onClick={closeModal}
             />
@@ -176,18 +175,17 @@ const Navigation = () => {
                                                     className="w-full flex items-center justify-between py-3 px-4 text-left text-gray-700 hover:text-green-500 transition-colors duration-200"
                                                 >
                                                     <span className="font-medium">{item.label}</span>
-                                                    <svg 
-                                                        className={`w-5 h-5 transition-transform duration-200 ${
-                                                            activeDropdown === item.key ? 'rotate-180' : ''
-                                                        }`}
-                                                        fill="none" 
-                                                        stroke="currentColor" 
+                                                    <svg
+                                                        className={`w-5 h-5 transition-transform duration-200 ${activeDropdown === item.key ? 'rotate-180' : ''
+                                                            }`}
+                                                        fill="none"
+                                                        stroke="currentColor"
                                                         viewBox="0 0 24 24"
                                                     >
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                                     </svg>
                                                 </button>
-                                                
+
                                                 {activeDropdown === item.key && (
                                                     <div className="border-t bg-gray-50">
                                                         {item.items.map((subItem) => (
@@ -212,14 +210,14 @@ const Navigation = () => {
                         {/* Footer Actions */}
                         <div className="border-t bg-gray-50 px-6 py-4">
                             <div className="flex gap-3">
-                                <Link 
+                                <Link
                                     href="https://portal.midwaybd.com/register"
                                     className="flex-1 py-2 px-4 bg-white border border-gray-300 rounded-lg text-center text-gray-700 hover:border-green-500 hover:text-green-500 transition-all duration-200"
                                     onClick={closeModal}
                                 >
                                     Sign Up
                                 </Link>
-                                <Link 
+                                <Link
                                     href="https://portal.midwaybd.com/"
                                     className="flex-1 py-2 px-4 bg-qtp_btn_bg_color text-white rounded-lg text-center hover:bg-opacity-90 transition-all duration-200"
                                     onClick={closeModal}
@@ -241,11 +239,11 @@ const SubNav = () => {
     const pathname = usePathname()
 
     const navItems = [
-        { 
-            href: "https://portal.midwaybd.com/bo/portal-login", 
-            label: "Open BO Account", 
+        {
+            href: "https://portal.midwaybd.com/bo/portal-login",
+            label: "Open BO Account",
             external: true,
-            primary: true 
+            primary: true
         },
         { href: "/deposit", label: "Deposits" },
         { href: "/withdrawals", label: "Withdrawals" },
@@ -255,20 +253,19 @@ const SubNav = () => {
 
     const getLinkClass = (item) => {
         const baseClass = "inline-flex items-center px-4 py-2 rounded-lg font-medium transition-all duration-200 whitespace-nowrap"
-        
+
         if (item.primary) {
-            return `${baseClass} bg-[#004990] text-white hover:bg-[#003875] shadow-md`
+            return `${baseClass} bg-primary_color text-white hover:bg-[#003875] shadow-md`
         }
-        
+
         if (item.external) {
             return `${baseClass} bg-white text-gray-700 border border-gray-300 hover:border-green-500 hover:text-green-500 shadow-sm`
         }
-        
-        return `${baseClass} ${
-            isActive(item.href)
+
+        return `${baseClass} ${isActive(item.href)
                 ? "bg-qtp_btn_bg_color text-white shadow-md"
                 : "bg-white text-gray-700 border border-gray-300 hover:border-green-500 hover:text-green-500 shadow-sm"
-        }`
+            }`
     }
 
     return (

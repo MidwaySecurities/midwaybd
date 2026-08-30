@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import MobileAppTabSection from '../components/MobileAppTabSection'
+import DownloadAppbutton from '../components/DownloadAppbutton'
 
 const MobileAppPage = () => {
   const [activeFeature, setActiveFeature] = useState('trading')
@@ -95,22 +96,22 @@ const MobileAppPage = () => {
     {
       id: 1,
       title: 'Dashboard',
-      image: '/images/qtp/dashboard.png'
+      image: '/images/mobile-app/Invest.png'
     },
     {
       id: 2,
-      title: 'Trading',
-      image: '/images/qtp/trading.png'
+      title: 'Portfolio',
+      image: '/images/mobile-app/Trade.png'
     },
     {
       id: 3,
-      title: 'Portfolio',
-      image: '/images/qtp/portfolio.gif'
+      title: 'Charts',
+      image: '/images/mobile-app/Tools.png'
     },
     {
       id: 4,
       title: 'Charts',
-      image: '/images/qtp/charts.png'
+      image: '/images/mobile-app/Tools.png'
     }
   ]
 
@@ -118,7 +119,7 @@ const MobileAppPage = () => {
     <div className="min-h-screen bg-gray-50">
 
       {/* Hero Section */}
-      <div className="bg-[#004990] text-white overflow-hidden relative">
+      <div className="bg-primary_color text-white overflow-hidden relative">
         <div className="absolute inset-0">
           {/* <div className="absolute top-10 left-4 w-40 h-40 sm:top-20 sm:left-10 sm:w-72 sm:h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
           <div className="absolute top-24 right-4 w-52 h-52 sm:top-40 sm:right-10 sm:w-96 sm:h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
@@ -148,33 +149,7 @@ const MobileAppPage = () => {
               </div>
 
               {/* Download Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                <Link href="https://play.google.com/store/apps/details?id=com.midwaybd.quick_trade_pro&hl=en" className="group">
-                  <div className="bg-black hover:bg-gray-800 transition-all duration-300 rounded-2xl p-3 sm:p-4 flex items-center justify-center sm:justify-start space-x-4 transform group-hover:scale-105">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 p-1 flex-shrink-0">
-                      <svg viewBox="30 336.7 120.9 129.2" className="w-full h-full"><path fill="#FFD400" d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7  c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z"></path><path fill="#FF3333" d="M99.1,401.1l-64.2,64.7c1.5,0.2,3.2-0.2,5.2-1.3  c4.2-2.3,48.8-26.7,79.1-43.3L99.1,401.1L99.1,401.1z"></path><path fill="#48FF48" d="M99.1,401.1l20.1-20.2c0,0-74.6-40.7-79.1-43.1  c-1.7-1-3.6-1.3-5.3-1L99.1,401.1z"></path><path fill="#3BCCFF" d="M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6  c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z"></path></svg>
-                    </div>
-                    <div className="text-left">
-                      <div className="text-[10px] sm:text-xs text-gray-300">Download on the</div>
-                      <div className="text-base sm:text-lg font-semibold">Google Play</div>
-                    </div>
-                  </div>
-                </Link>
-
-                <Link href="https://apps.apple.com/us/app/quicktrade-pro/id6740322022" className="group">
-                  <div className="bg-black hover:bg-gray-800 transition-all duration-300 rounded-2xl p-3 sm:p-4 flex items-center justify-center sm:justify-start space-x-4 transform group-hover:scale-105">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
-                      <svg viewBox="0 0 24 24" className="w-full h-full text-white">
-                        <path fill="currentColor" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                      </svg>
-                    </div>
-                    <div className="text-left">
-                      <div className="text-[10px] sm:text-xs text-gray-300">Download on the</div>
-                      <div className="text-base sm:text-lg font-semibold">App Store</div>
-                    </div>
-                  </div>
-                </Link>
-              </div>
+              <DownloadAppbutton />
             </div>
 
             {/* App Mockup */}
@@ -302,8 +277,8 @@ const MobileAppPage = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {screenshots.map((screenshot) => (
               <div key={screenshot.id} className="group">
-                <div className="bg-gray-900/80 rounded-2xl sm:rounded-3xl p-1.5 sm:p-2 shadow-2xl group-hover:shadow-3xl transition-all duration-300 transform group-hover:scale-105">
-                  <div className="aspect-[9/16] bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl sm:rounded-2xl overflow-hidden">
+                <div className="">
+                  <div className="">
                     <div className="w-full h-full flex items-center justify-center text-gray-400">
                       <div className="text-center w-full">
                         <img className="w-full" src={screenshot.image} width={100} height={100} />

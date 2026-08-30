@@ -38,7 +38,7 @@ const AccountOpeningSteps = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
             ),
-            bgColor: "bg-[#004990]",
+            bgColor: "bg-primary_color",
             hoverColor: "hover:from-purple-600 hover:to-purple-700"
         }
     ];
@@ -64,7 +64,7 @@ const AccountOpeningSteps = () => {
                     {/* Content */}
                     <div className="space-y-3 flex-grow flex flex-col justify-between">
                         <div>
-                            <button className='bg-[#004990] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'>{step.title}</button>
+                            <button className='bg-primary_color hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'>{step.title}</button>
                             <p className="text-gray-600 leading-relaxed max-w-xs mx-auto mt-3">
                                 {step.description}
                             </p>
@@ -108,7 +108,7 @@ const AccountOpeningSteps = () => {
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center bg-blue-100 text-[#004990] px-4 py-2 rounded-full font-medium text-sm mb-6 text-xl">
+                    <div className="inline-flex items-center bg-blue-100 text-primary_color px-4 py-2 rounded-full font-medium text-sm mb-6 text-xl">
                         <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
                         Simple Process
                     </div>

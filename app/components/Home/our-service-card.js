@@ -90,7 +90,7 @@ const OurServiceCard = () => {
                         <Link
                             href="https://portal.midwaybd.com/bo/portal-login"
                             target="_blank"
-                            className="inline-flex items-center gap-2 bg-[#004990] text-white text-[16px] font-semibold no-underline py-3 px-8 rounded-full shadow-lg shadow-blue-900/30 active:scale-95 transition-transform duration-200"
+                            className="inline-flex items-center gap-2 bg-primary_color text-white text-[16px] font-semibold no-underline py-3 px-8 rounded-full shadow-lg shadow-blue-900/30 active:scale-95 transition-transform duration-200"
                         >
                             Open BO Account
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,7 +114,7 @@ const OurServiceCard = () => {
                                     <div className="w-20 h-20 rounded-full bg-[#F0F6FF] flex items-center justify-center group-hover:bg-[#DBEAFE] transition-colors duration-300">
                                         <Image src={service.image} alt={service.alt} className="w-10 h-10 object-contain" width={40} />
                                     </div>
-                                    <h6 className="font-poppins text-[15px] font-medium text-gray-800 mt-5 group-hover:text-[#004990] transition-colors duration-300">
+                                    <h6 className="font-poppins text-[15px] font-medium text-gray-800 mt-5 group-hover:text-primary_color transition-colors duration-300">
                                         {service.label}
                                     </h6>
                                 </motion.div>

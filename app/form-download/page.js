@@ -5,7 +5,7 @@
 //     return (
 //         <div>
 //             <div className='bg-[url(https://www.midwaybd.com/uploads/6/0/4/6/60462737/background-images/1286135119.jpg)] h-[350px] bg-cover bg-center' >
-                
+
 //             </div>
 //             <div>
 //                 <h1 className='text-2xl font-bold mb-6 mt-8 px-8'>BO Account</h1>
@@ -73,14 +73,14 @@
 'use client'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { 
-  FileText, 
-  Download, 
-  Search, 
-  User, 
-  Wallet, 
-  TrendingUp, 
-  Smartphone, 
+import {
+  FileText,
+  Download,
+  Search,
+  User,
+  Wallet,
+  TrendingUp,
+  Smartphone,
   Building2,
   ChevronRight,
   FileCheck,
@@ -173,13 +173,13 @@ const FormDownload = () => {
       {/* Hero Section */}
       <div className="relative h-80 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ 
-            backgroundImage: "url('https://www.midwaybd.com/uploads/6/0/4/6/60462737/background-images/1286135119.jpg')" 
+          style={{
+            backgroundImage: "url('https://www.midwaybd.com/uploads/6/0/4/6/60462737/background-images/1286135119.jpg')"
           }}
         ></div>
-        
+
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
           <FileText className="w-16 h-16 mb-4" />
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Form Downloads</h1>
@@ -189,7 +189,7 @@ const FormDownload = () => {
         {/* Wave decoration */}
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" fill="#f9fafb"/>
+            <path d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" fill="#f9fafb" />
           </svg>
         </div>
       </div>
@@ -227,11 +227,10 @@ const FormDownload = () => {
           <div className="flex flex-wrap gap-2 mt-6">
             <button
               onClick={() => setSelectedCategory('all')}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                selectedCategory === 'all'
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${selectedCategory === 'all'
                   ? 'bg-blue-600 text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
+                }`}
             >
               All Categories
             </button>
@@ -239,11 +238,10 @@ const FormDownload = () => {
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                  selectedCategory === category.id
+                className={`px-4 py-2 rounded-lg font-medium transition-colors ${selectedCategory === category.id
                     ? 'bg-blue-600 text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+                  }`}
               >
                 {category.title}
               </button>
@@ -263,7 +261,7 @@ const FormDownload = () => {
             {filteredCategories.map((category) => (
               <div key={category.id} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 {/* Category Header */}
-                <div className={`bg-[#004990]/90 from-${category.color}-600 to-${category.color}-700 p-6`}>
+                <div className={`bg-primary_color/90 from-${category.color}-600 to-${category.color}-700 p-6`}>
                   <div className="flex items-center gap-3 text-white">
                     <div className={`p-3 bg-white/20 rounded-lg backdrop-blur-sm`}>
                       <category.icon className="w-6 h-6" />

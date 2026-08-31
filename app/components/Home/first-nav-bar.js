@@ -17,9 +17,10 @@ const FirstNavBar = () => {
             <Link className={`${style.logoZoom} flex items-center gap-2 font-bold text-gray-800 text-[14px]`} href={`/`}>
                 <Logo />
                 {/* <h1 className="">Midway Securities Ltd.</h1> */}
-                {/* <h1 className="flex flex-col leading-5 justify-center uppercase"><span className="tracking-[12.4px]">Midway</span><span className="tracking-[.9px]">Securities Ltd.</span></h1> */}
-                <h1 className="flex flex-col leading-0 justify-center uppercase mt-[-.25rem]"><span className="text-xl tracking-[2px]">Midway</span><span className="tracking-[.93px] text-[.6rem] leading-2">Securities Ltd.</span></h1>
+                {/* <h1 className="flex flex-col leading-0 justify-center uppercase mt-[-.25rem]"><span className="text-xl tracking-[2px]">Midway</span><span className="tracking-[.93px] text-[.6rem] leading-2">Securities Ltd.</span></h1> */}
             </Link>
+            <h1 className="flex flex-col leading-0 justify-center uppercase mt-[-.25rem] text-primary_color font-bold"><span className="text-xl tracking-[2px]">Midway</span><span className="tracking-[1.88px] text-[.6rem] leading-2">Securities Ltd.</span></h1>
+
             <p className="bg-secondary_color p-2 px-3 rounded-md"><Link href={`https://portal.midwaybd.com/bo/portal-login`}>Login</Link></p>
         </div>
     )

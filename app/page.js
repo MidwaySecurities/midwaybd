@@ -75,8 +75,8 @@ export async function generateMetadata() {
 }
 
 export default async function Home() {
-  const data = await getABlog(`get-your-dividend-statement-using-our-midway-portal`);
-
+  const res = await fetch(`${process.env.NEXT_PUBLIC_PORTAL_URL}/blog/latest`)
+  const result = await res.json();
   let newsData = [];
   try {
     const news = await fetch(`${process.env.NEXT_PUBLIC_PORTAL_URL}/public-web-news`, {
@@ -94,10 +94,10 @@ export default async function Home() {
   const tabs = [
     {
       id: "blog",
-      blog_id: data?.blog?.slug,
-      label: data?.blog?.title,
-      content: data?.blog?.excerpt,
-      createdAt: JSON.stringify(data?.blog?.createdAt)?.slice(1, 11),
+      blog_id: result?.data?.slug,
+      label: result?.data?.title,
+      content: result?.data?.excerpt,
+      createdAt: JSON.stringify(result?.data?.createdAt)?.slice(1, 11),
     },
     {
       id: "visual",
@@ -187,7 +187,7 @@ export default async function Home() {
                     </div>
 
                     <h2 id="quicktrade-heading" className="text-3xl lg:text-4xl font-bold text-gray-800">
-                      <span className="text-primary_color">QuickTrade Pro</span> -
+                      <span className="text-secondary_color">QuickTrade Pro</span> -
                       <br />The Ultimate Trading App
                     </h2>
 

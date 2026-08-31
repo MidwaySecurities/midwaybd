@@ -401,8 +401,8 @@ const Navigation = () => {
                 <button
                     onClick={handleClick}
                     className={`w-full flex items-center justify-between p-4 rounded-2xl transition-all duration-200 group ${isActiveItem
-                        ? 'bg-blue-600 text-white shadow-lg scale-[0.98]'
-                        : 'bg-white hover:bg-gray-50 text-gray-700 hover:text-blue-600 hover:shadow-md active:scale-[0.98]'
+                        ? 'bg-secondary_color text-white shadow-lg scale-[0.98]'
+                        : 'bg-white hover:bg-gray-50 text-gray-700 hover:text-primary_color hover:shadow-md active:scale-[0.98]'
                         }`}
                 >
                     <div className="flex items-center space-x-4">
@@ -609,12 +609,12 @@ const Navigation = () => {
                         badge="Market Insights"
                     />
 
-                    <NavItem
+                    {/* <NavItem
                         icon={<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
                         label="Foreign Investor"
                         path="/foreign-investors"
                         badge="International"
-                    />
+                    /> */}
 
                     <NavItem
                         icon={<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>}
@@ -630,7 +630,7 @@ const Navigation = () => {
                     <div className="space-y-3">
                         <Link
                             href="tel:09609100142"
-                            className="w-full flex items-center justify-center space-x-3 p-4 bg-green-600 hover:bg-green-700 text-white rounded-2xl transition-all font-semibold active:scale-95"
+                            className="w-full flex items-center justify-center space-x-3 p-4 bg-primary_color/90 hover:bg-green-700 text-white rounded-2xl transition-all font-semibold active:scale-95"
                         >
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -641,13 +641,13 @@ const Navigation = () => {
                         <div className="grid grid-cols-2 gap-3">
                             <Link
                                 href="https://portal.midwaybd.com/register"
-                                className="text-center py-3 px-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-xl hover:bg-blue-50 transition-all active:scale-95"
+                                className="text-center py-3 px-4 border-2 border-primary_color text-primary_color font-semibold rounded-xl hover:bg-blue-50 transition-all active:scale-95"
                             >
                                 Sign Up
                             </Link>
                             <Link
                                 href="https://portal.midwaybd.com/"
-                                className="text-center py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all active:scale-95"
+                                className="text-center py-3 px-4 bg-secondary_color hover:bg-blue-700 text-white font-semibold rounded-xl transition-all active:scale-95"
                             >
                                 Log In
                             </Link>

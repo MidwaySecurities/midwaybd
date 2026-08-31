@@ -191,10 +191,10 @@ export default function PricingPage() {
           <h3 className="text-2xl font-semibold text-white sm:text-3xl">
             Ready to open your BO account?
           </h3>
-          <p className="mx-auto mt-3 max-w-sm text-slate-400">
+          {/* <p className="mx-auto mt-3 max-w-sm text-slate-400">
             Bring your NID, a passport photo, and your initial deposit — the
             rest takes about fifteen minutes.
-          </p>
+          </p> */}
           <Link
             href="https://portal.midwaybd.com/bo/portal-login" target="_blank"
             className="mt-7 inline-flex items-center justify-center rounded-xl bg-secondary_color px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"

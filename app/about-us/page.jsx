@@ -1,12 +1,13 @@
 import { Fraunces, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { Architects_Daughter } from "next/font/google";
 import Image from "next/image";
+import Link from "next/link";
 
 // ─── Type tokens ───────────────────────────────────────────────────────────
 // Display face — a serif with the gravitas of an old brokerage ledger.
 const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-display",
+  variable: "--",
   weight: ["400", "500", "600"],
   style: ["normal", "italic"],
 });
@@ -66,7 +67,7 @@ function LedgerSeal({ className = "" }) {
         y="92"
         textAnchor="middle"
         fill={ring}
-        fontFamily="var(--font-display)"
+        fontFamily="var(--)"
         fontSize="30"
         fontWeight="600"
       >
@@ -122,14 +123,14 @@ export default function AboutUsPage() {
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-primary_color text-white">
         <div className="mx-auto max-w-6xl px-6 pt-24 pb-16 sm:px-10 sm:pt-28 sm:pb-20">
-          <p className="font-mono text-[11px] tracking-[0.35em] text-brass uppercase">
-            About Midway Securities Ltd. — Since 1975
+          <p className="font-mono text-md tracking-[0.35em] text-brass uppercase">
+            Midway Securities Ltd. — Since 1975
           </p>
           <h1
             className={`${architectsDaughter.className} mt-6 max-w-3xl text-3xl leading-[1.05] tracking-wide sm:text-7xl`}
           >
             Investing,
-            <span className="italic text-brass"> simplified.</span>
+            <span className="text-brass"> simplified.</span>
           </h1>
           <p className="mt-8 max-w-xl text-[15px] leading-relaxed text-paper/80 sm:text-base">
             A registered stock brokerage firm of the Dhaka Stock Exchange
@@ -140,10 +141,10 @@ export default function AboutUsPage() {
       </section>
 
       {/* ── NARRATIVE ────────────────────────────────────────────────── */}
-      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10 sm:py-20">
+      <section className="mx-auto max-w-6xl px-6 py-8 lg:py-20 sm:px-10 sm:py-20">
         <div className="grid gap-12 sm:grid-cols-[1fr_1.4fr] sm:gap-16">
           <div>
-            <h2 className="font-display text-3xl leading-tight text-ledger-navy sm:text-4xl">
+            <h2 className="text-3xl leading-tight text-ledger-navy sm:text-4xl">
               Fifty years of steady, disciplined guidance.
             </h2>
             <div className="mt-6 h-px w-16 bg-brass" />
@@ -181,14 +182,14 @@ export default function AboutUsPage() {
           <div className="mt-8 grid gap-10 sm:grid-cols-[224px_1fr] sm:gap-14">
             <div>
               <Portrait className="h-56 w-44" />
-              <h2 className="mt-5 font-display text-2xl leading-tight text-paper sm:text-3xl">
+              <h2 className="mt-5  text-2xl leading-tight text-paper sm:text-3xl">
                 Md. Ashequr Rahman
               </h2>
               <p className="mt-1 text-sm text-paper/60">Managing Director</p>
             </div>
 
             <div>
-              <p className="font-display text-2xl italic leading-snug sm:text-3xl">
+              <p className=" text-2xl italic leading-snug sm:text-3xl">
                 &ldquo;Discipline, patience and a clear, realistic investment
                 goal are necessary for any investor, new or veteran.&rdquo;
               </p>
@@ -223,7 +224,7 @@ export default function AboutUsPage() {
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-ledger-green">
             Get Started
           </p>
-          <p className="mt-5 max-w-2xl font-display text-2xl leading-snug text-ledger-navy sm:text-3xl">
+          <p className="mt-5 max-w-2xl  text-2xl leading-snug text-ledger-navy sm:text-3xl">
             Join us on this exciting journey of simplified investing.
           </p>
           <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink/75 sm:text-base">
@@ -231,12 +232,12 @@ export default function AboutUsPage() {
             insights, and how we can help you unlock the potential of your
             investments.
           </p>
-          <a
-            href="/services"
+          <Link
+            href="/client-services"
             className="mt-7 inline-flex items-center gap-2 font-mono text-sm tracking-[0.1em] text-ledger-green underline decoration-ledger-green/40 underline-offset-4 hover:text-ledger-navy"
           >
             Explore our services →
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -250,11 +251,7 @@ export default function AboutUsPage() {
               Regulatory Standing
             </p>
             <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-paper/80">
-              Midway Securities Ltd. is a full-service depository
-              participant of Central Depository Bangladesh Limited (CDBL)
-              and is authorized and regulated by the Bangladesh Securities
-              and Exchange Commission (BSEC), Government of the
-              People&rsquo;s Republic of Bangladesh.
+              Midway Securities Ltd. is a full-service brokerage house and a member of the Dhaka Stock Exchange (DSE). We are also an authorized Depository Participant (DP) of Central Depository Bangladesh Limited (CDBL) and are regulated by the Bangladesh Securities and Exchange Commission (BSEC), Government of the People’s Republic of Bangladesh.
             </p>
             <dl className="mt-10 grid gap-x-8 gap-y-6 font-mono text-sm sm:grid-cols-4">
               {credentials.map((c) => (

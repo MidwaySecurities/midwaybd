@@ -111,10 +111,10 @@ const Footer = () => {
           <div className='text-center'>
             <h3 className='text-lg font-semibold mb-4 text-blue-400'>Resources</h3>
             <ul className='space-y-2.5'>
-              <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Market News</a></li>
-              <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Blog</a></li>
-              <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>FAQ</a></li>
-              <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Terms of Service</a></li>
+              {/* <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Market News</a></li> */}
+              <li><Link href="/blogs" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Blog</Link></li>
+              <li><Link href="/frequently-asked-question" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>FAQ</Link></li>
+              {/* <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Terms of Service</a></li> */}
             </ul>
           </div>
 
@@ -122,9 +122,9 @@ const Footer = () => {
           <div className='text-center'>
             <h3 className='text-lg font-semibold mb-4 text-blue-400'>Company</h3>
             <ul className='space-y-2.5'>
-              <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>About Us</a></li>
-              <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Our Services</a></li>
-              <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Contact Us</a></li>
+              <li><Link href="/about-us" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>About Us</Link></li>
+              <li><Link href="/client-services" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Our Services</Link></li>
+              <li><Link href="/contact-us" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Contact Us</Link></li>
             </ul>
           </div>
         </div>

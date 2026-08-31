@@ -49,7 +49,7 @@ const openingRows = [
   },
   {
     icon: CalendarIcon,
-    label: "BO opening & Annual renewal",
+    label: "BO opening & renewal",
     detail: "Charged once a year, in June, to keep your account active.",
     amount: "৳150",
     tone: "charge",
@@ -59,7 +59,7 @@ const openingRows = [
 const fundingRows = [
   {
     icon: BankIcon,
-    label: "Deposit from your bank",
+    label: "Deposit via bank",
     detail: "From any bank account, straight into your BO account.",
     amount: "Free",
     tone: "free",
@@ -73,8 +73,8 @@ const fundingRows = [
   },
   {
     icon: WithdrawIcon,
-    label: "Withdrawal to your bank",
-    detail: "Send funds back to your personal bank account.",
+    label: "Withdrawal",
+    detail: "Fund withdrawal from your BO account to your bank account.",
     amount: "Free",
     tone: "free",
   },
@@ -128,9 +128,8 @@ export default function PricingPage() {
           </div> */}
           <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-6xl">
             Simple, transparent
-            <br />
             <span className="text-secondary_color mt-2 block">
-              account pricing
+              pricing
             </span>
           </h1>
           <p className="mx-auto mt-5 max-w-lg text-lg text-slate-400">

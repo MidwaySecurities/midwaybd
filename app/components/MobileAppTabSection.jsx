@@ -61,10 +61,10 @@ export default function MobileAppTabSection({ tabs }) {
               {activeTab.label}
             </h3>
             <time
-              dateTime={activeTab.createdAt}
+              dateTime={activeTab.created_at}
               className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full"
             >
-              {activeTab.createdAt}
+              {activeTab.created_at}
             </time>
           </div>
 

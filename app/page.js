@@ -399,8 +399,7 @@ export default async function Home() {
       {/* <Footer /> */}
 
       {/* Floating Elements */}
-      <Whatsapp />
-      <FirstApproachModal />
+
     </div>
   );
 }

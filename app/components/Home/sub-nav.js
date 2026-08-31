@@ -264,7 +264,7 @@ const SubNav = () => {
 
         return `${baseClass} ${isActive(item.href)
             ? "bg-secondary_color text-white shadow-md"
-            : "bg-white text-gray-700 border border-gray-300 hover:border-green-500 hover:text-green-500 shadow-sm"
+            : "bg-white text-gray-700 border border-gray-300 hover:border-secondary_color hover:text-primary_color shadow-sm"
             }`
     }
 

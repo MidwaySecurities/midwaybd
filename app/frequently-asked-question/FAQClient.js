@@ -61,7 +61,7 @@ export default function FAQClient({ faqData, categories }) {
                                             : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                                             }`}
                                     >
-                                        <div className={`${activeCategory === category.id ? 'text-blue-600' : 'text-gray-500'}`}>
+                                        <div className={`${activeCategory === category.id ? 'text-secondary_color' : 'text-gray-500'}`}>
                                             {category.icon}
                                         </div>
                                         <span className="text-sm">{category.name}</span>
@@ -78,7 +78,7 @@ export default function FAQClient({ faqData, categories }) {
                             <div className="space-y-3">
                                 <Link
                                     href="tel:09609100142"
-                                    className="flex items-center space-x-3 text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                                    className="flex items-center space-x-3 text-sm text-gray-600 hover:text-secondary_color transition-colors"
                                 >
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -88,7 +88,7 @@ export default function FAQClient({ faqData, categories }) {
 
                                 <Link
                                     href="mailto:support@midwaybd.com"
-                                    className="flex items-center space-x-3 text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                                    className="flex items-center space-x-3 text-sm text-gray-600 hover:text-secondary_color transition-colors"
                                 >
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -98,7 +98,7 @@ export default function FAQClient({ faqData, categories }) {
 
                                 <Link
                                     href="/contact-us"
-                                    className="flex items-center space-x-3 text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                                    className="flex items-center space-x-3 text-sm text-gray-600 hover:text-secondary_color transition-colors"
                                 >
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -130,7 +130,7 @@ export default function FAQClient({ faqData, categories }) {
                                 {/* Category Header */}
                                 <div className="bg-gray-50 px-8 py-6 border-b border-gray-200 flex flex-col gap-4">
                                     <div className="flex items-center space-x-3">
-                                        <div className="text-blue-600">
+                                        <div className="text-secondary_color">
                                             {category.icon}
                                         </div>
                                         <div>
@@ -158,12 +158,12 @@ export default function FAQClient({ faqData, categories }) {
                                                     aria-expanded={!!openItems[faq.id]}
                                                     aria-controls={`answer-${faq.id}`}
                                                 >
-                                                    <h3 className="text-lg font-semibold text-gray-800 group-hover:text-blue-600 transition-colors pr-4">
+                                                    <h3 className="text-lg font-semibold text-gray-800 group-hover:text-secondary_color transition-colors pr-4">
                                                         {faq.question}
                                                     </h3>
                                                     <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 group-hover:bg-blue-100 flex items-center justify-center transition-all duration-200 ${openItems[faq.id] ? 'rotate-180 bg-blue-100' : ''
                                                         }`}>
-                                                        <svg className="w-4 h-4 text-gray-600 group-hover:text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <svg className="w-4 h-4 text-gray-600 group-hover:text-secondary_color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                                                         </svg>
                                                     </div>
@@ -199,7 +199,7 @@ export default function FAQClient({ faqData, categories }) {
                         <Link href="/mobile-app" className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow group">
                             <div className="flex items-center space-x-4">
                                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-6 h-6 text-secondary_color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                                     </svg>
                                 </div>

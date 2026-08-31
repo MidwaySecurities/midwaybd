@@ -175,7 +175,7 @@ const BlogsInner = () => {
 
                             <div className="p-5 flex flex-col flex-1">
                                 <Link href={`/blogs/${blog.slug}`}>
-                                    <h2 className="text-lg font-semibold text-gray-800 line-clamp-2 hover:text-blue-600 transition-colors duration-200">
+                                    <h2 className="text-lg font-semibold text-gray-800 line-clamp-2 hover:text-secondary_color transition-colors duration-200">
                                         {blog.title}
                                     </h2>
                                 </Link>
@@ -184,7 +184,7 @@ const BlogsInner = () => {
                                 </p>
                                 <Link
                                     href={`/blogs/${blog.slug}`}
-                                    className="text-blue-500 hover:text-blue-600 font-medium mt-4 inline-block"
+                                    className="text-blue-500 hover:text-secondary_color font-medium mt-4 inline-block"
                                 >
                                     Read More →
                                 </Link>

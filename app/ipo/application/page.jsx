@@ -159,7 +159,7 @@ export default function IPOApplicationForm() {
             {/* Personal Information */}
             <div className="border-t pt-6">
               <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                <User className="h-5 w-5 mr-2 text-blue-600" />
+                <User className="h-5 w-5 mr-2 text-secondary_color" />
                 Personal Information
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -238,7 +238,7 @@ export default function IPOApplicationForm() {
             {/* Contact Information */}
             <div className="border-t pt-6">
               <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                <Phone className="h-5 w-5 mr-2 text-blue-600" />
+                <Phone className="h-5 w-5 mr-2 text-secondary_color" />
                 Contact Information
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -289,7 +289,7 @@ export default function IPOApplicationForm() {
             {/* BO Account & Banking */}
             <div className="border-t pt-6">
               <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                <CreditCard className="h-5 w-5 mr-2 text-blue-600" />
+                <CreditCard className="h-5 w-5 mr-2 text-secondary_color" />
                 BO Account & Banking Details
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -361,7 +361,7 @@ export default function IPOApplicationForm() {
             {/* Deposit Method */}
             <div className="border-t pt-6">
               <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                <Wallet className="h-5 w-5 mr-2 text-blue-600" />
+                <Wallet className="h-5 w-5 mr-2 text-secondary_color" />
                 Deposit Method
               </h3>
               <div className="space-y-3">
@@ -379,7 +379,7 @@ export default function IPOApplicationForm() {
                       value={method.value}
                       checked={formData.depositMethod === method.value}
                       onChange={handleChange}
-                      className="h-5 w-5 text-blue-600"
+                      className="h-5 w-5 text-secondary_color"
                     />
                     <span className="ml-3 text-gray-900 font-medium">{method.label}</span>
                   </label>

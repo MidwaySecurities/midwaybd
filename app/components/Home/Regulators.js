@@ -131,23 +131,23 @@ const Regulators = () => {
   return (
     <>
       {/* Desktop and Tablet View */}
-      
+
       <div className="sm:block">
         <div className="max-w-6xl mx-auto px-4">
           <Slider {...settings}>
             {regulators.map((regulator, index) => (
               <div key={index} className="px-3">
                 <div className="group">
-                  <Link 
-                    href={regulator.url} 
+                  <Link
+                    href={regulator.url}
                     target="_blank"
                     className="block"
                   >
                     <div className="w-32 h-32 lg:w-36 lg:h-36 mx-auto rounded-full bg-white shadow-lg hover:shadow-2xl border border-gray-100 transition-all duration-500 flex justify-center items-center group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-blue-50 group-hover:to-indigo-50">
                       <div className="relative w-20 h-20 lg:w-24 lg:h-24">
-                        <Image 
-                          src={regulator.logo} 
-                          alt={regulator.alt} 
+                        <Image
+                          src={regulator.logo}
+                          alt={regulator.alt}
                           fill
                           className="object-contain filter group-hover:brightness-110 transition-all duration-300"
                           sizes="(max-width: 768px) 80px, 96px"
@@ -155,7 +155,7 @@ const Regulators = () => {
                       </div>
                     </div>
                     {/* <div className="text-center mt-4">
-                      <h3 className="text-sm font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-300 leading-tight">
+                      <h3 className="text-sm font-medium text-gray-700 group-hover:text-secondary_color transition-colors duration-300 leading-tight">
                         {regulator.name}
                       </h3>
                     </div> */}
@@ -168,10 +168,10 @@ const Regulators = () => {
         </div>
       </div>
 
-      
+
 
       {/* Trust Indicators */}
-      
+
 
       <style jsx>{`
         .slick-track {

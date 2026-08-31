@@ -385,7 +385,7 @@ export default async function Home() {
                   </button>
                 </a>
                 <Link href="/contact-us">
-                  <button className="bg-white hover:bg-gray-100 text-blue-600 font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  <button className="bg-white hover:bg-gray-100 text-secondary_color font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
                     Contact Us
                   </button>
                 </Link>

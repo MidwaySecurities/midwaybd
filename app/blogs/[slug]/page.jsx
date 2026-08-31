@@ -52,7 +52,7 @@ const BlogPage = async ({ params }) => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-800 mb-4">Blog not found</h1>
-          <Link href="/blogs" className="text-blue-600 hover:underline">
+          <Link href="/blogs" className="text-secondary_color hover:underline">
             ← Back to all blogs
           </Link>
         </div>
@@ -134,7 +134,7 @@ const BlogPage = async ({ params }) => {
             className="prose prose-lg max-w-none text-gray-800 leading-relaxed
                      prose-headings:text-gray-900 prose-headings:font-bold
                      prose-p:text-gray-700 prose-p:leading-relaxed
-                     prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
+                     prose-a:text-secondary_color prose-a:no-underline hover:prose-a:underline
                      prose-strong:text-gray-900 prose-strong:font-semibold
                      prose-ul:text-gray-700 prose-ol:text-gray-700
                      prose-li:text-gray-700 prose-li:leading-relaxed
@@ -206,7 +206,7 @@ const BlogPage = async ({ params }) => {
 
                   <div className="p-6">
                     <Link href={`/blogs/${relatedBlog.slug}`}>
-                      <h3 className="text-lg font-bold text-gray-800 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-lg font-bold text-gray-800 mb-3 line-clamp-2 group-hover:text-secondary_color transition-colors">
                         {relatedBlog.title}
                       </h3>
                     </Link>
@@ -221,7 +221,7 @@ const BlogPage = async ({ params }) => {
                       </span>
                       <Link
                         href={`/blogs/${relatedBlog.slug}`}
-                        className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors group"
+                        className="inline-flex items-center text-secondary_color font-medium hover:text-blue-700 transition-colors group"
                       >
                         Read More
                         <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -243,7 +243,7 @@ const BlogPage = async ({ params }) => {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             <Link
               href="/blogs"
-              className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors group"
+              className="inline-flex items-center text-secondary_color hover:text-blue-700 font-medium transition-colors group"
             >
               <svg className="mr-2 w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />

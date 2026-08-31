@@ -779,7 +779,7 @@ const Deposit = async ({ searchParams }) => {
                                     href: 'tel:+8809609100142',
                                     label: 'Call Midway Securities support line',
                                     icon: (
-                                        <svg aria-hidden="true" className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" className="w-6 h-6 text-secondary_color" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                                         </svg>
                                     ),
@@ -791,7 +791,7 @@ const Deposit = async ({ searchParams }) => {
                                     href: 'mailto:accounts@midwaybd.com',
                                     label: 'Email Midway Securities accounts team',
                                     icon: (
-                                        <svg aria-hidden="true" className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" className="w-6 h-6 text-secondary_color" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                                         </svg>
                                     ),
@@ -803,7 +803,7 @@ const Deposit = async ({ searchParams }) => {
                                     href: 'http://m.me/midwaytrec142',
                                     label: 'Chat with Midway Securities on Facebook Messenger',
                                     icon: (
-                                        <svg aria-hidden="true" className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" className="w-6 h-6 text-secondary_color" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.914 1.359 5.52 3.498 7.28V22l3.184-1.75c.85.236 1.75.364 2.68.364 5.523 0 10-4.145 10-9.243S17.523 2 12 2zm1.006 12.44l-2.548-2.718-4.97 2.718 5.467-5.802 2.61 2.718 4.908-2.718-5.467 5.802z" />
                                         </svg>
                                     ),

@@ -358,7 +358,7 @@ const BrokerageDashboard = () => {
               {recentActivities.map((activity, index) => (
                 <div key={index} className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-50">
                   <div className="p-2 bg-blue-100 rounded-lg">
-                    <activity.icon className="w-4 h-4 text-blue-600" />
+                    <activity.icon className="w-4 h-4 text-secondary_color" />
                   </div>
                   <div className="flex-1">
                     <p className="text-gray-900">{activity.message}</p>
@@ -379,7 +379,7 @@ const BrokerageDashboard = () => {
             {contentPerformance.map((content) => (
               <div key={content.name} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                 <h4 className="font-semibold text-gray-900 mb-2">{content.name}</h4>
-                <p className="text-2xl font-bold text-blue-600 mb-1">{content.published}</p>
+                <p className="text-2xl font-bold text-secondary_color mb-1">{content.published}</p>
                 <p className="text-sm text-gray-600 mb-2">{content.views.toLocaleString()} views</p>
                 <p className="text-sm text-gray-500">Engagement: {content.engagement}/10</p>
               </div>
@@ -432,14 +432,14 @@ const BrokerageDashboard = () => {
                       <td className="py-3 text-gray-600">{blog.date}</td>
                       <td className="py-3">
                         <Link href={`/blogs/edit/${blog.slug}`}>
-                          <button className="p-1 text-gray-400 hover:text-blue-600">
+                          <button className="p-1 text-gray-400 hover:text-secondary_color">
                             <Edit className="w-4 h-4" />
                           </button>
                         </Link>
                         <button onClick={() => {
                           setIsOpenDeleteBlog(true)
                           setSelectedBlogId(blog.id)
-                        }} className="p-1 text-gray-400 hover:text-blue-600">
+                        }} className="p-1 text-gray-400 hover:text-secondary_color">
                           <Trash2 className="w-4 h-4 ml-2 hover:text-red-600" />
                         </button>
                       </td>

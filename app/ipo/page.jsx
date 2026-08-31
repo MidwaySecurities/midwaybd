@@ -13,7 +13,7 @@ export default function IPOApplicationPage() {
     { name: 'Rocket', icon: <RocketLogo />, fee: '1%', color: 'from-purple-100 to-violet-100 border-purple-300' },
     { name: 'Bank Transfer', icon: '🏦', fee: 'Free', color: 'from-blue-100 to-cyan-100 border-blue-300' }
   ]
-  
+
   const benefits = [
     { icon: <Zap className="w-6 h-6" />, title: 'Instant Application', desc: 'Apply in 2 minutes' },
     { icon: <Shield className="w-6 h-6" />, title: 'Secure Process', desc: '100% safe & encrypted' },
@@ -106,7 +106,7 @@ export default function IPOApplicationPage() {
 
         <div className="mt-8 p-6 bg-blue-50 border border-blue-200 rounded-2xl">
           <div className="flex items-start gap-3">
-            <Wallet className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
+            <Wallet className="w-6 h-6 text-secondary_color flex-shrink-0 mt-1" />
             <div>
               <h4 className="text-slate-800 font-semibold mb-2">Direct BO Account Deposit</h4>
               <p className="text-slate-600 text-sm">Deposit directly to your BO account via mobile banking or bank transfer. Funds will be available instantly for IPO applications.</p>
@@ -127,7 +127,7 @@ export default function IPOApplicationPage() {
             <p className="text-white/95 text-lg max-w-2xl mx-auto">
               Get exclusive access to IPO alerts, expert analysis, and priority application support
             </p>
-            <button className="px-8 py-4 bg-white hover:bg-slate-100 text-blue-600 font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2 mx-auto">
+            <button className="px-8 py-4 bg-white hover:bg-slate-100 text-secondary_color font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2 mx-auto">
               <Users className="w-5 h-5" />
               Join Now
               <ArrowRight className="w-5 h-5" />

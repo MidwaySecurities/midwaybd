@@ -8,7 +8,7 @@ const AccountOpeningSteps = () => {
             description: "Create your beneficiary owner account in minutes with our streamlined process",
             link: "https://portal.midwaybd.com/bo/portal-login",
             icon: (
-                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 text-secondary_color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
             ),
@@ -173,7 +173,7 @@ const AccountOpeningSteps = () => {
                                 Open Account Now
                             </a>
                             <Link href="/contact-us">
-                                <button className="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 font-bold px-8 py-4 rounded-full transition-all duration-300 hover:bg-blue-50">
+                                <button className="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-secondary_color font-bold px-8 py-4 rounded-full transition-all duration-300 hover:bg-blue-50">
                                     Contact Support
                                 </button>
                             </Link>
@@ -185,7 +185,7 @@ const AccountOpeningSteps = () => {
                 <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div className="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition">
                         <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-7 h-7 text-secondary_color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                         </div>

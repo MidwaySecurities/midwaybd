@@ -19,11 +19,11 @@ const NotFound = () => {
                         <h1 className="text-9xl md:text-[12rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 leading-none select-none">
                             404
                         </h1>
-                        <div className="absolute inset-0 text-9xl md:text-[12rem] font-black text-blue-600 opacity-10 blur-sm leading-none select-none animate-pulse">
+                        <div className="absolute inset-0 text-9xl md:text-[12rem] font-black text-secondary_color opacity-10 blur-sm leading-none select-none animate-pulse">
                             404
                         </div>
                     </div>
-                    
+
                     {/* Floating elements */}
                     {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                         <div className="w-4 h-4 bg-yellow-400 rounded-full animate-ping absolute -top-16 -left-8"></div>
@@ -38,22 +38,22 @@ const NotFound = () => {
                         Oops! Page Not Found
                     </h2>
                     <p className="text-gray-600 text-lg md:text-xl mb-6 leading-relaxed">
-                        The page you're looking for seems to have wandered off into the digital void. 
+                        The page you're looking for seems to have wandered off into the digital void.
                         Don't worry, it happens to the best of us!
                     </p>
                 </div>
 
                 {/* Action buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                    <Link 
+                    <Link
                         href="/"
                         className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg group"
                     >
                         <Home className="w-5 h-5 group-hover:animate-bounce" />
                         Go Home
                     </Link>
-                    
-                    <Link 
+
+                    <Link
                         href="javascript:history.back()"
                         className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-700 px-6 py-3 rounded-lg font-semibold border border-gray-300 transition-all duration-300 transform hover:scale-105 hover:shadow-lg group"
                     >
@@ -68,12 +68,12 @@ const NotFound = () => {
                         Maybe you were looking for:
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <Link 
+                        <Link
                             href="/about-us"
                             className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/80 transition-all duration-200 group"
                         >
                             <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                                <Search className="w-5 h-5 text-blue-600" />
+                                <Search className="w-5 h-5 text-secondary_color" />
                             </div>
                             <div className="text-left">
                                 <div className="font-medium text-gray-800">About Us</div>
@@ -81,7 +81,7 @@ const NotFound = () => {
                             </div>
                         </Link>
 
-                        <Link 
+                        <Link
                             href="/visual-research"
                             className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/80 transition-all duration-200 group"
                         >
@@ -94,7 +94,7 @@ const NotFound = () => {
                             </div>
                         </Link>
 
-                        <Link 
+                        <Link
                             href="/contact-us"
                             className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/80 transition-all duration-200 group"
                         >

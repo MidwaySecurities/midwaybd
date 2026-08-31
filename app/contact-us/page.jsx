@@ -50,7 +50,7 @@ const contactInfo = [
     icon: Clock,
     title: 'Office Hours',
     details: 'Sunday to Thursday\n9:30 AM to 5:30 PM',
-    color: 'text-blue-600'
+    color: 'text-secondary_color'
   },
   {
     icon: Phone,
@@ -208,7 +208,7 @@ export default function ContactUs() {
             {/* Branch Locations */}
             {/* <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8">
               <div className="flex items-center mb-6">
-                <Building2 className="w-6 h-6 text-blue-600 mr-3" aria-hidden="true" />
+                <Building2 className="w-6 h-6 text-secondary_color mr-3" aria-hidden="true" />
                 <h2 className="text-2xl font-bold text-gray-900">Our Locations</h2>
               </div>
 
@@ -225,13 +225,13 @@ export default function ContactUs() {
                       <div className={`w-2 h-2 rounded-full ${branch.type === 'main' ? 'bg-blue-600' : 'bg-gray-400'
                         }`}></div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 group-hover:text-blue-600">
+                        <h3 className="font-semibold text-gray-900 group-hover:text-secondary_color">
                           {branch.name}
                         </h3>
                         <p className="text-sm text-gray-600">{branch.location}</p>
                       </div>
                     </div>
-                    <MapPin className="w-4 h-4 text-gray-400 group-hover:text-blue-600" aria-hidden="true" />
+                    <MapPin className="w-4 h-4 text-gray-400 group-hover:text-secondary_color" aria-hidden="true" />
                   </a>
                 ))}
               </div>
@@ -240,7 +240,7 @@ export default function ContactUs() {
             {/* Social Media & Additional Support */}
             <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8">
               <div className="flex items-center mb-6">
-                <Users className="w-6 h-6 text-blue-600 mr-3" aria-hidden="true" />
+                <Users className="w-6 h-6 text-secondary_color mr-3" aria-hidden="true" />
                 <h2 className="text-2xl font-bold text-gray-900">Connect With Us</h2>
               </div>
 
@@ -252,7 +252,7 @@ export default function ContactUs() {
                   className="flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-200 group"
                 >
                   <div className="p-2 bg-blue-100 rounded-lg group-hover:bg-blue-200">
-                    <Facebook className="w-5 h-5 text-blue-600" aria-hidden="true" />
+                    <Facebook className="w-5 h-5 text-secondary_color" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Facebook</h3>

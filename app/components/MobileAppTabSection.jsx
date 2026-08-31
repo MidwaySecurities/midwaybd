@@ -39,7 +39,7 @@ export default function MobileAppTabSection({ tabs }) {
               aria-controls={`tabpanel-${id}`}
               onClick={() => setActiveTabId(id)}
               className={`px-4 py-2 font-medium border-b-2 transition-colors cursor-pointer ${isActive
-                  ? "border-blue-600 text-blue-600"
+                  ? "border-blue-600 text-secondary_color"
                   : "border-transparent text-gray-500 hover:text-gray-700"
                 }`}
             >
@@ -77,7 +77,7 @@ export default function MobileAppTabSection({ tabs }) {
             className="prose prose-lg max-w-none text-gray-800 leading-relaxed
               prose-headings:text-gray-900 prose-headings:font-bold
               prose-p:text-gray-700 prose-p:leading-relaxed
-              prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
+              prose-a:text-secondary_color prose-a:no-underline hover:prose-a:underline
               prose-strong:text-gray-900 prose-strong:font-semibold
               prose-ul:text-gray-700 prose-ol:text-gray-700
               prose-li:text-gray-700 prose-li:leading-relaxed
@@ -98,7 +98,7 @@ export default function MobileAppTabSection({ tabs }) {
             <p>
               <Link
                 href={`blogs/${activeTab.blog_id}`}
-                className="text-blue-600 hover:text-blue-700 underline font-medium"
+                className="text-secondary_color hover:text-blue-700 underline font-medium"
               >
                 Read More
               </Link>

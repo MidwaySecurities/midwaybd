@@ -25,11 +25,10 @@ export default function BlogTabs({ activeTab }) {
         <button
           key={tab.id}
           onClick={() => changeTab(tab.id)}
-          className={`relative flex-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 min-w-[120px] ${
-            activeTab?.toLowerCase() === tab.id.toLowerCase()
-              ? "bg-white text-blue-600 shadow-sm"
+          className={`relative flex-1 px-4 py-3 rounded-lg font-medium text-sm transition-all duration-200 min-w-[120px] ${activeTab?.toLowerCase() === tab.id.toLowerCase()
+              ? "bg-white text-secondary_color shadow-sm"
               : "text-gray-600 hover:text-gray-900"
-          }`}
+            }`}
         >
           <div className="flex items-center justify-center space-x-2">
             <span className="text-lg">{tab.icon}</span>

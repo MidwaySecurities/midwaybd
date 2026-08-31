@@ -142,7 +142,7 @@ export default function OurBranchesPage() {
                 {/* <nav className="bg-white border-b py-3" aria-label="Breadcrumb">
                     <div className="max-w-6xl mx-auto px-4">
                         <ol className="flex items-center space-x-2 text-sm">
-                            <li><Link href="/" className="text-blue-600 hover:underline">Home</Link></li>
+                            <li><Link href="/" className="text-secondary_color hover:underline">Home</Link></li>
                             <li className="text-gray-500">/</li>
                             <li className="text-gray-700 font-medium" aria-current="page">Our Branches</li>
                         </ol>

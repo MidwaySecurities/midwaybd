@@ -148,7 +148,7 @@
 //         `group relative overflow-hidden rounded-xl px-4 py-3 transition-all duration-300 font-medium ${
 //             isActive(path) 
 //                 ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg' 
-//                 : 'bg-white hover:bg-blue-50 text-gray-700 hover:text-blue-600 border border-gray-200 hover:border-blue-300 hover:shadow-md'
+//                 : 'bg-white hover:bg-blue-50 text-gray-700 hover:text-secondary_color border border-gray-200 hover:border-blue-300 hover:shadow-md'
 //         }`
 
 //     const investmentOptions = [
@@ -243,9 +243,9 @@
 //                                     }}
 //                                     className="w-full flex items-center justify-between p-4 hover:bg-blue-50 transition-colors duration-200 group"
 //                                 >
-//                                     <span className="font-medium text-gray-700 group-hover:text-blue-600">Investments</span>
+//                                     <span className="font-medium text-gray-700 group-hover:text-secondary_color">Investments</span>
 //                                     <svg 
-//                                         className={`w-5 h-5 text-gray-500 group-hover:text-blue-600 transition-all duration-300 ${openService ? 'rotate-180' : ''}`}
+//                                         className={`w-5 h-5 text-gray-500 group-hover:text-secondary_color transition-all duration-300 ${openService ? 'rotate-180' : ''}`}
 //                                         fill="none" 
 //                                         stroke="currentColor" 
 //                                         viewBox="0 0 24 24"
@@ -262,7 +262,7 @@
 //                                             <Link
 //                                                 key={index}
 //                                                 href={option.href}
-//                                                 className="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
+//                                                 className="block px-3 py-2 text-sm text-gray-600 hover:text-secondary_color hover:bg-blue-50 rounded-lg transition-colors duration-200"
 //                                                 onClick={() => setTimeout(() => closeModal(), 300)}
 //                                             >
 //                                                 {option.label}
@@ -334,7 +334,7 @@
 //                     <div className="flex gap-3">
 //                         <Link 
 //                             href="https://portal.midwaybd.com/register" 
-//                             className="flex-1 text-center py-3 px-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-xl hover:bg-blue-50 transition-colors duration-200"
+//                             className="flex-1 text-center py-3 px-4 border-2 border-blue-600 text-secondary_color font-semibold rounded-xl hover:bg-blue-50 transition-colors duration-200"
 //                         >
 //                             Sign Up
 //                         </Link>
@@ -408,7 +408,7 @@ const Navigation = () => {
                     <div className="flex items-center space-x-4">
                         <div className={`w-10 h-10 flex items-center justify-center rounded-xl transition-colors ${isActiveItem ? 'bg-white/20' : 'bg-gray-100 group-hover:bg-blue-100'
                             }`}>
-                            <div className={`transition-colors ${isActiveItem ? 'text-white' : 'text-gray-600 group-hover:text-blue-600'}`}>
+                            <div className={`transition-colors ${isActiveItem ? 'text-white' : 'text-gray-600 group-hover:text-secondary_color'}`}>
                                 {icon}
                             </div>
                         </div>
@@ -445,7 +445,7 @@ const Navigation = () => {
             onClick={() => handleNavigate(path)}
             className={`w-full flex items-center space-x-3 p-3 rounded-xl text-sm transition-all duration-200 ${isActive(path)
                 ? 'bg-blue-100 text-blue-700 font-semibold'
-                : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
+                : 'text-gray-600 hover:text-secondary_color hover:bg-gray-50'
                 }`}
         >
             {icon && <div className="w-5 h-5 flex-shrink-0">{icon}</div>}

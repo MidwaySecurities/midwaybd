@@ -46,13 +46,13 @@ const IpoTab = () => {
             <div className="flex gap-4 mb-8 border-b border-slate-200">
                 <button
                     onClick={() => setActiveTab('upcoming')}
-                    className={`px-6 py-3 font-semibold transition-all ${activeTab === 'upcoming' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
+                    className={`px-6 py-3 font-semibold transition-all ${activeTab === 'upcoming' ? 'text-secondary_color border-b-2 border-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
                 >
                     Upcoming IPOs
                 </button>
                 <button
                     onClick={() => setActiveTab('recent')}
-                    className={`px-6 py-3 font-semibold transition-all ${activeTab === 'recent' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
+                    className={`px-6 py-3 font-semibold transition-all ${activeTab === 'recent' ? 'text-secondary_color border-b-2 border-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
                 >
                     Recent Listings
                 </button>

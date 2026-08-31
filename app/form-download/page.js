@@ -200,7 +200,7 @@ const FormDownload = () => {
           <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="p-3 bg-blue-100 rounded-lg">
-                <FileCheck className="w-6 h-6 text-blue-600" />
+                <FileCheck className="w-6 h-6 text-secondary_color" />
               </div>
               <div>
                 <p className="text-3xl font-bold text-gray-900">{totalForms}</p>
@@ -228,8 +228,8 @@ const FormDownload = () => {
             <button
               onClick={() => setSelectedCategory('all')}
               className={`px-4 py-2 rounded-lg font-medium transition-colors ${selectedCategory === 'all'
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                ? 'bg-blue-600 text-white'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
             >
               All Categories
@@ -239,8 +239,8 @@ const FormDownload = () => {
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${selectedCategory === category.id
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
               >
                 {category.title}
@@ -285,10 +285,10 @@ const FormDownload = () => {
                       >
                         <div className="flex items-center gap-3 flex-1">
                           <div className="p-2 bg-gray-100 rounded-lg group-hover:bg-blue-100 transition-colors">
-                            <FileText className="w-5 h-5 text-gray-600 group-hover:text-blue-600" />
+                            <FileText className="w-5 h-5 text-gray-600 group-hover:text-secondary_color" />
                           </div>
                           <div className="flex-1">
-                            <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                            <h3 className="font-semibold text-gray-900 group-hover:text-secondary_color transition-colors">
                               {form.name}
                             </h3>
                             {form.popular && (
@@ -304,8 +304,8 @@ const FormDownload = () => {
                           </div>
                         </div>
                         <div className="flex items-center gap-2">
-                          <Download className="w-5 h-5 text-gray-400 group-hover:text-blue-600" />
-                          <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-transform" />
+                          <Download className="w-5 h-5 text-gray-400 group-hover:text-secondary_color" />
+                          <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-secondary_color group-hover:translate-x-1 transition-transform" />
                         </div>
                       </Link>
                     ))}

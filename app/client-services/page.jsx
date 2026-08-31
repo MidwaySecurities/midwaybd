@@ -470,7 +470,7 @@ export default function ClientServicesPage() {
 
         {/* ── Service Cards ── */}
         {/* <ol> because the services have a meaningful order matching the JSON-LD ItemList */}
-        <ol className="list-none p-0 m-0 max-w-5xl mx-auto px-8 md:px-12 py-16 space-y-20">
+        <ol className="list-none p-0 m-0 max-w-5xl mx-auto px-8 md:px-12 py-16 space-y-0 lg:space-y-20">
           {services.map((service, index) => (
             // <li> + <article> = semantically self-contained service entry
             <li key={service.id}>

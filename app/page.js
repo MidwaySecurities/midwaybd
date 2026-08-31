@@ -97,7 +97,7 @@ export default async function Home() {
       blog_id: result?.data?.slug,
       label: result?.data?.title,
       content: result?.data?.excerpt,
-      createdAt: JSON.stringify(result?.data?.createdAt)?.slice(1, 11),
+      createdAt: JSON.stringify(result?.data?.created_at)?.slice(1, 11),
     },
     {
       id: "visual",

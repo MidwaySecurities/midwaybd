@@ -556,7 +556,7 @@ function MobileBankingContent() {
 
             <dl className="bg-white border border-gray-200 rounded-xl p-4">
                 <FieldRow label="Reference" value="Your Midway Client Code" mono={false} />
-                <FieldRow label="Counter no." value="01" mono={true} />
+                {/* <FieldRow label="Counter no." value="01 " mono={true} /> */}
             </dl>
 
             <VerificationNote />

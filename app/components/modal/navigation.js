@@ -489,10 +489,10 @@ const Navigation = () => {
                     />
 
                     <NavItem
-                        icon={'$'}
+                        icon={'৳'}
                         label="Pricing"
                         path="/pricing"
-                        badge="Dashboard"
+                        badge="Deposit & Withdrawl"
                     />
 
                     <NavItem

@@ -49,7 +49,7 @@ const openingRows = [
   },
   {
     icon: CalendarIcon,
-    label: "Annual renewal",
+    label: "BO opening & Annual renewal",
     detail: "Charged once a year, in June, to keep your account active.",
     amount: "৳150",
     tone: "charge",
@@ -129,13 +129,12 @@ export default function PricingPage() {
           <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-6xl">
             Simple, transparent
             <br />
-            <span className="bg-gradient-to-r from-secondary_color to-violet-400 bg-clip-text text-transparent">
+            <span className="text-secondary_color mt-2 block">
               account pricing
             </span>
           </h1>
           <p className="mx-auto mt-5 max-w-lg text-lg text-slate-400">
-            Open your BO account for free with an initial deposit and share
-            buy of BDT 50,000. Here's what everything else costs.
+            Open your BO account for free with an initial investment of BDT 50,000 minimum.
           </p>
           {/* <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a

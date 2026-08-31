@@ -167,8 +167,8 @@ export default function PricingPage() {
           </div>
 
           <div>
-            <h2 className="invisible text-sm font-semibold text-slate-900">
-              Moving money
+            <h2 className="text-sm font-semibold text-slate-900">
+              Transaction
             </h2>
             <div className="mt-4 space-y-3">
               {fundingRows.map((row) => (

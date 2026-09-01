@@ -224,9 +224,12 @@ const MobileAppPage = () => {
               <div className="">
                 <div style={{
                   backgroundImage: `url(${features.find(f => f.id === activeFeature)?.bgImage})`
-                }} className={`aspect-square bg-white rounded-2xl flex items-center justify-center bg-cover bg-top`}>
-                  <Image src={`${features.find(f => f.id === activeFeature)?.image}`} width={270} height={300} className='absolute lg:static top-[20px] max-w-[35%] lg:max-w-[38%]' />
-                  <p className='block lg:hidden absolute text-center mb-5 lg:mb-10 bottom-0 text-sm sm:text-lg'>{features.find(f => f.id === activeFeature)?.description}</p>
+                }} className={`300:h-[600px] 321:h-[650px] bg-white rounded-2xl flex items-center justify-center bg-cover bg-top`}>
+                  <figure className="w-full h-full flex items-center justify-center">
+                    <Image src={`${features.find(f => f.id === activeFeature)?.image}`} width={270} height={300} className='absolute lg:static top-[20px] max-w-[80%] lg:max-w-[38%]' />
+                    <figcaption className='lg:hidden absolute bottom-0 text-center pb-6'>{features.find(f => f.id === activeFeature)?.description}</figcaption>
+                  </figure>
+                  {/* <p className='block lg:hidden absolute text-center mb-5 lg:mb-10 bottom-0 text-sm sm:text-lg'>{features.find(f => f.id === activeFeature)?.description}</p> */}
                 </div>
               </div>
             </div>

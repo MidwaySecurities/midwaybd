@@ -379,7 +379,7 @@ function FaqSection() {
         },
         {
             q: 'What is the bKash number for Midway Securities?',
-            a: 'Send to bKash number 01845222333. Use your Midway Client Code as the reference and counter no. 01.',
+            a: 'Send to bKash number 01845222333. Use your Midway Client Code as the reference.',
         },
         {
             q: 'How long does a deposit take to reflect?',

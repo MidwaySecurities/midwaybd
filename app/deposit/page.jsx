@@ -335,36 +335,37 @@ function MessengerIcon() {
 
 function Breadcrumb() {
     return (
-        <nav aria-label="Breadcrumb" className="max-w-4xl mx-auto px-4 pt-5 pb-1">
-            <ol
-                className="flex items-center gap-1.5 text-xs text-gray-400"
-                itemScope
-                itemType="https://schema.org/BreadcrumbList"
-            >
-                <li itemScope itemProp="itemListElement" itemType="https://schema.org/ListItem">
-                    <Link
-                        href="/"
-                        itemProp="item"
-                        className="hover:text-gray-600 transition-colors no-underline"
-                    >
-                        <span itemProp="name">Home</span>
-                    </Link>
-                    <meta itemProp="position" content="1" />
-                </li>
-                <li aria-hidden="true" className="text-gray-300">/</li>
-                <li
-                    itemScope
-                    itemProp="itemListElement"
-                    itemType="https://schema.org/ListItem"
-                    aria-current="page"
-                >
-                    <span itemProp="name" className="text-gray-600">
-                        Deposit
-                    </span>
-                    <meta itemProp="position" content="2" />
-                </li>
-            </ol>
-        </nav>
+        // <nav aria-label="Breadcrumb" className="max-w-4xl mx-auto px-4 pt-5 pb-1">
+        //     <ol
+        //         className="flex items-center gap-1.5 text-xs text-gray-400"
+        //         itemScope
+        //         itemType="https://schema.org/BreadcrumbList"
+        //     >
+        //         <li itemScope itemProp="itemListElement" itemType="https://schema.org/ListItem">
+        //             <Link
+        //                 href="/"
+        //                 itemProp="item"
+        //                 className="hover:text-gray-600 transition-colors no-underline"
+        //             >
+        //                 <span itemProp="name">Home</span>
+        //             </Link>
+        //             <meta itemProp="position" content="1" />
+        //         </li>
+        //         <li aria-hidden="true" className="text-gray-300">/</li>
+        //         <li
+        //             itemScope
+        //             itemProp="itemListElement"
+        //             itemType="https://schema.org/ListItem"
+        //             aria-current="page"
+        //         >
+        //             <span itemProp="name" className="text-gray-600">
+        //                 Deposit
+        //             </span>
+        //             <meta itemProp="position" content="2" />
+        //         </li>
+        //     </ol>
+        // </nav>
+        <></>
     )
 }
 
@@ -534,7 +535,7 @@ function MobileBankingContent() {
                     <article
                         key={s.name}
                         aria-label={`${s.name} deposit number`}
-                        className="bg-white border border-gray-200 rounded-xl p-4 hover:border-gray-300 transition-colors"
+                        className="bg-white border border-gray-200 rounded-xl p-2 lg:p-4 hover:border-gray-300 transition-colors"
                     >
                         <div
                             className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-xs font-semibold mb-3 ${s.colorClass}`}
@@ -545,7 +546,7 @@ function MobileBankingContent() {
                         <p className="text-sm font-bold text-gray-900 mb-1">{s.name}</p>
                         <a
                             href={s.href}
-                            className="text-sm font-bold bg-gray-100 text-gray-500 hover:text-gray-700 no-underline"
+                            className="text-[9px] font-bold bg-gray-100 text-gray-500 hover:text-gray-700 no-underline"
                             aria-label={`${s.name} number: ${s.number}`}
                         >
                             {s.number}

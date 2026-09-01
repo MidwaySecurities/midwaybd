@@ -3,15 +3,16 @@ import { useState } from 'react'
 
 const BranchesFilter = ({ branches }) => {
     const [activeFilter, setActiveFilter] = useState('all')
-
+    console.log(activeFilter)
     const filteredLocations =
         activeFilter === 'all' ? branches :
             activeFilter === 'digital' ? branches.filter(b => b.type === 'digital') :
                 activeFilter === 'head' ? branches.filter(b => b.type === 'head') :
-                    branches.filter(b => b.type === 'branch')
+                activeFilter === 'cumilla' ? branches.filter(b => b.type === 'cumilla') :
+                    branches.filter(b => b.locality === 'Dhaka')
 
     const digitalCount = branches.filter(b => b.type === 'digital').length
-    const branchCount = branches.filter(b => b.type === 'branch').length
+    const branchCount = branches.filter(b => b.locality === 'Dhaka').length
 
     return (
         <>
@@ -22,8 +23,9 @@ const BranchesFilter = ({ branches }) => {
                         {[
                             { id: 'all', label: 'All Locations', count: branches.length },
                             { id: 'head', label: 'Head Office', count: 1 },
-                            { id: 'branch', label: 'Branches', count: branchCount },
-                            ...(digitalCount > 0 ? [{ id: 'digital', label: 'Digital Booths', count: digitalCount }] : [])
+                            { id: 'cumilla', label: 'Cumilla', count: 1 },
+                            { id: 'branch', label: 'Dhaka', count: branchCount },
+                            ...(digitalCount > 0 ? [{ id: 'digital', label: 'Patuakhali', count: digitalCount }] : [])
                         ].map((tab) => (
                             <button
                                 key={tab.id}
@@ -51,6 +53,8 @@ const BranchesFilter = ({ branches }) => {
                         <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
                             {activeFilter === 'all' ? 'All Locations' :
                                 activeFilter === 'head' ? 'Head Office' :
+                                activeFilter === 'cumilla' ? 'Cumilla Branch' :
+                                activeFilter === 'branch' ? 'Dhaka' :
                                     activeFilter === 'digital' ? 'Digital Service Centers' : 'Branch Locations'}
                         </h2>
 

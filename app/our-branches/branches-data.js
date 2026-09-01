@@ -90,7 +90,7 @@ export const branches = [
         locality: "Dhaka",
         postalCode: "1211",
         tel: ["7342560", "7342561"],
-        mobile: ["01857777529", "01823416181"],
+        mobile: ["01335227115", "01335227116"],
         link: mapEmbed("https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d456.6082808597046!2d90.3947669!3d23.71647!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8e03e32ae8f%3A0xe22b821efdc852dd!2sMidway%20Securities%20Ltd!5e0!3m2!1sen!2sbd!4v1787727062599!5m2!1sen!2sbd"),
         coordinates: { lat: 23.7104, lng: 90.4074 },
         services: ["Account Opening", "Trading Support", "Customer Service"]
@@ -98,7 +98,7 @@ export const branches = [
     {
         id: 7,
         name: "COMILLA BRANCH",
-        type: "branch",
+        type: "cumilla",
         building: "Makka Tower",
         room: "3rd Floor",
         address: "AK Fazlul Haq Rd, Rajgong, Comilla 3500",
@@ -130,7 +130,7 @@ export const branches = [
         type: "digital",
         building: "Digital Service Center",
         room: "Ground Floor",
-        address: "Main Road, Kalapara, Patuakhali",
+        address: "MM Plaza, Notun Bazar, Kalapara",
         locality: "Patuakhali",
         tel: ["41040008"],
         mobile: ["01711148727"],

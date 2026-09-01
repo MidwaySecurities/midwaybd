@@ -217,8 +217,9 @@
   :root {
     --background: white;
     --foreground: #171717;
-    /* --primary_color: #003875; */
-    --qtp_btn_bg_color: #004990;
+    --primary_color: #003875;
+    --secondary_color: #1da1f2;
+    --qtp_btn_bg_color: #4a82d8;
     --font-dancing-script: var(--font-dancing-script);
   }
 }

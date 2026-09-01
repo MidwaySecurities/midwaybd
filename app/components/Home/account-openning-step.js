@@ -21,9 +21,7 @@ const AccountOpeningSteps = () => {
             description: "Deposit funds securely through bank transfer, mobile banking, or credit card",
             link: "https://portal.midwaybd.com/dashboard/fund/deposit/add",
             icon: (
-                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                </svg>
+                <div className="text-xl font-bold text-primary_color">৳</div>
             ),
             bgColor: "bg-gradient-to-br from-green-500 to-green-600",
             hoverColor: "hover:from-green-600 hover:to-green-700"
@@ -214,10 +212,8 @@ const AccountOpeningSteps = () => {
                     </div>
 
                     <div className="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition">
-                        <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <svg className="w-7 h-7 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                            </svg>
+                        <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-xl">
+                            ৳
                         </div>
                         <h4 className="font-semibold text-gray-800 mb-1">Low Fees</h4>
                         <p className="text-sm text-gray-600">Competitive pricing</p>

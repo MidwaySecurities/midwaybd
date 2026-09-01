@@ -200,12 +200,12 @@ const MobileAppPage = () => {
                     }`}
                 >
                   <div className="flex items-start space-x-3 sm:space-x-4">
-                    <div className={`hidden flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl md:flex items-center justify-center ${activeFeature === feature.id ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-600'
+                    <div className={`hidden shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl md:flex items-center justify-center ${activeFeature === feature.id ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-600'
                       }`}>
                       {feature.icon}
                     </div>
                     <div>
-                      <h3 className={`text-lg md:text-xl font-bold md:mb-2 ${activeFeature === feature.id ? 'text-blue-900' : 'text-gray-900'
+                      <h3 className={`text-sm md:text-xl font-bold md:mb-2 ${activeFeature === feature.id ? 'text-blue-900' : 'text-gray-900'
                         }`}>
                         {feature.title}
                       </h3>

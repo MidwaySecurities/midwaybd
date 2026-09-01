@@ -3,7 +3,7 @@ import React from 'react'
 
 const DownloadAppbutton = () => {
     return (
-        <div className="app-button-wrap flex gap-3">
+        <div className="app-button-wrap flex gap-3 justify-center lg:justify-start">
             <Link href={'https://apps.apple.com/us/app/quicktrade-pro/id6740322022'} target='_blank' className="border border-white/25 no-underline flex mt-2 md:mt-3 w-32 sm:w-40 md:w-48 py-[5px] sm:py-[6px] bg-[#0d2842] text-white rounded-xl items-center justify-center" style={{ background: '' }}>
                 <div className="mr-2 sm:mr-3">
                     <svg viewBox="0 0 384 512" className='w-[22px] sm:w-[25px] md:w-[30px]' >
@@ -12,7 +12,7 @@ const DownloadAppbutton = () => {
                 </div>
                 <div>
                     <div className="text-[10px] sm:text-xs leading-4">Download on the</div>
-                    <div className="text-sm sm:text-md md:text-xl font-semibold font-sans -mt-1">App Store</div>
+                    <div className="text-sm sm:text-md md:text-xl font-semibold font-sans -mt-1 text-left">App Store</div>
                 </div>
             </Link>
 
@@ -26,7 +26,7 @@ const DownloadAppbutton = () => {
                     </svg>
                 </div>
                 <div>
-                    <div className="text-[10px] sm:text-xs leading-4">GET IT ON</div>
+                    <div className="text-[10px] sm:text-xs leading-4 text-left">GET IT ON</div>
                     <div className="text-sm sm:text-md lg:text-xl font-semibold font-sans -mt-1">Google Play</div>
                 </div>
             </Link>

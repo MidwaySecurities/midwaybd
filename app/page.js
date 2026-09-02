@@ -75,8 +75,8 @@ export async function generateMetadata() {
 }
 
 export default async function Home() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_PORTAL_URL}/blog/latest`)
-  // const res = await fetch(`https://portal.midwaybd.com/api/blog/latest`)
+  // const res = await fetch(`${process.env.NEXT_PUBLIC_PORTAL_URL}/blog/latest`)
+  const res = await fetch(`https://portal.midwaybd.com/api/blog/latest`)
   const result = await res.json();
   let newsData = [];
   try {
@@ -381,12 +381,12 @@ export default async function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href='https://portal.midwaybd.com/bo/portal-login' target='_blank' rel='noopener noreferrer'>
-                  <button className="bg-primary_color hover:bg-yellow-400 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  <button className="bg-primary_color hover:ring-2 cursor-pointer ring-white ring-inset text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
                     Open BO Account
                   </button>
                 </a>
                 <Link href="/contact-us">
-                  <button className="bg-white hover:bg-gray-100 text-secondary_color font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  <button className="cursor-pointer bg-white hover:bg-gray-100 text-secondary_color font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
                     Contact Us
                   </button>
                 </Link>

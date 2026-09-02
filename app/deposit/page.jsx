@@ -740,17 +740,8 @@ const Deposit = async ({ searchParams }) => {
                         <p className="text-gray-400 text-sm mb-8">
                             Watch our guide to making your first deposit into Midway Securities.
                         </p>
-                        <div className="relative rounded-xl overflow-hidden bg-black aspect-video">
-                            <iframe
-                                className="w-full h-full"
-                                src="https://www.youtube.com/embed/KkBCBNHRL2A?si=v4UhTaSbcuCBIagM"
-                                title="How to deposit funds into Midway Securities BO account — step by step tutorial"
-                                frameBorder="0"
-                                loading="lazy"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerPolicy="strict-origin-when-cross-origin"
-                                allowFullScreen
-                            />
+                        <div className="relative rounded-xl overflow-hidden bg-black aspect-video flex justify-center">
+                            <iframe className='w-150' width="537" src="https://www.youtube.com/embed/sRZUXqpZJGA" title="How to deposit money into your BO account from Midway portal?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
                 </section>

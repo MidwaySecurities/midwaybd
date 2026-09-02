@@ -21,7 +21,7 @@ const FirstNavBar = () => {
             </Link>
             <h1 className="flex flex-col leading-0 justify-center uppercase mt-[-.25rem] text-primary_color font-bold"><span className="text-xl tracking-[2px]">Midway</span><span className="tracking-[1.88px] text-[.6rem] leading-2">Securities Ltd.</span></h1>
 
-            <p className="bg-secondary_color p-2 px-3 rounded-md"><Link href={`https://portal.midwaybd.com/bo/portal-login`}>Login</Link></p>
+            <p className="bg-secondary_color p-2 px-3 rounded-md"><Link href={`https://portal.midwaybd.com`}>Login</Link></p>
         </div>
     )
 }

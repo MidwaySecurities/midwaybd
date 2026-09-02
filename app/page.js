@@ -76,7 +76,7 @@ export async function generateMetadata() {
 
 export default async function Home() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_PORTAL_URL}/blog/latest`)
-  // const res = await fetch(`http://midway-app.test/api/blog/latest`)
+  // const res = await fetch(`https://portal.midwaybd.com/api/blog/latest`)
   const result = await res.json();
   let newsData = [];
   try {

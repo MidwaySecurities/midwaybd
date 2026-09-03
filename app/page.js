@@ -10,6 +10,7 @@ import IndexGraph from "./components/Home/index-graph";
 import Tickers from "./components/tickers";
 import { getABlog } from "@/lib/actions/blog/getABlog";
 import TabsSection from "./components/TabSection";
+import DownloadAppbutton from "./components/DownloadAppbutton";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.midwaybd.com";
 
@@ -180,13 +181,13 @@ export default async function Home() {
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
-                <div className="bg-white rounded-2xl shadow-2xl p-8 lg:p-12">
+                <div className="bg-white rounded-2xl shadow-2xl p-8 px-4 lg:px-8 lg:p-12">
                   <div className="space-y-6">
                     {/* <div className="inline-flex items-center bg-blue-100 text-primary_color px-4 py-2 rounded-full font-medium">
                       <span className="w-2 h-2 bg-primary_color rounded-full mr-2 animate-pulse"></span>
                       Latest Technology
                     </div> */}
-                    <Download
+                    
 
                     <h2 id="quicktrade-heading" className="text-3xl lg:text-4xl font-bold text-gray-800">
                       <span className="text-secondary_color">QuickTrade Pro</span> -
@@ -217,20 +218,7 @@ export default async function Home() {
                         <span className="text-gray-700">Advanced charting & technical indicators</span>
                       </li>
                     </ul>
-
-                    <div className="pt-6">
-                      <a
-                        href="https://quicktradepro.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center bg-secondary_color hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
-                      >
-                        Get QuickTrade Pro
-                        <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
-                      </a>
-                    </div>
+                    <DownloadAppbutton />
                   </div>
                 </div>
               </div>

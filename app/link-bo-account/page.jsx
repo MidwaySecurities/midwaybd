@@ -119,7 +119,7 @@ const LinkBoAccount = () => {
     <div className="font-sans max-w-6xl mx-auto px-4 py-10">
 
       {/* Hero */}
-      <div className="bg-[#0C447C] rounded-2xl p-10 mb-6 grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 items-center">
+      <div className="bg-primary_color rounded-2xl p-10 mb-6 grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 items-center">
         <div>
           <div className="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 rounded-full px-3.5 py-1 text-[11px] font-medium text-[#B5D4F4] tracking-wide uppercase mb-5">
             <span className="w-1.5 h-1.5 bg-[#85B7EB] rounded-full" />

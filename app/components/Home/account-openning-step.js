@@ -5,7 +5,7 @@ const AccountOpeningSteps = () => {
         {
             number: "1",
             title: "Open BO Account",
-            description: "Create your beneficiary owner account in minutes with our streamlined process",
+            description: "Create your Beneficiary Owner account in minutes with our streamlined process",
             link: "https://portal.midwaybd.com/bo/portal-login",
             icon: (
                 <svg className="w-8 h-8 text-secondary_color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -119,7 +119,7 @@ const AccountOpeningSteps = () => {
                     </h2>
 
                     <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Join thousands of successful traders with our streamlined account opening
+                        Join thousands of successful investors with our streamlined BO account opening
                         process. Get started in minutes and begin your investment journey today.
                     </p>
                 </div>
@@ -188,7 +188,7 @@ const AccountOpeningSteps = () => {
                             </svg>
                         </div>
                         <h4 className="font-semibold text-gray-800 mb-1">Fast Process</h4>
-                        <p className="text-sm text-gray-600">Account opening in minutes</p>
+                        <p className="text-sm text-gray-600">BO Account opening in minutes</p>
                     </div>
 
                     <div className="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition">

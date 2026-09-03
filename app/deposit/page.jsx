@@ -506,7 +506,7 @@ function BankTransferContent() {
 
 function MobileBankingContent() {
     const services = [
-        { initials: <Bkash width={30} height={30} />, colorClass: 'text-pink-800', name: 'bKash', number: '01845302333', href: 'tel:01845302333' },
+        { initials: <Bkash width={30} height={30} />, colorClass: 'text-pink-800', name: 'bKash', number: '01845222333', href: 'tel:01845222333' },
         { initials: <Nagad width={30} height={30} />, colorClass: 'text-amber-800', name: 'Nagad', number: '01776106410', href: 'tel:01776106410' },
         { initials: <Rocket width={30} height={30} />, colorClass: 'text-purple-800', name: 'Rocket', number: '017761064101', href: 'tel:017761064101' },
     ]
@@ -546,7 +546,7 @@ function MobileBankingContent() {
                         <p className="text-sm font-bold text-gray-900 mb-1">{s.name}</p>
                         <a
                             href={s.href}
-                            className="text-[9px] font-bold bg-gray-100 text-gray-500 hover:text-gray-700 no-underline"
+                            className="text-[9px] md:text-sm font-bold bg-gray-100 text-gray-500 hover:text-gray-700 no-underline"
                             aria-label={`${s.name} number: ${s.number}`}
                         >
                             {s.number}
@@ -676,7 +676,7 @@ const Deposit = async ({ searchParams }) => {
             <div className={`min-h-screen bg-gray-50 ${poppins.className}`}>
 
                 {/* ── Hero ── */}
-                <header className="bg-[#0C447C] px-6 py-14 sm:py-20 text-center">
+                <header className="bg-primary_color px-6 py-14 sm:py-20 text-center">
                     {/* Hidden H1 variant for screen readers / crawlers with keyword context */}
                     <h1 className="font-robboto text-3xl sm:text-4xl font-bold text-[#E6F1FB] leading-tight mb-3">
                         Deposit into your BO account{' '}
@@ -686,7 +686,7 @@ const Deposit = async ({ searchParams }) => {
                         </span>
                     </h1>
                     <p className="text-sm sm:text-base text-[#85B7EB] mb-8 max-w-lg mx-auto leading-relaxed">
-                        Fund your Midway Securities trading account easily — bank transfer, mobile banking, or credit card.
+                        Fund your BO account easily — bank transfer, mobile banking, or credit card.
                         অফিসে না এসে সহজেই আপনার বিও অ্যাকাউন্টে টাকা জমা দিন।
                     </p>
                     <div className="flex justify-center gap-3 flex-wrap" aria-label="Available deposit methods">

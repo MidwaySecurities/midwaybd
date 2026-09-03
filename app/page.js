@@ -75,8 +75,8 @@ export async function generateMetadata() {
 }
 
 export default async function Home() {
-  // const res = await fetch(`${process.env.NEXT_PUBLIC_PORTAL_URL}/blog/latest`)
-  const res = await fetch(`https://portal.midwaybd.com/api/blog/latest`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_PORTAL_URL}/blog/latest`)
+  // const res = await fetch(`https://portal.midwaybd.com/api/blog/latest`)
   const result = await res.json();
   let newsData = [];
   try {
@@ -182,10 +182,11 @@ export default async function Home() {
               <div className="order-2 lg:order-1">
                 <div className="bg-white rounded-2xl shadow-2xl p-8 lg:p-12">
                   <div className="space-y-6">
-                    <div className="inline-flex items-center bg-blue-100 text-primary_color px-4 py-2 rounded-full font-medium">
+                    {/* <div className="inline-flex items-center bg-blue-100 text-primary_color px-4 py-2 rounded-full font-medium">
                       <span className="w-2 h-2 bg-primary_color rounded-full mr-2 animate-pulse"></span>
                       Latest Technology
-                    </div>
+                    </div> */}
+                    <Download
 
                     <h2 id="quicktrade-heading" className="text-3xl lg:text-4xl font-bold text-gray-800">
                       <span className="text-secondary_color">QuickTrade Pro</span> -
@@ -315,7 +316,7 @@ export default async function Home() {
                 Trading <span className="text-secondary_color">Platforms</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Choose from our range of professional trading platforms designed for every trader
+                Choose from our range of professional trading platforms designed for every investors
               </p>
             </div>
             <Platform />
@@ -370,7 +371,7 @@ export default async function Home() {
         </section>
 
         {/* Call to Action Section */}
-        <section className="py-16 lg:py-24 bg-secondary_color text-white">
+        <section className="hidden py-16 lg:py-24 bg-secondary_color text-white">
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-3xl mx-auto space-y-8">
               <h2 className="text-3xl lg:text-5xl font-bold leading-tight">

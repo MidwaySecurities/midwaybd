@@ -30,31 +30,19 @@ const steps = [
   {
     label: '1',
     title: 'Visit the Midway portal',
-    desc: 'Go to portal.midwaybd.com and log in with your registered mobile number and password.',
+    desc: <>Go to <Link href = "https://portal.midwaybd.com" className='text-secondary_color/75 font-bold' target="_blank"> Midway Portal</Link> and log in with your registered mobile number and password.</>,
     done: false,
   },
   {
     label: '2',
-    title: 'Download the Transmission Form',
-    desc: 'Find the Link BO section and download the PDF transmission form to your device.',
-    done: false,
-  },
-  {
-    label: '3',
     title: 'Fill in your BO account details',
-    desc: 'Enter your BOID, current broker name, and personal details exactly as registered.',
-    done: false,
-  },
-  {
-    label: '4',
-    title: 'Sign and upload the form',
-    desc: 'Sign the completed form and upload it back through the portal submission page.',
+    desc: 'Enter your BOID and required fields.',
     done: false,
   },
   {
     label: '✓',
-    title: 'Transfer complete',
-    desc: 'Your BO account will be linked within the standard DSE processing period. No shares are sold.',
+    title: 'Link BO account completed',
+    desc: 'Your BO account will be linked within the standard CDBL processing period.',
     done: true,
   },
 ]
@@ -129,12 +117,11 @@ const LinkBoAccount = () => {
             Link Your BO Account
           </h1>
           <p className="text-sm text-white/70 leading-relaxed mb-7 max-w-md">
-            Transfer your Beneficiary Owner account from any Dhaka Stock Exchange broker —
-            completely free, without selling a single share.
+            Transfer your Beneficiary Owner(BO) account without selling your shares.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
-              href="https://portal.midwaybd.com/bo/portal-login"
+              href="https://portal.midwaybd.com/link-bo/portal-login"
               target="_blank"
               className="inline-flex items-center gap-2 bg-white text-[#0C447C] rounded-lg px-5 py-2.5 text-sm font-semibold hover:opacity-90 transition-opacity"
             >
@@ -258,7 +245,9 @@ const LinkBoAccount = () => {
               <circle cx="8" cy="5.5" r=".6" fill="#185FA5" />
             </svg>
             <p className="text-xs text-gray-500 leading-relaxed">
-              Need help? Contact Midway Securities support through the portal after logging in.
+              For help <a href="tel:09609100142" style={{ fontWeight: 600 }}>09609 100 142</a>
+              {" "}or message via{" "}
+              <a href="http://m.me/midwaytrec142" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600 }}>Facebook Messenger</a>.
             </p>
           </div>
 

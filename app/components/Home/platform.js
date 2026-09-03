@@ -94,7 +94,7 @@ const Platform = () => {
                                 target="_blank"
                                 className="inline-block bg-secondary_color hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
                             >
-                                Start Trading Now
+                                Start Trading
                             </Link>
                         </div>
                     </div>
@@ -184,7 +184,7 @@ const Platform = () => {
                     {/* Mobile CTA */}
                     <div className="text-center">
                         <button className="w-full sm:w-auto bg-secondary_color text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                            Start Trading Now
+                            Start Trading
                         </button>
                     </div>
                 </div>

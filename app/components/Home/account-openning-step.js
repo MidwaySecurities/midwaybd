@@ -106,7 +106,7 @@ const AccountOpeningSteps = () => {
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center bg-blue-100 text-primary_color px-4 py-2 rounded-full font-medium text-sm mb-6 text-xl">
+                    <div className="inline-flex items-center bg-blue-100 text-primary_color px-4 py-1 rounded-full font-medium text-sm mb-6">
                         <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
                         Simple Process
                     </div>

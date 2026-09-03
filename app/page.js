@@ -76,8 +76,8 @@ export async function generateMetadata() {
 }
 
 export default async function Home() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_PORTAL_URL}/blog/latest`)
-  // const res = await fetch(`https://portal.midwaybd.com/api/blog/latest`)
+  // const res = await fetch(`${process.env.NEXT_PUBLIC_PORTAL_URL}/blog/latest`)
+  const res = await fetch(`https://portal.midwaybd.com/api/blog/latest`)
   const result = await res.json();
   let newsData = [];
   try {
@@ -261,12 +261,12 @@ export default async function Home() {
         <section className="py-8 lg:py-16 bg-linear-to-br from-gray-100 to-blue-50 lg:hidden" aria-labelledby="regulators-heading">
           <div className="container mx-auto px-4">
             <div className="mt-8 text-center py-3">
-              <div className="inline-flex items-start lg:items-center bg-blue-100 text-primary_color px-4 py-2 rounded-full">
-                <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="inline-flex items-start lg:items-center bg-blue-100 text-primary_color px-4 py-1 rounded-full">
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                 </svg>
                 {/* inline-flex items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium */}
-                <span className="text-xl font-medium">Regulated & Licensed</span>
+                <span className="text-sm font-medium">Regulated & Licensed</span>
               </div>
             </div>
             <div className="text-center mb-12">
@@ -293,8 +293,8 @@ export default async function Home() {
         {/* Platform Section */}
         <section className="py-16 lg:py-24 bg-white" aria-labelledby="platforms-heading flex">
           <div className="flex justify-center">
-            <div className="inline-flex items-center bg-blue-100 text-primary_color px-4 py-2 rounded-full font-medium mb-4">
-              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse text-xl"></span>
+            <div className="text-sm inline-flex items-center bg-blue-100 text-primary_color px-4 py-1 rounded-full font-medium mb-4">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
               Multiple Platforms
             </div>
           </div>
@@ -315,11 +315,11 @@ export default async function Home() {
         <section className="py-16 bg-gradient-to-br from-gray-100 to-blue-50 hidden lg:block" aria-labelledby="regulators-heading">
           <div className="container mx-auto px-4">
             <div className="mt-8 text-center py-3 text-xl">
-              <div className="inline-flex items-center bg-blue-100 text-primary_color px-4 py-2 rounded-full">
-                <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="inline-flex items-center bg-blue-100 text-primary_color px-4 py-1 rounded-full">
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                 </svg>
-                <span className="text-xl font-medium">Regulated & Licensed</span>
+                <span className="text-sm font-medium">Regulated & Licensed</span>
               </div>
             </div>
             <div className="text-center mb-12">

@@ -452,7 +452,7 @@ export default function WithdrawClient() {
             </p>
             <p style={{ color: MUTED, fontSize: 13, margin: "0 0 28px" }}>
               Need help? Call us at{" "}
-              <a href="tel:09609100142" style={{ color: PRIMARY, fontWeight: 600 }}>09609 100 142</a>
+              <a href="tel:01776106410" style={{ color: PRIMARY, fontWeight: 600 }}>01776-106410</a>
             </p>
             <button onClick={resetAll} style={{
               background: PRIMARY, color: WHITE, border: "none", borderRadius: 8,
@@ -478,7 +478,7 @@ export default function WithdrawClient() {
               Withdrawals are processed via{" "}
               <strong style={{ color: PRIMARY }}>Bangladesh Electronic Fund Transfer Network (BEFTN)</strong>
               , approved by Bangladesh Bank. Funds go directly to your registered bank account.
-              Call <a href="tel:09609100142" style={{ color: PRIMARY, fontWeight: 600 }}>09609 100 142</a>
+              For help <a href="tel:01776106410" style={{ color: PRIMARY, fontWeight: 600 }}>01776-106410</a>
               {" "}or message via{" "}
               <a href="http://m.me/midwaytrec142" target="_blank" rel="noopener noreferrer" style={{ color: ACCENT, fontWeight: 600 }}>Facebook Messenger</a>.
             </p>

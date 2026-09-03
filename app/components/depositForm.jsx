@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import Image from 'next/image'
 import axios from 'axios';
 
 // ── Alert Modal ──────────────────────────────────────────────────────────────
@@ -116,7 +117,7 @@ const DepositForm = () => {
 
         const formData = new FormData(e.target);
         const data = {
-            client_code: formData.get('clientCode'),
+            client_code: formData.get('clientCode').toUpperCase(),
             client_name: formData.get('client_name'),
             email: formData.get('email'),
             phone_number: formData.get('phone_number'),
@@ -148,37 +149,89 @@ const DepositForm = () => {
         }
     };
 
+    const [depositSlipPreview, setDepositSlipPreview] = useState(null);
+
+    const handleDepositSlipChange = (e) => {
+        const file = e.target.files?.[0];
+
+        if (file) {
+            setDepositSlipPreview(URL.createObjectURL(file));
+        } else {
+            setDepositSlipPreview(null);
+        }
+    };
+
+    const starMark = <span className='text-red-500'>*</span>;
     return (
         <>
             <AlertModal alert={alert} onClose={() => setAlert(null)} />
 
             <form onSubmit={handleSubmit}>
                 <div className='mb-4'>
-                    <label htmlFor="clientCode" className='block mb-2'>Client Code</label>
-                    <input type="text" id="clientCode" name="clientCode" className='border border-gray-300 p-2 w-full' required />
+                    <label htmlFor="clientCode" className='block mb-2'>Client Code {starMark}</label>
+                    <input type="text" id="clientCode" name="clientCode" className='border border-gray-300 p-2 w-full uppercase' required />
                 </div>
                 <div className='mb-4'>
-                    <label htmlFor="client_name" className='block mb-2'>Name</label>
+                    <label htmlFor="client_name" className='block mb-2'>Name {starMark}</label>
                     <input type="text" id="client_name" name="client_name" className='border border-gray-300 p-2 w-full' required />
                 </div>
                 <div className='mb-4'>
-                    <label htmlFor="email" className='block mb-2'>Email</label>
+                    <label htmlFor="email" className='block mb-2'>Email {starMark}</label>
                     <input type="text" id="email" name="email" className='border border-gray-300 p-2 w-full' required />
                 </div>
                 <div className='mb-4'>
-                    <label htmlFor="phone_number" className='block mb-2'>Phone</label>
+                    <label htmlFor="phone_number" className='block mb-2'>Phone {starMark}</label>
                     <input type="phone_number" id="phone_number" name="phone_number" className='border border-gray-300 p-2 w-full' required />
                 </div>
                 <div className='mb-4'>
-                    <label htmlFor="amount" className='block mb-2'>Deposit Amount</label>
+                    <label htmlFor="amount" className='block mb-2'>Deposit Amount {starMark}</label>
                     <input type="number" id="amount" name="amount" className='border border-gray-300 p-2 w-full' required />
                 </div>
-                <div className='mb-4'>
-                    <label htmlFor="depositSlip" className='block mb-2'>Deposit Slip</label>
+
+                {/* deposit slip preview image */}
+                {/* <div className='mb-4'>
+                    <label htmlFor="depositSlip" className='block mb-2'>Deposit Slip {starMark}</label>
                     <input type="file" id="depositSlip" name="depositSlip" className='border border-gray-300 p-2 w-full' required />
+                </div> */}
+                <div className="mb-4">
+                    <div className="flex flex-col md:flex-row md:items-center justify-start gap-2">
+                        <div className="flex-[.5]">
+                            <label htmlFor="depositSlip" className="block mb-2">
+                                Deposit Slip {starMark}
+                            </label>
+                            <input
+                                type="file"
+                                id="depositSlip"
+                                name="depositSlip"
+                                accept="image/*"
+                                onChange={handleDepositSlipChange}
+                                className="hidden border border-gray-300 p-2 w-full"
+                                required
+                            />
+                            <label
+                                htmlFor="depositSlip"
+                                className="inline-block bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 cursor-pointer hover:bg-gray-200"
+                            >
+                                {depositSlipPreview ? "Change Deposit Slip" : "Choose Deposit Slip"}
+                            </label>
+                        </div>
+                        {depositSlipPreview && (
+                            <div className="mt-3">
+                                <div className="border border-gray-300 rounded-lg inline-block">
+                                    <Image
+                                        width={50}
+                                        height={50}
+                                        src={depositSlipPreview}
+                                        alt="Deposit Slip Preview"
+                                        className="h-[100px] w-auto object-contain rounded"
+                                    />
+                                </div>
+                            </div>
+                        )}
+                    </div>
                 </div>
                 <div className='mb-4'>
-                    <label htmlFor="bank_name" className='block mb-2'>Select Midway Bank Account</label>
+                    <label htmlFor="bank_name" className='block mb-2'>Select Midway Bank Account {starMark}</label>
                     <select id="bank_name" name="bank_name" className='border border-gray-300 p-2 w-full' required>
                         <option value="">Select Bank</option>
                         <option value="The City Bank">The City Bank</option>

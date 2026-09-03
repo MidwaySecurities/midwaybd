@@ -264,11 +264,11 @@ function ContactChips() {
             <p className="text-xs text-gray-400 mb-2">Need help?</p>
             <div className="flex flex-wrap gap-2">
                 <a
-                    href="tel:+8809609100142"
+                    href="tel:+8801776106410"
                     aria-label="Call Midway Securities support"
                     className="inline-flex items-center gap-1.5 text-xs text-gray-600 bg-white border border-gray-200 rounded-full px-3 py-1.5 hover:border-gray-300 hover:bg-gray-50 transition-colors no-underline"
                 >
-                    <PhoneIcon /> 09609 100 142
+                    <PhoneIcon />01776-106410
                 </a>
                 <Link
                     href="http://m.me/midwaytrec142"
@@ -750,7 +750,7 @@ const Deposit = async ({ searchParams }) => {
                 <FaqSection />
 
                 {/* ── Support / contact ── */}
-                <section
+                {/* <section
                     aria-labelledby="support-heading"
                     className="bg-blue-50 py-14 px-4"
                 >
@@ -823,7 +823,7 @@ const Deposit = async ({ searchParams }) => {
                             ))}
                         </address>
                     </div>
-                </section>
+                </section> */}
 
             </div>
         </>

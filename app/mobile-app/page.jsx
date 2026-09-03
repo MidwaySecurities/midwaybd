@@ -249,11 +249,11 @@ const MobileAppPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5 sm:gap-8">
             {appFeatures.map((feature, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
-                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{feature.icon}</div>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-secondary_color transition-colors">
+              <div key={index} className="sm:bg-white lg:rounded-2xl p-3 lg:p-6 sm:p-8 lg:shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                <div className="text-xl sm:text-4xl -ml-1.25 lg:ml-0 mb-0 sm:mb-4 inline-block">{feature.icon}</div>
+                <h3 className="inline-block lg:block text-lg sm:text-xl font-bold text-gray-900 mb-0 sm:mb-3 group-hover:text-secondary_color transition-colors">
                   {feature.title}
                 </h3>
                 <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
@@ -310,21 +310,21 @@ const MobileAppPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
-                name: "Rahul Ahmed",
-                role: "Day Trader",
-                content: "The speed of execution is incredible. I can place orders instantly and never miss market opportunities. Best trading app in Bangladesh!",
+                name: "Sayed Akber Hoshen",
+                role: "Client",
+                content: "Great app! It would be even better if we could view Stocks and Mutual Funds in separate, dedicated tabs on the dashboard. Also, please add a feature to \"Hide\" specific stocks from the main portfolio display for privacy. This would make portfolio tracking much more flexible!",
                 rating: 5
               },
               {
-                name: "Sarah Khan",
-                role: "Investment Advisor",
-                content: "Professional-grade charts and analysis tools right on my phone. It's like having a trading terminal in my pocket.",
+                name: "mr hasan",
+                role: "Client",
+                content: "QuickTrade Pro makes trading on DSE extremely easy. Real time updates and fast order execution are impressive. Very user friendly interface.",
                 rating: 5
               },
               {
-                name: "Mohammad Hassan",
-                role: "Long-term Investor",
-                content: "Portfolio tracking is excellent. I love the detailed performance analytics and easy-to-understand reports.",
+                name: "Muzahidur Rahman",
+                role: "Client",
+                content: "Simple interface, easy to use, and a lot of information about each stock. Thank you.",
                 rating: 5
               }
             ].map((testimonial, index) => (
@@ -392,18 +392,16 @@ const MobileAppPage = () => {
             <div>
               <h3 className="font-semibold text-gray-900 mb-3 sm:mb-4">System Requirements</h3>
               <div className="space-y-2 text-sm text-gray-600">
-                <p>Android: 7.0 or later</p>
+                <p>Android: 10 or later</p>
                 <p>iOS: 12.0 or later</p>
-                <p>Storage: 50MB free space</p>
               </div>
             </div>
 
             <div>
               <h3 className="font-semibold text-gray-900 mb-3 sm:mb-4">Support</h3>
               <div className="space-y-2 text-sm text-gray-600">
-                <p>Email: support@midwaybd.com</p>
+                <p>Email: info@midwaybd.com</p>
                 <p>Phone: 09609 100 142</p>
-                <p>Live Chat: Available 24/7</p>
               </div>
             </div>
 

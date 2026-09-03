@@ -134,8 +134,7 @@ export default function AboutUsPage() {
           </h1>
           <p className="mt-8 max-w-xl text-[15px] leading-relaxed text-paper/80 sm:text-base">
             A registered stock brokerage firm of the Dhaka Stock Exchange
-            PLC. (TREC 142), trusted by investors across Bangladesh for five
-            decades — from first-time traders to institutional clients.
+            PLC. (TREC 142), trusted by investors.
           </p>
         </div>
       </section>

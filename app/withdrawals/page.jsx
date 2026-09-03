@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Poppins, Roboto } from "next/font/google";
 import Swal from "sweetalert2";
 import { data } from "autoprefixer";
+import Link from "next/link";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -511,7 +512,7 @@ export default function WithdrawClient() {
 const faqs = [
   {
     q: "How do I withdraw funds from my Midway Securities BO account?",
-    a: "Log in to the Midway portal at portal.midwaybd.com and submit a withdrawal request, or fill out the manual form on this page. Funds are transferred via BEFTN to your registered bank account.",
+    a: <>Log in to the <Link className="text-secondary_color/75 font-bold" href = "https://portal.midwaybd.com">Midway portal</Link> and submit a withdrawal request, or fill out the manual form on this page. Funds are transferred via BEFTN to your registered bank account.</>,
   },
   {
     q: "How long does a BEFTN withdrawal take?",

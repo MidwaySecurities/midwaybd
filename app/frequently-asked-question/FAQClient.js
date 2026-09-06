@@ -96,7 +96,7 @@ export default function FAQClient({ faqData, categories }) {
                                     <span>Email Support</span>
                                 </Link>
 
-                                <Link
+                                {/* <Link
                                     href="/contact-us"
                                     className="flex items-center space-x-3 text-sm text-gray-600 hover:text-secondary_color transition-colors"
                                 >
@@ -105,7 +105,7 @@ export default function FAQClient({ faqData, categories }) {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
                                     <span>Visit Branch</span>
-                                </Link>
+                                </Link> */}
                             </div>
                         </div>
                     </nav>

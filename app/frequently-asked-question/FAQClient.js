@@ -147,7 +147,8 @@ export default function FAQClient({ faqData, categories }) {
                                     </Link>
                                 </div>
 
-                                {/* FAQ Items */}
+                                {/* FAQ Items */}   
+                                {console.log('items', items)}
                                 <div className="divide-y divide-gray-200">
                                     {items.length > 0 ? (
                                         items.map((faq) => (
@@ -161,7 +162,7 @@ export default function FAQClient({ faqData, categories }) {
                                                     <h3 className="text-lg font-semibold text-gray-800 group-hover:text-secondary_color transition-colors pr-4">
                                                         {faq.question}
                                                     </h3>
-                                                    <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 group-hover:bg-blue-100 flex items-center justify-center transition-all duration-200 ${openItems[faq.id] ? 'rotate-180 bg-blue-100' : ''
+                                                    <div className={`shrink-0 w-8 h-8 rounded-full bg-gray-100 group-hover:bg-blue-100 flex items-center justify-center transition-all duration-200 ${openItems[faq.id] ? 'rotate-180 bg-blue-100' : ''
                                                         }`}>
                                                         <svg className="w-4 h-4 text-gray-600 group-hover:text-secondary_color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
@@ -171,7 +172,7 @@ export default function FAQClient({ faqData, categories }) {
 
                                                 <div
                                                     id={`answer-${faq.id}`}
-                                                    className={`mt-4 transition-all duration-300 overflow-hidden ${openItems[faq.id] ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                                                    className={`mt-4 transition-all duration-300 overflow-scroll ${openItems[faq.id] ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                                                         }`}
                                                 >
                                                     <div className="text-gray-600 leading-relaxed bg-gray-50 p-6 rounded-xl">

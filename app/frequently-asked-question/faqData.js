@@ -1,6 +1,7 @@
 // FILE 3: app/frequently-asked-question/faqData.ts (Shared data file)
 
 import Link from "next/link"
+import PriceLimitTable from "./CircuitBreaker"
 
 export const categories = [
   {
@@ -30,15 +31,15 @@ export const categories = [
       </svg>
     )
   },
-  {
-    id: 'deposits',
-    name: 'Deposits & Withdrawals',
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-      </svg>
-    )
-  },
+  // {
+  //   id: 'deposits',
+  //   name: 'Deposits & Withdrawals',
+  //   icon: (
+  //     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+  //     </svg>
+  //   )
+  // },
   {
     id: 'fees',
     name: 'Fees & Charges',
@@ -65,7 +66,7 @@ export const faqData = {
     {
       id: 'dep4',
       question: 'How do I withdraw funds from my account?',
-      answer: <>Submit a withdrawal request through our <Link className = "text-secondary_color font-bold" href= "https://portal.midwaybd.com/dashboard/fund/witdrawl/add">Midway Portal</Link>. Funds are transferred to your registered bank account within 1-3 business days.</>
+      answer: <>Submit a withdrawal request through our <Link className="text-secondary_color font-bold" href="https://portal.midwaybd.com/dashboard/fund/witdrawl/add">Midway Portal</Link>. Funds are transferred to your registered bank account within 1-3 business days.</>
     },
     {
       id: 'dep5',
@@ -75,26 +76,27 @@ export const faqData = {
     }
   ],
   'fees': [
-    {
-      id: 'fee1',
-      question: 'What is your brokerage commission structure?',
-      answer: 'Our brokerage commission is 0.40% for equity transactions, 0.10% for government securities, and 0.25% for corporate bonds. Volume-based discounts are available for high-frequency traders.'
-    },
-    {
-      id: 'fee2',
-      question: 'Are there any hidden charges?',
-      answer: 'No hidden charges. All fees are transparently displayed: Brokerage commission, LAGA fee (0.002%), BSEC fee (0.006%), and VAT (15% on brokerage). These are standard regulatory charges applicable to all brokers.'
-    },
-    {
-      id: 'fee3',
-      question: 'Do you offer any fee waivers or discounts?',
-      answer: 'Yes, we offer volume-based discounts for active traders, promotional rates for new clients, and special packages for institutional investors. Contact our relationship manager for personalized pricing.'
-    },
-    {
-      id: 'fee4',
-      question: 'How is the margin interest calculated?',
-      answer: 'Margin interest is calculated daily at 12% annual rate (1% monthly). Interest is charged only on the utilized margin amount and debited monthly from your account.'
-    }
+    // {
+    //   id: 'fee1',
+    //   question: 'What is your brokerage commission structure?',
+    //   answer: 'Our brokerage commission is 0.40% for equity transactions, 0.10% for government securities, and 0.25% for corporate bonds. Volume-based discounts are available for high-frequency traders.'
+    // },
+    // {
+    //   id: 'fee2',
+    //   question: 'Are there any hidden charges?',
+    //   answer: 'No hidden charges. All fees are transparently displayed: Brokerage commission, LAGA fee (0.002%), BSEC fee (0.006%), and VAT (15% on brokerage). These are standard regulatory charges applicable to all brokers.'
+    // },
+    // {
+    //   id: 'fee3',
+    //   question: 'Do you offer any fee waivers or discounts?',
+    //   answer: 'Yes, we offer volume-based discounts for active traders, promotional rates for new clients, and special packages for institutional investors. Contact our relationship manager for personalized pricing.'
+    // },
+    // {
+    //   id: 'fee4',
+    //   question: 'How is the margin interest calculated?',
+    //   answer: 'Margin interest is calculated daily at 12% annual rate (1% monthly). Interest is charged only on the utilized margin amount and debited monthly from your account.'
+    // }
+
   ],
   'technical': [
     {
@@ -107,11 +109,11 @@ export const faqData = {
       question: 'Can I trade using mobile devices?',
       answer: 'Yes, our QuickTrade Pro mobile app is available for both Android and iOS devices. It offers full trading functionality, real-time quotes, portfolio monitoring, and market news. Download from Google Play Store or Apple App Store.'
     },
-    {
-      id: 'tech3',
-      question: 'Do you provide market data and research reports?',
-      answer: 'Yes, we provide Real-time market trading, daily market analysis, company research reports, sector analysis, and investment recommendations. Premium research is available for active traders.'
-    },
+    // {
+    //   id: 'tech3',
+    //   question: 'Do you provide market data and research reports?',
+    //   answer: 'Yes, we provide Real-time market trading, daily market analysis, company research reports, sector analysis, and investment recommendations. Premium research is available for active traders.'
+    // },
     {
       id: 'tech4',
       question: 'Is my personal and financial data secure?',
@@ -119,7 +121,7 @@ export const faqData = {
     },
     {
       id: 'tech5',
-      question: 'How do I enable two-factor authentication?',
+      question: 'How do I enable biometric aaccess?',
       answer: 'Log into your account, go to Security Settings, and select "Enable 2FA". Download Google Authenticator or use SMS-based verification. This adds an extra layer of security to your account.'
     }
   ],
@@ -199,7 +201,7 @@ export const faqData = {
     {
       id: 'tr6',
       question: 'Can I cancel or modify my order after placing it?',
-      answer: <>Yes, you can cancel or modify Pending/<span className="text-blue-700 font-semibold">Accepted</span> orders that have not yet been executed. Log into your QuickTrade Pro, go to "Order List" under portfolio, and select the order you wish to cancel or modify. Already executed(<span className = "text-green-700 font-bold">Filled</span>) orders cannot be reversed.</>
+      answer: <>Yes, you can cancel or modify Pending/<span className="text-blue-700 font-semibold">Accepted</span> orders that have not yet been executed. Log into your QuickTrade Pro, go to "Order List" under portfolio, and select the order you wish to cancel or modify. Already executed(<span className="text-green-700 font-bold">Filled</span>) orders cannot be reversed.</>
     },
     // {
     //   id: 'tr7',
@@ -214,7 +216,9 @@ export const faqData = {
     {
       id: 'tr9',
       question: 'What are circuit breakers and trading halts?',
-      answer: 'Circuit breakers are automatic trading halts triggered when a stock price moves beyond a certain percentage (usually ±10% in DSE) within a day. This cooling-off period prevents excessive volatility and gives investors time to make informed decisions. Trading resumes after the halt period or may continue the next day.'
+      answer: <>Circuit breakers are automatic trading halts triggered when a stock price moves beyond a certain percentage (usually ±10% in DSE) within a day.
+        <PriceLimitTable />
+      </>
     }
   ],
 }

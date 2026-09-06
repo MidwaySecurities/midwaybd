@@ -38,7 +38,7 @@ const NavigationBar = () => {
             <div>
                 <FirstNavBar />
             </div>
-            <div className="sticky top-0 z-[9]">
+            <div className="lg:container lg:m-auto sticky top-0 z-[9]">
                 <SubNav />
             </div>
         </>

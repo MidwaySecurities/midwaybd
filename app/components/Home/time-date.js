@@ -42,14 +42,17 @@ export default function TimeDate() {
         return () => clearInterval(interval);
 
     }, []);
-    
+
     return (
-        <div className='flex justify-between py-1 px-4 bg-[#d0deea]'>
-            <div className={`font-bold flex gap-2 justify-center items-center ${isAfterTwoThirty || dseStatus === 'CLOSED' ? 'text-black' : 'text-[#22C55E]'}`}>
-                <Image src={bangladeshFlag} alt='bangladesh' height={15} width={15} className='w-[20px]' />
-                {time === null ? <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-gray-900"></div> : time}
+        <div className='bg-[#d0deea]'>
+            <div className = "lg:container lg:mx-auto flex justify-between py-1 px-4 ">
+                <div className={`lg:pl-2 font-bold flex gap-2 justify-center items-center ${isAfterTwoThirty || dseStatus === 'CLOSED' ? 'text-black' : 'text-[#22C55E]'}`}>
+                    <Image src={bangladeshFlag} alt='bangladesh' height={15} width={15} className='w-[20px]' />
+                    {time === null ? <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-gray-900"></div> : time}
+                </div>
+                <div className={`font-bold w-[5.3rem] flex ${(isAfterTwoThirty === null || dseStatus === null) ? 'justify-start gap-2' : 'justify-between'} items-center`}><span>DSE:</span> <span className={`${(isAfterTwoThirty === null || dseStatus === null) ? '' : ''} text-right ${isAfterTwoThirty || dseStatus === 'CLOSED' ? 'text-black' : 'text-[#22C55E]'}`}>{isAfterTwoThirty || dseStatus === 'CLOSED' ? 'CLOSE' : (isAfterTwoThirty === null || dseStatus === null) ? <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-gray-900"></div> : 'OPEN'}</span></div>
+
             </div>
-            <div className={`font-bold w-[5.3rem] flex ${(isAfterTwoThirty === null || dseStatus === null) ? 'justify-start gap-2' : 'justify-between'} items-center`}><span>DSE:</span> <span className={`${(isAfterTwoThirty === null || dseStatus === null) ? '' : ''} text-right ${isAfterTwoThirty || dseStatus === 'CLOSED' ? 'text-black' : 'text-[#22C55E]'}`}>{isAfterTwoThirty || dseStatus === 'CLOSED' ? 'CLOSE' : (isAfterTwoThirty === null || dseStatus === null) ? <div className="animate-spin rounded-full h-3 w-3 border-b-2 border-gray-900"></div> : 'OPEN'}</span></div>
         </div>
     );
 }

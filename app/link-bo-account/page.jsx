@@ -250,7 +250,7 @@ const LinkBoAccount = () => {
               <a href="http://m.me/midwaytrec142" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600 }}>Facebook Messenger</a>.
             </p>
           </div>
-
+            
         </div>
       </div>
     </div>

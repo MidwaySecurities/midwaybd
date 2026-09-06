@@ -1,5 +1,7 @@
 // FILE 3: app/frequently-asked-question/faqData.ts (Shared data file)
 
+import Link from "next/link"
+
 export const categories = [
   {
     id: 'started',
@@ -63,13 +65,13 @@ export const faqData = {
     {
       id: 'dep4',
       question: 'How do I withdraw funds from my account?',
-      answer: 'Submit a withdrawal request through your trading platform or visit our branch. Funds are transferred to your registered bank account within 3-5 business days. Minimum withdrawal amount is BDT 1,000.'
+      answer: <>Submit a withdrawal request through our <Link className = "text-secondary_color font-bold" href= "https://portal.midwaybd.com/dashboard/fund/witdrawl/add">Midway Portal</Link>. Funds are transferred to your registered bank account within 1-3 business days.</>
     },
     {
       id: 'dep5',
       question: 'Are there any charges for deposits or withdrawals?',
       // answer: <div>Bank transfers: Free. Mobile banking: 1% fee. Credit cards: 2.2% (Visa/MasterCard), 3.5% (American Express).</div>
-      answer: <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300"><li>Bank transfers: Free.</li> <li>Mobile banking: 1% fee.</li><li>Credit cards: 2.2% (Visa/MasterCard), 3.5% (American Express).</li><li>Withdraw: free</li></ul>
+      answer: <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300"><li>Bank transfers: Free.</li> <li>Mobile banking: 1% processing fee.</li><li>Credit cards: 2.2% (Visa/MasterCard), 3.5% (American Express) processing fee.</li><li>Withdraw: free</li></ul>
     }
   ],
   'fees': [
@@ -124,18 +126,18 @@ export const faqData = {
   'account': [
     {
       id: 'acc1',
-      question: 'How do I reset my trading platform password?',
-      answer: 'Go to the login page and click "Forgot Password". Enter your registered email address or phone number. You will receive a password reset link via email or SMS. Follow the link to create a new password.'
+      question: 'How do I reset my QuickTrade Pro password?',
+      answer: 'Open QuickTrade Pro mobile app or go to the login page and click "Forgot Password". Enter your registered email address. You will receive a OTP via email or SMS. Now you can create a new password.'
     },
     {
       id: 'acc2',
       question: 'Can I change my registered mobile number or email?',
-      answer: 'Yes, you can update your contact information by visiting any of our branches with proper identification, or through our customer service hotline. For security reasons, online changes require additional verification.'
+      answer: <>Yes, you can update your contact information by visiting any of our branches with proper identification, or through our <Link className="text-secondary_color font-bold" href="https://portal.midwaybd.com">Midway Portal</Link>. For security reasons, online changes require additional verification.</>
     },
     {
       id: 'acc3',
       question: 'How do I update my bank account information?',
-      answer: 'Visit our nearest branch with your updated bank account details, bank statement, and valid ID. Changes to bank information require manual verification for security purposes and typically take 1-2 business days to process.'
+      answer: <>Yes, you can update your bank account information by visiting any of our branches with proper identification, or through our <Link className="text-secondary_color font-bold" href="https://portal.midwaybd.com">Midway Portal</Link>. For security reasons, online changes require additional verification.</>
     },
     {
       id: 'acc4',
@@ -145,7 +147,7 @@ export const faqData = {
     {
       id: 'acc5',
       question: 'How can I view my account statement and transaction history?',
-      answer: 'Log into your trading account and navigate to the "Reports" or "Statements" section. You can view and download monthly statements, transaction history, and trade confirmations. Statements are also sent to your registered email at the end of each month.'
+      answer: <>Log into your <Link className="text-secondary_color font-bold" href="https://portal.midwaybd.com">Midway Portal</Link> and navigate to the "Portfolio" or "Ledger Balance" section. You can view and download portfolio statements and transaction history also dividend history, transaction history. Statements are also sent to your registered email at the end of the day.</>
     },
     {
       id: 'acc6',
@@ -155,7 +157,7 @@ export const faqData = {
     {
       id: 'acc7',
       question: 'How do I update my nominee information?',
-      answer: 'Visit any Midway Securities branch with your updated nominee details, their National ID copy, and recent photographs. Nominee changes must be done in person for security and legal compliance. The update process takes 2-3 business days.'
+      answer: <>Visit any Midway Securities branch or <Link className="text-secondary_color font-bold" href="https://portal.midwaybd.com">Midway Portal</Link> with your updated nominee details(CDBL by laws form-23), their National ID copy, and recent photographs. Nominee changes must be done in person for security and legal compliance. The update process takes 2-7 business days.</>
     },
     {
       id: 'acc8',
@@ -172,7 +174,7 @@ export const faqData = {
     {
       id: 'tr1',
       question: 'What types of orders can I place?',
-      answer: 'You can place Market Orders (immediate execution at current price), Limit Orders (execution at specified price or better), and Stop Orders (triggered when price reaches specified level). Advanced traders can also use conditional orders.'
+      answer: 'You can place Market Orders (immediate execution at current price), Limit Orders (execution at specified price or better), and Busket order (triggered every day within your provided specific date range), SL&TP(Stop loss & Take profit), Offline trading and pre market order. Advanced traders can also use conditional orders.'
     },
     {
       id: 'tr2',

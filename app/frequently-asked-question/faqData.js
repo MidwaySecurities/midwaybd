@@ -114,6 +114,7 @@ export const faqData = {
     //   question: 'Do you provide market data and research reports?',
     //   answer: 'Yes, we provide Real-time market trading, daily market analysis, company research reports, sector analysis, and investment recommendations. Premium research is available for active traders.'
     // },
+    
     {
       id: 'tech4',
       question: 'Is my personal and financial data secure?',

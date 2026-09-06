@@ -179,12 +179,12 @@ export const faqData = {
     {
       id: 'tr2',
       question: 'What are the trading hours for DSE?',
-      answer: 'Dhaka Stock Exchange trading hours are Sunday to Thursday, 10:00 AM to 2:30 PM. The market is closed on Fridays, Saturdays, and public holidays. Pre-market and after-market sessions may have different timings.'
+      answer: 'Dhaka Stock Exchange (DSE) trading hours are Sunday to Thursday, 10:00 AM to 2:30 PM. The market is closed on Fridays, Saturdays, and public holidays. Trading hours may be changed or adjusted due to Ramadan, or government decisions. Pre-market and after-market sessions may have different timings.'
     },
     {
       id: 'tr3',
       question: 'How do I track my portfolio performance?',
-      answer: 'Use our QuickTrade Pro mobile app or web platform to monitor real-time portfolio values, profit/loss, and detailed performance analytics. You can also set up SMS or email alerts for price movements.'
+      answer: 'Use our QuickTrade Pro mobile app or web platform to monitor real-time portfolio values, profit/loss, and detailed performance analytics. You can also set up notification alerts for price movements.'
     },
     {
       id: 'tr4',
@@ -193,31 +193,26 @@ export const faqData = {
     },
     {
       id: 'tr5',
-      question: 'What is margin trading and how does it work?',
-      answer: 'Margin trading allows you to borrow funds to purchase more stocks than your available cash. We offer up to 2:1 leverage ratio. Interest is charged on the borrowed amount, and positions may be liquidated if margin requirements are not met.'
+      question: 'How long does it take for my order to execute?',
+      answer: 'Market at best orders typically execute within seconds during trading hours if liquidity is available. Limit orders execute when the market price reaches your specified price. Order execution depends on market conditions, available buyers/sellers, and order priority.'
     },
     {
       id: 'tr6',
-      question: 'How long does it take for my order to execute?',
-      answer: 'Market orders typically execute within seconds during trading hours if liquidity is available. Limit orders execute when the market price reaches your specified price. Order execution depends on market conditions, available buyers/sellers, and order priority.'
-    },
-    {
-      id: 'tr7',
       question: 'Can I cancel or modify my order after placing it?',
-      answer: 'Yes, you can cancel or modify pending orders that have not yet been executed. Log into your trading platform, go to "Order Book" or "Pending Orders", and select the order you wish to cancel or modify. Already executed orders cannot be reversed.'
+      answer: <>Yes, you can cancel or modify Pending/<span className="text-blue-700 font-semibold">Accepted</span> orders that have not yet been executed. Log into your QuickTrade Pro, go to "Order List" under portfolio, and select the order you wish to cancel or modify. Already executed(<span className = "text-green-700 font-bold">Filled</span>) orders cannot be reversed.</>
     },
+    // {
+    //   id: 'tr7',
+    //   question: 'What happens if I do not have enough funds to pay for my purchase?',
+    //   answer: 'You must ensure sufficient funds are available in your account before placing buy orders. If you fail to pay within T+2 settlement period (2 business days after trade), your account may be suspended, penalty charges applied, and the trade may be squared off by the exchange.'
+    // },
     {
       id: 'tr8',
-      question: 'What happens if I do not have enough funds to pay for my purchase?',
-      answer: 'You must ensure sufficient funds are available in your account before placing buy orders. If you fail to pay within T+2 settlement period (2 business days after trade), your account may be suspended, penalty charges applied, and the trade may be squared off by the exchange.'
+      question: 'How do I receive dividends from my shareholdings?',
+      answer: 'Cash dividends are automatically credited to your registered bank account within 30–45 days after the record date. If you do not receive the cash dividend, you can claim it directly from the company after the “Dividend Disbursement” notice is published.Please make sure your bank account and BO account details are up to date to avoid any delays. Stock dividends are credited directly to your BO account.'
     },
     {
       id: 'tr9',
-      question: 'How do I receive dividends from my shareholdings?',
-      answer: 'Cash dividends are automatically credited to your registered bank account within 30-45 days of the record date. Stock dividends are credited directly to your BO account. Ensure your bank account and BO details are up to date to receive dividends without delays.'
-    },
-    {
-      id: 'tr10',
       question: 'What are circuit breakers and trading halts?',
       answer: 'Circuit breakers are automatic trading halts triggered when a stock price moves beyond a certain percentage (usually ±10% in DSE) within a day. This cooling-off period prevents excessive volatility and gives investors time to make informed decisions. Trading resumes after the halt period or may continue the next day.'
     }

@@ -114,7 +114,7 @@ export const faqData = {
     //   question: 'Do you provide market data and research reports?',
     //   answer: 'Yes, we provide Real-time market trading, daily market analysis, company research reports, sector analysis, and investment recommendations. Premium research is available for active traders.'
     // },
-    
+
     {
       id: 'tech4',
       question: 'Is my personal and financial data secure?',
@@ -123,7 +123,7 @@ export const faqData = {
     {
       id: 'tech5',
       question: 'How do I enable biometric aaccess?',
-      answer: 'Log into your account, go to Security Settings, and select "Enable 2FA". Download Google Authenticator or use SMS-based verification. This adds an extra layer of security to your account.'
+      answer: 'Log in to your QuickTrade Pro mobile apps, go to the Menu Bar → Settings, and enable the Fingerprint/Face Lock option. This will make it easier and faster to access your account securely.'
     }
   ],
   'account': [

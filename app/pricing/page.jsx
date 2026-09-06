@@ -18,6 +18,44 @@ function CalendarIcon(props) {
     </svg>
   );
 }
+function CashBackIcon(props) {
+  return (
+    <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={800}
+    height={800}
+    viewBox="0 0 32 32"
+    {...props}
+  >
+    <path
+      d="M232.42 306.895c-.642 0-1.284.24-1.768.724l-2.933 2.936a2.485 2.485 0 0 0-1.455-1.08l-6.924-1.856a4.1 4.1 0 0 0-1.676-.092 4.096 4.096 0 0 0-1.572.584l-4.322 2.727-.35-.608a1.621 1.621 0 0 0-2.19-.585l-3.287 1.896a1.621 1.621 0 0 0-.586 2.19l4.899 8.482a1.62 1.62 0 0 0 2.187.588l3.287-1.899a1.622 1.622 0 0 0 .588-2.19l-.064-.112 1.873-1.266 6.89 1.355c.945.186 1.789-.077 2.461-.765a531.235 531.235 0 0 1 6.706-6.764 1 1 0 0 0 .006-.004 2.519 2.519 0 0 0 0-3.537 2.496 2.496 0 0 0-1.77-.725zm0 1.982a.5.5 0 0 1 .353.156.48.48 0 0 1 0 .71 533.533 533.533 0 0 0-6.724 6.784c-.041.042-.588.21-.645.2l-7.299-1.434a1 1 0 0 0-.753.152l-2.1 1.42-2.48-4.295 4.386-2.765a2.1 2.1 0 0 1 1.664-.254l6.924 1.855a.48.48 0 0 1 .354.614.48.48 0 0 1-.614.353l-4.345-1.164a1 1 0 0 0-1.225.707 1 1 0 0 0 .707 1.225l4.346 1.164a2.52 2.52 0 0 0 2.592-.852 1 1 0 0 0 .263-.176l4.242-4.244a.5.5 0 0 1 .354-.156zm-22.533 2.697.484.84a1 1 0 0 0 .139.4 1 1 0 0 0 .238.252l3.639 6.303-2.598 1.5-4.5-7.795zM224 301.014a1 1 0 0 0-1 1 1 1 0 0 0 1 1h2a1 1 0 0 0 1-1 1 1 0 0 0-1-1zM224 297.014a1 1 0 0 0-1 1 1 1 0 0 0 1 1h2a1 1 0 0 0 1-1 1 1 0 0 0-1-1z"
+      style={{
+        color: "#000",
+        fill: "#000",
+        fillRule: "evenodd",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeMiterlimit: 4.1,
+        InkscapeStroke: "none",
+      }}
+      transform="translate(-204 -292)"
+    />
+    <path
+      d="M225 293.014c-3.854 0-7 3.146-7 7s3.146 7 7 7 7-3.146 7-7-3.146-7-7-7zm0 2c2.773 0 5 2.226 5 5 0 2.773-2.227 5-5 5s-5-2.227-5-5c0-2.774 2.227-5 5-5z"
+      style={{
+        color: "#000",
+        fill: "#000",
+        fillRule: "evenodd",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeMiterlimit: 4.1,
+        InkscapeStroke: "none",
+      }}
+      transform="translate(-204 -292)"
+    />
+  </svg>
+  );
+}
 
 function PhoneIcon(props) {
   return (
@@ -37,21 +75,36 @@ function WithdrawIcon(props) {
     </svg>
   );
 }
+function TransactionIcon(props) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+      <path fill="none" stroke="#000000" stroke-width="2" d="M2,7 L20,7 M16,2 L21,7 L16,12 M22,17 L4,17 M8,12 L3,17 L8,22" />
+    </svg>
+  );
+}
 
 const openingRows = [
   {
     icon: BankIcon,
-    label: "Account opening",
-    detail: "With an initial deposit and share buy of BDT 50,000.",
-    amount: "Free",
+    label: "BO Account opening",
+    detail: "One time fee for opening a BO account with Midway Securities Ltd.",
+    // With an initial deposit and share buy of BDT 50,000.
+    amount: "৳150",
     tone: "free",
     hasNote: true,
   },
   {
     icon: CalendarIcon,
-    label: "BO opening & renewal",
+    label: "Yearly renewal fee",
     detail: "Charged once a year, in June, to keep your account active.",
     amount: "৳150",
+    tone: "charge",
+  },
+  {
+    icon: CashBackIcon,
+    label: "Cash Back BO Account Fee",
+    detail: <><ul className="list-disc px-4"><li>With an initial investment of BDT 50,000.</li><li>For Link BO account portfolio value above BDT 50,000.</li></ul></>,
+    amount: "",
     tone: "charge",
   },
 ];
@@ -78,6 +131,13 @@ const fundingRows = [
     amount: "Free",
     tone: "free",
   },
+  {
+    icon: TransactionIcon,
+    label: "Commission",
+    detail: <>Industry-standard commission rates.Call us to know your applicable commission rate: <Link href="https://wa.me/+8801874444816" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">01874444816 (WhatsApp)</Link>.</>,
+    amount: "",
+    tone: "free",
+  },
 ];
 
 function Card({ icon: Icon, label, detail, amount, tone, hasNote }) {
@@ -85,11 +145,10 @@ function Card({ icon: Icon, label, detail, amount, tone, hasNote }) {
   return (
     <div className="group relative flex items-start gap-4 rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm shadow-slate-200/50 transition hover:-translate-y-0.5 hover:shadow-md hover:shadow-slate-200">
       <div
-        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${
-          isFree
-            ? "bg-emerald-50 text-secondary_color"
-            : "bg-violet-50 text-primary_color"
-        }`}
+        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${isFree
+          ? "bg-emerald-50 text-secondary_color"
+          : "bg-violet-50 text-primary_color"
+          }`}
       >
         <Icon className="h-5 w-5" />
       </div>
@@ -97,12 +156,11 @@ function Card({ icon: Icon, label, detail, amount, tone, hasNote }) {
         <div className="flex items-start justify-between gap-3">
           <p className="font-medium text-slate-900">{label}</p>
           <p
-            className={`shrink-0 whitespace-nowrap text-right font-semibold tabular-nums ${
-              isFree ? "text-secondary_color" : "text-slate-900"
-            }`}
+            className={`shrink-0 whitespace-nowrap text-right font-semibold tabular-nums ${isFree ? "text-secondary_color" : "text-slate-900"
+              }`}
           >
             {amount}
-            {hasNote && <span className="text-slate-400">*</span>}
+            {/* {hasNote && <span className="text-slate-400">*</span>} */}
           </p>
         </div>
         <p className="mt-1 text-sm leading-relaxed text-slate-500">{detail}</p>

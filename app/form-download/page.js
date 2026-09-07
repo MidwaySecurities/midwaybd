@@ -100,7 +100,6 @@ const FormDownload = () => {
       forms: [
         { name: 'BO Account Opening Form', url: '/forms/BO_Account_Open_Form.pdf', popular: true },
         { name: 'Authorization Form', url: '/forms/letter_of_authorization_for_bo_account_form.pdf' },
-        { name: 'Change সঞ্চয় to Active', url: '/forms/change_sanchay_to_active.pdf' },
         { name: 'Change Address', url: '/forms/change_address_form.pdf' },
         { name: 'Change Mobile Number', url: '/forms/change_phone_number_form.pdf' },
         { name: 'Change Email Address', url: '/forms/change_email_form.pdf' }
@@ -228,7 +227,7 @@ const FormDownload = () => {
             <button
               onClick={() => setSelectedCategory('all')}
               className={`px-4 py-2 rounded-lg font-medium transition-colors ${selectedCategory === 'all'
-                ? 'bg-blue-600 text-white'
+                ? 'bg-secondary_color text-white'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
             >
@@ -239,7 +238,7 @@ const FormDownload = () => {
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${selectedCategory === category.id
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-secondary_color text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
               >
@@ -326,7 +325,7 @@ const FormDownload = () => {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact-us"
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors duration-200"
+                className="px-6 py-3 bg-secondary_color hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors duration-200"
               >
                 Contact Support
               </Link>

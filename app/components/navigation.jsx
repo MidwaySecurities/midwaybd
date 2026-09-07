@@ -38,8 +38,10 @@ const NavigationBar = () => {
             <div>
                 <FirstNavBar />
             </div>
-            <div className="lg:container lg:m-auto sticky top-0 z-[9]">
-                <SubNav />
+            <div className="bg-white sticky top-0 z-[9]">
+                <div className="lg:container lg:m-auto sticky top-0 z-[9]">
+                    <SubNav />
+                </div>
             </div>
         </>
     )

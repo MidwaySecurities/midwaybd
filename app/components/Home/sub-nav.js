@@ -269,7 +269,7 @@ const SubNav = () => {
     }
 
     return (
-        <div className="flex items-center gap-3 p-4 overflow-x-auto">
+        <div className="flex items-center gap-3 p-4 overflow-x-auto scrollbar-none">
             {navItems.map((item) => (
                 item.external ? (
                     <a

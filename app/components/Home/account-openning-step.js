@@ -113,7 +113,8 @@ const AccountOpeningSteps = () => {
 
                     <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
                         Start Investing In{" "}
-                        <span className="text-secondary_color">
+                        {/* gradient bg in three simple steps */}
+                        <span className="bg-gradient-to-r from-secondary_color to-primary_color bg-clip-text text-transparent">
                             Three Simple Steps
                         </span>
                     </h2>

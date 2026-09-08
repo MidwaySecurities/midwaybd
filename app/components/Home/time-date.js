@@ -44,7 +44,7 @@ export default function TimeDate() {
     }, []);
 
     return (
-        <div className='bg-[#d0deea]'>
+        <div className='bg-white'>
             <div className = "lg:container lg:mx-auto flex justify-between py-1 px-4 ">
                 <div className={`lg:pl-2 font-bold flex gap-2 justify-center items-center ${isAfterTwoThirty || dseStatus === 'CLOSED' ? 'text-black' : 'text-[#22C55E]'}`}>
                     <Image src={bangladeshFlag} alt='bangladesh' height={15} width={15} className='w-[20px]' />

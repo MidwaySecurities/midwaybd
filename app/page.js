@@ -284,7 +284,8 @@ export default async function Home() {
         </section>
 
         {/* Account Opening Steps */}
-        <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+        {/* <section className="py-16 lg:py-24 bg-linear-to-br from-gray-50 to-blue-50"> */}
+        <section className="py-16 lg:py-24 bg-gray-50">
           <div className="container mx-auto px-4">
             <AccountOpenningSteps />
           </div>

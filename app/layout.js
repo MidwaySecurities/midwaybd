@@ -19,14 +19,6 @@ const poppins = Poppins({
   display: "swap",
 });
 
-const architectsDaughter = Architects_Daughter({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-architects-daughter",
-});
-
-// use sonarbangla font like className={sonarBangla.className} in any element to apply the font
-
 export const metadata = {
   title: "Midway Securities Ltd.",
   description:

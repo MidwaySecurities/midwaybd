@@ -120,10 +120,7 @@ const FormDownload = () => {
       icon: Wallet,
       color: 'purple',
       forms: [
-        { name: 'Change Bank Account', url: '/', popular: true },
-        { name: 'Cheque Requisition Form', url: '/' },
-        { name: 'Fund Deposit Form', url: '/' },
-        { name: 'Fund Withdrawal Request', url: '/' }
+        { name: 'Change Bank Account', url: '/forms/change_bank_account_form.pdf', popular: true },
       ]
     },
     {
@@ -132,8 +129,7 @@ const FormDownload = () => {
       icon: TrendingUp,
       color: 'orange',
       forms: [
-        { name: 'IPO Membership Club Form', url: '/', popular: true },
-        { name: 'IPO Application Form', url: '/' }
+        { name: 'IPO Membership Club Form', url: '/forms/ipo_membership_club_from.jpg', popular: true },
       ]
     },
     {
@@ -142,12 +138,12 @@ const FormDownload = () => {
       icon: Building2,
       color: 'red',
       forms: [
-        { name: 'Acquisition Cost Declaration', url: '/' },
-        { name: 'Declaration of Sponsors/Directors', url: '/' },
-        { name: 'Declaration of Placement Holder', url: '/' },
-        { name: 'Change Commission', url: '/' },
-        { name: 'Share Transfer (Gift)', url: '/' },
-        { name: 'Share Transfer (Non-Gift)', url: '/' }
+        { name: 'Acquisition Cost Declaration', url: '/forms/acquisition-cost-declaration.pdf' },
+        { name: 'Declaration of Sponsors/Directors', url: '/forms/declaration_for_buying_and_selling_of_securities_by_sponsors_or_directors.pdf' },
+        { name: 'Declaration of Placement Holder', url: '/forms/declaration_for_selling_of_securities_by_placement_holders.pdf' },
+        { name: 'Change Commission', url: '/forms/change_commission_rate[20071].pdf' },
+        { name: 'Share Transfer (Gift)', url: '/forms/share_transfer_form-gift.pdf' },
+        { name: 'Share Transfer (Non-Gift)', url: '/forms/share_transfer_form_-_other_than_gift.pdf' }
       ]
     }
   ]

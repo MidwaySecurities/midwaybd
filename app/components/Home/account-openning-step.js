@@ -62,7 +62,7 @@ const AccountOpeningSteps = () => {
                     {/* Content */}
                     <div className="space-y-3 flex-grow flex flex-col justify-between">
                         <div>
-                            <button className='bg-primary_color hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'>{step.title}</button>
+                            <button className='bg-primary_color hover:bg-primary_color/80 text-white font-bold py-2 px-4 rounded-full'>{step.title}</button>
                             <p className="text-gray-600 leading-relaxed max-w-xs mx-auto mt-3">
                                 {step.description}
                             </p>

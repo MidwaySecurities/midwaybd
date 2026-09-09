@@ -11,6 +11,6 @@ export default function robots() {
         "/api/",
       ],
     },
-    sitemap: "https://midwaybd.com/sitemap.xml",
+    sitemap: "https://midwaybd.vercel.app/sitemap.xml",
   };
 }

@@ -1,6 +1,22 @@
 // app/sitemap.js
 
-export default function sitemap() {
+export default async function sitemap() {
+
+  const apiBaseUrl = process.env.NEXT_PUBLIC_PORTAL_URL || 'https://midwaybd.vercel.app';
+  const response = await fetch(
+    `${apiBaseUrl}/api/seo/blogs`,
+    {
+      next: {
+        revalidate: 3600,
+      },
+    }
+  );
+   const blogs = await response.blogs.json();
+  const blogUrls = blogs.map((blog) => ({
+    url: `https://midwaybd.vercel.app/blogs/${blog.slug}`,
+    lastModified: new Date(blog.created_at),
+  }));
+
   return [
     {
       url: 'https://midwaybd.vercel.app/',
@@ -33,6 +49,7 @@ export default function sitemap() {
     {
         url: 'https://midwaybd.vercel.app/pricing',
         lastModified: new Date(),
-    }
+    },
+    ...blogUrls
   ];
 }

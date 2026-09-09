@@ -46,6 +46,16 @@ const nextConfig = {
                 source: '/pricing.html',
                 destination: '/pricing',
                 permanent: true,
+            },
+            {
+                source: '/link-account.html',
+                destination: '/link-bo-account',
+                permanent: true,
+            },
+            {
+                source: '/taka-withdraw.html',
+                destination: '/withdrawals',
+                permanent: true,
             }
         ]
     },

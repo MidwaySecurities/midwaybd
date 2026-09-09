@@ -124,7 +124,7 @@ const BlogsInner = () => {
     }, [activeTab, activeCategory, currentPage, perPage]);
 
     return (
-        <div className="px-4 sm:px-6 lg:px-12 py-10">
+        <div className="px-4 sm:px-6 lg:px-4 py-10 lg:container lg:m-auto">
             {/* Header / Filters */}
             <BlogFilters
                 activeTab={tab === 'latest' ? 'regular' : tab}

@@ -20,7 +20,7 @@ export default async function sitemap() {
 
   const blogs = await response.json();
 
-  const blogUrls = blogs.map((blog) => ({
+  const blogUrls = blogs?.blogs?.map((blog) => ({
     url: `${siteUrl}/blogs/${blog.slug}`,
     lastModified: blog.updated_at
       ? new Date(blog.updated_at)

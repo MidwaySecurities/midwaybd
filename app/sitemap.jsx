@@ -4,7 +4,7 @@ export default async function sitemap() {
 
   const apiBaseUrl = process.env.NEXT_PUBLIC_PORTAL_URL || 'https://midwaybd.vercel.app';
   const response = await fetch(
-    `${apiBaseUrl}/api/seo/blogs`,
+    `${apiBaseUrl}/seo/blogs`,
     {
       next: {
         revalidate: 3600,

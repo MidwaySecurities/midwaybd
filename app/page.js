@@ -252,7 +252,7 @@ export default async function Home() {
               </p> */}
             </div>
 
-            <div className="bg-linear-to-br from-gray-50 to-white rounded-2xl p-6 lg:p-8 shadow-xl border border-gray-200">
+            <div className="bg-linear-to-br from-gray-50 to-white rounded-2xl p-0 lg:p-8 shadow-xl border border-gray-200">
               <IndexGraph />
             </div>
           </div>

@@ -19,12 +19,12 @@ const nextConfig = {
             },
             {
                 source: '/mobilemoney.html',
-                destination: '/deposit',
+                destination: '/deposit?tab=mobile',
                 permanent: true,
             },
             {
                 source: '/credit-card-deposit.html',
-                destination: '/deposit',
+                destination: '/deposit?tab=credit',
                 permanent: true,
             }
         ]

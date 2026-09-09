@@ -6,6 +6,26 @@ const nextConfig = {
                 source: '/blogs.html',
                 destination: '/blogs',
                 permanent: true,
+            },
+            {
+                source: '/open-a-bo-account.html',
+                destination: 'https://portal.midwaybd.com/bo/portal-login',
+                permanent: true,
+            },
+            {
+                source: '/taka-deposit.html',
+                destination: '/deposit',
+                permanent: true,
+            },
+            {
+                source: '/mobilemoney.html',
+                destination: '/deposit',
+                permanent: true,
+            },
+            {
+                source: '/credit-card-deposit.html',
+                destination: '/deposit',
+                permanent: true,
             }
         ]
     },

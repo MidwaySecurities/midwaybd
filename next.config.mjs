@@ -26,6 +26,26 @@ const nextConfig = {
                 source: '/credit-card-deposit.html',
                 destination: '/deposit?tab=credit',
                 permanent: true,
+            },
+            {
+                source: '/our-branches.html',
+                destination: '/our-branches',
+                permanent: true,
+            },
+            {
+                source: '/contact-us.html',
+                destination: '/contact-us',
+                permanent: true,
+            },
+            {
+                source: '/faq',
+                destination: '/contact-us',
+                permanent: true,
+            },
+            {
+                source: '/pricing.html',
+                destination: '/pricing',
+                permanent: true,
             }
         ]
     },

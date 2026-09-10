@@ -390,14 +390,6 @@ const services = [
   }
 ]
 
-// ─── Sub-components ────────────────────────────────────────────────────────────
-
-const Tag = ({ children }) => (
-  <span className="inline-block font-sans text-[10px] font-bold tracking-[0.14em] uppercase text-amber-600 border border-amber-500 px-2.5 py-1 rounded-sm mb-4">
-    {children}
-  </span>
-)
-
 const CheckIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#004990" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-amber-500 shrink-0 mt-0.5" aria-hidden="true">
     <polyline points="20 6 9 17 4 12" />
@@ -424,17 +416,6 @@ export default function ClientServicesPage() {
       />
 
       <main id="main-content" className={` text-slate-900 bg-white ${poppins.className}`}>
-
-        {/* ── Breadcrumb ── */}
-        {/* <nav aria-label="Breadcrumb" className="px-8 md:px-12 py-3 bg-stone-100 border-b border-stone-200">
-          <ol className="flex items-center gap-2 font-sans text-xs text-slate-500 list-none p-0 m-0">
-            <li><Link href="/" className="hover:text-slate-800 transition-colors">Home</Link></li>
-            <li aria-hidden="true" className="text-slate-300">/</li>
-            <li className="text-slate-800 font-medium" aria-current="page">Client Services</li>
-          </ol>
-        </nav> */}
-
-        {/* ── Hero ── */}
         <section
           className="relative bg-primary_color px-8 md:px-12 py-20 md:py-28 overflow-hidden"
           aria-labelledby="hero-heading"
@@ -445,7 +426,6 @@ export default function ClientServicesPage() {
             aria-hidden="true"
           />
           <div className="relative max-w-4xl mx-auto">
-            {/* h1 — primary keyword: "client services" + brand + location */}
             <h1 id="hero-heading" className="text-4xl md:text-6xl font-normal leading-tight tracking-tight text-white mb-5">
               Client Services<br />
               <span className={`${architectsDaughter.className} text-2xl md:text-3xl text-white font-light tracking-wide`}>Investing, Simplified.</span>
@@ -455,49 +435,29 @@ export default function ClientServicesPage() {
               trading, BO account opening, IPO applications, fund management,
               research, and more.
             </p>
-            {/* Keyword chip list — visible content, not decorative */}
-            {/* <ul className="flex flex-wrap gap-2 list-none p-0 m-0" aria-label="Services overview">
-              {['Mobile Trading', 'BO Accounts', 'IPO Applications', 'Share Trading', 'BEFTN Withdrawals', 'Research', 'SMS Alerts'].map((item) => (
-                <li key={item}>
-                  <span className="font-sans text-xs px-3 py-1 bg-white/10 border border-white/20 rounded-full text-sky-100">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul> */}
           </div>
         </section>
 
-        {/* ── Service Cards ── */}
-        {/* <ol> because the services have a meaningful order matching the JSON-LD ItemList */}
         <ol className="list-none p-0 m-0 max-w-5xl mx-auto px-8 md:px-12 py-16 space-y-0 lg:space-y-20">
           {services.map((service, index) => (
-            // <li> + <article> = semantically self-contained service entry
             <li key={service.id}>
               <article
                 id={service.id}
                 aria-labelledby={`${service.id}-heading`}
                 className="grid md:grid-cols-2 gap-10 md:gap-16 items-center"
               >
-                {/* Image — alternating left/right layout */}
                 <div className={`relative rounded overflow-hidden border border-stone-200 bg-stone-50 ${index % 2 !== 0 ? 'md:order-2' : ''}`}>
                   <Image
                     src={service.image}
-                    alt={service.imageAlt}  // descriptive alt text — not generic
+                    alt={service.imageAlt}
                     width={600}
                     height={400}
                     className="w-full h-56 object-contain p-4"
-                    // Lazy-load all images except the first (above the fold)
                     loading={index === 0 ? 'eager' : 'lazy'}
-                    // First image gets high priority for LCP
                     priority={index === 0}
                   />
                 </div>
-
-                {/* Content */}
                 <div className={index % 2 !== 0 ? 'md:order-1' : ''}>
-                  {/* <Tag>Service {String(index + 1).padStart(2, '0')}</Tag> */}
-                  {/* h2 — one per service, keyword-rich */}
                   <h2 id={`${service.id}-heading`} className="text-2xl md:text-3xl font-normal text-[#0d2b4e] leading-snug mb-4">
                     {service.title}
                   </h2>
@@ -505,7 +465,6 @@ export default function ClientServicesPage() {
                     {service.description}
                   </p>
 
-                  {/* Feature list — <ul> is correct; unordered benefits */}
                   <ul className="space-y-2 mb-5 list-none p-0">
                     {service.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5">

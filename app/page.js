@@ -194,7 +194,7 @@ export default async function Home() {
                       <br />The Ultimate Trading App
                     </h2>
 
-                    <p className="text-lg text-gray-600 leading-relaxed">
+                    <p className="hidden lg:block text-lg text-gray-600 leading-relaxed">
                       <strong>QuickTrade Pro</strong> is designed to streamline your trading experience with its powerful, user-friendly platform. Whether you're a seasoned trader or just starting, our features include Real-time market trading, advanced charting tools, and seamless trade execution.
                     </p>
 

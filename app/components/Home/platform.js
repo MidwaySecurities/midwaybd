@@ -63,7 +63,7 @@ const Platform = () => {
                         <div className="space-y-4">
                             <h2 className="text-4xl font-bold text-gray-800 leading-tight">
                                 World-class platform,<br />
-                                <span className="text-secondary_color">Trade without a doubt</span>
+                                <span className="bg-linear-to-r from-secondary_color to-primary_color bg-clip-text text-transparent">Trade without a doubt</span>
                             </h2>
 
                             <p className="text-lg text-gray-600 leading-relaxed">
@@ -137,7 +137,7 @@ const Platform = () => {
 
                         <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
                             World-class platform,<br />
-                            <span className="text-secondary_color">Trade without a doubt</span>
+                            <span className="bg-linear-to-r from-secondary_color to-primary_color bg-clip-text text-transparent">Trade without a doubt</span>
                         </h2>
 
                         <p className="text-gray-600 mb-6">

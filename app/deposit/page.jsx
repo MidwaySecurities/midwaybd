@@ -426,7 +426,7 @@ function BankTransferContent() {
         {
             initials: <CityBank width={30} height={30} />,
             colorClass: 'bg-blue-50 text-blue-800',
-            name: 'The The City Bank',
+            name: 'The City Bank',
             fields: [
                 { label: 'Account name', value: 'Midway Securities Limited', mono: false },
                 { label: 'Account no.', value: '3101093011001', mono: true },

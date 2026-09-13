@@ -125,6 +125,7 @@ const Footer = () => {
               <li><Link href="/about-us" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>About Us</Link></li>
               <li><Link href="/client-services" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Our Services</Link></li>
               <li><Link href="/contact-us" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Contact Us</Link></li>
+              <li><Link href="/privacy-policy" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Privacy & Policy</Link></li>
             </ul>
           </div>
         </div>
@@ -171,8 +172,7 @@ const Footer = () => {
           <div className='flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400'>
             <p>&copy; {new Date().getFullYear()} Midway Securities Ltd. All rights reserved. Licensed by BSEC.</p>
             <div className='flex gap-6'>
-              <a href="#" className='hover:text-white transition-colors duration-200'>Privacy Policy</a>
-              <a href="#" className='hover:text-white transition-colors duration-200'>Terms & Conditions</a>
+              <Link href="/privacy-policy" className='hover:text-white transition-colors duration-200'>Privacy Policy</Link>
             </div>
           </div>
         </div>

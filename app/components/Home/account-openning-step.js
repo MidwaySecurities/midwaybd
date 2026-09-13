@@ -62,9 +62,14 @@ const AccountOpeningSteps = () => {
                     {/* Content */}
                     <div className="space-y-3 flex-grow flex flex-col justify-between">
                         <div>
-                            <button className='bg-primary_color hover:bg-primary_color/80 text-white font-bold py-2 px-4 rounded-full'>{step.title}</button>
-                            <p className="text-gray-600 leading-relaxed max-w-xs mx-auto mt-3">
-                                {step.description}
+                            {/* <button className='border border- text-black hover:bg-primary_color hover:text-white transition-all duration-500 ease-in-out  font-bold py-2 px-4 rounded-full cursor-pointer'>{step.title}</button> */}
+                            <p className="text-gray-600 leading-relaxed max-w-50 mx-auto mt-3">
+                                <div class="rounded-full p-0.5 bg-linear-to-r from-blue-500 via-primary_color to-secondary_color">
+                                    <div class="bg-white text-black rounded-full p-3">
+                                        <p>{step.title}</p>
+                                    </div>
+                                </div>
+                                {/* {step.description} */}
                             </p>
                         </div>
                     </div>

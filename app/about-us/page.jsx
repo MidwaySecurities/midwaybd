@@ -31,7 +31,7 @@ const architectsDaughter = Architects_Daughter({
 });
 
 export const metadata = {
-  title: "About Us | Midway Securities Ltd.",
+  title: "About Us",
   description:
     "Midway Securities Ltd. (TREC 142) has been a part of Bangladesh's Capital Market since 1975, offering brokerage services through the Dhaka Stock Exchange.",
 };

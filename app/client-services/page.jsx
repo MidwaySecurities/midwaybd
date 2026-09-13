@@ -17,7 +17,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.midwaybd.com'
 const PAGE_URL = `${BASE_URL}/client-services`
 
 export const metadata = {
-  title: 'Client Services | Midway Securities Ltd. — DSE Broker Bangladesh',
+  title: 'Client Services',
   description:
     'Explore all client services at Midway Securities: QuickTrade Pro app, online BO account opening, IPO applications, share trading, BEFTN withdrawals, tax reports, SMS alerts and more.',
 

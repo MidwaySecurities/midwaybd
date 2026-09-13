@@ -9,7 +9,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.yourbrokerage.
 const PAGE_URL = `${BASE_URL}/foreign-investor`
 
 export const metadata = {
-  title: 'Foreign Investor Services | DSE-Authorized Broker Bangladesh',
+  title: 'Foreign Investor Services',
   description:
     'End-to-end investment services for foreign individuals and institutions on the Dhaka Stock Exchange. BO account opening, trade execution, repatriation support, and strategic consulting.',
 

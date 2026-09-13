@@ -2,7 +2,7 @@
 import FAQList from './FAQList'
 
 export const metadata = {
-  title: 'Frequently Asked Questions | Midway Securities Limited',
+  title: 'Frequently Asked Questions',
   description:
     'Find answers to common questions about BO accounts, trading, deposits, withdrawals, and more from Midway Securities Limited.',
   keywords:

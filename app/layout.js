@@ -20,11 +20,19 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Midway Securities Ltd.",
+  metadataBase: new URL('https://midwaybd.vercel.app'),
+  title: {
+    default: 'Midway Securities Limited',
+    template: '%s | Midway Securities',
+  },
   description:
-    "Trade shares seamlessly at Dhaka Stock Exchange with Midway Securities Ltd. Use our own Mobile Trading App - QuickTrade Pro. Open BO accounts online, fund via bKash/Nagad/Rocket, enjoy fast withdrawals, and expert support.",
-  verification: {
+    'Midway Securities Limited provides brokerage, stock trading, BO account, and investment services in Bangladesh.',
+    verification: {
     google: "LsE_8kRso1mGGgi2N0pkIjKcm0u5L9ElPo-t8ZUhaq4",
+  },
+  robots: {
+    index: false,
+    follow: false,
   },
 };
 export default function RootLayout({ children }) {

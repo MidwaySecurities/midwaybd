@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Withdraw Funds | Midway Securities',
+  title: 'Withdraw Funds',
   description: 'Withdraw funds securely from your Midway Securities brokerage account to your registered bank account.',
 
   robots: {

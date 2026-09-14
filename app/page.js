@@ -157,7 +157,7 @@ export default async function Home() {
 
       <main>
         <section className="relative text-white overflow-hidden">
-          <div className="absolute inset-0"></div>
+          {/* <div className="absolute inset-0"></div> */}
           <div className="lg:hidden bg-white lg:rounded-2xl shadow-2xl p-8 px-4 lg:px-8 lg:p-12">
             <div className="space-y-6">
               {/* <div className="inline-flex items-center bg-blue-100 text-primary_color px-4 py-2 rounded-full font-medium">
@@ -180,7 +180,7 @@ export default async function Home() {
                   DSE TREC 142
                 </div>
               </div>
-              <h2 id="quicktrade-heading" className="text-3xl lg:text-4xl font-bold text-gray-800">
+              <h2 id="quicktrade-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-0">
                 <span className="">Trade the DSE with a licensed, </span>
                 tech-forward brokerage
               </h2>
@@ -210,19 +210,24 @@ export default async function Home() {
                         <span className="text-gray-700">Advanced charting & technical indicators</span>
                       </li>
                     </ul> */}
-              <DownloadAppbutton />
+              <div className="hidden">
+                <DownloadAppbutton />
+              </div>
             </div>
           </div>
         </section>
 
         <div className="lg:hidden">
           <HeroSection />
+          <div className="pt-8">
+            <DownloadAppbutton />
+          </div>
         </div>
 
         {/* <NewsTicker /> */}
 
         {/* QuickTrade Pro Showcase */}
-        <section className="pb-0 lg:pb-8 pt-8 md:pt-4 bg-linear-to-br from-gray-50 to-blue-50" aria-labelledby="quicktrade-heading">
+        <section className="pb-0 lg:pb-8 pt-8 md:pt-4 bg-linear-to-br from-gray-50 to-blue-50 hidden lg:block" aria-labelledby="quicktrade-heading">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
@@ -318,7 +323,7 @@ export default async function Home() {
           </div>
         </section>
         {/* user choose */}
-        <section className="my-16 lg:mb-0">
+        <section className="py-16 lg:mb-0">
           <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight text-center px-2">Which best describes you?</h2>
           <div className="mt-0 grid lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6 container m-auto px-2">
             <Link href="https://portal.midwaybd.com/bo/portal-login" target="_blank">
@@ -345,7 +350,7 @@ export default async function Home() {
               </div>
             </Link>
 
-            <Link href = "/link-bo-account">
+            <Link href="/link-bo-account">
               <div className="flex sm:block items-center text-left sm:text-center gap-4 sm:gap-0 p-3 lg:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition">
                 <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center shrink-0 sm:mx-auto sm:mb-3">
                   {/* Switching brokers: refresh / switch-arrows icon */}
@@ -360,7 +365,7 @@ export default async function Home() {
         </section>
         <section className="py-8 lg:py-16 bg-linear-to-br from-gray-100 to-blue-50 lg:hidden" aria-labelledby="regulators-heading">
           <div className="container mx-auto px-2">
-            <div className="mt-8 text-center py-3">
+            <div className="text-center">
               <div className="inline-flex items-start lg:items-center bg-blue-100 text-primary_color px-4 py-1 rounded-full">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
@@ -369,7 +374,7 @@ export default async function Home() {
                 <span className="text-sm font-medium">Regulated & Licensed</span>
               </div>
             </div>
-            <div className="text-center mb-12">
+            <div className="text-center mb-12 pt-6">
               <h2 id="regulators-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
                 Regulated & Trusted
               </h2>
@@ -438,7 +443,7 @@ export default async function Home() {
         </section>
 
         {/* News & Insights Section */}
-        <section className="py-4 lg:py-24 bg-white" aria-labelledby="insights-heading">
+        <section className="hidden py-4 lg:py-24 bg-white" aria-labelledby="insights-heading">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 id="insights-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">

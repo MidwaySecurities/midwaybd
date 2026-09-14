@@ -112,12 +112,12 @@ const AccountOpeningSteps = () => {
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center bg-blue-100 text-primary_color px-4 py-1 rounded-full font-medium text-sm mb-6">
+                    <div className="inline-flex items-center bg-blue-100 text-primary_color px-4 py-1 rounded-full font-medium text-sm">
                         <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
                         Simple Process
                     </div>
 
-                    <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                    <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight pt-6">
                         Start Investing In{" "}
                         {/* gradient bg in three simple steps */}
                         <span className="bg-linear-to-r from-secondary_color to-primary_color bg-clip-text text-transparent">
@@ -125,7 +125,7 @@ const AccountOpeningSteps = () => {
                         </span>
                     </h2>
 
-                    <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    <p className="hidden lg:block text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
                         Join thousands of successful investors with our streamlined BO account opening
                         process. Get started in minutes and begin your investment journey today.
                     </p>

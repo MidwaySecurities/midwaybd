@@ -326,7 +326,7 @@ export default async function Home() {
         <section className="py-16 lg:mb-0">
           <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight text-center px-2">Which best describes you?</h2>
           <div className="mt-0 grid lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6 container m-auto px-2">
-            <Link href="https://portal.midwaybd.com/bo/portal-login" target="_blank">
+            <Link href="/new-investor" target="_blank">
               <div className="flex sm:block items-center text-left sm:text-center gap-4 sm:gap-0 p-3 lg:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 sm:mx-auto sm:mb-3">
                   {/* New investor: sprout / growth icon */}

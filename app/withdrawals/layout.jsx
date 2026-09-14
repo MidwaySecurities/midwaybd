@@ -1,10 +1,12 @@
+const isProduction = process.env.VERCEL_ENV === "production";
+
 export const metadata = {
   title: 'Withdraw Funds',
   description: 'Withdraw funds securely from your Midway Securities brokerage account to your registered bank account.',
 
   robots: {
-    index: false,
-    follow: false,
+    index: isProduction,
+    follow: isProduction,
   },
 };
 

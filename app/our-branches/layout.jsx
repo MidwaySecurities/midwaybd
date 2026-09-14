@@ -1,10 +1,11 @@
+const isProduction = process.env.VERCEL_ENV === "production";
 export const metadata = {
   title: 'Our Branches | Midway Securities',
   description: 'Find Midway Securities branches and office locations across Bangladesh and get the support you need for your brokerage and trading services.',
 
   robots: {
-    index: false,
-    follow: false,
+    index: isProduction,
+    follow: isProduction,
   },
 };
 

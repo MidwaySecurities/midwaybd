@@ -1,4 +1,5 @@
 import React from 'react';
+import BoFeatures from './BoFeatures';
 
 const AccountOpeningSteps = () => {
     const steps = [
@@ -21,7 +22,7 @@ const AccountOpeningSteps = () => {
             description: "Deposit funds securely through bank transfer, mobile banking, or credit card",
             link: "https://portal.midwaybd.com/dashboard/fund/deposit/add",
             icon: (
-                <div className="text-xl font-bold text-primary_color">৳</div>
+                <div className="text-xl font-bold text-green-600">৳</div>
             ),
             bgColor: "bg-gradient-to-br from-green-500 to-green-600",
             hoverColor: "hover:from-green-600 hover:to-green-700"
@@ -107,7 +108,7 @@ const AccountOpeningSteps = () => {
     };
 
     return (
-        <div className="w-full bg-gray-50 py-4 lg:py-8">
+        <div className="w-full bg-gray-50 py-4 lg:py-2">
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-16">
@@ -186,7 +187,7 @@ const AccountOpeningSteps = () => {
                 </div> */}
 
                 {/* Features */}
-                <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="hidden mt-16 lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div className="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition">
                         <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
                             <svg className="w-7 h-7 text-secondary_color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -224,6 +225,9 @@ const AccountOpeningSteps = () => {
                         <h4 className="font-semibold text-gray-800 mb-1">Low Fees</h4>
                         <p className="text-sm text-gray-600">Competitive pricing</p>
                     </div>
+                </div>
+                <div className='lg:hidden'>
+                    <BoFeatures />
                 </div>
             </div>
         </div>

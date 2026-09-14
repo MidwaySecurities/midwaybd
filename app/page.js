@@ -76,6 +76,7 @@ export async function generateMetadata() {
 }
 
 export default async function Home() {
+  console.log(process.env.VERCEL_ENV)
   // const res = await fetch(`${process.env.NEXT_PUBLIC_PORTAL_URL}/blog/latest`)
   const res = await fetch(`https://portal.midwaybd.com/api/blog/latest`)
   const result = await res.json();
@@ -156,49 +157,40 @@ export default async function Home() {
 
       <main>
         <section className="relative text-white overflow-hidden">
-          <div className="absolute inset-0 bg-black/20"></div>
-          <div className="lg:hidden relative py-0 md:py-6 pt-0">
-            <div className="text-center bg-primary_color space-y-6 mb-0 p-6">
-              <h1 className="text-3xl sm:text-4xl font-bold leading-tight">
-                Trade Online with
-                <span className="block text-yellow-400">Latest Technologies</span>
-              </h1>
-              <p className="text-lg text-blue-100">
-                Professional trading platform for Bangladesh's capital market
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <div className="lg:hidden">
-          <HeroSection />
-        </div>
-
-        {/* <NewsTicker /> */}
-
-        {/* QuickTrade Pro Showcase */}
-        <section className="pb-8 pt-8 md:pt-0 bg-gradient-to-br from-gray-50 to-blue-50" aria-labelledby="quicktrade-heading">
-          <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="order-2 lg:order-1">
-                <div className="bg-white rounded-2xl shadow-2xl p-8 px-4 lg:px-8 lg:p-12">
-                  <div className="space-y-6">
-                    {/* <div className="inline-flex items-center bg-blue-100 text-primary_color px-4 py-2 rounded-full font-medium">
+          <div className="absolute inset-0"></div>
+          <div className="lg:hidden bg-white lg:rounded-2xl shadow-2xl p-8 px-4 lg:px-8 lg:p-12">
+            <div className="space-y-6">
+              {/* <div className="inline-flex items-center bg-blue-100 text-primary_color px-4 py-2 rounded-full font-medium">
                       <span className="w-2 h-2 bg-primary_color rounded-full mr-2 animate-pulse"></span>
                       Latest Technology
                     </div> */}
-                    
 
-                    <h2 id="quicktrade-heading" className="text-3xl lg:text-4xl font-bold text-gray-800">
+
+              {/* <h2 id="quicktrade-heading" className="text-3xl lg:text-4xl font-bold text-gray-800">
                       <span className="text-secondary_color">QuickTrade Pro</span> -
                       <br />The Ultimate Trading App
-                    </h2>
+                    </h2> */}
+              <div className="flex flex-col md:flex-row gap-0 md:gap-2 justify-start items-start mb-0">
+                <div className="bg-blue-100 text-primary_color px-4 py-1 rounded-full font-medium text-sm mb-3 lg:mb-6">
+                  {/* <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span> */}
+                  BSEC Registered
+                </div>
+                <div className="bg-blue-100 text-primary_color px-4 py-1 rounded-full font-medium text-sm mb-6">
+                  {/* <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span> */}
+                  DSE TREC 142
+                </div>
+              </div>
+              <h2 id="quicktrade-heading" className="text-3xl lg:text-4xl font-bold text-gray-800">
+                <span className="">Trade the DSE with a licensed, </span>
+                tech-forward brokerage
+              </h2>
 
-                    <p className="hidden lg:block text-lg text-gray-600 leading-relaxed">
-                      <strong>QuickTrade Pro</strong> is designed to streamline your trading experience with its powerful, user-friendly platform. Whether you're a seasoned trader or just starting, our features include Real-time market trading, advanced charting tools, and seamless trade execution.
-                    </p>
+              <p className="hidden lg:block text-lg text-gray-600 leading-relaxed">
+                {/* <strong>QuickTrade Pro</strong> is designed to streamline your trading experience with its powerful, user-friendly platform. Whether you're a seasoned trader or just starting, our features include Real-time market trading, advanced charting tools, and seamless trade execution. */}
+                Real-time execution, advanced trading system, and secure BO account opening - built for Bangladesh's capital market.
+              </p>
 
-                    <ul className="space-y-4 list-none">
+              {/* <ul className="space-y-4 list-none">
                       <li className="flex items-center space-x-3">
                         <div className="w-6 h-6 text-primary_color items-center justify-center" aria-hidden="true">
                           <span className="text-sm font-bold">✓</span>
@@ -217,7 +209,75 @@ export default async function Home() {
                         </div>
                         <span className="text-gray-700">Advanced charting & technical indicators</span>
                       </li>
-                    </ul>
+                    </ul> */}
+              <DownloadAppbutton />
+            </div>
+          </div>
+        </section>
+
+        <div className="lg:hidden">
+          <HeroSection />
+        </div>
+
+        {/* <NewsTicker /> */}
+
+        {/* QuickTrade Pro Showcase */}
+        <section className="pb-0 lg:pb-8 pt-8 md:pt-4 bg-linear-to-br from-gray-50 to-blue-50" aria-labelledby="quicktrade-heading">
+          <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1">
+                <div className="hidden lg:block bg-white rounded-2xl shadow-2xl p-8 px-4 lg:px-8 lg:p-12">
+                  <div className="space-y-6">
+                    {/* <div className="inline-flex items-center bg-blue-100 text-primary_color px-4 py-2 rounded-full font-medium">
+                      <span className="w-2 h-2 bg-primary_color rounded-full mr-2 animate-pulse"></span>
+                      Latest Technology
+                    </div> */}
+
+
+                    {/* <h2 id="quicktrade-heading" className="text-3xl lg:text-4xl font-bold text-gray-800">
+                      <span className="text-secondary_color">QuickTrade Pro</span> -
+                      <br />The Ultimate Trading App
+                    </h2> */}
+                    <div className="flex flex-col md:flex-row gap-0 md:gap-2 justify-start items-start mb-0">
+                      <div className="bg-blue-100 text-primary_color px-4 py-1 rounded-full font-medium text-sm mb-3 lg:mb-6">
+                        {/* <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span> */}
+                        BSEC Registered
+                      </div>
+                      <div className="bg-blue-100 text-primary_color px-4 py-1 rounded-full font-medium text-sm mb-6">
+                        {/* <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span> */}
+                        DSE TREC 142
+                      </div>
+                    </div>
+                    <h2 id="quicktrade-heading" className="text-3xl lg:text-4xl font-bold text-gray-800">
+                      <span className="">Trade the DSE with a licensed, </span>
+                      <br />tech-forward brokerage
+                    </h2>
+
+                    <p className="hidden lg:block text-lg text-gray-600 leading-relaxed">
+                      {/* <strong>QuickTrade Pro</strong> is designed to streamline your trading experience with its powerful, user-friendly platform. Whether you're a seasoned trader or just starting, our features include Real-time market trading, advanced charting tools, and seamless trade execution. */}
+                      Real-time execution, advanced trading system, and secure BO account opening - built for Bangladesh's capital market.
+                    </p>
+
+                    {/* <ul className="space-y-4 list-none">
+                      <li className="flex items-center space-x-3">
+                        <div className="w-6 h-6 text-primary_color items-center justify-center" aria-hidden="true">
+                          <span className="text-sm font-bold">✓</span>
+                        </div>
+                        <span className="text-gray-700">Real-time market trading & analytics</span>
+                      </li>
+                      <li className="flex items-center space-x-3">
+                        <div className="w-6 h-6 text-primary_color items-center justify-center" aria-hidden="true">
+                          <span className="text-sm font-bold">✓</span>
+                        </div>
+                        <span className="text-gray-700">Lightning-fast order execution</span>
+                      </li>
+                      <li className="flex items-center space-x-3">
+                        <div className="w-6 h-6 text-primary_color items-center justify-center" aria-hidden="true">
+                          <span className="text-sm font-bold">✓</span>
+                        </div>
+                        <span className="text-gray-700">Advanced charting & technical indicators</span>
+                      </li>
+                    </ul> */}
                     <DownloadAppbutton />
                   </div>
                 </div>
@@ -242,7 +302,7 @@ export default async function Home() {
 
         {/* Stock Chart Section */}
         <section className="py-16 bg-white" aria-labelledby="analytics-heading">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-2 lg:px-4">
             <div className="text-center mb-12">
               <h2 id="analytics-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
                 DSEX INDEX: <span className="text-secondary_color">LIVE</span>
@@ -257,9 +317,49 @@ export default async function Home() {
             </div>
           </div>
         </section>
+        {/* user choose */}
+        <section className="my-16 lg:mb-0">
+          <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight text-center px-2">Which best describes you?</h2>
+          <div className="mt-0 grid lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6 container m-auto px-2">
+            <Link href="https://portal.midwaybd.com/bo/portal-login" target="_blank">
+              <div className="flex sm:block items-center text-left sm:text-center gap-4 sm:gap-0 p-3 lg:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 sm:mx-auto sm:mb-3">
+                  {/* New investor: sprout / growth icon */}
+                  <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 21v-8m0 0c0-3.314-2.686-6-6-6H4v2c0 3.314 2.686 6 6 6h2zm0 0c0-4.418 3.582-8 8-8h1v1c0 4.418-3.582 8-8 8h-1z" />
+                  </svg>
+                </div>
+                <h4 className="font-semibold text-gray-800 mb-0 sm:mb-1">New investor</h4>
+              </div>
+            </Link>
 
+            <Link href="https://portal.midwaybd.com" target="_blank">
+              <div className="flex sm:block items-center text-left sm:text-center gap-4 sm:gap-0 p-3 lg:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 sm:mx-auto sm:mb-3">
+                  {/* Existing client: user check / badge check icon */}
+                  <svg className="w-7 h-7 text-secondary_color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14c-4.418 0-8 2.239-8 5v1h10.5M16 19l2 2 4-4" />
+                  </svg>
+                </div>
+                <h4 className="font-semibold text-gray-800 mb-0 sm:mb-1">Existing client</h4>
+              </div>
+            </Link>
+
+            <Link href = "/link-bo-account">
+              <div className="flex sm:block items-center text-left sm:text-center gap-4 sm:gap-0 p-3 lg:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center shrink-0 sm:mx-auto sm:mb-3">
+                  {/* Switching brokers: refresh / switch-arrows icon */}
+                  <svg className="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h5M20 20v-5h-5M4.583 9A8.001 8.001 0 0119.418 7M19.417 15A8.001 8.001 0 014.582 17" />
+                  </svg>
+                </div>
+                <h4 className="font-semibold text-gray-800 mb-0 sm:mb-1">Switching brokers</h4>
+              </div>
+            </Link>
+          </div>
+        </section>
         <section className="py-8 lg:py-16 bg-linear-to-br from-gray-100 to-blue-50 lg:hidden" aria-labelledby="regulators-heading">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-2">
             <div className="mt-8 text-center py-3">
               <div className="inline-flex items-start lg:items-center bg-blue-100 text-primary_color px-4 py-1 rounded-full">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

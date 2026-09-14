@@ -12,6 +12,7 @@ import Script from "next/script";
 import Whatsapp from './components/whatsapp-button';
 import FirstApproachModal from './components/firstApproachModal';
 
+const isProduction = process.env.VERCEL_ENV === "production";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,8 +32,8 @@ export const metadata = {
     google: "LsE_8kRso1mGGgi2N0pkIjKcm0u5L9ElPo-t8ZUhaq4",
   },
   robots: {
-    index: false,
-    follow: false,
+    index: isProduction,
+    follow: isProduction,
   },
 };
 export default function RootLayout({ children }) {

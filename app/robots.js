@@ -1,6 +1,16 @@
-// app/robots.js
-
 export default function robots() {
+  const isPreview =
+    process.env.VERCEL_ENV !== "production";
+
+  if (isPreview) {
+    return {
+      rules: {
+        userAgent: "*",
+        disallow: "/",
+      },
+    };
+  }
+
   return {
     rules: {
       userAgent: "*",
@@ -11,6 +21,6 @@ export default function robots() {
         "/api/",
       ],
     },
-    sitemap: "https://midwaybd.vercel.app/sitemap.xml",
+    sitemap: "https://midwaybd.com/sitemap.xml",
   };
 }

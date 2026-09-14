@@ -23,8 +23,8 @@ const BranchesFilter = ({ branches }) => {
                         {[
                             { id: 'all', label: 'All Locations', count: branches.length },
                             { id: 'head', label: 'Head Office', count: 1 },
-                            { id: 'cumilla', label: 'Cumilla', count: 1 },
                             { id: 'branch', label: 'Dhaka', count: branchCount },
+                            { id: 'cumilla', label: 'Cumilla', count: 1 },
                             ...(digitalCount > 0 ? [{ id: 'digital', label: 'Patuakhali', count: digitalCount }] : [])
                         ].map((tab) => (
                             <button

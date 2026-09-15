@@ -11,6 +11,7 @@ import Tickers from "./components/tickers";
 import { getABlog } from "@/lib/actions/blog/getABlog";
 import TabsSection from "./components/TabSection";
 import DownloadAppbutton from "./components/DownloadAppbutton";
+import TradingPlatforms from "./components/TradingPlatforms";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.midwaybd.com";
 
@@ -170,7 +171,7 @@ export default async function Home() {
                       <span className="text-secondary_color">QuickTrade Pro</span> -
                       <br />The Ultimate Trading App
                     </h2> */}
-              <div className="flex flex-col md:flex-row gap-0 md:gap-2 justify-start items-start mb-0">
+              <div className="flex flex-row md:flex-row gap-2 md:gap-2 justify-start items-start mb-0">
                 <div className="bg-blue-100 text-primary_color px-4 py-1 rounded-full font-medium text-sm mb-3 lg:mb-6">
                   {/* <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span> */}
                   BSEC Registered
@@ -182,7 +183,7 @@ export default async function Home() {
               </div>
               <h2 id="quicktrade-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-0">
                 <span className="">Trade the DSE with a licensed, </span>
-                tech-forward brokerage
+                <span className="bg-linear-to-r from-secondary_color to-primary_color bg-clip-text text-transparent">tech-forward brokerage</span>
               </h2>
 
               <p className="hidden lg:block text-lg text-gray-600 leading-relaxed">
@@ -255,7 +256,7 @@ export default async function Home() {
                     </div>
                     <h2 id="quicktrade-heading" className="text-3xl lg:text-4xl font-bold text-gray-800">
                       <span className="">Trade the DSE with a licensed, </span>
-                      <br />tech-forward brokerage
+                      <br /><span className="bg-linear-to-r from-secondary_color to-primary_color bg-clip-text text-transparent">tech-forward brokerage</span>
                     </h2>
 
                     <p className="hidden lg:block text-lg text-gray-600 leading-relaxed">
@@ -363,6 +364,7 @@ export default async function Home() {
             </Link>
           </div>
         </section>
+        <TradingPlatforms />
         <section className="py-8 lg:py-16 bg-linear-to-br from-gray-100 to-blue-50 lg:hidden" aria-labelledby="regulators-heading">
           <div className="container mx-auto px-2">
             <div className="text-center">
@@ -397,7 +399,7 @@ export default async function Home() {
         </section>
 
         {/* Platform Section */}
-        <section className="py-16 lg:py-24 bg-white" aria-labelledby="platforms-heading flex">
+        {/* <section className="py-16 lg:py-24 bg-white" aria-labelledby="platforms-heading flex">
           <div className="flex justify-center">
             <div className="text-sm inline-flex items-center bg-blue-100 text-primary_color px-4 py-1 rounded-full font-medium mb-4">
               <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
@@ -415,7 +417,7 @@ export default async function Home() {
             </div>
             <Platform />
           </div>
-        </section>
+        </section> */}
 
         {/* Regulators Section */}
         <section className="py-16 bg-gradient-to-br from-gray-100 to-blue-50 hidden lg:block" aria-labelledby="regulators-heading">

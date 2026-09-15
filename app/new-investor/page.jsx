@@ -216,8 +216,8 @@ export default function Page() {
                   </button>
                   <div
                     className={`grid transition-all duration-200 ease-in-out ${isOpen
-                        ? "grid-rows-[1fr] opacity-100"
-                        : "grid-rows-[0fr] opacity-0"
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
                       }`}
                   >
                     <div className="overflow-hidden">
@@ -244,9 +244,11 @@ export default function Page() {
               </button>
             </Link>
           </div>
-          <button className="sm:hidden w-full bg-white text-black text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-secondary_color/80 transition-colors">
-            Start BO account application
-          </button>
+          <Link href = "https://portal.midwaybd.com/bo/portal-login" target="_blank">
+            <button className="sm:hidden w-full bg-white text-black text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-secondary_color/80 transition-colors">
+              Start BO account application
+            </button>
+          </Link>
         </div>
       </div>
     </div>

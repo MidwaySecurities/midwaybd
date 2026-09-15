@@ -26,7 +26,7 @@ const SimpleLoader = () => {
       {/* Simple centered content */}
       <div className="text-center">
         {/* Logo */}
-        <div className="mx-auto mb-6 rounded-xl flex items-center justify-center">
+        <div className="rounded-full mx-auto mb-6 flex items-center justify-center">
           {/* <TrendingUp className="w-8 h-8 text-white" /> */}
           <Logo width = {40} height={40} />
         </div>

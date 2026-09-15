@@ -8,9 +8,8 @@ import Nagad from './Assets/Svg/nagad'
 import Rocket from './Assets/Svg/rocket'
 import VisaMasterCard from './Assets/Svg/visa-mastercard'
 import AmericanExpress from './Assets/Svg/americanExpress'
-import CityBank from './Assets/Svg/cityBank'
-import DutchBangla from './Assets/Svg/dutchBangla'
 import { Poppins, Roboto } from "next/font/google";
+import BankInfo from './components/BankInfo'
 const poppins = Poppins({
     subsets: ["latin"],
     weight: ["400", "500", "600", "700"],
@@ -422,30 +421,7 @@ function FaqSection() {
 // ─── Tab content ─────────────────────────────────────────────────────────────
 
 function BankTransferContent() {
-    const banks = [
-        {
-            initials: <CityBank width={30} height={30} />,
-            colorClass: 'bg-blue-50 text-blue-800',
-            name: 'The City Bank',
-            fields: [
-                { label: 'Account name', value: 'Midway Securities Limited', mono: false },
-                { label: 'Account no.', value: '3101093011001', mono: true },
-                { label: 'Branch', value: 'Principal Branch, Dhaka South', mono: false },
-                { label: 'Routing no.', value: '225275357', mono: true },
-            ],
-        },
-        {
-            initials: <DutchBangla width={30} height={30} />,
-            colorClass: 'bg-green-50 text-green-800',
-            name: 'Dutch Bangla Bank',
-            fields: [
-                { label: 'Account name', value: 'Midway Securities Limited', mono: false },
-                { label: 'Account no.', value: '1011200006385', mono: true },
-                { label: 'Branch', value: 'Local Branch, Dhaka South', mono: false },
-                { label: 'Routing no.', value: '090273889', mono: true },
-            ],
-        },
-    ]
+    
 
     return (
         <section aria-labelledby="bank-heading" className="space-y-6">
@@ -467,28 +443,7 @@ function BankTransferContent() {
                 টাকা জমা দেওয়ার সময় অবশ্যই আপনার <strong>Midway Client Code</strong> উল্লেখ করুন।
             </NoticeBanner>
 
-            <div className="grid sm:grid-cols-2 gap-3">
-                {banks.map((bank) => (
-                    <article
-                        key={bank.name}
-                        aria-label={`${bank.name} bank account details`}
-                        className="bg-white border border-gray-200 rounded-xl p-4 hover:border-gray-300 transition-colors"
-                    >
-                        <div
-                            className={`inline-flex items-center justify-center w-8 h-8 rounded-lg text-xs font-semibold mb-3 ${bank.colorClass}`}
-                            aria-hidden="true"
-                        >
-                            {bank.initials}
-                        </div>
-                        <h3 className="text-sm font-semibold text-gray-900 mb-3">{bank.name}</h3>
-                        <dl>
-                            {bank.fields.map((f) => (
-                                <FieldRow key={f.label} {...f} />
-                            ))}
-                        </dl>
-                    </article>
-                ))}
-            </div>
+            <BankInfo />
 
             <VerificationNote />
             <ContactChips />

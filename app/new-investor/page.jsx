@@ -36,17 +36,17 @@ const steps = [
 const faqs = [
   {
     id: 1,
-    question: "How long does bo account approval take",
+    question: "How long does BO account approval take",
     ans: "Most applications are reviewed within 1–2 business days once your NID, bank account, and photo are submitted and verified.",
   },
   {
-    id:2,
-    question: "Is there a minimum deposit to open a bo account",
+    id: 2,
+    question: "Is there a minimum deposit to open a BO account",
     ans: "No minimum deposit is required to open the account itself — you can fund it whenever you're ready to start trading.",
   },
   {
     id: 3,
-    question: "Opening a joint or nrb bo account instead?",
+    question: "Opening a joint or NRB BO account instead?",
     ans: "Joint and NRB (Non-Resident Bangladeshi) accounts follow a slightly different document checklist. Contact support on WhatsApp and we'll guide you through it.",
   },
 ];
@@ -141,7 +141,7 @@ export default function Page() {
 
         {/* Requirements */}
         <div className="py-5 sm:py-6 border-b border-l border-r px-4 border-neutral-800/20">
-          <p className="text-xs text-black mb-3 sm:mb-4">
+          <p className="text-lg font-semibold text-black mb-3 sm:mb-4">
             What you&apos;ll need
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
@@ -150,7 +150,7 @@ export default function Page() {
                 key={label}
                 className="flex items-center gap-3 border border-neutral-800/20 rounded-lg px-4 py-3"
               >
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-blue-950/60 sm:bg-transparent">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md  sm:bg-transparent">
                   <Icon
                     className="h-4 w-4 text-blue-400 sm:text-black"
                     strokeWidth={1.75}
@@ -164,7 +164,7 @@ export default function Page() {
 
         {/* How it works */}
         <div className="py-5 sm:py-6 border-b border-r border-l border-neutral-800/20 px-4">
-          <p className="text-xs text-black mb-4 sm:mb-5">
+          <p className="text-lg font-semibold text-black mb-4 sm:mb-5">
             How it works
           </p>
           <div className="flex flex-col gap-3 sm:grid sm:grid-cols-4 sm:gap-2 sm:items-start">
@@ -186,7 +186,7 @@ export default function Page() {
 
         {/* FAQ */}
         <div className="py-5 sm:py-6 border-b border-l border-r px-4 border-neutral-800/20">
-          <p className="text-xs text-black mb-3 sm:mb-4">
+          <p className="text-lg font-semibold text-black mb-3 sm:mb-4">
             Common questions
           </p>
           <div className="flex flex-col gap-2">
@@ -203,27 +203,25 @@ export default function Page() {
                       setQuestionId(faq.id)
                     }}
                     aria-expanded={isOpen}
-                    className={`text-black w-full flex items-center justify-between px-4 py-3 text-left hover:bg-primary_color hover:text-white transition-colors ${faq.id === questionId?'bg-primary_color text-white':''}`}
+                    className={`text-black w-full flex items-center justify-between px-4 py-3 text-left hover:bg-primary_color hover:text-white transition-colors ${faq.id === questionId ? 'bg-primary_color text-white' : ''}`}
                   >
                     <span className={`text-sm `}>
                       {faq.question}
                     </span>
                     <ChevronDown
-                      className={`h-4 w-4 text-neutral-500 shrink-0 transition-transform duration-200 ${
-                        isOpen ? "rotate-180" : ""
-                      }`}
+                      className={`h-4 w-4 text-neutral-500 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""
+                        }`}
                       strokeWidth={1.75}
                     />
                   </button>
                   <div
-                    className={`grid transition-all duration-200 ease-in-out ${
-                      isOpen
+                    className={`grid transition-all duration-200 ease-in-out ${isOpen
                         ? "grid-rows-[1fr] opacity-100"
                         : "grid-rows-[0fr] opacity-0"
-                    }`}
+                      }`}
                   >
                     <div className="overflow-hidden">
-                      <p className="px-4 pb-3 text-sm text-neutral-500 leading-relaxed">
+                      <p className="px-4 py-3 text-sm text-neutral-500 leading-relaxed">
                         {faq.ans}
                       </p>
                     </div>
@@ -240,9 +238,11 @@ export default function Page() {
             <span className="text-sm text-black">
               Ready when you are.
             </span>
-            <button className="cursor-pointer bg-secondary_color text-white text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-secondary_color/80 transition-colors">
-              Start BO account application
-            </button>
+            <Link href={`https://portal.midwaybd.com/bo/portal-login`} target="_blank">
+              <button className="cursor-pointer bg-secondary_color text-white text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-secondary_color/80 transition-colors">
+                Start BO account application
+              </button>
+            </Link>
           </div>
           <button className="sm:hidden w-full bg-white text-black text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-secondary_color/80 transition-colors">
             Start BO account application

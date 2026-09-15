@@ -84,7 +84,7 @@ export default function TradingPlatforms() {
                                 QuickTrade Pro
                             </div>
                         </div>
-                        <h2 className="mt-1.5 mb-2 text-xl font-bold text-black xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+                        <h2 className="mt-1.5 mb-2 text-3xl font-bold text-black lg:text-5xl">
                             One platform,{" "}
                             <span className="bg-linear-to-r from-secondary_color to-primary_color bg-clip-text text-transparent">
                                 every device

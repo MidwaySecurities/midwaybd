@@ -12,6 +12,7 @@ import { getABlog } from "@/lib/actions/blog/getABlog";
 import TabsSection from "./components/TabSection";
 import DownloadAppbutton from "./components/DownloadAppbutton";
 import TradingPlatforms from "./components/TradingPlatforms";
+import HeroCarousol from "./components/Home/hero-carousel";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.midwaybd.com";
 
@@ -298,8 +299,7 @@ export default async function Home() {
                     height={300}
                     className="max-w-full h-auto filter drop-shadow-2xl"
                   />
-                  <div className="absolute -top-6 -right-6 w-24 h-24 bg-yellow-400/20 rounded-full blur-xl animate-pulse"></div>
-                  <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-400/20 rounded-full blur-xl animate-pulse"></div>
+                  {/* <HeroSection /> */}
                 </div>
               </div>
             </div>

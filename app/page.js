@@ -13,6 +13,8 @@ import TabsSection from "./components/TabSection";
 import DownloadAppbutton from "./components/DownloadAppbutton";
 import TradingPlatforms from "./components/TradingPlatforms";
 import HeroCarousol from "./components/Home/hero-carousel";
+import HeroCarouselDesktop from "./components/Home/hero-carousel-desktop";
+import HeroSectionDesktop from "./components/Home/hero-section-desktop";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.midwaybd.com";
 
@@ -299,7 +301,8 @@ export default async function Home() {
                     height={300}
                     className="max-w-full h-auto filter drop-shadow-2xl"
                   />
-                  {/* <HeroSection /> */}
+
+                  {/* <HeroSectionDesktop /> */}
                 </div>
               </div>
             </div>

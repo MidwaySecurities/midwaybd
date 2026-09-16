@@ -3,7 +3,6 @@
 import mobile_app1 from '../../../public/images/home/hero-carousel/H1.gif';
 import mobile_app2 from '../../../public/images/home/hero-carousel/H2.svg';
 import hero_image2 from '../../../public/images/home/hero-carousel/H3.svg';
-import hero_image3 from '../../../public/images/home/hero-carousel/QTP-desktop.png';
 
 import Image from "next/image";
 
@@ -14,7 +13,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SliderTitle from './slider-title'
 
-function HeroCarousol() {
+function HeroCarouselDesktop() {
     var settings = {
         dots: false,
         infinite: true,
@@ -68,7 +67,6 @@ function HeroCarousol() {
                 }
             }
         ]
-
     };
     return (
         <div className="slider-container">
@@ -86,14 +84,10 @@ function HeroCarousol() {
                     <SliderTitle title={``} />
                     <Image className="w-full transform" src={hero_image2} width={320} alt='QuickTrade Pro 3' />
                 </div>
-                <div>
-                    <SliderTitle title={``} />
-                    <Image className="w-full transform" src={hero_image3} width={320} alt='QuickTrade Pro 3' />
-                </div>
 
             </Slider>
         </div>
     );
 }
 
-export default HeroCarousol;
+export default HeroCarouselDesktop;

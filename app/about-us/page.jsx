@@ -122,7 +122,7 @@ export default function AboutUsPage() {
     >
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-primary_color text-white">
-        <div className="mx-auto max-w-6xl px-6 pt-24 pb-16 sm:px-10 sm:pt-28 sm:pb-20">
+        <div className="mx-auto max-w-6xl px-6 py-16 sm:px-10 sm:pt-28 sm:pb-20">
           <p className="font-mono text-md tracking-[0.35em] text-brass uppercase">
             Midway Securities Ltd. — Since 1975
           </p>
@@ -141,7 +141,7 @@ export default function AboutUsPage() {
 
       {/* ── NARRATIVE ────────────────────────────────────────────────── */}
       <section className="mx-auto max-w-6xl px-6 py-8 lg:py-20 sm:px-10 sm:py-20">
-        <div className="grid gap-12 sm:grid-cols-[1fr_1.4fr] sm:gap-16">
+        <div className="grid gap-6 sm:grid-cols-[1fr_1.4fr] sm:gap-16">
           <div>
             <h2 className="text-3xl leading-tight text-ledger-navy sm:text-4xl">
               Fifty years of steady, disciplined guidance.
@@ -177,8 +177,8 @@ export default function AboutUsPage() {
 
       {/* ── LEADERSHIP — portrait, quote, and bio as one story ─────────── */}
       <section className="bg-ledger-navy text-paper">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:px-10 sm:py-24">
-          <div className="mt-8 grid gap-10 sm:grid-cols-[224px_1fr] sm:gap-14">
+        <div className="mx-auto max-w-6xl px-6 py-8 sm:px-10 sm:py-10 ">
+          <div className=" grid gap-10 sm:grid-cols-[224px_1fr] sm:gap-14">
             <div>
               <Portrait className="h-56 w-44" />
               <h2 className="mt-5  text-2xl leading-tight text-paper sm:text-3xl">

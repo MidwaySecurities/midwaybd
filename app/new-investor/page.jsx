@@ -16,11 +16,12 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
+import Whatsapp from "../components/svgs/WhatsApp";
 
 const badges = ["https://www.sec.gov.bd/storage/layout/yNYeBHuLJm4Bwzhkm4eAhwkxKDq0Ej49a9e4tUuH.png", "https://www.dsebd.org/assets/images/plc-logo.png", "https://www.cdbl.com.bd/assets/img/CDBL%20Logo.png"];
 
 const requirements = [
-  { icon: CreditCard, label: "National id (nid)" },
+  { icon: CreditCard, label: "National ID (NID)" },
   { icon: Building2, label: "Bank account" },
   { icon: Camera, label: "Recent photograph" },
   { icon: Users, label: "Nominee information" },
@@ -30,7 +31,7 @@ const steps = [
   { number: 1, label: "Fill the online form" },
   { number: 2, label: "Upload documents" },
   { number: 3, label: "Verification" },
-  { number: 4, label: "Bo account is active" },
+  { number: 4, label: "BO account is active" },
 ];
 
 const faqs = [
@@ -132,8 +133,9 @@ export default function Page() {
             </Link>
             <Link href="https://wa.me/8801874444816" className="cursor-pointer">
               <button className="flex items-center justify-center sm:justify-start gap-1.5 text-sm text-black hover:text-black/80 transition-colors cursor-pointer">
-                <MessageCircle className="h-4 w-4" strokeWidth={1.75} />
-                Need help? chat on whatsapp
+                {/* <MessageCircle className="h-4 w-4" strokeWidth={1.75} /> */}
+                <Whatsapp width={5} height={5} fillColor={'#25D366'} />
+                Need help? Chat on Whatsapp
               </button>
             </Link>
           </div>
@@ -167,16 +169,17 @@ export default function Page() {
           <p className="text-lg font-semibold text-black mb-4 sm:mb-5">
             How it works
           </p>
-          <div className="flex flex-col gap-3 sm:grid sm:grid-cols-4 sm:gap-2 sm:items-start">
+          {/* <div className="flex flex-col gap-3 sm:grid sm:grid-cols-4 sm:gap-2 sm:items-start"> */}
+          <div className="flex flex-col md:flex-row md:justify-between">
             {steps.map((step) => (
               <div
                 key={step.number}
-                className="flex sm:flex-col items-center sm:items-start gap-3 sm:gap-2.5"
+                className="flex sm:flex-col items-center sm:items-center gap-3 sm:gap-2.5 mb-2 lg:mb-0"
               >
-                <div className="h-6 w-6 shrink-0 rounded-full bg-secondary_color flex items-center justify-center text-xs font-medium text-white">
+                <div className="h-6 sm:h-8 w-6 sm:w-8 md:w-12 md:h-12 lg:h-20 lg:w-20 shrink-0 rounded-full bg-secondary_color flex items-center justify-center text-xs lg:text-lg font-medium text-white">
                   {step.number}
                 </div>
-                <span className="text-sm sm:text-xs text-black sm:text-black leading-snug">
+                <span className="text-sm sm:text-sm text-black sm:text-black leading-snug">
                   {step.label}
                 </span>
               </div>
@@ -210,7 +213,7 @@ export default function Page() {
                     </span>
                     <ChevronDown
                       className={`h-4 w-4 text-neutral-500 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""
-                        }`}
+                        } ${faq.id === questionId ? 'text-white' : ''}`}
                       strokeWidth={1.75}
                     />
                   </button>

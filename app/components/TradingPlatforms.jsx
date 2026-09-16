@@ -76,7 +76,9 @@ export default function TradingPlatforms() {
         <div className="bg-white px-4 py-6 sm:px-6 sm:py-8">
             <div className="container mx-auto max-w-5xl rounded-[28px] border border-white/10 p-5 xs:p-6 sm:p-8 md:p-10">
                 <div className="flex flex-col items-center gap-6 sm:gap-8 md:flex-row md:items-center md:gap-16">
-                    <PhoneMock />
+                    <div className="hidden lg:block">
+                        <PhoneMock />
+                    </div>
 
                     <div className="flex w-full flex-col items-center text-center md:items-start md:text-left">
                         <div className="mb-2">
@@ -90,7 +92,9 @@ export default function TradingPlatforms() {
                                 every device
                             </span>
                         </h2>
-
+                        <div className="block lg:hidden">
+                            <PhoneMock />
+                        </div>
                         <div className="mt-4 mb-2 grid grid-cols-1 gap-x-8 gap-y-3 xs:grid-cols-2 sm:grid-cols-2">
                             {FEATURES.map((feature) => (
                                 <Feature key={feature.label} icon={feature.icon} label={feature.label} />

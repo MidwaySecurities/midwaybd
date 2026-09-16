@@ -47,9 +47,9 @@ function PhoneMock() {
 
 function Feature({ icon: Icon, label }) {
     return (
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-2 lg:gap-1.5">
             <Icon className="h-3.5 w-3.5 shrink-0 text-sky-400" strokeWidth={2} />
-            <span className="text-xs text-black sm:text-sm md:text-base">{label}</span>
+            <span className="text-[16px] text-black sm:text-sm md:text-base">{label}</span>
         </div>
     );
 }
@@ -75,7 +75,7 @@ export default function TradingPlatforms() {
     return (
         <div className="bg-white px-4 py-6 sm:px-6 sm:py-8">
             <div className="container mx-auto max-w-5xl rounded-[28px] border border-white/10 p-5 xs:p-6 sm:p-8 md:p-10">
-                <div className="flex flex-col items-center gap-6 sm:gap-8 md:flex-row md:items-center md:gap-10">
+                <div className="flex flex-col items-center gap-6 sm:gap-8 md:flex-row md:items-center md:gap-16">
                     <PhoneMock />
 
                     <div className="flex w-full flex-col items-center text-center md:items-start md:text-left">

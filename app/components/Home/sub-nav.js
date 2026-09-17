@@ -232,7 +232,7 @@ const SubNav = () => {
             {/* More Menu */}
             <button
                 onClick={openModal}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-gray-300 hover:border-green-500 hover:text-green-500 transition-all duration-200 shadow-sm text-gray-700"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-gray-300 hover:border-secondary_color hover:text-secondary_color transition-all duration-200 shadow-sm text-gray-700"
             >
                 <span>More</span>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

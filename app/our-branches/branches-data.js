@@ -131,7 +131,7 @@ export const branches = [
         address: "MM Plaza, Notun Bazar, Kalapara",
         locality: "Patuakhali",
         tel: [],
-        mobile: ["01711148727", "01335227114"],
+        mobile: ["01713626286", "01335227114"],
         link: mapEmbed("https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2380.1292022812536!2d90.22607034948113!3d21.984955545395902!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30aa8d093c1d9057%3A0x3f33bcf4053ecd08!2sMidway%20Securities%20Ltd.!5e0!3m2!1sen!2sbd!4v1789365464628!5m2!1sen!2sbd"),
         coordinates: { lat: 21.985203260962965, lng: 90.23216196353128 },
         services: ["Digital Account Opening", "Online Support", "Document Verification"]

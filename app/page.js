@@ -292,12 +292,12 @@ export default async function Home() {
 
               <div className="hidden lg:block order-1 lg:order-2 text-center">
                 <div className="relative inline-block">
-                  <Image
-                    src="https://www.midwaybd.com/uploads/6/0/4/6/60462737/quicktrade-pro-website-1-png-transparent-compressed_orig.png"
+                  <img
+                    src="/images/home/quickTradePro.png"
                     alt="QuickTrade Pro mobile trading app screen showing live Bangladesh stock market charts"
-                    width={400}
+                    width={700}
                     height={300}
-                    className="max-w-full h-auto filter drop-shadow-2xl"
+                    className="max-w-full h-auto filter drop-shadow-2xl rounded-xl"
                   />
 
                   {/* <HeroSectionDesktop /> */}

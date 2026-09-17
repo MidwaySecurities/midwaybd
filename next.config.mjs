@@ -28,6 +28,36 @@ const nextConfig = {
                 permanent: true,
             },
             {
+                source: '/blog/bo-account-opening-rules-bangladesh',
+                destination: 'https://portal.midwaybd.com/bo/portal-login',
+                permanent: true,
+            },
+            {
+                source: '/faq/how-do-i-open-a-bo-account',
+                destination: 'https://midwaybd.com/new-investor',
+                permanent: true,
+            },
+            {
+                source: '/faq/what-is-a-bo-account',
+                destination: 'https://midwaybd.com/new-investor',
+                permanent: true,
+            },
+            {
+                source: '/faq/category/bo-account',
+                destination: 'https://midwaybd.com/new-investor',
+                permanent: true,
+            },
+            {
+                source: '/faq/what-documents-are-required-to-open-a-bo-account',
+                destination: 'https://midwaybd.com/new-investor',
+                permanent: true,
+            },
+            {
+                source: '/blog/open-a-bo-account-in-3-easy-steps',
+                destination: 'https://portal.midwaybd.com/bo/portal-login',
+                permanent: true,
+            },
+            {
                 source: '/taka-deposit.html',
                 destination: '/deposit',
                 permanent: true,

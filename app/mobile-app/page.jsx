@@ -134,7 +134,7 @@ const MobileAppPage = () => {
               <div className="space-y-4 sm:space-y-6">
                 <div className="inline-flex items-center bg-secondary_color bg-opacity-50 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium">
                   <span className="w-2 h-2 bg-green-400 rounded-full mr-2 sm:mr-3 animate-pulse"></span>
-                  Now Available on Mobile
+                  DSE Approved
                 </div>
 
                 <h1 style={{ fontFamily: 'Mokoto' }} className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight">

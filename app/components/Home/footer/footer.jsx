@@ -100,7 +100,7 @@ const Footer = () => {
           <div className='text-center'>
             <h3 className='text-lg font-semibold mb-4 text-secondary_color'>Operations</h3>
             <ul className='space-y-2.5'>
-              <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Pricing</a></li>
+              <li><Link href="/pricing" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Pricing</Link></li>
               <li><Link href="/withdrawals" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Withdraw</Link></li>
               <li><Link href="/deposit" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Deposit</Link></li>
               <li><Link href="/our-branches" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Branches</Link></li>

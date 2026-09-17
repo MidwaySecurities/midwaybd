@@ -190,7 +190,7 @@ export default function PricingPage() {
               pricing
             </span>
           </h1>
-          <p className="mx-auto mt-5 max-w-lg text-lg text-slate-400">
+          <p className="mx-auto mt-5 max-w-lg text-lg text-white">
             Open your BO account for free with an initial investment of BDT 50,000 minimum.
           </p>
           {/* <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">

@@ -220,7 +220,10 @@ export default async function Home() {
 
         <div className="lg:hidden">
           <HeroSection />
-          <div className="pt-8">
+          <div className="pt-0">
+            <div className="p-2 text-center lg:hidden">
+              <h2 className="mb-2">Real-time execution, advanced trading system, and secure BO account opening - built for Bangladesh's capital market.</h2>
+            </div>
             <DownloadAppbutton />
           </div>
         </div>
@@ -325,7 +328,7 @@ export default async function Home() {
         </section>
         {/* user choose */}
         <section className="py-16 lg:mb-0">
-          <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight text-center px-2">Which best describes you?</h2>
+          <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight text-center px-2">Which best <span className="bg-linear-to-r from-secondary_color to-primary_color bg-clip-text text-transparent">describes you?</span></h2>
           <div className="mt-0 grid lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6 container m-auto px-2">
             <Link href="/new-investor">
               <div className="flex sm:block items-center text-left sm:text-center gap-4 sm:gap-0 p-3 lg:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition">

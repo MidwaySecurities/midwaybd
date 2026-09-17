@@ -8,8 +8,8 @@ const BranchesFilter = ({ branches }) => {
         activeFilter === 'all' ? branches :
             activeFilter === 'digital' ? branches.filter(b => b.type === 'digital') :
                 activeFilter === 'head' ? branches.filter(b => b.type === 'head') :
-                activeFilter === 'cumilla' ? branches.filter(b => b.type === 'cumilla') :
-                    branches.filter(b => b.locality === 'Dhaka')
+                    activeFilter === 'cumilla' ? branches.filter(b => b.type === 'cumilla') :
+                        branches.filter(b => b.locality === 'Dhaka')
 
     const digitalCount = branches.filter(b => b.type === 'digital').length
     const branchCount = branches.filter(b => b.locality === 'Dhaka').length
@@ -53,9 +53,9 @@ const BranchesFilter = ({ branches }) => {
                         <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
                             {activeFilter === 'all' ? 'All Locations' :
                                 activeFilter === 'head' ? 'Head Office' :
-                                activeFilter === 'cumilla' ? 'Cumilla Branch' :
-                                activeFilter === 'branch' ? 'Dhaka' :
-                                    activeFilter === 'digital' ? 'Digital Service Centers' : 'Branch Locations'}
+                                    activeFilter === 'cumilla' ? 'Cumilla Branch' :
+                                        activeFilter === 'branch' ? 'Dhaka' :
+                                            activeFilter === 'digital' ? 'Digital Service Centers' : 'Branch Locations'}
                         </h2>
 
                         <div className="space-y-4 sm:space-y-6">
@@ -108,19 +108,6 @@ const BranchesFilter = ({ branches }) => {
                                                 Contact Information
                                             </h4>
                                             <div className="space-y-2">
-                                                {location.tel.map((tel, index) => (
-                                                    <a
-                                                        key={index}
-                                                        href={`tel:${tel}`}
-                                                        className="flex items-center text-secondary_color hover:text-blue-800 transition-colors text-sm sm:text-base break-all"
-                                                        itemProp="telephone"
-                                                    >
-                                                        <svg className="w-3 h-3 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                                        </svg>
-                                                        Tel: {tel}
-                                                    </a>
-                                                ))}
                                                 {location.mobile.map((mobile, index) => (
                                                     <a
                                                         key={index}
@@ -134,6 +121,20 @@ const BranchesFilter = ({ branches }) => {
                                                         Cell: {mobile}
                                                     </a>
                                                 ))}
+                                                {location.tel.map((tel, index) => (
+                                                    <a
+                                                        key={index}
+                                                        href={`tel:${tel}`}
+                                                        className="flex items-center text-secondary_color hover:text-blue-800 transition-colors text-sm sm:text-base break-all"
+                                                        itemProp="telephone"
+                                                    >
+                                                        <svg className="w-3 h-3 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                                        </svg>
+                                                        Tel: {tel}
+                                                    </a>
+                                                ))}
+
                                             </div>
                                         </div>
 

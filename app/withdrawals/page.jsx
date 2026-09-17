@@ -158,7 +158,7 @@ export default function WithdrawClient() {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Accept': 'application/json',
-          'Authorization' : `Bearer ${process.env.NEXT_PUBLIC_PORTAL_API_BEARER_TOKEN}`
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_PORTAL_API_BEARER_TOKEN}`
         },
       })
 
@@ -252,7 +252,7 @@ export default function WithdrawClient() {
                   name="client_code"
                   autoComplete="username"
                   style={{ ...inputStyle, ...getFocusStyle("client_code") }}
-                  placeholder="e.g. MSL-00123"
+                  placeholder="e.g. M00000"
                   value={portalData.client_code}
                   onChange={(e) => setPortalData((p) => ({ ...p, client_code: e.target.value }))}
                   onFocus={() => setFocusedField("client_code")}
@@ -342,7 +342,7 @@ export default function WithdrawClient() {
                   <input
                     id="f-client_code" name="client_code"
                     style={{ ...inputStyle, ...getFocusStyle("fclient_code") }}
-                    placeholder="e.g. MSL-00123"
+                    placeholder="e.g. M00000"
                     value={formData.client_code}
                     onChange={(e) => setFormData((p) => ({ ...p, client_code: e.target.value }))}
                     onFocus={() => setFocusedField("fclient_code")}
@@ -512,7 +512,7 @@ export default function WithdrawClient() {
 const faqs = [
   {
     q: "How do I withdraw funds from my Midway Securities BO account?",
-    a: <>Log in to the <Link className="text-secondary_color/75 font-bold" href = "https://portal.midwaybd.com">Midway portal</Link> and submit a withdrawal request, or fill out the manual form on this page. Funds are transferred via BEFTN to your registered bank account.</>,
+    a: <>Log in to the <Link className="text-secondary_color/75 font-bold" href="https://portal.midwaybd.com">Midway portal</Link> and submit a withdrawal request, or fill out the manual form on this page. Funds are transferred via BEFTN to your registered bank account.</>,
   },
   {
     q: "How long does a BEFTN withdrawal take?",

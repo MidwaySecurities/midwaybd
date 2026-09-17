@@ -640,7 +640,7 @@ const Deposit = async ({ searchParams }) => {
                             — সহজ ডিপোজিট
                         </span>
                     </h1>
-                    <p className="text-sm sm:text-base text-[#85B7EB] mb-8 max-w-lg mx-auto leading-relaxed">
+                    <p className="text-sm sm:text-base text-white mb-8 max-w-lg mx-auto leading-relaxed">
                         Fund your BO account easily — bank transfer, mobile banking, or credit card.
                         অফিসে না এসে সহজেই আপনার বিও অ্যাকাউন্টে টাকা জমা দিন।
                     </p>
@@ -652,7 +652,7 @@ const Deposit = async ({ searchParams }) => {
                         ].map(({ label }) => (
                             <div
                                 key={label}
-                                className="text-xs text-[#B5D4F4] border border-[#185FA5] rounded-full px-4 py-2 bg-white/5"
+                                className="text-xs text-white border border-[#185FA5] rounded-full px-4 py-2 bg-white/5"
                             >
                                 {label}
                             </div>

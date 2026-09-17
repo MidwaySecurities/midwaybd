@@ -58,11 +58,9 @@ export const branches = [
         address: "Gulshan-1, Dhaka-1212",
         locality: "Dhaka",
         postalCode: "1212",
-        tel: ["58815077", "58815078"],
-        mobile: ["01841778806", "01841778807"],
+        tel: ["58815078"],
+        mobile: ["01841778807", "01841778809"],
         link: mapEmbed("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2581.7014241550855!2d90.41762845636897!3d23.780266249341828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c79c07f45e7b%3A0x1e65ce34acd41792!2sMidway%20Securities%20Ltd.!5e0!3m2!1sen!2sbd!4v1789364852106!5m2!1sen!2sbd"),
-        // NOTE: no lat/lng supplied for this branch in the original source —
-        // left out rather than guessed. Add real coordinates if you have them.
         services: ["Account Opening", "Trading Support", "Customer Service"]
     },
     {
@@ -75,7 +73,7 @@ export const branches = [
         locality: "Dhaka",
         postalCode: "1230",
         tel: [],
-        mobile: ["01971227340", "01715325978"],
+        mobile: ["01971227340", "01335227125"],
         link: mapEmbed("https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4138.752978019246!2d90.39911887644432!3d23.86520088599906!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c420d5c527af%3A0x50fce62d42fa2bc!2sMidway%20Securities%20Ltd.!5e0!3m2!1sen!2sbd!4v1789365304398!5m2!1sen!2sbd"),
         coordinates: { lat: 23.8759, lng: 90.3795 },
         services: ["Account Opening", "Trading Support", "Investment Advisory"]
@@ -105,7 +103,7 @@ export const branches = [
         locality: "Comilla",
         postalCode: "3500",
         tel: ["+8802334400508", "+8802334400509"],
-        mobile: ["01711148727"],
+        mobile: ["01711148727", "01335227127", "01335227128"],
         link: mapEmbed("https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2670.789388165986!2d91.18685872819835!3d23.463408688369974!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37547f30e9c48493%3A0x60511c41b00e2851!2sMidway%20Securities%20Ltd!5e0!3m2!1sen!2sbd!4v1789365399513!5m2!1sen!2sbd"),
         coordinates: { lat: 23.4607, lng: 91.1809 },
         services: ["Account Opening", "Trading Support", "Investment Advisory"]
@@ -118,8 +116,8 @@ export const branches = [
         room: "Room 219",
         address: "Plot 46, Road 21, Nikunja 2, Level 11",
         locality: "Dhaka",
-        tel: ["41040008", "41040009"],
-        mobile: [],
+        tel: ["41040008"],
+        mobile: ["01874444816", "01335227111"],
         link: mapEmbed("https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4408.906272322789!2d90.41605507620196!3d23.83685657689536!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7e77c0b8fe9%3A0x1a58e79220ddf2a3!2sMidway%20Securities%20Ltd.!5e0!3m2!1sen!2sbd!4v1789364992414!5m2!1sen!2sbd"),
         coordinates: { lat: 23.8103, lng: 90.4125 },
         services: ["Account Opening", "Trading Support"]
@@ -132,8 +130,8 @@ export const branches = [
         room: "Ground Floor",
         address: "MM Plaza, Notun Bazar, Kalapara",
         locality: "Patuakhali",
-        tel: ["41040008"],
-        mobile: ["01711148727"],
+        tel: [],
+        mobile: ["01711148727", "01335227114"],
         link: mapEmbed("https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2380.1292022812536!2d90.22607034948113!3d21.984955545395902!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30aa8d093c1d9057%3A0x3f33bcf4053ecd08!2sMidway%20Securities%20Ltd.!5e0!3m2!1sen!2sbd!4v1789365464628!5m2!1sen!2sbd"),
         coordinates: { lat: 21.985203260962965, lng: 90.23216196353128 },
         services: ["Digital Account Opening", "Online Support", "Document Verification"]

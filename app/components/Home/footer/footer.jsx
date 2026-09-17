@@ -157,8 +157,9 @@ const Footer = () => {
                 </div>
                 <h5 className='text-sm font-semibold text-white mb-2'>Get In Touch</h5>
                 <p className='text-slate-300 text-sm'>
-                  <span className='font-semibold text-white'>Hotline:</span> 09609 100 142<br />
-                  <span className='font-semibold text-white'>Email:</span> info@midwaybd.com
+                  {/* <span className='font-semibold text-white'>Hotline:</span> 09609 100 142<br /> */}
+                  <span className='font-semibold text-white'>Hotline:</span> <a href="tel:09609100142">09609 100 142</a><br />
+                  <span className='font-semibold text-white'>Email:</span> <a href="mailto:info@midwaybd.com">info@midwaybd.com</a>
                 </p>
               </div>
             </div>

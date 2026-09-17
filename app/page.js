@@ -77,8 +77,6 @@ export async function generateMetadata() {
 }
 
 export default async function Home() {
-  console.log(process.env.VERCEL_ENV)
-  // const res = await fetch(`${process.env.NEXT_PUBLIC_PORTAL_URL}/blog/latest`)
   const res = await fetch(`https://portal.midwaybd.com/api/blog/latest`)
   const result = await res.json();
   let newsData = [];
@@ -220,9 +218,9 @@ export default async function Home() {
 
         <div className="lg:hidden">
           <HeroSection />
-          <div className="pt-0">
-            <div className="p-2 text-center lg:hidden">
-              <h2 className="mb-2">Real-time execution, advanced trading system, and secure BO account opening - built for Bangladesh's capital market.</h2>
+          <div className="mt-4">
+            <div className="text-center lg:hidden">
+              <h2 className="mb-4">Real-time execution, advanced trading system, and secure BO account opening - built for Bangladesh's capital market.</h2>
             </div>
             <DownloadAppbutton />
           </div>

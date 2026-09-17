@@ -219,7 +219,7 @@ export default async function Home() {
         <div className="lg:hidden">
           <HeroSection />
           <div className="mt-4">
-            <div className="text-center lg:hidden">
+            <div className="px-2 text-center lg:hidden">
               <h2 className="mb-4">Real-time execution, advanced trading system, and secure BO account opening - built for Bangladesh's capital market.</h2>
             </div>
             <DownloadAppbutton />

@@ -13,6 +13,21 @@ const nextConfig = {
                 permanent: true,
             },
             {
+                source: '/blog/open-bo-account-free-bangladesh',
+                destination: 'https://portal.midwaybd.com/bo/portal-login',
+                permanent: true,
+            },
+            {
+                source: '/bangla-bo-account.html',
+                destination: 'https://portal.midwaybd.com/bo/portal-login',
+                permanent: true,
+            },
+            {
+                source: '/boaccountrefface.html',
+                destination: 'https://portal.midwaybd.com/bo/portal-login',
+                permanent: true,
+            },
+            {
                 source: '/taka-deposit.html',
                 destination: '/deposit',
                 permanent: true,

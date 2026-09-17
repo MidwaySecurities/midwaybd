@@ -1,8 +1,8 @@
 'use client'
 
 import mobile_app1 from '../../../public/images/home/hero-carousel/H1.gif';
-import mobile_app2 from '../../../public/images/home/hero-carousel/H2.svg';
-import hero_image2 from '../../../public/images/home/hero-carousel/H3.svg';
+import mobile_app2 from '../../../public/images/home/hero-carousel/OPEN_BO_ACCOUNT.png';
+import hero_image2 from '../../../public/images/home/hero-carousel/client_profile.png';
 import hero_image3 from '../../../public/images/home/hero-carousel/QTP-desktop.png';
 
 import Image from "next/image";

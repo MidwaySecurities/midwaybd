@@ -12,15 +12,12 @@ import { getABlog } from "@/lib/actions/blog/getABlog";
 import TabsSection from "./components/TabSection";
 import DownloadAppbutton from "./components/DownloadAppbutton";
 import TradingPlatforms from "./components/TradingPlatforms";
-import HeroCarousol from "./components/Home/hero-carousel";
-import HeroCarouselDesktop from "./components/Home/hero-carousel-desktop";
-import HeroSectionDesktop from "./components/Home/hero-section-desktop";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.midwaybd.com";
 
 export async function generateMetadata() {
   const title =
-    "Upcoming website | Midway Securities | Online Stock Trading Platform in Bangladesh";
+    "Midway Securities | Online Stock Trading Platform in Bangladesh";
   const description =
     "Trade online with Midway Securities — a DSE & CSE registered brokerage offering Real-time market trading, advanced charting, QuickTrade Pro mobile trading, and secure online account opening in Bangladesh.";
 

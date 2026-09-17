@@ -2,10 +2,9 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 
-// Adjust this list to match the categories your API actually returns
 export const categories = [
   { value: "", label: "All Categories" },
-  { value: "Portfolio Transfer", label: "Portfolio Transfer" },
+  // { value: "Portfolio Transfer", label: "Portfolio Transfer" },
 ];
 
 const BlogCategoryDropdown = ({ activeCategory }) => {

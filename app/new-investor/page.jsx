@@ -18,7 +18,7 @@ import {
 import Link from "next/link";
 import Whatsapp from "../components/svgs/WhatsApp";
 
-const badges = ["https://www.sec.gov.bd/storage/layout/yNYeBHuLJm4Bwzhkm4eAhwkxKDq0Ej49a9e4tUuH.png", "https://www.dsebd.org/assets/images/plc-logo.png", "https://www.cdbl.com.bd/assets/img/CDBL%20Logo.png"];
+const badges = ["https://www.sec.gov.bd/storage/layout/yNYeBHuLJm4Bwzhkm4eAhwkxKDq0Ej49a9e4tUuH.png", "https://www.dsebd.org/assets/images/plc-logo.png", "./images/logos/cdbl.png"];
 
 const requirements = [
   { icon: CreditCard, label: "National ID (NID)" },
@@ -95,7 +95,7 @@ export default function Page() {
               //   {badge}
               // </span>
               <div className="bg-secondary_color/20 p-2 rounded-full">
-                <img src={badge} width={40} height={40} />
+                <img src={badge} width={40} height={40} className="min-w-[40px] min-h-[40px]" />
               </div>
             ))}
           </div>
@@ -248,7 +248,7 @@ export default function Page() {
             </Link>
           </div>
           <Link href = "https://portal.midwaybd.com/bo/portal-login" target="_blank">
-            <button className="sm:hidden w-full bg-white text-black text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-secondary_color/80 transition-colors">
+            <button className="sm:hidden w-full bg-secondary_color text-white text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-secondary_color/80 transition-colors">
               Start BO account application
             </button>
           </Link>

@@ -1,5 +1,6 @@
 import BlogPost from '@/app/components/blogShare';
 import Carousel from '@/app/components/carousel';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -67,8 +68,8 @@ const BlogPage = async ({ params }) => {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section with Image */}
       <div className="relative">
-        <div className="w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
-          {blog?.images?.length > 0 ? (
+        <div className="w-full">
+          {/* {blog?.images?.length > 0 ? (
             <Carousel images={blog.images} />
           ) : (
             <div className="relative mt-1 w-full flex justify-center items-center">
@@ -79,11 +80,12 @@ const BlogPage = async ({ params }) => {
               />
               <div className="absolute inset-0 bg-transparent bg-opacity-30"></div>
             </div>
-          )}
+          )} */}
+          <img src = '/images/blog_banner.png' alt='' width={100} height={100} className='w-full' />
         </div>
 
         {/* Overlay Content */}
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/50 to-transparent text-white p-6 lg:p-8">
+        {/* <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/50 to-transparent text-white p-6 lg:p-8">
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center bg-blue-600 text-white text-xs md:text-sm rounded-full px-4 py-2 mb-4">
               <svg className="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,7 +97,7 @@ const BlogPage = async ({ params }) => {
               {blog?.title}
             </h1>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Main Content */}

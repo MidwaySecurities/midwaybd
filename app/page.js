@@ -161,7 +161,7 @@ export default async function Home() {
             <div className="space-y-6">
               <div className="flex flex-row md:flex-row gap-2 md:gap-2 justify-start items-start mb-0">
                 <div className="bg-blue-100 text-primary_color px-4 py-1 rounded-full font-medium text-sm mb-3 lg:mb-6">
-                  BSEC Reg<span className="hidden lg:inline">istered</span>
+                  BSEC Reg<span className="lg:hidden">.</span><span className="hidden lg:inline">istered</span>
                 </div>
                 <div className="bg-blue-100 text-primary_color px-4 py-1 rounded-full font-medium text-sm mb-6">
                   {/* <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span> */}

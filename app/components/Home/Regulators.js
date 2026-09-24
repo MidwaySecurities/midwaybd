@@ -53,7 +53,7 @@ const Regulators = () => {
     {
       name: "Central Depository Bangladesh Limited",
       url: "https://cdbl.com.bd",
-      logo: "https://cdbl.com.bd/assets/img/CDBL%20Logo.png",
+      logo: "/images/regulators/cdbl-logo.png",
       alt: "CDBL"
     },
     {

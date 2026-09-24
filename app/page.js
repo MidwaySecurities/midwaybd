@@ -159,24 +159,17 @@ export default async function Home() {
           {/* <div className="absolute inset-0"></div> */}
           <div className="lg:hidden bg-white lg:rounded-2xl shadow-2xl p-8 px-4 lg:px-8 lg:p-12">
             <div className="space-y-6">
-              {/* <div className="inline-flex items-center bg-blue-100 text-primary_color px-4 py-2 rounded-full font-medium">
-                      <span className="w-2 h-2 bg-primary_color rounded-full mr-2 animate-pulse"></span>
-                      Latest Technology
-                    </div> */}
-
-
-              {/* <h2 id="quicktrade-heading" className="text-3xl lg:text-4xl font-bold text-gray-800">
-                      <span className="text-secondary_color">QuickTrade Pro</span> -
-                      <br />The Ultimate Trading App
-                    </h2> */}
               <div className="flex flex-row md:flex-row gap-2 md:gap-2 justify-start items-start mb-0">
                 <div className="bg-blue-100 text-primary_color px-4 py-1 rounded-full font-medium text-sm mb-3 lg:mb-6">
-                  {/* <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span> */}
-                  BSEC Registered
+                  BSEC Reg<span className="hidden lg:inline">istered</span>
                 </div>
                 <div className="bg-blue-100 text-primary_color px-4 py-1 rounded-full font-medium text-sm mb-6">
                   {/* <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span> */}
                   DSE TREC 142
+                </div>
+                <div className="bg-blue-100 text-primary_color px-4 py-1 rounded-full font-medium text-sm mb-6">
+                  <Image src={`/images/bangladesh.png`} alt='bangladesh' height={15} width={15} className='w-5' />
+
                 </div>
               </div>
               <h2 id="quicktrade-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-0">
@@ -253,6 +246,9 @@ export default async function Home() {
                       <div className="bg-blue-100 text-primary_color px-4 py-1 rounded-full font-medium text-sm mb-6">
                         {/* <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span> */}
                         DSE TREC 142
+                      </div>
+                      <div className="bg-blue-100 text-primary_color px-4 py-1 rounded-full font-medium text-sm mb-6">
+                        <Image src={`/images/bangladesh.png`} alt='bangladesh' height={15} width={15} className='w-5' />
                       </div>
                     </div>
                     <h2 id="quicktrade-heading" className="text-3xl lg:text-4xl font-bold text-gray-800">

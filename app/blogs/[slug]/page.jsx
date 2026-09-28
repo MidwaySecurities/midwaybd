@@ -104,30 +104,7 @@ const BlogPage = async ({ params }) => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         {/* Blog Meta Info */}
         <div className="bg-white rounded-xl p-6 mb-8 shadow-sm border border-gray-200">
-          <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-gray-600">
-            <div className="flex items-center space-x-4 text-[12px] md:text-sm">
-              <div className="flex items-center">
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                Published on {blog?.created_at ? new Date(blog.created_at).toLocaleDateString() : '—'}
-              </div>
-              <div className="flex items-center">
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                {readMinutes} min read
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <span className="text-gray-500">Share:</span>
-              <BlogPost
-                postUrl={`${API_BASE_URL}/blogs/${blog?.slug}`}
-                postTitle={blog?.title}
-              />
-            </div>
-          </div>
+          <h1 className='text-xl lg:text-3xl font-semibold'>{blog.title}</h1>
         </div>
 
         {/* Blog Content */}
@@ -149,33 +126,35 @@ const BlogPage = async ({ params }) => {
             dangerouslySetInnerHTML={{ __html: blog?.content }}
           ></div>
         </article>
-
-        {/* Author/Tags Section */}
-        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-12">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">M</span>
+        <div className="bg-white rounded-xl p-3 mb-8 shadow-sm border border-gray-200">
+          <div className="flex lg:flex-wrap items-center justify-between gap-1 lg:gap-4 text-sm text-gray-600">
+            <div className="flex items-center space-x-4 text-[12px] md:text-sm">
+              <div className="flex items-center">
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Published on {blog?.created_at ? new Date(blog.created_at).toLocaleDateString() : '—'}
               </div>
-              <div>
-                <h3 className="font-semibold text-gray-800">Midway Securities</h3>
-                <p className="text-gray-600 text-sm">Investment Research Team</p>
-              </div>
+              {/* <div className="flex items-center">
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                {readMinutes} min read
+              </div> */}
             </div>
 
-            {blog?.tags && blog.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2">
-                {blog.tags.map((tag, index) => (
-                  <span key={index} className="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">
-                    #{tag}
-                  </span>
-                ))}
-              </div>
-            )}
+            <div className="flex items-center space-x-2">
+              <span className="text-gray-500 hidden lg:block">Share:</span>
+              <BlogPost
+                postUrl={`${API_BASE_URL}/blogs/${blog?.slug}`}
+                postTitle={blog?.title}
+              />
+            </div>
           </div>
         </div>
+        {/* Author/Tags Section */}
       </div>
-
+      
       {/* Related Blogs Section */}
       {blog?.related_blogs && blog.related_blogs.length > 0 && (
         <div className="bg-white py-16">

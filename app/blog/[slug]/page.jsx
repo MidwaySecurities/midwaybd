@@ -53,7 +53,7 @@ const BlogPage = async ({ params }) => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-800 mb-4">Blog not found</h1>
-          <Link href="/blogs" className="text-secondary_color hover:underline">
+          <Link href="/blog" className="text-secondary_color hover:underline">
             ← Back to all blogs
           </Link>
         </div>
@@ -146,7 +146,7 @@ const BlogPage = async ({ params }) => {
             <div className="flex items-center space-x-2">
               <span className="text-gray-500 hidden lg:block">Share:</span>
               <BlogPost
-                postUrl={`${API_BASE_URL}/blogs/${blog?.slug}`}
+                postUrl={`https://midwaybd.com/blog/${blog?.slug}`}
                 postTitle={blog?.title}
               />
             </div>
@@ -174,7 +174,7 @@ const BlogPage = async ({ params }) => {
                   key={relatedBlog.id}
                   className="group bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 overflow-hidden"
                 >
-                  <Link href={`/blogs/${relatedBlog.slug}`} className="block">
+                  <Link href={`/blog/${relatedBlog.slug}`} className="block">
                     <div className="relative overflow-hidden">
                       <img
                         src={relatedBlog.cover_image_url}
@@ -186,7 +186,7 @@ const BlogPage = async ({ params }) => {
                   </Link>
 
                   <div className="p-6">
-                    <Link href={`/blogs/${relatedBlog.slug}`}>
+                    <Link href={`/blog/${relatedBlog.slug}`}>
                       <h3 className="text-lg font-bold text-gray-800 mb-3 line-clamp-2 group-hover:text-secondary_color transition-colors">
                         {relatedBlog.title}
                       </h3>
@@ -201,7 +201,7 @@ const BlogPage = async ({ params }) => {
                         {relatedBlog.created_at ? new Date(relatedBlog.created_at).toLocaleDateString() : ''}
                       </span>
                       <Link
-                        href={`/blogs/${relatedBlog.slug}`}
+                        href={`/blog/${relatedBlog.slug}`}
                         className="inline-flex items-center text-secondary_color font-medium hover:text-blue-700 transition-colors group"
                       >
                         Read More
@@ -223,7 +223,7 @@ const BlogPage = async ({ params }) => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             <Link
-              href="/blogs"
+              href="/blog"
               className="inline-flex items-center text-secondary_color hover:text-blue-700 font-medium transition-colors group"
             >
               <svg className="mr-2 w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

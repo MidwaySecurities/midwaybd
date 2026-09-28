@@ -45,7 +45,7 @@ export default async function sitemap() {
       blogUrls = (data?.blogs ?? [])
         .filter((blog) => blog?.slug)
         .map((blog) => ({
-          url: `${siteUrl}/blogs/${blog.slug}`,
+          url: `${siteUrl}/blog/${blog.slug}`,
           lastModified: blog.updated_at
             ? new Date(blog.updated_at)
             : new Date(blog.created_at),

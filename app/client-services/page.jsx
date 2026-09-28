@@ -63,7 +63,7 @@ const SECTIONS = [
     items: [
       {
         icon: IconDeviceMobile,
-        title: "QuickTrade Pros",
+        title: "QuickTrade Pro",
         text: "Buy, sell, and track your portfolio from your phone",
       },
       {
@@ -180,8 +180,8 @@ function Tile({ icon: Icon, title, text }) {
   return (
     <li className="rounded-lg border-neutral-800/20 border-[0.5px] border-line p-3 transition-colors hover:border-secondary">
       {/* <Icon size={18} className="block text-primary" aria-hidden="true" /> */}
-      <h3 className="mt-1.5 text-xs font-medium">{title}</h3>
-      <p className="mt-1 text-[11px] text-ink-2">{text}</p>
+      <h3 className="mt-1.5 text-sm font-medium">{title}</h3>
+      <p className="mt-1 text-xs text-ink-2">{text}</p>
     </li>
   );
 }
@@ -236,7 +236,7 @@ const jsonLd = {
 export default function ClientServicesPage() {
   return (
     <>
-      <div className="container mx-auto p-4 py-0">
+      <div className="container mx-auto lg:p-4 py-0">
         <div className="mx-auto container shadow-xl rounded-2xl bg-white p-3 px-4 lg:p-8">
           <div className="overflow-hidden rounded-2xl border-neutral-800/20 border-[0.5px] border-line bg-surface-2">
             {/* Top bar */}
@@ -267,7 +267,7 @@ export default function ClientServicesPage() {
             <main>
               {/* Hero */}
               <section className="border-b-[0.5px] border-neutral-800/20 border-line px-5 py-6">
-                <p className="text-lg font-semibold text-black mb-4 sm:mb-5">Client Services</p>
+                <p className="text-3xl font-bold text-black mb-4 sm:mb-5">Client Services</p>
                 <h1 className="text-xl sm:text-2xl font-semibold text-black leading-snug mb-3">
                   Everything you need to invest on the DSE
                 </h1>

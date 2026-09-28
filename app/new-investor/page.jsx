@@ -57,7 +57,7 @@ export default function Page() {
   const [questionId, setQuestionId] = useState(null)
   console.log(openFaq)
   return (
-    <div className="container mx-auto px-2 lg:px-4">
+    <div className="container mx-auto lg:px-4">
       {/* Header — mobile */}
       <div className="hidden sm:hidden items-center justify-between px-4 py-3.5 border-b ">
         <div className="flex items-center gap-1.5 text-sm text-black">

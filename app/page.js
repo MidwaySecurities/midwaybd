@@ -305,7 +305,7 @@ export default async function Home() {
 
         {/* Stock Chart Section */}
         <section className="py-16 bg-white" aria-labelledby="analytics-heading">
-          <div className="container mx-auto px-2 lg:px-4">
+          <div className="container mx-auto lg:px-4">
             <div className="text-center mb-12">
               <h2 id="analytics-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
                 DSEX INDEX: <span className="text-secondary_color">LIVE</span>

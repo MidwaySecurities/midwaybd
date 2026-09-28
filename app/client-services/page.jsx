@@ -63,7 +63,7 @@ const SECTIONS = [
     items: [
       {
         icon: IconDeviceMobile,
-        title: "QuickTrade Pro",
+        title: "QuickTrade Pros",
         text: "Buy, sell, and track your portfolio from your phone",
       },
       {
@@ -178,8 +178,8 @@ const SECTIONS = [
 
 function Tile({ icon: Icon, title, text }) {
   return (
-    <li className="rounded-lg border-[0.5px] border-line p-3 transition-colors hover:border-secondary">
-      <Icon size={18} className="block text-primary" aria-hidden="true" />
+    <li className="rounded-lg border-neutral-800/20 border-[0.5px] border-line p-3 transition-colors hover:border-secondary">
+      {/* <Icon size={18} className="block text-primary" aria-hidden="true" /> */}
       <h3 className="mt-1.5 text-xs font-medium">{title}</h3>
       <p className="mt-1 text-[11px] text-ink-2">{text}</p>
     </li>
@@ -188,8 +188,8 @@ function Tile({ icon: Icon, title, text }) {
 
 function Chip({ icon: Icon, title }) {
   return (
-    <li className="flex items-center gap-1.5 rounded-lg border-[0.5px] border-line px-2.5 py-[9px] text-[11px]">
-      <Icon size={14} className="shrink-0 text-primary" aria-hidden="true" />
+    <li className="flex items-center gap-1.5 rounded-lg border-neutral-800/20 border-[0.5px] border-line px-2.5 py-[9px] text-[11px]">
+      {/* <Icon size={14} className="shrink-0 text-primary" aria-hidden="true" /> */}
       {/* Chips are plain labels, so use a span rather than a heading */}
       <span>{title}</span>
     </li>
@@ -236,68 +236,70 @@ const jsonLd = {
 export default function ClientServicesPage() {
   return (
     <>
-      <div className="mx-auto container rounded-2xl  bg-white p-3 px-4">
-        <div className="overflow-hidden rounded-xl border-[0.5px] border-line bg-surface-2">
-          {/* Top bar */}
-          <header className="flex items-center justify-between gap-3 border-b-[0.5px] border-line px-4 py-2.5 hidden">
-            <Link
-              href="/"
-              className="flex items-center gap-2 text-sm font-medium"
-              aria-label={`${siteConfig.name} home`}
-            >
-              <IconChartCandle size={18} className="text-primary" aria-hidden="true" />
-              {siteConfig.name}
-            </Link>
-            <nav aria-label="Breadcrumb" className="text-xs text-ink-2">
-              <ol className="flex items-center gap-1">
-                <li>
-                  <Link href="/" className="hover:text-primary">
-                    Home
-                  </Link>
-                </li>
-                <li aria-hidden="true">/</li>
-                <li aria-current="page" className="text-ink">
-                  Client Services
-                </li>
-              </ol>
-            </nav>
-          </header>
-
-          <main>
-            {/* Hero */}
-            <section className="border-b-[0.5px] border-line px-5 py-6">
-              <p className="mb-1.5 text-[11px] text-secondary">Client Services</p>
-              <h1 className="mb-2 text-[19px] font-medium">
-                Everything you need to invest on the DSE
-              </h1>
-              <p className="max-w-[460px] text-[13px] leading-[1.6] text-ink-2">
-                From mobile trading to tax reports — the full suite of services
-                available to every Midway client.
-              </p>
-            </section>
-
-            {/* Service groups */}
-            {SECTIONS.map((section) => (
-              <section
-                key={section.id}
-                aria-labelledby={section.id}
-                className="border-b-[0.5px] border-line px-5 py-[18px] last:border-b-0"
+      <div className="container mx-auto p-4 py-0">
+        <div className="mx-auto container shadow-xl rounded-2xl bg-white p-3 px-4 lg:p-8">
+          <div className="overflow-hidden rounded-2xl border-neutral-800/20 border-[0.5px] border-line bg-surface-2">
+            {/* Top bar */}
+            <header className="flex items-center justify-between gap-3 border-b-[0.5px] border-neutral-800/20 border-line px-4 py-2.5 hidden">
+              <Link
+                href="/"
+                className="flex items-center gap-2 text-sm font-medium"
+                aria-label={`${siteConfig.name} home`}
               >
-                <h2 id={section.id} className="mb-2.5 text-xs font-normal text-ink-muted">
-                  {section.title}
-                </h2>
-                <ul className={`grid gap-2.5 ${section.cols}`}>
-                  {section.items.map((item) =>
-                    section.variant === "chip" ? (
-                      <Chip key={item.title} {...item} />
-                    ) : (
-                      <Tile key={item.title} {...item} />
-                    )
-                  )}
-                </ul>
+                <IconChartCandle size={18} className="text-primary" aria-hidden="true" />
+                {siteConfig.name}
+              </Link>
+              <nav aria-label="Breadcrumb" className="text-xs text-ink-2">
+                <ol className="flex items-center gap-1">
+                  <li>
+                    <Link href="/" className="hover:text-primary">
+                      Home
+                    </Link>
+                  </li>
+                  <li aria-hidden="true">/</li>
+                  <li aria-current="page" className="text-ink">
+                    Client Services
+                  </li>
+                </ol>
+              </nav>
+            </header>
+
+            <main>
+              {/* Hero */}
+              <section className="border-b-[0.5px] border-neutral-800/20 border-line px-5 py-6">
+                <p className="text-lg font-semibold text-black mb-4 sm:mb-5">Client Services</p>
+                <h1 className="text-xl sm:text-2xl font-semibold text-black leading-snug mb-3">
+                  Everything you need to invest on the DSE
+                </h1>
+                <p className="max-w-[460px] text-[13px] leading-[1.6] text-ink-2">
+                  From mobile trading to tax reports — the full suite of services
+                  available to every Midway client.
+                </p>
               </section>
-            ))}
-          </main>
+
+              {/* Service groups */}
+              {SECTIONS.map((section) => (
+                <section
+                  key={section.id}
+                  aria-labelledby={section.id}
+                  className="border-b-[0.5px] border-neutral-800/20 border-line px-5 py-[18px] last:border-b-0"
+                >
+                  <h2 id={section.id} className="text-lg font-semibold text-black mb-4 sm:mb-5">
+                    {section.title}
+                  </h2>
+                  <ul className={`grid gap-2.5 ${section.cols}`}>
+                    {section.items.map((item) =>
+                      section.variant === "chip" ? (
+                        <Chip key={item.title} {...item} />
+                      ) : (
+                        <Tile key={item.title} {...item} />
+                      )
+                    )}
+                  </ul>
+                </section>
+              ))}
+            </main>
+          </div>
         </div>
       </div>
 

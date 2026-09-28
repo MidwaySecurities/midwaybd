@@ -112,7 +112,7 @@ const Footer = () => {
             <h3 className='text-lg font-semibold mb-4 text-secondary_color'>Resources</h3>
             <ul className='space-y-2.5'>
               {/* <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Market News</a></li> */}
-              <li><Link href="/blogs" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Blog</Link></li>
+              <li><Link href="/blog" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Blog</Link></li>
               <li><Link href="/frequently-asked-question" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>FAQ</Link></li>
               {/* <li><a href="#" className='text-slate-300 hover:text-white transition-colors duration-200 text-sm'>Terms of Service</a></li> */}
             </ul>

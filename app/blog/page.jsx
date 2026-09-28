@@ -165,7 +165,7 @@ const BlogsInner = () => {
                             key={blog.id}
                             className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col"
                         >
-                            <Link href={`/blogs/${blog.slug}`}>
+                            <Link href={`/blog/${blog.slug}`}>
                                 <img
                                     src={blog.cover_image}
                                     alt={blog.title}
@@ -174,7 +174,7 @@ const BlogsInner = () => {
                             </Link>
 
                             <div className="p-5 flex flex-col flex-1">
-                                <Link href={`/blogs/${blog.slug}`}>
+                                <Link href={`/blog/${blog.slug}`}>
                                     <h2 className="text-lg font-semibold text-gray-800 line-clamp-2 hover:text-secondary_color transition-colors duration-200">
                                         {blog.title}
                                     </h2>
@@ -183,7 +183,7 @@ const BlogsInner = () => {
                                     {blog.excerpt}
                                 </p>
                                 <Link
-                                    href={`/blogs/${blog.slug}`}
+                                    href={`/blog/${blog.slug}`}
                                     className="text-blue-500 hover:text-secondary_color font-medium mt-4 inline-block"
                                 >
                                     Read More →

@@ -180,15 +180,15 @@ function Tile({ icon: Icon, title, text }) {
   return (
     <li className="rounded-lg border-neutral-800/20 border-[0.5px] border-line p-3 transition-colors hover:border-secondary">
       {/* <Icon size={18} className="block text-primary" aria-hidden="true" /> */}
-      <h3 className="mt-1.5 text-sm font-medium">{title}</h3>
-      <p className="mt-1 text-xs text-ink-2">{text}</p>
+      <h3 className="mt-1.5 text-lg font-medium">{title}</h3>
+      <p className="mt-1 text-sm text-ink-2">{text}</p>
     </li>
   );
 }
 
 function Chip({ icon: Icon, title }) {
   return (
-    <li className="flex items-center gap-1.5 rounded-lg border-neutral-800/20 border-[0.5px] border-line px-2.5 py-[9px] text-[11px]">
+    <li className="flex items-center gap-1.5 rounded-lg border-neutral-800/20 border-[0.5px] border-line px-2.5 py-[9px] text-sm">
       {/* <Icon size={14} className="shrink-0 text-primary" aria-hidden="true" /> */}
       {/* Chips are plain labels, so use a span rather than a heading */}
       <span>{title}</span>
@@ -271,7 +271,7 @@ export default function ClientServicesPage() {
                 <h1 className="text-xl sm:text-2xl font-semibold text-black leading-snug mb-3">
                   Everything you need to invest on the DSE
                 </h1>
-                <p className="max-w-[460px] text-[13px] leading-[1.6] text-ink-2">
+                <p className="max-w-[460px] text-base leading-[1.6] text-ink-2">
                   From mobile trading to tax reports — the full suite of services
                   available to every Midway client.
                 </p>
@@ -284,7 +284,7 @@ export default function ClientServicesPage() {
                   aria-labelledby={section.id}
                   className="border-b-[0.5px] border-neutral-800/20 border-line px-5 py-[18px] last:border-b-0"
                 >
-                  <h2 id={section.id} className="text-lg font-semibold text-black mb-4 sm:mb-5">
+                  <h2 id={section.id} className="text-xl font-semibold text-black mb-4 sm:mb-5">
                     {section.title}
                   </h2>
                   <ul className={`grid gap-2.5 ${section.cols}`}>

@@ -96,6 +96,7 @@ const SECTIONS = [
       {
         icon: IconUserPlus,
         title: "BO Account Opening",
+        link : 'https://portal.midwaybd.com/bo/portal-login',
         text: "100% online — ৳150, no branch visit needed",
       },
       {
@@ -291,9 +292,9 @@ export default function ClientServicesPage() {
                     {section.items.map((item) =>
                       section.variant === "chip" ? (
                         <Chip key={item.title} {...item} />
-                      ) : (
-                        <Tile key={item.title} {...item} />
-                      )
+                      ) : item.link?(
+                        <Link className="cursor-pointer hover:text-secondary_color" href={item.link}><Tile key={item.title} {...item} /></Link>
+                      ):(<Tile key={item.title} {...item} />)
                     )}
                   </ul>
                 </section>

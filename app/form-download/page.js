@@ -30,7 +30,8 @@ const FormDownload = () => {
         { name: 'Authorization Form', url: '/forms/letter_of_authorization_for_bo_account_form.pdf' },
         { name: 'Change Address', url: '/forms/change_address_form.pdf' },
         { name: 'Change Mobile Number', url: '/forms/change_phone_number_form.pdf' },
-        { name: 'Change Email Address', url: '/forms/change_email_form.pdf' }
+        { name: 'Change Email Address', url: '/forms/change_email_form.pdf' },
+        { name: 'Name Change Form', url: '/forms/Name_change_form.pdf' }
       ]
     },
     {

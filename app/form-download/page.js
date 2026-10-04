@@ -71,7 +71,8 @@ const FormDownload = () => {
         { name: 'Declaration of Placement Holder', url: '/forms/declaration_for_selling_of_securities_by_placement_holders.pdf' },
         { name: 'Change Commission', url: '/forms/change_commission_rate[20071].pdf' },
         { name: 'Share Transfer (Gift)', url: '/forms/share_transfer_form-gift.pdf' },
-        { name: 'Share Transfer (Non-Gift)', url: '/forms/share_transfer_form_-_other_than_gift.pdf' }
+        { name: 'Share Transfer (Non-Gift)', url: '/forms/share_transfer_form_-_other_than_gift.pdf' },
+        { name: 'Share Transmission', url: '/forms/Transmission_Request_Form.pdf' },
       ]
     }
   ]

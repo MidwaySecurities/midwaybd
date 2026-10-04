@@ -1,34 +1,5 @@
 import { BuildingIcon } from "./icons";
 
-/**
- * "Currently Open" IPO card.
- *
- * Renders the live/open IPO (with an optional company image/banner) when
- * `data.isOpen` is true, and a neutral "nothing open right now" state when
- * it's false — so the section never has to be hidden or hard-coded empty.
- *
- * `data` is the `currentlyOpen` object from ipo-content.json. In production,
- * swap the static JSON import for a fetch to whatever powers the live IPO
- * calendar (Midway Portal API, CMS, etc.) and pass the result in as `data`.
- *
- * Field reference (from ipo-content.json → currentlyOpen):
- *   companyName               string   e.g. "Asiatic Laboratories Limited"
- *   companyImage               string  URL/path to a banner image for the
- *                                      company — optional. Falls back to a
- *                                      placeholder icon tile when empty.
- *   pricingMethod              string  "Fixed Price" | "Book Building"
- *   price                      string  e.g. "৳20" (per-share or cut-off price)
- *   sharesOffered               string  e.g. "24,181,819"
- *   investorCategory           string  e.g. "General Investors (RB)"
- *   subscriptionAmount         string  e.g. "৳10,010"
- *   openingSubscriptionDate    string  ISO date, e.g. "2027-02-04"
- *   closingSubscriptionDate    string  ISO date, e.g. "2027-02-08"
- *   applyUrl                   string  link to the Midway Portal IPO apply flow
- *
- * NOTE: deliberately no "minimum investment" field here — current BSEC
- * rules (confirmed) require no minimum prior investment for GI/NRB
- * applicants. Don't re-add one without a confirmed current-rules source.
- */
 export default function CurrentlyOpenIPOCard({ data }) {
   if (!data || !data.isOpen) {
     return (

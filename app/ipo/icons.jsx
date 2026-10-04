@@ -1,9 +1,3 @@
-/**
- * Minimal inline-SVG icon set used by the IPO page components.
- * No external icon library required — swap these for your own icon
- * system (e.g. @tabler/icons-react, lucide-react) if you have one installed.
- */
-
 export function CheckCircleIcon({ className = "w-4 h-4" }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"

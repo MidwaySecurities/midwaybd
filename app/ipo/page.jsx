@@ -7,17 +7,6 @@ import {
   IconByName,
 } from "./icons";
 
-/**
- * IPO page — brand colors: #004990 navy / #1da1f2 sky / #fad870 gold,
- * with the IPO asset-class accent (#c99a1a deep gold / #fdf6e3 tint)
- * per the site's color system. Content is driven entirely by
- * ipo-content.json so marketing can update copy, the live IPO, and
- * figures without touching this component.
- *
- * Drop this inside your existing page layout (it assumes your site's
- * own header/nav/footer wrap around it) — it renders only the IPO
- * page's own content column.
- */
 export default function IPOPage({ content = ipoContent }) {
   const {
     hero,
@@ -34,10 +23,6 @@ export default function IPOPage({ content = ipoContent }) {
 
   return (
     <div className="max-w-3xl mx-auto">
-      {/* Top accent border — IPO asset-class color */}
-      {/* <div className="h-1 w-full bg-[#c99a1a]" /> */}
-
-      {/* Hero */}
       <section className="px-5 py-8 sm:py-10">
         <span className="inline-flex items-center gap-1.5 rounded-md bg-secondary_color/10 px-2.5 py-1 text-xs font-semibold text-secondary_color mb-4">
           {hero.eyebrow}

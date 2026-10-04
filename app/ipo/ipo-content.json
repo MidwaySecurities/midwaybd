@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "eyebrow": "IPO",
+    "headline": "Apply for Every DSE IPO, Right From Your BO Account",
+    "subhead": "100% online, through the Midway Portal. No paper forms, no branch visit.",
+    "primaryCta": { "label": "View Open IPOs", "href": "#currently-open" },
+    "secondaryCta": { "label": "Open BO Account", "href": "/new-investor" }
+  },
+
+  "currentlyOpen": {
+    "isOpen": false,
+    "companyName": "",
+    "companyImage": "",
+    "pricingMethod": "",
+    "price": "",
+    "sharesOffered": "",
+    "investorCategory": "",
+    "subscriptionAmount": "",
+    "openingSubscriptionDate": "",
+    "closingSubscriptionDate": "",
+    "applyUrl": "https://portal.midwaybd.com/ipo/apply",
+    "noOpenIpoMessage": "No IPO is currently open for subscription. Check back soon, or join the IPO Membership Club below so you never miss one."
+  },
+
+  "whoCanApply": [
+    {
+      "icon": "user",
+      "title": "General Investor",
+      "description": "Any resident retail investor with an active BO Account"
+    },
+    {
+      "icon": "plane",
+      "title": "NRB",
+      "description": "Bangladeshi citizens abroad get a dedicated quota — see lock-in note below"
+    }
+  ],
+
+  "confirmedNote": "No minimum prior stock-market investment is required to apply — confirmed per current BSEC rules.",
+
+  "pricingMethods": [
+    {
+      "title": "Fixed Price",
+      "description": "The company sets one price. You apply at that price."
+    },
+    {
+      "title": "Book Building",
+      "description": "Eligible institutional investors set a \"cut-off price\" through bidding. You apply at that price — you don't bid yourself."
+    }
+  ],
+
+  "allocation": {
+    "note": "Per current BSEC rules — the public offer is split into category quotas, which differ by pricing method",
+    "rows": [
+      { "category": "General Investors (GI)", "fixedPrice": "60%", "bookBuilding": "35%" },
+      { "category": "Eligible Investors (EIs)", "fixedPrice": "10%", "bookBuilding": "40%" },
+      { "category": "Non-Resident Bangladeshis (NRB)", "fixedPrice": "10%", "bookBuilding": "7%" }
+    ],
+    "warning": ""
+  },
+
+  "howToApply": {
+    "steps": [
+      { "number": 1, "label": "Check the Calendar" },
+      { "number": 2, "label": "Apply via Portal" },
+      { "number": 3, "label": "Fund Held for Lottery" },
+      { "number": 4, "label": "Shares or Refund" }
+    ],
+    "note": "You apply for a 5-working-day window and deposit the full subscription amount upfront. If the IPO is oversubscribed, General Investors and NRBs are allotted by lottery — if you're not selected, your money is refunded to your BO Account."
+  },
+
+  "lockIn": {
+    "gi": "General Investors (GIs): No lock-in. Resident retail investors who receive shares through the public offer have no lock-in period and can trade or sell their shares starting from the first trading day.",
+    "nrb": "Non-Resident Bangladeshis (NRBs) / Non-Residents (NR): 1-Year Lock-In. Shares held under the non-resident quota are subject to a 1-year lock-in period starting from the first trading day at the stock exchange(s)."
+  },
+
+  "membershipClub": {
+    "title": "IPO Membership Club",
+    "description": "Sign up once in the Midway Portal, and we auto-apply to every eligible Equity IPO on your behalf, based on available balance.",
+    "href": "https://portal.midwaybd.com/ipo-club"
+  },
+
+  "finalCta": {
+    "label": "Ready to Apply?",
+    "buttonLabel": "Open BO Account",
+    "href": "/new-investor"
+  }
+}

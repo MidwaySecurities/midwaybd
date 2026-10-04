@@ -1,10 +1,105 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    async redirects(){
+    async redirects() {
         return [
             {
                 source: '/blogs.html',
-                destination: '/blogs',
+                destination: '/blog',
+                permanent: true,
+            },
+            {
+                source: '/open-a-bo-account.html',
+                destination: 'https://portal.midwaybd.com/bo/portal-login',
+                permanent: true,
+            },
+            {
+                source: '/blog/open-bo-account-free-bangladesh',
+                destination: 'https://portal.midwaybd.com/bo/portal-login',
+                permanent: true,
+            },
+            {
+                source: '/bangla-bo-account.html',
+                destination: 'https://portal.midwaybd.com/bo/portal-login',
+                permanent: true,
+            },
+            {
+                source: '/boaccountrefface.html',
+                destination: 'https://portal.midwaybd.com/bo/portal-login',
+                permanent: true,
+            },
+            {
+                source: '/blog/bo-account-opening-rules-bangladesh',
+                destination: 'https://portal.midwaybd.com/bo/portal-login',
+                permanent: true,
+            },
+            {
+                source: '/faq/how-do-i-open-a-bo-account',
+                destination: 'https://midwaybd.com/new-investor',
+                permanent: true,
+            },
+            {
+                source: '/faq/what-is-a-bo-account',
+                destination: 'https://midwaybd.com/new-investor',
+                permanent: true,
+            },
+            {
+                source: '/faq/category/bo-account',
+                destination: 'https://midwaybd.com/new-investor',
+                permanent: true,
+            },
+            {
+                source: '/faq/what-documents-are-required-to-open-a-bo-account',
+                destination: 'https://midwaybd.com/new-investor',
+                permanent: true,
+            },
+            {
+                source: '/blog/open-a-bo-account-in-3-easy-steps',
+                destination: 'https://portal.midwaybd.com/bo/portal-login',
+                permanent: true,
+            },
+            {
+                source: '/taka-deposit.html',
+                destination: '/deposit',
+                permanent: true,
+            },
+            {
+                source: '/mobilemoney.html',
+                destination: '/deposit?tab=mobile',
+                permanent: true,
+            },
+            {
+                source: '/credit-card-deposit.html',
+                destination: '/deposit?tab=credit',
+                permanent: true,
+            },
+            {
+                source: '/our-branches.html',
+                destination: '/our-branches',
+                permanent: true,
+            },
+            {
+                source: '/contact-us.html',
+                destination: '/contact-us',
+                permanent: true,
+            },
+            {
+                source: '/faq',
+                destination: '/contact-us',
+                permanent: true,
+            },
+            {
+                source: '/pricing.html',
+                destination: '/pricing',
+                permanent: true,
+            },
+            {
+                source: '/link-account.html',
+                destination: '/link-bo-account',
+                permanent: true,
+            },
+            {
+                source: '/taka-withdraw.html',
+                destination: '/withdrawals',
                 permanent: true,
             }
         ]

@@ -1,0 +1,461 @@
+{
+  "date": "December 9, 2025",
+  "reportTitle": "DSE Market Analysis - Major Breakout",
+  "indices": {
+    "dsex": {
+      "value": 4962.90,
+      "change": 56.61,
+      "changePercent": 1.15,
+      "high": 4975.06,
+      "low": 4915.83,
+      "open": 4906.29,
+      "previousClose": 4906.29
+    },
+    "dses": {
+      "value": 1039.23,
+      "change": 11.70,
+      "changePercent": 1.14
+    },
+    "ds30": {
+      "value": 1907.77,
+      "change": 14.82,
+      "changePercent": 0.78
+    }
+  },
+  "technicalLevels": {
+    "dma20": 4959.80,
+    "dma50": 5128.30,
+    "dma200": 5120.60,
+    "rsi14": 56.80,
+    "support": 4872.64,
+    "resistance": 5197.27,
+    "week52High": 5636.15,
+    "week52Low": 4615.41
+  },
+  "ytdPerformance": {
+    "startValue": 5218.16,
+    "currentValue": 4962.90,
+    "returnPercent": -4.89
+  },
+  "marketSummary": {
+    "totalVolume": 155516501,
+    "totalValueMn": 4580.37,
+    "issuesAdvanced": 317,
+    "issuesDeclined": 35,
+    "issuesUnchanged": 37,
+    "advanceDeclineRatio": 9.06
+  },
+  "marketBreadth": {
+    "gainers": {
+      "count": 306,
+      "percent": 81.0
+    },
+    "losers": {
+      "count": 36,
+      "percent": 9.5
+    },
+    "unchanged": {
+      "count": 36,
+      "percent": 9.5
+    },
+    "advanceDeclineRatio": 8.50,
+    "commentary": {
+      "en": "Market breadth reached euphoric levels in this breakout session. Gainers surged to 81.0% (306 stocks) while losers collapsed to just 9.5% (36 stocks), producing an explosive 8.50:1 A/D ratio - the best reading in months. This represents a dramatic improvement from yesterday's already strong 5.00:1 ratio. All categories showed overwhelming participation: Category A had 152 gainers vs 14 losers (10.9:1 ratio), Category B showed 71 gainers vs 4 losers (17.8:1 ratio), and even Category Z turned decisively bullish with 68 gainers vs 15 losers (4.5:1 ratio). Circuit breakers exploded to 9 upper circuits (STANDARINS, USMANIAGL, JUTESPINN all hitting +10%) with zero lower circuits. This breadth surge came with strong volume confirmation - turnover jumped 25.6% to BDT 4,580M and volume increased 15.0% to 155.5M. The combination of extreme breadth, heavy volume, and widespread sector participation confirms this is genuine institutional buying, not a retail-driven spike. Two consecutive days of expanding breadth on rising volume is the hallmark of a sustainable trend reversal.",
+      "bn": "Market breadth এই breakout session-এ euphoric level-এ পৌঁছেছে। Gainer 81.0% (306টি stock)-এ surge করেছে আর loser মাত্র 9.5% (36টি stock)-এ collapse করেছে, explosive 8.50:1 A/D ratio তৈরি করেছে - মাসগুলোতে সেরা reading। এটা গতকালের ইতিমধ্যে শক্তিশালী 5.00:1 ratio থেকে নাটকীয় উন্নতি প্রতিনিধিত্ব করে। সব category overwhelming participation দেখিয়েছে: Category A-তে 152টি gainer বনাম 14টি loser (10.9:1 ratio), Category B 71টি gainer বনাম 4টি loser (17.8:1 ratio) দেখিয়েছে, এবং এমনকি Category Z decisively bullish হয়েছে 68টি gainer বনাম 15টি loser (4.5:1 ratio) নিয়ে। Circuit breaker 9টি upper circuit-এ বিস্ফোরিত হয়েছে (STANDARINS, USMANIAGL, JUTESPINN সব +10% hit করেছে) শূন্য lower circuit সহ। এই breadth surge শক্তিশালী volume confirmation সহ এসেছে - turnover 25.6% jump করে BDT 4,580M হয়েছে এবং volume 15.0% বেড়ে 155.5M হয়েছে। Extreme breadth, heavy volume, এবং widespread sector participation-এর সংমিশ্রণ confirm করে এটা genuine institutional buying, retail-driven spike নয়। Expanding breadth-এর পরপর দুই দিন rising volume-এ sustainable trend reversal-এর hallmark।"
+    }
+  },
+  "categoryBreadth": [
+    {
+      "category": "A",
+      "gainers": 152,
+      "losers": 14,
+      "unchanged": 0,
+      "turnoverMn": 2583.60,
+      "gainerRatio": 10.9
+    },
+    {
+      "category": "B",
+      "gainers": 71,
+      "losers": 4,
+      "unchanged": 0,
+      "turnoverMn": 1456.01,
+      "gainerRatio": 17.8
+    },
+    {
+      "category": "Z",
+      "gainers": 68,
+      "losers": 15,
+      "unchanged": 0,
+      "turnoverMn": 176.85,
+      "gainerRatio": 4.5
+    }
+  ],
+  "circuitBreakers": {
+    "upper": [
+      {
+        "symbol": "STANDARINS",
+        "close": 41.80,
+        "change": 10.00
+      },
+      {
+        "symbol": "USMANIAGL",
+        "close": 37.40,
+        "change": 10.00
+      },
+      {
+        "symbol": "JUTESPINN",
+        "close": 218.00,
+        "change": 9.99
+      },
+      {
+        "symbol": "STANCERAM",
+        "close": 82.70,
+        "change": 9.97
+      },
+      {
+        "symbol": "NORTHERN",
+        "close": 102.70,
+        "change": 9.96
+      },
+      {
+        "symbol": "ZEALBANGLA",
+        "close": 175.70,
+        "change": 9.95
+      },
+      {
+        "symbol": "CENTRALINS",
+        "close": 39.80,
+        "change": 9.94
+      },
+      {
+        "symbol": "INTECH",
+        "close": 31.00,
+        "change": 9.93
+      },
+      {
+        "symbol": "SONARGAON",
+        "close": 28.80,
+        "change": 9.92
+      }
+    ],
+    "upperCount": 9,
+    "lower": [],
+    "lowerCount": 0
+  },
+  "volumeSpikes": {
+    "totalCount": 118,
+    "top5": [
+      {
+        "symbol": "PROGRESLIF",
+        "spike": 11340.0,
+        "close": 44.80,
+        "change": -6.75
+      },
+      {
+        "symbol": "BDPAINTS",
+        "spike": 146.1,
+        "close": 29.60,
+        "change": -3.90
+      },
+      {
+        "symbol": "HIMADRI",
+        "spike": 50.0,
+        "close": 688.90,
+        "change": 1.31
+      },
+      {
+        "symbol": "EASTERNINS",
+        "spike": 22.0,
+        "close": 50.30,
+        "change": 8.41
+      },
+      {
+        "symbol": "HEIDELBCEM",
+        "spike": 20.0,
+        "close": 221.00,
+        "change": 1.19
+      }
+    ]
+  },
+  "sectorPerformance": [
+    {
+      "sector": "Pharma & Chemicals",
+      "valueMn": 577.27,
+      "percent": 13.59,
+      "changeVsPreviousDay": -18.0
+    },
+    {
+      "sector": "Engineering",
+      "valueMn": 572.59,
+      "percent": 13.48,
+      "changeVsPreviousDay": 48.0
+    },
+    {
+      "sector": "Textile",
+      "valueMn": 550.15,
+      "percent": 12.95,
+      "changeVsPreviousDay": 1.0
+    },
+    {
+      "sector": "Fuel and Power",
+      "valueMn": 447.06,
+      "percent": 10.52,
+      "changeVsPreviousDay": 49.0
+    },
+    {
+      "sector": "Food and Allied",
+      "valueMn": 355.30,
+      "percent": 8.36,
+      "changeVsPreviousDay": -6.0
+    }
+  ],
+  "sectorCommentary": {
+    "en": "Sector leadership became more balanced as the rally broadened. Pharma held first place with BDT 577M (13.59%, -18% vs Sunday) but surrendered dominance as money rotated across sectors. Engineering surged to second with BDT 573M (13.48%, +48% vs Sunday), showing industrials joining the rally. Textile maintained third at BDT 550M (12.95%, +1% vs Sunday) as SIMTEX normalized. Fuel & Power jumped to fourth with BDT 447M (10.52%, +49% vs Sunday), while Food & Allied fell to fifth at BDT 355M (8.36%, -6% vs Sunday). The top 5 sectors now account for just 59% of turnover (vs 69% on Sunday), indicating healthy sector rotation. ORIONINFU maintained turnover leadership at BDT 148M despite declining 2.17%, while SIMTEX fell 3.33% on BDT 133M turnover. KBPPWBIL emerged as the new star with BDT 128M (+8.18%). This rotation from defensive Pharma into cyclical Engineering and Power signals confidence in economic recovery rather than defensive positioning.",
+    "bn": "Rally বিস্তৃত হওয়ার সাথে সাথে sector leadership আরো balanced হয়েছে। Pharma প্রথম স্থান ধরে রেখেছে BDT 577M (13.59%, রবিবার থেকে -18%) নিয়ে কিন্তু dominance surrender করেছে কারণ টাকা sector জুড়ে rotate করেছে। Engineering দ্বিতীয় স্থানে surge করেছে BDT 573M (13.48%, রবিবার থেকে +48%) নিয়ে, দেখাচ্ছে industrial rally-তে যোগ দিচ্ছে। Textile তৃতীয় স্থানে বজায় রেখেছে BDT 550M (12.95%, রবিবার থেকে +1%) নিয়ে কারণ SIMTEX normalize হয়েছে। Fuel & Power চতুর্থ স্থানে jump করেছে BDT 447M (10.52%, রবিবার থেকে +49%) নিয়ে, আর Food & Allied পঞ্চম স্থানে পড়েছে BDT 355M (8.36%, রবিবার থেকে -6%) নিয়ে। Top 5 sector এখন turnover-এর মাত্র 59% account করছে (রবিবারে 69% ছিল), স্বাস্থ্যকর sector rotation indicate করছে। ORIONINFU turnover leadership বজায় রেখেছে BDT 148M-এ 2.17% decline সত্ত্বেও, আর SIMTEX 3.33% পড়েছে BDT 133M turnover-এ। KBPPWBIL নতুন star হিসেবে emerge হয়েছে BDT 128M (+8.18%) নিয়ে। Defensive Pharma থেকে cyclical Engineering এবং Power-এ এই rotation defensive positioning-এর পরিবর্তে economic recovery-তে confidence signal করে।"
+  },
+  "topGainers": [
+    {
+      "symbol": "STANDARINS",
+      "close": 41.80,
+      "change": 10.00
+    },
+    {
+      "symbol": "USMANIAGL",
+      "close": 37.40,
+      "change": 10.00
+    },
+    {
+      "symbol": "JUTESPINN",
+      "close": 218.00,
+      "change": 9.99
+    },
+    {
+      "symbol": "STANCERAM",
+      "close": 82.70,
+      "change": 9.97
+    },
+    {
+      "symbol": "NORTHERN",
+      "close": 102.70,
+      "change": 9.96
+    }
+  ],
+  "topLosers": [
+    {
+      "symbol": "PROGRESLIF",
+      "close": 44.80,
+      "change": -6.75
+    },
+    {
+      "symbol": "ILFSL",
+      "close": 0.70,
+      "change": -6.67
+    },
+    {
+      "symbol": "BDPAINTS",
+      "close": 29.60,
+      "change": -3.90
+    },
+    {
+      "symbol": "ZAHINTEX",
+      "close": 5.50,
+      "change": -3.64
+    },
+    {
+      "symbol": "PLFSL",
+      "close": 0.58,
+      "change": -3.33
+    }
+  ],
+  "topValue": [
+    {
+      "symbol": "ORIONINFU",
+      "valueMn": 147.54,
+      "close": 383.00,
+      "change": -2.17
+    },
+    {
+      "symbol": "SIMTEX",
+      "valueMn": 133.16,
+      "close": 23.20,
+      "change": -3.33
+    },
+    {
+      "symbol": "KBPPWBIL",
+      "valueMn": 127.66,
+      "close": 58.20,
+      "change": 8.18
+    },
+    {
+      "symbol": "DOMINAGE",
+      "valueMn": 117.58,
+      "close": 27.10,
+      "change": 1.12
+    },
+    {
+      "symbol": "ACMEPL",
+      "valueMn": 108.98,
+      "close": 17.50,
+      "change": -2.23
+    },
+    {
+      "symbol": "ANWARGALV",
+      "valueMn": 99.06,
+      "close": 92.40,
+      "change": 9.74
+    },
+    {
+      "symbol": "CVOPRL",
+      "valueMn": 83.86,
+      "close": 170.70,
+      "change": 4.92
+    },
+    {
+      "symbol": "MPETROLEUM",
+      "valueMn": 82.96,
+      "close": 210.00,
+      "change": -0.48
+    },
+    {
+      "symbol": "ASIATICCLAB",
+      "valueMn": 81.76,
+      "close": 54.50,
+      "change": -0.18
+    },
+    {
+      "symbol": "SQURPHARMA",
+      "valueMn": 78.16,
+      "close": 201.90,
+      "change": -0.15
+    }
+  ],
+  "blockMarket": {
+    "summary": {
+      "totalTrades": 80,
+      "totalScrips": 35,
+      "totalValueMn": 213.29
+    },
+    "top5": [
+      {
+        "symbol": "FINEFOODS",
+        "quantity": 181558,
+        "price": 335.57,
+        "valueMn": 60.93
+      },
+      {
+        "symbol": "SHYAMPSUG",
+        "quantity": 92850,
+        "price": 212.69,
+        "valueMn": 19.69
+      },
+      {
+        "symbol": "DOMINAGE",
+        "quantity": 530838,
+        "price": 26.29,
+        "valueMn": 13.90
+      },
+      {
+        "symbol": "BXPHARMA",
+        "quantity": 125000,
+        "price": 109.00,
+        "valueMn": 13.63
+      },
+      {
+        "symbol": "SQURPHARMA",
+        "quantity": 74000,
+        "price": 201.00,
+        "valueMn": 14.87
+      }
+    ]
+  },
+  "intraday": [
+    { "time": "10:00", "value": 4906 },
+    { "time": "10:05", "value": 4920 },
+    { "time": "10:10", "value": 4935 },
+    { "time": "10:15", "value": 4945 },
+    { "time": "10:20", "value": 4955 },
+    { "time": "10:25", "value": 4962 },
+    { "time": "10:30", "value": 4960 },
+    { "time": "10:35", "value": 4958 },
+    { "time": "10:40", "value": 4955 },
+    { "time": "10:45", "value": 4952 },
+    { "time": "10:50", "value": 4950 },
+    { "time": "10:55", "value": 4948 },
+    { "time": "11:00", "value": 4950 },
+    { "time": "11:10", "value": 4952 },
+    { "time": "11:20", "value": 4955 },
+    { "time": "11:30", "value": 4957 },
+    { "time": "11:40", "value": 4955 },
+    { "time": "11:50", "value": 4953 },
+    { "time": "12:00", "value": 4950 },
+    { "time": "12:10", "value": 4947 },
+    { "time": "12:20", "value": 4945 },
+    { "time": "12:30", "value": 4943 },
+    { "time": "12:40", "value": 4940 },
+    { "time": "12:50", "value": 4938 },
+    { "time": "13:00", "value": 4940 },
+    { "time": "13:10", "value": 4945 },
+    { "time": "13:20", "value": 4950 },
+    { "time": "13:30", "value": 4955 },
+    { "time": "13:40", "value": 4958 },
+    { "time": "13:50", "value": 4962 },
+    { "time": "14:00", "value": 4968 },
+    { "time": "14:10", "value": 4973 },
+    { "time": "14:20", "value": 4975 },
+    { "time": "14:30", "value": 4962.90 }
+  ],
+  "mainCommentary": {
+    "en": "The DSEX delivered a decisive breakout, surging 56.61 points (+1.15%) to close at 4,962.90, clearing the critical 20 DMA resistance at 4,960. This marks the largest single-day point gain in weeks and confirms a trend reversal after the Nov 13 capitulation low. The market opened at 4,906 and rallied steadily through the morning to breach 4,960 by 10:25 AM. After consolidating through midday around 4,950, a powerful late-session surge drove the index to an intraday high of 4,975 before settling at 4,963. Market breadth reached euphoric levels: gainers exploded to 81.0% (306 stocks) while the A/D ratio hit 8.50:1, the strongest reading in months. Circuit breakers showed the frenzy with 9 upper circuits and zero lower circuits. Critically, this breadth expansion came with strong volume validation - turnover surged 25.6% to BDT 4,580M and volume jumped 15.0% to 155.5M, confirming institutional participation. All categories participated decisively: Category A posted a 10.9:1 gainer ratio, Category B showed 17.8:1, and Category Z achieved 4.5:1. Sector rotation became healthier as money flowed from defensive Pharma into cyclical Engineering (+48%) and Fuel & Power (+49%). The two-day rally has now added 90 points from the Dec 7 low, with the index recovering 260 points from the Nov 13 bottom. RSI improved to 56.8, entering bullish momentum territory. The breakout above 4,960 (20 DMA) on heavy volume opens the door to 5,000 psychological resistance, with potential to test 5,050-5,100 if momentum sustains.",
+    "bn": "DSEX decisive breakout দিয়েছে, 56.61 পয়েন্ট (+1.15%) surge করে 4,962.90-এ বন্ধ হয়েছে, critical 20 DMA resistance 4,960 clear করেছে। এটা সপ্তাহগুলোতে সবচেয়ে বড় single-day point gain চিহ্নিত করে এবং Nov 13 capitulation low-এর পর trend reversal confirm করে। বাজার 4,906-এ খুলেছে এবং সকাল জুড়ে steadily rally করে 10:25 AM-এ 4,960 breach করেছে। দুপুরে 4,950-এর আশেপাশে consolidate করার পর, একটি শক্তিশালী late-session surge index-কে 4,975 intraday high-এ নিয়ে গেছে 4,963-এ settle করার আগে। Market breadth euphoric level-এ পৌঁছেছে: gainer 81.0% (306টি stock)-এ explode করেছে আর A/D ratio 8.50:1 hit করেছে, মাসগুলোতে সবচেয়ে শক্তিশালী reading। Circuit breaker frenzy দেখিয়েছে 9টি upper circuit এবং শূন্য lower circuit নিয়ে। গুরুত্বপূর্ণভাবে, এই breadth expansion শক্তিশালী volume validation সহ এসেছে - turnover 25.6% surge করে BDT 4,580M হয়েছে এবং volume 15.0% jump করে 155.5M হয়েছে, institutional participation confirm করছে। সব category decisively অংশ নিয়েছে: Category A 10.9:1 gainer ratio post করেছে, Category B 17.8:1 দেখিয়েছে, এবং Category Z 4.5:1 achieve করেছে। Sector rotation স্বাস্থ্যকর হয়েছে কারণ টাকা defensive Pharma থেকে cyclical Engineering (+48%) এবং Fuel & Power (+49%)-এ flow করেছে। Two-day rally এখন Dec 7 low থেকে 90 পয়েন্ট add করেছে, index Nov 13 bottom থেকে 260 পয়েন্ট recover করেছে। RSI 56.8-এ উন্নত হয়েছে, bullish momentum territory-তে প্রবেশ করেছে। Heavy volume-এ 4,960 (20 DMA) উপরে breakout 5,000 psychological resistance-এ door খুলে দিয়েছে, momentum sustain হলে 5,050-5,100 test করার potential সহ।"
+  },
+  "comparisonWithPreviousDay": {
+    "date": "December 8, 2025",
+    "dsex": {
+      "previous": 4906.29,
+      "current": 4962.90,
+      "pointChange": 56.61,
+      "percentChange": 1.15
+    },
+    "gainersPercent": {
+      "previous": 72.4,
+      "current": 81.0,
+      "change": 8.6
+    },
+    "advanceDeclineRatio": {
+      "previous": 5.00,
+      "current": 8.50
+    },
+    "turnover": {
+      "previous": 3646,
+      "current": 4580,
+      "percentChange": 25.6
+    },
+    "volume": {
+      "previous": 135300000,
+      "current": 155516501,
+      "percentChange": 15.0
+    },
+    "upperCircuits": {
+      "previous": 2,
+      "current": 9
+    }
+  },
+  "keyTakeaways": [
+    "DSEX broke above 20 DMA (4,960) for first time since Nov 27",
+    "Largest single-day point gain in weeks (+56.61 points)",
+    "Market breadth reached euphoric 81.0% gainers (8.50:1 A/D ratio)",
+    "9 upper circuits with zero lower circuits shows buying frenzy",
+    "Strong volume confirmation: turnover +25.6%, volume +15.0%",
+    "Two-day rally totals +90 points from Dec 7 low",
+    "Total recovery: +260 points from Nov 13 capitulation bottom",
+    "RSI at 56.8 enters bullish momentum territory",
+    "Healthy sector rotation from defensive to cyclical sectors",
+    "Institutional participation confirmed by heavy volume on breakout",
+    "Next target: 5,000 psychological level, then 5,050-5,100"
+  ],
+  "marketVerdict": "MAJOR BREAKOUT - TREND REVERSAL CONFIRMED",
+  "technicalOutlook": "Bullish - breakout above 20 DMA on heavy volume with extreme positive breadth",
+  "nextSupport": 4906.29,
+  "nextResistance": 5000.00,
+  "extendedTarget": "5,050-5,100"
+}

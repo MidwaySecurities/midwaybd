@@ -1,0 +1,17 @@
+{
+  "_note": "SAMPLE DATA ONLY — shows how to fill `currentlyOpen` when a real IPO is live, modeled on the layout of the 'Next IPO — Asiatic Laboratories Limited' graphic you shared. Dates/figures below are illustrative placeholders, not real. Copy the `currentlyOpen` block into ipo-content.json (or your live data source) and replace every value before publishing.",
+
+  "currentlyOpen": {
+    "isOpen": true,
+    "companyName": "Example Pharmaceuticals Limited",
+    "companyImage": "/images/ipo/example-pharma-banner.jpg",
+    "pricingMethod": "Fixed Price",
+    "price": "৳20 / Share",
+    "sharesOffered": "24,181,819",
+    "investorCategory": "General Investors (GI)",
+    "subscriptionAmount": "৳10,010",
+    "openingSubscriptionDate": "2027-02-04",
+    "closingSubscriptionDate": "2027-02-08",
+    "applyUrl": "https://portal.midwaybd.com/ipo/apply"
+  }
+}

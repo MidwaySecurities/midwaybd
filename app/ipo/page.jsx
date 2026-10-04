@@ -1,141 +1,199 @@
-import { TrendingUp, Shield, Zap, Clock, ArrowRight, Bell, Users, Wallet } from 'lucide-react'
-import IpoTab from './components/ipoTab'
-import NagadLogo from './logoComponents/Nagad'
-import RocketLogo from './logoComponents/Rocket'
+import ipoContent from "./ipo-content.json";
+import CurrentlyOpenIPOCard from "./CurrentlyOpenIPOCard";
+import {
+  CheckCircleIcon,
+  AlertTriangleIcon,
+  ArrowRightIcon,
+  IconByName,
+} from "./icons";
 
-
-
-
-export default function IPOApplicationPage() {
-  const paymentMethods = [
-    { name: 'bKash', icon: <svg xmlns="http://www.w3.org/2000/svg" height="800" width="1200" viewBox="-6.6741 -11.07275 57.8422 66.4365"><g fill="none"><path fill="#DF146E" d="M42.31 44.291H2.182C.981 44.291 0 43.308 0 42.107V2.186C0 .982.981 0 2.182 0H42.31c1.203 0 2.184.982 2.184 2.186v39.921c0 1.201-.981 2.184-2.184 2.184" /><path fill="#FFF" d="M31.894 24.251l-14.107-2.246 1.909 8.329zm.572-.682L21.374 8.16l-3.623 13.106zm-15.402-2.482L5.441 6.239l15.221 1.819zm-5.639-6.154l-6.449-6.08h1.695zm24.504 1.15L33.2 23.486l-4.426-6.118zM21.417 30.232l10.71-4.3.454-1.365zm-8.933 7.821l4.589-16.102 2.326 10.479zm24.099-21.914l-1.128 3.056 4.059-.07z" /></g></svg>, fee: '1%', color: 'from-pink-100 to-rose-100 border-pink-300' },
-    { name: 'Nagad', icon: <NagadLogo />, fee: '1%', color: 'from-orange-100 to-amber-100 border-orange-300' },
-    { name: 'Rocket', icon: <RocketLogo />, fee: '1%', color: 'from-purple-100 to-violet-100 border-purple-300' },
-    { name: 'Bank Transfer', icon: '🏦', fee: 'Free', color: 'from-blue-100 to-cyan-100 border-blue-300' }
-  ]
-
-  const benefits = [
-    { icon: <Zap className="w-6 h-6" />, title: 'Instant Application', desc: 'Apply in 2 minutes' },
-    { icon: <Shield className="w-6 h-6" />, title: 'Secure Process', desc: '100% safe & encrypted' },
-    { icon: <Clock className="w-6 h-6" />, title: '24/7 Access', desc: 'Apply anytime, anywhere' },
-    { icon: <Users className="w-6 h-6" />, title: 'Expert Support', desc: 'Dedicated assistance' }
-  ]
+/**
+ * IPO page — brand colors: #004990 navy / #1da1f2 sky / #fad870 gold,
+ * with the IPO asset-class accent (#c99a1a deep gold / #fdf6e3 tint)
+ * per the site's color system. Content is driven entirely by
+ * ipo-content.json so marketing can update copy, the live IPO, and
+ * figures without touching this component.
+ *
+ * Drop this inside your existing page layout (it assumes your site's
+ * own header/nav/footer wrap around it) — it renders only the IPO
+ * page's own content column.
+ */
+export default function IPOPage({ content = ipoContent }) {
+  const {
+    hero,
+    currentlyOpen,
+    whoCanApply,
+    confirmedNote,
+    pricingMethods,
+    allocation,
+    howToApply,
+    lockIn,
+    membershipClub,
+    finalCta,
+  } = content;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
-      {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        {/* Decorative background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-100/50 via-purple-100/50 to-pink-100/50"></div>
-        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl"></div>
+    <div className="max-w-3xl mx-auto">
+      {/* Top accent border — IPO asset-class color */}
+      {/* <div className="h-1 w-full bg-[#c99a1a]" /> */}
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center space-y-6">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 border border-emerald-300 rounded-full text-emerald-700 text-sm font-semibold">
-              <TrendingUp className="w-4 h-4" />
-              <span>আই.পি.ও অনলাইনে আবেদন করুন</span>
-            </div>
-
-            {/* Main Heading */}
-            <h1 className="text-5xl md:text-6xl font-bold text-slate-800">
-              Apply for <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-transparent bg-clip-text">IPO Online</span>
-            </h1>
-
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Bangladesh's fastest and most secure way to invest in Initial Public Offerings
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap justify-center gap-4 pt-4">
-              <button className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-xl text-white font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2">
-                Apply Now
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="px-8 py-4 bg-white hover:bg-slate-50 border-2 border-slate-300 rounded-xl text-slate-700 font-semibold transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-lg">
-                <Bell className="w-5 h-5" />
-                Join IPO Alerts
-              </button>
-            </div>
-          </div>
+      {/* Hero */}
+      <section className="px-5 py-8 sm:py-10">
+        <span className="inline-flex items-center gap-1.5 rounded-md bg-secondary_color/10 px-2.5 py-1 text-xs font-semibold text-secondary_color mb-4">
+          {hero.eyebrow}
+        </span>
+        <h1 className="text-2xl sm:text-3xl font-semibold text-gray-900 max-w-xl">
+          {hero.headline}
+        </h1>
+        <p className="text-sm text-gray-600 mt-3 max-w-xl leading-relaxed">
+          {hero.subhead}
+        </p>
+        <div className="flex flex-wrap gap-3 mt-5">
+          <a
+            href={hero.primaryCta.href}
+            className="inline-flex items-center justify-center rounded-md bg-[#004990] px-4 py-2.5 text-sm font-medium text-white hover:opacity-90 transition"
+          >
+            {hero.primaryCta.label}
+          </a>
+          <a
+            href={hero.secondaryCta.href}
+            className="inline-flex items-center justify-center rounded-md border border-gray-300 px-4 py-2.5 text-sm font-medium text-gray-800 hover:bg-gray-50 transition"
+          >
+            {hero.secondaryCta.label}
+          </a>
         </div>
-      </div>
+      </section>
 
-      {/* Benefits Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="group p-6 bg-white border border-slate-200 rounded-2xl hover:border-blue-300 hover:shadow-lg transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform shadow-md">
-                {benefit.icon}
-              </div>
-              <h3 className="text-lg font-bold text-slate-800 mb-2">{benefit.title}</h3>
-              <p className="text-slate-600">{benefit.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* Currently Open — dedicated component, supports a company image */}
+      <CurrentlyOpenIPOCard data={currentlyOpen} />
 
-      {/* IPO Listings */}
-      <IpoTab />
-
-      {/* Payment Methods */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-            Easy <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">IPO Deposits</span>
-          </h2>
-          <p className="text-slate-600 text-lg">Multiple payment options for your convenience</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {paymentMethods.map((method, index) => (
-            <div key={index} className="group p-6 bg-white border border-slate-200 rounded-2xl hover:border-blue-300 hover:shadow-lg transition-all duration-300 cursor-pointer">
-              <div className={`w-16 h-16 p-2 rounded-2xl bg-gradient-to-br flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform`}>
-                {method.icon}
-              </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-2">{method.name}</h3>
-              <div className="flex items-center justify-between">
-                <span className="text-slate-600">Service Fee:</span>
-                <span className="text-slate-800 font-semibold">{method.fee}</span>
-              </div>
+      {/* Who Can Apply */}
+      <section className="px-5 py-6 border-b border-gray-200">
+        <h2 className="text-xs font-medium text-gray-500 mb-3">Who Can Apply</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {whoCanApply.map((item) => (
+            <div key={item.title} className="rounded-lg border border-gray-200 p-3.5">
+              <IconByName name={item.icon} className="w-5 h-5 text-secondary_color" />
+              <div className="text-sm font-medium text-gray-900 mt-2">{item.title}</div>
+              <div className="text-xs text-gray-600 mt-1">{item.description}</div>
             </div>
           ))}
         </div>
 
-        <div className="mt-8 p-6 bg-blue-50 border border-blue-200 rounded-2xl">
-          <div className="flex items-start gap-3">
-            <Wallet className="w-6 h-6 text-secondary_color flex-shrink-0 mt-1" />
-            <div>
-              <h4 className="text-slate-800 font-semibold mb-2">Direct BO Account Deposit</h4>
-              <p className="text-slate-600 text-sm">Deposit directly to your BO account via mobile banking or bank transfer. Funds will be available instantly for IPO applications.</p>
+        {confirmedNote && (
+          <div className="flex items-start gap-2 rounded-md border border-[#cfe7da] bg-[#e7f3ec] px-3 py-2.5 mt-3">
+            <CheckCircleIcon className="w-4 h-4 text-[#1f7a4d] mt-0.5 shrink-0" />
+            <p className="text-xs text-[#1f7a4d]">{confirmedNote}</p>
+          </div>
+        )}
+      </section>
+
+      {/* How Pricing Works */}
+      <section className="px-5 py-6 border-b border-gray-200">
+        <h2 className="text-xs font-medium text-gray-500 mb-3">How Pricing Works</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {pricingMethods.map((method) => (
+            <div key={method.title} className="rounded-lg border border-gray-200 p-3.5">
+              <div className="text-sm font-medium text-gray-900">{method.title}</div>
+              <div className="text-xs text-gray-600 mt-1">{method.description}</div>
             </div>
-          </div>
+          ))}
         </div>
-      </div>
+      </section>
 
-      {/* CTA Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="relative overflow-hidden p-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl shadow-2xl">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTEwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHptMC0xMGMwLTIuMjEtMS43OS00LTQtNHMtNCAxLjc5LTQgNCAxLjc5IDQgNCA0IDQtMS43OSA0LTR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20"></div>
+      {/* Allocation Rules & Quota Distribution */}
+      <section className="px-5 py-6 border-b border-gray-200">
+        <h2 className="text-xs font-medium text-gray-500 mb-1">
+          Allocation Rules &amp; Quota Distribution
+        </h2>
+        <p className="text-xs text-gray-600 mb-3 leading-relaxed">{allocation.note}</p>
 
-          <div className="relative text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Join IPO Membership Club
-            </h2>
-            <p className="text-white/95 text-lg max-w-2xl mx-auto">
-              Get exclusive access to IPO alerts, expert analysis, and priority application support
-            </p>
-            <button className="px-8 py-4 bg-white hover:bg-slate-100 text-secondary_color font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2 mx-auto">
-              <Users className="w-5 h-5" />
-              Join Now
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr>
+                <th className="text-left text-[10px] font-semibold uppercase tracking-wide text-gray-500 bg-secondary_color/10 px-2.5 py-2">
+                  Investor Category
+                </th>
+                <th className="text-right text-[10px] font-semibold uppercase tracking-wide text-gray-500 bg-secondary_color/10 px-2.5 py-2">
+                  Fixed Price Quota
+                </th>
+                <th className="text-right text-[10px] font-semibold uppercase tracking-wide text-gray-500 bg-secondary_color/10 px-2.5 py-2">
+                  Book Building Quota
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {allocation.rows.map((row) => (
+                <tr key={row.category} className="border-b border-gray-200 last:border-b-0">
+                  <td className="px-2.5 py-2.5 font-medium text-secondary_color">{row.category}</td>
+                  <td className="px-2.5 py-2.5 text-right text-gray-900">{row.fixedPrice}</td>
+                  <td className="px-2.5 py-2.5 text-right text-gray-900">{row.bookBuilding}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-      </div>
 
+        {allocation.warning && (
+          <p className="text-[11px] text-gray-500 border border-dashed border-gray-300 rounded-md px-2.5 py-2 mt-3 leading-relaxed">
+            {allocation.warning}
+          </p>
+        )}
+      </section>
+
+      {/* How to Apply */}
+      <section className="px-5 py-6 border-b border-gray-200">
+        <h2 className="text-xs font-medium text-gray-500 mb-3">How to Apply</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {howToApply.steps.map((step) => (
+            <div key={step.number} className="text-center">
+              <div className="w-6 h-6 rounded-full bg-secondary_color/10 text-secondary_color text-xs font-semibold flex items-center justify-center mx-auto mb-1.5">
+                {step.number}
+              </div>
+              <div className="text-xs text-gray-700">{step.label}</div>
+            </div>
+          ))}
+        </div>
+        <p className="text-xs text-gray-600 leading-relaxed mt-3">{howToApply.note}</p>
+      </section>
+
+      {/* Lock-In callout */}
+      <section className="px-5 py-5 border-b border-gray-200">
+        <div className="flex items-start gap-2.5 rounded-lg bg-secondary_color/10 p-3.5">
+          <AlertTriangleIcon className="w-4 h-4 text-secondary_color mt-0.5 shrink-0" />
+          <p className="text-xs text-gray-700 leading-relaxed">
+            <strong>{lockIn.gi.split(":")[0]}:</strong> {lockIn.gi.split(":").slice(1).join(":").trim()}{" "}
+            <strong>{lockIn.nrb.split(":")[0]}:</strong> {lockIn.nrb.split(":").slice(1).join(":").trim()}
+          </p>
+        </div>
+      </section>
+
+      {/* Membership Club */}
+      <section className="px-5 py-6 border-b border-gray-200">
+        <h2 className="text-xs font-medium text-gray-500 mb-3">Never Miss an IPO</h2>
+        <a
+          href={membershipClub.href}
+          className="flex items-center justify-between gap-4 rounded-lg border border-gray-200 p-3.5 hover:border-[#c99a1a] transition"
+        >
+          <div>
+            <div className="text-sm font-medium text-gray-900">{membershipClub.title}</div>
+            <div className="text-xs text-gray-600 mt-1">{membershipClub.description}</div>
+          </div>
+          <ArrowRightIcon className="w-4 h-4 text-secondary_color shrink-0" />
+        </a>
+      </section>
+
+      {/* Final CTA */}
+      <section className="px-5 py-6 flex items-center justify-between gap-4 flex-wrap">
+        <span className="text-sm text-gray-600">{finalCta.label}</span>
+        <a
+          href={finalCta.href}
+          className="inline-flex items-center justify-center rounded-md bg-[#004990] px-4 py-2.5 text-sm font-medium text-white hover:opacity-90 transition"
+        >
+          {finalCta.buttonLabel}
+        </a>
+      </section>
     </div>
-  )
+  );
 }

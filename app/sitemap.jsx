@@ -25,6 +25,7 @@ export default async function sitemap() {
     "/client-services",
     "/our-branches",
     "/pricing",
+    "/ipo"
   ].map((path) => ({
     url: `${siteUrl}${path}`,
     lastModified: now,

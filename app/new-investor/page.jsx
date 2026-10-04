@@ -94,7 +94,7 @@ export default function Page() {
               // >
               //   {badge}
               // </span>
-              <div className="bg-secondary_color/20 p-2 rounded-full">
+              <div className="bg-secondary_color/10 p-2 rounded-full">
                 <img src={badge} width={40} height={40} className="min-w-[40px] min-h-[40px]" />
               </div>
             ))}
@@ -247,7 +247,7 @@ export default function Page() {
               </button>
             </Link>
           </div>
-          <Link href = "https://portal.midwaybd.com/bo/portal-login" target="_blank">
+          <Link href="https://portal.midwaybd.com/bo/portal-login" target="_blank">
             <button className="sm:hidden w-full bg-secondary_color text-white text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-secondary_color/80 transition-colors">
               Start BO account application
             </button>

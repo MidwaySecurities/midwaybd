@@ -32,7 +32,7 @@ import { BuildingIcon } from "./icons";
 export default function CurrentlyOpenIPOCard({ data }) {
   if (!data || !data.isOpen) {
     return (
-      <section id="currently-open" className="px-5 py-5 border-b border-gray-200">
+      <section id="currently-open" className="px-4 lg:px-0 py-5 border-b border-gray-200">
         <h2 className="text-xs font-medium text-gray-500 mb-3">Currently Open</h2>
         <div className="rounded-lg border border-dashed border-gray-300 bg-gray-50 px-4 py-6 text-center">
           <p className="text-sm text-gray-600">

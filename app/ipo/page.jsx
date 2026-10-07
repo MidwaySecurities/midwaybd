@@ -33,12 +33,12 @@ export default function IPOPage({ content = ipoContent }) {
   } = content;
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto lg:container">
       {/* Top accent border — IPO asset-class color */}
       {/* <div className="h-1 w-full bg-[#c99a1a]" /> */}
 
       {/* Hero */}
-      <section className="px-5 py-8 sm:py-10">
+      <section className="px-4 lg:px-0 py-8 sm:py-10">
         <span className="inline-flex items-center gap-1.5 rounded-md bg-secondary_color/10 px-2.5 py-1 text-xs font-semibold text-secondary_color mb-4">
           {hero.eyebrow}
         </span>
@@ -68,7 +68,7 @@ export default function IPOPage({ content = ipoContent }) {
       <CurrentlyOpenIPOCard data={currentlyOpen} />
 
       {/* Who Can Apply */}
-      <section className="px-5 py-6 border-b border-gray-200">
+      <section className="px-4 lg:px-0 py-6 border-b border-gray-200">
         <h2 className="text-xs font-medium text-gray-500 mb-3">Who Can Apply</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {whoCanApply.map((item) => (
@@ -89,7 +89,7 @@ export default function IPOPage({ content = ipoContent }) {
       </section>
 
       {/* How Pricing Works */}
-      <section className="px-5 py-6 border-b border-gray-200">
+      <section className="px-4 lg:px-0 py-6 border-b border-gray-200">
         <h2 className="text-xs font-medium text-gray-500 mb-3">How Pricing Works</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {pricingMethods.map((method) => (
@@ -102,7 +102,7 @@ export default function IPOPage({ content = ipoContent }) {
       </section>
 
       {/* Allocation Rules & Quota Distribution */}
-      <section className="px-5 py-6 border-b border-gray-200">
+      <section className="px-4 lg:px-0 py-6 border-b border-gray-200">
         <h2 className="text-xs font-medium text-gray-500 mb-1">
           Allocation Rules &amp; Quota Distribution
         </h2>
@@ -143,7 +143,7 @@ export default function IPOPage({ content = ipoContent }) {
       </section>
 
       {/* How to Apply */}
-      <section className="px-5 py-6 border-b border-gray-200">
+      <section className="px-4 lg:px-0 py-6 border-b border-gray-200">
         <h2 className="text-xs font-medium text-gray-500 mb-3">How to Apply</h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {howToApply.steps.map((step) => (
@@ -159,7 +159,7 @@ export default function IPOPage({ content = ipoContent }) {
       </section>
 
       {/* Lock-In callout */}
-      <section className="px-5 py-5 border-b border-gray-200">
+      <section className="px-4 lg:px-0 py-5 border-b border-gray-200">
         <div className="flex items-start gap-2.5 rounded-lg bg-secondary_color/10 p-3.5">
           <AlertTriangleIcon className="w-4 h-4 text-secondary_color mt-0.5 shrink-0" />
           <p className="text-xs text-gray-700 leading-relaxed">
@@ -170,7 +170,7 @@ export default function IPOPage({ content = ipoContent }) {
       </section>
 
       {/* Membership Club */}
-      <section className="px-5 py-6 border-b border-gray-200">
+      <section className="px-5 lg:px-0 py-6 border-b border-gray-200">
         <h2 className="text-xs font-medium text-gray-500 mb-3">Never Miss an IPO</h2>
         <a
           href={membershipClub.href}
@@ -185,7 +185,7 @@ export default function IPOPage({ content = ipoContent }) {
       </section>
 
       {/* Final CTA */}
-      <section className="px-5 py-6 flex items-center justify-between gap-4 flex-wrap">
+      <section className="px-5 lg:px-0 py-6 flex items-center justify-between gap-4 flex-wrap">
         <span className="text-sm text-gray-600">{finalCta.label}</span>
         <a
           href={finalCta.href}

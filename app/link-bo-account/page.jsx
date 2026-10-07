@@ -1,260 +1,212 @@
-'use client'
-import React, { useState } from 'react'
-import Link from 'next/link'
-import DownloadTransmissionForm from './components/transmission-form-download'
-import Accordion from './components/link-bo-accordion'
+import defaultContent from "./switching-brokers-content.json";
+import { Icon } from "./icons";
 
-const features = [
-  {
-    icon: (
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <rect x="3" y="5" width="10" height="7" rx="1.5" stroke="#85B7EB" strokeWidth="1.4" />
-        <path d="M6 5V4a2 2 0 014 0v1" stroke="#85B7EB" strokeWidth="1.4" strokeLinecap="round" />
-      </svg>
-    ),
-    title: 'Keep all your shares',
-    desc: 'No need to sell before or during the transfer',
-  },
-  {
-    icon: (
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <path d="M3 8h10M8 3v10" stroke="#85B7EB" strokeWidth="1.4" strokeLinecap="round" />
-      </svg>
-    ),
-    title: 'Any DSE & CSE broker',
-    desc: 'Transfer from any registered DSE & CSE brokerage',
-  },
-]
+/**
+ * Switching Brokers page — MOBILE-FIRST.
+ * Base classes are the phone layout (single column, thumb-sized buttons,
+ * sticky bottom action bar). `md:` classes enlarge it for tablet/desktop.
+ *
+ * Brand colors (arbitrary Tailwind values, no config changes needed):
+ *   #004990 navy · #1da1f2 sky · #fad870 gold · #e8f0f8 navy tint
+ *   #1fa855 WhatsApp green (WhatsApp actions only)
+ *
+ * All copy lives in switching-brokers-content.json.
+ * Render inside your site layout (header/footer wrap this component).
+ */
+export default function SwitchingBrokersPage({ content = defaultContent }) {
+  const {
+    hero,
+    keyFacts,
+    steps,
+    stayTheSame,
+    yourRights,
+    beforeYouStart,
+    whatYouGet,
+    faq,
+    finalCta,
+    disclaimer,
+  } = content;
 
-const steps = [
-  {
-    label: '1',
-    title: 'Visit the Midway portal',
-    desc: <>Go to <Link href = "https://portal.midwaybd.com" className='text-secondary_color/75 font-bold' target="_blank"> Midway Portal</Link> and log in with your registered mobile number and password.</>,
-    done: false,
-  },
-  {
-    label: '2',
-    title: 'Fill in your BO account details',
-    desc: 'Enter your BOID and required fields.',
-    done: false,
-  },
-  {
-    label: '✓',
-    title: 'Link BO account completed',
-    desc: 'Your BO account will be linked within the standard CDBL processing period.',
-    done: true,
-  },
-]
-
-const faqs = [
-  {
-    q: 'What is a Link BO Account?',
-    a: 'A Link BO Account lets you electronically transfer your Beneficiary Owner (BO) account from any DSE & CSE-registered broker to Midway Securities without selling any shares in your portfolio. Your shares remain intact.',
-  },
-  {
-    q: 'Do I need to sell my shares first?',
-    a: 'No. You can transfer all existing shares directly. You do not need to sell or liquidate any position before or during the link process.',
-  },
-  {
-    q: 'Which brokers are eligible?',
-    a: "Any BO account held at a DSE & CSE registered brokerage is eligible for transfer.",
-  },
-  {
-    q: 'How long does the transfer take?',
-    a: 'Processing times follow standard CDBL guidelines. Once your form is submitted and verified, the transfer is typically completed within a two business days.',
-  },
-]
-
-const transferDetails = [
-  { label: 'Link BO A/C fee', value: 'Free', badge: 'green' },
-  { label: 'Sell shares required', value: 'No', badge: 'green' },
-  { label: 'Eligible exchanges', value: 'DSE & CSE', badge: 'blue' },
-]
-
-const Badge = ({ type, children }) => {
-  const styles = {
-    green: 'bg-[#EAF3DE] text-[#3B6D11]',
-    blue: 'bg-[#E6F1FB] text-[#185FA5]',
-  }
   return (
-    <span className={`text-[11px] font-medium px-2 py-0.5 rounded-full ${styles[type]}`}>
-      {children}
-    </span>
-  )
-}
-
-const FaqItem = ({ q, a }) => {
-  const [open, setOpen] = useState(false)
-  return (
-    <div className="border-b border-black/[0.06] last:border-b-0">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full text-left px-5 py-3.5 flex justify-between items-center gap-2 text-sm font-medium text-gray-900 hover:bg-gray-50 transition-colors"
-      >
-        {q}
-        <span className={`text-xs text-gray-400 flex-shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>▾</span>
-      </button>
-      {open && (
-        <div className="px-5 pb-4 text-[13px] text-gray-500 leading-relaxed">{a}</div>
-      )}
-    </div>
-  )
-}
-
-const LinkBoAccount = () => {
-  return (
-    <div className="font-sans max-w-6xl mx-auto px-4 py-10">
-
+    <div className="mx-auto container bg-[#f7f8f7] pb-24 md:pb-0 text-[#111827]">
       {/* Hero */}
-      <div className="bg-primary_color rounded-2xl p-10 mb-6 grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 items-center">
-        <div>
-          <div className="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 rounded-full px-3.5 py-1 text-[11px] font-medium text-[#B5D4F4] tracking-wide uppercase mb-5">
-            <span className="w-1.5 h-1.5 bg-[#85B7EB] rounded-full" />
-            CDBL Registered Service
-          </div>
-          <h1 className="font-serif text-4xl font-semibold text-white leading-tight mb-4">
-            Link Your BO Account
-          </h1>
-          <p className="text-sm text-white/70 leading-relaxed mb-7 max-w-md">
-            Transfer your Beneficiary Owner(BO) account without selling your shares.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="https://portal.midwaybd.com/link-bo/portal-login"
-              target="_blank"
-              className="inline-flex items-center gap-2 bg-white text-[#0C447C] rounded-lg px-5 py-2.5 text-sm font-semibold hover:opacity-90 transition-opacity"
-            >
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="#0C447C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              লিংক অ্যাকাউন্ট — Link Account
-            </Link>
-            <DownloadTransmissionForm className="inline-flex items-center gap-2 bg-white/10 border border-white/25 text-white rounded-lg px-5 py-2.5 text-sm font-medium hover:bg-white/20 transition-colors" />
-          </div>
+      <section className="bg-white px-4 pt-6 pb-6 md:px-10 md:pt-12 md:pb-10 border-b border-[#e5e7e5]">
+        <p className="text-[11px] md:text-xs font-semibold uppercase tracking-wide text-[#004990]">
+          {hero.eyebrow}
+        </p>
+        <h1 className="mt-2 text-[26px] leading-tight md:text-5xl md:leading-tight font-semibold max-w-2xl">
+          {hero.headline}
+        </h1>
+        <p className="mt-3 text-[15px] md:text-lg leading-relaxed text-[#4b5563] max-w-xl">
+          {hero.subhead}
+        </p>
+        <div className="mt-5 flex flex-col gap-3 md:flex-row md:items-center">
+          <a
+            href={hero.primaryCta.href}
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#004990] px-5 py-3.5 text-[15px] font-semibold text-white md:py-3"
+          >
+            {hero.primaryCta.label}
+            <Icon name="arrow" className="w-4 h-4" />
+          </a>
+          <a
+            href={hero.whatsapp.href}
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#1fa855] px-5 py-3.5 text-[15px] font-semibold text-[#1fa855] md:py-3"
+          >
+            <Icon name="whatsapp" className="w-5 h-5" />
+            {hero.whatsapp.label}
+          </a>
         </div>
+        <ul className="mt-5 flex flex-wrap gap-2">
+          {hero.badges.map((b) => (
+            <li
+              key={b}
+              className="rounded-full bg-[#e8f0f8] px-3 py-1 text-[11px] font-semibold text-[#004990]"
+            >
+              {b}
+            </li>
+          ))}
+        </ul>
+      </section>
 
-        <div className="bg-white/[0.07] border border-white/[0.15] rounded-xl p-6 space-y-4">
-          {features.map(({ icon, title, desc }) => (
-            <div key={title} className="flex items-start gap-3 pb-4 border-b border-white/10 last:border-b-0 last:pb-0">
-              <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
-                {icon}
-              </div>
+      {/* Key facts */}
+      <section className="px-4 py-5 md:px-10 md:py-8">
+        <ul className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+          {keyFacts.map((f) => (
+            <li
+              key={f.label}
+              className="rounded-lg border border-[#e5e7e5] border-t-[3px] border-t-[#004990] bg-white p-3.5 md:p-4"
+            >
+              <Icon name={f.icon} className="w-5 h-5 text-[#004990]" />
+              <p className="mt-2 text-[10px] font-semibold uppercase tracking-wide text-[#6b7280]">
+                {f.label}
+              </p>
+              <p className="text-[15px] md:text-base font-semibold leading-snug">{f.value}</p>
+              <p className="mt-0.5 text-[11px] text-[#4b5563]">{f.sub}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* How it works */}
+      <section className="bg-white px-4 py-6 md:px-10 md:py-10 border-y border-[#e5e7e5]">
+        <h2 className="text-xl md:text-2xl font-semibold">{steps.title}</h2>
+        <ol className="mt-4 grid gap-3 md:grid-cols-4 md:gap-4">
+          {steps.items.map((s, i) => (
+            <li key={s.title} className="flex gap-3 md:flex-col">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#004990] text-sm font-semibold text-[#fad870]">
+                {i + 1}
+              </span>
               <div>
-                <p className="text-sm font-semibold text-white mb-0.5">{title}</p>
-                <p className="text-xs text-white/60 leading-snug">{desc}</p>
+                <h3 className="text-[15px] font-semibold">{s.title}</h3>
+                <p className="mt-0.5 text-[13px] leading-relaxed text-[#4b5563]">{s.body}</p>
               </div>
-            </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      {/* What stays the same */}
+      <section className="px-4 py-6 md:px-10 md:py-10">
+        <h2 className="text-xl md:text-2xl font-semibold">{stayTheSame.title}</h2>
+        <p className="mt-1 text-[14px] text-[#4b5563]">{stayTheSame.intro}</p>
+        <ul className="mt-4 grid gap-3 md:grid-cols-3">
+          {stayTheSame.items.map((it) => (
+            <li key={it.title} className="flex gap-3 rounded-lg border border-[#e5e7e5] bg-white p-4">
+              <Icon name={it.icon} className="w-6 h-6 shrink-0 text-[#1f7a4d]" />
+              <div>
+                <h3 className="text-[15px] font-semibold">{it.title}</h3>
+                <p className="mt-0.5 text-[13px] text-[#4b5563]">{it.body}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Your rights + before you start */}
+      <section className="grid gap-3 px-4 pb-6 md:grid-cols-2 md:gap-4 md:px-10 md:pb-10">
+        <div className="rounded-lg bg-[#004990] p-5 text-white">
+          <Icon name="shield" className="w-6 h-6 text-[#fad870]" />
+          <h2 className="mt-2 text-lg font-semibold">{yourRights.title}</h2>
+          <p className="mt-1 text-[14px] leading-relaxed text-[#dbe7f3]">{yourRights.body}</p>
+          <p className="mt-3 text-[12px] text-[#fad870]">{yourRights.note}</p>
+        </div>
+        <div className="rounded-lg border border-[#e5e7e5] bg-white p-5">
+          <h2 className="text-lg font-semibold">{beforeYouStart.title}</h2>
+          <ul className="mt-3 space-y-2.5">
+            {beforeYouStart.items.map((t) => (
+              <li key={t} className="flex gap-2.5 text-[14px] text-[#4b5563]">
+                <Icon name="check" className="mt-0.5 w-4 h-4 shrink-0 text-[#1f7a4d]" />
+                {t}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* What you get */}
+      <section className="bg-white px-4 py-6 md:px-10 md:py-10 border-y border-[#e5e7e5]">
+        <h2 className="text-xl md:text-2xl font-semibold">{whatYouGet.title}</h2>
+        <ul className="mt-4 grid gap-3 md:grid-cols-2">
+          {whatYouGet.items.map((it) => (
+            <li key={it.title} className="flex gap-3 rounded-lg bg-[#f7f8f7] p-4">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#e8f0f8] text-[#004990]">
+                <Icon name={it.icon} className="w-5 h-5" />
+              </span>
+              <div>
+                <h3 className="text-[15px] font-semibold">{it.title}</h3>
+                <p className="mt-0.5 text-[13px] leading-relaxed text-[#4b5563]">{it.body}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* FAQ — native details/summary: works without JS, content stays crawlable */}
+      <section className="px-4 py-6 md:px-10 md:py-10">
+        <h2 className="text-xl md:text-2xl font-semibold">{faq.title}</h2>
+        <div className="mt-4 space-y-2">
+          {faq.items.map((f) => (
+            <details key={f.q} className="group rounded-lg border border-[#e5e7e5] bg-white">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-4 text-[14px] font-semibold [&::-webkit-details-marker]:hidden">
+                {f.q}
+                <Icon name="chevron" className="w-4 h-4 shrink-0 text-[#004990] transition-transform group-open:rotate-180" />
+              </summary>
+              <p className="px-4 pb-4 text-[14px] leading-relaxed text-[#4b5563]">{f.a}</p>
+            </details>
           ))}
         </div>
-      </div>
+      </section>
 
-      {/* Body: two columns */}
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-5 items-start">
-
-        {/* Left column */}
-        <div className="space-y-5">
-
-          {/* Steps */}
-          <div className="bg-white border border-black/[0.08] rounded-xl overflow-hidden">
-            <div className="flex items-center gap-2.5 px-5 py-4 border-b border-black/[0.06]">
-              <div className="w-7 h-7 rounded-lg bg-[#E6F1FB] flex items-center justify-center">
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                  <path d="M2 4h12M2 8h8M2 12h5" stroke="#185FA5" strokeWidth="1.4" strokeLinecap="round" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-gray-900">How to link your account</p>
-                <p className="text-[11px] text-gray-400 mt-0.5">Complete these steps in order</p>
-              </div>
-            </div>
-            {steps.map(({ label, title, desc, done }) => (
-              <div key={title} className="flex gap-3.5 items-start px-5 py-3.5 border-b border-black/[0.06] last:border-b-0">
-                <div className={`w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-semibold flex-shrink-0 mt-0.5 ${done ? 'bg-[#EAF3DE] text-[#3B6D11]' : 'bg-[#E6F1FB] text-[#185FA5]'}`}>
-                  {label}
-                </div>
-                <div>
-                  <p className="text-[13px] font-medium text-gray-900 leading-snug">{title}</p>
-                  <p className="text-xs text-gray-500 mt-1 leading-relaxed">{desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* FAQ */}
-          <div className="bg-white border border-black/[0.08] rounded-xl overflow-hidden">
-            <div className="flex items-center gap-2.5 px-5 py-4 border-b border-black/[0.06]">
-              <div className="w-7 h-7 rounded-lg bg-[#FAEEDA] flex items-center justify-center">
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="5.5" stroke="#854F0B" strokeWidth="1.4" />
-                  <path d="M8 5.5v3" stroke="#854F0B" strokeWidth="1.4" strokeLinecap="round" />
-                  <circle cx="8" cy="10.5" r=".6" fill="#854F0B" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-gray-900">Frequently asked questions</p>
-                <p className="text-[11px] text-gray-400 mt-0.5">Common questions about Link BO</p>
-              </div>
-            </div>
-            {faqs.map((faq) => (
-              <FaqItem key={faq.q} {...faq} />
-            ))}
-          </div>
-
+      {/* Final CTA */}
+      <section className="mx-4 mb-4 rounded-xl bg-[#004990] p-5 text-white md:mx-10 md:mb-8 md:flex md:items-center md:justify-between md:gap-8 md:p-8">
+        <div>
+          <h2 className="text-xl md:text-2xl font-semibold">{finalCta.title}</h2>
+          <p className="mt-1 text-[14px] text-[#dbe7f3]">{finalCta.body}</p>
         </div>
-
-        {/* Right sidebar */}
-        <div className="space-y-4">
-
-          {/* CTA card */}
-          <div className="bg-[#185FA5] rounded-xl p-5">
-            <p className="text-[15px] font-semibold text-white mb-1.5">Ready to get started?</p>
-            <p className="text-xs text-white/70 leading-relaxed mb-4">
-              Log in to the Midway portal to link your BO account or download the transmission form.
-            </p>
-            <Link
-              href="https://portal.midwaybd.com/link-bo/portal-login"
-              target="_blank"
-              className="block text-center bg-white text-[#185FA5] rounded-lg px-4 py-2.5 text-sm font-semibold hover:opacity-90 transition-opacity"
-            >
-              Create Link BO A/C →
-            </Link>
-            <div className="mt-2">
-              <DownloadTransmissionForm className="block text-center bg-white/10 border border-white/30 text-white rounded-lg px-4 py-2.5 text-sm font-medium hover:bg-white/20 transition-colors w-full" />
-            </div>
-          </div>
-
-          {/* Transfer details */}
-          <div className="bg-white border border-black/[0.08] rounded-xl p-5">
-            <p className="text-[10px] font-semibold tracking-widest uppercase text-gray-400 mb-3">
-              Transfer details
-            </p>
-            {transferDetails.map(({ label, value, badge }) => (
-              <div key={label} className="flex items-center justify-between py-2.5 border-b border-black/[0.06] last:border-b-0 first:pt-0 last:pb-0">
-                <span className="text-xs text-gray-500">{label}</span>
-                {badge ? <Badge type={badge}>{value}</Badge> : <span className="text-xs font-medium text-gray-900">{value}</span>}
-              </div>
-            ))}
-          </div>
-
-          {/* Help note */}
-          <div className="bg-gray-50 border border-black/[0.06] rounded-xl p-4 flex gap-2.5 items-start">
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" className="flex-shrink-0 mt-0.5">
-              <circle cx="8" cy="8" r="5.5" stroke="#185FA5" strokeWidth="1.4" />
-              <path d="M8 7v3.5" stroke="#185FA5" strokeWidth="1.4" strokeLinecap="round" />
-              <circle cx="8" cy="5.5" r=".6" fill="#185FA5" />
-            </svg>
-            <p className="text-xs text-gray-500 leading-relaxed">
-              For help <a href="tel:09609100142" style={{ fontWeight: 600 }}>09609 100 142</a>
-              {" "}or message via{" "}
-              <a href="http://m.me/midwaytrec142" target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600 }}>Facebook Messenger</a>.
-            </p>
-          </div>
-            
+        <div className="mt-4 flex flex-col gap-3 md:mt-0 md:shrink-0">
+          <a href={finalCta.primaryCta.href} className="rounded-lg bg-[#fad870] px-5 py-3.5 text-center text-[15px] font-semibold text-[#004990] md:py-3">
+            {finalCta.primaryCta.label}
+          </a>
+          <a href={finalCta.whatsapp.href} className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/50 px-5 py-3.5 text-[15px] font-semibold md:py-3">
+            <Icon name="whatsapp" className="w-5 h-5 text-[#25D366]" />
+            {finalCta.whatsapp.label}
+          </a>
         </div>
+      </section>
+
+      <p className="mx-4 mb-6 rounded-lg border border-dashed border-[#c9cdc9] p-3 text-[11px] leading-relaxed text-[#6b7280] md:mx-10">
+        {disclaimer}
+      </p>
+
+      {/* Mobile sticky action bar (hidden on md and up) */}
+      <div className="fixed inset-x-0 bottom-0 z-20 flex gap-2 border-t border-[#e5e7e5] bg-white p-3 md:hidden">
+        <a href={hero.primaryCta.href} className="flex-1 rounded-lg bg-[#004990] py-3 text-center text-[14px] font-semibold text-white">
+          {hero.primaryCta.label}
+        </a>
+        <a href={hero.whatsapp.href} aria-label="WhatsApp" className="flex w-12 items-center justify-center rounded-lg bg-[#1fa855] text-white">
+          <Icon name="whatsapp" className="w-6 h-6" />
+        </a>
       </div>
     </div>
-  )
+  );
 }
-
-export default LinkBoAccount

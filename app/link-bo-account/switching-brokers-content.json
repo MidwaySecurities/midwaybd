@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "path": "/switching-brokers",
+    "title": "Switch to Midway Without Selling a Single Share | Midway Securities Ltd.",
+    "description": "Link your existing BO Account to Midway, 100% online. Same shares, same cost price, no transfer fee."
+  },
+  "hero": {
+    "eyebrow": "Switching Brokers",
+    "headline": "Switch to Midway Without Selling a Single Share",
+    "subhead": "Link your existing BO Account to Midway, 100% online. Your holdings, cost price and profit and loss stay exactly as they are.",
+    "primaryCta": { "label": "Start Link BO Account", "href": "https://portal.midwaybd.com/link-bo/portal-login" },
+    "whatsapp": { "label": "Ask on WhatsApp", "href": "https://wa.me/8801874444816?text=I%20want%20to%20switch%20my%20BO%20Account%20to%20Midway" },
+    "badges": ["BSEC Registered", "DSE TREC 142", "CDBL Depository Participant"]
+  },
+  "keyFacts": [
+    { "icon": "tag", "label": "Cost", "value": "Free", "sub": "No transfer fee" },
+    { "icon": "clock", "label": "Time", "value": "About 1 Working Day", "sub": "After you submit the form" },
+    { "icon": "shield", "label": "Your Shares", "value": "Nothing Sold", "sub": "Same quantity and cost price" },
+    { "icon": "link", "label": "Works With", "value": "Any DSE or CSE Broker", "sub": "100% online" }
+  ],
+  "steps": {
+    "title": "How It Works",
+    "items": [
+      { "title": "Fill the Link BO Account Form", "body": "Submit the short online form in the Midway Portal. No branch visit." },
+      { "title": "We Open Your Link BO Account", "body": "Midway opens your Link BO Account and connects it to your existing BO Account." },
+      { "title": "Your Portfolio Moves As It Is", "body": "Your shares transfer at the same quantity and cost price." },
+      { "title": "Move Any Remaining Funds", "body": "Transfer any leftover cash from your old broker to Midway yourself." }
+    ]
+  },
+  "stayTheSame": {
+    "title": "What Stays the Same",
+    "intro": "Switching changes who looks after your account, not what you own.",
+    "items": [
+      { "icon": "check", "title": "Quantity", "body": "You keep every share you own." },
+      { "icon": "check", "title": "Cost Price", "body": "Your average buying price does not change." },
+      { "icon": "check", "title": "Profit and Loss", "body": "Your gains and losses carry over as they are." }
+    ]
+  },
+  "yourRights": {
+    "title": "Your Old Broker Cannot Say No",
+    "body": "Under BSEC and CDBL rules, your current broker cannot refuse the transfer as long as you have no margin loan or unpaid balance with them.",
+    "note": "Have a margin loan or dues? Message us on WhatsApp and we will guide you."
+  },
+  "beforeYouStart": {
+    "title": "Before You Start",
+    "items": [
+      "Settle any margin loan or unpaid balance with your current broker.",
+      "Keep your existing BO Account details handy.",
+      "Want a hand? We can walk you through it on WhatsApp."
+    ]
+  },
+  "whatYouGet": {
+    "title": "What You Get With Midway",
+    "items": [
+      { "icon": "device", "title": "QuickTrade Pro, Free", "body": "Android, iOS, desktop and web, with real-time data and advanced charting." },
+      { "icon": "file", "title": "Midway Portal", "body": "Manage your account, IPO applications and withdrawals online." },
+      { "icon": "bank", "title": "Free Withdrawals", "body": "Withdraw to your own bank account at no charge, within 1 working day." },
+      { "icon": "phone", "title": "Real Support", "body": "Reach us on WhatsApp or the hotline, 09609 100 142." }
+    ]
+  },
+  "faq": {
+    "title": "Questions Switchers Ask",
+    "items": [
+      { "q": "Do I have to sell my shares to switch?", "a": "No. Your shares move as they are, at the same quantity and cost price." },
+      { "q": "Will my cost price or profit and loss change?", "a": "No. Both carry over unchanged." },
+      { "q": "What does it cost?", "a": "There is no fee to link your account." },
+      { "q": "How long does it take?", "a": "About 1 working day after you submit the form." },
+      { "q": "What if I have a margin loan?", "a": "The transfer rule applies when there is no margin loan or unpaid balance. If you have one, message us on WhatsApp and we will guide you." },
+      { "q": "What happens to my leftover cash?", "a": "Once the link is done, transfer any remaining funds from your old broker to Midway yourself." }
+    ]
+  },
+  "finalCta": {
+    "title": "Ready to Switch?",
+    "body": "Start your Link BO Account in the Midway Portal, or ask us anything on WhatsApp first.",
+    "primaryCta": { "label": "Start Link BO Account", "href": "https://portal.midwaybd.com/link-bo/portal-login" },
+    "whatsapp": { "label": "Chat on WhatsApp", "href": "https://wa.me/8801874444816?text=I%20want%20to%20switch%20my%20BO%20Account%20to%20Midway" }
+  },
+  "disclaimer": "Account transfers follow BSEC, DSE and CDBL rules. Investing involves risk, including loss of principal. No returns are guaranteed."
+}

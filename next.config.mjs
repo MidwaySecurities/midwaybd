@@ -177,6 +177,7 @@ const nextConfig = {
     experimental: {
         appDir: true,
     },
+    allowedDevOrigins: ['192.168.1.246:3000'],
     outputFileTracingExcludes: ['**/node_modules/next/dist/server/future/route-modules/**'],
 };
 

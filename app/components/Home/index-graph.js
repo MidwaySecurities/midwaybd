@@ -74,7 +74,7 @@ const DseDsexChart = () => {
     fetchDSEX()
   }, [])
 
-  if (loading) return <p>Loading DSEX data...</p>
+  if (loading) return <p className = "p-2 text-center">Loading DSEX data...</p>
   if (error) return <p className="text-red-500">Failed to load DSEX data: {error}</p>
   if (!dsexData.length) return <p>No DSEX data available.</p>
 

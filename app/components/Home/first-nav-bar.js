@@ -20,13 +20,15 @@ const FirstNavBar = () => {
                 {/* <h1 className="flex flex-col leading-0 justify-center uppercase mt-[-.25rem]"><span className="text-xl tracking-[2px]">Midway</span><span className="tracking-[.93px] text-[.6rem] leading-2">Securities Ltd.</span></h1> */}
                 {/* need a gap after midway */}
             </Link>
-            <h1 className="flex shrink-0 flex-col lg:flex-row items-center lg:items-baseline leading-0 justify-center uppercase -mt-1 text-primary_color font-bold">
-                <span className="text-3xl lg:text-4xl tracking-[2px]">Midway</span>
-                <span className="hidden lg:inline">{"\u00a0\u00a0\u00a0"}</span>
-                <span className="text-[.6rem] lg:text-3xl xl:text-4xl tracking-[4.5px] lg:tracking-[2px] leading-2 lg:leading-none">
-                    Securities Ltd.
-                </span>
-            </h1>
+            <Link href = '/'>
+                <h1 className="flex shrink-0 flex-col lg:flex-row items-center lg:items-baseline leading-0 justify-center uppercase -mt-1 text-primary_color font-bold">
+                    <span className="text-3xl lg:text-4xl tracking-[2px]">Midway</span>
+                    <span className="hidden lg:inline">{"\u00a0\u00a0\u00a0"}</span>
+                    <span className="text-[.6rem] lg:text-3xl xl:text-4xl tracking-[4.5px] lg:tracking-[2px] leading-2 lg:leading-none">
+                        Securities Ltd.
+                    </span>
+                </h1>
+            </Link>
             <p className="bg-secondary_color p-2 px-3 rounded-md"><Link href={`https://portal.midwaybd.com`}>Login</Link></p>
         </div>
     )

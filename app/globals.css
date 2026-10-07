@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@plugin "@tailwindcss/typography";
 @theme {
   --font-display: "Satoshi", "sans-serif";
   --breakpoint-3xl: 1920px;

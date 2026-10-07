@@ -10,7 +10,7 @@ async function getABlog(slug, retries = 2) {
   for (let attempt = 0; attempt <= retries; attempt++) {
     try {
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 8000); // 8s timeout
+      const timeout = setTimeout(() => controller.abort(), 8000);
 
       const res = await fetch(`${API_BASE_URL}/blogs/${slug}`, {
         next: { revalidate: 60 },
@@ -20,7 +20,7 @@ async function getABlog(slug, retries = 2) {
       clearTimeout(timeout);
 
       if (res.status === 404) {
-        return null; // genuine "not found" — don't retry
+        return null;
       }
 
       if (!res.ok) {
@@ -111,18 +111,18 @@ const BlogPage = async ({ params }) => {
         <article className="bg-white rounded-xl p-6 lg:p-8 shadow-sm border border-gray-200 mb-8 overflow-x-hidden">
           <div
             className="prose prose-lg max-w-none text-gray-800 leading-relaxed
-                     prose-headings:text-gray-900 prose-headings:font-bold
-                     prose-p:text-gray-700 prose-p:leading-relaxed
-                     prose-a:text-secondary_color prose-a:no-underline hover:prose-a:underline
-                     prose-strong:text-gray-900 prose-strong:font-semibold
-                     prose-ul:text-gray-700 prose-ol:text-gray-700
-                     prose-li:text-gray-700 prose-li:leading-relaxed
-                     prose-blockquote:border-l-4 prose-blockquote:border-blue-500 
-                     prose-blockquote:bg-blue-50 prose-blockquote:py-4 prose-blockquote:px-6
-                     prose-blockquote:text-gray-700 prose-blockquote:not-italic
-                     prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded
-                     prose-pre:bg-gray-900 prose-pre:text-gray-100
-                     prose-img:rounded-lg prose-img:shadow-md"
+           prose-headings:text-gray-900 prose-headings:font-bold
+           prose-p:text-gray-700 prose-p:leading-relaxed
+           prose-a:text-secondary_color prose-a:no-underline hover:prose-a:underline
+           prose-strong:text-gray-900 prose-strong:font-semibold
+           prose-ul:text-gray-700 prose-ol:text-gray-700
+           prose-li:text-gray-700 prose-li:leading-relaxed prose-li:marker:text-black
+           prose-blockquote:border-l-4 prose-blockquote:border-blue-500
+           prose-blockquote:bg-blue-50 prose-blockquote:py-4 prose-blockquote:px-6
+           prose-blockquote:text-gray-700 prose-blockquote:not-italic
+           prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded
+           prose-pre:bg-gray-900 prose-pre:text-gray-100
+           prose-img:rounded-lg prose-img:shadow-md"
             dangerouslySetInnerHTML={{ __html: blog?.content }}
           ></div>
         </article>

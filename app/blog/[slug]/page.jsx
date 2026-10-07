@@ -103,30 +103,11 @@ const BlogPage = async ({ params }) => {
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         {/* Blog Meta Info */}
-        <div className="bg-white rounded-xl p-6 mb-8 shadow-sm border border-gray-200">
+        
+        <div className="bg-white rounded-xl p-6 mb-4 shadow-sm border border-gray-200">
           <h1 className='text-xl lg:text-3xl font-semibold'>{blog.title}</h1>
         </div>
-
-        {/* Blog Content */}
-        <article className="bg-white rounded-xl p-6 lg:p-8 shadow-sm border border-gray-200 mb-8 overflow-x-hidden">
-          <div
-            className="prose prose-lg max-w-none text-gray-800 leading-relaxed
-           prose-headings:text-gray-900 prose-headings:font-bold
-           prose-p:text-gray-700 prose-p:leading-relaxed
-           prose-a:text-secondary_color prose-a:no-underline hover:prose-a:underline
-           prose-strong:text-gray-900 prose-strong:font-semibold
-           prose-ul:text-gray-700 prose-ol:text-gray-700
-           prose-li:text-gray-700 prose-li:leading-relaxed prose-li:marker:text-black
-           prose-blockquote:border-l-4 prose-blockquote:border-blue-500
-           prose-blockquote:bg-blue-50 prose-blockquote:py-4 prose-blockquote:px-6
-           prose-blockquote:text-gray-700 prose-blockquote:not-italic
-           prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded
-           prose-pre:bg-gray-900 prose-pre:text-gray-100
-           prose-img:rounded-lg prose-img:shadow-md"
-            dangerouslySetInnerHTML={{ __html: blog?.content }}
-          ></div>
-        </article>
-        <div className="bg-white rounded-xl p-3 mb-8 shadow-sm border border-gray-200">
+          <div className="bg-white rounded-xl p-3 mb-4 shadow-sm border border-gray-200">
           <div className="flex lg:flex-wrap items-center justify-between gap-1 lg:gap-4 text-sm text-gray-600">
             <div className="flex items-center space-x-4 text-[12px] md:text-sm">
               <div className="flex items-center">
@@ -152,6 +133,26 @@ const BlogPage = async ({ params }) => {
             </div>
           </div>
         </div>
+        {/* Blog Content */}
+        <article className="bg-white rounded-xl p-6 lg:p-8 shadow-sm border border-gray-200 mb-8 overflow-x-hidden">
+          <div
+            className="prose prose-lg max-w-none text-gray-800 leading-relaxed
+           prose-headings:text-gray-900 prose-headings:font-bold
+           prose-p:text-gray-700 prose-p:leading-relaxed
+           prose-a:text-secondary_color prose-a:no-underline hover:prose-a:underline
+           prose-strong:text-gray-900 prose-strong:font-semibold
+           prose-ul:text-gray-700 prose-ol:text-gray-700
+           prose-li:text-gray-700 prose-li:leading-relaxed prose-li:marker:text-black
+           prose-blockquote:border-l-4 prose-blockquote:border-blue-500
+           prose-blockquote:bg-blue-50 prose-blockquote:py-4 prose-blockquote:px-6
+           prose-blockquote:text-gray-700 prose-blockquote:not-italic
+           prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded
+           prose-pre:bg-gray-900 prose-pre:text-gray-100
+           prose-img:rounded-lg prose-img:shadow-md"
+            dangerouslySetInnerHTML={{ __html: blog?.content }}
+          ></div>
+        </article>
+        
         {/* Author/Tags Section */}
       </div>
       

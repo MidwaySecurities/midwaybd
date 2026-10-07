@@ -28,7 +28,7 @@ export default function SwitchingBrokersPage({ content = defaultContent }) {
   } = content;
 
   return (
-    <div className="mx-auto container bg-[#f7f8f7] pb-24 md:pb-0 text-[#111827]">
+    <div className="mx-auto max-w-5xl lg:container bg-[#f7f8f7] pb-24 md:pb-0 text-[#111827]">
       {/* Hero */}
       <section className="bg-white px-4 pt-6 pb-6 md:px-10 md:pt-12 md:pb-10 border-b border-[#e5e7e5]">
         <p className="text-[11px] md:text-xs font-semibold uppercase tracking-wide text-[#004990]">

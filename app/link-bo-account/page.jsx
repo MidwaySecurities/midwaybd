@@ -43,7 +43,7 @@ export default function SwitchingBrokersPage({ content = defaultContent }) {
         <div className="mt-5 flex flex-col gap-3 md:flex-row md:items-center">
           <a
             href={hero.primaryCta.href}
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#004990] px-5 py-3.5 text-[15px] font-semibold text-white md:py-3"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary_color px-5 py-3.5 text-[15px] font-semibold text-white md:py-3"
           >
             {hero.primaryCta.label}
             <Icon name="arrow" className="w-4 h-4" />
@@ -93,7 +93,7 @@ export default function SwitchingBrokersPage({ content = defaultContent }) {
         <ol className="mt-4 grid gap-3 md:grid-cols-4 md:gap-4">
           {steps.items.map((s, i) => (
             <li key={s.title} className="flex gap-3 md:flex-col">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#004990] text-sm font-semibold text-[#fad870]">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary_color text-sm font-semibold text-[#fad870]">
                 {i + 1}
               </span>
               <div>
@@ -124,7 +124,7 @@ export default function SwitchingBrokersPage({ content = defaultContent }) {
 
       {/* Your rights + before you start */}
       <section className="grid gap-3 px-4 pb-6 md:grid-cols-2 md:gap-4 md:px-10 md:pb-10">
-        <div className="rounded-lg bg-[#004990] p-5 text-white">
+        <div className="rounded-lg bg-primary_color p-5 text-white">
           <Icon name="shield" className="w-6 h-6 text-[#fad870]" />
           <h2 className="mt-2 text-lg font-semibold">{yourRights.title}</h2>
           <p className="mt-1 text-[14px] leading-relaxed text-[#dbe7f3]">{yourRights.body}</p>
@@ -178,7 +178,7 @@ export default function SwitchingBrokersPage({ content = defaultContent }) {
       </section>
 
       {/* Final CTA */}
-      <section className="mx-4 mb-4 rounded-xl bg-[#004990] p-5 text-white md:mx-10 md:mb-8 md:flex md:items-center md:justify-between md:gap-8 md:p-8">
+      <section className="mx-4 mb-4 rounded-xl bg-primary_color p-5 text-white md:mx-10 md:mb-8 md:flex md:items-center md:justify-between md:gap-8 md:p-8">
         <div>
           <h2 className="text-xl md:text-2xl font-semibold">{finalCta.title}</h2>
           <p className="mt-1 text-[14px] text-[#dbe7f3]">{finalCta.body}</p>
@@ -200,10 +200,10 @@ export default function SwitchingBrokersPage({ content = defaultContent }) {
 
       {/* Mobile sticky action bar (hidden on md and up) */}
       <div className="fixed inset-x-0 bottom-0 z-20 flex gap-2 border-t border-[#e5e7e5] bg-white p-3 md:hidden">
-        <a href={hero.primaryCta.href} className="flex-1 rounded-lg bg-[#004990] py-3 text-center text-[14px] font-semibold text-white">
+        <a href={hero.primaryCta.href} className="flex-1 rounded-lg bg-primary_color py-3 text-center text-[14px] font-semibold text-white">
           {hero.primaryCta.label}
         </a>
-        <a href={hero.whatsapp.href} aria-label="WhatsApp" className="flex w-12 items-center justify-center rounded-lg bg-[#1fa855] text-white">
+        <a href={hero.whatsapp.href} aria-label="WhatsApp" className="flex w-12 items-center justify-center rounded-lg bg-secondary_color text-white">
           <Icon name="whatsapp" className="w-6 h-6" />
         </a>
       </div>

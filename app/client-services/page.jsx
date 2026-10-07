@@ -237,7 +237,7 @@ const jsonLd = {
 export default function ClientServicesPage() {
   return (
     <>
-      <div className="container mx-auto lg:p-4 py-0">
+      <div className="container mx-auto lg:p-4 lg:px-0 py-0">
         <div className="mx-auto container shadow-xl rounded-2xl bg-white p-3 px-4 lg:p-8">
           <div className="overflow-hidden rounded-2xl border-neutral-800/20 border-[0.5px] border-line bg-surface-2">
             {/* Top bar */}

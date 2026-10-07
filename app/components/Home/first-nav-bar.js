@@ -13,7 +13,7 @@ const FirstNavBar = () => {
             .then(data => console.log(data));
     }, [])
     return (
-        <div className="lg:container lg:m-auto flex justify-between items-center bg-white p-4 text-white">
+        <div className="lg:container lg:m-auto flex justify-between items-center bg-white p-4 lg:px-0 text-white">
             <Link className={`${style.logoZoom} flex items-center gap-2 font-bold text-gray-800 text-[14px]`} href={`/`}>
                 <Logo width={55} height={55} />
                 {/* <h1 className="">Midway Securities Ltd.</h1> */}

@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "path": "/pricing",
+    "title": "Pricing | Midway Securities Ltd.",
+    "description": "BO Account fees, deposits, withdrawals, IPO charges and free services at Midway Securities Ltd."
+  },
+  "header": {
+    "lastUpdated": "6 Oct 2026",
+    "eyebrow": "Pricing",
+    "headline": "Simple, Transparent Pricing",
+    "subhead": "What it costs to open, fund and use your Midway account."
+  },
+  "trading": {
+    "title": "Trading Charges",
+    "body": "Industry-standard commission rates apply when you buy and sell. Charges depend on the product you trade, and we share your applicable rate when you contact us.",
+    "cta": {
+      "label": "Message Us for Your Rate",
+      "href": "https://wa.me/8801874444816?text=I%20would%20like%20to%20know%20my%20trading%20charges"
+    }
+  },
+  "boAccount": {
+    "title": "BO Account",
+    "items": [
+      { "label": "Opening Fee", "value": "৳150" },
+      { "label": "Yearly Renewal (June)", "value": "৳150" }
+    ],
+    "refund": {
+      "title": "Get Your Opening Fee Refunded",
+      "body": "Buy ৳50,000 or more in stocks within your first month and we refund the ৳150 opening fee."
+    }
+  },
+  "deposits": {
+    "title": "Deposits & Withdrawals",
+    "rows": [
+      { "method": "Bank Transfer (Deposit)", "charge": "Free", "free": true },
+      { "method": "bKash / Nagad / Rocket", "charge": "1%", "free": false },
+      { "method": "Credit / Debit Card", "charge": "2.2%", "free": false },
+      { "method": "Withdrawal to Your Bank", "charge": "Free", "free": true }
+    ],
+    "note": "bKash, Nagad, Rocket and card charges are set by the provider, not Midway."
+  },
+  "ipo": {
+    "title": "IPO",
+    "items": [
+      { "label": "IPO Application", "value": "৳10", "free": false, "sub": "Per application" },
+      { "label": "IPO Membership Club", "value": "Free", "free": true, "sub": "Sign up once in the Midway Portal. Equity IPOs only." }
+    ]
+  },
+  "otherFees": {
+    "title": "Other Fees",
+    "items": [
+      { "label": "Mutual Fund Units Transfer", "value": "Standard CDBL Fee", "note": "Charged by CDBL, not Midway." }
+    ]
+  },
+  "freeServices": {
+    "title": "Free for Every Client",
+    "items": [
+      { "icon": "device", "title": "QuickTrade Pro App", "body": "Android, iOS, desktop and web.", "show": true },
+      { "icon": "grid", "title": "Midway Portal", "body": "Account, IPO applications and withdrawals online.", "show": true },
+      { "icon": "file", "title": "Midway Research Notes", "body": "Market notes for clients.", "show": true }
+    ]
+  },
+  "help": {
+    "title": "Questions About a Charge?",
+    "body": "Message us on WhatsApp and we will explain.",
+    "whatsapp": { "label": "WhatsApp Us", "href": "https://wa.me/8801874444816" },
+    "primary": { "label": "Open BO Account", "href": "https://portal.midwaybd.com/bo/portal-login" }
+  },
+  "disclaimer": "Fees are as of the date shown and may change. Charges by third parties (bKash, Nagad, Rocket, card networks and CDBL) are set by those providers, not Midway."
+}

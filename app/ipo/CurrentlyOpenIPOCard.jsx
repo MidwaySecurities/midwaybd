@@ -90,7 +90,7 @@ export default function CurrentlyOpenIPOCard({ data }) {
             {data.applyUrl && (
               <a
                 href={data.applyUrl}
-                className="shrink-0 inline-flex items-center justify-center rounded-md bg-[#004990] px-4 py-2 text-xs font-medium text-white hover:opacity-90 transition"
+                className="shrink-0 inline-flex items-center justify-center rounded-md bg-primary_color px-4 py-2 text-xs font-medium text-white hover:opacity-90 transition"
               >
                 Apply Now
               </a>

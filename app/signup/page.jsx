@@ -39,7 +39,7 @@ const Signup = () => {
     initialState
   );
   return (
-    <div className='container mx-auto px-4 py-8'>
+    <div className='container mx-auto px-4 lg:px-0 py-8'>
       <h1 className='text-3xl text-center font-bold'>Sign Up</h1>
       <p className='text-center mt-4'>Please fill in the form below to create an account.</p>
 
@@ -71,7 +71,7 @@ const Signup = () => {
         {state.success && (
           <p className='text-green-600 text-sm mb-4'>User created successfully!</p>
         )}
-        
+
         <button
           type='submit'
           disabled={isPending || state.loading}

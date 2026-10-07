@@ -149,7 +149,7 @@ export default async function Home() {
       />
 
       <section className="my-3" aria-label="Live market data">
-        <div className="container mx-auto px-0 lg:px-4">
+        <div className="container mx-auto px-0 lg:px-0">
           <Tickers />
         </div>
       </section>
@@ -223,7 +223,7 @@ export default async function Home() {
 
         {/* QuickTrade Pro Showcase */}
         <section className="pb-0 lg:pb-8 pt-8 md:pt-4 bg-linear-to-br from-gray-50 to-blue-50 hidden lg:block" aria-labelledby="quicktrade-heading">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 lg:px-0">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <div className="hidden lg:block bg-white rounded-2xl shadow-2xl p-8 px-4 lg:px-8 lg:p-12">
@@ -305,7 +305,7 @@ export default async function Home() {
 
         {/* Stock Chart Section */}
         <section className="py-16 bg-white" aria-labelledby="analytics-heading">
-          <div className="container mx-auto lg:px-4">
+          <div className="container mx-auto lg:px-0">
             <div className="text-center mb-12">
               <h2 id="analytics-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
                 DSEX INDEX: <span className="text-secondary_color">LIVE</span>
@@ -390,7 +390,7 @@ export default async function Home() {
         {/* Account Opening Steps */}
         {/* <section className="py-16 lg:py-24 bg-linear-to-br from-gray-50 to-blue-50"> */}
         <section className="py-16 lg:py-24 bg-gray-50">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 lg:px-0">
             <AccountOpenningSteps />
           </div>
         </section>
@@ -403,7 +403,7 @@ export default async function Home() {
               Multiple Platforms
             </div>
           </div>
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 lg:px-0">
             <div className="text-center mb-16">
               <h2 id="platforms-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
                 Trading <span className="text-secondary_color">Platforms</span>
@@ -418,7 +418,7 @@ export default async function Home() {
 
         {/* Regulators Section */}
         <section className="py-16 bg-gradient-to-br from-gray-100 to-blue-50 hidden lg:block" aria-labelledby="regulators-heading">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 lg:px-0">
             <div className="mt-8 text-center py-3 text-xl">
               <div className="inline-flex items-center bg-blue-100 text-primary_color px-4 py-1 rounded-full">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -443,7 +443,7 @@ export default async function Home() {
 
         {/* News & Insights Section */}
         <section className="hidden py-4 lg:py-24 bg-white" aria-labelledby="insights-heading">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 lg:px-0">
             <div className="text-center mb-12">
               <h2 id="insights-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
                 Market Insights & Analysis
@@ -465,7 +465,7 @@ export default async function Home() {
 
         {/* Call to Action Section */}
         <section className="hidden py-16 lg:py-24 bg-secondary_color text-white">
-          <div className="container mx-auto px-4 text-center">
+          <div className="container mx-auto px-4 lg:px-0 text-center">
             <div className="max-w-3xl mx-auto space-y-8">
               <h2 className="text-3xl lg:text-5xl font-bold leading-tight">
                 Ready to Start Your Investment Journey?

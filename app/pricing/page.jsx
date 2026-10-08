@@ -48,7 +48,7 @@ export default function PricingPage({ content = defaultContent }) {
         </div>
         <a
           href={trading.cta.href}
-          className="mt-4 flex items-center justify-center gap-2 rounded-lg bg-secondary_color px-5 py-3.5 text-[15px] font-semibold text-white md:mt-0 md:px-6 md:py-3"
+          className="mt-4 flex items-center justify-center gap-2 rounded-lg bg-[#25D366] px-5 py-3.5 text-[15px] font-semibold text-white md:mt-0 md:px-6 md:py-3"
         >
           <Icon name="whatsapp" className="h-5 w-5" />
           {trading.cta.label}
@@ -151,11 +151,11 @@ export default function PricingPage({ content = defaultContent }) {
           <p className="mt-2 text-[14px] leading-relaxed text-[#dbe7f3] md:text-base">{help.body}</p>
         </div>
         <div className="mt-4 flex flex-col gap-3 md:mt-0 md:shrink-0 md:flex-row">
-          <a href={help.whatsapp.href} className="flex items-center justify-center gap-2 rounded-lg bg-secondary_color px-5 py-3.5 text-[15px] font-semibold text-white md:px-6 md:py-3">
+          <a href={help.whatsapp.href} className="flex items-center justify-center gap-2 rounded-lg bg-[#25D366] px-5 py-3.5 text-[15px] font-semibold text-white md:px-6 md:py-3">
             <Icon name="whatsapp" className="h-5 w-5" />
             {help.whatsapp.label}
           </a>
-          <a href={help.primary.href} className="rounded-lg bg-[#fad870] px-5 py-3.5 text-center text-[15px] font-semibold text-[#004990] md:px-6 md:py-3">
+          <a href={help.primary.href} className="rounded-lg bg-secondary_color px-5 py-3.5 text-center text-[15px] font-semibold text-white md:px-6 md:py-3">
             {help.primary.label}
           </a>
         </div>

@@ -36,9 +36,6 @@ export default function PricingPage({ content = defaultContent }) {
     <div className="mx-auto max-w-6xl lg:container lg:px-4 bg-[#f7f8f7] pb-4 text-[#111827] md:pb-0">
       {/* Header */}
       <section className="border-b border-[#e5e7e5] bg-white px-4 pb-6 pt-6 md:px-10 md:pb-12 md:pt-14">
-        <p className="text-[11px] font-semibold uppercase tracking-wide text-[#004990] md:text-xs">
-          {header.eyebrow} · Last Updated: {header.lastUpdated}
-        </p>
         <h1 className="mt-2 max-w-2xl text-[26px] font-semibold leading-tight md:text-5xl md:leading-tight">{header.headline}</h1>
         <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-[#4b5563] md:text-lg">{header.subhead}</p>
       </section>

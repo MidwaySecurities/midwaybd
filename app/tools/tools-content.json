@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "path": "/tools",
+    "title": "Free Investing Tools for DSE Stocks and Bonds | Midway Securities Ltd.",
+    "description": "Free calculators and guides for Bangladesh investors: dividends, bonus shares, rights issues, profit and loss, position size, order types, government bond interest, bond vs bank deposit, treasury bond yields and auction dates.",
+    "origin": "https://www.midwaybd.com"
+  },
+  "links": {
+    "stocks": "/stocks",
+    "bonds": "/government-bonds",
+    "openBo": "https://portal.midwaybd.com/bo/portal-login",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20tool%20suggestion%20for%20Midway"
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Tools"
+    ],
+    "eyebrow": "Free Tools",
+    "headline": "Free Investing Tools",
+    "subhead": "Simple calculators and trackers for Bangladesh investors. Enter a few numbers and see what a dividend, a bonus or a government bond means for you."
+  },
+  "start": {
+    "title": "Not Sure Where to Start?",
+    "items": [
+      {
+        "situation": "A company announced a dividend",
+        "tool": "Dividend Calculator",
+        "href": "/dividend-calculator"
+      },
+      {
+        "situation": "My share price fell after the record date",
+        "tool": "Bonus Share Adjustment Calculator",
+        "href": "/bonus-share-adjustment-calculator"
+      },
+      {
+        "situation": "I am thinking about a government bond",
+        "tool": "Bond Interest Calculator",
+        "href": "/bond-interest-calculator"
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "stocks",
+      "title": "Dividends, Bonus and Rights Shares",
+      "accent": "stocks",
+      "intro": "Understand dividends, bonus shares, rights offers and what happens to your price.",
+      "tools": [
+        {
+          "icon": "gift",
+          "name": "Dividend Calculator",
+          "body": "Work out your cash dividend after tax and your bonus shares from a company’s announcement.",
+          "href": "/dividend-calculator",
+          "cta": "Open Calculator"
+        },
+        {
+          "icon": "gift",
+          "name": "Dividend Income Goal Calculator",
+          "body": "Start with the dividend income you want and see how many shares it would take.",
+          "href": "/dividend-income-goal-calculator",
+          "cta": "Open Calculator"
+        },
+        {
+          "icon": "percent",
+          "name": "Bonus Share Adjustment Calculator",
+          "body": "See why a price falls after the record date, how many shares you own, and your new cost price.",
+          "href": "/bonus-share-adjustment-calculator",
+          "cta": "Open Calculator"
+        },
+        {
+          "icon": "tag",
+          "name": "Rights Issue Calculator",
+          "body": "See how many rights shares you can buy, what you pay, and how the offer changes your price.",
+          "href": "/rights-issue-calculator",
+          "cta": "Open Calculator"
+        }
+      ]
+    },
+    {
+      "id": "trading",
+      "title": "Trading Your Shares",
+      "accent": "stocks",
+      "intro": "Know your average cost, size your trades and pick the right order.",
+      "tools": [
+        {
+          "icon": "percent",
+          "name": "Profit and Loss Calculator",
+          "body": "Add every buy of a stock to see your average cost and your profit or loss at any price.",
+          "href": "/profit-and-loss-calculator",
+          "cta": "Open Calculator"
+        },
+        {
+          "icon": "shield",
+          "name": "Position Size and Stop-Loss Calculator",
+          "body": "Decide how many shares to buy for the amount you are willing to lose.",
+          "href": "/position-size-calculator",
+          "cta": "Open Calculator"
+        },
+        {
+          "icon": "device",
+          "name": "Which Order Type?",
+          "body": "Answer three questions to see which QuickTrade Pro order type fits what you want to do.",
+          "href": "/which-order-type",
+          "cta": "Open Guide"
+        }
+      ]
+    },
+    {
+      "id": "bonds",
+      "title": "Government Bonds",
+      "accent": "bonds",
+      "intro": "Plan bond interest and follow every Bangladesh Bank auction.",
+      "tools": [
+        {
+          "icon": "bank",
+          "name": "Bond Interest Calculator",
+          "body": "Estimate the interest a Treasury Bond pays every 6 months, after the 10% AIT.",
+          "href": "/bond-interest-calculator",
+          "cta": "Open Calculator"
+        },
+        {
+          "icon": "percent",
+          "name": "Bond vs Bank Deposit Comparison",
+          "body": "See what a Treasury Bond and a bank fixed deposit pay you after tax, side by side.",
+          "href": "/bond-vs-bank-deposit-calculator",
+          "cta": "Open Calculator"
+        },
+        {
+          "icon": "file",
+          "name": "Treasury Bond Center",
+          "body": "The yield curve, the next auction and recent results, in one place.",
+          "href": "/treasury-bond-center",
+          "cta": "Open Center"
+        },
+        {
+          "icon": "clock",
+          "name": "Auction Calendar",
+          "body": "Upcoming bond auctions with the date to apply by.",
+          "href": "/treasury-bond-center/auction-calendar",
+          "cta": "Open Calendar"
+        }
+      ]
+    }
+  ],
+  "soon": {
+    "title": "Coming Soon",
+    "intro": "We are building these next.",
+    "items": [
+      {
+        "icon": "grid",
+        "name": "Valuation Ratios",
+        "body": "P/E, price-to-book and dividend yield explained in plain language."
+      },
+      {
+        "icon": "clock",
+        "name": "Corporate Events Calendar",
+        "body": "Record dates, AGMs and rights issue dates for DSE companies in one place."
+      }
+    ],
+    "tag": "Coming Soon",
+    "suggest": {
+      "body": "Have an idea for a tool?",
+      "cta": "Tell Us on WhatsApp"
+    }
+  },
+  "faq": {
+    "title": "Questions About Our Tools",
+    "items": [
+      {
+        "q": "Are the tools free?",
+        "a": "Yes. All of our tools are free to use. You do not need an account or a BO Account."
+      },
+      {
+        "q": "Are the results exact?",
+        "a": "No. They are estimates based on the numbers you enter, for education and information only. Companies, the Dhaka Stock Exchange and Bangladesh Bank decide the actual amounts, so always check the official announcement."
+      },
+      {
+        "q": "Where do the bond numbers come from?",
+        "a": "Bond rates, dates and auction results come from Bangladesh Bank’s website."
+      },
+      {
+        "q": "Do the tools include trading fees?",
+        "a": "No. They show the numbers for the dividend, bonus or bond itself and leave out fees and charges."
+      },
+      {
+        "q": "Can I trade after using a tool?",
+        "a": "Yes. Open a BO Account online, then buy and sell stocks in QuickTrade Pro and apply for government bonds in the Midway Portal."
+      }
+    ]
+  },
+  "related": [
+    {
+      "label": "Read about Stocks",
+      "href": "/stocks"
+    },
+    {
+      "label": "Read about Government Bonds",
+      "href": "/government-bonds"
+    }
+  ],
+  "legal": "Our tools give estimates for education and information only. They do not include fees or charges and are not investment or tax advice. Share prices can fall as well as rise, dividends and bond payments depend on the issuer, and you can lose some or all of the money you invest. No returns are guaranteed. Bond data on this site is taken from Bangladesh Bank’s website.",
+  "cta": {
+    "title": "Ready to Start Investing?",
+    "body": "Open a BO Account online, then trade stocks in QuickTrade Pro. Questions? Message us on WhatsApp.",
+    "primary": "Open BO Account",
+    "whatsapp": "WhatsApp Us"
+  }
+}

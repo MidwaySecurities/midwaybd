@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "path": "/dividend-calculator",
+    "title": "Dividend Calculator for DSE Stocks | Midway Securities Ltd.",
+    "description": "Work out your cash dividend, tax at source and bonus shares from a DSE company’s announcement. Free calculator, with a plain-language guide to face value and record dates.",
+    "origin": "https://www.midwaybd.com"
+  },
+  "links": {
+    "stocks": "/stocks",
+    "app": "/mobile-app",
+    "tools": "/tools",
+    "portal": "https://portal.midwaybd.com/",
+    "openBo": "https://portal.midwaybd.com/bo/portal-login",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20the%20Dividend%20Calculator"
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Tools",
+      "Dividend Calculator"
+    ],
+    "headline": "Dividend Calculator",
+    "subhead": "Enter the dividend a company has announced. See the cash you receive after tax and the bonus shares you get, in seconds."
+  },
+  "inputs": {
+    "title": "Your Shares and the Dividend",
+    "shares": {
+      "label": "Shares You Own",
+      "chips": [
+        5,
+        10,
+        100,
+        1000,
+        5000
+      ],
+      "default": "1000",
+      "hint": "The number of shares in your Portfolio on the record date."
+    },
+    "face": {
+      "label": "Face Value Per Share",
+      "left": "৳",
+      "default": "10",
+      "hint": "Most DSE stocks have a face value of ৳10. Dividends are a percentage of this, not of the market price."
+    },
+    "presets": {
+      "label": "Try an Example",
+      "items": [
+        {
+          "label": "Cash Only",
+          "cash": "15",
+          "stock": "0"
+        },
+        {
+          "label": "Bonus Only",
+          "cash": "0",
+          "stock": "10"
+        },
+        {
+          "label": "Cash and Bonus",
+          "cash": "10",
+          "stock": "5"
+        }
+      ]
+    },
+    "cash": {
+      "label": "Cash Dividend",
+      "unit": "%",
+      "default": "10",
+      "hint": "10% on a ৳10 face value is ৳1 per share."
+    },
+    "stock": {
+      "label": "Stock (Bonus) Dividend",
+      "unit": "%",
+      "default": "5",
+      "hint": "5% means 5 bonus shares for every 100 you own."
+    },
+    "tax": {
+      "label": "Tax Deducted at Source",
+      "unit": "%",
+      "default": "15",
+      "hint": "Taken from the cash dividend before it reaches you. This tool uses 15%. There is no tax on bonus shares."
+    },
+    "price": {
+      "label": "Current Share Price (Optional)",
+      "left": "৳",
+      "default": "",
+      "hint": "Add it to see the dividend yield and the estimated price after the record date."
+    }
+  },
+  "warnings": {
+    "face": "Face value must be more than zero.",
+    "pct": "Please check the dividend percentage.",
+    "shares": "Enter a whole number of shares."
+  },
+  "results": {
+    "title": "Your Estimated Dividend",
+    "bigLabel": "Cash After Tax",
+    "bigSub": "for the shares you hold on the record date",
+    "perShare": "Cash Dividend Per Share",
+    "gross": "Total Cash Before Tax",
+    "tax": "Tax Deducted at Source",
+    "bonus": "Bonus Shares You Receive",
+    "after": "Shares You Own Afterwards",
+    "yield": "Cash Dividend Yield",
+    "adj": "Estimated Price After the Record Date",
+    "valBefore": "Value of Your Shares Before",
+    "valAfter": "Estimated Value of Your Shares After",
+    "bonusNote": "Whole shares only. The company handles any fraction.",
+    "balanceTitle": "Where Does the Dividend Come From?",
+    "balanceBody": "A dividend is paid out of the company’s value, so the share price is adjusted around the record date. In this example, your shares are worth about {after} after the record date, and the cash before tax is {cash}. Together that is close to the {before} you started with. A dividend moves value from the share price into your account. It does not create new value.",
+    "bonusLabel": "Bonus Shares",
+    "fractionRow": "Fraction of a Share (Paid in Cash)",
+    "fractionValue": "{n} of a share",
+    "fractionNote": "The DSE has no fractional shares, so this fraction is not issued as a share. The company pays cash for it instead. The amount is set by the company, so check its announcement.",
+    "gapNote": "The small gap is the fraction of a share, which is paid in cash instead."
+  },
+  "how": {
+    "title": "How a Dividend Is Worked Out",
+    "items": [
+      {
+        "title": "It Is a Percentage of Face Value",
+        "body": "A 15% dividend on a ৳10 face value is ৳1.50 per share. It is not 15% of the market price."
+      },
+      {
+        "title": "Cash Dividend",
+        "body": "Shares × face value × cash dividend %. For 1,000 shares at 10% on ৳10: ৳1,000, minus 15% tax (৳150) leaves ৳850."
+      },
+      {
+        "title": "Bonus Shares",
+        "body": "Shares × stock dividend %. For 1,000 shares at 5%: 50 new shares, so you own 1,050."
+      }
+    ],
+    "record": {
+      "title": "Record Date",
+      "body": "Each company sets a record date. Shares you buy before the record date are eligible for the dividend. Check the date in the company’s announcement.",
+      "link": "Read about Stocks"
+    }
+  },
+  "faq": {
+    "title": "Dividend Questions",
+    "items": [
+      {
+        "q": "What does a 15% cash dividend mean?",
+        "a": "It means 15% of the face value, not of the share price. With a ৳10 face value, a 15% cash dividend is ৳1.50 for every share you own."
+      },
+      {
+        "q": "What is a stock dividend, or bonus shares?",
+        "a": "A stock dividend gives you extra shares instead of cash. A 10% stock dividend means 1 bonus share for every 10 shares you own."
+      },
+      {
+        "q": "What if my bonus is less than one whole share?",
+        "a": "The DSE has no fractional shares, so a fraction of a share is not issued. For example, 2 shares with a 10% bonus is 0.2 of a share, so you receive no bonus shares. The company pays cash for the fraction instead. Check the company’s announcement for how it is calculated."
+      },
+      {
+        "q": "Can a company pay both cash and bonus shares?",
+        "a": "Yes. Many companies announce a cash dividend and a stock dividend together, for example 10% cash and 5% bonus. This calculator handles both."
+      },
+      {
+        "q": "When do I need to buy to receive a dividend?",
+        "a": "Shares you buy before the company’s record date are eligible for the dividend. The record date is in the company’s announcement."
+      },
+      {
+        "q": "If I sell the day after the record date, do I still get the dividend?",
+        "a": "Yes. Eligibility depends on the shares you hold on the record date, so you can sell the day after and still receive the dividend."
+      },
+      {
+        "q": "Why does the share price change after a dividend?",
+        "a": "A dividend is paid out of the company’s value, so the share price is adjusted around the record date. The value of your shares falls by about the amount you receive in cash or bonus shares."
+      },
+      {
+        "q": "Is tax deducted from my dividend?",
+        "a": "Tax is deducted at source from cash dividends before they reach you. This calculator uses 15% and lets you change it. There is no tax on bonus shares."
+      }
+    ]
+  },
+  "glossary": {
+    "title": "Quick Glossary",
+    "items": [
+      {
+        "term": "Face Value",
+        "def": "The nominal value printed on a share, usually ৳10. Dividends are declared as a percentage of it."
+      },
+      {
+        "term": "Cash Dividend",
+        "def": "A payment in money for each share you own."
+      },
+      {
+        "term": "Stock Dividend",
+        "def": "Extra shares given to you instead of cash, also called bonus shares."
+      },
+      {
+        "term": "Record Date",
+        "def": "The date a company uses to decide which shareholders receive the dividend."
+      },
+      {
+        "term": "Tax Deducted at Source",
+        "def": "Tax taken from the cash dividend before it is paid to you."
+      },
+      {
+        "term": "Dividend Yield",
+        "def": "The cash dividend per share divided by the share price, shown as a percentage."
+      }
+    ]
+  },
+  "related": [
+    {
+      "label": "Bonus Share Adjustment Calculator",
+      "href": "/bonus-share-adjustment-calculator"
+    },
+    {
+      "label": "Read about Stocks",
+      "href": "/stocks"
+    },
+    {
+      "label": "QuickTrade Pro App",
+      "href": "/mobile-app"
+    }
+  ],
+  "legal": "An estimate based on the numbers you enter, for education and information only. It does not include trading fees or charges. Companies and the Dhaka Stock Exchange decide the actual dividend, record date and price adjustment, so check the company’s announcement. Tax rules can change and your position may differ. This is not tax or investment advice. Share prices can fall as well as rise, dividends are not guaranteed, and you can lose some or all of the money you invest.",
+  "cta": {
+    "title": "Ready to Start Investing?",
+    "body": "Open a BO Account online, then buy and sell stocks in QuickTrade Pro. Questions? Message us on WhatsApp.",
+    "primary": "Open BO Account",
+    "whatsapp": "WhatsApp Us"
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "meta": {
+    "path": "/dividend-income-goal-calculator",
+    "title": "Dividend Income Goal Calculator for DSE Stocks | Midway Securities Ltd.",
+    "description": "Find how many shares you would need to receive a dividend income you want, after the 15% tax at source. Free calculator with a plain-language guide.",
+    "origin": "https://www.midwaybd.com"
+  },
+  "links": {
+    "openBo": "https://portal.midwaybd.com/bo/portal-login",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20the%20Dividend%20Income%20Goal%20Calculator",
+    "app": "/mobile-app",
+    "tools": "/tools",
+    "dividend": "/dividend-calculator",
+    "stocks": "/stocks",
+    "dsePrices": "https://www.dse.com.bd/markets/latest-share-price"
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Tools",
+      "Dividend Income Goal Calculator"
+    ],
+    "headline": "Dividend Income Goal Calculator",
+    "subhead": "Start with the dividend income you would like, then see how many shares it takes at a given dividend rate, and what those shares would cost."
+  },
+  "inputs": {
+    "title": "Your Goal",
+    "goal": {
+      "label": "Dividend Income You Want, After Tax",
+      "left": "৳",
+      "default": "10000",
+      "hint": "Cash dividends only. Bonus shares are not counted.",
+      "period": {
+        "month": "Per Month",
+        "year": "Per Year"
+      },
+      "chips": {
+        "month": [
+          5000,
+          10000,
+          25000,
+          50000
+        ],
+        "year": [
+          50000,
+          100000,
+          500000,
+          1000000
+        ]
+      }
+    },
+    "cash": {
+      "label": "Cash Dividend Rate",
+      "unit": "% of face value",
+      "default": "10",
+      "chips": [
+        5,
+        10,
+        15,
+        20,
+        25
+      ],
+      "hint": "10% on ৳10 face value is ৳1 per share. Use the rate the company declared."
+    },
+    "face": {
+      "label": "Face Value Per Share",
+      "left": "৳",
+      "default": "10",
+      "hint": "Usually ৳10."
+    },
+    "tax": {
+      "label": "Tax Deducted at Source",
+      "unit": "%",
+      "default": "15",
+      "hint": "15% is deducted from cash dividends before you receive them. You can change it."
+    },
+    "price": {
+      "label": "Share Price (Optional)",
+      "left": "৳",
+      "default": "100",
+      "hint": "Add the price to see what these shares cost. Check QuickTrade Pro or the DSE.",
+      "dseLink": "Check latest prices on the DSE"
+    },
+    "owned": {
+      "label": "Shares You Already Own (Optional)",
+      "default": "",
+      "hint": "Add what you hold to see how many more shares you need."
+    }
+  },
+  "warnings": {
+    "goal": "Enter the income you want.",
+    "cash": "Enter a cash dividend rate above zero.",
+    "cashHigh": "Please check the dividend rate.",
+    "face": "Face value must be more than zero.",
+    "tax": "Tax must be between 0% and 100%.",
+    "price": "Enter a share price above zero to see the cost."
+  },
+  "results": {
+    "title": "What It Would Take",
+    "sharesLabel": "Shares Needed",
+    "costLabel": "Cost of Those Shares",
+    "noPrice": "Add a price",
+    "empty": "Fill in the goal",
+    "sub": "Whole shares only, so your income may be a little above the goal.",
+    "rows": {
+      "perShare": "Cash Dividend Per Share",
+      "tax": "Tax at Source Per Share",
+      "net": "You Receive Per Share",
+      "incomeYear": "Income From These Shares, Per Year",
+      "incomeMonth": "Which Is About, Per Month",
+      "yield": "Dividend Yield at This Price",
+      "owned": "Shares You Already Own",
+      "more": "More Shares Needed",
+      "moreCost": "Cost of the Extra Shares"
+    },
+    "insightTitle": "What This Means",
+    "insight": "To receive about {goal} {period} after tax, with a {cash} cash dividend and {tax} tax at source, you would need {n} shares. They would pay about {year} a year.",
+    "insightCost": " At {price} a share, that is about {cost}.",
+    "insightMore": " You already own {owned}, so you would need {more} more.",
+    "insightHave": " You already own enough shares for this goal at this dividend rate.",
+    "caution": {
+      "title": "Dividends Are Not Promised",
+      "body": "Companies choose their dividend each year. It can be higher, lower or zero, and the share price can fall. This tool assumes the same dividend every year to show the arithmetic. It is not a forecast."
+    }
+  },
+  "how": {
+    "title": "How the Goal Works",
+    "items": [
+      {
+        "title": "Turn the Goal Into a Year",
+        "body": "A goal of ৳10,000 a month is ৳1,20,000 a year."
+      },
+      {
+        "title": "Find the Dividend Per Share",
+        "body": "Face value × cash rate, less tax. ৳10 × 10% is ৳1, and after 15% tax you receive ৳0.85 per share."
+      },
+      {
+        "title": "Divide",
+        "body": "Yearly goal ÷ dividend per share after tax. ৳1,20,000 ÷ ৳0.85 is about 1,41,177 shares."
+      }
+    ],
+    "example": "Example: for ৳10,000 a month after tax from a 10% cash dividend, you need about 1,41,177 shares. At ৳100 a share they would cost about ৳1,41,17,700."
+  },
+  "faq": {
+    "title": "Dividend Income Questions",
+    "items": [
+      {
+        "q": "How many shares do I need to earn a monthly dividend income?",
+        "a": "Divide your yearly goal by the cash dividend you receive per share after tax. The calculator does this and rounds up to whole shares."
+      },
+      {
+        "q": "Do companies pay dividends every month?",
+        "a": "No. Companies on the DSE usually declare dividends once a year, so a monthly figure here is the yearly amount divided by 12, not a monthly payment."
+      },
+      {
+        "q": "Will the dividend stay the same every year?",
+        "a": "Not necessarily. Each company decides its dividend every year, and it can pay more, less or nothing. Past dividends do not promise future ones."
+      },
+      {
+        "q": "Are bonus shares counted?",
+        "a": "No. This tool counts cash dividends only. Bonus shares add to your holding but are not cash. Use the Dividend Calculator to see both."
+      },
+      {
+        "q": "How much tax is taken from dividends?",
+        "a": "The calculator uses 15% tax at source, which you can change. The company deducts it before you receive the dividend."
+      },
+      {
+        "q": "Is it wise to rely on one company for income?",
+        "a": "Dividends can change or stop, and one company’s share price can fall. This tool uses a single dividend rate to keep the arithmetic simple. It does not suggest putting everything in one stock."
+      },
+      {
+        "q": "What is dividend yield?",
+        "a": "The yearly dividend per share divided by the share price. A ৳1 dividend on a ৳100 share is a 1% yield, before tax."
+      }
+    ]
+  },
+  "glossary": {
+    "title": "Quick Glossary",
+    "items": [
+      {
+        "term": "Cash Dividend",
+        "def": "Money a company pays to shareholders, shown as a percentage of face value."
+      },
+      {
+        "term": "Face Value",
+        "def": "The nominal value of a share, usually ৳10. Dividends are a percentage of it."
+      },
+      {
+        "term": "Tax at Source",
+        "def": "Tax the company deducts from your dividend before paying you."
+      },
+      {
+        "term": "Dividend Yield",
+        "def": "The yearly dividend per share divided by the share price."
+      },
+      {
+        "term": "Record Date",
+        "def": "The date a company uses to decide which shareholders receive the dividend."
+      }
+    ]
+  },
+  "related": [
+    {
+      "label": "Dividend Calculator",
+      "href": "/dividend-calculator"
+    },
+    {
+      "label": "Bonus Share Adjustment Calculator",
+      "href": "/bonus-share-adjustment-calculator"
+    },
+    {
+      "label": "Read about Stocks",
+      "href": "/stocks"
+    },
+    {
+      "label": "All Tools",
+      "href": "/tools"
+    }
+  ],
+  "legal": "An estimate based on the numbers you enter, for education and information only. It assumes the same cash dividend every year, which companies do not promise. It does not include trading fees or charges. Share prices can fall as well as rise, dividends are not guaranteed, and you can lose some or all of the money you invest. This is not investment advice.",
+  "cta": {
+    "title": "Ready to Start Investing?",
+    "body": "Open a BO Account online, then buy and sell stocks in QuickTrade Pro. Questions? Message us on WhatsApp.",
+    "primary": "Open BO Account",
+    "whatsapp": "WhatsApp Us"
+  }
+}

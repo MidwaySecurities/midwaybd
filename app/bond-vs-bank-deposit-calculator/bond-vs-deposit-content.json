@@ -1,0 +1,289 @@
+{
+  "meta": {
+    "path": "/bond-vs-bank-deposit-calculator",
+    "title": "Bond vs Bank Deposit Calculator: Treasury Bond or Fixed Deposit? | Midway Securities Ltd.",
+    "description": "Compare the interest on a Bangladesh Treasury Bond and a bank fixed deposit after tax. Enter your amount, years and rates. Free calculator with a plain-language guide.",
+    "origin": "https://www.midwaybd.com"
+  },
+  "links": {
+    "openBo": "https://portal.midwaybd.com/bo/portal-login",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20the%20Bond%20vs%20Bank%20Deposit%20Calculator",
+    "app": "/mobile-app",
+    "tools": "/tools",
+    "bondCalc": "/bond-interest-calculator",
+    "center": "/treasury-bond-center",
+    "governmentBonds": "/government-bonds",
+    "calendar": "/treasury-bond-center/auction-calendar"
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Tools",
+      "Bond vs Bank Deposit Calculator"
+    ],
+    "headline": "Bond vs Bank Deposit Calculator",
+    "subhead": "See what a Treasury Bond and a bank fixed deposit would pay you after tax, side by side, for the same amount and the same years."
+  },
+  "inputs": {
+    "title": "Your Two Options",
+    "presets": {
+      "label": "Try an Example",
+      "items": [
+        {
+          "label": "Bond Rate Higher",
+          "amount": "1000000",
+          "years": "5",
+          "bondRate": "9",
+          "depRate": "8",
+          "bondTax": "10",
+          "depTax": "10"
+        },
+        {
+          "label": "Deposit Rate Higher",
+          "amount": "1000000",
+          "years": "5",
+          "bondRate": "8",
+          "depRate": "9",
+          "bondTax": "10",
+          "depTax": "10"
+        },
+        {
+          "label": "Same Rate",
+          "amount": "1000000",
+          "years": "5",
+          "bondRate": "9",
+          "depRate": "9",
+          "bondTax": "10",
+          "depTax": "10"
+        }
+      ]
+    },
+    "amount": {
+      "label": "Amount You Invest",
+      "left": "৳",
+      "default": "1000000",
+      "chips": [
+        [
+          "1 Lakh",
+          100000
+        ],
+        [
+          "5 Lakh",
+          500000
+        ],
+        [
+          "10 Lakh",
+          1000000
+        ],
+        [
+          "50 Lakh",
+          5000000
+        ]
+      ],
+      "hint": "Treasury Bonds start at ৳1,00,000, in multiples of ৳1,00,000."
+    },
+    "years": {
+      "label": "Number of Years",
+      "unit": "yrs",
+      "default": "5",
+      "chips": [
+        1,
+        2,
+        5,
+        10
+      ],
+      "hint": "Steps of 0.5 years, because bond interest is paid every 6 months."
+    },
+    "bondTitle": "Treasury Bond",
+    "bondRate": {
+      "label": "Bond Interest Rate (Per Year)",
+      "unit": "%",
+      "default": "9",
+      "hint": "Use the rate from the latest auction result."
+    },
+    "bondTax": {
+      "label": "Tax Deducted at Source (AIT)",
+      "unit": "%",
+      "default": "10",
+      "hint": "Bangladesh Bank deducts 10% AIT from every interest payment."
+    },
+    "depTitle": "Bank Fixed Deposit",
+    "depRate": {
+      "label": "Deposit Interest Rate (Per Year)",
+      "unit": "%",
+      "default": "8",
+      "hint": "Use the rate your bank offers for this period."
+    },
+    "depTax": {
+      "label": "Tax Deducted at Source",
+      "unit": "%",
+      "default": "10",
+      "hint": "Banks deduct tax from deposit interest. The rate depends on your tax status, so check with your bank."
+    },
+    "exampleNote": "The numbers above are examples, not current rates. Enter the rates you are comparing."
+  },
+  "warnings": {
+    "amount": "Enter the amount you want to invest.",
+    "bondMin": "Treasury Bonds start at ৳1,00,000, in multiples of ৳1,00,000. The deposit side works with any amount.",
+    "rate": "Please check the interest rate.",
+    "years": "Enter the number of years.",
+    "yearsStep": "Bond interest is paid every 6 months, so use steps of 0.5 years.",
+    "tax": "Tax must be between 0% and 100%."
+  },
+  "results": {
+    "title": "Your Comparison",
+    "bondLabel": "Bond, After Tax",
+    "depLabel": "Deposit, After Tax",
+    "empty": "Enter amount",
+    "subTotal": "Total interest you keep over {y} years.",
+    "colBond": "Treasury Bond",
+    "colDep": "Bank Deposit",
+    "rows": {
+      "yearGross": "Interest Per Year, Before Tax",
+      "yearTax": "Tax Per Year",
+      "yearNet": "Interest Per Year, After Tax",
+      "total": "Total Interest After Tax",
+      "rate": "Return Per Year After Tax"
+    },
+    "diffLabel": "Difference After Tax",
+    "matchLabel": "Deposit Rate That Would Match the Bond",
+    "matchHint": "The deposit rate at which both pay the same interest after tax.",
+    "insightTitle": "What This Means",
+    "bondMore": "On these numbers the bond pays {diff} more than the deposit over {y} years, after tax. The deposit would need a rate of {match} to pay the same.",
+    "depMore": "On these numbers the deposit pays {diff} more than the bond over {y} years, after tax. The bond would need a rate of {match} to pay the same.",
+    "same": "On these numbers both pay the same interest after tax over {y} years.",
+    "assume": "Interest is paid out and not reinvested. Both return your original amount at the end. Compound interest, fees and other charges are not included.",
+    "beyond": {
+      "title": "Beyond the Numbers",
+      "intro": "The rate is only part of the choice. These also matter.",
+      "cols": [
+        "",
+        "Treasury Bond",
+        "Bank Deposit"
+      ],
+      "rows": [
+        [
+          "Issued by",
+          "The Government of Bangladesh",
+          "Your bank, on its own terms"
+        ],
+        [
+          "Interest paid",
+          "Every 6 months",
+          "As your bank sets it. Check how and when."
+        ],
+        [
+          "Minimum",
+          "৳1,00,000, in multiples of ৳1,00,000",
+          "Depends on the bank"
+        ],
+        [
+          "Taking money out early",
+          "Depends on the market. The price can be lower than you paid.",
+          "Depends on the bank. Check the early withdrawal rules."
+        ]
+      ]
+    }
+  },
+  "how": {
+    "title": "How the Comparison Works",
+    "items": [
+      {
+        "title": "Interest Before Tax",
+        "body": "Amount × rate. ৳10,00,000 at 9% pays ৳90,000 a year. At 8% it pays ৳80,000."
+      },
+      {
+        "title": "Take Off the Tax",
+        "body": "Both are taxed at source. At 10%, ৳90,000 becomes ৳81,000 and ৳80,000 becomes ৳72,000 a year."
+      },
+      {
+        "title": "Add Up the Years",
+        "body": "Interest after tax × years. Over 5 years that is ৳4,05,000 for the bond and ৳3,60,000 for the deposit."
+      }
+    ],
+    "example": "Example: ৳10,00,000 for 5 years. A 9% bond pays ৳4,05,000 after 10% tax. An 8% deposit with 10% tax pays ৳3,60,000. The difference is ৳45,000."
+  },
+  "faq": {
+    "title": "Bond vs Deposit Questions",
+    "items": [
+      {
+        "q": "Is a Treasury Bond better than a bank fixed deposit?",
+        "a": "Neither is better for everyone. The right choice depends on the rates on offer, how long you can leave the money, whether you may need it early, and your tax position. This calculator compares only the interest you keep after tax."
+      },
+      {
+        "q": "How is tax taken from bond interest?",
+        "a": "Bangladesh Bank deducts 10% AIT from every bond interest payment, so you receive the amount after tax."
+      },
+      {
+        "q": "How is tax taken from deposit interest?",
+        "a": "Banks deduct tax at source from deposit interest. The rate depends on your tax status, so check with your bank and change the figure in the calculator."
+      },
+      {
+        "q": "Where do I find the bond interest rate?",
+        "a": "In the Bangladesh Bank auction result. The Treasury Bond Center shows the latest results and the next auction."
+      },
+      {
+        "q": "Why does the calculator not use compound interest?",
+        "a": "Bond interest is paid out every 6 months and bank terms differ. To keep the comparison clear, interest is treated as paid out and not reinvested."
+      },
+      {
+        "q": "Does the result include fees and charges?",
+        "a": "No. Fees, charges and any other duties are not included. Your bank and Midway can tell you what applies."
+      },
+      {
+        "q": "What if I sell the bond or break the deposit early?",
+        "a": "The numbers here assume you hold both to the end. A bond sold before maturity sells at the market price, which can be lower than you paid. A deposit broken early follows your bank’s rules, which can reduce the interest."
+      }
+    ]
+  },
+  "glossary": {
+    "title": "Quick Glossary",
+    "items": [
+      {
+        "term": "Treasury Bond",
+        "def": "A loan to the Government of Bangladesh that pays interest every 6 months and returns your money at maturity."
+      },
+      {
+        "term": "Fixed Deposit",
+        "def": "Money placed with a bank for a set period at an agreed interest rate."
+      },
+      {
+        "term": "AIT",
+        "def": "Advance Income Tax, deducted at source before you receive the interest."
+      },
+      {
+        "term": "Maturity",
+        "def": "The date a bond or deposit ends and your original amount is returned."
+      },
+      {
+        "term": "After-Tax Return",
+        "def": "The interest you keep as a percentage of your amount, once tax is taken off."
+      }
+    ]
+  },
+  "related": [
+    {
+      "label": "Bond Interest Calculator",
+      "href": "/bond-interest-calculator"
+    },
+    {
+      "label": "Treasury Bond Center",
+      "href": "/treasury-bond-center"
+    },
+    {
+      "label": "Auction Calendar",
+      "href": "/treasury-bond-center/auction-calendar"
+    },
+    {
+      "label": "Government Bonds",
+      "href": "/government-bonds"
+    }
+  ],
+  "legal": "An estimate based on the numbers you enter, for education and information only. It assumes both are held to the end, interest is paid out and not reinvested, and rates stay as entered. It does not include fees, charges or other duties. The two options differ in risk, issuer and flexibility, so the higher figure is not necessarily the better choice. Your tax position may differ; this is not tax or investment advice. Investing involves risk and no returns are guaranteed. Bond rates and years come from Bangladesh Bank’s website; actual amounts follow the auction result.",
+  "cta": {
+    "title": "Ready to Start Investing?",
+    "body": "Open a BO Account online, then buy and sell stocks in QuickTrade Pro. Questions? Message us on WhatsApp.",
+    "primary": "Open BO Account",
+    "whatsapp": "WhatsApp Us"
+  }
+}

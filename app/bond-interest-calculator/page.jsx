@@ -2,6 +2,7 @@
 import { useState } from "react";
 import defaultContent from "./bond-calculator-content.json";
 import { Icon } from "./icons";
+import Link from "next/link";
 
 /**
  * Bond Interest Calculator: MOBILE-FIRST. Base classes = phone, `md:` = two columns.
@@ -65,14 +66,14 @@ export default function BondInterestCalculator({ content = defaultContent }) {
   ];
 
   return (
-    <div className="mx-auto max-w-6xl bg-[#f7f8f7] pb-24 text-[#111827] md:pb-0">
+    <div className="mx-auto max-w-6xl lg:container bg-[#f7f8f7] pb-6 text-[#111827]">
       <section className="border-b border-[#e5e7e5] bg-white px-4 pb-6 pt-5 md:px-10 md:pb-10 md:pt-8">
-        <nav aria-label="Breadcrumb" className="text-[12px] text-[#6b7280]">
+        {/* <nav aria-label="Breadcrumb" className="text-[12px] text-[#6b7280]">
           {header.breadcrumb.map((b, i) => (
             <span key={b}>{i > 0 && " / "}{i === header.breadcrumb.length - 1 ? <span className="text-[#111827]">{b}</span> : b}</span>
           ))}
-        </nav>
-        <h1 className="mt-4 text-[26px] font-semibold leading-tight md:text-5xl md:leading-tight">{header.headline}</h1>
+        </nav> */}
+        <h1 className="text-[26px] font-semibold leading-tight md:text-5xl md:leading-tight">{header.headline}</h1>
         <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-[#4b5563] md:text-lg">{header.subhead}</p>
       </section>
 
@@ -131,7 +132,7 @@ export default function BondInterestCalculator({ content = defaultContent }) {
       <p className="px-4 pb-4 text-[11px] leading-relaxed text-[#6b7280] md:px-10 md:text-xs">{legal}</p>
       <ul className="flex flex-wrap gap-x-5 gap-y-2 px-4 pb-6 md:px-10">
         {related.map((l) => (
-          <li key={l.href}><a href={l.href} className="text-[14px] font-semibold text-[#004990]">{l.label} →</a></li>
+          <li key={l.href}><Link href={l.href} className="text-[14px] font-semibold text-[#004990]">{l.label} →</Link></li>
         ))}
       </ul>
 
@@ -141,17 +142,17 @@ export default function BondInterestCalculator({ content = defaultContent }) {
           <p className="mt-2 max-w-xl text-[14px] leading-relaxed text-[#dbe7f3] md:text-base">{cta.body}</p>
         </div>
         <div className="mt-4 flex flex-col gap-3 md:mt-0 md:shrink-0 md:flex-row">
-          <a href={links.openBo} target="_blank" className="rounded-lg bg-[#fad870] px-5 py-3.5 text-center text-[15px] font-semibold text-[#004990] md:px-6 md:py-3">{cta.primary}</a>
-          <a href={links.portal} className="rounded-lg border border-white px-5 py-3.5 text-center text-[15px] font-semibold text-white md:px-6 md:py-3">{cta.secondary}</a>
-          <a href={links.whatsapp} target="_blank" className="flex items-center justify-center gap-2 rounded-lg bg-[#1fa855] px-5 py-3.5 text-[15px] font-semibold text-white md:px-6 md:py-3">
+          <Link href={links.openBo} target="_blank" className="rounded-lg bg-[#fad870] px-5 py-3.5 text-center text-[15px] font-semibold text-[#004990] md:px-6 md:py-3">{cta.primary}</Link>
+          <Link href={links.portal} className="rounded-lg border border-white px-5 py-3.5 text-center text-[15px] font-semibold text-white md:px-6 md:py-3">{cta.secondary}</Link>
+          <Link href={links.whatsapp} target="_blank" className="flex items-center justify-center gap-2 rounded-lg bg-[#1fa855] px-5 py-3.5 text-[15px] font-semibold text-white md:px-6 md:py-3">
             <Icon name="whatsapp" className="h-5 w-5" />{cta.whatsapp}
-          </a>
+          </Link>
         </div>
       </section>
 
       <div className="fixed inset-x-0 bottom-0 z-20 flex gap-2 border-t border-[#e5e7e5] bg-white p-3 md:hidden">
-        <a href={links.openBo} className="flex-1 rounded-lg bg-[#004990] py-3 text-center text-[14px] font-semibold text-white">{cta.primary}</a>
-        <a href={links.whatsapp} aria-label="WhatsApp" className="flex w-12 items-center justify-center rounded-lg bg-[#1fa855] text-white"><Icon name="whatsapp" className="h-6 w-6" /></a>
+        <Link href={links.openBo} className="flex-1 rounded-lg bg-[#004990] py-3 text-center text-[14px] font-semibold text-white">{cta.primary}</Link>
+        <Link href={links.whatsapp} aria-label="WhatsApp" className="flex w-12 items-center justify-center rounded-lg bg-[#1fa855] text-white"><Icon name="whatsapp" className="h-6 w-6" /></Link>
       </div>
     </div>
   );

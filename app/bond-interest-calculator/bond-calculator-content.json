@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "path": "/bond-interest-calculator",
+    "title": "Treasury Bond Interest Calculator | Midway Securities",
+    "description": "Estimate the interest a Bangladesh Treasury Bond pays every 6 months after 10% AIT. Enter the amount, rate and years. Free calculator with a plain guide."
+  },
+  "links": {
+    "center": "/treasury-bond-center",
+    "governmentBonds": "/government-bonds",
+    "calendar": "/treasury-bond-center/auction-calendar",
+    "portal": "https://portal.midwaybd.com/",
+    "openBo": "https://portal.midwaybd.com/bo/portal-login",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20the%20Bond%20Interest%20Calculator"
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Tools",
+      "Bond Interest Calculator"
+    ],
+    "headline": "Bond Interest Calculator",
+    "subhead": "See how much interest a government bond could pay you every 6 months, after the 10% AIT, with a few numbers from the auction.",
+    "answer": "A Treasury Bond pays interest every 6 months. Each payment is the amount × the yearly rate ÷ 2, less 10% AIT. On ৳10,00,000 at 9%, that is ৳45,000 before AIT and ৳40,500 after.",
+    "answerLabel": "Short Answer",
+    "updatedLabel": "Last Updated"
+  },
+  "inputs": {
+    "title": "Your Bond",
+    "face": {
+      "label": "Amount You Apply For (Face Value)",
+      "chips": [
+        [
+          "1 Lakh",
+          100000
+        ],
+        [
+          "5 Lakh",
+          500000
+        ],
+        [
+          "10 Lakh",
+          1000000
+        ],
+        [
+          "50 Lakh",
+          5000000
+        ],
+        [
+          "1 Crore",
+          10000000
+        ]
+      ],
+      "hint": "Minimum ৳1,00,000, in multiples of ৳1,00,000.",
+      "default": 1000000
+    },
+    "rate": {
+      "label": "Interest Rate (Per Year)",
+      "unit": "%",
+      "default": "9.00"
+    },
+    "years": {
+      "label": "Years Until Maturity",
+      "unit": "yrs",
+      "chips": [
+        2,
+        5,
+        10,
+        15,
+        20
+      ],
+      "default": "10",
+      "hint": "Use the interest rate (coupon) and remaining years shown in the auction result. For a reissued bond, use the years left, not the original tenor."
+    },
+    "ait": {
+      "label": "Tax Deducted at Source (AIT)",
+      "unit": "%",
+      "default": "10",
+      "hint": "Bangladesh Bank deducts 10% AIT from every interest payment."
+    },
+    "presets": {
+      "label": "Try an Example",
+      "note": "The rates shown are examples, not current rates. Use the rate from the latest auction result.",
+      "items": [
+        {
+          "label": "Small Start",
+          "face": "100000",
+          "rate": "9",
+          "years": "5"
+        },
+        {
+          "label": "Mid-Size",
+          "face": "1000000",
+          "rate": "9",
+          "years": "10"
+        },
+        {
+          "label": "Long Term",
+          "face": "5000000",
+          "rate": "9.5",
+          "years": "20"
+        }
+      ]
+    }
+  },
+  "warnings": {
+    "min": "The minimum application is ৳1,00,000.",
+    "multiple": "Applications are in multiples of ৳1,00,000.",
+    "rate": "Please check the interest rate.",
+    "years": "Years should be in steps of 0.5 (interest is paid every 6 months)."
+  },
+  "results": {
+    "title": "Your Estimated Interest",
+    "bigLabel": "You Receive Every 6 Months",
+    "bigSub": "after AIT, deposited by Bangladesh Bank into your bank account",
+    "gross": "Interest Before AIT (Per 6 Months)",
+    "ait": "AIT Deducted by Bangladesh Bank",
+    "yearly": "Net Interest Per Year",
+    "count": "Number of Interest Payments",
+    "total": "Total Net Interest Until Maturity",
+    "principal": "Principal Returned at Maturity",
+    "lifePrefix": "Over the full life:",
+    "lifeMiddle": "net interest plus principal comes to",
+    "lifeSuffix": "Payments arrive automatically, with nothing for you to do.",
+    "returnLabel": "After-Tax Return on Face Value, Per Year"
+  },
+  "legal": "An estimate based on the numbers you enter, for education and information only. It does not include fees or charges, and it assumes the bond is held to maturity and the interest rate stays as entered. Reissued bonds also involve accrued interest at purchase, which is not included here. Your tax position may differ; this is not tax or investment advice. Investing involves risk and no returns are guaranteed. Auction rates and years left come from Bangladesh Bank’s website; actual amounts follow the auction result.",
+  "cta": {
+    "title": "Ready to Apply or Have a Question?",
+    "body": "Apply in the Midway Portal by Thursday 1:00 PM for next week’s auction, or ask us anything on WhatsApp.",
+    "primary": "Open BO Account",
+    "secondary": "Apply via Midway Portal",
+    "whatsapp": "Chat on WhatsApp"
+  },
+  "related": [
+    {
+      "label": "Bond vs Bank Deposit Calculator",
+      "href": "/bond-vs-bank-deposit-calculator"
+    },
+    {
+      "label": "Treasury Bond Center",
+      "href": "/treasury-bond-center"
+    },
+    {
+      "label": "Auction Calendar",
+      "href": "/treasury-bond-center/auction-calendar"
+    },
+    {
+      "label": "Government Bonds",
+      "href": "/government-bonds"
+    },
+    {
+      "label": "All Tools",
+      "href": "/tools"
+    }
+  ],
+  "seo": {
+    "type": "tool",
+    "path": "/bond-interest-calculator",
+    "title": "Treasury Bond Interest Calculator | Midway Securities",
+    "description": "Estimate the interest a Bangladesh Treasury Bond pays every 6 months after 10% AIT. Enter the amount, rate and years. Free calculator with a plain guide.",
+    "datePublished": "2026-10-07",
+    "dateModified": "2026-10-17",
+    "section": "Government Bonds",
+    "image": "/og/bond-interest-calculator.png",
+    "about": [
+      {
+        "name": "Treasury Bond",
+        "description": "A Government of Bangladesh bond that pays interest every 6 months and returns the principal at maturity."
+      },
+      {
+        "name": "Advance Income Tax (AIT)",
+        "description": "Tax Bangladesh Bank deducts from each bond interest payment."
+      }
+    ],
+    "keywords": [
+      "Treasury Bond interest calculator",
+      "Bangladesh Treasury Bond",
+      "bond interest after AIT",
+      "government bond Bangladesh",
+      "Bangladesh Bank bond auction"
+    ],
+    "sources": [
+      {
+        "name": "Bangladesh Bank",
+        "url": "https://www.bb.org.bd/"
+      }
+    ],
+    "app": {
+      "name": "Bond Interest Calculator",
+      "subCategory": "Bond interest calculator",
+      "version": "2.0",
+      "featureList": [
+        "Interest every 6 months before and after AIT",
+        "Net interest per year",
+        "Total net interest until maturity",
+        "Principal returned at maturity",
+        "Editable AIT rate"
+      ]
+    }
+  },
+  "how": {
+    "title": "How Bond Interest Is Calculated",
+    "items": [
+      {
+        "title": "Interest Before AIT",
+        "body": "Face value × yearly rate ÷ 2. ৳10,00,000 × 9% ÷ 2 is ৳45,000 every 6 months."
+      },
+      {
+        "title": "Take Off the AIT",
+        "body": "Bangladesh Bank deducts 10% AIT. 10% of ৳45,000 is ৳4,500, so you receive ৳40,500 each time."
+      },
+      {
+        "title": "Add Up to Maturity",
+        "body": "Payments = years × 2. Over 10 years that is 20 payments × ৳40,500 = ৳8,10,000, and your ৳10,00,000 comes back at maturity."
+      }
+    ],
+    "example": "Example: ৳10,00,000 at 9% for 10 years pays ৳40,500 after AIT every 6 months, which is ৳81,000 a year, or 8.10% of the face value. Rates here are examples, not current rates."
+  },
+  "sourcesBlock": {
+    "title": "Where the Numbers Come From",
+    "body": "Interest rates and years to maturity come from Bangladesh Bank’s auction results. The AIT rate is the one Bangladesh Bank deducts from interest payments. You can change it above if your position differs.",
+    "link": "Bangladesh Bank",
+    "linkNote": "Check the latest auction result"
+  },
+  "faq": {
+    "title": "Bond Interest Questions",
+    "items": [
+      {
+        "q": "How is Treasury Bond interest calculated?",
+        "a": "Each interest payment is the face value × the yearly interest rate ÷ 2, because interest is paid every 6 months. Bangladesh Bank deducts 10% AIT from each payment. For ৳10,00,000 at 9%, the payment is ৳45,000 before AIT and ৳40,500 after."
+      },
+      {
+        "q": "When is Treasury Bond interest paid?",
+        "a": "Every 6 months until maturity. Bangladesh Bank deposits the interest directly into your bank account, and returns the principal at maturity in the same way, automatically."
+      },
+      {
+        "q": "How much tax is deducted from bond interest?",
+        "a": "Bangladesh Bank deducts 10% AIT (Advance Income Tax) from every interest payment. You can change the rate in the calculator. Your tax position may differ, and this is not tax advice."
+      },
+      {
+        "q": "Where do I find the interest rate and the years to maturity?",
+        "a": "In the Bangladesh Bank auction result. The Treasury Bond Center and the Auction Calendar show the latest results. For a reissued bond, use the years left, not the original tenor."
+      },
+      {
+        "q": "What is the minimum amount for a Treasury Bond?",
+        "a": "The minimum is ৳1,00,000, in multiples of ৳1,00,000."
+      },
+      {
+        "q": "How do I apply for a Treasury Bond through Midway?",
+        "a": "Apply in the Midway Portal by Thursday 1:00 PM for next week’s auction. You need a BO Account."
+      },
+      {
+        "q": "What is accrued interest on a reissued bond?",
+        "a": "Reissued bonds involve accrued interest at purchase, which this calculator does not include. Ask us for the figure for a specific bond."
+      },
+      {
+        "q": "Can I sell a bond before maturity?",
+        "a": "Bonds held in your BO Account can be bought and sold in QuickTrade Pro. The price can be higher or lower than you paid. This calculator assumes you hold the bond to maturity."
+      },
+      {
+        "q": "Are the results guaranteed?",
+        "a": "No. They are estimates from the numbers you enter. They assume the bond is held to maturity and the interest rate stays as entered, and they exclude fees and charges. Investing involves risk and no returns are guaranteed."
+      }
+    ]
+  },
+  "glossary": {
+    "title": "Quick Glossary",
+    "items": [
+      {
+        "term": "Face Value",
+        "def": "The amount of the bond, which is repaid at maturity. Interest is worked out on it."
+      },
+      {
+        "term": "Interest (Coupon) Rate",
+        "def": "The yearly interest rate set for the bond, shown in the auction result."
+      },
+      {
+        "term": "AIT",
+        "def": "Advance Income Tax, deducted by Bangladesh Bank from each interest payment."
+      },
+      {
+        "term": "Maturity",
+        "def": "The date the bond ends and the principal is returned."
+      },
+      {
+        "term": "Primary Auction",
+        "def": "The Bangladesh Bank auction where a bond is first issued."
+      },
+      {
+        "term": "Secondary Market",
+        "def": "Buying and selling a bond that is already issued, for example in QuickTrade Pro."
+      },
+      {
+        "term": "Accrued Interest",
+        "def": "Interest that has built up since the last payment date, relevant when you buy a reissued bond."
+      }
+    ]
+  }
+}

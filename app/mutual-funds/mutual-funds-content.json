@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "path": "/mutual-funds",
+    "title": "Mutual Funds | Midway Securities Ltd.",
+    "description": "How mutual funds work, the difference between listed and open-ended funds, and how to buy and sell them through Midway Securities Ltd."
+  },
+  "links": {
+    "openBo": "https://portal.midwaybd.com/bo/portal-login",
+    "portal": "https://portal.midwaybd.com/",
+    "weeklyReport": "/research/weekly-mutual-fund-report",
+    "blog": "/blog/learn",
+    "pricing": "/pricing",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20mutual%20funds"
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Investments",
+      "Mutual Funds"
+    ],
+    "eyebrow": "Investments · Mutual Funds",
+    "headline": "What Are Mutual Funds, and How Do They Work?",
+    "subhead": "New to funds? Start here, then see how to buy and sell through Midway."
+  },
+  "part1": {
+    "label": "Part 1 · Understanding Mutual Funds",
+    "what": {
+      "title": "What Is a Mutual Fund?",
+      "body": "A mutual fund pools money from many investors, and a professional fund manager decides where to invest it, across a mix of companies, bonds or other assets, on everyone’s behalf. Instead of picking individual stocks yourself, you own a small piece of the whole pool."
+    },
+    "types": {
+      "title": "Open-Ended vs Closed-Ended: What Is the Difference?",
+      "items": [
+        {
+          "name": "Closed-Ended",
+          "body": "A fixed number of units is issued once. After that, the fund is listed and traded on the DSE just like a stock, with a price that moves as buyers and sellers agree.",
+          "how": "Buy and sell on the DSE"
+        },
+        {
+          "name": "Open-Ended",
+          "body": "There is no fixed number of units. You buy or sell units directly with the fund company (the AMC) at any time, at a price tied to the fund’s actual value.",
+          "how": "Buy and sell with the fund company"
+        }
+      ]
+    }
+  },
+  "part2": {
+    "label": "Part 2 · Investing in Mutual Funds with Midway",
+    "ways": {
+      "title": "Two Ways to Invest, Depending on the Fund Type",
+      "items": [
+        {
+          "icon": "device",
+          "name": "Listed (Closed-Ended) Funds",
+          "body": "Buy and sell through our mobile app QuickTrade Pro, just like a stock. Your BO Account is all you need."
+        },
+        {
+          "icon": "bank",
+          "name": "Open-Ended Funds",
+          "body": "These are not traded on the exchange. You buy and sell units with the fund company. You still need a BO Account first, and the steps below show how it works."
+        }
+      ]
+    },
+    "buy": {
+      "title": "How to Buy Open-Ended Funds",
+      "steps": [
+        {
+          "title": "Open a BO Account with Midway",
+          "body": "This is the first step for every fund. Your units are held in your BO Account."
+        },
+        {
+          "title": "Contact the fund company",
+          "body": "Choose the fund company whose fund you want. Give them your BO Account details and the other information they ask for."
+        },
+        {
+          "title": "Deposit your investment",
+          "body": "Pay the amount into the fund company’s designated bank account."
+        },
+        {
+          "title": "Units arrive in your BO Account",
+          "body": "Once the fund company completes its steps, the units are credited to your BO Account and you can see them in your portfolio."
+        }
+      ]
+    },
+    "sell": {
+      "title": "How to Sell (Redeem) Open-Ended Funds",
+      "steps": [
+        {
+          "title": "Ask the fund company for a Transfer Form",
+          "body": "This form moves your units out of your BO Account."
+        },
+        {
+          "title": "Fill it in carefully and send it to Midway",
+          "body": "Complete every field correctly, then submit the signed hard copy to Midway."
+        },
+        {
+          "title": "We email your DP40 Report",
+          "body": "The day after we accept your form, we email you a DP40 Report."
+        },
+        {
+          "title": "Send the DP40 Report to the fund company",
+          "body": "Submit it to the fund company as proof that the units have been transferred."
+        },
+        {
+          "title": "Money reaches your bank account",
+          "body": "The fund company transfers the proceeds to the bank account you designated."
+        }
+      ],
+      "note": "A Standard CDBL Fee applies to a mutual fund units transfer. Timing after you submit the DP40 Report depends on the fund company."
+    },
+    "whatsappHelp": {
+      "title": "Not Sure Where to Start?",
+      "body": "Ask us on WhatsApp. We will tell you what the fund company needs and where to send your form."
+    },
+    "report": {
+      "title": "Weekly Mutual Fund Report",
+      "body": "Every week we publish an update on how DSE-listed mutual funds are performing, so you can follow them without digging through raw data.",
+      "cta": "Read the Weekly Report"
+    },
+    "blogLink": "Want to go deeper? Read more on our blog"
+  },
+  "glossary": {
+    "title": "Quick Glossary",
+    "items": [
+      {
+        "term": "AMC",
+        "def": "The asset management company that runs the fund and issues or buys back its units."
+      },
+      {
+        "term": "Units",
+        "def": "Your share of a fund. You own a number of units, and each one is worth a share of the fund’s total value."
+      },
+      {
+        "term": "NAV",
+        "def": "Net asset value: the value of one unit, worked out from what the fund owns. Open-ended funds buy and sell at a price tied to it."
+      },
+      {
+        "term": "BO Account",
+        "def": "The account at CDBL where your units, shares and bonds are held in electronic form."
+      },
+      {
+        "term": "Transfer Form",
+        "def": "The form from the fund company that moves your units out of your BO Account when you sell."
+      },
+      {
+        "term": "DP40 Report",
+        "def": "A report we email you after accepting your Transfer Form. The fund company needs it to pay you."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Invest in Mutual Funds?",
+    "body": "Open a BO Account to get started, or message us on WhatsApp with any question.",
+    "primary": "Open BO Account",
+    "whatsapp": "WhatsApp Us"
+  },
+  "disclaimer": "Mutual funds are subject to market risk. The value of units can fall as well as rise, past performance does not indicate future results, and no returns are guaranteed. Read the fund’s prospectus before you invest. This page is for education and information only and is not investment advice."
+}

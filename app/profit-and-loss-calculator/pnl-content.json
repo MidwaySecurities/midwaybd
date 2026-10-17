@@ -1,0 +1,290 @@
+{
+  "meta": {
+    "path": "/profit-and-loss-calculator",
+    "title": "Profit and Loss Calculator for DSE Stocks | Midway Securities Ltd.",
+    "description": "Add every buy of a DSE stock and see your average cost, total invested and profit or loss at any price. Free calculator with a plain-language guide.",
+    "origin": "https://www.midwaybd.com"
+  },
+  "links": {
+    "stocks": "/stocks",
+    "tools": "/tools",
+    "dividend": "/dividend-calculator",
+    "bonus": "/bonus-share-adjustment-calculator",
+    "app": "/mobile-app",
+    "dsePrices": "https://www.dse.com.bd/markets/latest-share-price",
+    "openBo": "https://portal.midwaybd.com/bo/portal-login",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20the%20Profit%20and%20Loss%20Calculator"
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Tools",
+      "Profit and Loss Calculator"
+    ],
+    "headline": "Profit and Loss Calculator",
+    "subhead": "Bought the same stock more than once? Add each buy to see your average cost and your profit or loss at any price."
+  },
+  "inputs": {
+    "title": "Your Buys and the Price",
+    "lots": {
+      "title": "Your Buys",
+      "buy": "Buy",
+      "shares": "Shares",
+      "price": "Price Per Share",
+      "left": "৳",
+      "cost": "Cost",
+      "add": "Add Another Buy",
+      "remove": "Remove Buy {n}",
+      "hint": "Add every time you bought this stock. Got bonus shares? Add them as a buy at ৳0.",
+      "max": 10,
+      "defaults": [
+        {
+          "shares": "100",
+          "price": "50"
+        },
+        {
+          "shares": "100",
+          "price": "60"
+        }
+      ]
+    },
+    "price": {
+      "label": "Price Now, or Your Sell Price",
+      "left": "৳",
+      "default": "65",
+      "hint": "Enter the latest price from QuickTrade Pro or the DSE.",
+      "dseLink": "Check latest prices on the DSE"
+    },
+    "sold": {
+      "label": "Shares You Sold (Optional)",
+      "default": "",
+      "hint": "Leave empty to see the result if you sold everything at this price. Enter a number to see the profit on the shares you sold and the ones you keep.",
+      "chips": [
+        {
+          "label": "All",
+          "mode": "all"
+        },
+        {
+          "label": "Half",
+          "mode": "half"
+        },
+        {
+          "label": "None",
+          "mode": "none"
+        }
+      ]
+    },
+    "presets": {
+      "label": "Try an Example",
+      "items": [
+        {
+          "label": "Bought Twice",
+          "lots": [
+            {
+              "shares": "100",
+              "price": "50"
+            },
+            {
+              "shares": "100",
+              "price": "60"
+            }
+          ],
+          "price": "65",
+          "sold": ""
+        },
+        {
+          "label": "Price Fell After a Buy",
+          "lots": [
+            {
+              "shares": "200",
+              "price": "80"
+            },
+            {
+              "shares": "200",
+              "price": "60"
+            }
+          ],
+          "price": "55",
+          "sold": ""
+        },
+        {
+          "label": "Bonus Shares Included",
+          "lots": [
+            {
+              "shares": "100",
+              "price": "90"
+            },
+            {
+              "shares": "10",
+              "price": "0"
+            }
+          ],
+          "price": "85",
+          "sold": ""
+        },
+        {
+          "label": "Sold Part",
+          "lots": [
+            {
+              "shares": "300",
+              "price": "40"
+            },
+            {
+              "shares": "200",
+              "price": "50"
+            }
+          ],
+          "price": "60",
+          "sold": "200"
+        }
+      ]
+    }
+  },
+  "warnings": {
+    "lots": "Add at least one buy with a number of shares.",
+    "price": "Enter a price above zero.",
+    "whole": "The DSE trades whole shares only, so decimals are rounded down.",
+    "sold": "You cannot sell more shares than you bought. We used all of them.",
+    "negative": "Shares and prices cannot be negative."
+  },
+  "results": {
+    "title": "Your Result",
+    "avgLabel": "Average Cost Per Share",
+    "plLabel": "Profit or Loss",
+    "plSubAll": "If you sell everything at this price",
+    "plSubSold": "On the shares you sold",
+    "empty": "Add a buy",
+    "noPct": "",
+    "rows": {
+      "shares": "Shares Bought",
+      "invested": "Total Invested",
+      "value": "Value at This Price",
+      "pct": "Return",
+      "breakeven": "Break-Even Price",
+      "sold": "Shares Sold",
+      "proceeds": "Sale Amount",
+      "plSold": "Profit or Loss on Shares Sold",
+      "held": "Shares You Still Hold",
+      "heldCost": "Cost of Shares You Hold",
+      "heldValue": "Value of Shares You Hold",
+      "heldPl": "Profit or Loss on Shares You Hold"
+    },
+    "breakevenNote": "before charges",
+    "insightTitle": "What This Means",
+    "gain": "At {price} you would be up {amt} ({pct}) on {n} shares. If the price fell back to {avg} per share, that gain would be gone, before charges.",
+    "loss": "At {price} you would be down {amt} ({pct}) on {n} shares. The price needs to get back to {avg} per share to break even, before charges.",
+    "flat": "At {price} you would be at break-even on {n} shares, before charges.",
+    "gainAllFree": "At {price} you would be up {amt} on {n} shares, because part of your holding cost nothing.",
+    "soldGain": "Selling {sold} shares at {price} gives a profit of {amt} ({pct}), before charges. The {rem} shares you keep still have an average cost of {avg}.",
+    "soldLoss": "Selling {sold} shares at {price} gives a loss of {amt} ({pct}), before charges. The {rem} shares you keep still have an average cost of {avg}.",
+    "soldFlat": "Selling {sold} shares at {price} gives neither profit nor loss, before charges. The {rem} shares you keep still have an average cost of {avg}.",
+    "soldEverything": "Selling all {sold} shares at {price} gives a {word} of {amt} ({pct}), before charges.",
+    "avgNote": "Your average cost counts every share equally, so a bigger buy moves it more than a small one."
+  },
+  "how": {
+    "title": "How Average Cost Works",
+    "items": [
+      {
+        "title": "Add Up What You Paid",
+        "body": "Multiply the shares by the price for each buy, then add them together. 100 shares at ৳50 and 100 at ৳60 cost ৳11,000 in total."
+      },
+      {
+        "title": "Divide by Total Shares",
+        "body": "Total paid ÷ total shares. ৳11,000 ÷ 200 shares is ৳55 per share. This is a weighted average, not the simple average of the two prices."
+      },
+      {
+        "title": "Compare With the Price",
+        "body": "Profit or loss = (price − average cost) × shares. At ৳65 you are up ৳10 on each of your 200 shares: ৳2,000, before charges."
+      }
+    ],
+    "example": "Example: 100 shares at ৳50 and 100 shares at ৳60 give an average cost of ৳55. At ৳65, 200 shares are worth ৳13,000 against ৳11,000 paid, a profit of ৳2,000 or about 18.18%.",
+    "record": {
+      "title": "Bonus Shares and Dividends",
+      "body": "A bonus share costs you nothing, so add it as a buy at ৳0 and your average cost falls. The Bonus Share Adjustment Calculator shows the same effect step by step. Cash dividends are not counted here.",
+      "link": "Bonus Share Adjustment Calculator"
+    }
+  },
+  "faq": {
+    "title": "Profit and Loss Questions",
+    "items": [
+      {
+        "q": "How do I calculate the average cost of my shares?",
+        "a": "Add up the total you paid for all your buys, then divide by the total number of shares. This is a weighted average, so a larger buy counts for more than a smaller one."
+      },
+      {
+        "q": "Why is my average cost not the simple average of my buy prices?",
+        "a": "Because the number of shares matters. If you bought 100 shares at ৳50 and 300 shares at ৳60, your average cost is ৳57.50, not ৳55."
+      },
+      {
+        "q": "What price do I need to break even?",
+        "a": "Your average cost per share. If the price is above it you are in profit, and below it you are at a loss. Trading fees and charges raise the real break-even price a little."
+      },
+      {
+        "q": "Does my average cost change when I sell some shares?",
+        "a": "No. This calculator uses the average cost method, so the shares you keep still have the same average cost. Only buying more shares changes it."
+      },
+      {
+        "q": "How do bonus shares change my average cost?",
+        "a": "Bonus shares add to your share count without adding to what you paid, so your average cost per share falls. Add them as a buy at ৳0 to see it."
+      },
+      {
+        "q": "Does the result include fees, charges or tax?",
+        "a": "No. The figures are before trading fees and any charges or taxes, which reduce your real profit. Your Portfolio and statements show the official figures."
+      },
+      {
+        "q": "Are dividends included in my profit?",
+        "a": "No. Cash dividends are separate from the share price. Use the Dividend Calculator to see your cash dividend after tax."
+      }
+    ]
+  },
+  "glossary": {
+    "title": "Quick Glossary",
+    "items": [
+      {
+        "term": "Average Cost",
+        "def": "The total you paid divided by the number of shares you bought."
+      },
+      {
+        "term": "Break-Even Price",
+        "def": "The price at which you neither gain nor lose. It equals your average cost, before charges."
+      },
+      {
+        "term": "Realised Profit or Loss",
+        "def": "The gain or loss on shares you have already sold."
+      },
+      {
+        "term": "Unrealised Profit or Loss",
+        "def": "The gain or loss on shares you still hold, at today’s price. It changes as the price moves."
+      },
+      {
+        "term": "Weighted Average",
+        "def": "An average where bigger amounts count for more, so a larger buy moves your average cost more."
+      }
+    ]
+  },
+  "related": [
+    {
+      "label": "Bonus Share Adjustment Calculator",
+      "href": "/bonus-share-adjustment-calculator"
+    },
+    {
+      "label": "Dividend Calculator",
+      "href": "/dividend-calculator"
+    },
+    {
+      "label": "All Tools",
+      "href": "/tools"
+    },
+    {
+      "label": "QuickTrade Pro App",
+      "href": "/mobile-app"
+    }
+  ],
+  "legal": "An estimate based on the numbers you enter, for education and information only. It does not include trading fees, charges or taxes, which reduce your real profit. Share prices can fall as well as rise, and you can lose some or all of the money you invest. Past results do not predict future ones. Your Portfolio and statements show your official figures. This is not investment advice.",
+  "cta": {
+    "title": "Ready to Start Investing?",
+    "body": "Open a BO Account online, then buy and sell stocks in QuickTrade Pro. Questions? Message us on WhatsApp.",
+    "primary": "Open BO Account",
+    "whatsapp": "WhatsApp Us"
+  }
+}

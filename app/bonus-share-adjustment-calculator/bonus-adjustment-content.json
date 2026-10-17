@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "path": "/bonus-share-adjustment-calculator",
+    "title": "Bonus Share Adjustment Calculator for DSE Stocks | Midway Securities Ltd.",
+    "description": "See how a bonus share or cash dividend changes a stock’s price, your number of shares and your cost price on the record date. Free calculator with a plain-language guide.",
+    "origin": "https://www.midwaybd.com"
+  },
+  "links": {
+    "stocks": "/stocks",
+    "dividend": "/dividend-calculator",
+    "app": "/mobile-app",
+    "dsePrices": "https://www.dse.com.bd/markets/latest-share-price",
+    "openBo": "https://portal.midwaybd.com/bo/portal-login",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20the%20Bonus%20Share%20Adjustment%20Calculator"
+  },
+  "priceFeed": {
+    "items": [],
+    "asOf": "",
+    "source": ""
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Tools",
+      "Bonus Share Adjustment Calculator"
+    ],
+    "headline": "Bonus Share Adjustment Calculator",
+    "subhead": "Did your stock’s price fall after the record date? See why, how many shares you now own, and what your cost price becomes."
+  },
+  "inputs": {
+    "title": "Your Shares and the Dividend",
+    "shares": {
+      "label": "Shares You Own",
+      "chips": [
+        5,
+        10,
+        100,
+        1000,
+        5000
+      ],
+      "default": "1000",
+      "hint": "The shares in your Portfolio on the record date."
+    },
+    "cost": {
+      "label": "Your Average Cost Price (Optional)",
+      "left": "৳",
+      "default": "90",
+      "hint": "What you paid per share on average. Add it to see your new cost price."
+    },
+    "price": {
+      "label": "Share Price Before the Record Date",
+      "left": "৳",
+      "default": "100",
+      "hint": "Enter the latest price from QuickTrade Pro or the DSE.",
+      "symbolLabel": "Search Stock Symbol",
+      "symbolHint": "Pick a symbol to fill the latest price. You can still change it.",
+      "feedNote": "Price from {source}, as of {asOf}.",
+      "dseLink": "Check latest prices on the DSE"
+    },
+    "face": {
+      "label": "Face Value Per Share",
+      "left": "৳",
+      "default": "10",
+      "hint": "Usually ৳10. Dividends are a percentage of face value."
+    },
+    "presets": {
+      "label": "Try an Example",
+      "items": [
+        {
+          "label": "10% Bonus",
+          "cash": "0",
+          "stock": "10"
+        },
+        {
+          "label": "Cash and Bonus",
+          "cash": "10",
+          "stock": "5"
+        },
+        {
+          "label": "Cash Only",
+          "cash": "15",
+          "stock": "0"
+        }
+      ]
+    },
+    "cash": {
+      "label": "Cash Dividend",
+      "unit": "%",
+      "default": "0",
+      "hint": "10% on ৳10 face value is ৳1 per share."
+    },
+    "stock": {
+      "label": "Stock (Bonus) Dividend",
+      "unit": "%",
+      "default": "10",
+      "hint": "10% means 10 bonus shares for every 100 you own."
+    }
+  },
+  "warnings": {
+    "price": "Enter a share price above zero.",
+    "face": "Face value must be more than zero.",
+    "pct": "Please check the dividend percentage.",
+    "cashHigh": "The cash dividend is larger than the share price. Please check the numbers."
+  },
+  "results": {
+    "title": "Your Estimated Adjustment",
+    "priceLabel": "Estimated Price After",
+    "sharesLabel": "Shares You Own After",
+    "empty": "Enter a price",
+    "sub": "The exchange sets the actual adjusted price on the record date.",
+    "rows": {
+      "bonus": "Bonus Shares You Receive",
+      "chg": "Change You See on the Chart",
+      "before": "Value of Your Shares Before",
+      "after": "Estimated Value of Your Shares After",
+      "cash": "Cash Dividend Before Tax",
+      "costBefore": "Your Cost Price Before",
+      "costAfter": "Your Cost Price After",
+      "totalCost": "Your Total Cost (Unchanged)",
+      "fraction": "Fraction of a Share (Paid in Cash)"
+    },
+    "insightTitle": "Price Down, Shares Up",
+    "insight": "The price looks {chg} lower, but you now own {extra} more shares. Your shares are worth about {after} afterwards, against {before} before. The company has paid you from its own value, so a lower price is expected.",
+    "insightCash": "The cash dividend of {cash} (before tax) comes on top.",
+    "costInsight": "Your total cost stays the same, spread over more shares, so your cost price per share falls.",
+    "fractionValue": "{n} of a share",
+    "fractionNote": "The DSE has no fractional shares, so this fraction is not issued as a share. The company pays cash for it instead. The amount is set by the company, so check its announcement.",
+    "insightNone": "With this holding, the bonus is less than one whole share, so you receive no bonus shares. The price still adjusts, and your cost price per share stays the same because your share count does not change. The company pays cash for the fraction instead.",
+    "gapNote": "The small gap is the fraction of a share, which is paid in cash instead.",
+    "insightNoneTitle": "Price Adjusts, Shares Stay the Same"
+  },
+  "how": {
+    "title": "How the Adjustment Works",
+    "items": [
+      {
+        "title": "Bonus Shares Lower the Price",
+        "body": "Adjusted price = price ÷ (1 + bonus %). With a 10% bonus, ৳100 becomes about ৳90.91."
+      },
+      {
+        "title": "Cash Dividends Lower It Too",
+        "body": "The cash dividend per share is taken off the price first. A ৳1 cash dividend takes ৳1 off."
+      },
+      {
+        "title": "Your Cost Price Falls",
+        "body": "Total cost ÷ new number of shares. Cost of ৳90 on 1,000 shares is ৳90,000. After a 10% bonus, that is spread over 1,100 shares: about ৳81.82 each."
+      }
+    ],
+    "example": "Example: 1,000 shares at ৳100 are worth ৳1,00,000. After a 10% bonus, you own 1,100 shares at about ৳90.91. That is still about ৳1,00,000.",
+    "record": {
+      "title": "Record Date",
+      "body": "Each company sets a record date. Shares you buy before it are eligible for the dividend. You can sell the day after the record date and still receive the dividend.",
+      "link": "Read about Stocks"
+    }
+  },
+  "faq": {
+    "title": "Bonus Share Questions",
+    "items": [
+      {
+        "q": "Why did my share price fall after the record date?",
+        "a": "After a bonus or cash dividend, the exchange adjusts the share price. A bonus issue creates more shares, so each share is worth less. For example, a 10% bonus turns a ৳100 price into about ৳90.91."
+      },
+      {
+        "q": "Did I lose money when the price was adjusted?",
+        "a": "No. You own more shares at a lower price, so the value of your holding stays about the same. The adjustment on its own does not change your wealth. Prices still move up and down afterwards."
+      },
+      {
+        "q": "If I sell the day after the record date, do I still get the dividend?",
+        "a": "Yes. Eligibility depends on the shares you hold on the record date, so you can sell the day after and still receive the dividend."
+      },
+      {
+        "q": "What if my bonus is less than one whole share?",
+        "a": "The DSE has no fractional shares, so a fraction of a share is not issued. For example, 2 shares with a 10% bonus is 0.2 of a share, so you receive no bonus shares. The company pays cash for the fraction instead. Your share price still adjusts on the record date."
+      },
+      {
+        "q": "What happens to my cost price after a bonus?",
+        "a": "Your total cost does not change, but it is spread over more shares, so your cost price per share falls. Total cost ÷ new number of shares gives the new figure."
+      },
+      {
+        "q": "Is there tax on bonus shares?",
+        "a": "No. There is no tax on bonus shares. Tax is deducted from cash dividends, which the Dividend Calculator covers."
+      },
+      {
+        "q": "Is the price this calculator shows exact?",
+        "a": "It is an estimate. The Dhaka Stock Exchange sets the actual adjusted price on the record date, and rounding can make it differ slightly."
+      }
+    ]
+  },
+  "glossary": {
+    "title": "Quick Glossary",
+    "items": [
+      {
+        "term": "Bonus Shares",
+        "def": "Extra shares given to you instead of cash, also called a stock dividend."
+      },
+      {
+        "term": "Adjusted Price",
+        "def": "The share price after the exchange adjusts it for a bonus or cash dividend."
+      },
+      {
+        "term": "Cost Price",
+        "def": "What you paid per share on average, before costs."
+      },
+      {
+        "term": "Record Date",
+        "def": "The date a company uses to decide which shareholders receive the dividend."
+      },
+      {
+        "term": "Face Value",
+        "def": "The nominal value of a share, usually ৳10. Dividends are a percentage of it."
+      }
+    ]
+  },
+  "related": [
+    {
+      "label": "Dividend Calculator",
+      "href": "/dividend-calculator"
+    },
+    {
+      "label": "Read about Stocks",
+      "href": "/stocks"
+    },
+    {
+      "label": "QuickTrade Pro App",
+      "href": "/mobile-app"
+    }
+  ],
+  "legal": "An estimate based on the numbers you enter, for education and information only. It does not include trading fees or charges. The Dhaka Stock Exchange and the company decide the actual dividend, record date and adjusted price, so check the company’s announcement. Share prices can fall as well as rise, dividends are not guaranteed, and you can lose some or all of the money you invest. This is not investment advice.",
+  "cta": {
+    "title": "Ready to Start Investing?",
+    "body": "Open a BO Account online, then buy and sell stocks in QuickTrade Pro. Questions? Message us on WhatsApp.",
+    "primary": "Open BO Account",
+    "whatsapp": "WhatsApp Us"
+  }
+}

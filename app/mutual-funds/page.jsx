@@ -17,7 +17,7 @@ function Steps({ title, steps, note }) {
       <ol className="mt-4 grid gap-4">
         {steps.map((s, i) => (
           <li key={s.title} className="flex gap-3">
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#6b46c1] text-[14px] font-semibold text-white">{i + 1}</span>
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-secondary_color text-[14px] font-semibold text-white">{i + 1}</span>
             <div>
               <p className="text-[15px] font-semibold">{s.title}</p>
               <p className="mt-0.5 text-[13px] leading-relaxed text-[#4b5563]">{s.body}</p>
@@ -42,7 +42,7 @@ export default function MutualFundsPage({ content = defaultContent }) {
             <span key={b}>{i > 0 && " / "}{i === header.breadcrumb.length - 1 ? <span className="text-[#111827]">{b}</span> : b}</span>
           ))}
         </nav> */}
-        {/* <p className="mt-4 text-[11px] font-semibold uppercase tracking-wide text-[#6b46c1] md:text-xs">{header.eyebrow}</p> */}
+        {/* <p className="mt-4 text-[11px] font-semibold uppercase tracking-wide text-secondary_color md:text-xs">{header.eyebrow}</p> */}
         <h1 className="max-w-3xl text-[26px] font-semibold leading-tight md:text-5xl md:leading-tight">{header.headline}</h1>
         <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-[#4b5563] md:text-lg">{header.subhead}</p>
       </section>
@@ -57,9 +57,9 @@ export default function MutualFundsPage({ content = defaultContent }) {
         <ul className="mt-4 grid gap-3 md:grid-cols-2 md:gap-4">
           {part1.types.items.map((t) => (
             <li key={t.name} className={card + " border-t-[3px] border-t-[#6b46c1] p-4 md:p-5"}>
-              <p className="text-[17px] font-semibold text-[#6b46c1]">{t.name}</p>
+              <p className="text-[17px] font-semibold text-secondary_color">{t.name}</p>
               <p className="mt-2 text-[14px] leading-relaxed text-[#4b5563]">{t.body}</p>
-              <p className="mt-3 inline-block rounded-full bg-[#f1ecfa] px-3 py-1 text-[12px] font-semibold text-[#6b46c1]">{t.how}</p>
+              <p className="mt-3 inline-block rounded-full bg-[#f1ecfa] px-3 py-1 text-[12px] font-semibold text-secondary_color">{t.how}</p>
             </li>
           ))}
         </ul>
@@ -72,7 +72,7 @@ export default function MutualFundsPage({ content = defaultContent }) {
         <ul className="mt-4 grid gap-3 md:grid-cols-2 md:gap-4">
           {part2.ways.items.map((w) => (
             <li key={w.name} className={card + " bg-[#f7f8f7] p-4 md:p-5"}>
-              <span className="text-[#6b46c1]"><Icon name={w.icon} className="h-6 w-6" /></span>
+              <span className="text-secondary_color"><Icon name={w.icon} className="h-6 w-6" /></span>
               <p className="mt-2 text-[16px] font-semibold">{w.name}</p>
               <p className="mt-1 text-[14px] leading-relaxed text-[#4b5563]">{w.body}</p>
             </li>
@@ -113,7 +113,7 @@ export default function MutualFundsPage({ content = defaultContent }) {
         <dl className="mt-4 grid gap-3 md:grid-cols-2 md:gap-4">
           {glossary.items.map((g) => (
             <div key={g.term} className={card + " p-4"}>
-              <dt className="text-[14px] font-semibold text-[#6b46c1]">{g.term}</dt>
+              <dt className="text-[14px] font-semibold text-secondary_color">{g.term}</dt>
               <dd className="mt-1 text-[13px] leading-relaxed text-[#4b5563]">{g.def}</dd>
             </div>
           ))}

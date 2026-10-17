@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "component": "SiteFooter",
+    "note": "Shared footer. Include once in the site layout.",
+    "title": "Site Footer | Midway Securities Ltd."
+  },
+  "links": {
+    "home": "/",
+    "openBo": "https://portal.midwaybd.com/bo/portal-login",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20Midway",
+    "branches": "/our-branches",
+    "maps": "https://www.google.com/maps/search/?api=1&query=23.72346001950178,90.42068093685988"
+  },
+  "brand": {
+    "name": "Midway Securities Ltd.",
+    "tagline": "Investing, Simplified!",
+    "openBo": "Open BO Account"
+  },
+  "registration": {
+    "title": "Licensed and Regulated",
+    "items": [
+      {
+        "label": "BSEC Registration",
+        "value": "3.1/DSE-142/2008/194",
+        "href": "https://sec.gov.bd/"
+      },
+      {
+        "label": "DSE",
+        "value": "TREC 142",
+        "href": "https://www.dsebd.org/"
+      },
+      {
+        "label": "CDBL Depository Participant",
+        "value": "CDBL-DP-36",
+        "href": "https://www.cdbl.com.bd/"
+      }
+    ]
+  },
+  "groups": [
+    {
+      "title": "Get Started",
+      "links": [
+        {
+          "label": "Open BO Account",
+          "href": "https://portal.midwaybd.com/bo/portal-login"
+        },
+        {
+          "label": "Switch to Midway",
+          "href": "/switching-brokers"
+        },
+        {
+          "label": "QuickTrade Pro App",
+          "href": "/mobile-app"
+        },
+        {
+          "label": "Pricing",
+          "href": "/pricing"
+        },
+        {
+          "label": "FAQ",
+          "href": "/frequently-asked-question"
+        }
+      ]
+    },
+    {
+      "title": "Investments",
+      "links": [
+        {
+          "label": "Stocks",
+          "href": "/stocks"
+        },
+        {
+          "label": "Mutual Funds",
+          "href": "/mutual-funds"
+        },
+        {
+          "label": "IPOs",
+          "href": "/ipo"
+        },
+        {
+          "label": "SME and ATB",
+          "href": "/sme-atb"
+        },
+        {
+          "label": "Government Bonds",
+          "href": "/government-bonds"
+        }
+      ]
+    },
+    {
+      "title": "Your Midway",
+      "links": [
+        {
+          "label": "Deposit",
+          "href": "/deposit"
+        },
+        {
+          "label": "Withdraw",
+          "href": "/withdrawals"
+        },
+        {
+          "label": "Midway Portal",
+          "href": "https://portal.midwaybd.com/"
+        },
+        {
+          "label": "Our Services",
+          "href": "/client-services"
+        },
+        {
+          "label": "About Us",
+          "href": "/about-us"
+        }
+      ]
+    },
+    {
+      "title": "Tools and Learn",
+      "links": [
+        {
+          "label": "Treasury Bond Center",
+          "href": "/treasury-bond-center"
+        },
+        {
+          "label": "Auction Calendar",
+          "href": "/treasury-bond-center/auction-calendar"
+        },
+        {
+          "label": "Bond Interest Calculator",
+          "href": "/bond-interest-calculator"
+        },
+        {
+          "label": "Blog",
+          "href": "/blog"
+        }
+      ]
+    }
+  ],
+  "contact": {
+    "title": "Contact Us",
+    "hotlineLabel": "Hotline",
+    "hotline": "09609 100 142",
+    "hotlineHref": "tel:09609100142",
+    "emailLabel": "Email",
+    "email": "info@midwaybd.com",
+    "whatsappLabel": "WhatsApp",
+    "whatsapp": "+880 1874-444816",
+    "hoursLabel": "Office Hours",
+    "hours": "Sunday to Thursday, 9:30 am to 5:30 pm",
+    "addressLabel": "Head Office",
+    "address": [
+      "Midway Securities Ltd.",
+      "Dhaka Stock Exchange Building (Room 508)",
+      "9/F, Motijheel C/A, Dhaka 1000"
+    ],
+    "mapsHint": "Open in Google Maps",
+    "branchesLabel": "Find a Branch"
+  },
+  "social": {
+    "title": "Follow Us",
+    "items": [
+      {
+        "icon": "facebook",
+        "label": "Facebook",
+        "href": "https://www.facebook.com/midwaytrec142"
+      },
+      {
+        "icon": "instagram",
+        "label": "Instagram",
+        "href": "https://www.instagram.com/midwaytrec142"
+      },
+      {
+        "icon": "linkedin",
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/company/midway-securities-ltd-/"
+      },
+      {
+        "icon": "youtube",
+        "label": "YouTube",
+        "href": "https://www.youtube.com/c/MidwaySecuritiesLtd"
+      }
+    ],
+    "note": "Market updates and insights"
+  },
+  "legal": {
+    "copyright": "© 2026 Midway Securities Ltd.",
+    "links": [
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy-policy"
+      },
+      {
+        "label": "Terms of Use",
+        "href": "#"
+      }
+    ]
+  }
+}

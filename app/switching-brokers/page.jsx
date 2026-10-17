@@ -1,5 +1,6 @@
 import defaultContent from "./switching-brokers-content.json";
 import { Icon } from "./icons";
+import Link from "next/link";
 
 /**
  * Switching Brokers page — MOBILE-FIRST.
@@ -41,20 +42,20 @@ export default function SwitchingBrokersPage({ content = defaultContent }) {
           {hero.subhead}
         </p>
         <div className="mt-5 flex flex-col gap-3 md:flex-row md:items-center">
-          <a
-            href={hero.primaryCta.href}
+          <Link
+            href={hero.primaryCta.href} target="_blank"
             className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary_color px-5 py-3.5 text-[15px] font-semibold text-white md:py-3"
           >
             {hero.primaryCta.label}
             <Icon name="arrow" className="w-4 h-4" />
-          </a>
-          <a
-            href={hero.whatsapp.href}
+          </Link>
+          <Link
+            href={hero.whatsapp.href} target="_blank"
             className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#1fa855] px-5 py-3.5 text-[15px] font-semibold text-[#1fa855] md:py-3"
           >
             <Icon name="whatsapp" className="w-5 h-5" />
             {hero.whatsapp.label}
-          </a>
+          </Link>
         </div>
         <ul className="mt-5 flex flex-wrap gap-2">
           {hero.badges.map((b) => (
@@ -184,13 +185,13 @@ export default function SwitchingBrokersPage({ content = defaultContent }) {
           <p className="mt-1 text-[14px] text-[#dbe7f3]">{finalCta.body}</p>
         </div>
         <div className="mt-4 flex flex-col gap-3 md:mt-0 md:shrink-0">
-          <a href={finalCta.primaryCta.href} className="rounded-lg bg-[#fad870] px-5 py-3.5 text-center text-[15px] font-semibold text-[#004990] md:py-3">
+          <Link href={finalCta.primaryCta.href} target="_blank" className="rounded-lg bg-[#fad870] px-5 py-3.5 text-center text-[15px] font-semibold text-[#004990] md:py-3">
             {finalCta.primaryCta.label}
-          </a>
-          <a href={finalCta.whatsapp.href} className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/50 px-5 py-3.5 text-[15px] font-semibold md:py-3">
+          </Link>
+          <Link href={finalCta.whatsapp.href} target="_blank" className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/50 px-5 py-3.5 text-[15px] font-semibold md:py-3">
             <Icon name="whatsapp" className="w-5 h-5 text-[#25D366]" />
             {finalCta.whatsapp.label}
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -200,12 +201,12 @@ export default function SwitchingBrokersPage({ content = defaultContent }) {
 
       {/* Mobile sticky action bar (hidden on md and up) */}
       <div className="fixed inset-x-0 bottom-0 z-20 flex gap-2 border-t border-[#e5e7e5] bg-white p-3 md:hidden">
-        <a href={hero.primaryCta.href} className="flex-1 rounded-lg bg-primary_color py-3 text-center text-[14px] font-semibold text-white">
+        <Link href={hero.primaryCta.href} className="flex-1 rounded-lg bg-primary_color py-3 text-center text-[14px] font-semibold text-white">
           {hero.primaryCta.label}
-        </a>
-        <a href={hero.whatsapp.href} aria-label="WhatsApp" className="flex w-12 items-center justify-center rounded-lg bg-secondary_color text-white">
+        </Link>
+        <Link href={hero.whatsapp.href} aria-label="WhatsApp" className="flex w-12 items-center justify-center rounded-lg bg-secondary_color text-white">
           <Icon name="whatsapp" className="w-6 h-6" />
-        </a>
+        </Link>
       </div>
     </div>
   );

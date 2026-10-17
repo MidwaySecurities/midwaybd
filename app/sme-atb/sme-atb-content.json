@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "path": "/sme-atb",
+    "title": "SME & ATB | Midway Securities Ltd.",
+    "description": "What the DSE SME platform and Alternative Trading Board are, who can trade on each, and how to get started with Midway Securities Ltd."
+  },
+  "links": {
+    "openBo": "https://portal.midwaybd.com/bo/portal-login",
+    "smeSite": "https://sme.dsebd.org/",
+    "atbSite": "https://atb.dsebd.org/",
+    "stocks": "/stocks",
+    "mutualFunds": "/mutual-funds",
+    "blog": "/blog/learn",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20SME%20or%20ATB%20trading"
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Investments",
+      "SME & ATB"
+    ],
+    "eyebrow": "Investments · SME & ATB",
+    "headline": "SME and ATB: Two Smaller Boards of the DSE",
+    "subhead": "Most investors trade on the DSE main board. The SME platform and the Alternative Trading Board (ATB) are separate boards for smaller companies and for securities that are not on it."
+  },
+  "overview": {
+    "title": "Main Board, SME and ATB: What Is the Difference?",
+    "items": [
+      {
+        "name": "Main Board",
+        "body": "Where most investors trade listed stocks. Open to anyone with a BO Account.",
+        "tag": "Open to all",
+        "link": {
+          "label": "Read about Stocks",
+          "href": "/stocks"
+        }
+      },
+      {
+        "name": "SME Platform",
+        "body": "Shares of small and growing companies. Requires a ৳30 lakh portfolio.",
+        "tag": "Qualified Investors"
+      },
+      {
+        "name": "ATB",
+        "body": "Equity shares and company bonds that are not listed on another board.",
+        "tag": "Open to all"
+      }
+    ]
+  },
+  "sme": {
+    "label": "Part 1 · The SME Platform",
+    "what": {
+      "title": "What Is the SME Platform?",
+      "body": "The Small Capital Platform (SME Platform) is the DSE’s dedicated market for small and medium companies. It lets growing companies raise money from investors before they are ready for a main board listing. Many are in newer areas such as IT, retail, education and media. As an investor, it is a different kind of opportunity from main board stocks."
+    },
+    "who": {
+      "title": "Who Can Trade on It?",
+      "body": "Only Qualified Investors can trade on the SME Platform. You qualify when your portfolio of listed securities is worth at least the amount below. The DSE registers eligible investors automatically from CDBL data, which is updated every quarter, so there is no form to fill in.",
+      "threshold": {
+        "amount": "৳30 lakh",
+        "prefix": "The minimum portfolio is",
+        "fallback": "Message us on WhatsApp for the current minimum.",
+        "note": "Counted at market value or cost value, whichever is higher, across listed securities on any board. Foreign investors with an account at a BSEC-registered custodian in Bangladesh also qualify."
+      }
+    },
+    "good": {
+      "title": "Good to Know",
+      "items": [
+        "SME shares can move more and trade less often than main board stocks.",
+        "You may need to wait for a buyer when you want to sell.",
+        "If your portfolio later falls below the minimum, you may not be able to buy more SME shares. Check with us before you trade."
+      ]
+    }
+  },
+  "atb": {
+    "label": "Part 2 · The Alternative Trading Board (ATB)",
+    "what": {
+      "title": "What Is the ATB?",
+      "body": "The Alternative Trading Board (ATB) is a DSE board launched on 4 January 2023. It gives securities that are not listed on another board an automated, transparent place to be bought and sold. You trade through your BO Account, in QuickTrade Pro, as you do for other stocks."
+    },
+    "types": {
+      "title": "What Can Trade on the ATB",
+      "items": [
+        {
+          "icon": "tag",
+          "name": "Equity Shares",
+          "body": "Shares of companies that are not on the main board.",
+          "status": "Trading now"
+        },
+        {
+          "icon": "bank",
+          "name": "Debt Securities",
+          "body": "Bonds issued by companies (corporate bonds).",
+          "status": "Trading now"
+        },
+        {
+          "icon": "grid",
+          "name": "Open-End Fund Units",
+          "body": "Units of open-end mutual funds.",
+          "status": "Coming soon"
+        },
+        {
+          "icon": "shield",
+          "name": "Alternative Investment Fund Units",
+          "body": "Units of alternative investment funds.",
+          "status": "Coming soon"
+        }
+      ]
+    },
+    "who": {
+      "title": "Who Can Trade on It?",
+      "body": "Any investor with a BO Account. There is no minimum portfolio value."
+    },
+    "rules": {
+      "title": "Key Rules at a Glance",
+      "items": [
+        {
+          "label": "Settlement",
+          "value": "T+4",
+          "body": "Four trading days after you buy"
+        },
+        {
+          "label": "Daily Price Limit",
+          "value": "5%",
+          "body": "A new listing starts at 4% for its first two days"
+        },
+        {
+          "label": "Margin Loans",
+          "value": "No",
+          "body": "Not available on the ATB"
+        }
+      ]
+    },
+    "good": {
+      "title": "Good to Know",
+      "items": [
+        "Some ATB securities trade rarely, so a sale can take time.",
+        "Companies on the ATB publish fewer reports than main board companies.",
+        "Government bonds are not traded here. See our Government Bonds page."
+      ]
+    }
+  },
+  "start": {
+    "title": "How to Get Started with Midway",
+    "steps": [
+      "Open a BO Account, or use the one you already have",
+      "Check you are eligible. For the SME Platform, that means a ৳30 lakh portfolio of listed securities. The DSE registers eligible investors automatically",
+      "Buy and sell SME and ATB securities in QuickTrade Pro, just like any other stock, and follow your holdings in your Portfolio"
+    ],
+    "note": "Both boards need a BO Account. Rules are set by BSEC and the DSE and can change. To apply for an IPO, including an SME company’s IPO, use the Midway Portal."
+  },
+  "dse": {
+    "title": "See the Boards on the DSE",
+    "body": "Company lists, prices and the official rules are published by the DSE.",
+    "smeLabel": "DSE SME Platform",
+    "atbLabel": "DSE Alternative Trading Board"
+  },
+  "glossary": {
+    "title": "Quick Glossary",
+    "items": [
+      {
+        "term": "SME",
+        "def": "Small and medium enterprise: a smaller company than those on the main board."
+      },
+      {
+        "term": "ATB",
+        "def": "The Alternative Trading Board, a DSE board for securities not on the main board."
+      },
+      {
+        "term": "Qualified Investor",
+        "def": "An investor eligible to trade on the SME Platform: a portfolio of listed securities worth at least ৳30 lakh."
+      },
+      {
+        "term": "BSEC",
+        "def": "The Bangladesh Securities and Exchange Commission, the market regulator."
+      },
+      {
+        "term": "Portfolio",
+        "def": "Everything you hold in your BO Account."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "body": "Open a BO Account, or message us on WhatsApp with any question about SME or ATB.",
+    "primary": "Open BO Account",
+    "whatsapp": "WhatsApp Us"
+  },
+  "disclaimer": "SME and ATB securities can be more volatile and harder to sell than main board stocks, and you can lose some or all of the money you invest. Rules and eligibility are set by BSEC and the DSE and can change. Past performance does not indicate future results, and no returns are guaranteed. This page is for education and information only and is not investment advice."
+}

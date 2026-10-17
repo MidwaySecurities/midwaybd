@@ -43,8 +43,8 @@ export default function TreasuryBondCenterPage({ content = defaultContent, yield
             </span>
           ))}
         </nav> */}
-        <p className="text-[11px] font-semibold uppercase tracking-wide text-[#1f7a4d] md:text-xs">{header.eyebrow}</p>
-        <h1 className="mt-2 max-w-2xl text-[26px] font-semibold leading-tight md:text-5xl md:leading-tight">{header.headline}</h1>
+        {/* <p className="text-[11px] font-semibold uppercase tracking-wide text-[#1f7a4d] md:text-xs">{header.eyebrow}</p> */}
+        <h1 className="max-w-2xl text-[26px] font-semibold leading-tight md:text-5xl md:leading-tight">{header.headline}</h1>
         <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-[#4b5563] md:text-lg">{header.subhead}</p>
         <Link href={links.guide} className="mt-4 inline-block text-[14px] font-semibold text-[#004990]">{header.guideLink} →</Link>
       </section>

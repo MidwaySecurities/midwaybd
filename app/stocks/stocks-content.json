@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "path": "/stocks",
+    "title": "Stocks | Midway Securities Ltd.",
+    "description": "What a stock is, how prices move, the DSE share categories, when you can sell, and how to trade stocks through Midway Securities Ltd."
+  },
+  "links": {
+    "openBo": "https://portal.midwaybd.com/bo/portal-login",
+    "quicktrade": "/mobile-app",
+    "pricing": "/pricing",
+    "blog": "/blog",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20trading%20stocks"
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Investments",
+      "Stocks"
+    ],
+    "eyebrow": "Investments · Stocks",
+    "headline": "What Is a Stock, and How Does Stock Trading Work?",
+    "subhead": "New to stocks? Start here, then see how to trade through Midway."
+  },
+  "part1": {
+    "label": "Part 1 · Understanding Stocks",
+    "what": {
+      "title": "What Is a Stock?",
+      "body": "Imagine a pizza cut into thousands of equal slices. A company is like that pizza, and each share is one slice. When you own a share, you own a small piece of the company.",
+      "terms": {
+        "title": "Stock, Share, Equity: Same Idea, Different Words",
+        "body": "You will see all three words on our website. For you, they point to the same thing: owning part of a company.",
+        "items": [
+          {
+            "term": "Share",
+            "def": "One unit of ownership. “You own 100 shares.”"
+          },
+          {
+            "term": "Stock",
+            "def": "The general word for ownership in companies. “Buying stocks.”"
+          },
+          {
+            "term": "Equity",
+            "def": "Ownership, as a type of investment. “Equities” means stocks and shares, as opposed to bonds."
+          }
+        ]
+      }
+    },
+    "prices": {
+      "title": "Why Do Share Prices Move?",
+      "body": "A share’s price is set by buyers and sellers on the exchange. When more people want to buy than sell, the price tends to rise. When more people want to sell than buy, it tends to fall. No one can promise which way a price will go.",
+      "points": [
+        {
+          "label": "More Buyers",
+          "body": "Price tends to rise"
+        },
+        {
+          "label": "More Sellers",
+          "body": "Price tends to fall"
+        }
+      ]
+    },
+    "earn": {
+      "title": "How Can a Stock Pay You?",
+      "body": "There are two ways, and neither is guaranteed.",
+      "ways": [
+        {
+          "icon": "tag",
+          "title": "A Change in Price",
+          "body": "If you sell for more than you paid, you make a gain. If you sell for less, you make a loss."
+        },
+        {
+          "icon": "gift",
+          "title": "Dividends",
+          "body": "A dividend is a part of the company’s profit that it shares with its shareholders. The company decides whether to pay one and how much."
+        }
+      ],
+      "dividends": {
+        "title": "Two Kinds of Dividend",
+        "items": [
+          {
+            "name": "Cash Dividend",
+            "body": "Money paid to the bank account linked to your BO Account."
+          },
+          {
+            "name": "Stock Dividend (Bonus Shares)",
+            "body": "Extra shares added to your BO Account instead of cash, so you own more shares."
+          }
+        ],
+        "note": "A company may pay either one or both. Dividends are never guaranteed, and a company can pay less one year or none at all."
+      },
+      "record": {
+        "title": "What Is a Record Date?",
+        "body": "The record date is the day a company uses to decide who receives its dividend. Only the shareholders on its list that day are paid. Shares take a few trading days to settle, so if you want dividends, buy before the record date. Companies announce their record dates publicly on the exchange."
+      }
+    },
+    "categories": {
+      "title": "Share Categories on the DSE",
+      "body": "The Dhaka Stock Exchange places each listed company in a category. The category also decides how fast a purchase settles.",
+      "items": [
+        {
+          "letter": "A",
+          "body": "Companies that hold their annual meeting and pay regular dividends.",
+          "settle": "T+2"
+        },
+        {
+          "letter": "B",
+          "body": "Companies that hold their annual meeting and pay smaller dividends.",
+          "settle": "T+2"
+        },
+        {
+          "letter": "N",
+          "body": "Newly listed companies that are not yet in another category.",
+          "settle": "T+2"
+        },
+        {
+          "letter": "Z",
+          "body": "Companies that have not met requirements such as paying a dividend or holding an annual meeting.",
+          "settle": "T+3"
+        }
+      ]
+    },
+    "settlement": {
+      "title": "If I Buy a Stock Today, When Can I Sell It?",
+      "body": "A purchase has to settle before you can sell. “T+2” means two trading days after the day you buy (T stands for the trade day). How long it takes depends on the category.",
+      "rows": [
+        {
+          "label": "A, B and N Category",
+          "days": "T+2",
+          "body": "Two trading days"
+        },
+        {
+          "label": "Z Category",
+          "days": "T+3",
+          "body": "Three trading days"
+        },
+        {
+          "label": "Spot Market",
+          "days": "T+1",
+          "body": "One trading day"
+        }
+      ],
+      "exampleTitle": "Example: You Buy an A, B or N Category Stock on Thursday",
+      "days": [
+        {
+          "day": "Thursday",
+          "label": "You buy",
+          "body": "Your order is matched on the exchange."
+        },
+        {
+          "day": "Sunday",
+          "label": "Settling",
+          "body": "The first trading day after you buy. Friday and Saturday are not trading days."
+        },
+        {
+          "day": "Monday",
+          "label": "You can sell",
+          "body": "Settlement is complete. Your shares show as available to sell in your Portfolio."
+        }
+      ],
+      "note": "Trading days are Sunday to Thursday. Public holidays move the dates."
+    },
+    "goodToKnow": {
+      "title": "Good to Know Before You Start",
+      "items": [
+        "Share prices can fall as well as rise, and you can lose some or all of what you invest.",
+        "Dividends are decided by each company and are never guaranteed.",
+        "Only invest money you can afford to leave invested for a while."
+      ]
+    }
+  },
+  "part2": {
+    "label": "",
+    "video": {
+      "title": "Watch: Place Your First Buy Order on QuickTrade Pro",
+      "body": "A short walkthrough of buying a share in our mobile app.",
+      "youtubeId": "sRZUXqpZJGA",
+      "playLabel": "Play Video",
+      "comingSoon": "Video coming soon"
+    },
+    "need": {
+      "title": "All You Need Is a BO Account",
+      "body": "Open a BO Account with Midway, then buy and sell stocks in our mobile app QuickTrade Pro.",
+      "quicktradeLink": "Explore QuickTrade Pro",
+      "pricingLink": "See what it costs"
+    },
+    "blogLink": "Want to go deeper? Read more on our blog"
+  },
+  "cta": {
+    "title": "Ready to Start Trading?",
+    "body": "Open a BO Account to get started, or message us on WhatsApp with any question.",
+    "primary": "Open BO Account",
+    "whatsapp": "WhatsApp Us"
+  },
+  "disclaimer": "Share prices can fall as well as rise, and you can lose some or all of the money you invest. Past performance does not indicate future results, and no returns are guaranteed. This page is for education and information only and is not investment advice."
+}

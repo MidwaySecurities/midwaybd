@@ -1,0 +1,502 @@
+{
+  "meta": {
+    "path": "/faq",
+    "title": "FAQ | Midway Securities Ltd.",
+    "description": "Answers about opening a BO Account, deposits and withdrawals, trading in QuickTrade Pro, IPOs, bonds and more."
+  },
+  "links": {
+    "portal": "https://portal.midwaybd.com/",
+    "openBo": "https://portal.midwaybd.com/bo/portal-login",
+    "linkBo": "https://portal.midwaybd.com/link-bo/portal-login",
+    "web": "https://oms.midwaybd.com/",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20Midway",
+    "pricing": "/pricing",
+    "stocks": "/stocks",
+    "smeAtb": "/sme-atb",
+    "bonds": "/government-bonds",
+    "calendar": "/treasury-bond-center/auction-calendar",
+    "funds": "/mutual-funds",
+    "switching": "/switching-brokers",
+    "ipo": "/ipo",
+    "app": "/mobile-app"
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Support",
+      "FAQ"
+    ],
+    "eyebrow": "Support · FAQ",
+    "headline": "Frequently Asked Questions",
+    "subhead": "Quick answers about your BO Account, money, trading and more. Can’t find yours? We are one message away.",
+    "searchLabel": "Search Questions",
+    "searchPlaceholder": "Search, for example “withdraw”"
+  },
+  "mostAsked": {
+    "title": "Most Asked",
+    "ids": [
+      "open-bo-account",
+      "bo-approval-time",
+      "how-to-withdraw",
+      "deposit-speed",
+      "when-can-i-sell"
+    ]
+  },
+  "categories": [
+    {
+      "id": "all",
+      "label": "All"
+    },
+    {
+      "id": "start",
+      "label": "Getting Started"
+    },
+    {
+      "id": "money",
+      "label": "Deposits and Withdrawals"
+    },
+    {
+      "id": "trade",
+      "label": "Trading and QuickTrade Pro"
+    },
+    {
+      "id": "ipo",
+      "label": "IPOs"
+    },
+    {
+      "id": "bonds",
+      "label": "Bonds and Mutual Funds"
+    },
+    {
+      "id": "switch",
+      "label": "Switching Brokers"
+    },
+    {
+      "id": "account",
+      "label": "Account and Security"
+    }
+  ],
+  "items": [
+    {
+      "id": "open-bo-account",
+      "cat": "start",
+      "q": "How do I open a BO Account with Midway?",
+      "a": [
+        "Apply online in the Midway Portal. A standard individual BO Account has a Tk 150 opening fee.",
+        "For an NRB or Corporate BO Account, contact us first so our team can confirm the exact documents and guide you through the application."
+      ],
+      "links": [
+        {
+          "label": "Open BO Account",
+          "key": "openBo"
+        }
+      ]
+    },
+    {
+      "id": "bo-approval-time",
+      "cat": "start",
+      "q": "How long does it take to open a BO Account?",
+      "a": [
+        "If all your information is accurate, your BO Account is opened after 1 working day of your application. We email you the details."
+      ]
+    },
+    {
+      "id": "bo-documents",
+      "cat": "start",
+      "q": "What documents do I need for a resident individual BO Account?",
+      "a": [
+        "Have these ready before you apply:"
+      ],
+      "list": [
+        "National ID (NID)",
+        "Recent passport-size photograph",
+        "Digital signature",
+        "Bank account details",
+        "Nominee’s information and photograph",
+        "Valid mobile number and email address"
+      ]
+    },
+    {
+      "id": "nrb-company-bo",
+      "cat": "start",
+      "q": "Can NRBs and companies open an account?",
+      "a": [
+        "Yes. The documents are more detailed and depend on your residency, banking arrangements or company structure. For an NRB, we generally ask for your NID and passport copy, photograph and signature, proof of residence abroad where applicable, and your Bangladesh bank account details. A company generally needs its Certificate of Incorporation, Memorandum and Articles of Association, TIN, a Board Resolution, and details of its authorised signatories.",
+        "Contact us so our team can confirm the exact checklist for you."
+      ],
+      "links": [
+        {
+          "label": "Message Us on WhatsApp",
+          "key": "whatsapp"
+        }
+      ]
+    },
+    {
+      "id": "bo-account-cost",
+      "cat": "start",
+      "q": "How much does it cost to open a BO Account?",
+      "a": [
+        "The opening fee is Tk 150 for a standard individual BO Account. For all our charges in one place, see Pricing."
+      ],
+      "links": [
+        {
+          "label": "See Pricing",
+          "key": "pricing"
+        }
+      ]
+    },
+    {
+      "id": "how-many-bo",
+      "cat": "start",
+      "q": "How many BO Accounts can I have?",
+      "a": [
+        "You can open 1 single BO Account and 1 joint BO Account with a brokerage. You can also have BO Accounts with more than one brokerage."
+      ]
+    },
+    {
+      "id": "minimum-deposit",
+      "cat": "money",
+      "q": "Is there a minimum deposit?",
+      "a": [
+        "No. There is no minimum deposit at Midway."
+      ]
+    },
+    {
+      "id": "how-to-deposit",
+      "cat": "money",
+      "q": "How do I add money to my account?",
+      "a": [
+        "You can deposit by RTGS, NPSB, mobile money (bKash, Rocket and Nagad), credit cards or BEFTN. Start from the Midway Portal."
+      ],
+      "links": [
+        {
+          "label": "Open Midway Portal",
+          "key": "portal"
+        }
+      ]
+    },
+    {
+      "id": "deposit-speed",
+      "cat": "money",
+      "q": "How fast does my deposit reach my BO Account?",
+      "a": [
+        "Deposits by RTGS, NPSB, mobile money (bKash, Rocket and Nagad) and credit cards reach your BO Account almost instantly. BEFTN deposits usually take 1 working day to clear."
+      ]
+    },
+    {
+      "id": "deposit-charges",
+      "cat": "money",
+      "q": "Are there charges for deposits?",
+      "a": [
+        "Charges for bank transfers, mobile money and cards are listed on our Pricing page. Mobile money and card charges are set by the provider, not Midway."
+      ],
+      "links": [
+        {
+          "label": "See Pricing",
+          "key": "pricing"
+        }
+      ]
+    },
+    {
+      "id": "how-to-withdraw",
+      "cat": "money",
+      "q": "How do I withdraw money?",
+      "a": [
+        "Withdrawing is completely online. Log in to your Midway Portal and select Withdrawal. Your money is sent to your registered bank account through BEFTN.",
+        "Withdrawals are typically processed within 1 working day, provided the funds are matured. You can check your Portfolio to see which funds have matured. Midway does not charge any withdrawal fee.",
+        "Requests are processed on working days, subject to banking and operational processing times."
+      ],
+      "links": [
+        {
+          "label": "Open Midway Portal",
+          "key": "portal"
+        }
+      ]
+    },
+    {
+      "id": "withdraw-after-sale",
+      "cat": "money",
+      "q": "When can I withdraw money after selling shares?",
+      "a": [
+        "Sale proceeds become withdrawable once the applicable DSE settlement period is completed."
+      ]
+    },
+    {
+      "id": "where-to-trade",
+      "cat": "trade",
+      "q": "Where can I trade?",
+      "a": [
+        "Use QuickTrade Pro, our trading app for Android, iOS and desktop. You can also trade on the web at oms.midwaybd.com. The app is available 24/7."
+      ],
+      "links": [
+        {
+          "label": "Open Web Trading",
+          "key": "web"
+        }
+      ]
+    },
+    {
+      "id": "trading-hours",
+      "cat": "trade",
+      "q": "What are the DSE trading hours?",
+      "a": [
+        "The DSE trades Sunday to Thursday, from 10:00 am to 2:10 pm. QuickTrade Pro is available 24/7, and you can place pre-market orders before the market opens."
+      ]
+    },
+    {
+      "id": "order-types",
+      "cat": "trade",
+      "q": "What order types does QuickTrade Pro offer?",
+      "a": [
+        "You can use these tools:"
+      ],
+      "list": [
+        "Limit Order: set your preferred buy or sell price. The order executes when a matching buyer or seller is available.",
+        "Market at Best: place an order at the best available market price without entering a limit price.",
+        "Stop Loss and Take Profit: set conditions for your order. These do not guarantee a result.",
+        "Pre-Market Orders: place orders before the market opens.",
+        "Good Till Date: set how long an order stays valid, within the available order settings.",
+        "Modify or Cancel: change the price or quantity of an eligible open order, or cancel it.",
+        "Market Depth: view available buy and sell prices and quantities before you order.",
+        "Real-Time Order Tracking: follow Accepted, Partially Filled and Filled orders."
+      ]
+    },
+    {
+      "id": "when-can-i-sell",
+      "cat": "trade",
+      "q": "When can I sell shares I just bought?",
+      "a": [
+        "It depends on the stock’s category. A, B and N Category stocks settle in 2 trading days, and Z Category stocks in 3. For example, if you buy an A, B or N Category stock on Thursday, you can normally sell it from Monday, if there are no market holidays. Once settlement is complete, your shares show as available to sell in your Portfolio."
+      ],
+      "links": [
+        {
+          "label": "Read about Stocks",
+          "key": "stocks"
+        }
+      ]
+    },
+    {
+      "id": "sme-atb-trading",
+      "cat": "trade",
+      "q": "Can I trade SME and ATB securities?",
+      "a": [
+        "Yes, in QuickTrade Pro. ATB is open to any investor with a BO Account. The SME Platform is for Qualified Investors, with a portfolio of listed securities worth at least ৳30 lakh."
+      ],
+      "links": [
+        {
+          "label": "Read about SME and ATB",
+          "key": "smeAtb"
+        }
+      ]
+    },
+    {
+      "id": "multiple-bo-app",
+      "cat": "trade",
+      "q": "Can I see more than one BO Account in the app?",
+      "a": [
+        "Yes. You can manage multiple BO Accounts through a single QuickTrade Pro login."
+      ]
+    },
+    {
+      "id": "how-to-apply-ipo",
+      "cat": "ipo",
+      "q": "How do I apply for an IPO?",
+      "a": [
+        "All IPO applications are made through the Midway Portal. Check the IPO page for what is open, then apply in the Portal."
+      ],
+      "links": [
+        {
+          "label": "See IPOs",
+          "key": "ipo"
+        },
+        {
+          "label": "Open Midway Portal",
+          "key": "portal"
+        }
+      ]
+    },
+    {
+      "id": "ipo-prior-investment",
+      "cat": "ipo",
+      "q": "Do I need to have invested before to apply for an IPO?",
+      "a": [
+        "No minimum prior stock-market investment is required to apply, per current BSEC rules."
+      ]
+    },
+    {
+      "id": "ipo-refund",
+      "cat": "ipo",
+      "q": "When do I get my money back if I do not get shares?",
+      "a": [
+        "Refunds go to your BO Account, usually 5 working days after the lottery. You can place a withdrawal request the next day."
+      ]
+    },
+    {
+      "id": "ipo-club",
+      "cat": "ipo",
+      "q": "What is the IPO Membership Club?",
+      "a": [
+        "Sign up once in the Midway Portal, and we apply to every eligible Equity IPO on your behalf, based on your available balance."
+      ],
+      "links": [
+        {
+          "label": "Open Midway Portal",
+          "key": "portal"
+        }
+      ]
+    },
+    {
+      "id": "buy-gov-bond",
+      "cat": "bonds",
+      "q": "How do I buy a government bond?",
+      "a": [
+        "Apply in the Midway Portal by Thursday 1:00 PM for next week’s auction. The minimum is ৳1 lakh, in multiples of ৳1 lakh. T-Bills and Government Sukuk primary auctions are not open to brokerage clients."
+      ],
+      "links": [
+        {
+          "label": "Read about Government Bonds",
+          "key": "bonds"
+        },
+        {
+          "label": "See the Auction Calendar",
+          "key": "calendar"
+        }
+      ]
+    },
+    {
+      "id": "bond-interest",
+      "cat": "bonds",
+      "q": "When do I receive bond interest?",
+      "a": [
+        "Bangladesh Bank deposits interest into your bank account every 6 months, and the principal at maturity. You do not need to do anything. Bangladesh Bank deducts 10% AIT from each interest payment."
+      ]
+    },
+    {
+      "id": "mutual-fund-buy-sell",
+      "cat": "bonds",
+      "q": "How do I buy and sell mutual fund units?",
+      "a": [
+        "Listed funds trade in QuickTrade Pro, just like a stock. For open-end funds, you deal with the fund company, and you need a BO Account. The Mutual Funds page shows the steps."
+      ],
+      "links": [
+        {
+          "label": "Read about Mutual Funds",
+          "key": "funds"
+        }
+      ]
+    },
+    {
+      "id": "switch-broker",
+      "cat": "switch",
+      "q": "Can I move my existing BO Account to Midway?",
+      "a": [
+        "Yes. Use the Link BO Account form in the Midway Portal. It is free and takes about 1 working day after you submit the form. Your shares move at the same quantity and cost price, and you do not have to sell anything."
+      ],
+      "links": [
+        {
+          "label": "Start Link BO Account",
+          "key": "linkBo"
+        },
+        {
+          "label": "Read about Switching",
+          "key": "switching"
+        }
+      ]
+    },
+    {
+      "id": "leftover-cash",
+      "cat": "switch",
+      "q": "What happens to my leftover cash when I switch?",
+      "a": [
+        "Once the link is done, transfer any remaining funds from your old broker to Midway yourself."
+      ]
+    },
+    {
+      "id": "change-password",
+      "cat": "account",
+      "q": "How do I change my password or PIN?",
+      "a": [
+        "You can do it yourself in QuickTrade Pro or the Midway Portal. There is no need to contact us."
+      ]
+    },
+    {
+      "id": "change-nominee",
+      "cat": "account",
+      "q": "How do I change my nominee?",
+      "a": [
+        "Through the Midway Portal."
+      ],
+      "links": [
+        {
+          "label": "Open Midway Portal",
+          "key": "portal"
+        }
+      ]
+    },
+    {
+      "id": "update-details",
+      "cat": "account",
+      "q": "How do I update my phone, email, address or bank details?",
+      "a": [
+        "All of these can be done through the Midway Portal."
+      ],
+      "links": [
+        {
+          "label": "Open Midway Portal",
+          "key": "portal"
+        }
+      ]
+    },
+    {
+      "id": "close-account",
+      "cat": "account",
+      "q": "How do I close my account?",
+      "a": [
+        "Through the Midway Portal."
+      ],
+      "links": [
+        {
+          "label": "Open Midway Portal",
+          "key": "portal"
+        }
+      ]
+    },
+    {
+      "id": "contact-midway",
+      "cat": "account",
+      "q": "How do I contact Midway?",
+      "a": [
+        "Call our hotline on 09609 100 142, email info@midwaybd.com, or message us on WhatsApp at +880 1874-444816. Office hours are Sunday to Thursday, 9:30 am to 5:30 pm."
+      ],
+      "links": [
+        {
+          "label": "Message Us on WhatsApp",
+          "key": "whatsapp"
+        }
+      ]
+    }
+  ],
+  "noResults": {
+    "title": "No Questions Found",
+    "body": "Try a different word, or message us and we will help."
+  },
+  "contact": {
+    "title": "Still Have a Question?",
+    "body": "Our team is happy to help.",
+    "hotlineLabel": "Hotline",
+    "hotline": "09609 100 142",
+    "hotlineHref": "tel:09609100142",
+    "emailLabel": "Email",
+    "email": "info@midwaybd.com",
+    "hoursLabel": "Office Hours",
+    "hours": "Sunday to Thursday, 9:30 am to 5:30 pm",
+    "whatsapp": "WhatsApp Us"
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "body": "Open a BO Account online in the Midway Portal.",
+    "primary": "Open BO Account",
+    "whatsapp": "WhatsApp Us"
+  },
+  "disclaimer": "Information on this page is general and can change. Investing in the stock market carries risk, and you can lose some or all of the money you invest. No returns are guaranteed. This page is for education and information only and is not investment advice."
+}

@@ -33,7 +33,7 @@ export default function ToolsHubPage({ content = defaultContent }) {
   ];
 
   return (
-    <div className="mx-auto max-w-6xl lg:container bg-[#f7f8f7] pb-24 text-[#111827] md:pb-0">
+    <div className="mx-auto max-w-6xl lg:container bg-[#f7f8f7] pb-6 text-[#111827]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Header */}
@@ -44,7 +44,7 @@ export default function ToolsHubPage({ content = defaultContent }) {
           ))}
         </nav>
         <p className="mt-4 text-[11px] font-semibold uppercase tracking-wide text-[#1da1f2] md:text-xs">{header.eyebrow}</p> */}
-        <h1 className="mt-2 text-[26px] font-semibold leading-tight md:text-5xl md:leading-tight">{header.headline}</h1>
+        <h1 className="text-[26px] font-semibold leading-tight md:text-5xl md:leading-tight">{header.headline}</h1>
         <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[#4b5563] md:text-lg">{header.subhead}</p>
       </section>
 

@@ -1,0 +1,247 @@
+{
+  "meta": {
+    "path": "/position-size-calculator",
+    "title": "Position Size and Stop-Loss Calculator for DSE Stocks | Midway Securities Ltd.",
+    "description": "Decide how many shares to buy for the amount you are willing to lose. Enter your capital, risk, buy price and stop-loss. Free calculator with a plain-language guide.",
+    "origin": "https://www.midwaybd.com"
+  },
+  "links": {
+    "stocks": "/stocks",
+    "tools": "/tools",
+    "pnl": "/profit-and-loss-calculator",
+    "app": "/mobile-app",
+    "dsePrices": "https://www.dse.com.bd/markets/latest-share-price",
+    "openBo": "https://portal.midwaybd.com/bo/portal-login",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20the%20Position%20Size%20and%20Stop-Loss%20Calculator"
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Tools",
+      "Position Size and Stop-Loss Calculator"
+    ],
+    "headline": "Position Size and Stop-Loss Calculator",
+    "subhead": "Decide how much you are willing to lose on a trade, then see how many shares that allows for your buy price and stop-loss."
+  },
+  "inputs": {
+    "title": "Your Trade",
+    "presets": {
+      "label": "Try an Example",
+      "items": [
+        {
+          "label": "Tight Stop",
+          "capital": "500000",
+          "risk": "1",
+          "entry": "100",
+          "stop": "97",
+          "target": "109"
+        },
+        {
+          "label": "Wide Stop",
+          "capital": "500000",
+          "risk": "1",
+          "entry": "250",
+          "stop": "212.5",
+          "target": "325"
+        },
+        {
+          "label": "Limited by Capital",
+          "capital": "20000",
+          "risk": "2",
+          "entry": "100",
+          "stop": "99",
+          "target": ""
+        }
+      ]
+    },
+    "capital": {
+      "label": "Your Investment Capital",
+      "left": "৳",
+      "default": "500000",
+      "chips": [
+        100000,
+        500000,
+        1000000
+      ],
+      "hint": "The money you have set aside for investing in shares."
+    },
+    "risk": {
+      "label": "Most You Are Willing to Lose",
+      "unit": "% of capital",
+      "default": "1",
+      "chips": [
+        "0.5",
+        "1",
+        "2"
+      ],
+      "hint": "This is your choice. The calculator does not suggest a figure."
+    },
+    "entry": {
+      "label": "Buy Price",
+      "left": "৳",
+      "default": "100",
+      "hint": "The price you plan to pay. Check the latest price in QuickTrade Pro or on the DSE.",
+      "dseLink": "Check latest prices on the DSE"
+    },
+    "stop": {
+      "label": "Stop-Loss Price",
+      "left": "৳",
+      "default": "95",
+      "hint": "The price at which you would sell to limit the loss. It must be below your buy price.",
+      "chipsLabel": "Or Set the Stop Below Your Buy Price By",
+      "chips": [
+        3,
+        5,
+        8,
+        10
+      ]
+    },
+    "target": {
+      "label": "Target Price (Optional)",
+      "left": "৳",
+      "default": "110",
+      "hint": "Add the price where you would take profit to see the reward compared with the risk."
+    }
+  },
+  "warnings": {
+    "capital": "Enter your capital.",
+    "risk": "Enter how much you are willing to lose, above 0% and up to 100%.",
+    "riskHigh": "That is a large share of your capital to risk on one trade. Please check the number.",
+    "entry": "Enter a buy price above zero.",
+    "stop": "The stop-loss must be above zero and below your buy price.",
+    "target": "The target should be above your buy price to show a reward."
+  },
+  "results": {
+    "title": "Your Position Size",
+    "sharesLabel": "Shares to Buy",
+    "valueLabel": "Cost of Position",
+    "empty": "Fill in the trade",
+    "sub": "Whole shares only. Before fees and charges.",
+    "rows": {
+      "riskAmt": "Amount You Are Willing to Lose",
+      "stopDist": "Stop-Loss Distance",
+      "loss": "Loss if the Stop-Loss Is Hit",
+      "lossPct": "Loss as a Share of Your Capital",
+      "posPct": "Share of Your Capital in This Trade",
+      "gain": "Gain if the Target Is Reached",
+      "rr": "Reward Compared With Risk",
+      "win": "Win Rate Needed to Break Even"
+    },
+    "noShares": "At this stop, your chosen loss is too small to buy even one share, or one share costs more than your capital. Try a higher risk, a tighter stop or more capital.",
+    "limited": "Your capital, not your risk limit, sets the size here. Buying more would cost more than you have, so the loss if stopped out is smaller than your limit.",
+    "insightTitle": "What This Means",
+    "insight": "You are willing to lose {risk} on this trade. Your stop-loss is {dist} below your buy price, so you could buy {n} shares for {cost}. If the stop-loss were hit you would lose about {loss}, before charges, which is {lossPct} of your capital.",
+    "insightTarget": " If the price reached your target you would gain about {gain}, which is {rr} the amount you risk.",
+    "winNote": "This is the share of trades you must win to break even at this ratio, before charges. It is a guide to the numbers, not a forecast.",
+    "caution": {
+      "title": "A Stop-Loss Is Not a Guarantee",
+      "body": "The price can jump past your stop, and trading in a stock can be limited by daily price limits or few buyers. Your order may then be filled at a worse price than the one you chose, or not at all. QuickTrade Pro offers a Stop Loss order type.",
+      "link": "QuickTrade Pro App"
+    }
+  },
+  "how": {
+    "title": "How Position Size Works",
+    "items": [
+      {
+        "title": "Set Your Loss Limit",
+        "body": "Capital × the percentage you will risk. ৳5,00,000 × 1% is ৳5,000, the most you accept losing on this trade."
+      },
+      {
+        "title": "Measure the Stop Distance",
+        "body": "Buy price − stop-loss price. Buying at ৳100 with a stop at ৳95 puts ৳5 at risk on every share."
+      },
+      {
+        "title": "Divide",
+        "body": "Loss limit ÷ distance. ৳5,000 ÷ ৳5 is 1,000 shares, which cost ৳1,00,000, or 20% of your capital."
+      }
+    ],
+    "example": "Example: with ৳5,00,000 and a 1% loss limit, buying at ৳100 with a stop at ৳95 gives 1,000 shares. If the stop is hit you lose about ৳5,000. If you set the stop at ৳90 instead, the same limit allows only 500 shares."
+  },
+  "faq": {
+    "title": "Position Size Questions",
+    "items": [
+      {
+        "q": "What is position sizing?",
+        "a": "It means deciding how many shares to buy based on how much you are willing to lose, not just how much you would like to invest. A wider stop-loss means fewer shares for the same loss limit."
+      },
+      {
+        "q": "How much of my capital should I risk on one trade?",
+        "a": "There is no single right answer. It depends on your goals and how much loss you can accept. Many investors choose a small percentage so that a run of losing trades does not do serious damage. This calculator shows what any figure you choose means in shares and Taka. It does not suggest one."
+      },
+      {
+        "q": "How many shares should I buy?",
+        "a": "The calculator shows the number that fits the loss limit and stop-loss you enter. Whether to buy at all is your decision, and this is not investment advice."
+      },
+      {
+        "q": "What is a stop-loss?",
+        "a": "A stop-loss is a price at which you plan to sell to limit a loss. QuickTrade Pro offers a Stop Loss order type that places this instruction in advance."
+      },
+      {
+        "q": "Is a stop-loss guaranteed?",
+        "a": "No. If the price jumps past your stop, or trading is limited by daily price limits or a lack of buyers, your shares may sell at a worse price or not sell at all. The loss can be larger than the figure shown."
+      },
+      {
+        "q": "Why is the number of shares lower than I expected?",
+        "a": "The calculator buys whole shares only, and never more than your capital can pay for. If your capital is the limit, the loss if stopped out will be smaller than your loss limit."
+      },
+      {
+        "q": "What does reward compared with risk mean?",
+        "a": "It compares the gain if your target is reached with the loss if your stop-loss is hit. A target ৳10 above and a stop ৳5 below the buy price is 2 times the risk. It says nothing about how likely either outcome is."
+      },
+      {
+        "q": "Does the result include fees and charges?",
+        "a": "No. Trading fees and charges make a loss slightly larger and a gain slightly smaller."
+      }
+    ]
+  },
+  "glossary": {
+    "title": "Quick Glossary",
+    "items": [
+      {
+        "term": "Position Size",
+        "def": "The number of shares you buy in one trade."
+      },
+      {
+        "term": "Stop-Loss",
+        "def": "A price at which you plan to sell to limit a loss."
+      },
+      {
+        "term": "Loss Limit",
+        "def": "The most you are willing to lose on one trade, as a percentage of your capital."
+      },
+      {
+        "term": "Reward Compared With Risk",
+        "def": "The gain at your target divided by the loss at your stop-loss."
+      },
+      {
+        "term": "Take Profit",
+        "def": "A price at which you plan to sell to lock in a gain. QuickTrade Pro offers a Take Profit order type."
+      }
+    ]
+  },
+  "related": [
+    {
+      "label": "Profit and Loss Calculator",
+      "href": "/profit-and-loss-calculator"
+    },
+    {
+      "label": "Read about Stocks",
+      "href": "/stocks"
+    },
+    {
+      "label": "All Tools",
+      "href": "/tools"
+    },
+    {
+      "label": "QuickTrade Pro App",
+      "href": "/mobile-app"
+    }
+  ],
+  "legal": "An estimate based on the numbers you enter, for education and information only. It does not include trading fees, charges or taxes. A stop-loss does not guarantee that you can sell at your chosen price, and you can lose more than the amount shown. Share prices can fall as well as rise, and you can lose some or all of the money you invest. This is not investment advice and does not suggest how much to risk.",
+  "cta": {
+    "title": "Ready to Start Investing?",
+    "body": "Open a BO Account online, then buy and sell stocks in QuickTrade Pro. Questions? Message us on WhatsApp.",
+    "primary": "Open BO Account",
+    "whatsapp": "WhatsApp Us"
+  }
+}

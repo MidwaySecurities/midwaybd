@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "path": "/treasury-bond-center/auction-calendar",
+    "title": "Treasury Bond Auction Calendar | Midway Securities Ltd.",
+    "description": "Monthly Treasury Bond auction dates, amounts, last cut-off yields and how to apply through Midway Securities Ltd."
+  },
+  "links": {
+    "treasuryCenter": "/treasury-bond-center",
+    "governmentBonds": "/government-bonds",
+    "reissuedExplainer": "/government-bonds#reissued-bonds",
+    "calculator": "/bond-interest-calculator",
+    "portal": "https://portal.midwaybd.com",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20the%20Treasury%20Bond%20auction"
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Treasury Bond Center",
+      "Auction Calendar"
+    ],
+    "eyebrow": "Treasury Bonds",
+    "headline": "Treasury Bond Auction Calendar",
+    "subhead": "This month's Bangladesh Bank auction dates and amounts, plus last month's results, all in one place.",
+    "month": "October 2026",
+    "back": "Back to Treasury Bond Center"
+  },
+  "calendar": {
+    "title": "Auction Calendar",
+    "month": "October 2026",
+    "unit": "Amounts in ৳ Crore",
+    "dates": [
+      "6 Oct",
+      "13 Oct",
+      "19 Oct",
+      "27 Oct"
+    ],
+    "rows": [
+      {
+        "tenor": "2-Year",
+        "amounts": [
+          "5,000",
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "tenor": "5-Year",
+        "amounts": [
+          null,
+          "4,000",
+          null,
+          null
+        ]
+      },
+      {
+        "tenor": "10-Year",
+        "amounts": [
+          null,
+          null,
+          "3,000",
+          null
+        ]
+      },
+      {
+        "tenor": "15-Year",
+        "amounts": [
+          null,
+          null,
+          null,
+          "1,500"
+        ]
+      },
+      {
+        "tenor": "20-Year",
+        "amounts": [
+          null,
+          null,
+          null,
+          "1,000"
+        ]
+      }
+    ],
+    "totals": [
+      "5,000",
+      "4,000",
+      "3,000",
+      "2,500"
+    ],
+    "totalLabel": "Total Amount",
+    "howToApply": {
+      "title": "How to Apply Through Midway",
+      "steps": [
+        "Open the Midway Portal and choose Government Bonds.",
+        "Apply by 11:00 AM on Sunday. Minimum ৳1 lakh.",
+        "Your bonds are credited to your BO Account about a week after a successful auction."
+      ],
+      "note": "Charges are shared when you contact us on WhatsApp."
+    },
+    "monthKey": "2026-10"
+  },
+  "lastResults": {
+    "title": "Last Auction Results",
+    "month": "September 2026",
+    "columns": [
+      "Tenor",
+      "Years Left",
+      "Auction Date",
+      "Issue Date",
+      "Coupon Rate",
+      "Cut-off Yield"
+    ],
+    "rows": [
+      {
+        "tenor": "2-Year",
+        "yearsLeft": "2.73",
+        "auctionDate": "1 Sep",
+        "issueDate": "27 May 2009",
+        "reissue": true,
+        "coupon": "11.09%",
+        "cutoff": "8.87%"
+      },
+      {
+        "tenor": "5-Year",
+        "yearsLeft": "5.71",
+        "auctionDate": "8 Sep",
+        "issueDate": "25 May 2022",
+        "reissue": true,
+        "coupon": "8.00%",
+        "cutoff": "8.64%"
+      },
+      {
+        "tenor": "10-Year",
+        "yearsLeft": "10.78",
+        "auctionDate": "15 Sep",
+        "issueDate": "29 Jun 2022",
+        "reissue": true,
+        "coupon": "8.55%",
+        "cutoff": "8.54%"
+      },
+      {
+        "tenor": "15-Year",
+        "yearsLeft": "16.26",
+        "auctionDate": "22 Sep",
+        "issueDate": "28 Dec 2022",
+        "reissue": true,
+        "coupon": "8.95%",
+        "cutoff": "9.34%"
+      },
+      {
+        "tenor": "20-Year",
+        "yearsLeft": "18.93",
+        "auctionDate": "22 Sep",
+        "issueDate": "27 Aug 2025",
+        "reissue": true,
+        "coupon": "10.30%",
+        "cutoff": "9.35%"
+      }
+    ],
+    "reissueTag": "Reissue",
+    "reissueNote": {
+      "title": "What Reissue Means",
+      "body": "Bangladesh Bank is currently selling more of bonds it has already issued. The coupon and maturity date stay the same, so the time left is shorter than the original term. The Tenor column groups each bond by about how many years it has left. Your yield depends on the price you pay at the auction.",
+      "link": "How Reissued Bonds Work"
+    }
+  },
+  "afterYouBuy": {
+    "title": "After You Buy, There Is Nothing to Do",
+    "items": [
+      {
+        "icon": "clock",
+        "title": "Interest Every 6 Months",
+        "body": "Bangladesh Bank deposits it directly into your bank account."
+      },
+      {
+        "icon": "bank",
+        "title": "Principal at Maturity",
+        "body": "Bangladesh Bank deposits it into your bank account when the bond matures."
+      },
+      {
+        "icon": "percent",
+        "title": "10% AIT",
+        "body": "AIT is deducted by Bangladesh Bank from every interest payment."
+      }
+    ],
+    "calculatorLabel": "Estimate Your Interest"
+  },
+  "bills": {
+    "title": "Treasury Bill Auction Results",
+    "badge": "Information Only",
+    "note": "Treasury Bills cannot be bought through brokerage houses. Government Sukuk primary auctions are not available through brokerage houses either. We show bill results so you can see the full market.",
+    "month": "October 2026",
+    "columns": [
+      "Tenor",
+      "Auction Date",
+      "Issue Date",
+      "Last Cut-off Yield"
+    ],
+    "rows": [
+      {
+        "tenor": "14 Days",
+        "auctionDate": "28 Oct 2026",
+        "issueDate": "18 Sep 2025",
+        "cutoff": "10.05%"
+      },
+      {
+        "tenor": "91 Days",
+        "auctionDate": "11, 18, 25 Oct 2026",
+        "issueDate": "5 Oct 2026",
+        "cutoff": "8.13%"
+      },
+      {
+        "tenor": "182 Days",
+        "auctionDate": "11, 18, 25 Oct 2026",
+        "issueDate": "5 Oct 2026",
+        "cutoff": "8.37%"
+      },
+      {
+        "tenor": "364 Days",
+        "auctionDate": "11, 18, 25 Oct 2026",
+        "issueDate": "5 Oct 2026",
+        "cutoff": "8.59%"
+      }
+    ]
+  },
+  "glossary": {
+    "title": "Quick Glossary",
+    "items": [
+      {
+        "term": "Tenor",
+        "def": "About how many years are left until the bond matures. Bangladesh Bank groups reissued bonds this way."
+      },
+      {
+        "term": "Auction Date",
+        "def": "The day Bangladesh Bank holds the auction."
+      },
+      {
+        "term": "Issue Date",
+        "def": "The date the bond was first issued."
+      },
+      {
+        "term": "Reissue",
+        "def": "More of an existing bond sold again, with the same coupon and maturity date as the original."
+      },
+      {
+        "term": "Coupon Rate",
+        "def": "The fixed yearly interest rate paid on the bond's face value."
+      },
+      {
+        "term": "Cut-off Yield",
+        "def": "The highest yield Bangladesh Bank accepted at the auction. Bids above it were rejected."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Apply for the Next Auction?",
+    "body": "Apply in the Midway Portal, or message us on WhatsApp with any question.",
+    "primary": "Apply via Midway Portal",
+    "whatsapp": "WhatsApp Us"
+  },
+  "disclaimer": "Information is from Bangladesh Bank auction notices and is provided for general guidance only. Bond yields and prices change with each auction and past results do not indicate future results. Returns are not guaranteed. Consider whether an investment suits your circumstances and seek professional advice if needed."
+}

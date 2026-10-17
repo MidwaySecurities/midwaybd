@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "path": "/government-bonds",
+    "title": "Government Bonds | Midway Securities Ltd.",
+    "description": "What Bangladesh Treasury Bonds are, how auctions work, and how to apply through the Midway Portal."
+  },
+  "links": {
+    "center": "/treasury-bond-center",
+    "calendar": "/treasury-bond-center/auction-calendar",
+    "calculator": "/bond-interest-calculator",
+    "blog": "/blog/learn",
+    "portal": "https://portal.midwaybd.com/",
+    "openBo": "https://portal.midwaybd.com/bo/portal-login",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20Government%20Bonds"
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Investments",
+      "Government Bonds"
+    ],
+    "eyebrow": "Investments · Government Bonds",
+    "headline": "What Are Government Bonds, and How Do They Work?",
+    "subhead": "New to bonds? Start here, then see how to invest through Midway."
+  },
+  "part1": {
+    "label": "Part 1 · Understanding Government Bonds",
+    "what": {
+      "title": "What Is a Government Bond?",
+      "body": "Imagine lending money to someone you trust, who promises to pay you back later, plus a little extra as thanks. That is essentially what a government bond is. You lend money to the government, and they pay you back with interest after a set period of time."
+    },
+    "tenor": {
+      "title": "The Tenor of a Bond: How Long Is Your Money Lent For?",
+      "body": "“Tenor” just means the length of time you agree to lend your money before you get it back. Shorter tenors return your money sooner, while longer ones typically pay a bit more interest for tying your money up for longer.",
+      "tiles": [
+        {
+          "range": "2 and 5 Years",
+          "label": "Shorter Term"
+        },
+        {
+          "range": "10 and 15 Years",
+          "label": "Longer Term"
+        },
+        {
+          "range": "20 Years",
+          "label": "Longest Term"
+        }
+      ],
+      "note": "Bangladesh Bank sells these five tenors through the year. Because it often reissues older bonds, a tenor means about how many years are left, not always how long ago the bond was first issued."
+    },
+    "why": {
+      "title": "Why Do People Choose Government Bonds?",
+      "body": "They are generally considered lower-risk than stocks, since repayment is backed by the government. Many investors hold a mix of both, steadier government bonds alongside stocks, rather than choosing one over the other."
+    }
+  },
+  "part2": {
+    "label": "Part 2 · Investing in Government Bonds with Midway",
+    "how": {
+      "title": "How It Works",
+      "steps": [
+        "Check the auction calendar",
+        "Apply by Thursday 1:00 PM",
+        "Bangladesh Bank holds the auction the following week",
+        "Bonds are credited to your BO Account"
+      ],
+      "note": "Apply in the Midway Portal by 1:00 PM on Thursday for next week’s auction. The price is set automatically through the auction, so you do not need to set your own. Allotted bonds are typically credited to your BO Account about a week after the auction.",
+      "calendarLink": "See the Auction Calendar",
+      "applyCta": "Apply via Midway Portal"
+    },
+    "afterYouBuy": {
+      "title": "After You Buy: There Is Nothing to Do",
+      "body": "Owning a government bond is one of the easiest things in investing. Once you buy through Midway, the payments arrive on their own, straight from Bangladesh Bank.",
+      "items": [
+        {
+          "icon": "clock",
+          "title": "Interest Every 6 Months",
+          "body": "Bangladesh Bank deposits your interest directly into your bank account, twice a year."
+        },
+        {
+          "icon": "check",
+          "title": "Paid Straight to Your Bank",
+          "body": "No forms to file, no requests to make and no reminders to set. The deposit just shows up."
+        },
+        {
+          "icon": "bank",
+          "title": "Principal at Maturity",
+          "body": "When the bond matures, Bangladesh Bank deposits your money back into your bank account."
+        }
+      ],
+      "relax": {
+        "title": "Buy once, then relax.",
+        "body": "There is nothing to claim, renew or chase. Prefer to sell early? You can also trade your bonds in QuickTrade Pro, just like a stock."
+      },
+      "caveat": "The interest rate and payment amounts depend on the bond you buy. Government bonds are not risk-free and no returns are guaranteed by Midway. For education and information only; not investment advice.",
+      "calculator": {
+        "title": "Calculate Your Bond Interest",
+        "body": "See how much you would receive every 6 months, after AIT."
+      }
+    },
+    "reissue": {
+      "title": "Reissued Bonds: What They Are and What Changes for You",
+      "intro": "Bangladesh Bank often reissues a bond it has already issued: instead of creating a brand-new bond, it sells more of an existing one, with the same interest rate and the same maturity date. You buy it exactly like any other auction bond, and the interest and maturity payments still arrive in your bank account automatically.",
+      "points": [
+        {
+          "icon": "clock",
+          "title": "Less Time Left",
+          "body": "A reissued 5-year bond may have only 2 or 3 years left. Look at the time remaining to maturity, not just the original tenor."
+        },
+        {
+          "icon": "percent",
+          "title": "Original Interest Rate",
+          "body": "The bond keeps its original rate. Your actual return also depends on the price you pay, which can be above or below face value."
+        },
+        {
+          "icon": "check",
+          "title": "Accrued Interest at Purchase",
+          "body": "You reimburse the seller for interest earned since the last payment date, and you receive the full interest on the next payment date, so it evens out."
+        },
+        {
+          "icon": "tag",
+          "title": "Original Payment Dates",
+          "body": "Interest follows the bond’s original calendar, so your first payment can arrive sooner than six months after you buy."
+        }
+      ],
+      "good": {
+        "title": "Good to know:",
+        "body": "reissues add to the size of an existing bond, which can make it easier to trade later. Each auction result shows the price, yield and remaining maturity, so you can see exactly what you are buying."
+      },
+      "centerLink": "See a worked example in the Treasury Bond Center"
+    },
+    "trade": {
+      "title": "Already Own Bonds? Trade Them on the App Too",
+      "body": "Government bonds are not just for new auctions. Once they are in your BO Account, you can also buy and sell them directly through QuickTrade Pro, just like a stock."
+    },
+    "rules": {
+      "title": "Minimum Investment",
+      "body": "Applications start at ৳1,00,000, in multiples of that amount.",
+      "items": [
+        "You cannot apply for government bonds if you have a Sharia-based bank account registered on your BO Account.",
+        "Treasury Bills and Government Sukuk auctions are not open to brokerage clients. For now, the one Sukuk listed on the stock market can be traded through Midway.",
+        "Ask us on WhatsApp about charges."
+      ]
+    },
+    "blogLink": "Want to go deeper? Read more on our blog"
+  },
+  "cta": {
+    "title": "Ready to Invest in Government Bonds?",
+    "body": "Open a BO Account, or apply for the next auction in the Midway Portal.",
+    "primary": "Open BO Account",
+    "secondary": "Apply via Midway Portal",
+    "whatsapp": "WhatsApp Us"
+  },
+  "disclaimer": "All auction and yield data referred to on this page are taken from Bangladesh Bank’s website. Bond yields and prices change with each auction and past results do not indicate future results. Returns are not guaranteed."
+}

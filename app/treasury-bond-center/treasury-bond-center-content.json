@@ -1,0 +1,244 @@
+{
+  "meta": {
+    "path": "/treasury-bond-center",
+    "title": "Treasury Bond Center | Midway Securities Ltd.",
+    "description": "Bangladesh Treasury Bond yield curve, recent auction results, the next auction and how to apply through Midway Securities Ltd."
+  },
+  "links": {
+    "guide": "/government-bonds",
+    "calendar": "/treasury-bond-center/auction-calendar",
+    "calculator": "/bond-interest-calculator",
+    "reissuedExplainer": "#reissued-bonds",
+    "portal": "https://portal.midwaybd.com/",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20the%20Treasury%20Bond%20auction"
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Government Bonds",
+      "Treasury Bond Center"
+    ],
+    "eyebrow": "Treasury Bonds",
+    "headline": "Treasury Bond Auctions & Yields",
+    "subhead": "Recent auction results, the next auction and today's yield curve, from Bangladesh Bank data. Apply directly in the Midway Portal.",
+    "guideLink": "New to bonds? Start with our plain-language guide"
+  },
+  "yield": {
+    "title": "Yield Curve"
+  },
+  "results": {
+    "title": "Recent Auction Results",
+    "subtitle": "September 2026 auctions, from Bangladesh Bank. Tenor groups each bond by about how many years it has left.",
+    "columns": [
+      "Tenor",
+      "Auction Date",
+      "Years Left",
+      "Amount",
+      "Cut-off Yield"
+    ],
+    "rows": [
+      {
+        "tenor": "20-Year",
+        "auctionDate": "22 Sep 2026",
+        "yearsLeft": "18.93",
+        "amount": "৳1,000 Cr",
+        "cutoff": "9.35%"
+      },
+      {
+        "tenor": "15-Year",
+        "auctionDate": "22 Sep 2026",
+        "yearsLeft": "16.26",
+        "amount": "৳1,000 Cr",
+        "cutoff": "9.34%"
+      },
+      {
+        "tenor": "10-Year",
+        "auctionDate": "15 Sep 2026",
+        "yearsLeft": "10.78",
+        "amount": "৳2,500 Cr",
+        "cutoff": "8.54%"
+      },
+      {
+        "tenor": "5-Year",
+        "auctionDate": "8 Sep 2026",
+        "yearsLeft": "5.71",
+        "amount": "৳3,000 Cr",
+        "cutoff": "8.64%"
+      },
+      {
+        "tenor": "2-Year",
+        "auctionDate": "1 Sep 2026",
+        "yearsLeft": "2.73",
+        "amount": "৳3,500 Cr",
+        "cutoff": "8.87%"
+      }
+    ],
+    "calendarLink": "See the full Auction Calendar"
+  },
+  "nextAuction": {
+    "label": "Next Auction",
+    "tenor": "5-Year",
+    "date": "13 Oct 2026",
+    "amount": "৳4,000 Cr",
+    "applyBy": "Thursday 8 Oct 2026, 1:00 PM",
+    "applyNote": "Clients apply in the Midway Portal by Thursday 1:00 PM for next week’s auction.",
+    "cta": "Apply via Midway Portal"
+  },
+  "frequency": {
+    "title": "Auction Frequency by Tenor",
+    "subtitle": "Bangladesh Bank runs each tenor on roughly this cadence",
+    "items": [
+      {
+        "tenor": "2-Year",
+        "cadence": "Monthly"
+      },
+      {
+        "tenor": "5-Year",
+        "cadence": "Monthly"
+      },
+      {
+        "tenor": "10-Year",
+        "cadence": "Monthly"
+      },
+      {
+        "tenor": "15-Year",
+        "cadence": "Monthly"
+      },
+      {
+        "tenor": "20-Year",
+        "cadence": "Monthly"
+      }
+    ]
+  },
+  "calculator": {
+    "title": "Calculate Your Bond Interest",
+    "body": "See how much you would receive every 6 months, after AIT.",
+    "cta": "Open the Calculator"
+  },
+  "reissue": {
+    "title": "Reissued Bonds: Reading an Auction Result",
+    "intro": "Bangladesh Bank often reissues an existing bond: it sells more of a bond it has already issued, with the same interest rate and maturity date, instead of creating a new one. That changes a few things for a buyer, so the same “5-year” label can mean very different things. Here is how to read one.",
+    "example": {
+      "title": "Worked Example: 5-Year Bond, 9.0% Interest",
+      "badge": "Illustrative · Sample Figures",
+      "rows": [
+        [
+          "Originally issued",
+          "9 Aug 2023"
+        ],
+        [
+          "Matures",
+          "9 Aug 2028"
+        ],
+        [
+          "Bought (settlement) on",
+          "4 Mar 2026"
+        ],
+        [
+          "Time left at purchase",
+          "About 2.4 years"
+        ],
+        [
+          "Price per 100 of face value / yield",
+          "98.4691 / 9.7152%"
+        ],
+        [
+          "Face value allotted",
+          "৳5,36,00,000"
+        ],
+        [
+          "Principal (price × face value)",
+          "৳5,27,79,437.60"
+        ],
+        [
+          "Accrued interest (23 days since last payment)",
+          "৳3,06,497.24"
+        ],
+        [
+          "Total paid (principal + accrued interest)",
+          "৳5,30,85,934.84"
+        ],
+        [
+          "Next interest payment (9 Aug 2026)",
+          "৳24,12,000"
+        ]
+      ],
+      "note": "Interest is paid every six months on the original dates (9 Feb and 9 Aug) until maturity, when the principal is repaid. Bangladesh Bank deposits all of it into the client’s bank account. Amounts applied for and allotted can differ when demand is high. All figures are samples for explanation, not a real result."
+    },
+    "points": [
+      {
+        "icon": "clock",
+        "title": "Less Time Left",
+        "body": "The bond matures on its original date, so a reissued 5-year bond may have far fewer than 5 years left."
+      },
+      {
+        "icon": "percent",
+        "title": "Price Sets Your Yield",
+        "body": "The interest rate is fixed at the original rate, but your yield also depends on the price paid (here 98.4691 per 100, giving 9.7152%)."
+      },
+      {
+        "icon": "check",
+        "title": "Accrued Interest Evens Out",
+        "body": "You pay the seller the interest earned so far, then receive the full next payment, so you are not short-changed."
+      },
+      {
+        "icon": "bank",
+        "title": "Same Automatic Payments",
+        "body": "Interest and maturity payments still go straight to your bank account with nothing for you to do."
+      }
+    ]
+  },
+  "glossary": {
+    "title": "New to These Terms? Quick Glossary",
+    "items": [
+      {
+        "term": "Yield",
+        "def": "The return you earn by holding the bond, including the coupon payments and any difference between what you paid and what you get back."
+      },
+      {
+        "term": "Coupon",
+        "def": "The fixed interest rate the bond pays, every six months, until it matures."
+      },
+      {
+        "term": "Cut-off Yield",
+        "def": "The highest yield Bangladesh Bank accepted at an auction. Bids above it were rejected."
+      },
+      {
+        "term": "Tenor",
+        "def": "About how many years are left until the bond matures and you get your principal back."
+      },
+      {
+        "term": "Reissue",
+        "def": "When Bangladesh Bank sells more of a bond it has already issued, with the same interest rate and maturity date."
+      },
+      {
+        "term": "Accrued Interest",
+        "def": "Interest the bond has earned since its last payment date. The buyer reimburses the seller at purchase and gets the full payment later."
+      },
+      {
+        "term": "Clean vs Dirty Price",
+        "def": "Clean price excludes accrued interest. Dirty price includes it and is the actual cash you pay."
+      }
+    ]
+  },
+  "howToApply": {
+    "title": "How to Apply",
+    "steps": [
+      "Check the tenor, amount and date above",
+      "Apply in the Midway Portal by Thursday 1:00 PM for next week’s auction",
+      "Bangladesh Bank holds the auction the following week",
+      "Bonds are credited to your BO Account about a week later"
+    ],
+    "note": {
+      "title": "Good to Know",
+      "body": "Through Midway you can apply for Treasury Bond auctions. Treasury Bills and Government Sukuk auctions are not open to brokerage clients. For now, the one Sukuk listed on the stock market can be traded through Midway. Minimum ৳1 lakh. Ask us on WhatsApp about charges."
+    }
+  },
+  "cta": {
+    "title": "Ready to Apply for the Next Auction?",
+    "body": "Apply in the Midway Portal, or message us on WhatsApp with any question.",
+    "primary": "Apply via Midway Portal",
+    "whatsapp": "WhatsApp Us"
+  },
+  "disclaimer": "All data on this page are taken from Bangladesh Bank’s website. Bond yields and prices change with each auction and past results do not indicate future results. Returns are not guaranteed. The worked example uses sample figures for explanation only."
+}

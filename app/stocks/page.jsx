@@ -62,7 +62,7 @@ export default function StocksPage({ content = defaultContent }) {
           ))}
         </nav> */}
         {/* <p className="mt-4 text-[11px] font-semibold uppercase tracking-wide text-[#0b78bd] md:text-xs">{header.eyebrow}</p> */}
-        <h1 className="mt-2 max-w-3xl text-[26px] font-semibold leading-tight md:text-5xl md:leading-tight">{header.headline}</h1>
+        <h1 className="max-w-3xl text-[26px] font-semibold leading-tight md:text-5xl md:leading-tight">{header.headline}</h1>
         <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-[#4b5563] md:text-lg">{header.subhead}</p>
       </section>
 

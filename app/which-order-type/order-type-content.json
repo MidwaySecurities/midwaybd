@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "path": "/which-order-type",
+    "title": "Which Order Type? A Guide to DSE Orders in QuickTrade Pro | Midway Securities Ltd.",
+    "description": "Answer three quick questions and see which order type fits: Limit, Market at Best, Stop Loss, Take Profit, Pre-Market or Good Till Date. Free guide for DSE investors.",
+    "origin": "https://www.midwaybd.com"
+  },
+  "links": {
+    "openBo": "https://portal.midwaybd.com/bo/portal-login",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20order%20types",
+    "app": "/mobile-app",
+    "tools": "/tools",
+    "stocks": "/stocks",
+    "position": "/position-size-calculator",
+    "hours": "/faq"
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Tools",
+      "Which Order Type?"
+    ],
+    "headline": "Which Order Type?",
+    "subhead": "Answer three quick questions to see which order type in QuickTrade Pro fits what you want to do."
+  },
+  "inputs": {
+    "title": "Three Quick Questions",
+    "q1": {
+      "label": "1. What do you want to do?",
+      "options": [
+        {
+          "id": "buy",
+          "label": "Buy Shares"
+        },
+        {
+          "id": "sell",
+          "label": "Sell Shares"
+        }
+      ]
+    },
+    "q2": {
+      "label": "2. What matters most to you?",
+      "options": [
+        {
+          "id": "limit",
+          "label": "Trade at my price",
+          "buy": "Pay my price or less",
+          "sell": "Sell at my price or better",
+          "for": [
+            "buy",
+            "sell"
+          ]
+        },
+        {
+          "id": "market",
+          "label": "Trade now",
+          "buy": "Buy right now",
+          "sell": "Sell right now",
+          "for": [
+            "buy",
+            "sell"
+          ]
+        },
+        {
+          "id": "stoploss",
+          "label": "Limit my loss",
+          "sell": "Protect me if the price falls",
+          "for": [
+            "sell"
+          ]
+        },
+        {
+          "id": "takeprofit",
+          "label": "Take a gain",
+          "sell": "Sell when the price reaches my target",
+          "for": [
+            "sell"
+          ]
+        },
+        {
+          "id": "premarket",
+          "label": "Be ready at the open",
+          "buy": "Place it before the market opens",
+          "sell": "Place it before the market opens",
+          "for": [
+            "buy",
+            "sell"
+          ]
+        }
+      ]
+    },
+    "q3": {
+      "label": "3. How long should the order stay active?",
+      "options": [
+        {
+          "id": "today",
+          "label": "Only today"
+        },
+        {
+          "id": "date",
+          "label": "Until a date I choose"
+        }
+      ]
+    }
+  },
+  "results": {
+    "title": "Your Order Type",
+    "bestLabel": "Best Fit",
+    "whatLabel": "What It Does",
+    "knowLabel": "Good to Know",
+    "alsoTitle": "Also Consider",
+    "alsoDate": "Add Good Till Date to keep the order active until the date you choose.",
+    "alsoChange": "Changed your mind? You can modify or cancel an order that has not been fully filled.",
+    "place": "Choose it as the order type when you place the order in QuickTrade Pro.",
+    "caution": {
+      "title": "Orders Are Not Guarantees",
+      "body": "Prices can move, and trading in a stock can be limited. An order may fill at a different price than you expected, only in part, or not at all."
+    },
+    "glanceTitle": "All Order Types at a Glance",
+    "glanceCols": [
+      "Order Type",
+      "What It Does",
+      "Best For"
+    ],
+    "types": {
+      "limit": {
+        "name": "Limit Order",
+        "does": "You choose the price. A buy fills at your price or lower. A sell fills at your price or higher.",
+        "know": [
+          "It may not fill if the market never reaches your price.",
+          "Only part of your order may fill at your price."
+        ],
+        "short": "Trade only at your price or better",
+        "best": "When the price matters more than speed"
+      },
+      "market": {
+        "name": "Market at Best",
+        "does": "Sends your order to trade now at the best price available in the market.",
+        "know": [
+          "The price you get can differ from the last price you saw, especially in shares that trade little.",
+          "Check Market Depth first to see the orders waiting at each price."
+        ],
+        "short": "Trade now at the best available price",
+        "best": "When getting the trade done matters more than the exact price"
+      },
+      "stoploss": {
+        "name": "Stop Loss",
+        "does": "A sell instruction that is triggered if the price falls to the level you choose, to limit a loss.",
+        "know": [
+          "It is not a guarantee. The price can fall past your level, and the order may fill lower, or not at all.",
+          "Choose the level before you buy, not after the price starts falling."
+        ],
+        "short": "Sell if the price falls to your level",
+        "best": "Limiting a loss on shares you hold"
+      },
+      "takeprofit": {
+        "name": "Take Profit",
+        "does": "A sell instruction that is triggered if the price rises to the level you choose, to take a gain.",
+        "know": [
+          "The price may never reach your level.",
+          "Once sold, you no longer gain if the price keeps rising."
+        ],
+        "short": "Sell if the price rises to your target",
+        "best": "Taking a gain at a price you picked in advance"
+      },
+      "premarket": {
+        "name": "Pre-Market Order",
+        "does": "An order you place before the market opens, so it is ready when trading starts.",
+        "know": [
+          "The price at the open can differ from yesterday’s close.",
+          "Like any order, it may not fill if the price does not reach your level."
+        ],
+        "short": "Place it before trading opens",
+        "best": "Being ready at the start of the day"
+      },
+      "gtd": {
+        "name": "Good Till Date",
+        "does": "Keeps an order active until the date you choose, instead of only for today.",
+        "know": [
+          "Check the order from time to time. Cancel it if you change your mind.",
+          "The price you set may be far from the market by the time the date arrives."
+        ],
+        "short": "Keep an order active until a date",
+        "best": "Orders you do not want to re-enter every day"
+      }
+    }
+  },
+  "how": {
+    "title": "How to Choose",
+    "items": [
+      {
+        "title": "Price or Speed?",
+        "body": "If the exact price matters, use a Limit order. If getting the trade done now matters more, use Market at Best."
+      },
+      {
+        "title": "Protect or Take a Gain?",
+        "body": "To plan a sale in advance, Stop Loss reacts to a fall and Take Profit reacts to a rise. Both are instructions you set before the price moves."
+      },
+      {
+        "title": "Today or Later?",
+        "body": "Orders last for the day unless you add Good Till Date. Pre-Market lets you place an order before the market opens."
+      }
+    ],
+    "example": "Example: you own a share bought at ৳100 and want to limit the loss. You choose Stop Loss and set the level at ৳95, so a sell instruction is triggered if the price falls to that level."
+  },
+  "faq": {
+    "title": "Order Type Questions",
+    "items": [
+      {
+        "q": "What is the difference between a Limit order and Market at Best?",
+        "a": "A Limit order fixes your price but may not fill. Market at Best trades now at the best available price, but the price can differ from the one you saw."
+      },
+      {
+        "q": "What is a Stop Loss order?",
+        "a": "A Stop Loss is a sell instruction that is triggered if the price falls to the level you choose, to limit a loss. It is not a guarantee, because the price can fall past your level."
+      },
+      {
+        "q": "What is a Take Profit order?",
+        "a": "A Take Profit is a sell instruction that is triggered if the price rises to the level you choose, so you can take a gain without watching the screen."
+      },
+      {
+        "q": "What does Good Till Date mean?",
+        "a": "It keeps an order active until the date you choose instead of only for today. You can still modify or cancel it before then."
+      },
+      {
+        "q": "What is a Pre-Market order?",
+        "a": "An order you place before the market opens so it is ready when trading starts."
+      },
+      {
+        "q": "Can I change or cancel an order?",
+        "a": "Yes. QuickTrade Pro lets you modify or cancel an order that has not been fully filled."
+      },
+      {
+        "q": "What is Market Depth?",
+        "a": "A view of the buy and sell orders waiting at different prices. It helps you judge how easily a share trades and at what price."
+      },
+      {
+        "q": "When can I trade?",
+        "a": "The Dhaka Stock Exchange trades Sunday to Thursday, 10:00 am to 2:10 pm. QuickTrade Pro is available around the clock, but trades happen when the exchange is open."
+      }
+    ]
+  },
+  "glossary": {
+    "title": "Quick Glossary",
+    "items": [
+      {
+        "term": "Order",
+        "def": "Your instruction to buy or sell a number of shares."
+      },
+      {
+        "term": "Limit Price",
+        "def": "The price you set. A buy fills at it or lower, a sell at it or higher."
+      },
+      {
+        "term": "Market Depth",
+        "def": "The buy and sell orders waiting at different prices for a share."
+      },
+      {
+        "term": "Filled",
+        "def": "An order that has traded. It can fill in full or in part."
+      },
+      {
+        "term": "Trigger",
+        "def": "The price level at which a Stop Loss or Take Profit instruction is activated."
+      }
+    ]
+  },
+  "related": [
+    {
+      "label": "Position Size and Stop-Loss Calculator",
+      "href": "/position-size-calculator"
+    },
+    {
+      "label": "Profit and Loss Calculator",
+      "href": "/profit-and-loss-calculator"
+    },
+    {
+      "label": "QuickTrade Pro App",
+      "href": "/mobile-app"
+    },
+    {
+      "label": "All Tools",
+      "href": "/tools"
+    }
+  ],
+  "legal": "A guide for education and information only. How an order behaves depends on the market at the time. Orders may fill at a different price, in part or not at all, and a Stop Loss does not guarantee that you can sell at your chosen price. Share prices can fall as well as rise, and you can lose some or all of the money you invest. This is not investment advice and does not recommend any trade.",
+  "cta": {
+    "title": "Ready to Start Investing?",
+    "body": "Open a BO Account online, then buy and sell stocks in QuickTrade Pro. Questions? Message us on WhatsApp.",
+    "primary": "Open BO Account",
+    "whatsapp": "WhatsApp Us"
+  }
+}

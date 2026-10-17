@@ -1,0 +1,249 @@
+{
+  "meta": {
+    "path": "/rights-issue-calculator",
+    "title": "Rights Issue Calculator for DSE Stocks | Midway Securities Ltd.",
+    "description": "See how many rights shares you can buy, what you would pay, and how a rights issue changes the share price and your holding. Free calculator with a plain-language guide.",
+    "origin": "https://www.midwaybd.com"
+  },
+  "links": {
+    "openBo": "https://portal.midwaybd.com/bo/portal-login",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20the%20Rights%20Issue%20Calculator",
+    "app": "/mobile-app",
+    "tools": "/tools",
+    "stocks": "/stocks",
+    "bonus": "/bonus-share-adjustment-calculator",
+    "dividend": "/dividend-calculator",
+    "dsePrices": "https://www.dse.com.bd/markets/latest-share-price"
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Tools",
+      "Rights Issue Calculator"
+    ],
+    "headline": "Rights Issue Calculator",
+    "subhead": "A company offered you new shares? See how many you can buy, what they cost, and how your holding looks if you take them up or leave them."
+  },
+  "inputs": {
+    "title": "Your Shares and the Offer",
+    "presets": {
+      "label": "Try an Example",
+      "items": [
+        {
+          "label": "Offer Below Market",
+          "shares": "1000",
+          "price": "40",
+          "per": "4",
+          "new": "1",
+          "offer": "25",
+          "cost": "30"
+        },
+        {
+          "label": "Offer at Face Value",
+          "shares": "1000",
+          "price": "40",
+          "per": "2",
+          "new": "1",
+          "offer": "10",
+          "cost": "30"
+        },
+        {
+          "label": "Small Holding",
+          "shares": "3",
+          "price": "40",
+          "per": "2",
+          "new": "1",
+          "offer": "25",
+          "cost": ""
+        }
+      ]
+    },
+    "shares": {
+      "label": "Shares You Own",
+      "chips": [
+        5,
+        10,
+        100,
+        1000,
+        5000
+      ],
+      "default": "1000",
+      "hint": "The shares in your Portfolio on the record date."
+    },
+    "price": {
+      "label": "Share Price Before the Record Date",
+      "left": "৳",
+      "default": "40",
+      "hint": "Enter the latest price from QuickTrade Pro or the DSE.",
+      "dseLink": "Check latest prices on the DSE"
+    },
+    "ratio": {
+      "label": "The Rights Offer",
+      "perLabel": "For Every (Shares You Own)",
+      "newLabel": "You Can Buy (New Shares)",
+      "perDefault": "4",
+      "newDefault": "1",
+      "hint": "Use the ratio in the company’s announcement. “1 for 4” means 1 new share for every 4 you own."
+    },
+    "offer": {
+      "label": "Offer Price Per New Share",
+      "left": "৳",
+      "default": "25",
+      "hint": "The price the company asks for each new share, from its announcement."
+    },
+    "cost": {
+      "label": "Your Average Cost Price (Optional)",
+      "left": "৳",
+      "default": "30",
+      "hint": "What you paid per share on average. Add it to see your new cost price."
+    }
+  },
+  "warnings": {
+    "price": "Enter a share price above zero.",
+    "shares": "Enter the number of shares you own.",
+    "ratio": "Enter both parts of the offer, for example 1 new share for every 4.",
+    "offer": "Enter the offer price per new share.",
+    "offerHigh": "The offer price is not below the market price. Rights offers are usually priced below the market, so please check the numbers."
+  },
+  "results": {
+    "title": "Your Estimated Rights Offer",
+    "rightsLabel": "Rights Shares You Can Buy",
+    "payLabel": "Amount to Take Them Up",
+    "empty": "Enter the offer",
+    "sub": "Whole shares only. The company sets the last date to apply.",
+    "colTake": "If You Take Up Your Rights",
+    "colSkip": "If You Do Not",
+    "rows": {
+      "price": "Estimated Price After the Adjustment",
+      "chg": "Change in Price",
+      "right": "Estimated Value of One New Share’s Right",
+      "shares": "Shares You Own After",
+      "pay": "Money You Pay",
+      "value": "Estimated Value of Your Shares After",
+      "net": "Net Change Compared With Today",
+      "cost": "Your New Average Cost Price"
+    },
+    "fractionRow": "Part of a Right Left Over",
+    "fractionValue": "{n} of a share",
+    "fractionNote": "The DSE has no fractional shares, so the part of a right left over cannot become a share. How a company treats it is set in its announcement.",
+    "insightTitle": "What This Means",
+    "insightTake": "If you take up your {n} rights, you pay {pay} and own {total} shares. The price is estimated to adjust to {tprice}, so your shares are worth about {after}. After the money you paid, you are about where you started.",
+    "insightSkip": "If you do not take them up, you still own {shares} shares, but the price is estimated to adjust to {tprice}. Your holding would be worth about {after}, which is {drop} less than today. Your share of the company also becomes smaller.",
+    "insightNone": "At this ratio you own too few shares for one whole new share, so there is nothing to take up. The price still adjusts to about {tprice}, and the company decides how it treats the part of a right left over.",
+    "assume": "Estimates at the theoretical price, before fees and charges. Prices can move, and the exchange and the company set the actual figures.",
+    "caution": {
+      "title": "Rights Come With a Deadline",
+      "body": "Each company sets the record date, the last date to apply and the amount to pay. If you do nothing, you do not receive the new shares. Check the company’s announcement, and message us if you have a question."
+    }
+  },
+  "how": {
+    "title": "How a Rights Issue Works",
+    "items": [
+      {
+        "title": "Your Rights",
+        "body": "Shares owned × new shares ÷ shares per offer. 1,000 shares at 1 for 4 gives 250 rights shares, which cost 250 × ৳25 = ৳6,250."
+      },
+      {
+        "title": "The Price Adjusts",
+        "body": "The price after = (4 × ৳40 + 1 × ৳25) ÷ 5 = ৳37. New shares at a lower price pull the average down."
+      },
+      {
+        "title": "Compare Your Choices",
+        "body": "Take up the rights: 1,250 shares × ৳37 = ৳46,250, less the ৳6,250 you paid, is ৳40,000. Skip them: 1,000 × ৳37 = ৳37,000, which is ৳3,000 less."
+      }
+    ],
+    "example": "Example: 1,000 shares at ৳40 are worth ৳40,000. At 1 for 4 with an offer price of ৳25, taking up your 250 rights costs ৳6,250 and leaves you with 1,250 shares at about ৳37. Not taking them up leaves 1,000 shares at about ৳37.",
+    "record": {
+      "title": "Record Date",
+      "body": "Each company sets a record date to decide who is entitled to the rights. Check the company’s announcement for the record date, the last date to apply and how to apply.",
+      "link": "Read about Stocks"
+    }
+  },
+  "faq": {
+    "title": "Rights Issue Questions",
+    "items": [
+      {
+        "q": "What is a rights issue?",
+        "a": "A company offers its existing shareholders the chance to buy new shares, usually at a price below the market price, in proportion to the shares they already own."
+      },
+      {
+        "q": "Do I have to buy the new shares?",
+        "a": "No. Taking up your rights is your choice. If you do nothing, you do not receive the new shares, and the number of shares you own stays the same."
+      },
+      {
+        "q": "Why does the share price fall after the record date?",
+        "a": "The company is issuing new shares at a price below the market price, so the average value per share goes down. The exchange adjusts the price. This is a calculation, not a market opinion, and prices keep moving afterwards."
+      },
+      {
+        "q": "Do I lose money if I take up my rights?",
+        "a": "The adjustment alone does not make you worse off if you subscribe. You pay for new shares, and the lower price is spread over more shares. The calculator shows that your total is about unchanged at the estimated price. Prices can still rise or fall."
+      },
+      {
+        "q": "What happens if I do not take up my rights?",
+        "a": "You keep your shares, but the price adjusts down and your share of the company becomes smaller because there are more shares in total. Check the company’s announcement for whether your rights can be sold or given up."
+      },
+      {
+        "q": "What if I own only a few shares?",
+        "a": "The DSE has no fractional shares, so you can only take up whole new shares. If your rights come to less than one share, there is nothing to take up, and how the company treats the part left over is set in its announcement."
+      },
+      {
+        "q": "How is the estimated price after the offer worked out?",
+        "a": "It is the theoretical price: the value of the old shares plus the money raised from the new shares, divided by the total number of shares. The exchange and the company set the actual adjusted price."
+      },
+      {
+        "q": "Does the result include fees and charges?",
+        "a": "No. Fees and charges are not included, and they reduce your real result slightly."
+      }
+    ]
+  },
+  "glossary": {
+    "title": "Quick Glossary",
+    "items": [
+      {
+        "term": "Rights Issue",
+        "def": "An offer of new shares to existing shareholders, usually below the market price."
+      },
+      {
+        "term": "Rights Ratio",
+        "def": "How many new shares you can buy for the shares you own. 1 for 4 means 1 new share for every 4 held."
+      },
+      {
+        "term": "Offer Price",
+        "def": "The price the company asks for each new share."
+      },
+      {
+        "term": "Estimated Price After",
+        "def": "The theoretical price after the new shares are added. The exchange sets the real adjusted price."
+      },
+      {
+        "term": "Record Date",
+        "def": "The date a company uses to decide which shareholders are entitled to the offer."
+      }
+    ]
+  },
+  "related": [
+    {
+      "label": "Bonus Share Adjustment Calculator",
+      "href": "/bonus-share-adjustment-calculator"
+    },
+    {
+      "label": "Dividend Calculator",
+      "href": "/dividend-calculator"
+    },
+    {
+      "label": "Read about Stocks",
+      "href": "/stocks"
+    },
+    {
+      "label": "All Tools",
+      "href": "/tools"
+    }
+  ],
+  "legal": "An estimate based on the numbers you enter, for education and information only. It uses the theoretical price after a rights issue, and the exchange and the company decide the actual adjusted price, record date, last date to apply and amount to pay. It does not include fees or charges. Share prices can fall as well as rise, and you can lose some or all of the money you invest. Check the company’s announcement before you decide. This is not investment advice.",
+  "cta": {
+    "title": "Ready to Start Investing?",
+    "body": "Open a BO Account online, then buy and sell stocks in QuickTrade Pro. Questions? Message us on WhatsApp.",
+    "primary": "Open BO Account",
+    "whatsapp": "WhatsApp Us"
+  }
+}

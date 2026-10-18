@@ -1,5 +1,6 @@
 import React from 'react';
 import BoFeatures from './BoFeatures';
+import Link from 'next/link';
 
 const AccountOpeningSteps = () => {
     const steps = [
@@ -20,7 +21,7 @@ const AccountOpeningSteps = () => {
             number: "2",
             title: "Fund Your Account",
             description: "Deposit funds securely through bank transfer, mobile banking, or credit card",
-            link: "https://portal.midwaybd.com/dashboard/fund/deposit/add",
+            link: "/deposit",
             icon: (
                 <div className="text-xl font-bold text-green-600">৳</div>
             ),
@@ -31,7 +32,7 @@ const AccountOpeningSteps = () => {
             number: "3",
             title: "Start Investing",
             description: "Begin your investment journey with our advanced trading platforms and tools",
-            link: "https://oms.midwaybd.com",
+            link: "/mobile-app",
             icon: (
                 <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -88,9 +89,9 @@ const AccountOpeningSteps = () => {
         return (
             <div className="relative w-full">
                 {step.link ? (
-                    <a href={step.link} target="_blank" rel="noopener noreferrer" className="block transition-transform duration-300 hover:scale-105 h-full">
+                    <Link href={step.link} rel="noopener noreferrer" className="block transition-transform duration-300 hover:scale-105 h-full">
                         <CardContent />
-                    </a>
+                    </Link>
                 ) : (
                     <div className="transition-transform duration-300 hover:scale-105 h-full">
                         <CardContent />

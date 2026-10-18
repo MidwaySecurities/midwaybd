@@ -336,6 +336,18 @@ export default async function Home() {
               </div>
             </Link>
 
+            <Link href="/switching-brokers">
+              <div className="flex sm:block items-center text-left sm:text-center gap-4 sm:gap-0 p-3 lg:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center shrink-0 sm:mx-auto sm:mb-3">
+                  {/* Switching brokers: refresh / switch-arrows icon */}
+                  <svg className="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h5M20 20v-5h-5M4.583 9A8.001 8.001 0 0119.418 7M19.417 15A8.001 8.001 0 014.582 17" />
+                  </svg>
+                </div>
+                <h4 className="font-semibold text-gray-800 mb-0 sm:mb-1">Switching brokers</h4>
+              </div>
+            </Link>
+
             <Link href="https://portal.midwaybd.com" target="_blank">
               <div className="flex sm:block items-center text-left sm:text-center gap-4 sm:gap-0 p-3 lg:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 sm:mx-auto sm:mb-3">
@@ -348,17 +360,7 @@ export default async function Home() {
               </div>
             </Link>
 
-            <Link href="/link-bo-account">
-              <div className="flex sm:block items-center text-left sm:text-center gap-4 sm:gap-0 p-3 lg:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center shrink-0 sm:mx-auto sm:mb-3">
-                  {/* Switching brokers: refresh / switch-arrows icon */}
-                  <svg className="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h5M20 20v-5h-5M4.583 9A8.001 8.001 0 0119.418 7M19.417 15A8.001 8.001 0 014.582 17" />
-                  </svg>
-                </div>
-                <h4 className="font-semibold text-gray-800 mb-0 sm:mb-1">Switching brokers</h4>
-              </div>
-            </Link>
+            
           </div>
         </section>
         <TradingPlatforms />
@@ -375,7 +377,7 @@ export default async function Home() {
             </div>
             <div className="text-center mb-12 pt-6">
               <h2 id="regulators-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-                Regulated & Trusted
+                Regulated <span className="bg-linear-to-r from-secondary_color to-primary_color bg-clip-text text-transparent">& Trusted</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
                 We are regulated by multiple Bangladesh financial authorities ensuring your investments are safe and secure.
@@ -429,7 +431,7 @@ export default async function Home() {
             </div>
             <div className="text-center mb-12">
               <h2 id="regulators-heading" className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-                Regulated & Trusted
+                Regulated <span className="bg-linear-to-r from-secondary_color to-primary_color bg-clip-text text-transparent">& Trusted</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
                 We are regulated by multiple Bangladesh financial authorities ensuring your investments are safe and secure.

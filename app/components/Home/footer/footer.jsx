@@ -74,7 +74,6 @@ export default function SiteFooter({ content = defaultContent }) {
           </ul>
         </div>
 
-        {/* Brand + link groups */}
         <div className="py-6 md:grid md:grid-cols-[1.4fr_1fr_1fr_1fr_1fr] md:gap-6 md:py-10">
           <div className="mb-4 md:mb-0">
             <Link href={links.home} className="block text-[20px] font-semibold">{brand.name}</Link>
@@ -86,7 +85,6 @@ export default function SiteFooter({ content = defaultContent }) {
           ))}
         </div>
 
-        {/* Contact + address + social */}
         <div className={"border-t py-6 md:grid md:grid-cols-[1.4fr_1fr_1fr_1fr] md:gap-8 md:py-8 " + line}>
           <div>
             <p className="text-[15px] font-semibold">{contact.title}</p>

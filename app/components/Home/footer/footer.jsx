@@ -4,19 +4,16 @@ import defaultContent from "./footer-content.json";
 import { Icon } from "./icons";
 import Link from "next/link";
 
-/**
- * Shared site footer: MOBILE-FIRST. Base classes = phone, `md:` = desktop. DARK theme.
- * Colors: #0b1220 footer, #1f2a3d lines, #a8b3c5 muted, #fad870 gold accent, #1da1f2 sky, #004990 navy (buttons only), #1fa855 WhatsApp only.
- * Tagline font: Architects Daughter. Load once in the site layout, for example:
- *   Next.js:  import { Architects_Daughter } from "next/font/google"  (weight "400")
- *   or CSS:   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
- * Clickable: hotline (tel:), email (mailto:), WhatsApp, whole address (Google Maps), registration bodies, socials, every link.
- * Phone: link groups are tap-to-open. Desktop: all visible.
- * Policy: no fees, returns, CSE or risk wording.
- */
 const muted = "text-[#a8b3c5]";
 const line = "border-[#1f2a3d]";
 const ext = { target: "_blank", rel: "noopener noreferrer" };
+
+import { Architects_Daughter } from "next/font/google";
+const architectsDaughter = Architects_Daughter({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-architects-daughter",
+});
 
 function Group({ g, open, onToggle }) {
   return (
@@ -81,7 +78,7 @@ export default function SiteFooter({ content = defaultContent }) {
         <div className="py-6 md:grid md:grid-cols-[1.4fr_1fr_1fr_1fr_1fr] md:gap-6 md:py-10">
           <div className="mb-4 md:mb-0">
             <Link href={links.home} className="block text-[20px] font-semibold">{brand.name}</Link>
-            <p className="mt-2 text-[24px] leading-tight text-[#fad870]" style={{ fontFamily: '"Architects Daughter", cursive' }}>{brand.tagline}</p>
+            <p className= {`mt-2 text-[24px] leading-tight text-[#fad870] ${architectsDaughter.className} `}>{brand.tagline}</p>
             <Link href={links.openBo} target="_blank" className="mt-4 block rounded-lg bg-[#fad870] px-5 py-3 text-center text-[14px] font-semibold text-[#0b1220] md:max-w-[200px]">{brand.openBo}</Link>
           </div>
           {groups.map((g, i) => (

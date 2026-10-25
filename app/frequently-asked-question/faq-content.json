@@ -16,7 +16,7 @@
     "bonds": "/government-bonds",
     "calendar": "/treasury-bond-center/auction-calendar",
     "funds": "/mutual-funds",
-    "switching": "/switching-brokers",
+    "switching": "/link-bo-account",
     "ipo": "/ipo",
     "app": "/mobile-app"
   },

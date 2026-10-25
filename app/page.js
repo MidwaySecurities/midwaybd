@@ -336,7 +336,7 @@ export default async function Home() {
               </div>
             </Link>
 
-            <Link href="/switching-brokers">
+            <Link href="/link-bo-account">
               <div className="flex sm:block items-center text-left sm:text-center gap-4 sm:gap-0 p-3 lg:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition">
                 <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center shrink-0 sm:mx-auto sm:mb-3">
                   {/* Switching brokers: refresh / switch-arrows icon */}

@@ -1,0 +1,399 @@
+{
+  "meta": {
+    "path": "/ipo",
+    "title": "Apply for an IPO in Bangladesh Online | Midway Securities",
+    "description": "How to apply for a DSE IPO online: who can apply, quotas, lottery, lock-in and refunds. Apply in the Midway Portal with a BO Account."
+  },
+  "seo": {
+    "type": "page",
+    "path": "/ipo",
+    "title": "Apply for an IPO in Bangladesh Online | Midway Securities",
+    "description": "How to apply for a DSE IPO online with a BO Account: who can apply, the quota split, lottery, lock-in and refunds. Apply in the Midway Portal.",
+    "datePublished": "2026-10-23",
+    "dateModified": "2026-10-23",
+    "section": "Investments",
+    "image": "/og/ipo.png",
+    "breadcrumb": [
+      {
+        "name": "Home",
+        "path": "/"
+      },
+      {
+        "name": "Investments",
+        "path": "/investments"
+      },
+      {
+        "name": "IPO",
+        "path": "/ipo"
+      }
+    ],
+    "about": [
+      {
+        "name": "Initial public offering (IPO) in Bangladesh",
+        "description": "How a company offers shares to the public for the first time on the Dhaka Stock Exchange, and how investors apply."
+      }
+    ],
+    "keywords": [
+      "apply for IPO in Bangladesh",
+      "IPO apply online Bangladesh",
+      "how to apply for IPO DSE",
+      "IPO quota Bangladesh",
+      "IPO lottery Bangladesh",
+      "NRB IPO quota",
+      "IPO lock-in Bangladesh",
+      "Book Building vs Fixed Price",
+      "IPO Membership Club"
+    ],
+    "sources": [
+      {
+        "name": "Bangladesh Securities and Exchange Commission (BSEC)",
+        "url": "https://sec.gov.bd/"
+      }
+    ]
+  },
+  "links": {
+    "openBo": "https://portal.midwaybd.com/bo/portal-login",
+    "portal": "https://portal.midwaybd.com/",
+    "ipoClub": "https://portal.midwaybd.com/dashboard/ipo-club-membership-request/create",
+    "stocks": "/stocks",
+    "smeAtb": "/sme-atb",
+    "pricing": "/pricing",
+    "deposit": "/deposit",
+    "learn": "/blog/learn",
+    "whatsapp": "https://wa.me/8801874444816?text=I%20have%20a%20question%20about%20applying%20for%20an%20IPO"
+  },
+  "header": {
+    "breadcrumb": [
+      "Home",
+      "Investments",
+      "IPO"
+    ],
+    "eyebrow": "Investments · IPO",
+    "headline": "How to Apply for an IPO in Bangladesh, Online",
+    "subhead": "To apply for a DSE IPO, you need a BO Account. When an IPO opens, log in to the Midway Portal, apply within the 5-working-day window and pay the full subscription amount. If you are not allotted shares, your money is refunded to your BO Account.",
+    "primary": {
+      "label": "See Open IPOs",
+      "href": "#currently-open"
+    },
+    "secondary": {
+      "label": "Open BO Account",
+      "href": "openBo"
+    },
+    "jump": [
+      {
+        "label": "Open IPOs",
+        "href": "#currently-open"
+      },
+      {
+        "label": "How an IPO Works",
+        "href": "#how"
+      },
+      {
+        "label": "Who Can Apply",
+        "href": "#who"
+      },
+      {
+        "label": "How to Apply",
+        "href": "#apply"
+      },
+      {
+        "label": "Questions",
+        "href": "#faq"
+      }
+    ]
+  },
+  "currentlyOpen": {
+    "title": "Currently Open",
+    "isOpen": false,
+    "companyName": "",
+    "companyImage": "",
+    "pricingMethod": "",
+    "price": "",
+    "sharesOffered": "",
+    "investorCategory": "",
+    "subscriptionAmount": "",
+    "openingSubscriptionDate": "",
+    "closingSubscriptionDate": "",
+    "applyUrl": "https://portal.midwaybd.com/ipo/apply",
+    "applyLabel": "Apply in the Portal",
+    "noOpenIpoMessage": "No IPO is open for subscription right now. Join the IPO Membership Club below so you never miss one."
+  },
+  "part1": {
+    "label": "Part 1 · Understanding IPOs",
+    "what": {
+      "title": "What Is an IPO?",
+      "body": "An IPO, or initial public offering, is when a company offers its shares to the public for the first time. Investors apply during a set window. When the offer closes, the shares are allotted and then listed on the exchange, where they can be bought and sold like other shares."
+    },
+    "pricing": {
+      "title": "How the Price Is Set",
+      "items": [
+        {
+          "name": "Fixed Price",
+          "body": "The company sets one price. You apply at that price."
+        },
+        {
+          "name": "Book Building",
+          "body": "Eligible institutional investors set a “cut-off price” by bidding. You apply at that price. You do not bid yourself."
+        }
+      ]
+    },
+    "who": {
+      "title": "Who Can Apply?",
+      "items": [
+        {
+          "name": "General Investor (GI)",
+          "body": "A resident retail investor with an active BO Account.",
+          "tag": "BO Account required"
+        },
+        {
+          "name": "Non-Resident Bangladeshi (NRB)",
+          "body": "Bangladeshis living abroad have their own quota. A 1-year lock-in applies, see below.",
+          "tag": "BO Account required"
+        }
+      ],
+      "note": "No minimum prior stock-market investment is required to apply."
+    },
+    "allocation": {
+      "title": "How the Offer Is Shared",
+      "body": "A public offer is divided into quotas for different kinds of investors. The split depends on the pricing method. The two rows in blue are the ones that apply to Midway clients applying as General Investors or NRBs.",
+      "headers": [
+        "Investor Category",
+        "Fixed Price",
+        "Book Building"
+      ],
+      "rows": [
+        {
+          "category": "General Investors (GI)",
+          "fixed": "60%",
+          "book": "35%",
+          "highlight": true
+        },
+        {
+          "category": "Non-Resident Bangladeshis (NRB)",
+          "fixed": "10%",
+          "book": "7%",
+          "highlight": true
+        },
+        {
+          "category": "Eligible Investors (EIs)",
+          "fixed": "10%",
+          "book": "40%"
+        },
+        {
+          "category": "Mutual Funds",
+          "fixed": "10%",
+          "book": "10%"
+        },
+        {
+          "category": "Permanent Employees of the Issuer",
+          "fixed": "5%",
+          "book": "3%"
+        },
+        {
+          "category": "HNI",
+          "fixed": "5%",
+          "book": "5%"
+        }
+      ],
+      "foot": "Eligible Investors are institutions such as stock dealers, asset managers and merchant bankers. Source: BSEC public issue rules, Chapter VIII (Distribution and Lock-In), Rule 16.",
+      "total": {
+        "category": "Total",
+        "fixed": "100%",
+        "book": "100%"
+      }
+    }
+  },
+  "part2": {
+    "label": "Part 2 · Applying With Midway",
+    "steps": {
+      "title": "Apply in Four Steps",
+      "items": [
+        {
+          "title": "Have a BO Account",
+          "body": "You need an active BO Account. Opening one is 100% online."
+        },
+        {
+          "title": "Apply in the Portal",
+          "body": "Log in to the Midway Portal and apply while the IPO is open. The subscription window is 5 working days."
+        },
+        {
+          "title": "Your Money Is Held",
+          "body": "You deposit the full subscription amount upfront. If the IPO is oversubscribed, General Investors and NRBs are allotted shares by lottery."
+        },
+        {
+          "title": "Shares or Refund",
+          "body": "If you are allotted shares, they arrive in your BO Account. If you are not selected, your money is refunded to your BO Account."
+        }
+      ],
+      "note": "IPO applications are made in the Midway Portal, not in the QuickTrade Pro app. After listing, you can trade the shares in QuickTrade Pro."
+    },
+    "good": {
+      "title": "Good to Know",
+      "items": [
+        "General Investors have no lock-in. You can trade or sell shares you receive from the first trading day.",
+        "NRBs and Non-Residents have a 1-year lock-in from the first trading day at the exchange.",
+        "If an IPO is oversubscribed, allotment is by lottery, so applying does not guarantee you will receive shares.",
+        "Share prices can fall after listing as well as rise."
+      ]
+    },
+    "club": {
+      "title": "Never Miss an IPO",
+      "body": "It is free to join. Sign up once in the Midway Portal, and we apply to every eligible Equity IPO on your behalf, based on your available balance. Joining is your choice, and it covers Equity IPOs only.",
+      "cta": "Join IPO Membership Club",
+      "href": "ipoClub",
+      "tag": "Free to Join"
+    }
+  },
+  "glossary": {
+    "title": "Quick Glossary",
+    "items": [
+      {
+        "term": "IPO",
+        "def": "Initial public offering: a company offers its shares to the public for the first time."
+      },
+      {
+        "term": "Subscription",
+        "def": "The window in which you apply for the IPO, and the amount you pay when you apply."
+      },
+      {
+        "term": "Fixed Price",
+        "def": "An IPO where the company sets the price and you apply at that price."
+      },
+      {
+        "term": "Book Building",
+        "def": "An IPO where eligible institutional investors bid to set the cut-off price."
+      },
+      {
+        "term": "Cut-Off Price",
+        "def": "The price set through bidding in a Book Building IPO. You apply at this price."
+      },
+      {
+        "term": "Oversubscribed",
+        "def": "When investors apply for more shares than the company is offering."
+      },
+      {
+        "term": "Lottery",
+        "def": "How shares are allotted to General Investors and NRBs when an IPO is oversubscribed."
+      },
+      {
+        "term": "Lock-In",
+        "def": "A period after listing during which shares cannot be sold. It applies to NRB and Non-Resident quota shares."
+      },
+      {
+        "term": "HNI",
+        "def": "High Net Worth Individual: a quota category in the BSEC distribution rules."
+      },
+      {
+        "term": "BO Account",
+        "def": "The account at CDBL where your shares, and any IPO refund, are held in your name."
+      }
+    ]
+  },
+  "faq": {
+    "title": "IPO Questions",
+    "items": [
+      {
+        "q": "Do I need a BO Account to apply for an IPO?",
+        "a": "Yes. Both General Investors and NRBs need an active BO Account. You can open one online with Midway."
+      },
+      {
+        "q": "Where do I apply for an IPO?",
+        "a": "In the Midway Portal. IPO applications are not made in the QuickTrade Pro app."
+      },
+      {
+        "q": "Is there a minimum prior investment to apply?",
+        "a": "No. No minimum prior stock-market investment is required to apply under current BSEC rules."
+      },
+      {
+        "q": "Who can apply for an IPO in Bangladesh?",
+        "a": "General Investors, who are resident retail investors, and Non-Resident Bangladeshis (NRBs) can apply with Midway. Both need an active BO Account."
+      },
+      {
+        "q": "How long is the subscription window?",
+        "a": "5 working days. You deposit the full subscription amount upfront when you apply."
+      },
+      {
+        "q": "What happens if the IPO is oversubscribed?",
+        "a": "General Investors and NRBs are allotted shares by lottery. If you are not selected, your money is refunded to your BO Account."
+      },
+      {
+        "q": "What is the difference between Fixed Price and Book Building?",
+        "a": "In a Fixed Price IPO the company sets one price and you apply at that price. In Book Building, eligible institutional investors bid to set a cut-off price, and you apply at that price. You do not bid yourself."
+      },
+      {
+        "q": "Can I sell my IPO shares right after listing?",
+        "a": "General Investors have no lock-in and can trade from the first trading day. NRBs and Non-Residents have a 1-year lock-in from the first trading day."
+      },
+      {
+        "q": "What is the IPO Membership Club?",
+        "a": "An optional service that is free to join. You sign up once in the Midway Portal, and Midway applies to every eligible Equity IPO for you, based on your available balance."
+      },
+      {
+        "q": "Does applying for an IPO guarantee a profit?",
+        "a": "No. Applying does not guarantee shares, and IPO shares can fall in price after listing. You can lose some or all of the money you invest."
+      }
+    ],
+    "visible": 3
+  },
+  "related": {
+    "title": "Related",
+    "items": [
+      {
+        "label": "Stocks",
+        "href": "stocks"
+      },
+      {
+        "label": "Mutual Funds",
+        "href": "/mutual-funds"
+      },
+      {
+        "label": "SME and ATB",
+        "href": "smeAtb"
+      },
+      {
+        "label": "QuickTrade Pro App",
+        "href": "/mobile-app"
+      },
+      {
+        "label": "Pricing",
+        "href": "pricing"
+      },
+      {
+        "label": "Deposit",
+        "href": "deposit"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Apply for an IPO?",
+    "body": "Open a BO Account online, then apply in the Midway Portal when an IPO opens. Questions? Message us on WhatsApp.",
+    "primary": "Open BO Account",
+    "whatsapp": "WhatsApp Us"
+  },
+  "disclaimer": "Investing in IPOs involves risk. Share prices can fall as well as rise after listing, and you can lose some or all of the money you invest. Applying does not guarantee an allotment, and no returns are guaranteed. Quotas, rules and eligibility are set by BSEC and the DSE and can change. This page is for information only and is not investment advice. Midway Securities Ltd. is registered with the Bangladesh Securities and Exchange Commission (BSEC) and is a Trading Right Entitlement Certificate holder of the Dhaka Stock Exchange (DSE TREC 142).",
+  "glance": {
+    "title": "IPO at a Glance",
+    "items": [
+      {
+        "icon": "file",
+        "label": "What You Need",
+        "value": "A BO Account"
+      },
+      {
+        "icon": "link",
+        "label": "Where You Apply",
+        "value": "The Midway Portal"
+      },
+      {
+        "icon": "clock",
+        "label": "Apply Window",
+        "value": "5 working days"
+      },
+      {
+        "icon": "bank",
+        "label": "If You Are Not Selected",
+        "value": "Refund to your BO Account"
+      }
+    ]
+  }
+}

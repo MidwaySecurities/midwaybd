@@ -1,0 +1,71 @@
+{
+  "origin": "https://www.midwaybd.com",
+  "name": "Midway Securities Ltd.",
+  "shortName": "Midway",
+  "tagline": "Investing, Simplified!",
+  "language": "en",
+  "alternateLanguages": [
+    "bn"
+  ],
+  "themeColor": "#004990",
+  "defaultImage": "/og/midway-default.png",
+  "logo": "/brand/midway-logo-square-512.png",
+  "organization": {
+    "legalName": "Midway Securities Ltd.",
+    "phone": "+8809609100142",
+    "email": "info@midwaybd.com",
+    "whatsapp": "+8801874444816",
+    "address": {
+      "streetAddress": "Dhaka Stock Exchange Building (Room 508), 9/F, Motijheel C/A",
+      "addressLocality": "Dhaka",
+      "postalCode": "1000",
+      "addressCountry": "BD"
+    },
+    "geo": {
+      "latitude": 23.72346001950178,
+      "longitude": 90.42068093685988
+    },
+    "officeHours": {
+      "days": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "opens": "09:30",
+      "closes": "17:30"
+    },
+    "sameAs": [
+      "https://www.facebook.com/midwaytrec142",
+      "https://www.instagram.com/midwaytrec142",
+      "https://www.youtube.com/c/MidwaySecuritiesLtd",
+      "https://www.linkedin.com/company/midway-securities-ltd-/"
+    ],
+    "identifiers": [
+      {
+        "name": "BSEC Registration No.",
+        "value": "3.1/DSE-142/2008/194"
+      },
+      {
+        "name": "DSE TREC No.",
+        "value": "142"
+      },
+      {
+        "name": "CDBL Depository Participant ID",
+        "value": "CDBL-DP-36"
+      }
+    ]
+  },
+  "pathNames": {
+    "Home": "/",
+    "Tools": "/tools",
+    "Blog": "/blog",
+    "Learn": "/blog/learn",
+    "News": "/blog/news",
+    "Watch": "/blog/watch",
+    "Research": "/blog/research",
+    "Topics": "/blog/topic",
+    "Government Bonds": "/government-bonds"
+  }
+}

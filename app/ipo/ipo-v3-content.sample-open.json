@@ -1,0 +1,19 @@
+{
+  "_note": "SAMPLE ONLY. Shows a filled currentlyOpen block. Values are placeholders, not a real IPO.",
+  "currentlyOpen": {
+    "title": "Currently Open",
+    "isOpen": true,
+    "companyName": "Example Pharmaceuticals Limited",
+    "companyImage": "",
+    "pricingMethod": "Fixed Price",
+    "price": "৳20 per Share",
+    "sharesOffered": "24,181,819",
+    "investorCategory": "General Investors (GI)",
+    "subscriptionAmount": "৳10,010",
+    "openingSubscriptionDate": "2027-02-04",
+    "closingSubscriptionDate": "2027-02-08",
+    "applyUrl": "https://portal.midwaybd.com/ipo/apply",
+    "applyLabel": "Apply in the Portal",
+    "noOpenIpoMessage": "No IPO is open for subscription right now. Join the IPO Membership Club below so you never miss one."
+  }
+}

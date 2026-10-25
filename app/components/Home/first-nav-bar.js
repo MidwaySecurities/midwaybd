@@ -16,9 +16,6 @@ const FirstNavBar = () => {
         <div className="flex justify-between items-center bg-white px-4 md:px-0 text-white">
             <Link className={`${style.logoZoom} flex items-center gap-2 font-bold text-gray-800 text-[14px]`} href={`/`}>
                 <Logo width={55} height={55} />
-                {/* <h1 className="">Midway Securities Ltd.</h1> */}
-                {/* <h1 className="flex flex-col leading-0 justify-center uppercase mt-[-.25rem]"><span className="text-xl tracking-[2px]">Midway</span><span className="tracking-[.93px] text-[.6rem] leading-2">Securities Ltd.</span></h1> */}
-                {/* need a gap after midway */}
             </Link>
             <Link href = '/'>
                 <h1 className="flex shrink-0 flex-col lg:flex-row items-center lg:items-baseline leading-0 justify-center uppercase -mt-1 text-primary_color font-bold">

@@ -9,7 +9,6 @@ import { DeviceDetectContextProvider } from "./context/deviceDetectContext";
 import Footer from "./components/Home/footer/footer";
 import { BlogTabProvider } from "./context/blogTabContext";
 import Script from "next/script";
-import Whatsapp from './components/whatsapp-button';
 import FirstApproachModal from './components/firstApproachModal';
 
 const isProduction = process.env.VERCEL_ENV === "production";
@@ -68,7 +67,6 @@ export default function RootLayout({ children }) {
               <BlogTabProvider>
                 <NavigationBar />
                 {children}
-                <Whatsapp />
                 <FirstApproachModal />
 
                 <div className="section-gap bg-white font-bold">

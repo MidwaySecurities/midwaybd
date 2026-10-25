@@ -20,6 +20,7 @@ import {
   IconUserPlus,
   IconWallet,
 } from "@tabler/icons-react";
+import { Icon } from "./icons";
 import { siteConfig } from "../../lib/site";
 
 const PAGE_PATH = "/client-services";
@@ -70,6 +71,7 @@ const SECTIONS = [
         icon: IconLayoutDashboard,
         title: "Midway Portal",
         text: "Manage your BO Account, funds, and applications in one place",
+        link:"https://portal.midwaybd.com"
       },
     ],
   },
@@ -121,11 +123,13 @@ const SECTIONS = [
         icon: IconWallet,
         title: "Easy Deposits",
         text: "Bank transfer, mobile banking, or credit card",
+        link:"/deposit"
       },
       {
         icon: IconBuildingBank,
         title: "BEFTN Withdrawals",
         text: "Funds sent directly to your bank via Bangladesh Bank's BEFTN network",
+        link:"/withdrawals"
       },
     ],
   },
@@ -302,6 +306,10 @@ export default function ClientServicesPage() {
             </main>
           </div>
         </div>
+        <div className="fixed inset-x-0 bottom-0 z-20 flex gap-2 border-t border-[#e5e7e5] bg-white p-3 md:hidden">
+        <Link href={`https://portal.midwaybd.com/bo/portal-login`} target="_blank" className="flex-1 rounded-lg bg-[#004990] py-3 text-center text-[14px] font-semibold text-white">Open BO Account</Link>
+        <Link href={`https://wa.me/8801874444816`} target="_blank" aria-label="WhatsApp" className="flex w-12 items-center justify-center rounded-lg bg-[#1fa855] text-white"><Icon name="whatsapp" className="h-6 w-6" /></Link>
+      </div>
       </div>
 
       <script

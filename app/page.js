@@ -360,7 +360,7 @@ export default async function Home() {
               </div>
             </Link>
 
-            
+
           </div>
         </section>
         <TradingPlatforms />
@@ -496,7 +496,7 @@ export default async function Home() {
       {/* <Footer /> */}
 
       {/* Floating Elements */}
-
+      <Whatsapp />
     </div>
   );
 }

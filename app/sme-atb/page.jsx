@@ -41,7 +41,7 @@ export default function SmeAtbPage({ content = defaultContent }) {
             <span key={b}>{i > 0 && " / "}{i === header.breadcrumb.length - 1 ? <span className="text-[#111827]">{b}</span> : b}</span>
           ))}
         </nav> */}
-        {/* <p className="mt-4 text-[11px] font-semibold uppercase tracking-wide text-[#c2720c] md:text-xs">{header.eyebrow}</p> */}
+        <p className="text-[11px] font-semibold uppercase tracking-wide text-[#0b78bd] md:text-xs">{header.eyebrow}</p>
         <h1 className="max-w-3xl text-[26px] font-semibold leading-tight md:text-5xl md:leading-tight">{header.headline}</h1>
         <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[#4b5563] md:text-lg">{header.subhead}</p>
       </section>

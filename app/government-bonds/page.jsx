@@ -41,7 +41,7 @@ export default function GovernmentBondsPage({ content = defaultContent }) {
             </span>
           ))}
         </nav> */}
-        {/* <p className="text-[11px] font-semibold uppercase tracking-wide text-[#1f7a4d] md:text-xs">{header.eyebrow}</p> */}
+        <p className="text-[11px] font-semibold uppercase tracking-wide text-[#0b78bd] md:text-xs">{header.eyebrow}</p>
         <h1 className="max-w-3xl text-[26px] font-semibold leading-tight md:text-5xl md:leading-tight">{header.headline}</h1>
         <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-[#4b5563] md:text-lg">{header.subhead}</p>
       </section>

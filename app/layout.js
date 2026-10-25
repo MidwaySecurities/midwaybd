@@ -1,5 +1,4 @@
-import localFont from 'next/font/local';
-import { Poppins, Architects_Daughter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
 import { ModalCloseProvider } from "./components/close-button-provider";

@@ -8,7 +8,7 @@ import Nagad from './Assets/Svg/nagad'
 import Rocket from './Assets/Svg/rocket'
 import VisaMasterCard from './Assets/Svg/visa-mastercard'
 import AmericanExpress from './Assets/Svg/americanExpress'
-import { Poppins, Roboto } from "next/font/google";
+import { Poppins } from "next/font/google";
 import BankInfo from './components/BankInfo'
 const poppins = Poppins({
     subsets: ["latin"],

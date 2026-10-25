@@ -1,15 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Poppins, Roboto } from "next/font/google";
 import Swal from "sweetalert2";
-import { data } from "autoprefixer";
 import Link from "next/link";
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
+
 const axios = require("axios");
 
 const PRIMARY = "#1a3a5c";

@@ -97,7 +97,7 @@ export default function IPOPage({ content = defaultContent }) {
         <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[#4b5563] md:text-lg">{header.subhead}</p>
         <div className="mt-5 flex flex-col gap-3 md:flex-row">
           <a href={href(header.primary.href)} className="rounded-lg bg-[#004990] px-6 py-3.5 text-center text-[15px] font-semibold text-white md:py-3">{header.primary.label}</a>
-          <a href={href(header.secondary.href)} className="rounded-lg border border-[#004990] bg-white px-6 py-3.5 text-center text-[15px] font-semibold text-[#004990] md:py-3">{header.secondary.label}</a>
+          <a href={href(header.secondary.href)} target="_blank" className="rounded-lg border border-[#004990] bg-white px-6 py-3.5 text-center text-[15px] font-semibold text-[#004990] md:py-3">{header.secondary.label}</a>
         </div>
         <nav aria-label="On this page" className="mt-5 flex gap-2 overflow-x-auto md:flex-wrap scrollbar-none">
           {header.jump.map((j) => <a key={j.href} href={j.href} className="whitespace-nowrap rounded-full border border-[#c9cdc9] bg-white px-3.5 py-1.5 text-[13px] font-semibold text-[#004990]">{j.label}</a>)}

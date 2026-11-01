@@ -3,6 +3,8 @@ import defaultContent from "./withdraw-content.json";
 import site from "../seo/site.json";
 import { buildGraph, graphToString } from "../seo/structured-data";
 import { Icon } from "./icons";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 /**
  * Withdraw Funds (/withdrawals) — DRAFT v1, MOBILE-FIRST. Base = phone, `md:` = desktop.
@@ -14,75 +16,153 @@ import { Icon } from "./icons";
 const card = "rounded-lg border border-[#e5e7e5] bg-white";
 const input = "mt-1 w-full rounded-lg border border-[#c9cdc9] bg-white px-3 py-3 text-[14px] text-[#111827]";
 
-useEffect(() => {
-  if (!portalData.client_code || !portalData.password) {
-    return;
-  }
+// useEffect(() => {
+//   if (!portalData.client_code || !portalData.password) {
+//     return;
+//   }
 
-  const timer = setTimeout(async () => {
-    try {
-      const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_PORTAL_URL}/check-ledger/${portalData.client_code}/${portalData.password}`
-      );
+//   const timer = setTimeout(async () => {
+//     try {
+//       const response = await axios.get(
+//         `${process.env.NEXT_PUBLIC_PORTAL_URL}/check-ledger/${portalData.client_code}/${portalData.password}`
+//       );
 
-      console.log(response.data);
-      setLedgerBalance(response.data['ledger_balance'])
-    } catch (error) {
-      console.error("Error checking ledger:", error);
-      setLedgerBalance(null)
+//       console.log(response.data);
+//       setLedgerBalance(response.data['ledger_balance'])
+//     } catch (error) {
+//       console.error("Error checking ledger:", error);
+//       setLedgerBalance(null)
+//     }
+//   }, 400);
+
+//   return () => {
+//     clearTimeout(timer);
+//   };
+// }, []);
+
+function Field({ f, formValues, setFormValues, badge }) {
+  const [ledgerBalance, setLedgerBalance] = useState(null)
+  useEffect(() => {
+    if (!formValues['portal']?.client_code || !formValues['portal']?.password) {
+      return;
     }
-  }, 400);
 
-  return () => {
-    clearTimeout(timer);
-  };
-}, []);
-function Field({ f }) {
+    const timer = setTimeout(async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_PORTAL_URL}/check-ledger/${formValues['portal']?.client_code}/${formValues['portal']?.password}`
+        );
+
+        console.log(response.data);
+        setLedgerBalance(response.data['ledger_balance'])
+      } catch (error) {
+        console.error("Error checking ledger:", error);
+        // setLedgerBalance(null)
+      }
+    }, 400);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [formValues]);
   return (
-    <label className={"block text-[11px] font-semibold uppercase tracking-wide text-[#004990] " + (f.wide ? "md:col-span-2" : "")}>
+    <label
+      className={
+        "block text-[11px] font-semibold uppercase tracking-wide text-[#004990] " +
+        (f.wide ? "md:col-span-2" : "")
+      }
+    >
       {f.label}
+
       {f.type === "textarea" ? (
-        <textarea rows={3} placeholder={f.placeholder} className={input} />
+        <textarea
+          rows={3}
+          name={f.name}
+          placeholder={f.placeholder}
+          className={input}
+          onChange={(e) =>
+            setFormValues((prev) => ({
+              ...prev,
+              [badge]: { ...prev[badge], [f.name]: e.target.value },
+            }))
+          }
+        />
       ) : (
-        <input onChange={(e) => {
-          console.log(e.target.value)
-        }} type={f.type} placeholder={f.placeholder} className={input} />
+        <div>
+          <input
+            type={f.type}
+            name={f.name}
+            placeholder={f.placeholder}
+            className={input}
+            onChange={(e) =>
+              setFormValues((prev) => ({
+                ...prev,
+                [badge]: { ...prev[badge], [f.name]: e.target.value },
+              }))
+            }
+          />
+          <p>{ledgerBalance}</p>
+        </div>
       )}
     </label>
   );
 }
 
-function Method({ m, cols }) {
+function Method({ m, cols, type }) {
+  const [formValues, setFormValues] = useState({});
+
   return (
     <details className="group rounded-lg border-2 border-[#004990] bg-white">
       <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-4 [&::-webkit-details-marker]:hidden">
         <span>
           <span className="flex items-center gap-2">
             <span className="text-[16px] font-semibold">{m.title}</span>
-            <span className="rounded bg-[#e8f0f8] px-2 py-[2px] text-[10px] font-semibold text-[#004990]">{m.badge}</span>
+            <span className="rounded bg-[#e8f0f8] px-2 py-[2px] text-[10px] font-semibold text-[#004990]">
+              {m.badge}
+            </span>
           </span>
-          <span className="mt-0.5 block text-[13px] text-[#4b5563]">{m.body}</span>
+          <span className="mt-0.5 block text-[13px] text-[#4b5563]">
+            {m.body}
+          </span>
         </span>
         <Icon name="chevron" className="h-4 w-4 shrink-0 text-[#004990] transition-transform group-open:rotate-180" />
       </summary>
-      <form className="border-t border-[#c9d9ea] p-4" action="#" method="post" onSubmit={(e) => {
-        e.preventDefault()
-        console.log(
-          e.target[0].value,
-          e.target[1].value,
-          e.target[2].value,
-          e.target[3].value
-        )
-      }}>
+
+      <form
+        className="border-t border-[#c9d9ea] p-4"
+        action="#"
+        method="post"
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
         <div className={"grid gap-3 " + (cols === 2 ? "md:grid-cols-2" : "")}>
-          {m.fields.map((f) => <Field key={f.label} f={f} />)}
+          {m.fields.map((f) => (
+            <Field
+              key={f.name}
+              f={f}
+              badge={type}
+              formValues={formValues}
+              setFormValues={setFormValues}
+            />
+          ))}
         </div>
-        <button type="submit" className="mt-4 w-full rounded-lg bg-[#004990] px-5 py-3.5 text-[15px] font-semibold text-white">{m.submit}</button>
-        <p className="mt-3 text-[12px] leading-relaxed text-[#6b7280]">{m.note}</p>
+
+        <button
+          type="submit"
+          className="mt-4 w-full rounded-lg bg-[#004990] px-5 py-3.5 text-[15px] font-semibold text-white"
+        >
+          {m.submit}
+        </button>
+
+        <p className="mt-3 text-[12px] leading-relaxed text-[#6b7280]">
+          {m.note}
+        </p>
       </form>
     </details>
   );
 }
+
 
 export default function WithdrawPage({ content = defaultContent }) {
   const { links, hero, keyFacts, eod, steps, request, rtgs, account, faq, finalCta, related, disclaimer } = content;
@@ -102,8 +182,8 @@ export default function WithdrawPage({ content = defaultContent }) {
         <h2 id="req" className="text-xl font-semibold md:text-2xl">{request.title}</h2>
         <p className="mt-1 text-[14px] text-[#4b5563]">{request.intro}</p>
         <div className="mt-4 grid items-start gap-3 md:grid-cols-2 md:gap-4">
-          <Method m={request.portal} cols={1} />
-          <Method m={request.manual} cols={1} />
+          <Method m={request.portal} type="portal" cols={1} />
+          <Method m={request.manual} type="manual" cols={1} />
         </div>
       </section>
 

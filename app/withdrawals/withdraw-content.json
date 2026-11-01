@@ -1,0 +1,300 @@
+{
+  "meta": {
+    "title": "Withdraw Funds | Midway Securities"
+  },
+  "seo": {
+    "type": "page",
+    "path": "/withdrawals",
+    "title": "Withdraw Funds From Your BO Account | Midway Securities",
+    "description": "Withdraw matured funds to your own bank account by BEFTN: request before 12 PM, track it in the Midway Portal. RTGS pilot for ৳1 lakh and above.",
+    "datePublished": "2026-10-23",
+    "dateModified": "2026-10-23",
+    "section": "Your Account",
+    "image": "/og/withdrawals.png",
+    "breadcrumb": [
+      {
+        "name": "Home",
+        "path": "/"
+      },
+      {
+        "name": "Withdraw Funds",
+        "path": "/withdrawals"
+      }
+    ],
+    "about": [
+      {
+        "name": "Withdrawing funds from a brokerage account",
+        "description": "Moving matured funds to your own bank account by BEFTN or RTGS."
+      }
+    ],
+    "keywords": [
+      "withdraw funds Midway Securities",
+      "BEFTN withdrawal",
+      "RTGS withdrawal",
+      "BO account withdrawal"
+    ],
+    "sources": []
+  },
+  "links": {
+    "portal": "https://portal.midwaybd.com/",
+    "whatsapp": "https://wa.me/8801874444816?text=Hello%20Midway%2C%20I%20need%20help%20with%20a%20withdrawal",
+    "deposits": "/deposit",
+    "pricing": "/pricing",
+    "phone": "tel:01776106410"
+  },
+  "hero": {
+    "eyebrow": "Withdraw Funds · টাকা উত্তোলন",
+    "headline": "Withdraw Your Matured Funds to Your Own Bank Account",
+    "subhead": "Request before 12 PM on a working day. Your request is processed automatically the same day, and the money reaches your bank by the end of business the next working day. Free of charge.",
+    "primaryCta": {
+      "label": "Request a Withdrawal",
+      "href": "#request"
+    },
+    "whatsapp": {
+      "label": "Ask on WhatsApp"
+    },
+    "badges": [
+      "Free Withdrawals",
+      "Automated",
+      "No Branch Visit"
+    ]
+  },
+  "keyFacts": [
+    {
+      "icon": "clock",
+      "label": "Request By",
+      "value": "12:00 PM",
+      "sub": "On a working day, for same-day processing"
+    },
+    {
+      "icon": "bank",
+      "label": "Money Arrives",
+      "value": "End of Next Working Day",
+      "sub": "In your registered bank account"
+    },
+    {
+      "icon": "check",
+      "label": "Cost",
+      "value": "Free",
+      "sub": "Midway charges nothing to withdraw"
+    },
+    {
+      "icon": "shield",
+      "label": "Limits",
+      "value": "No Limits",
+      "sub": "On standard BEFTN withdrawals"
+    }
+  ],
+  "eod": {
+    "title": "What “End of Business” Means",
+    "body": "“End of business” (EOD) means the time banks close their books for the day. Money sent to you that day appears in your account by then, not at a fixed hour such as 12 PM or 2 PM. If you are waiting for a withdrawal, please check your bank balance after the bank closes before you contact us.",
+    "example": "Example: You place a request at 11:30 AM on Sunday. We process it on Sunday, and the money reaches your bank by the end of business on Monday."
+  },
+  "steps": {
+    "title": "How a Withdrawal Works",
+    "items": [
+      {
+        "title": "Funds Mature",
+        "body": "Sale proceeds become available (matured) in your BO account on the day your shares settle."
+      },
+      {
+        "title": "Place Your Request",
+        "body": "Use one of the forms above before 12 PM on a working day. Requests placed later are processed on the next working day."
+      },
+      {
+        "title": "Automatic Processing",
+        "body": "The system processes your request. There is no manual approval step and nothing more to do."
+      },
+      {
+        "title": "Money in Your Bank",
+        "body": "The money is sent to your registered bank account by BEFTN and arrives by the end of business the next working day."
+      }
+    ]
+  },
+  "request": {
+    "title": "Request a Withdrawal",
+    "intro": "Choose the way that matches you. Your money is always sent to the bank account registered with your BO account.",
+    "portal": {
+      "title": "I Have a Portal Account",
+      "badge": "Fastest",
+      "body": "Use your client code and Midway Portal password.",
+      "fields": [
+        {
+          "label": "Client Code",
+          "placeholder": "e.g. M00000",
+          "type": "text",
+          "name":"client_code"
+        },
+        {
+          "label": "Portal Password",
+          "placeholder": "Your portal password",
+          "type": "password",
+          "name":"password"
+        },
+        {
+          "label": "Withdrawal Amount (৳)",
+          "placeholder": "e.g. 10000",
+          "type": "text",
+          "name":"amount"
+        }
+      ],
+      "submit": "Submit Withdrawal",
+      "note": "Only enter your password on this page or the Midway Portal. Never send it on WhatsApp or by phone."
+    },
+    "manual": {
+      "title": "I Do Not Have a Portal Account",
+      "badge": "Manual",
+      "body": "Fill in the form and we will process it manually.",
+      "fields": [
+        {
+          "label": "Full Name / নাম *",
+          "placeholder": "Your full name",
+          "type": "text",
+          "name":"name"
+        },
+        {
+          "label": "Client Code / ক্লায়েন্ট কোড *",
+          "placeholder": "e.g. M00000",
+          "type": "text",
+          "name":"client_code"
+        },
+        {
+          "label": "Amount / টাকা (৳) *",
+          "placeholder": "e.g. 10000",
+          "type": "text",
+          "name":"amount"
+        },
+        {
+          "label": "Phone / ফোন নম্বর *",
+          "placeholder": "+880 17XXXXXXXX",
+          "type": "tel",
+          "name":"phone"
+        },
+        {
+          "label": "Email / ই-মেইল",
+          "placeholder": "your@email.com",
+          "type": "email",
+          "wide": true,
+          "name":"email"
+        },
+        {
+          "label": "Your Signature",
+          "type": "file",
+          "wide": true,
+          "name":"signature"
+        },
+        {
+          "label": "Comment (Optional)",
+          "placeholder": "Any additional instructions...",
+          "type": "textarea",
+          "wide": true
+        }
+      ],
+      "submit": "Submit Request",
+      "note": "[Manual requests: processing time to be confirmed.]"
+    }
+  },
+  "rtgs": {
+    "badge": "Pilot Program",
+    "title": "RTGS Withdrawal: Money in About 10 Minutes",
+    "body": "We are testing RTGS withdrawals for larger amounts. RTGS is Bangladesh Bank’s real-time system: during banking hours the money reaches your bank account in up to 10 minutes.",
+    "facts": [
+      {
+        "label": "Minimum",
+        "value": "৳1,00,000"
+      },
+      {
+        "label": "Speed",
+        "value": "Up to 10 minutes"
+      },
+      {
+        "label": "When",
+        "value": "During banking hours"
+      }
+    ],
+    "how": "[How to request RTGS: to confirm]",
+    "note": "RTGS is a pilot and may change. For smaller amounts, use the standard BEFTN withdrawal above."
+  },
+  "account": {
+    "title": "Your Bank Account",
+    "items": [
+      "Money goes to the bank account you used to open your BO account.",
+      "You can change your bank account at any time in the Midway Portal.",
+      "The account must always be in your own name."
+    ]
+  },
+  "faq": {
+    "title": "Withdrawal Questions",
+    "items": [
+      {
+        "q": "When can I withdraw my money?",
+        "a": "Once your funds are matured. After you sell shares, the money becomes available (matured) in your BO account on the day your shares settle."
+      },
+      {
+        "q": "How long does a withdrawal take?",
+        "a": "Place your request before 12 PM on a working day. It is processed the same day, and the money reaches your bank account by the end of business the next working day. Requests placed after 12 PM are processed on the next working day."
+      },
+      {
+        "q": "What does end of business mean?",
+        "a": "It is the time banks close their books for the day. Your money arrives in your account by then, not at a fixed hour. Please check your balance after the bank closes."
+      },
+      {
+        "q": "What if my money is late?",
+        "a": "First check your bank balance after the bank closes, because money arrives by the end of business on the next working day. Delays can come from the banking network, which is outside Midway’s control. If the bank details on file are wrong, the transfer can fail, so check them in the Midway Portal, where you can also see the status of every request."
+      },
+      {
+        "q": "Is there a withdrawal limit?",
+        "a": "No. There are no limits on standard withdrawals. The RTGS pilot has a minimum of ৳1,00,000."
+      },
+      {
+        "q": "Is there a fee?",
+        "a": "No. Withdrawals from Midway are free."
+      },
+      {
+        "q": "Which bank account is used?",
+        "a": "The registered bank account you used to open your BO account. You can change it in the Midway Portal, but it must always be your own bank account."
+      },
+      {
+        "q": "Do I need to approve or follow up on my request?",
+        "a": "No. Withdrawals are fully automated. Once you place a request, nothing more is needed."
+      },
+      {
+        "q": "Can I withdraw without a Portal account?",
+        "a": "Yes. Use the manual form on this page and we will process it manually."
+      },
+      {
+        "q": "What is the RTGS pilot?",
+        "a": "A test program for larger withdrawals. RTGS is Bangladesh Bank’s real-time system, and during banking hours the money reaches your bank account in up to 10 minutes. The minimum is ৳1,00,000."
+      }
+    ],
+    "visible": 4
+  },
+  "finalCta": {
+    "title": "Need Help With a Withdrawal?",
+    "body": "Message us on WhatsApp or call 01776-106410. Please never share your password.",
+    "whatsapp": {
+      "label": "Chat on WhatsApp"
+    },
+    "secondary": {
+      "label": "Open the Midway Portal"
+    }
+  },
+  "related": {
+    "title": "Related",
+    "items": [
+      {
+        "label": "Deposits",
+        "href": "/deposit"
+      },
+      {
+        "label": "Pricing",
+        "href": "/pricing"
+      },
+      {
+        "label": "FAQ",
+        "href": "/faq"
+      }
+    ]
+  },
+  "disclaimer": "Processing and arrival times depend on banking days and hours and on the receiving bank. Midway is not responsible for delays caused by the banking network or by incorrect bank details. DRAFT: details pending Midway confirmation."
+}

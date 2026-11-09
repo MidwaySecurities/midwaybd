@@ -134,7 +134,7 @@
         {
           "label": "Withdrawal Amount (৳)",
           "placeholder": "e.g. 10000",
-          "type": "text",
+          "type": "number",
           "name":"amount"
         }
       ],
@@ -161,7 +161,7 @@
         {
           "label": "Amount / টাকা (৳) *",
           "placeholder": "e.g. 10000",
-          "type": "text",
+          "type": "number",
           "name":"amount"
         },
         {

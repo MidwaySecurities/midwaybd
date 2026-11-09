@@ -3,7 +3,9 @@ import defaultContent from "./withdraw-content.json";
 import site from "../seo/site.json";
 import { buildGraph, graphToString } from "../seo/structured-data";
 import { Icon } from "./icons";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Swal from "sweetalert2";
+
 import axios from "axios";
 
 /**
@@ -13,46 +15,16 @@ import axios from "axios";
  * (field names unchanged from the live page: client code, portal password, amount; manual: name, client code, amount, phone, email, signature, comment).
  * SEO: JSON-LD @graph built from content (FAQ in schema = visible FAQ). See ../seo/README.md.
  */
+const PRIMARY = "#004990";
 const card = "rounded-lg border border-[#e5e7e5] bg-white";
 const input = "mt-1 w-full rounded-lg border border-[#c9cdc9] bg-white px-3 py-3 text-[14px] text-[#111827]";
 
-function Field({ f, formValues, setFormValues, badge }) {
-  const [ledgerBalance, setLedgerBalance] = useState(null)
-  const [errorMessage, setErrorMessage] = useState("");
-  useEffect(() => {
-    if (!formValues['portal']?.client_code || !formValues['portal']?.password) {
-      return;
-    }
+// Fields that are allowed to stay empty
+// (any textarea, or a field named like comment / remarks / note / message)
+const isOptional = (f) =>
+  f.type === "textarea" || /comment|remark|note|message/i.test(f.name || "");
 
-    const timer = setTimeout(async () => {
-      try {
-        const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_PORTAL_URL}/check-ledger/${formValues['portal']?.client_code}/${formValues['portal']?.password}`
-        );
-        console.log(33, response)
-        if (response.data['ledger_balance']) {
-          setLedgerBalance(response.data['ledger_balance'])
-          setErrorMessage('')
-        }
-        console.log(response)
-      } catch (error) {
-        if (error.status == 401) {
-          setErrorMessage('Invalid client code or password')
-          setLedgerBalance(null)
-        }
-        console.error("Error checking ledger:", error);
-      }
-    }, 400);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [formValues]);
-
-  useEffect(() => {
-
-  }, [])
-
+function Field({ f, onValueChange, ledgerBalance, errorMessage }) {
   return (
     <label
       className={
@@ -67,12 +39,7 @@ function Field({ f, formValues, setFormValues, badge }) {
           name={f.name}
           placeholder={f.placeholder}
           className={input}
-          onChange={(e) =>
-            setFormValues((prev) => ({
-              ...prev,
-              [badge]: { ...prev[badge], [f.name]: e.target.value },
-            }))
-          }
+          onChange={(e) => onValueChange(f.name, e.target.value)}
         />
       ) : (
         <div>
@@ -82,16 +49,18 @@ function Field({ f, formValues, setFormValues, badge }) {
             placeholder={f.placeholder}
             className={input}
             onChange={(e) =>
-              setFormValues((prev) => ({
-                ...prev,
-                [badge]: { ...prev[badge], [f.name]: e.target.value },
-              }))
+              onValueChange(
+                f.name,
+                f.type === "file" ? e.target.files?.[0] ?? null : e.target.value
+              )
             }
           />
-          {f.name === 'amount' && ledgerBalance && !errorMessage && (
-            <p className={`${ledgerBalance < 0 ? 'text-red-600' : 'text-green-600'} text-sm mt-1`}>Your available balance is: {ledgerBalance}</p>
+          {f.name === "amount" && ledgerBalance !== null && !errorMessage && (
+            <p className={`${Number(ledgerBalance) < 0 ? "text-red-600" : "text-green-600"} text-sm mt-1`}>
+              Your available balance is: {ledgerBalance}
+            </p>
           )}
-          {f.name === 'password' && !ledgerBalance && errorMessage && (
+          {f.name === "password" && ledgerBalance === null && errorMessage && (
             <p className="text-red-600 mt-1 text-sm">{errorMessage}</p>
           )}
         </div>
@@ -101,99 +70,171 @@ function Field({ f, formValues, setFormValues, badge }) {
 }
 
 function Method({ m, cols, type }) {
-  const [formValues, setFormValues] = useState({});
-  const [Submitting, setSubmitting] = useState(false)
-  // const submitWithdrawl = async () => {
-  //   const {data} = await axios.post(`${process.env.NEXT_PUBLIC_PORTAL_URL}/`)
-  // }
-  const submitWithdrawl = async () => {
-    // if (!validatePortal()) return;
-    setSubmitting(true);
-    try {
-      console.log(formValues)
-      if(formValues.portal){
-        const { data } = await axios.post(
-          `${process.env.NEXT_PUBLIC_PORTAL_URL}/web/withdraw/request`,
-          { ...formValues.portal }
+  const [values, setValues] = useState({});
+  const [submitting, setSubmitting] = useState(false);
+  const [ledgerBalance, setLedgerBalance] = useState(null);
+  const [ledgerError, setLedgerError] = useState("");
+  const formRef = useRef(null);
+
+  const clientCode = type === "portal" ? values.client_code : undefined;
+  const password = type === "portal" ? values.password : undefined;
+
+  const onValueChange = (name, value) =>
+    setValues((prev) => ({ ...prev, [name]: value }));
+
+  // Live ledger balance check (portal method only), debounced, runs once per form.
+  useEffect(() => {
+    if (type !== "portal") return;
+    if (!clientCode || !password) {
+      setLedgerBalance(null);
+      setLedgerError("");
+      return;
+    }
+
+    let cancelled = false;
+    const timer = setTimeout(async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_PORTAL_URL}/check-ledger/${encodeURIComponent(clientCode)}/${encodeURIComponent(password)}`
         );
-        console.log(data)
-        return;
-        if (data.status === "success") {
-          setStep("success");
+        if (cancelled) return;
+        const balance = response.data?.ledger_balance;
+        if (balance !== undefined && balance !== null) {
+          setLedgerBalance(balance);
+          setLedgerError("");
+        }
+      } catch (error) {
+        if (cancelled) return;
+        const status = error?.response?.status ?? error?.status;
+        setLedgerBalance(null);
+        if (status === 401) {
+          setLedgerError("Invalid client code or password");
         } else {
-          Swal.fire({
-            icon: "error",
-            title: "Withdrawal Failed",
-            text: data.message || "An error occurred. Please try again.",
-            confirmButtonColor: PRIMARY,
-          });
-          setErrors({ form: data.message || "An error occurred. Please try again." });
+          setLedgerError("");
+          console.error("Error checking ledger:", error);
         }
       }
-    } catch (error) {
-      // console.error("Withdrawal submit error:", error);
-      // Swal.fire({
-      //   icon: "error",
-      //   title: "Something went wrong",
-      //   text:
-      //     error?.response?.data?.message ||
-      //     "Could not submit your withdrawal request. Please check your connection and try again.",
-      //   confirmButtonColor: PRIMARY,
-      // });
-      // setErrors({ form: "Failed to submit withdrawal request." });
-    } finally {
-      setSubmitting(false);
+    }, 400);
+
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [type, clientCode, password]);
+
+  const showError = (title, text) =>
+    Swal.fire({ icon: "error", title, text, confirmButtonColor: PRIMARY });
+
+  const validate = () => {
+    for (const f of m.fields) {
+      if (isOptional(f)) continue;
+      const v = values[f.name];
+      const empty = v === undefined || v === null || (typeof v === "string" && v.trim() === "");
+      if (empty) {
+        showError("Missing information", `Please fill in: ${f.label}`);
+        return false;
+      }
+      if (f.type === "email" && !/^\S+@\S+\.\S+$/.test(String(v).trim())) {
+        showError("Invalid email", "Please enter a valid email address.");
+        return false;
+      }
+    }
+    const amount = Number(values.amount);
+    if (!Number.isFinite(amount) || amount <= 0) {
+      showError("Invalid amount", "Please enter a withdrawal amount greater than zero.");
+      return false;
+    }
+    return true;
+  };
+
+  const resetForm = () => {
+    formRef.current?.reset();
+    setValues({});
+    setLedgerBalance(null);
+    setLedgerError("");
+  };
+
+  const showSuccess = (message) =>
+    Swal.fire({
+      icon: "success",
+      title: "Request submitted",
+      text: message || "Your withdrawal request has been submitted successfully.",
+      confirmButtonColor: PRIMARY,
+    });
+
+  const submitPortal = async () => {
+    const { data } = await axios.post(
+      `${process.env.NEXT_PUBLIC_PORTAL_URL}/web/withdraw/request`,
+      { ...values }
+    );
+    if (data?.status === "success") {
+      await showSuccess(data.message);
+      resetForm();
+    } else {
+      showError("Withdrawal Failed", data?.message || "An error occurred. Please try again.");
     }
   };
 
-  const handleFormSubmit = async () => {
-    setSubmitting(true);
-    console.log(formData)
-    const manualFormData = new FormData()
-    manualFormData.append('client_code', formData.client_code);
-    manualFormData.append('client_name', formData.client_name);
-    manualFormData.append('email', formData.email);
-    manualFormData.append('phone_number', formData.phone_number);
-    manualFormData.append('amount', formData.amount);
-    manualFormData.append('remarks', formData.remarks);
-    manualFormData.append('signature', formData.signature);
-
-    try {
-      const { data } = await axios.post(`${process.env.NEXT_PUBLIC_PORTAL_URL}/web/withdraw/manual/request`, manualFormData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_PORTAL_API_BEARER_TOKEN}`
-        },
-      })
-
-      if (data.status === "success") {
-        setStep("success");
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Withdrawal Failed",
-          text: data.message || "An error occurred. Please try again.",
-          confirmButtonColor: PRIMARY,
-        });
-        setErrors({ form: data.message || "An error occurred. Please try again." });
+  const submitManual = async () => {
+    const pick = (...keys) => {
+      for (const k of keys) {
+        const v = values[k];
+        if (v !== undefined && v !== null && v !== "") return v;
       }
+      return "";
+    };
+
+    const body = new FormData();
+    body.append("client_code", pick("client_code"));
+    body.append("client_name", pick("client_name", "name"));
+    body.append("email", pick("email"));
+    body.append("phone_number", pick("phone_number", "phone"));
+    body.append("amount", pick("amount"));
+    body.append("remarks", pick("remarks", "comment"));
+    const signature = pick("signature");
+    if (signature instanceof File) {
+      body.append("signature", signature, signature.name);
+    } else if (signature) {
+      body.append("signature", signature);
+    }
+
+    const { data } = await axios.post(
+      `${process.env.NEXT_PUBLIC_PORTAL_URL}/web/withdraw/manual/request`,
+      body,
+      {
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_PORTAL_API_BEARER_TOKEN}`,
+        },
+      }
+    );
+    if (data?.status === "success") {
+      await showSuccess(data.message);
+      resetForm();
+    } else {
+      showError("Withdrawal Failed", data?.message || "An error occurred. Please try again.");
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (submitting || !validate()) return;
+    setSubmitting(true);
+    try {
+      if (type === "portal") await submitPortal();
+      else await submitManual();
     } catch (error) {
       console.error("Withdrawal submit error:", error);
-      Swal.fire({
-        icon: "error",
-        title: "Something went wrong",
-        text:
-          error?.response?.data?.message ||
-          "Could not submit your withdrawal request. Please check your connection and try again.",
-        confirmButtonColor: PRIMARY,
-      });
-      setErrors({ form: "Failed to submit withdrawal request." });
+      showError(
+        "Something went wrong",
+        error?.response?.data?.message ||
+          "Could not submit your withdrawal request. Please check your connection and try again."
+      );
     } finally {
       setSubmitting(false);
     }
-    // setTimeout(() => { setSubmitting(false); setStep("success"); }, 1500);
   };
+
   return (
     <details className="group rounded-lg border-2 border-[#004990] bg-white">
       <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-4 [&::-webkit-details-marker]:hidden">
@@ -212,31 +253,30 @@ function Method({ m, cols, type }) {
       </summary>
 
       <form
+        ref={formRef}
         className="border-t border-[#c9d9ea] p-4"
         action="#"
         method="post"
-        onSubmit={(e) => {
-          e.preventDefault();
-          submitWithdrawl()
-        }}
+        onSubmit={handleSubmit}
       >
         <div className={"grid gap-3 " + (cols === 2 ? "md:grid-cols-2" : "")}>
           {m.fields.map((f) => (
             <Field
               key={f.name}
               f={f}
-              badge={type}
-              formValues={formValues}
-              setFormValues={setFormValues}
+              onValueChange={onValueChange}
+              ledgerBalance={ledgerBalance}
+              errorMessage={ledgerError}
             />
           ))}
         </div>
 
         <button
           type="submit"
-          className="mt-4 w-full rounded-lg bg-[#004990] px-5 py-3.5 text-[15px] font-semibold text-white"
+          disabled={submitting}
+          className="mt-4 w-full rounded-lg bg-[#004990] px-5 py-3.5 text-[15px] font-semibold text-white disabled:opacity-60"
         >
-          {m.submit}
+          {submitting ? "Submitting…" : m.submit}
         </button>
         <p className="mt-3 text-[12px] leading-relaxed text-[#6b7280]">
           {m.note}

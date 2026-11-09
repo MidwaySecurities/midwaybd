@@ -371,7 +371,11 @@ const Navigation = () => {
     const handleNavigate = (path) => {
         closeModal()
         setTimeout(() => {
-            router.push(path)
+            if (path === 'https://blog.midwaybd.com') {
+                window.open(path, '_blank', 'noopener,noreferrer')
+            }else {
+                router.push(path)
+            }
         }, 100)
     }
 
@@ -385,7 +389,6 @@ const Navigation = () => {
 
     const NavItem = ({ icon, label, path, onClick, children, isExpanded, badge }) => {
         const isActiveItem = isActive(path)
-
         const handleClick = (e) => {
             e.preventDefault()
             e.stopPropagation()
@@ -480,7 +483,6 @@ const Navigation = () => {
 
                 {/* Navigation Items */}
                 <div className="flex-1 overflow-y-auto overflow-x-hidden px-4 py-6 space-y-2" style={{ maxHeight: 'calc(100vh - 180px)' }}>
-
                     <NavItem
                         icon={<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>}
                         label="Home"
@@ -528,17 +530,17 @@ const Navigation = () => {
                         />
                         <SubNavItem
                             label="Government Bonds"
-                            path="/government-bonds" 
+                            path="/government-bonds"
                             icon={<svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>}
                         />
                         <SubNavItem
                             label="SME/ATB"
-                            path="/sme-atb" 
+                            path="/sme-atb"
                             icon={<svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>}
                         />
                         <SubNavItem
                             label="Mutual Funds"
-                            path="/mutual-funds" 
+                            path="/mutual-funds"
                             icon={<svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>}
                         />
                         {/* 
@@ -615,7 +617,7 @@ const Navigation = () => {
                     <NavItem
                         icon={<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>}
                         label="Blogs"
-                        path="/blog"
+                        path="https://blog.midwaybd.com"
                         badge="Market Insights"
                     />
 

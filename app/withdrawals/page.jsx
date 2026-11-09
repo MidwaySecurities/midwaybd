@@ -102,9 +102,98 @@ function Field({ f, formValues, setFormValues, badge }) {
 
 function Method({ m, cols, type }) {
   const [formValues, setFormValues] = useState({});
+  const [Submitting, setSubmitting] = useState(false)
+  // const submitWithdrawl = async () => {
+  //   const {data} = await axios.post(`${process.env.NEXT_PUBLIC_PORTAL_URL}/`)
+  // }
   const submitWithdrawl = async () => {
-    const {data} = await axios.post(`${process.env.NEXT_PUBLIC_PORTAL_URL}/`)
-  }
+    // if (!validatePortal()) return;
+    setSubmitting(true);
+    try {
+      console.log(formValues)
+      if(formValues.portal){
+        const { data } = await axios.post(
+          `${process.env.NEXT_PUBLIC_PORTAL_URL}/web/withdraw/request`,
+          { ...formValues.portal }
+        );
+        console.log(data)
+        return;
+        if (data.status === "success") {
+          setStep("success");
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Withdrawal Failed",
+            text: data.message || "An error occurred. Please try again.",
+            confirmButtonColor: PRIMARY,
+          });
+          setErrors({ form: data.message || "An error occurred. Please try again." });
+        }
+      }
+    } catch (error) {
+      // console.error("Withdrawal submit error:", error);
+      // Swal.fire({
+      //   icon: "error",
+      //   title: "Something went wrong",
+      //   text:
+      //     error?.response?.data?.message ||
+      //     "Could not submit your withdrawal request. Please check your connection and try again.",
+      //   confirmButtonColor: PRIMARY,
+      // });
+      // setErrors({ form: "Failed to submit withdrawal request." });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const handleFormSubmit = async () => {
+    setSubmitting(true);
+    console.log(formData)
+    const manualFormData = new FormData()
+    manualFormData.append('client_code', formData.client_code);
+    manualFormData.append('client_name', formData.client_name);
+    manualFormData.append('email', formData.email);
+    manualFormData.append('phone_number', formData.phone_number);
+    manualFormData.append('amount', formData.amount);
+    manualFormData.append('remarks', formData.remarks);
+    manualFormData.append('signature', formData.signature);
+
+    try {
+      const { data } = await axios.post(`${process.env.NEXT_PUBLIC_PORTAL_URL}/web/withdraw/manual/request`, manualFormData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_PORTAL_API_BEARER_TOKEN}`
+        },
+      })
+
+      if (data.status === "success") {
+        setStep("success");
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Withdrawal Failed",
+          text: data.message || "An error occurred. Please try again.",
+          confirmButtonColor: PRIMARY,
+        });
+        setErrors({ form: data.message || "An error occurred. Please try again." });
+      }
+    } catch (error) {
+      console.error("Withdrawal submit error:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Something went wrong",
+        text:
+          error?.response?.data?.message ||
+          "Could not submit your withdrawal request. Please check your connection and try again.",
+        confirmButtonColor: PRIMARY,
+      });
+      setErrors({ form: "Failed to submit withdrawal request." });
+    } finally {
+      setSubmitting(false);
+    }
+    // setTimeout(() => { setSubmitting(false); setStep("success"); }, 1500);
+  };
   return (
     <details className="group rounded-lg border-2 border-[#004990] bg-white">
       <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-4 [&::-webkit-details-marker]:hidden">

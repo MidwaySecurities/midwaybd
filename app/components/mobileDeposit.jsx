@@ -127,7 +127,7 @@ const MobileDeposit = () => {
             deposit_slip: formData.get('depositSlip'),
         };
 
-        try {
+        try { 
             const response = await axios.post(`${process.env.NEXT_PUBLIC_PORTAL_URL}/web/deposit/mobile/request`, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',

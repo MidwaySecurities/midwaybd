@@ -16,32 +16,9 @@ import axios from "axios";
 const card = "rounded-lg border border-[#e5e7e5] bg-white";
 const input = "mt-1 w-full rounded-lg border border-[#c9cdc9] bg-white px-3 py-3 text-[14px] text-[#111827]";
 
-// useEffect(() => {
-//   if (!portalData.client_code || !portalData.password) {
-//     return;
-//   }
-
-//   const timer = setTimeout(async () => {
-//     try {
-//       const response = await axios.get(
-//         `${process.env.NEXT_PUBLIC_PORTAL_URL}/check-ledger/${portalData.client_code}/${portalData.password}`
-//       );
-
-//       console.log(response.data);
-//       setLedgerBalance(response.data['ledger_balance'])
-//     } catch (error) {
-//       console.error("Error checking ledger:", error);
-//       setLedgerBalance(null)
-//     }
-//   }, 400);
-
-//   return () => {
-//     clearTimeout(timer);
-//   };
-// }, []);
-
 function Field({ f, formValues, setFormValues, badge }) {
   const [ledgerBalance, setLedgerBalance] = useState(null)
+  const [errorMessage, setErrorMessage] = useState("");
   useEffect(() => {
     if (!formValues['portal']?.client_code || !formValues['portal']?.password) {
       return;
@@ -52,12 +29,18 @@ function Field({ f, formValues, setFormValues, badge }) {
         const response = await axios.get(
           `${process.env.NEXT_PUBLIC_PORTAL_URL}/check-ledger/${formValues['portal']?.client_code}/${formValues['portal']?.password}`
         );
-
-        console.log(response.data);
-        setLedgerBalance(response.data['ledger_balance'])
+        console.log(33, response)
+        if (response.data['ledger_balance']) {
+          setLedgerBalance(response.data['ledger_balance'])
+          setErrorMessage('')
+        }
+        console.log(response)
       } catch (error) {
+        if (error.status == 401) {
+          setErrorMessage('Invalid client code or password')
+          setLedgerBalance(null)
+        }
         console.error("Error checking ledger:", error);
-        // setLedgerBalance(null)
       }
     }, 400);
 
@@ -65,6 +48,11 @@ function Field({ f, formValues, setFormValues, badge }) {
       clearTimeout(timer);
     };
   }, [formValues]);
+
+  useEffect(() => {
+
+  }, [])
+
   return (
     <label
       className={
@@ -73,7 +61,6 @@ function Field({ f, formValues, setFormValues, badge }) {
       }
     >
       {f.label}
-
       {f.type === "textarea" ? (
         <textarea
           rows={3}
@@ -101,7 +88,12 @@ function Field({ f, formValues, setFormValues, badge }) {
               }))
             }
           />
-          <p>{ledgerBalance}</p>
+          {f.name === 'amount' && ledgerBalance && !errorMessage && (
+            <p className={`${ledgerBalance < 0 ? 'text-red-600' : 'text-green-600'} text-sm mt-1`}>Your available balance is: {ledgerBalance}</p>
+          )}
+          {f.name === 'password' && !ledgerBalance && errorMessage && (
+            <p className="text-red-600 mt-1 text-sm">{errorMessage}</p>
+          )}
         </div>
       )}
     </label>
@@ -110,14 +102,16 @@ function Field({ f, formValues, setFormValues, badge }) {
 
 function Method({ m, cols, type }) {
   const [formValues, setFormValues] = useState({});
-
+  const submitWithdrawl = async () => {
+    const {data} = await axios.post(`${process.env.NEXT_PUBLIC_PORTAL_URL}/`)
+  }
   return (
     <details className="group rounded-lg border-2 border-[#004990] bg-white">
       <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-4 [&::-webkit-details-marker]:hidden">
         <span>
           <span className="flex items-center gap-2">
             <span className="text-[16px] font-semibold">{m.title}</span>
-            <span className="rounded bg-[#e8f0f8] px-2 py-[2px] text-[10px] font-semibold text-[#004990]">
+            <span className="rounded bg-[#e8f0f8] px-2 py-0.5 text-[10px] font-semibold text-[#004990]">
               {m.badge}
             </span>
           </span>
@@ -134,6 +128,7 @@ function Method({ m, cols, type }) {
         method="post"
         onSubmit={(e) => {
           e.preventDefault();
+          submitWithdrawl()
         }}
       >
         <div className={"grid gap-3 " + (cols === 2 ? "md:grid-cols-2" : "")}>
@@ -154,7 +149,6 @@ function Method({ m, cols, type }) {
         >
           {m.submit}
         </button>
-
         <p className="mt-3 text-[12px] leading-relaxed text-[#6b7280]">
           {m.note}
         </p>

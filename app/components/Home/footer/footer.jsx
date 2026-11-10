@@ -25,7 +25,7 @@ function Group({ g, open, onToggle }) {
       </button>
       <ul className={(open ? "block" : "hidden") + " pb-3 md:mt-3 md:block md:pb-0"}>
         {g.links.map((l) => (
-          <li key={l.label}><Link href={l.href} target="_blank" className={"block py-1.5 text-[14px] " + muted}>{l.label}</Link></li>
+          <li key={l.label}><Link href={l.href} className={"block py-1.5 text-[14px] " + muted}>{l.label}</Link></li>
         ))}
       </ul>
     </div>

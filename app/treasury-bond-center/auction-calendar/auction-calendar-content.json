@@ -21,24 +21,22 @@
     "eyebrow": "Treasury Bonds",
     "headline": "Treasury Bond Auction Calendar",
     "subhead": "This month's Bangladesh Bank auction dates and amounts, plus last month's results, all in one place.",
-    "month": "October 2026",
+    "month": "November 2026",
     "back": "Back to Treasury Bond Center"
   },
   "calendar": {
     "title": "Auction Calendar",
-    "month": "October 2026",
+    "month": "November 2026",
     "unit": "Amounts in ৳ Crore",
     "dates": [
-      "6 Oct",
-      "13 Oct",
-      "19 Oct",
-      "27 Oct"
+      "10 Nov",
+      "17 Nov",
+      "24 Nov"
     ],
     "rows": [
       {
         "tenor": "2-Year",
         "amounts": [
-          "5,000",
           null,
           null,
           null
@@ -47,8 +45,7 @@
       {
         "tenor": "5-Year",
         "amounts": [
-          null,
-          "4,000",
+          "5,000",
           null,
           null
         ]
@@ -57,8 +54,7 @@
         "tenor": "10-Year",
         "amounts": [
           null,
-          null,
-          "3,000",
+          "5,000",
           null
         ]
       },
@@ -67,8 +63,7 @@
         "amounts": [
           null,
           null,
-          null,
-          "1,500"
+          "2,750"
         ]
       },
       {
@@ -76,16 +71,14 @@
         "amounts": [
           null,
           null,
-          null,
-          "1,000"
+          "2,750"
         ]
       }
     ],
     "totals": [
       "5,000",
-      "4,000",
-      "3,000",
-      "2,500"
+      "5,000",
+      "5,500"
     ],
     "totalLabel": "Total Amount",
     "howToApply": {
@@ -97,11 +90,11 @@
       ],
       "note": "Charges are shared when you contact us on WhatsApp."
     },
-    "monthKey": "2026-10"
+    "monthKey": "2026-11"
   },
   "lastResults": {
     "title": "Last Auction Results",
-    "month": "September 2026",
+    "month": "November 2026",
     "columns": [
       "Tenor",
       "Years Left",
@@ -112,49 +105,49 @@
     ],
     "rows": [
       {
-        "tenor": "2-Year",
-        "yearsLeft": "2.73",
-        "auctionDate": "1 Sep",
-        "issueDate": "27 May 2009",
-        "reissue": true,
-        "coupon": "11.09%",
-        "cutoff": "8.87%"
-      },
-      {
         "tenor": "5-Year",
-        "yearsLeft": "5.71",
-        "auctionDate": "8 Sep",
+        "yearsLeft": "5.61",
+        "auctionDate": "13 Oct",
         "issueDate": "25 May 2022",
         "reissue": true,
         "coupon": "8.00%",
-        "cutoff": "8.64%"
+        "cutoff": "8.47%"
       },
       {
         "tenor": "10-Year",
-        "yearsLeft": "10.78",
-        "auctionDate": "15 Sep",
+        "yearsLeft": "10.68",
+        "auctionDate": "24 Oct",
         "issueDate": "29 Jun 2022",
         "reissue": true,
         "coupon": "8.55%",
-        "cutoff": "8.54%"
+        "cutoff": "9.27%"
       },
       {
         "tenor": "15-Year",
-        "yearsLeft": "16.26",
-        "auctionDate": "22 Sep",
+        "yearsLeft": "16.17",
+        "auctionDate": "27 Oct",
         "issueDate": "28 Dec 2022",
         "reissue": true,
         "coupon": "8.95%",
-        "cutoff": "9.34%"
+        "cutoff": "9.38%"
       },
       {
         "tenor": "20-Year",
-        "yearsLeft": "18.93",
-        "auctionDate": "22 Sep",
+        "yearsLeft": "18.83",
+        "auctionDate": "27 Oct",
         "issueDate": "27 Aug 2025",
         "reissue": true,
         "coupon": "10.30%",
-        "cutoff": "9.35%"
+        "cutoff": "9.38%"
+      },
+      {
+        "tenor": "2-Year",
+        "yearsLeft": "2.05",
+        "auctionDate": "3 Nov",
+        "issueDate": "22 Nov 2018",
+        "reissue": true,
+        "coupon": "7.15%",
+        "cutoff": "8.55%"
       }
     ],
     "reissueTag": "Reissue",
@@ -189,7 +182,7 @@
     "title": "Treasury Bill Auction Results",
     "badge": "Information Only",
     "note": "Treasury Bills cannot be bought through brokerage houses. Government Sukuk primary auctions are not available through brokerage houses either. We show bill results so you can see the full market.",
-    "month": "October 2026",
+    "month": "November 2026",
     "columns": [
       "Tenor",
       "Auction Date",
@@ -200,26 +193,26 @@
       {
         "tenor": "14 Days",
         "auctionDate": "28 Oct 2026",
-        "issueDate": "18 Sep 2025",
-        "cutoff": "10.05%"
+        "issueDate": "29 Oct 2026",
+        "cutoff": "8.97%"
       },
       {
         "tenor": "91 Days",
-        "auctionDate": "11, 18, 25 Oct 2026",
-        "issueDate": "5 Oct 2026",
-        "cutoff": "8.13%"
+        "auctionDate": "15, 22, 29 Nov 2026",
+        "issueDate": "9 Nov 2026",
+        "cutoff": "8.12%"
       },
       {
         "tenor": "182 Days",
-        "auctionDate": "11, 18, 25 Oct 2026",
-        "issueDate": "5 Oct 2026",
-        "cutoff": "8.37%"
+        "auctionDate": "15, 22, 29 Nov 2026",
+        "issueDate": "9 Nov 2026",
+        "cutoff": "8.29%"
       },
       {
         "tenor": "364 Days",
-        "auctionDate": "11, 18, 25 Oct 2026",
-        "issueDate": "5 Oct 2026",
-        "cutoff": "8.59%"
+        "auctionDate": "15, 22, 29 Nov 2026",
+        "issueDate": "9 Nov 2026",
+        "cutoff": "8.34%"
       }
     ]
   },

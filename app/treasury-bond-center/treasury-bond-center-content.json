@@ -38,50 +38,50 @@
     ],
     "rows": [
       {
+        "tenor": "2-Year",
+        "auctionDate": "3 Nov 2026",
+        "yearsLeft": "2.05",
+        "amount": "৳5,000 Cr",
+        "cutoff": "8.55%"
+      },
+      {
         "tenor": "20-Year",
-        "auctionDate": "22 Sep 2026",
-        "yearsLeft": "18.93",
+        "auctionDate": "27 Oct 2026",
+        "yearsLeft": "18.83",
         "amount": "৳1,000 Cr",
-        "cutoff": "9.35%"
+        "cutoff": "9.38%"
       },
       {
         "tenor": "15-Year",
-        "auctionDate": "22 Sep 2026",
-        "yearsLeft": "16.26",
-        "amount": "৳1,000 Cr",
-        "cutoff": "9.34%"
+        "auctionDate": "27 Oct 2026",
+        "yearsLeft": "16.17",
+        "amount": "৳1,500 Cr",
+        "cutoff": "9.38%"
       },
       {
         "tenor": "10-Year",
-        "auctionDate": "15 Sep 2026",
-        "yearsLeft": "10.78",
-        "amount": "৳2,500 Cr",
-        "cutoff": "8.54%"
+        "auctionDate": "24 Oct 2026",
+        "yearsLeft": "10.68",
+        "amount": "৳3,000 Cr",
+        "cutoff": "9.27%"
       },
       {
         "tenor": "5-Year",
-        "auctionDate": "8 Sep 2026",
-        "yearsLeft": "5.71",
-        "amount": "৳3,000 Cr",
-        "cutoff": "8.64%"
-      },
-      {
-        "tenor": "2-Year",
-        "auctionDate": "1 Sep 2026",
-        "yearsLeft": "2.73",
-        "amount": "৳3,500 Cr",
-        "cutoff": "8.87%"
+        "auctionDate": "13 Oct 2026",
+        "yearsLeft": "5.61",
+        "amount": "৳4,000 Cr",
+        "cutoff": "8.47%"
       }
     ],
     "calendarLink": "See the full Auction Calendar"
   },
   "nextAuction": {
     "label": "Next Auction",
-    "tenor": "5-Year",
-    "date": "13 Oct 2026",
-    "amount": "৳4,000 Cr",
-    "applyBy": "Thursday 8 Oct 2026, 1:00 PM",
-    "applyNote": "Clients apply in the Midway Portal by Thursday 1:00 PM for next week’s auction.",
+    "tenor": "10-Year",
+    "date": "17 Nov 2026",
+    "amount": "৳5,000 Cr",
+    "applyBy": "Thursday 12 Nov 2026, 1:00 PM",
+    "applyNote": "Applications for the 10 Nov 5-Year auction (৳5,000 Cr) are closed. Clients apply in the Midway Portal by Thursday 1:00 PM for next week’s auction.",
     "cta": "Apply via Midway Portal"
   },
   "frequency": {

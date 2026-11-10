@@ -1,5 +1,5 @@
 import defaultContent from "./treasury-bond-center-content.json";
-import defaultYield from "./yield-curve-old.json";
+import defaultYield from "./yield-curve.json";
 import YieldCurve from "./YieldCurve";
 import { Icon } from "./icons";
 import Link from "next/link";

@@ -105,15 +105,6 @@
     ],
     "rows": [
       {
-        "tenor": "5-Year",
-        "yearsLeft": "5.61",
-        "auctionDate": "13 Oct",
-        "issueDate": "25 May 2022",
-        "reissue": true,
-        "coupon": "8.00%",
-        "cutoff": "8.47%"
-      },
-      {
         "tenor": "10-Year",
         "yearsLeft": "10.68",
         "auctionDate": "24 Oct",
@@ -148,6 +139,15 @@
         "reissue": true,
         "coupon": "7.15%",
         "cutoff": "8.55%"
+      },
+      {
+        "tenor": "5-Year",
+        "yearsLeft": "5.86",
+        "auctionDate": "10 Nov",
+        "issueDate": "21 Sep 2022",
+        "reissue": true,
+        "coupon": "8.10%",
+        "cutoff": "8.38%"
       }
     ],
     "reissueTag": "Reissue",

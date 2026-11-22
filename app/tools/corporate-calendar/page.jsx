@@ -1,6 +1,6 @@
 // app/dse-calendar/page.jsx  (Next.js App Router, server component)
-import DseAgmCalendar from "./../components/DseAgmCalendar";
-import { buildJsonLd, summaryRows } from "./../components/agmSeo";
+import DseAgmCalendar from "../../components/DseAgmCalendar";
+import { buildJsonLd, summaryRows } from "../../components/agmSeo";
 
 const URL = "https://YOUR-DOMAIN/dse-calendar"; // set your canonical URL
 export const metadata = {

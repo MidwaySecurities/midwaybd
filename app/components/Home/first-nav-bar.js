@@ -26,7 +26,7 @@ const FirstNavBar = () => {
                     </span>
                 </h1>
             </Link>
-            {/* <p className="bg-secondary_color p-2 px-3 rounded-md"><Link href={`https://portal.midwaybd.com`}>Login</Link></p> */}
+            <p className="bg-secondary_color p-2 px-3 rounded-md invisible"><Link href={`https://portal.midwaybd.com`}>Login</Link></p>
         </div>
     )
 }

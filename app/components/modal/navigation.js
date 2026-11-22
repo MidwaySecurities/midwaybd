@@ -361,6 +361,7 @@ import { useModalClose } from '../close-button-provider'
 import Link from 'next/link'
 import BodyScrollLock from '../BodyScrollLock'
 import { useRouter, usePathname } from 'next/navigation'
+import { Icon } from '@/app/icons'
 
 const Navigation = () => {
     const { isModalOpen, closeModal } = useModalClose()
@@ -373,7 +374,7 @@ const Navigation = () => {
         setTimeout(() => {
             if (path === 'https://blog.midwaybd.com') {
                 window.open(path, '_blank', 'noopener,noreferrer')
-            }else {
+            } else {
                 router.push(path)
             }
         }, 100)
@@ -482,7 +483,7 @@ const Navigation = () => {
                 </div>
 
                 {/* Navigation Items */}
-                <div className="flex-1 overflow-y-auto overflow-x-hidden px-4 py-6 space-y-2" style={{ maxHeight: 'calc(100vh - 180px)' }}>
+                <div className="flex-1 overflow-y-auto overflow-x-hidden px-4 py-6 space-y-2 pb-0" style={{ maxHeight: 'calc(100vh - 180px)' }}>
                     <NavItem
                         icon={<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>}
                         label="Home"
@@ -638,31 +639,11 @@ const Navigation = () => {
                 </div>
 
                 {/* Bottom Actions */}
-                <div className="bg-white p-4 border-t border-gray-200">
-                    <div className="space-y-3">
-                        <Link
-                            href="https://portal.midwaybd.com/bo/portal-login" target='_blank'
-                            className="w-full flex items-center justify-center space-x-3 p-4 bg-primary_color/90 hover:bg-secondary_color text-white rounded-2xl transition-all font-semibold active:scale-95"
-                        >
-                            {/* <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                            </svg> */}
-                            <span>Open BO Account</span>
-                        </Link>
-
-                        <div className="grid grid-cols-2 gap-3">
-                            <Link
-                                href="https://wa.me/8801874444816?text=I have a question..." target='_blank'
-                                className="text-center py-3 px-4 border-2 text-white font-semibold rounded-xl bg-[#1fa855] transition-all active:scale-95"
-                            >
-                                Call Us
-                            </Link>
-                            <Link
-                                href="https://portal.midwaybd.com/"
-                                className="text-center py-3 px-4 bg-secondary_color hover:bg-blue-700 text-white font-semibold rounded-xl transition-all active:scale-95"
-                            >
-                                Log In
-                            </Link>
+                <div className="space-y-3">
+                    <div>
+                        <div className="fixed inset-x-0 bottom-0 z-20 flex gap-2 border-t border-[#e5e7e5] bg-white p-3">
+                            <Link href={`https://portal.midwaybd.com/bo/portal-login`} target="_blank" className="flex-1 rounded-lg bg-[#004990] py-3 text-center text-[14px] font-semibold text-white">Open BO Account</Link>
+                            <Link href={`https://wa.me/8801874444816`} target="_blank" aria-label="WhatsApp" className="flex w-12 items-center justify-center rounded-lg bg-[#1fa855] text-white"><Icon name="whatsapp" className="h-6 w-6" /></Link>
                         </div>
                     </div>
                 </div>

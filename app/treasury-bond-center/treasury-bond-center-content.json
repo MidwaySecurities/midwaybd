@@ -38,6 +38,13 @@
     ],
     "rows": [
       {
+        "tenor": "10-Year",
+        "auctionDate": "17 Nov 2026",
+        "yearsLeft": "10.61",
+        "amount": "৳5,000 Cr",
+        "cutoff": "9.33%"
+      },
+      {
         "tenor": "5-Year",
         "auctionDate": "10 Nov 2026",
         "yearsLeft": "5.86",
@@ -64,24 +71,17 @@
         "yearsLeft": "16.17",
         "amount": "৳1,500 Cr",
         "cutoff": "9.38%"
-      },
-      {
-        "tenor": "10-Year",
-        "auctionDate": "24 Oct 2026",
-        "yearsLeft": "10.68",
-        "amount": "৳3,000 Cr",
-        "cutoff": "9.27%"
       }
     ],
     "calendarLink": "See the full Auction Calendar"
   },
   "nextAuction": {
     "label": "Next Auction",
-    "tenor": "15-Year and 20-Year",
-    "date": "24 Nov 2026",
-    "amount": "৳5,500 Cr",
-    "applyBy": "Thursday 19 Nov 2026, 1:00 PM",
-    "applyNote": "Applications for the 17 Nov 10-Year auction (৳5,000 Cr) are closed. Clients apply in the Midway Portal by Thursday 1:00 PM for next week’s auction.",
+    "tenor": "2-Year",
+    "date": "1 Dec 2026",
+    "amount": "৳2,500 Cr",
+    "applyBy": "Thursday 26 Nov 2026, 1:00 PM",
+    "applyNote": "Applications for the 24 Nov 15-Year and 20-Year auction (৳5,500 Cr) are closed. Clients apply in the Midway Portal by Thursday 1:00 PM for next week’s auction.",
     "cta": "Apply via Midway Portal"
   },
   "frequency": {

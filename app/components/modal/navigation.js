@@ -641,7 +641,7 @@ const Navigation = () => {
                 {/* Bottom Actions */}
                 <div className="space-y-3">
                     <div>
-                        <div className="fixed inset-x-0 bottom-0 z-20 flex gap-2 border-t border-[#e5e7e5] bg-white p-3 md:hidden">
+                        <div className="fixed inset-x-0 bottom-0 z-20 flex gap-2 border-t border-[#e5e7e5] bg-white p-3">
                             <Link href={`https://portal.midwaybd.com/bo/portal-login`} target="_blank" className="flex-1 rounded-lg bg-[#004990] py-3 text-center text-[14px] font-semibold text-white">Open BO Account</Link>
                             <Link href={`https://wa.me/8801874444816`} target="_blank" aria-label="WhatsApp" className="flex w-12 items-center justify-center rounded-lg bg-[#1fa855] text-white"><Icon name="whatsapp" className="h-6 w-6" /></Link>
                         </div>

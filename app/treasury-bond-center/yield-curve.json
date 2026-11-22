@@ -1,94 +1,94 @@
 {
  "source": "Bangladesh Bank, G-Sec YTM Curve (gsom.bb.org.bd/index.php/ytm)",
- "asOf": "2026-11-12",
+ "asOf": "2026-11-19",
  "curve": [
   {
    "years": 1,
-   "yield": 7.78
+   "yield": 8.27
   },
   {
    "years": 2,
-   "yield": 8.25
+   "yield": 8.49
   },
   {
    "years": 3,
-   "yield": 8.42
+   "yield": 8.68
   },
   {
    "years": 4,
-   "yield": 8.42
+   "yield": 8.6
   },
   {
    "years": 5,
-   "yield": 8.42
+   "yield": 8.66
   },
   {
    "years": 6,
-   "yield": 8.42
+   "yield": 8.6
   },
   {
    "years": 7,
-   "yield": 8.54
+   "yield": 8.7
   },
   {
    "years": 8,
-   "yield": 8.65
+   "yield": 8.75
   },
   {
    "years": 9,
-   "yield": 8.69
+   "yield": 8.62
   },
   {
    "years": 10,
-   "yield": 8.58
+   "yield": 8.97
   },
   {
    "years": 11,
-   "yield": 8.58
+   "yield": 9.13
   },
   {
    "years": 12,
-   "yield": 8.77
+   "yield": 9.01
   },
   {
    "years": 13,
-   "yield": 8.84
+   "yield": 8.98
   },
   {
    "years": 14,
-   "yield": 8.86
+   "yield": 9
   },
   {
    "years": 15,
-   "yield": 8.91
+   "yield": 9
   },
   {
    "years": 16,
-   "yield": 8.99
+   "yield": 9.05
   },
   {
    "years": 17,
-   "yield": 8.93
+   "yield": 9.06
   },
   {
    "years": 18,
-   "yield": 8.87
+   "yield": 9.06
   },
   {
    "years": 19,
-   "yield": 8.9
+   "yield": 8.99
   },
   {
    "years": 20,
-   "yield": 8.93
+   "yield": 8.99
   }
  ],
  "standard": {
-  "2": 8.25,
-  "5": 8.42,
-  "10": 8.58,
-  "15": 8.91,
-  "20": 8.93
+  "2": 8.49,
+  "5": 8.66,
+  "10": 8.97,
+  "15": 9,
+  "20": 8.99
  },
  "monthly": [
   {
@@ -140,12 +140,12 @@
    "y20": 9.13
   },
   {
-   "date": "2026-11-12",
-   "y2": 8.25,
-   "y5": 8.42,
-   "y10": 8.58,
-   "y15": 8.91,
-   "y20": 8.93
+   "date": "2026-11-19",
+   "y2": 8.49,
+   "y5": 8.66,
+   "y10": 8.97,
+   "y15": 9,
+   "y20": 8.99
   }
  ],
  "history": [
@@ -220,6 +220,14 @@
    "y10": 8.58,
    "y15": 8.91,
    "y20": 8.93
+  },
+  {
+   "date": "2026-11-19",
+   "y2": 8.49,
+   "y5": 8.66,
+   "y10": 8.97,
+   "y15": 9,
+   "y20": 8.99
   }
  ]
 }

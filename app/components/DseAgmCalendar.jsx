@@ -11,6 +11,8 @@
  * Data lives in ./dseAgmData.js (SOURCE, RAW, MARKET).
  *
  * Props
+ *   Dark styles use the `[.dark_&]:` variant, so they never depend on the host Tailwind darkMode setting or the visitor's OS theme:
+ *   the calendar always opens white; only the Midnight button (or the `theme` prop) switches it.
  *   theme            "light" | "dark" | undefined. Pass your site theme (e.g. next-themes resolvedTheme) to control it.
  *                    Left undefined, the component follows the device setting and shows its own toggle.
  *   showThemeToggle  default true. Hidden automatically when `theme` is passed.
@@ -48,7 +50,7 @@
 import React, { useMemo, useState, useEffect, useRef } from "react";
 import { SOURCE as D_SOURCE, RAW as D_RAW, MARKET as D_MARKET, IPO as D_IPO, HOLIDAYS as D_HOLIDAYS, HOLIDAYS_META as D_HOL_META, RIGHTS as D_RIGHTS } from "./dseAgmData";
 
-const VERSION = "v1.7.0";
+const VERSION = "v1.7.2";
 
 /* ─────────────────────────── Helpers ─────────────────────────── */
 const MON = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
@@ -164,37 +166,37 @@ function statusOf(e, today) {
 
 /* ─────────────────────────── Visual tokens ─────────────────────────── */
 const TYPE_STYLE = {
-  AGM: { chip: "bg-[#1da1f2]/15 text-[#004990] ring-[#004990]/25 dark:text-[#38bdf8] dark:ring-[#38bdf8]/25", dot: "bg-[#1da1f2]", label: "AGM" },
-  EGM: { chip: "bg-[#c99a1a]/15 text-[#8a6a0f] ring-amber-600/25 dark:text-[#fad870] dark:ring-[#fad870]/25", dot: "bg-[#c99a1a]", label: "EGM" },
-  IPO: { chip: "bg-[#1da1f2]/15 text-[#0b78bd] ring-[#0b78bd]/25 dark:text-[#38bdf8] dark:ring-[#38bdf8]/25", dot: "bg-[#1da1f2]", label: "IPO" },
-  REC: { chip: "bg-[#c99a1a]/15 text-[#8a6a0f] ring-[#8a6a0f]/25 dark:text-[#fad870] dark:ring-[#fad870]/25", dot: "bg-[#c99a1a]", label: "Record" },
+  AGM: { chip: "bg-[#1da1f2]/15 text-[#004990] ring-[#004990]/25 [.dark_&]:text-[#38bdf8] [.dark_&]:ring-[#38bdf8]/25", dot: "bg-[#1da1f2]", label: "AGM" },
+  EGM: { chip: "bg-[#c99a1a]/15 text-[#8a6a0f] ring-amber-600/25 [.dark_&]:text-[#fad870] [.dark_&]:ring-[#fad870]/25", dot: "bg-[#c99a1a]", label: "EGM" },
+  IPO: { chip: "bg-[#1da1f2]/15 text-[#0b78bd] ring-[#0b78bd]/25 [.dark_&]:text-[#38bdf8] [.dark_&]:ring-[#38bdf8]/25", dot: "bg-[#1da1f2]", label: "IPO" },
+  REC: { chip: "bg-[#c99a1a]/15 text-[#8a6a0f] ring-[#8a6a0f]/25 [.dark_&]:text-[#fad870] [.dark_&]:ring-[#fad870]/25", dot: "bg-[#c99a1a]", label: "Record" },
 };
 const STATUS_STYLE = {
-  Upcoming: "bg-[#0f9d6b]/15 text-[#0f9d6b] dark:text-[#34d399]",
+  Upcoming: "bg-[#0f9d6b]/15 text-[#0f9d6b] [.dark_&]:text-[#34d399]",
   Today: "bg-[#004990] text-white",
-  "Date passed": "bg-[#6b7280]/10 text-[#4b5563] dark:text-[#a8b3c5]",
-  Postponed: "bg-[#d9423a]/15 text-[#d9423a] dark:text-[#fb7185]",
-  "Court-pending": "bg-[#c2720c]/15 text-[#c2720c] dark:text-orange-300",
-  "Date TBA": "bg-[#6b7280]/15 text-[#4b5563] dark:text-[#dbe7f3]",
-  "Record only": "bg-[#c99a1a]/15 text-[#8a6a0f] dark:text-[#fad870]",
-  Cancelled: "bg-[#d9423a]/15 text-[#d9423a] dark:text-[#fb7185]",
+  "Date passed": "bg-[#6b7280]/10 text-[#4b5563] [.dark_&]:text-[#a8b3c5]",
+  Postponed: "bg-[#d9423a]/15 text-[#d9423a] [.dark_&]:text-[#fb7185]",
+  "Court-pending": "bg-[#c2720c]/15 text-[#c2720c] [.dark_&]:text-orange-300",
+  "Date TBA": "bg-[#6b7280]/15 text-[#4b5563] [.dark_&]:text-[#dbe7f3]",
+  "Record only": "bg-[#c99a1a]/15 text-[#8a6a0f] [.dark_&]:text-[#fad870]",
+  Cancelled: "bg-[#d9423a]/15 text-[#d9423a] [.dark_&]:text-[#fb7185]",
   "IPO open": "bg-[#0f9d6b] text-white",
-  "IPO upcoming": "bg-[#1da1f2]/15 text-[#0b78bd] dark:text-[#38bdf8]",
-  Listed: "bg-[#6b7280]/10 text-[#4b5563] dark:text-[#a8b3c5]",
-  Closed: "bg-[#6b7280]/10 text-[#4b5563] dark:text-[#a8b3c5]",
+  "IPO upcoming": "bg-[#1da1f2]/15 text-[#0b78bd] [.dark_&]:text-[#38bdf8]",
+  Listed: "bg-[#6b7280]/10 text-[#4b5563] [.dark_&]:text-[#a8b3c5]",
+  Closed: "bg-[#6b7280]/10 text-[#4b5563] [.dark_&]:text-[#a8b3c5]",
 };
 /** Midway type: Inter for English, Noto Sans Bengali for Bangla. Load both fonts once in the site layout (see README). */
 const FONT_STACK = 'Inter, "Noto Sans Bengali", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif';
 const GROUPS = ["Bank", "NBFI", "Life Ins", "Gen Ins", "Other"];
 const MODES = ["Hybrid", "Digital", "Physical", "TBA", "Postponed"];
-const glass = "rounded-lg border-[0.5px] border-[#e5e7e5] bg-white dark:backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.045] dark:shadow-[0_10px_40px_-15px_rgba(0,0,0,0.6)]";
-const muted = "text-[#6b7280] dark:text-[#a8b3c5]";
+const glass = "rounded-lg border-[0.5px] border-[#e5e7e5] bg-white [.dark_&]:backdrop-blur-xl [.dark_&]:border-white/10 [.dark_&]:bg-white/[0.045] [.dark_&]:shadow-[0_10px_40px_-15px_rgba(0,0,0,0.6)]";
+const muted = "text-[#6b7280] [.dark_&]:text-[#a8b3c5]";
 /** Always-dark card, used for sections that keep a dark look in both themes (wrapped in a `.dark` scope). */
 const darkGlass = "rounded-lg border border-[#1f2a3d] bg-[#0b1220] text-[#dbe7f3] shadow-[0_12px_40px_-18px_rgba(2,12,20,0.7)]";
 const focusRing = "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1da1f2]";
-const selCtrl = "dark:bg-[#0b1220] dark:[color-scheme:dark]";
-const optCls = "bg-white text-[#111827] dark:bg-[#0b1220] dark:text-[#ffffff]";
-const ctrl = `min-h-[40px] rounded-lg border-0 bg-[#111827]/5 text-xs font-semibold text-[#111827] dark:bg-white/5 dark:text-[#dbe7f3] sm:min-h-[34px] ${focusRing}`;
+const selCtrl = "[.dark_&]:bg-[#0b1220] [.dark_&]:[color-scheme:dark]";
+const optCls = "bg-white text-[#111827] [.dark_&]:bg-[#0b1220] [.dark_&]:text-[#ffffff]";
+const ctrl = `min-h-[40px] rounded-lg border-0 bg-[#111827]/5 text-xs font-semibold text-[#111827] [.dark_&]:bg-white/5 [.dark_&]:text-[#dbe7f3] sm:min-h-[34px] ${focusRing}`;
 const shortName = (c) => c.replace(/\b(PLC|Ltd|Limited|Company|Co)\b\.?/gi, "").replace(/\s+/g, " ").trim();
 const fyLabel = (ye) => ((ye.match(/(\d{4})$/)?.[1]) || ("20" + ye.slice(-2))).slice(2);
 
@@ -207,7 +209,7 @@ const SectionInner = ({ title, kicker, right, children, className = "", darkInne
     <div className="mb-3 flex flex-wrap items-end justify-between gap-2">
       <div className="min-w-0">
         {kicker && <div className={`text-[11px] font-bold uppercase tracking-[0.12em] ${muted}`}>{kicker}</div>}
-        <h2 className="text-base font-bold leading-snug text-[#111827] dark:text-white">{title}</h2>
+        <h2 className="text-base font-bold leading-snug text-[#111827] [.dark_&]:text-white">{title}</h2>
       </div>
       {right}
     </div>
@@ -222,13 +224,13 @@ const Section = ({ dark = false, className = "", ...p }) => dark ? (
 function Seg({ value, onChange, options, id, full = false }) {
   return (
     <div role="group" aria-label={id}
-      className={`${full ? "flex w-full sm:inline-flex sm:w-auto" : "inline-flex max-w-full"} overflow-x-auto rounded-lg bg-[#111827]/5 p-0.5 [scrollbar-width:none] dark:bg-white/5 [&::-webkit-scrollbar]:hidden`}>
+      className={`${full ? "flex w-full sm:inline-flex sm:w-auto" : "inline-flex max-w-full"} overflow-x-auto rounded-lg bg-[#111827]/5 p-0.5 [scrollbar-width:none] [.dark_&]:bg-white/5 [&::-webkit-scrollbar]:hidden`}>
       {options.map((o) => {
         const v = typeof o === "string" ? o : o.v, l = typeof o === "string" ? o : o.l, on = value === v;
         return (
           <button key={v} type="button" aria-pressed={on} onClick={() => onChange(v)}
             className={`${full ? "flex-1 sm:flex-none" : ""} min-h-[36px] shrink-0 whitespace-nowrap rounded-[10px] px-2 text-xs font-semibold transition sm:min-h-[30px] sm:px-2.5 ${focusRing} ${
-              on ? "bg-white text-[#111827] shadow-sm dark:bg-white/15 dark:text-white" : `${muted} hover:text-[#111827] dark:hover:text-white`}`}>
+              on ? "bg-white text-[#111827] shadow-sm [.dark_&]:bg-white/15 [.dark_&]:text-white" : `${muted} hover:text-[#111827] [.dark_&]:hover:text-white`}`}>
             {l}
           </button>
         );
@@ -240,7 +242,7 @@ function Seg({ value, onChange, options, id, full = false }) {
 const LIST_CAP = 3;
 const MoreToggle = ({ total, open, onToggle, label = "" }) => total <= LIST_CAP ? null : (
   <button type="button" onClick={onToggle} aria-expanded={open}
-    className={`mt-2 flex min-h-[40px] w-full items-center justify-center gap-1.5 rounded-lg border border-[#e5e7e5] text-xs font-semibold text-[#4b5563] transition hover:bg-[#f7f8f7] dark:border-white/10 dark:text-[#dbe7f3] dark:hover:bg-white/5 sm:min-h-[34px] ${focusRing}`}>
+    className={`mt-2 flex min-h-[40px] w-full items-center justify-center gap-1.5 rounded-lg border border-[#e5e7e5] text-xs font-semibold text-[#4b5563] transition hover:bg-[#f7f8f7] [.dark_&]:border-white/10 [.dark_&]:text-[#dbe7f3] [.dark_&]:hover:bg-white/5 sm:min-h-[34px] ${focusRing}`}>
     {open ? "Show less" : `Show more${label ? " " + label : ""} (${total - LIST_CAP})`}
     <Chevron open={open} />
   </button>
@@ -286,9 +288,9 @@ const EventTooltip = ({ tip, today }) => {
 };
 
 const Stat = ({ l, v, sub, cls = "" }) => (
-  <div className="min-w-0 rounded-lg border border-[#e5e7e5] bg-white px-2.5 py-2 dark:border-transparent dark:bg-white/[0.035] sm:px-3">
+  <div className="min-w-0 rounded-lg border border-[#e5e7e5] bg-white px-2.5 py-2 [.dark_&]:border-transparent [.dark_&]:bg-white/[0.035] sm:px-3">
     <div className={`text-[11px] font-bold uppercase leading-tight tracking-[0.06em] ${muted}`}>{l}</div>
-    <div className={`tabular-nums text-base font-bold tabular-nums ${cls || "text-[#111827] dark:text-white"}`}>{v}</div>
+    <div className={`tabular-nums text-base font-bold tabular-nums ${cls || "text-[#111827] [.dark_&]:text-white"}`}>{v}</div>
     {sub && <div className={`text-[11px] leading-snug ${muted}`}>{sub}</div>}
   </div>
 );
@@ -296,7 +298,7 @@ const Stat = ({ l, v, sub, cls = "" }) => (
 /* ─────────────────────────── Price reaction chart ─────────────────────────── */
 const fmtPx = (v) => (v == null ? "—" : fmtIN(v, 2));
 const fmtPct = (v, dp = 1) => (v == null ? "—" : `${v > 0 ? "+" : ""}${fmtIN(v, dp)}%`);
-const pctClass = (v) => (v == null ? "" : v > 0 ? "text-[#0f9d6b] dark:text-[#34d399]" : v < 0 ? "text-[#d9423a] dark:text-[#fb7185]" : "");
+const pctClass = (v) => (v == null ? "" : v > 0 ? "text-[#0f9d6b] [.dark_&]:text-[#34d399]" : v < 0 ? "text-[#d9423a] [.dark_&]:text-[#fb7185]" : "");
 
 function PriceChart({ m, adjusted }) {
   const [hover, setHover] = useState(null);
@@ -428,17 +430,17 @@ const EntryDetails = ({ e, onChart }) => (
     {e.m?.dps != null && <div><b>Cash per share:</b> <span className="tabular-nums">Tk {fmtIN(e.m.dps, 3)}</span> <span className={muted}>(face value Tk {fmtIN(e.m.face, 0)} per DSE{e.m.faceFlag ? ", assumed" : ""})</span></div>}
     {e.m?.sponsorPct ? <div><b>Payout basis:</b> <span className={muted}>company-wide; per share {fmtIN(e.m.payout, 0)}% with sponsors ({e.m.sponsorPct}%) excluded</span></div> : null}
     {e.m?.epsBasis && <div><b>EPS basis:</b> <span className={muted}>{e.m.epsBasis}</span></div>}
-    {e.m && <div><b>DSE code:</b> <span className="tabular-nums">{e.m.code}</span>{e.m.px ? <> · <button type="button" onClick={(ev) => { ev.stopPropagation(); onChart(e); }} className="inline-flex min-h-[32px] items-center font-semibold text-[#004990] hover:underline dark:text-[#38bdf8]">Show price reaction ↑</button></> : null}</div>}
+    {e.m && <div><b>DSE code:</b> <span className="tabular-nums">{e.m.code}</span>{e.m.px ? <> · <button type="button" onClick={(ev) => { ev.stopPropagation(); onChart(e); }} className="inline-flex min-h-[32px] items-center font-semibold text-[#004990] hover:underline [.dark_&]:text-[#38bdf8]">Show price reaction ↑</button></> : null}</div>}
   </div>
 );
 
 /* ─────────────────────────── Loading shell (server render + first client render) ─────────────────────────── */
 const Skeleton = () => (
   <div className="mx-auto flex max-w-7xl flex-col gap-4 px-3 py-5 sm:px-6" aria-busy="true" aria-label="Loading calendar">
-    <div className="h-4 w-48 max-w-full animate-pulse rounded bg-[#e5e7e5] dark:bg-white/10" />
-    <div className="h-8 w-72 max-w-full animate-pulse rounded bg-[#e5e7e5] dark:bg-white/10" />
-    <div className="flex gap-3 overflow-hidden">{[0, 1, 2].map((i) => <div key={i} className="h-24 w-[72%] shrink-0 animate-pulse rounded-lg bg-[#e5e7e5] dark:bg-white/10 sm:w-auto sm:flex-1" />)}</div>
-    <div className="h-[420px] animate-pulse rounded-lg bg-[#f7f8f7] dark:bg-white/5" />
+    <div className="h-4 w-48 max-w-full animate-pulse rounded bg-[#e5e7e5] [.dark_&]:bg-white/10" />
+    <div className="h-8 w-72 max-w-full animate-pulse rounded bg-[#e5e7e5] [.dark_&]:bg-white/10" />
+    <div className="flex gap-3 overflow-hidden">{[0, 1, 2].map((i) => <div key={i} className="h-24 w-[72%] shrink-0 animate-pulse rounded-lg bg-[#e5e7e5] [.dark_&]:bg-white/10 sm:w-auto sm:flex-1" />)}</div>
+    <div className="h-[420px] animate-pulse rounded-lg bg-[#f7f8f7] [.dark_&]:bg-white/5" />
   </div>
 );
 
@@ -463,8 +465,8 @@ export default function DseAgmCalendar({ theme, showThemeToggle = true, classNam
   const onToggleTheme = controlled || !showThemeToggle ? null : () => setUserDark(!dark);
   return (
     <div className={`${dark ? "dark" : ""} ${className}`} style={{ fontFamily: FONT_STACK }}>
-      <div className="relative isolate overflow-hidden bg-white text-[#111827] transition-colors dark:bg-[#0b1220] dark:[color-scheme:dark] dark:text-[#dbe7f3]">
-        <div className="pointer-events-none absolute inset-0 -z-10 hidden overflow-hidden dark:block" aria-hidden="true">
+      <div className="relative isolate overflow-hidden bg-white text-[#111827] transition-colors [.dark_&]:bg-[#0b1220] [.dark_&]:[color-scheme:dark] [.dark_&]:text-[#dbe7f3]">
+        <div className="pointer-events-none absolute inset-0 -z-10 hidden overflow-hidden [.dark_&]:block" aria-hidden="true">
           <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-[#1da1f2]/10 blur-3xl" />
           <div className="absolute right-0 top-1/3 h-80 w-80 rounded-full bg-[#c99a1a]/10 blur-3xl" />
         </div>
@@ -672,7 +674,7 @@ function Calendar({ today, dark, onToggleTheme, data }) {
   }, [filtered, sort]);
   const th = (key, label, right = false) => (
     <th className={`whitespace-nowrap px-3 py-2 ${right ? "text-right" : "text-left"}`} aria-sort={sort.key === key ? (sort.dir > 0 ? "ascending" : "descending") : "none"}>
-      <button type="button" className={`font-semibold uppercase hover:text-[#004990] dark:hover:text-[#38bdf8] ${focusRing}`} onClick={() => setSort((s) => ({ key, dir: s.key === key ? -s.dir : 1 }))}>
+      <button type="button" className={`font-semibold uppercase hover:text-[#004990] [.dark_&]:hover:text-[#38bdf8] ${focusRing}`} onClick={() => setSort((s) => ({ key, dir: s.key === key ? -s.dir : 1 }))}>
         {label}{sort.key === key ? (sort.dir > 0 ? " ↑" : " ↓") : ""}
       </button>
     </th>
@@ -695,11 +697,11 @@ function Calendar({ today, dark, onToggleTheme, data }) {
   useEffect(() => { const h = () => setTip(null); window.addEventListener("scroll", h, { passive: true }); return () => window.removeEventListener("scroll", h); }, []);
 
   /* ── v1.6 shared calendar pieces (used inline and in the full-screen view) ── */
-  const navBtn = `h-10 w-10 rounded-lg bg-[#111827]/5 text-base font-bold hover:bg-[#111827]/10 dark:bg-white/5 dark:hover:bg-white/10 sm:h-9 sm:w-9 ${focusRing}`;
+  const navBtn = `h-10 w-10 rounded-lg bg-[#111827]/5 text-base font-bold hover:bg-[#111827]/10 [.dark_&]:bg-white/5 [.dark_&]:hover:bg-white/10 sm:h-9 sm:w-9 ${focusRing}`;
   const monthNav = (
     <div className="flex items-center gap-1">
       <button type="button" onClick={() => shift(-1)} aria-label="Previous month" className={navBtn}>‹</button>
-      <button type="button" onClick={goToday} className={`h-10 rounded-lg bg-[#111827]/5 px-3 text-xs font-semibold hover:bg-[#111827]/10 dark:bg-white/5 dark:hover:bg-white/10 sm:h-9 ${focusRing}`}>Today</button>
+      <button type="button" onClick={goToday} className={`h-10 rounded-lg bg-[#111827]/5 px-3 text-xs font-semibold hover:bg-[#111827]/10 [.dark_&]:bg-white/5 [.dark_&]:hover:bg-white/10 sm:h-9 ${focusRing}`}>Today</button>
       <button type="button" onClick={() => shift(1)} aria-label="Next month" className={navBtn}>›</button>
     </div>
   );
@@ -714,7 +716,7 @@ function Calendar({ today, dark, onToggleTheme, data }) {
     </div>
   );
   const holNote = holMeta && !holMeta.complete && holMeta.through && `${month.y}-${String(month.m + 1).padStart(2, "0")}-01` > holMeta.through ? (
-    <p className="mt-1 text-[11px] text-[#8a6a0f] dark:text-[#fad870]">DSE holidays are loaded only through {fmtD(holMeta.through)} so far. Closed days after that may be missing until the next daily update.</p>
+    <p className="mt-1 text-[11px] text-[#8a6a0f] [.dark_&]:text-[#fad870]">DSE holidays are loaded only through {fmtD(holMeta.through)} so far. Closed days after that may be missing until the next daily update.</p>
   ) : null;
   const gridEl = (big) => (
     <div className={`grid grid-cols-7 gap-0.5 sm:gap-1 ${big ? "lg:h-full lg:grid-rows-[auto_repeat(6,minmax(0,1fr))]" : ""}`}>
@@ -734,23 +736,23 @@ function Calendar({ today, dark, onToggleTheme, data }) {
           <button type="button" key={c.iso} onClick={() => setSel(c.iso)} aria-pressed={isS}
             aria-label={`${fmtD(c.iso)}${nt && nt.kind === "holiday" ? `, DSE holiday: ${nt.label}` : ""}${n ? `: ${n} item${n === 1 ? "" : "s"}` : ""}`}
             className={`relative flex min-h-[46px] min-w-0 flex-col items-center gap-0.5 overflow-hidden rounded-lg border p-1 text-left transition sm:items-stretch sm:rounded-lg sm:p-1.5 ${big ? "sm:min-h-[104px] lg:min-h-0" : "sm:min-h-[92px]"} ${focusRing} ${
-              isS ? "border-[#1da1f2] bg-white ring-1 ring-[#1da1f2] dark:bg-white/[0.06]"
-                : c.inMonth ? (nt && nt.kind === "holiday" ? "border-[#fb7185]/60 bg-rose-50 hover:bg-rose-100/70 dark:border-[#fb7185]/20 dark:bg-[#d9423a]/10 dark:hover:bg-[#d9423a]/15" : nt ? "border-[#e5e7e5] bg-[#f7f8f7] hover:bg-[#f7f8f7] dark:border-white/5 dark:bg-white/[0.015] dark:hover:bg-white/[0.05]" : "border-[#e5e7e5] bg-white hover:bg-[#f7f8f7] dark:border-white/5 dark:bg-white/[0.03] dark:hover:bg-white/[0.07]")
+              isS ? "border-[#1da1f2] bg-white ring-1 ring-[#1da1f2] [.dark_&]:bg-white/[0.06]"
+                : c.inMonth ? (nt && nt.kind === "holiday" ? "border-[#fb7185]/60 bg-rose-50 hover:bg-rose-100/70 [.dark_&]:border-[#fb7185]/20 [.dark_&]:bg-[#d9423a]/10 [.dark_&]:hover:bg-[#d9423a]/15" : nt ? "border-[#e5e7e5] bg-[#f7f8f7] hover:bg-[#f7f8f7] [.dark_&]:border-white/5 [.dark_&]:bg-white/[0.015] [.dark_&]:hover:bg-white/[0.05]" : "border-[#e5e7e5] bg-white hover:bg-[#f7f8f7] [.dark_&]:border-white/5 [.dark_&]:bg-white/[0.03] [.dark_&]:hover:bg-white/[0.07]")
                 : "border-transparent bg-transparent opacity-40"}`}>
-            <span className={`tabular-nums text-[12px] font-bold leading-5 ${isT ? "flex h-5 w-5 items-center justify-center rounded-full bg-[#004990] text-white" : "text-[#4b5563] dark:text-[#dbe7f3]"}`}>{c.day}</span>
+            <span className={`tabular-nums text-[12px] font-bold leading-5 ${isT ? "flex h-5 w-5 items-center justify-center rounded-full bg-[#004990] text-white" : "text-[#4b5563] [.dark_&]:text-[#dbe7f3]"}`}>{c.day}</span>
             <span className="flex max-w-full flex-wrap justify-center gap-0.5 sm:hidden" aria-hidden="true">
               {items.slice(0, 4).map((x, i) => <i key={i} className={`h-1.5 w-1.5 rounded-full ${x.e.type === "IPO" ? "bg-[#1da1f2]" : TYPE_STYLE[x.e.type].dot}`} />)}
               {rec.slice(0, Math.max(0, 4 - Math.min(4, items.length))).map((e) => <i key={"r" + e.id} className="h-1.5 w-1.5 rounded-full bg-[#c99a1a]/60" />)}
             </span>
-            {n > 4 && <span className="tabular-nums text-[11px] font-bold leading-none text-[#6b7280] dark:text-[#a8b3c5] sm:hidden" aria-hidden="true">+{n - 4}</span>}
-            {nt && nt.kind === "holiday" && <span className="hidden truncate rounded-md bg-[#d9423a]/15 px-1 py-[1px] text-[11px] font-semibold text-rose-800 dark:text-[#fb7185] sm:block" title={nt.label}>{nt.label}</span>}
+            {n > 4 && <span className="tabular-nums text-[11px] font-bold leading-none text-[#6b7280] [.dark_&]:text-[#a8b3c5] sm:hidden" aria-hidden="true">+{n - 4}</span>}
+            {nt && nt.kind === "holiday" && <span className="hidden truncate rounded-md bg-[#d9423a]/15 px-1 py-[1px] text-[11px] font-semibold text-rose-800 [.dark_&]:text-[#fb7185] sm:block" title={nt.label}>{nt.label}</span>}
             {nt && nt.kind === "holiday" && <i className="h-1.5 w-1.5 rounded-sm bg-[#fb7185] sm:hidden" aria-hidden="true" />}
             {items.slice(0, maxChips).map((x, i) => (
               <span key={i} {...hoverProps(x.e)} className={`hidden truncate rounded-md px-1 py-[1px] text-[11px] font-semibold ring-1 ring-inset sm:block ${x.cls}`}>{x.label}</span>
             ))}
             {items.length > maxChips && <span className={`hidden text-[11px] font-semibold sm:block ${muted}`}>+{items.length - maxChips} more</span>}
             {rec.length > 0 && (
-              <span className="mt-auto hidden items-center gap-1 text-[11px] font-semibold text-[#8a6a0f] dark:text-[#fad870] sm:flex" {...(rec.length === 1 ? hoverProps(rec[0]) : {})}>
+              <span className="mt-auto hidden items-center gap-1 text-[11px] font-semibold text-[#8a6a0f] [.dark_&]:text-[#fad870] sm:flex" {...(rec.length === 1 ? hoverProps(rec[0]) : {})}>
                 <i className="h-1.5 w-1.5 rounded-full bg-[#c99a1a]" />R × {rec.length}
               </span>
             )}
@@ -772,7 +774,7 @@ function Calendar({ today, dark, onToggleTheme, data }) {
     const capf = (key, arr) => (big ? arr : cap(key, arr));
     const dnt = TC.reason(sel);
     const banner = dnt && (
-      <div className={`mb-2 rounded-lg border p-2.5 text-xs ${dnt.kind === "holiday" ? "border-[#fb7185]/40 bg-[#d9423a]/10 text-rose-900 dark:text-[#fb7185]" : "border-[#c9cdc9]/60 bg-[#6b7280]/10"}`}>
+      <div className={`mb-2 rounded-lg border p-2.5 text-xs ${dnt.kind === "holiday" ? "border-[#fb7185]/40 bg-[#d9423a]/10 text-rose-900 [.dark_&]:text-[#fb7185]" : "border-[#c9cdc9]/60 bg-[#6b7280]/10"}`}>
         <b>{dnt.kind === "holiday" ? `DSE holiday: ${dnt.label}` : `${dnt.label}: DSE weekend`}</b>{dnt.moon ? " (subject to moon sighting)" : ""}. The market is closed.
         {(selDay.rec.length > 0 || selDay.meet.some((e) => e.type === "IPO") || selDay.ipo.length > 0) && <span className="mt-1 block">Record dates or IPO dates on a non-trading day usually mean a data error or the nearest trading day: check the company notice.</span>}
       </div>
@@ -782,9 +784,9 @@ function Calendar({ today, dark, onToggleTheme, data }) {
     ) : (
       <>{banner}<ul className="flex flex-col gap-2">
         {capf("day", selDay.meet).map((e) => (
-          <li key={"m" + e.id} className="rounded-lg border border-[#e5e7e5] bg-white p-2.5 dark:border-transparent dark:bg-white/[0.04]">
+          <li key={"m" + e.id} className="rounded-lg border border-[#e5e7e5] bg-white p-2.5 [.dark_&]:border-transparent [.dark_&]:bg-white/[0.04]">
             <div className="flex items-start justify-between gap-2">
-              <button type="button" onClick={() => pick(e)} className={`-my-1.5 min-w-0 py-1.5 text-left text-sm font-bold leading-snug text-[#111827] hover:text-[#004990] dark:text-white dark:hover:text-[#38bdf8] ${focusRing}`}>{e.company}</button>
+              <button type="button" onClick={() => pick(e)} className={`-my-1.5 min-w-0 py-1.5 text-left text-sm font-bold leading-snug text-[#111827] hover:text-[#004990] [.dark_&]:text-white [.dark_&]:hover:text-[#38bdf8] ${focusRing}`}>{e.company}</button>
               <Pill className={`ring-1 ring-inset ${TYPE_STYLE[e.type].chip}`}>{e.type}</Pill>
             </div>
             {e.type === "IPO" ? (
@@ -804,14 +806,14 @@ function Calendar({ today, dark, onToggleTheme, data }) {
         {selDay.ipo.map(({ e, k: kk }) => (
           <li key={"i" + kk + e.id} className="flex items-start gap-2 rounded-lg border border-sky-400/40 bg-[#1da1f2]/[0.06] p-2.5">
             <i className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#1da1f2]" />
-            <div className="min-w-0 text-xs"><b className="text-[#111827] dark:text-white">{e.company}</b> IPO {IPO_K[kk]}
+            <div className="min-w-0 text-xs"><b className="text-[#111827] [.dark_&]:text-white">{e.company}</b> IPO {IPO_K[kk]}
               <div className={muted}>{e.subStart ? `Subscription ${fmtShort(e.subStart)}${e.subEnd ? " – " + fmtShort(e.subEnd) : ""}` : ""}</div></div>
           </li>
         ))}
         {capf("dayR", selDay.rec).map((e) => (
           <li key={"r" + e.id} className="flex items-start gap-2 rounded-lg border border-dashed border-[#fad870]/50 p-2.5">
             <i className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#c99a1a]" />
-            <div className="min-w-0 text-xs"><button type="button" onClick={() => pick(e)} className={`-my-1.5 py-1.5 text-left font-bold text-[#111827] hover:text-[#004990] dark:text-white dark:hover:text-[#38bdf8] ${focusRing}`}>{e.company}</button> record date
+            <div className="min-w-0 text-xs"><button type="button" onClick={() => pick(e)} className={`-my-1.5 py-1.5 text-left font-bold text-[#111827] hover:text-[#004990] [.dark_&]:text-white [.dark_&]:hover:text-[#38bdf8] ${focusRing}`}>{e.company}</button> record date
               <div className={muted}>{e.type === "REC" ? e.purpose : e.meeting ? `${e.type} on ${fmtD(e.meeting)} (${dayDiff(e.record, e.meeting)} d later)` : `${e.type}: ${e.status.toLowerCase()}`}</div>
             </div>
           </li>
@@ -847,24 +849,51 @@ function Calendar({ today, dark, onToggleTheme, data }) {
     b: `${ntRecords.slice(0, 4).map((e) => `${shortName(e.company)} (${fmtShort(e.record)}, ${ntNote(recNT(e))})`).join("; ")}${ntRecords.length > 4 ? ` and ${ntRecords.length - 4} more` : ""}. DSE does not trade on those days, so the entitlement date may be a data error or may refer to the last trading day: worth checking with the company notice.`,
   });
 
+  const live5 = all.filter((e) => e.type !== "IPO" && e.status !== "Cancelled");
+  const recWeek = live5.filter((e) => e.record && e.record >= today && dayDiff(today, e.record) <= 7 && (e.cash > 0 || e.stock > 0)).sort((a, b) => a.record.localeCompare(b.record));
+  const lastWeek = live5.filter((e) => e.record && e.record < today && dayDiff(e.record, today) <= 10 && e.m && e.m.exAdj != null).sort((a, b) => b.m.exAdj - a.m.exAdj);
+  const yieldAhead = live5.filter((e) => e.record && e.record >= today && e.m && e.m.yield != null && e.cash > 0).sort((a, b) => b.m.yield - a.m.yield);
+  const mtgWeek = live5.filter((e) => e.meeting && e.meeting >= today && dayDiff(today, e.meeting) <= 7).sort((a, b) => a.meeting.localeCompare(b.meeting));
+  const dailyInsights = [];
+  if (recWeek.length) dailyInsights.push({
+    t: `${recWeek.length} dividend record date${recWeek.length === 1 ? "" : "s"} in the next 7 days`,
+    b: `Next: ${recWeek.slice(0, 3).map((e) => `${shortName(e.company)} (${fmtShort(e.record)}${e.cash > 0 ? `, ${fmtIN(e.cash, 2)}% cash` : ""}${e.m && e.m.yield != null ? `, yield ${fmtIN(e.m.yield, 2)}%` : ""})`).join("; ")}${recWeek.length > 3 ? ` and ${recWeek.length - 3} more` : ""}. Dates are as published by DSE; Fridays, Saturdays and DSE holidays are not trading days.`,
+  });
+  if (lastWeek.length >= 2) {
+    const best = lastWeek[0], worst = lastWeek[lastWeek.length - 1];
+    dailyInsights.push({
+      t: `Ex-day moves over the last 10 days`,
+      b: `${lastWeek.length} record dates have passed with prices. Best after adding back the dividend: ${shortName(best.company)} ${fmtPct(best.m.exAdj, 1)} (${fmtShort(best.record)}). Weakest: ${shortName(worst.company)} ${fmtPct(worst.m.exAdj, 1)} (${fmtShort(worst.record)}). Tap an entry in Record-date reaction to see its chart.`,
+    });
+  }
+  if (yieldAhead.length) dailyInsights.push({
+    t: `Highest cash yields among upcoming record dates`,
+    b: `${yieldAhead.slice(0, 3).map((e) => `${shortName(e.company)} ${fmtIN(e.m.yield, 2)}% (record ${fmtShort(e.record)})`).join("; ")}. Yield uses the latest price and the proposed cash dividend; figures for years not yet audited are indicative.`,
+  });
+  if (mtgWeek.length) dailyInsights.push({
+    t: `${mtgWeek.length} AGM/EGM meeting${mtgWeek.length === 1 ? "" : "s"} in the next 7 days`,
+    b: `${mtgWeek.slice(0, 3).map((e) => `${shortName(e.company)} (${e.type}, ${fmtShort(e.meeting)})`).join("; ")}${mtgWeek.length > 3 ? ` and ${mtgWeek.length - 3} more` : ""}.`,
+  });
+  insights.unshift(...dailyInsights);
+
   return (
     <>
       <EventTooltip tip={tip} today={today} />
-      <div className="mx-auto flex max-w-7xl md:container flex-col gap-4 px-4 py-5 sm:px-0 sm:py-6">
+      <div className="mx-auto flex container flex-col gap-4 px-3 py-5 sm:px-6 lg:px-0 sm:py-6">
         {/* Header */}
         <header className="flex flex-wrap items-start justify-between gap-x-3 gap-y-2">
           <div className="min-w-[min(100%,260px)] flex-1">
             <div className={`text-[11px] font-bold uppercase tracking-[0.14em] ${muted}`}>Dhaka Stock Exchange · Corporate calendar</div>
-            <h1 className="text-[22px] font-extrabold leading-tight tracking-tight text-[#004990] [text-wrap:balance] dark:text-white sm:text-3xl">AGM · EGM · IPO · Record Dates</h1>
+            <h1 className="text-[22px] font-extrabold leading-tight tracking-tight text-[#004990] [text-wrap:balance] [.dark_&]:text-white sm:text-3xl">AGM · EGM · IPO · Record Dates</h1>
             <p className={`mt-1 text-xs sm:text-sm ${muted}`}>
               DSE list updated <span className="tabular-nums">{fmtD(SOURCE.lastUpdated)}</span> · <span className="tabular-nums">{k.total}</span> entries · as of <span className="tabular-nums">{fmtD(today)}</span>{SOURCE.fetched ? <> · refreshed <span className="tabular-nums">{fmtShort(SOURCE.fetched)}</span></> : null}
             </p>
           </div>
           {/* <div className="flex items-center gap-2">
-            <Pill className="bg-[#111827]/5 tabular-nums text-[#4b5563] dark:bg-white/10 dark:text-[#dbe7f3]">{VERSION}</Pill>
+            <Pill className="bg-[#111827]/5 tabular-nums text-[#4b5563] [.dark_&]:bg-white/10 [.dark_&]:text-[#dbe7f3]">{VERSION}</Pill>
             {onToggleTheme && (
               <button type="button" onClick={onToggleTheme} aria-label={dark ? "Switch to light theme" : "Switch to Midnight theme"}
-                className={`flex min-h-[40px] items-center gap-2 rounded-lg border border-[#e5e7e5] bg-white px-3 text-xs font-semibold hover:bg-[#f7f8f7] dark:border-white/10 dark:bg-white/10 dark:hover:bg-white/15 sm:min-h-[36px] ${focusRing}`}>
+                className={`flex min-h-[40px] items-center gap-2 rounded-lg border border-[#e5e7e5] bg-white px-3 text-xs font-semibold hover:bg-[#f7f8f7] [.dark_&]:border-white/10 [.dark_&]:bg-white/10 [.dark_&]:hover:bg-white/15 sm:min-h-[36px] ${focusRing}`}>
                 {dark ? (
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
                 ) : (
@@ -877,7 +906,7 @@ function Calendar({ today, dark, onToggleTheme, data }) {
         </header>
 
         {staleTd >= 2 && (
-          <div role="status" className="rounded-lg border border-[#c99a1a]/40 bg-[#c99a1a]/10 p-3 text-xs text-amber-900 dark:text-[#fad870]">
+          <div role="status" className="rounded-lg border border-[#c99a1a]/40 bg-[#c99a1a]/10 p-3 text-xs text-amber-900 [.dark_&]:text-[#fad870]">
             <b>Data may be out of date.</b> Last refreshed <span className="tabular-nums">{fmtD(SOURCE.fetched)}</span>, {staleTd} trading days ago. The daily update may not have run, so recent AGM, record-date or IPO changes could be missing.
           </div>
         )}
@@ -918,12 +947,12 @@ function Calendar({ today, dark, onToggleTheme, data }) {
                 placeholder="Search company…" className={`${ctrl} w-full px-3 font-normal placeholder:text-[#6b7280]`} />
               {sugOpen && suggestions.length > 0 && (
                 <ul id="agm-suggest" role="listbox" aria-label="Matching companies"
-                  className="absolute left-0 right-0 top-full z-30 mt-1 max-h-[60vh] overflow-y-auto rounded-lg border border-[#e5e7e5] bg-white p-1 shadow-xl dark:border-white/10 dark:bg-[#0b1220]">
+                  className="absolute left-0 right-0 top-full z-30 mt-1 max-h-[60vh] overflow-y-auto rounded-lg border border-[#e5e7e5] bg-white p-1 shadow-xl [.dark_&]:border-white/10 [.dark_&]:bg-[#0b1220]">
                   {suggestions.map((e, i) => (
                     <li key={e.id} id={`agm-sug-${i}`} role="option" aria-selected={i === sugIx}>
                       <button type="button" onMouseDown={(ev) => ev.preventDefault()} onClick={() => jumpTo(e)}
                         className={`flex min-h-[44px] w-full items-center justify-between gap-2 rounded-lg px-2.5 py-1.5 text-left text-xs hover:bg-[#1da1f2]/10 ${i === sugIx ? "bg-[#1da1f2]/10" : ""} ${focusRing}`}>
-                        <span className="min-w-0"><span className="block truncate font-semibold text-[#111827] dark:text-white">{e.company}</span>
+                        <span className="min-w-0"><span className="block truncate font-semibold text-[#111827] [.dark_&]:text-white">{e.company}</span>
                           <span className={`block truncate text-[11px] ${muted}`}>{e.type}{e.type === "IPO" ? ` · ${e.status === "Date TBA" ? "dates TBA" : e.status}` : e.meeting ? ` · ${fmtShort(e.meeting)}` : ""}{e.m?.code ? ` · ${e.m.code}` : ""}</span></span>
                         <Pill className={`ring-1 ring-inset ${TYPE_STYLE[e.type].chip}`}>{e.type}</Pill>
                       </button>
@@ -958,7 +987,7 @@ function Calendar({ today, dark, onToggleTheme, data }) {
               <span className={`tabular-nums text-[11px] sm:hidden ${muted}`}>{filtered.length}/{all.length}</span>
             </div>
             {(activeFilters > 0 || q) && (
-              <button type="button" onClick={resetFilters} className={`min-h-[40px] rounded-lg px-3 text-xs font-semibold text-[#004990] hover:bg-[#1da1f2]/10 dark:text-[#38bdf8] sm:min-h-[34px] ${focusRing}`}>Clear filters</button>
+              <button type="button" onClick={resetFilters} className={`min-h-[40px] rounded-lg px-3 text-xs font-semibold text-[#004990] hover:bg-[#1da1f2]/10 [.dark_&]:text-[#38bdf8] sm:min-h-[34px] ${focusRing}`}>Clear filters</button>
             )}
           </div>
         </div>
@@ -981,7 +1010,7 @@ function Calendar({ today, dark, onToggleTheme, data }) {
           </Section>
 
           <div className="flex min-w-0 flex-col gap-4">
-            <Section kicker={weekday(sel)} title={fmtD(sel)} right={<button type="button" onClick={copyLink} className={`h-9 rounded-lg bg-[#111827]/5 px-3 text-xs font-semibold hover:bg-[#111827]/10 dark:bg-white/10 dark:hover:bg-white/15 ${focusRing}`} aria-live="polite">{copied ? "Link copied" : "Copy link"}</button>}>
+            <Section kicker={weekday(sel)} title={fmtD(sel)} right={<button type="button" onClick={copyLink} className={`h-9 rounded-lg bg-[#111827]/5 px-3 text-xs font-semibold hover:bg-[#111827]/10 [.dark_&]:bg-white/10 [.dark_&]:hover:bg-white/15 ${focusRing}`} aria-live="polite">{copied ? "Link copied" : "Copy link"}</button>}>
               {dayPanel(false)}
               <MoreToggle total={selDay.meet.length} open={!!exp.day} onToggle={() => toggle("day")} label="meetings" />
               <MoreToggle total={selDay.rec.length} open={!!exp.dayR} onToggle={() => toggle("dayR")} label="record dates" />
@@ -994,12 +1023,12 @@ function Calendar({ today, dark, onToggleTheme, data }) {
                   return (
                     <li key={e.id} className="flex items-center gap-3 py-2">
                       <button type="button" aria-label={`Show ${fmtD(e.meeting)} on calendar`} onClick={() => { const d = toDate(e.meeting); setMonth({ y: d.getFullYear(), m: d.getMonth() }); setSel(e.meeting); }}
-                        className={`w-12 shrink-0 rounded-lg bg-[#111827]/5 py-1.5 text-center hover:bg-[#1da1f2]/15 dark:bg-white/5 ${focusRing}`}>
-                        <div className="tabular-nums text-base font-bold leading-none text-[#111827] dark:text-white">{toDate(e.meeting).getDate()}</div>
+                        className={`w-12 shrink-0 rounded-lg bg-[#111827]/5 py-1.5 text-center hover:bg-[#1da1f2]/15 [.dark_&]:bg-white/5 ${focusRing}`}>
+                        <div className="tabular-nums text-base font-bold leading-none text-[#111827] [.dark_&]:text-white">{toDate(e.meeting).getDate()}</div>
                         <div className={`text-[11px] font-semibold uppercase ${muted}`}>{MONTHS[toDate(e.meeting).getMonth()]}</div>
                       </button>
                       <div className="min-w-0 flex-1">
-                        <button type="button" onClick={() => pick(e)} className={`-my-1.5 block max-w-full truncate py-1.5 text-left text-sm font-semibold text-[#111827] hover:text-[#004990] dark:text-white dark:hover:text-[#38bdf8] ${focusRing}`}>{shortName(e.company)}</button>
+                        <button type="button" onClick={() => pick(e)} className={`-my-1.5 block max-w-full truncate py-1.5 text-left text-sm font-semibold text-[#111827] hover:text-[#004990] [.dark_&]:text-white [.dark_&]:hover:text-[#38bdf8] ${focusRing}`}>{shortName(e.company)}</button>
                         <div className={`truncate text-[11px] ${muted}`}>{e.type === "IPO" ? `IPO subscription opens${e.subEnd ? ` · closes ${fmtShort(e.subEnd)}` : ""}` : `${e.type} · ${isClock(e.time) ? e.time : "time n/a"} · ${e.mode}`}{dd > 0 ? ` · ${TC.tradingDays(today, e.meeting)} trading day${TC.tradingDays(today, e.meeting) === 1 ? "" : "s"}` : ""}</div>
                       </div>
                       <Pill className={dd === 0 ? STATUS_STYLE.Today : STATUS_STYLE.Upcoming}><span className="tabular-nums">{dd === 0 ? "Today" : `${dd} d`}</span></Pill>
@@ -1018,9 +1047,9 @@ function Calendar({ today, dark, onToggleTheme, data }) {
             className={`flex min-h-[52px] w-full items-center justify-between gap-3 rounded-lg px-3 py-2.5 text-left sm:px-5 ${focusRing}`}>
             <span className="min-w-0">
               <span className={`block text-[11px] font-bold uppercase tracking-[0.12em] ${muted}`}>IPO</span>
-              <span className="block text-sm font-bold text-[#111827] dark:text-white">{ipoSummary}</span>
+              <span className="block text-sm font-bold text-[#111827] [.dark_&]:text-white">{ipoSummary}</span>
             </span>
-            <span className="flex shrink-0 items-center gap-2 text-xs font-semibold text-[#0b78bd] dark:text-[#38bdf8]">{ipoSec ? "Hide" : "Show"}<Chevron open={ipoSec} /></span>
+            <span className="flex shrink-0 items-center gap-2 text-xs font-semibold text-[#0b78bd] [.dark_&]:text-[#38bdf8]">{ipoSec ? "Hide" : "Show"}<Chevron open={ipoSec} /></span>
           </button>
           {ipoSec && (
             <div id="ipo-section-body" className="border-t border-[#6b7280]/15 p-3 sm:p-5">
@@ -1037,11 +1066,11 @@ function Calendar({ today, dark, onToggleTheme, data }) {
                   const o = !!ipoOpen[e.id];
                   const when = e.subStart ? `${fmtShort(e.subStart)}${e.subEnd ? " – " + fmtShort(e.subEnd) : ""}` : "Dates TBA";
                   return (
-                    <li key={e.id} id={`ipo-${e.id}`} className={`min-w-0 self-start rounded-lg border border-[#e5e7e5] bg-white dark:border-white/10 dark:bg-white/[0.03] ${o ? "sm:col-span-2 lg:col-span-1" : ""}`}>
+                    <li key={e.id} id={`ipo-${e.id}`} className={`min-w-0 self-start rounded-lg border border-[#e5e7e5] bg-white [.dark_&]:border-white/10 [.dark_&]:bg-white/[0.03] ${o ? "sm:col-span-2 lg:col-span-1" : ""}`}>
                       <button type="button" aria-expanded={o} aria-controls={`ipo-body-${e.id}`} onClick={() => setIpoOpen((x) => ({ ...x, [e.id]: !x[e.id] }))}
                         className={`flex min-h-[56px] w-full items-center justify-between gap-2 rounded-lg p-3 text-left ${focusRing}`}>
                         <span className="min-w-0">
-                          <span className="block text-sm font-bold leading-snug text-[#111827] dark:text-white">{e.company}</span>
+                          <span className="block text-sm font-bold leading-snug text-[#111827] [.dark_&]:text-white">{e.company}</span>
                           <span className={`block truncate text-[11px] ${muted}`}>{when}{e.ipo.method ? ` · ${e.ipo.method}` : ""}</span>
                         </span>
                         <span className="flex shrink-0 items-center gap-2">
@@ -1055,7 +1084,7 @@ function Calendar({ today, dark, onToggleTheme, data }) {
                             {ipoLines(e).map(([a, b]) => <React.Fragment key={a}><dt className={muted}>{a}</dt><dd className="tabular-nums">{b}</dd></React.Fragment>)}
                             <dt className={muted}>Stage</dt><dd>{e.ipo.status || "Draft prospectus"}</dd>
                           </dl>
-                          {e.ipo.prospectus && <a className="mt-2 inline-flex min-h-[40px] items-center text-xs font-semibold text-[#0b78bd] underline dark:text-[#38bdf8]" href={e.ipo.prospectus} target="_blank" rel="noreferrer">Read prospectus (PDF)</a>}
+                          {e.ipo.prospectus && <a className="mt-2 inline-flex min-h-[40px] items-center text-xs font-semibold text-[#0b78bd] underline [.dark_&]:text-[#38bdf8]" href={e.ipo.prospectus} target="_blank" rel="noreferrer">Read prospectus (PDF)</a>}
                         </div>
                       )}
                     </li>
@@ -1075,19 +1104,19 @@ function Calendar({ today, dark, onToggleTheme, data }) {
               className={`flex min-h-[52px] w-full items-center justify-between gap-3 rounded-lg px-3 py-2.5 text-left sm:px-5 ${focusRing}`}>
               <span className="min-w-0">
                 <span className={`block text-[11px] font-bold uppercase tracking-[0.12em] ${muted}`}>Rights offers</span>
-                <span className="block text-sm font-bold text-[#111827] dark:text-white">{data.RIGHTS.length} rights offer document{data.RIGHTS.length === 1 ? "" : "s"} on DSE</span>
+                <span className="block text-sm font-bold text-[#111827] [.dark_&]:text-white">{data.RIGHTS.length} rights offer document{data.RIGHTS.length === 1 ? "" : "s"} on DSE</span>
               </span>
-              <span className="flex shrink-0 items-center gap-2 text-xs font-semibold text-[#0b78bd] dark:text-[#38bdf8]">{rightsOpen ? "Hide" : "Show"}<Chevron open={rightsOpen} /></span>
+              <span className="flex shrink-0 items-center gap-2 text-xs font-semibold text-[#0b78bd] [.dark_&]:text-[#38bdf8]">{rightsOpen ? "Hide" : "Show"}<Chevron open={rightsOpen} /></span>
             </button>
             {rightsOpen && (
               <div id="rights-body" className="border-t border-[#6b7280]/15 p-3 sm:p-5">
                 <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                   {data.RIGHTS.map((r) => (
-                    <li key={r.name} className="min-w-0 rounded-lg border border-[#e5e7e5] bg-white p-3 dark:border-white/10 dark:bg-white/[0.03]">
-                      <div className="text-sm font-bold leading-snug text-[#111827] dark:text-white">{r.name}</div>
+                    <li key={r.name} className="min-w-0 rounded-lg border border-[#e5e7e5] bg-white p-3 [.dark_&]:border-white/10 [.dark_&]:bg-white/[0.03]">
+                      <div className="text-sm font-bold leading-snug text-[#111827] [.dark_&]:text-white">{r.name}</div>
                       <div className="mt-2 flex flex-wrap gap-2">
-                        {r.abridged && <a className="inline-flex min-h-[40px] items-center rounded-lg bg-[#1da1f2]/10 px-3 text-xs font-semibold text-[#0b78bd] underline dark:text-[#38bdf8]" href={r.abridged} target="_blank" rel="noreferrer">Abridged (PDF)</a>}
-                        {r.full && <a className="inline-flex min-h-[40px] items-center rounded-lg bg-[#1da1f2]/10 px-3 text-xs font-semibold text-[#0b78bd] underline dark:text-[#38bdf8]" href={r.full} target="_blank" rel="noreferrer">Full (PDF)</a>}
+                        {r.abridged && <a className="inline-flex min-h-[40px] items-center rounded-lg bg-[#1da1f2]/10 px-3 text-xs font-semibold text-[#0b78bd] underline [.dark_&]:text-[#38bdf8]" href={r.abridged} target="_blank" rel="noreferrer">Abridged (PDF)</a>}
+                        {r.full && <a className="inline-flex min-h-[40px] items-center rounded-lg bg-[#1da1f2]/10 px-3 text-xs font-semibold text-[#0b78bd] underline [.dark_&]:text-[#38bdf8]" href={r.full} target="_blank" rel="noreferrer">Full (PDF)</a>}
                       </div>
                     </li>
                   ))}
@@ -1101,16 +1130,16 @@ function Calendar({ today, dark, onToggleTheme, data }) {
         {/* Full-screen calendar */}
         {full && (
           <div role="dialog" aria-modal="true" aria-label="Full-screen calendar"
-            className="fixed inset-0 z-40 flex flex-col bg-[#f7f8f7] text-[#111827] dark:bg-[#0b1220] dark:text-[#ffffff]">
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#e5e7e5] px-3 py-2.5 dark:border-white/10 sm:px-5">
+            className="fixed inset-0 z-40 flex flex-col bg-[#f7f8f7] text-[#111827] [.dark_&]:bg-[#0b1220] [.dark_&]:text-[#ffffff]">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#e5e7e5] px-3 py-2.5 [.dark_&]:border-white/10 sm:px-5">
               <div className="min-w-0">
                 <div className={`text-[11px] font-bold uppercase tracking-[0.12em] ${muted}`}>AGM · EGM · IPO · Record dates</div>
                 <h2 className="text-lg font-extrabold leading-tight sm:text-xl">{MONTHS_LONG[month.m]} {month.y}</h2>
               </div>
               <div className="flex items-center gap-1.5">
                 {monthNav}
-                {onToggleTheme && <button type="button" onClick={onToggleTheme} className={`h-10 rounded-lg bg-[#111827]/5 px-3 text-xs font-semibold hover:bg-[#111827]/10 dark:bg-white/10 sm:h-9 ${focusRing}`}>{dark ? "Light" : "Midnight"}</button>}
-                <button id="agm-full-close" type="button" onClick={() => setFull(false)} className={`h-10 rounded-lg bg-[#111827] px-3 text-xs font-bold text-white hover:bg-[#4b5563] dark:bg-white dark:text-[#111827] sm:h-9 ${focusRing}`}>Close ✕</button>
+                {onToggleTheme && <button type="button" onClick={onToggleTheme} className={`h-10 rounded-lg bg-[#111827]/5 px-3 text-xs font-semibold hover:bg-[#111827]/10 [.dark_&]:bg-white/10 sm:h-9 ${focusRing}`}>{dark ? "Light" : "Midnight"}</button>}
+                <button id="agm-full-close" type="button" onClick={() => setFull(false)} className={`h-10 rounded-lg bg-[#111827] px-3 text-xs font-bold text-white hover:bg-[#4b5563] [.dark_&]:bg-white [.dark_&]:text-[#111827] sm:h-9 ${focusRing}`}>Close ✕</button>
               </div>
             </div>
             <div className="grid min-h-0 flex-1 gap-3 overflow-y-auto p-3 sm:p-5 lg:grid-cols-[minmax(0,1fr)_380px] lg:overflow-hidden">
@@ -1120,7 +1149,7 @@ function Calendar({ today, dark, onToggleTheme, data }) {
               </div>
               <aside className={`${glass} min-w-0 p-3 sm:p-4 lg:overflow-y-auto`} aria-label="Selected day">
                 <div className={`text-[11px] font-bold uppercase tracking-[0.12em] ${muted}`}>{weekday(sel)}</div>
-                <div className="mb-3 flex items-center justify-between gap-2"><h3 className="text-base font-bold">{fmtD(sel)}</h3><button type="button" onClick={copyLink} className={`h-9 rounded-lg bg-[#111827]/5 px-3 text-xs font-semibold hover:bg-[#111827]/10 dark:bg-white/10 ${focusRing}`} aria-live="polite">{copied ? "Link copied" : "Copy link"}</button></div>
+                <div className="mb-3 flex items-center justify-between gap-2"><h3 className="text-base font-bold">{fmtD(sel)}</h3><button type="button" onClick={copyLink} className={`h-9 rounded-lg bg-[#111827]/5 px-3 text-xs font-semibold hover:bg-[#111827]/10 [.dark_&]:bg-white/10 ${focusRing}`} aria-live="polite">{copied ? "Link copied" : "Copy link"}</button></div>
                 {dayPanel(true)}
               </aside>
             </div>
@@ -1144,9 +1173,9 @@ function Calendar({ today, dark, onToggleTheme, data }) {
                 <label className="flex min-h-[40px] items-center gap-2 text-xs font-semibold sm:min-h-[34px]"><input id="div-ahead" type="checkbox" checked={divAhead} onChange={(ev) => setDivAhead(ev.target.checked)} className="h-4 w-4 rounded accent-[#004990]" />Record date ahead ({nAhead})</label>
               </div>}>
               <div className={`mb-2 flex flex-wrap gap-x-3 gap-y-1 text-[11px] ${muted}`}>
-                <span><b className="tabular-nums text-[#111827] dark:text-white">{nStock}</b> include stock</span>
-                <span><b className="tabular-nums text-[#111827] dark:text-white">{nInterim}</b> interim</span>
-                <span><b className="tabular-nums text-[#111827] dark:text-white">{nAhead}</b> record date ahead</span>
+                <span><b className="tabular-nums text-[#111827] [.dark_&]:text-white">{nStock}</b> include stock</span>
+                <span><b className="tabular-nums text-[#111827] [.dark_&]:text-white">{nInterim}</b> interim</span>
+                <span><b className="tabular-nums text-[#111827] [.dark_&]:text-white">{nAhead}</b> record date ahead</span>
                 <span>Tk/share uses DSE face value · payout is company-wide</span>
               </div>
               <div className={`hidden grid-cols-[minmax(0,1.6fr)_repeat(4,minmax(0,1fr))] gap-3 border-b border-[#6b7280]/20 px-2 pb-1.5 text-[11px] font-bold uppercase tracking-wider sm:grid ${muted}`}>
@@ -1158,28 +1187,28 @@ function Calendar({ today, dark, onToggleTheme, data }) {
                   const m = e.m || {}; const dd = e.record ? dayDiff(today, e.record) : null; const po = m.payoutCo;
                   return (
                     <li key={e.id}>
-                      <button type="button" onClick={() => pick(e)} className={`grid w-full gap-1.5 rounded-lg px-1 py-2.5 text-left text-xs hover:bg-[#f7f8f7] dark:hover:bg-white/[0.04] sm:grid-cols-[minmax(0,1.6fr)_repeat(4,minmax(0,1fr))] sm:items-center sm:gap-3 sm:px-2 sm:py-2 ${focusRing}`}>
+                      <button type="button" onClick={() => pick(e)} className={`grid w-full gap-1.5 rounded-lg px-1 py-2.5 text-left text-xs hover:bg-[#f7f8f7] [.dark_&]:hover:bg-white/[0.04] sm:grid-cols-[minmax(0,1.6fr)_repeat(4,minmax(0,1fr))] sm:items-center sm:gap-3 sm:px-2 sm:py-2 ${focusRing}`}>
                         <span className="min-w-0">
-                          <b className="block truncate text-sm text-[#111827] dark:text-white">{shortName(e.company)}</b>
+                          <b className="block truncate text-sm text-[#111827] [.dark_&]:text-white">{shortName(e.company)}</b>
                           <span className="mt-0.5 flex flex-wrap gap-1">
-                            {/interim/i.test(e.purpose) && <Flag c="bg-[#c99a1a]/15 text-[#8a6a0f] dark:text-[#fad870]">interim</Flag>}
-                            {e.sponsorExcluded && <Flag c="bg-[#6b7280]/10 text-[#4b5563] dark:text-[#dbe7f3]">excl. sponsors</Flag>}
-                            {e.cash != null && e.cash <= 0.25 && <Flag c="bg-[#c99a1a]/15 text-[#8a6a0f] dark:text-[#fad870]">token</Flag>}
+                            {/interim/i.test(e.purpose) && <Flag c="bg-[#c99a1a]/15 text-[#8a6a0f] [.dark_&]:text-[#fad870]">interim</Flag>}
+                            {e.sponsorExcluded && <Flag c="bg-[#6b7280]/10 text-[#4b5563] [.dark_&]:text-[#dbe7f3]">excl. sponsors</Flag>}
+                            {e.cash != null && e.cash <= 0.25 && <Flag c="bg-[#c99a1a]/15 text-[#8a6a0f] [.dark_&]:text-[#fad870]">token</Flag>}
                             {["Postponed", "Court-pending"].includes(e.status) && <Flag c={STATUS_STYLE[e.status]}>{e.status.toLowerCase()}</Flag>}
-                            {m.lossPayer ? <Flag c="bg-[#d9423a]/15 text-[#d9423a] dark:text-[#fb7185]">paid from loss</Flag> : null}
+                            {m.lossPayer ? <Flag c="bg-[#d9423a]/15 text-[#d9423a] [.dark_&]:text-[#fb7185]">paid from loss</Flag> : null}
                           </span>
                         </span>
                         <span className="grid grid-cols-2 gap-x-2 gap-y-1.5 sm:contents">
                           <span className="min-w-0">
-                            <span className="block tabular-nums font-bold text-[#0f9d6b] dark:text-[#34d399]">{e.cash != null ? `${fmtIN(e.cash, e.cash % 1 ? 2 : 0)}% cash` : ""}{e.stock ? `${e.cash != null ? " + " : ""}${e.stock}% stock` : ""}</span>
+                            <span className="block tabular-nums font-bold text-[#0f9d6b] [.dark_&]:text-[#34d399]">{e.cash != null ? `${fmtIN(e.cash, e.cash % 1 ? 2 : 0)}% cash` : ""}{e.stock ? `${e.cash != null ? " + " : ""}${e.stock}% stock` : ""}</span>
                             <span className={`block tabular-nums text-[11px] ${muted}`}>{m.dps != null ? `Tk ${fmtIN(m.dps, m.dps < 0.1 ? 3 : 2)}/share` : "—"}</span>
                           </span>
                           <span className="min-w-0">
                             <span className="tabular-nums">{e.record ? fmtShort(e.record) : "TBA"}</span>
-                            <span className={`block text-[11px] ${dd != null && dd > 0 ? "font-semibold text-[#0f9d6b] dark:text-[#34d399]" : muted}`}>{dd == null ? "not set" : dd > 0 ? `in ${dd} d · ${TC.tradingDays(today, e.record)} trading` : dd === 0 ? "today" : "passed"}</span>
-                            {recNT(e) && <span className="block text-[11px] font-semibold text-[#8a6a0f] dark:text-[#fad870]">⚠ {recNT(e).kind === "holiday" ? "holiday" : "weekend"}: non-trading</span>}
+                            <span className={`block text-[11px] ${dd != null && dd > 0 ? "font-semibold text-[#0f9d6b] [.dark_&]:text-[#34d399]" : muted}`}>{dd == null ? "not set" : dd > 0 ? `in ${dd} d · ${TC.tradingDays(today, e.record)} trading` : dd === 0 ? "today" : "passed"}</span>
+                            {recNT(e) && <span className="block text-[11px] font-semibold text-[#8a6a0f] [.dark_&]:text-[#fad870]">⚠ {recNT(e).kind === "holiday" ? "holiday" : "weekend"}: non-trading</span>}
                           </span>
-                          <span className={`tabular-nums sm:text-right ${m.lossPayer || (po || 0) > 100 ? "text-[#d9423a] dark:text-[#fb7185]" : ""}`}><span className={`font-sans sm:hidden ${muted}`}>Payout </span>{po != null ? `${fmtIN(po, 0)}%${m.sponsorPct ? "*" : ""}` : m.lossPayer ? "loss" : "—"}</span>
+                          <span className={`tabular-nums sm:text-right ${m.lossPayer || (po || 0) > 100 ? "text-[#d9423a] [.dark_&]:text-[#fb7185]" : ""}`}><span className={`font-sans sm:hidden ${muted}`}>Payout </span>{po != null ? `${fmtIN(po, 0)}%${m.sponsorPct ? "*" : ""}` : m.lossPayer ? "loss" : "—"}</span>
                           <span className="tabular-nums sm:text-right"><span className={`font-sans sm:hidden ${muted}`}>Yield </span>{m.yield != null ? `${fmtIN(m.yield, 2)}%` : "—"}</span>
                         </span>
                       </button>
@@ -1232,9 +1261,9 @@ function Calendar({ today, dark, onToggleTheme, data }) {
                     {cap("rank", ranked).map((e) => (
                       <li key={e.id}>
                         <button type="button" onClick={() => setSelEv(e.id)} aria-pressed={selEv === e.id}
-                          className={`grid min-h-[40px] w-full grid-cols-[minmax(0,1fr)_56px_52px] items-center gap-2 rounded-lg px-1.5 text-left text-xs hover:bg-[#f7f8f7] dark:hover:bg-white/[0.06] sm:min-h-[32px] ${focusRing} ${selEv === e.id ? "bg-[#1da1f2]/10 ring-1 ring-[#1da1f2]/40" : ""}`}>
-                          <span className="truncate"><b className="text-[#111827] dark:text-white">{shortName(e.company)}</b> <span className={`tabular-nums ${muted}`}>{fmtShort(e.record)}</span></span>
-                          <span className="relative h-2 rounded-full bg-[#111827]/5 dark:bg-white/5">
+                          className={`grid min-h-[40px] w-full grid-cols-[minmax(0,1fr)_56px_52px] items-center gap-2 rounded-lg px-1.5 text-left text-xs hover:bg-[#f7f8f7] [.dark_&]:hover:bg-white/[0.06] sm:min-h-[32px] ${focusRing} ${selEv === e.id ? "bg-[#1da1f2]/10 ring-1 ring-[#1da1f2]/40" : ""}`}>
+                          <span className="truncate"><b className="text-[#111827] [.dark_&]:text-white">{shortName(e.company)}</b> <span className={`tabular-nums ${muted}`}>{fmtShort(e.record)}</span></span>
+                          <span className="relative h-2 rounded-full bg-[#111827]/5 [.dark_&]:bg-white/5">
                             <i className={`absolute top-0 h-2 rounded-full ${e.m.exAdj >= 0 ? "left-1/2 bg-[#0f9d6b]" : "right-1/2 bg-[#d9423a]"}`} style={{ width: `${(Math.abs(e.m.exAdj) / maxAbs) * 50}%` }} />
                           </span>
                           <span className={`text-right tabular-nums ${pctClass(e.m.exAdj)}`}>{fmtPct(e.m.exAdj, 1)}</span>
@@ -1250,49 +1279,18 @@ function Calendar({ today, dark, onToggleTheme, data }) {
           );
         })()}
 
-        {/* Insights + watchlist */}
-        <div className="grid gap-4 lg:grid-cols-3">
-          <Section className="lg:col-span-2" kicker="Derived from the list and DSE data" title="Insights">
-            <div className="grid items-start gap-3 md:grid-cols-2">
-              {insights.map((it, i) => (
-                <div key={i} className="rounded-lg border border-[#e5e7e5] bg-white p-3 dark:border-transparent dark:bg-white/[0.035]">
-                  <div className="text-sm font-bold text-[#111827] dark:text-white">{it.t}</div>
+        {/* Insights (rule-based; recalculated from the data file on every load) */}
+        <div>
+          <Section kicker="Derived from the list and DSE data" title="Insights" right={<span className={`text-[11px] ${muted}`}>as of {fmtShort(today)}</span>}>
+            <div className="grid items-start gap-3 md:grid-cols-2 lg:grid-cols-3">
+              {cap("ins", insights).map((it, i) => (
+                <div key={i} className="rounded-lg border border-[#e5e7e5] bg-white p-3 [.dark_&]:border-transparent [.dark_&]:bg-white/[0.035]">
+                  <div className="text-sm font-bold text-[#111827] [.dark_&]:text-white">{it.t}</div>
                   <p className={`mt-1 text-xs leading-relaxed ${muted}`}>{it.b}</p>
                 </div>
               ))}
             </div>
-          </Section>
-          <Section className="self-start" kicker="Watchlist" title="No meeting date yet" right={<span className={`tabular-nums text-[11px] ${muted}`}>{A.unscheduled.length}</span>}>
-            <ul className="flex flex-col divide-y divide-[#6b7280]/10">
-              {cap("watch", A.unscheduled).map(({ e, age }) => {
-                const isO = wOpen === e.id;
-                return (
-                  <li key={e.id}>
-                    <button type="button" onClick={() => setWOpen(isO ? null : e.id)} aria-expanded={isO}
-                      className={`flex min-h-[40px] w-full items-center gap-2 text-left text-xs sm:min-h-[34px] ${focusRing}`}>
-                      <i className={`h-2 w-2 shrink-0 rounded-full ${e.status === "Postponed" ? "bg-[#d9423a]" : e.status === "Court-pending" ? "bg-[#c2720c]" : "bg-[#6b7280]"}`} aria-hidden="true" />
-                      <span className="min-w-0 flex-1 truncate"><b className="text-[#111827] dark:text-white">{shortName(e.company)}</b> <span className={muted}>FY{fyLabel(e.yearEnd)}</span></span>
-                      <span className={`tabular-nums ${age != null && age > 180 ? "text-[#d9423a] dark:text-[#fb7185]" : muted}`}>{age == null ? "—" : age < 0 ? `in ${-age}d` : `${fmtIN(age)}d`}</span>
-                      <Chevron open={isO} className={muted} />
-                    </button>
-                    {isO && (
-                      <div className="mb-2 space-y-0.5 rounded-lg bg-[#111827]/[0.03] p-2 text-[11px] dark:bg-white/[0.04]">
-                        <div><Pill className={STATUS_STYLE[e.status]}>{e.status}</Pill> <span className={muted}>{e.type} · record {e.record ? fmtD(e.record) : e.recordRaw || "TBA"}</span></div>
-                        <div>{e.purpose}</div>
-                        <div className={`break-words ${muted}`}>{e.meetingRaw}</div>
-                      </div>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-            <div className={`mt-2 flex flex-wrap gap-2 text-[11px] ${muted}`}>
-              <span className="flex items-center gap-1"><i className="h-1.5 w-1.5 rounded-full bg-[#d9423a]" />postponed</span>
-              <span className="flex items-center gap-1"><i className="h-1.5 w-1.5 rounded-full bg-[#c2720c]" />court</span>
-              <span className="flex items-center gap-1"><i className="h-1.5 w-1.5 rounded-full bg-[#6b7280]" />TBA</span>
-            </div>
-            <MoreToggle total={A.unscheduled.length} open={!!exp.watch} onToggle={() => toggle("watch")} />
-            <p className={`mt-1 text-[11px] ${muted}`}>Days since record date. Tap a row for details.</p>
+            <MoreToggle total={insights.length} open={!!exp.ins} onToggle={() => toggle("ins")} />
           </Section>
         </div>
 
@@ -1316,12 +1314,12 @@ function Calendar({ today, dark, onToggleTheme, data }) {
                 <div className="min-w-0"><div className={`text-[11px] ${muted}`}>{l}</div><div className={`truncate tabular-nums text-xs font-semibold ${cls}`}>{v}</div></div>
               );
               return (
-                <li key={e.id} id={`entry-c-${e.id}`} className={`min-w-0 scroll-mt-24 rounded-lg border p-3 ${selEv === e.id ? "border-[#1da1f2]/50" : "border-[#e5e7e5] dark:border-white/10"} bg-white dark:bg-white/[0.03]`}>
+                <li key={e.id} id={`entry-c-${e.id}`} className={`min-w-0 scroll-mt-24 rounded-lg border p-3 ${selEv === e.id ? "border-[#1da1f2]/50" : "border-[#e5e7e5] [.dark_&]:border-white/10"} bg-white [.dark_&]:bg-white/[0.03]`}>
                   <button type="button" onClick={() => { setOpen(isO ? null : e.id); if (m) setSelEv(e.id); }} aria-expanded={isO} className={`block w-full text-left ${focusRing}`}>
                     <div className="flex items-start justify-between gap-2">
                       <div className="min-w-0">
-                        <div className="text-sm font-bold leading-snug text-[#111827] dark:text-white">{e.company}</div>
-                        <div className={`text-[11px] ${muted}`}>{e.group}{e.m && e.m.cat ? <> · <span className={e.m.cat === "Z" ? "font-semibold text-[#8a6a0f] dark:text-[#fad870]" : ""}>Cat {e.m.cat}</span></> : ""}{e.yearEnd ? ` · YE ${e.yearEnd}` : ""}</div>
+                        <div className="text-sm font-bold leading-snug text-[#111827] [.dark_&]:text-white">{e.company}</div>
+                        <div className={`text-[11px] ${muted}`}>{e.group}{e.m && e.m.cat ? <> · <span className={e.m.cat === "Z" ? "font-semibold text-[#8a6a0f] [.dark_&]:text-[#fad870]" : ""}>Cat {e.m.cat}</span></> : ""}{e.yearEnd ? ` · YE ${e.yearEnd}` : ""}</div>
                       </div>
                       <Pill className={`ring-1 ring-inset ${TYPE_STYLE[e.type].chip}`}>{TYPE_STYLE[e.type].label}</Pill>
                     </div>
@@ -1333,12 +1331,12 @@ function Calendar({ today, dark, onToggleTheme, data }) {
                       {metric(e.type === "REC" ? "Meeting" : e.type === "IPO" ? "Subscription opens" : `Meeting${isClock(e.time) ? ` · ${e.time}` : ""}`, e.meeting ? fmtD(e.meeting) : e.type === "REC" ? "—" : e.type === "IPO" ? "TBA" : "Not set")}
                       {metric("Record", e.record ? fmtD(e.record) + (recNT(e) ? " ⚠ non-trading" : "") : "TBA")}
                     </div>
-                    <div className={`mt-2 text-xs ${e.noDividend ? "text-[#d9423a] dark:text-[#fb7185]" : e.cash != null || e.stock != null ? "font-semibold text-[#0f9d6b] dark:text-[#34d399]" : ""}`}>{e.purpose}</div>
+                    <div className={`mt-2 text-xs ${e.noDividend ? "text-[#d9423a] [.dark_&]:text-[#fb7185]" : e.cash != null || e.stock != null ? "font-semibold text-[#0f9d6b] [.dark_&]:text-[#34d399]" : ""}`}>{e.purpose}</div>
                     {m && (m.eps != null || m.nav != null || m.payoutCo != null || m.yield != null || m.exAdj != null || m.lossPayer) ? (
                       <div className="mt-2 grid grid-cols-3 gap-2 border-t border-[#6b7280]/15 pt-2">
-                        {metric("EPS", m.eps == null ? "—" : fmtIN(m.eps, 2), m.eps != null && m.eps < 0 ? "text-[#d9423a] dark:text-[#fb7185]" : "")}
-                        {metric("NAV", m.nav == null ? "—" : fmtIN(m.nav, 2), m.nav != null && m.nav < 0 ? "text-[#d9423a] dark:text-[#fb7185]" : "")}
-                        {metric("Payout", m.payoutCo != null ? `${fmtIN(m.payoutCo, 0)}%${m.sponsorPct ? "*" : ""}` : m.lossPayer ? "loss" : "—", m.lossPayer || (m.payoutCo || 0) > 100 ? "text-[#d9423a] dark:text-[#fb7185]" : "")}
+                        {metric("EPS", m.eps == null ? "—" : fmtIN(m.eps, 2), m.eps != null && m.eps < 0 ? "text-[#d9423a] [.dark_&]:text-[#fb7185]" : "")}
+                        {metric("NAV", m.nav == null ? "—" : fmtIN(m.nav, 2), m.nav != null && m.nav < 0 ? "text-[#d9423a] [.dark_&]:text-[#fb7185]" : "")}
+                        {metric("Payout", m.payoutCo != null ? `${fmtIN(m.payoutCo, 0)}%${m.sponsorPct ? "*" : ""}` : m.lossPayer ? "loss" : "—", m.lossPayer || (m.payoutCo || 0) > 100 ? "text-[#d9423a] [.dark_&]:text-[#fb7185]" : "")}
                         {metric("Yield", m.yield == null ? "—" : `${fmtIN(m.yield, 2)}%`)}
                         {metric("Ex-day adj.", m.exAdj == null ? "—" : fmtPct(m.exAdj, 1), pctClass(m.exAdj))}
                         <div className={`flex items-end justify-end text-[11px] font-semibold ${muted}`}>{isO ? "Less" : "More"}<Chevron open={isO} className="ml-1" /></div>
@@ -1363,27 +1361,27 @@ function Calendar({ today, dark, onToggleTheme, data }) {
               <tbody>
                 {cap("table", rows).map((e) => (
                   <React.Fragment key={e.id}>
-                    <tr id={`entry-t-${e.id}`} onClick={() => { setOpen(open === e.id ? null : e.id); if (e.m) setSelEv(e.id); }} aria-expanded={open === e.id} className={`cursor-pointer border-b border-[#6b7280]/10 hover:bg-[#f7f8f7] dark:hover:bg-white/[0.04] ${selEv === e.id ? "bg-[#1da1f2]/[0.07]" : ""}`}>
-                      <td className="min-w-[190px] px-3 py-2 font-semibold text-[#111827] dark:text-white">{e.company}<div className={`font-normal ${muted}`}>{e.yearEnd && `YE ${e.yearEnd}`}</div></td>
+                    <tr id={`entry-t-${e.id}`} onClick={() => { setOpen(open === e.id ? null : e.id); if (e.m) setSelEv(e.id); }} aria-expanded={open === e.id} className={`cursor-pointer border-b border-[#6b7280]/10 hover:bg-[#f7f8f7] [.dark_&]:hover:bg-white/[0.04] ${selEv === e.id ? "bg-[#1da1f2]/[0.07]" : ""}`}>
+                      <td className="min-w-[190px] px-3 py-2 font-semibold text-[#111827] [.dark_&]:text-white">{e.company}<div className={`font-normal ${muted}`}>{e.yearEnd && `YE ${e.yearEnd}`}</div></td>
                       <td className="px-3 py-2"><Pill className={`ring-1 ring-inset ${TYPE_STYLE[e.type].chip}`}>{TYPE_STYLE[e.type].label}</Pill></td>
-                      <td className={`px-3 py-2 ${muted}`}>{e.group}{e.m && e.m.cat ? <span className={`ml-1 tabular-nums text-[11px] ${e.m.cat === "Z" ? "font-semibold text-[#8a6a0f] dark:text-[#fad870]" : ""}`}>{e.m.cat}</span> : null}</td>
+                      <td className={`px-3 py-2 ${muted}`}>{e.group}{e.m && e.m.cat ? <span className={`ml-1 tabular-nums text-[11px] ${e.m.cat === "Z" ? "font-semibold text-[#8a6a0f] [.dark_&]:text-[#fad870]" : ""}`}>{e.m.cat}</span> : null}</td>
                       <td className="whitespace-nowrap px-3 py-2 tabular-nums">{e.meeting ? fmtD(e.meeting) : <span className={`font-sans ${muted}`}>{e.type === "REC" ? "—" : e.type === "IPO" ? "Sub. TBA" : e.meetingRaw.length > 40 ? e.meetingRaw.slice(0, 40) + "…" : e.meetingRaw}</span>}</td>
                       <td className="whitespace-nowrap px-3 py-2 tabular-nums">{isClock(e.time) ? e.time : <span className={muted} title={e.time || ""}>—</span>}</td>
-                      <td className="whitespace-nowrap px-3 py-2 tabular-nums">{e.record ? fmtD(e.record) : <span className={`font-sans ${muted}`}>TBA</span>}{recNT(e) && <span className="ml-1 font-sans text-[#8a6a0f] dark:text-[#fad870]" title={`Record date is ${ntNote(recNT(e))}`} aria-label={`Record date is ${ntNote(recNT(e))}`}>⚠</span>}</td>
+                      <td className="whitespace-nowrap px-3 py-2 tabular-nums">{e.record ? fmtD(e.record) : <span className={`font-sans ${muted}`}>TBA</span>}{recNT(e) && <span className="ml-1 font-sans text-[#8a6a0f] [.dark_&]:text-[#fad870]" title={`Record date is ${ntNote(recNT(e))}`} aria-label={`Record date is ${ntNote(recNT(e))}`}>⚠</span>}</td>
                       <td className="max-w-[260px] px-3 py-2">
-                        {e.cash != null && !new RegExp("^" + String(e.cash).replace(".", "\\.") + "0*%").test(e.purpose) && <span className="mr-1 tabular-nums font-bold text-[#0f9d6b] dark:text-[#34d399]">{fmtIN(e.cash, e.cash % 1 ? 2 : 0)}%</span>}
-                        <span className={e.noDividend ? "text-[#d9423a] dark:text-[#fb7185]" : ""}>{e.purpose}</span>
+                        {e.cash != null && !new RegExp("^" + String(e.cash).replace(".", "\\.") + "0*%").test(e.purpose) && <span className="mr-1 tabular-nums font-bold text-[#0f9d6b] [.dark_&]:text-[#34d399]">{fmtIN(e.cash, e.cash % 1 ? 2 : 0)}%</span>}
+                        <span className={e.noDividend ? "text-[#d9423a] [.dark_&]:text-[#fb7185]" : ""}>{e.purpose}</span>
                       </td>
-                      <td className={`whitespace-nowrap px-3 py-2 text-right tabular-nums ${e.m?.eps != null && e.m.eps < 0 ? "text-[#d9423a] dark:text-[#fb7185]" : ""}`} title={e.m?.epsBasis || ""}>{e.m?.eps == null ? <span className={muted}>—</span> : fmtIN(e.m.eps, 2)}</td>
-                      <td className={`whitespace-nowrap px-3 py-2 text-right tabular-nums ${e.m?.nav != null && e.m.nav < 0 ? "text-[#d9423a] dark:text-[#fb7185]" : ""}`}>{e.m?.nav == null ? <span className={muted}>—</span> : fmtIN(e.m.nav, 2)}</td>
-                      <td className={`whitespace-nowrap px-3 py-2 text-right tabular-nums ${e.m?.lossPayer || (e.m?.payoutCo || 0) > 100 ? "text-[#d9423a] dark:text-[#fb7185]" : ""}`}>{e.m?.payoutCo != null ? <span title={e.m.sponsorPct ? `Company-wide; per share ${fmtIN(e.m.payout, 0)}% (sponsors ${e.m.sponsorPct}% excluded)` : ""}>{fmtIN(e.m.payoutCo, 0)}%{e.m.sponsorPct ? "*" : ""}</span> : e.m?.lossPayer ? "loss" : <span className={muted}>—</span>}</td>
+                      <td className={`whitespace-nowrap px-3 py-2 text-right tabular-nums ${e.m?.eps != null && e.m.eps < 0 ? "text-[#d9423a] [.dark_&]:text-[#fb7185]" : ""}`} title={e.m?.epsBasis || ""}>{e.m?.eps == null ? <span className={muted}>—</span> : fmtIN(e.m.eps, 2)}</td>
+                      <td className={`whitespace-nowrap px-3 py-2 text-right tabular-nums ${e.m?.nav != null && e.m.nav < 0 ? "text-[#d9423a] [.dark_&]:text-[#fb7185]" : ""}`}>{e.m?.nav == null ? <span className={muted}>—</span> : fmtIN(e.m.nav, 2)}</td>
+                      <td className={`whitespace-nowrap px-3 py-2 text-right tabular-nums ${e.m?.lossPayer || (e.m?.payoutCo || 0) > 100 ? "text-[#d9423a] [.dark_&]:text-[#fb7185]" : ""}`}>{e.m?.payoutCo != null ? <span title={e.m.sponsorPct ? `Company-wide; per share ${fmtIN(e.m.payout, 0)}% (sponsors ${e.m.sponsorPct}% excluded)` : ""}>{fmtIN(e.m.payoutCo, 0)}%{e.m.sponsorPct ? "*" : ""}</span> : e.m?.lossPayer ? "loss" : <span className={muted}>—</span>}</td>
                       <td className="whitespace-nowrap px-3 py-2 text-right tabular-nums" title={e.m?.yBasis || ""}>{e.m?.yield == null ? <span className={muted}>—</span> : `${fmtIN(e.m.yield, 2)}%`}</td>
                       <td className={`whitespace-nowrap px-3 py-2 text-right tabular-nums ${pctClass(e.m?.exAdj)}`}>{e.m?.exAdj == null ? <span className={muted}>—</span> : fmtPct(e.m.exAdj, 1)}</td>
                       <td className="px-3 py-2">{e.mode}</td>
                       <td className="px-3 py-2"><Pill className={STATUS_STYLE[e.status]}>{e.status}</Pill></td>
                     </tr>
                     {open === e.id && (
-                      <tr className="bg-white dark:bg-white/[0.03]">
+                      <tr className="bg-white [.dark_&]:bg-white/[0.03]">
                         <td colSpan={14} className="px-3 py-2"><EntryDetails e={e} onChart={pick} /></td>
                       </tr>
                     )}

@@ -49,12 +49,15 @@
  */
 import React, { useMemo, useState, useEffect, useRef } from "react";
 import { SOURCE as D_SOURCE, RAW as D_RAW, MARKET as D_MARKET, IPO as D_IPO, HOLIDAYS as D_HOLIDAYS, HOLIDAYS_META as D_HOL_META, RIGHTS as D_RIGHTS } from "./dseAgmData";
+import { createPortal } from "react-dom";
 
 const VERSION = "v1.7.2";
 
 /* ─────────────────────────── Helpers ─────────────────────────── */
-const MON = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
-  January: 0, February: 1, March: 2, April: 3, June: 5, July: 6, August: 7, September: 8, October: 9, November: 10, December: 11 };
+const MON = {
+  Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
+  January: 0, February: 1, March: 2, April: 3, June: 5, July: 6, August: 7, September: 8, October: 9, November: 10, December: 11
+};
 const pad = (n) => String(n).padStart(2, "0");
 const iso = (y, m, d) => `${y}-${pad(m + 1)}-${pad(d)}`;
 function parseDate(s) {
@@ -229,8 +232,7 @@ function Seg({ value, onChange, options, id, full = false }) {
         const v = typeof o === "string" ? o : o.v, l = typeof o === "string" ? o : o.l, on = value === v;
         return (
           <button key={v} type="button" aria-pressed={on} onClick={() => onChange(v)}
-            className={`${full ? "flex-1 sm:flex-none" : ""} min-h-[36px] shrink-0 whitespace-nowrap rounded-[10px] px-2 text-xs font-semibold transition sm:min-h-[30px] sm:px-2.5 ${focusRing} ${
-              on ? "bg-white text-[#111827] shadow-sm [.dark_&]:bg-white/15 [.dark_&]:text-white" : `${muted} hover:text-[#111827] [.dark_&]:hover:text-white`}`}>
+            className={`${full ? "flex-1 sm:flex-none" : ""} min-h-[36px] shrink-0 whitespace-nowrap rounded-[10px] px-2 text-xs font-semibold transition sm:min-h-[30px] sm:px-2.5 ${focusRing} ${on ? "bg-white text-[#111827] shadow-sm [.dark_&]:bg-white/15 [.dark_&]:text-white" : `${muted} hover:text-[#111827] [.dark_&]:hover:text-white`}`}>
             {l}
           </button>
         );
@@ -685,8 +687,8 @@ function Calendar({ today, dark, onToggleTheme, data }) {
   const ipoOpenNow = ipos.filter((e) => e.status === "IPO open").length;
   const ipoSummary = ipos.length === 0 ? "No IPOs listed on DSE right now"
     : ipoOpenNow ? `${ipoOpenNow} IPO open for subscription${ipoLive > ipoOpenNow ? `, ${ipoLive - ipoOpenNow} upcoming` : ""}`
-    : ipoLive ? `${ipoLive} IPO subscription${ipoLive === 1 ? "" : "s"} upcoming`
-    : `IPO pipeline: ${ipos.length} awaiting dates`;
+      : ipoLive ? `${ipoLive} IPO subscription${ipoLive === 1 ? "" : "s"} upcoming`
+        : `IPO pipeline: ${ipos.length} awaiting dates`;
   const upcoming = all.filter((e) => e.meeting && e.meeting >= today).sort((a, b) => a.meeting.localeCompare(b.meeting) || (parseTime(a.time) ?? 1e4) - (parseTime(b.time) ?? 1e4));
   /** Mouse-only hover tooltip (touch devices use tap: day panel / expandable rows). */
   const hoverProps = (e) => ({
@@ -731,14 +733,13 @@ function Calendar({ today, dark, onToggleTheme, data }) {
         const n = meet.length + rec.length + ms.length;
         const maxChips = big ? 5 : 3;
         const items = [...meet.map((e) => ({ e, label: (e.type === "EGM" ? "EGM · " : e.type === "IPO" ? "IPO opens · " : "") + shortName(e.company), cls: TYPE_STYLE[e.type].chip })),
-          ...ms.map(({ e, k: kk }) => ({ e, label: `${shortName(e.company)} ${IPO_K[kk]}`, cls: TYPE_STYLE.IPO.chip }))];
+        ...ms.map(({ e, k: kk }) => ({ e, label: `${shortName(e.company)} ${IPO_K[kk]}`, cls: TYPE_STYLE.IPO.chip }))];
         return (
           <button type="button" key={c.iso} onClick={() => setSel(c.iso)} aria-pressed={isS}
             aria-label={`${fmtD(c.iso)}${nt && nt.kind === "holiday" ? `, DSE holiday: ${nt.label}` : ""}${n ? `: ${n} item${n === 1 ? "" : "s"}` : ""}`}
-            className={`relative flex min-h-[46px] min-w-0 flex-col items-center gap-0.5 overflow-hidden rounded-lg border p-1 text-left transition sm:items-stretch sm:rounded-lg sm:p-1.5 ${big ? "sm:min-h-[104px] lg:min-h-0" : "sm:min-h-[92px]"} ${focusRing} ${
-              isS ? "border-[#1da1f2] bg-white ring-1 ring-[#1da1f2] [.dark_&]:bg-white/[0.06]"
+            className={`relative flex min-h-[46px] min-w-0 flex-col items-center gap-0.5 overflow-hidden rounded-lg border p-1 text-left transition sm:items-stretch sm:rounded-lg sm:p-1.5 ${big ? "sm:min-h-[104px] lg:min-h-0" : "sm:min-h-[92px]"} ${focusRing} ${isS ? "border-[#1da1f2] bg-white ring-1 ring-[#1da1f2] [.dark_&]:bg-white/[0.06]"
                 : c.inMonth ? (nt && nt.kind === "holiday" ? "border-[#fb7185]/60 bg-rose-50 hover:bg-rose-100/70 [.dark_&]:border-[#fb7185]/20 [.dark_&]:bg-[#d9423a]/10 [.dark_&]:hover:bg-[#d9423a]/15" : nt ? "border-[#e5e7e5] bg-[#f7f8f7] hover:bg-[#f7f8f7] [.dark_&]:border-white/5 [.dark_&]:bg-white/[0.015] [.dark_&]:hover:bg-white/[0.05]" : "border-[#e5e7e5] bg-white hover:bg-[#f7f8f7] [.dark_&]:border-white/5 [.dark_&]:bg-white/[0.03] [.dark_&]:hover:bg-white/[0.07]")
-                : "border-transparent bg-transparent opacity-40"}`}>
+                  : "border-transparent bg-transparent opacity-40"}`}>
             <span className={`tabular-nums text-[12px] font-bold leading-5 ${isT ? "flex h-5 w-5 items-center justify-center rounded-full bg-[#004990] text-white" : "text-[#4b5563] [.dark_&]:text-[#dbe7f3]"}`}>{c.day}</span>
             <span className="flex max-w-full flex-wrap justify-center gap-0.5 sm:hidden" aria-hidden="true">
               {items.slice(0, 4).map((x, i) => <i key={i} className={`h-1.5 w-1.5 rounded-full ${x.e.type === "IPO" ? "bg-[#1da1f2]" : TYPE_STYLE[x.e.type].dot}`} />)}
@@ -1054,45 +1055,45 @@ function Calendar({ today, dark, onToggleTheme, data }) {
           {ipoSec && (
             <div id="ipo-section-body" className="border-t border-[#6b7280]/15 p-3 sm:p-5">
               <div className="mb-3 flex justify-end"><a className={`text-[11px] font-semibold underline ${muted}`} href="https://www.dse.com.bd/ipo" target="_blank" rel="noreferrer">dse.com.bd/ipo</a></div>
-          {ipos.length === 0 ? (
-            <p className={`text-sm ${muted}`}>No IPOs are listed on the DSE site right now. This section fills in automatically when DSE publishes one.</p>
-          ) : (
-            <>
-              {!ipos.some((e) => e.subStart) && (
-                <p className={`mb-3 text-sm ${muted}`}>DSE has published {ipos.length} draft prospectus{ipos.length === 1 ? "" : "es"} but no subscription dates yet. Tap a card for details. Dates, lottery and listing day will appear here and on the calendar as soon as DSE announces them.</p>
+              {ipos.length === 0 ? (
+                <p className={`text-sm ${muted}`}>No IPOs are listed on the DSE site right now. This section fills in automatically when DSE publishes one.</p>
+              ) : (
+                <>
+                  {!ipos.some((e) => e.subStart) && (
+                    <p className={`mb-3 text-sm ${muted}`}>DSE has published {ipos.length} draft prospectus{ipos.length === 1 ? "" : "es"} but no subscription dates yet. Tap a card for details. Dates, lottery and listing day will appear here and on the calendar as soon as DSE announces them.</p>
+                  )}
+                  <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                    {ipos.map((e) => {
+                      const o = !!ipoOpen[e.id];
+                      const when = e.subStart ? `${fmtShort(e.subStart)}${e.subEnd ? " – " + fmtShort(e.subEnd) : ""}` : "Dates TBA";
+                      return (
+                        <li key={e.id} id={`ipo-${e.id}`} className={`min-w-0 self-start rounded-lg border border-[#e5e7e5] bg-white [.dark_&]:border-white/10 [.dark_&]:bg-white/[0.03] ${o ? "sm:col-span-2 lg:col-span-1" : ""}`}>
+                          <button type="button" aria-expanded={o} aria-controls={`ipo-body-${e.id}`} onClick={() => setIpoOpen((x) => ({ ...x, [e.id]: !x[e.id] }))}
+                            className={`flex min-h-[56px] w-full items-center justify-between gap-2 rounded-lg p-3 text-left ${focusRing}`}>
+                            <span className="min-w-0">
+                              <span className="block text-sm font-bold leading-snug text-[#111827] [.dark_&]:text-white">{e.company}</span>
+                              <span className={`block truncate text-[11px] ${muted}`}>{when}{e.ipo.method ? ` · ${e.ipo.method}` : ""}</span>
+                            </span>
+                            <span className="flex shrink-0 items-center gap-2">
+                              <Pill className={STATUS_STYLE[e.status] || STATUS_STYLE["Date TBA"]}>{e.status === "Date TBA" ? "Dates TBA" : e.status}</Pill>
+                              <Chevron open={o} />
+                            </span>
+                          </button>
+                          {o && (
+                            <div id={`ipo-body-${e.id}`} className="border-t border-[#6b7280]/15 px-3 pb-3 pt-2">
+                              <dl className="grid grid-cols-[84px_1fr] gap-x-2 gap-y-0.5 text-xs">
+                                {ipoLines(e).map(([a, b]) => <React.Fragment key={a}><dt className={muted}>{a}</dt><dd className="tabular-nums">{b}</dd></React.Fragment>)}
+                                <dt className={muted}>Stage</dt><dd>{e.ipo.status || "Draft prospectus"}</dd>
+                              </dl>
+                              {e.ipo.prospectus && <a className="mt-2 inline-flex min-h-[40px] items-center text-xs font-semibold text-[#0b78bd] underline [.dark_&]:text-[#38bdf8]" href={e.ipo.prospectus} target="_blank" rel="noreferrer">Read prospectus (PDF)</a>}
+                            </div>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </>
               )}
-              <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                {ipos.map((e) => {
-                  const o = !!ipoOpen[e.id];
-                  const when = e.subStart ? `${fmtShort(e.subStart)}${e.subEnd ? " – " + fmtShort(e.subEnd) : ""}` : "Dates TBA";
-                  return (
-                    <li key={e.id} id={`ipo-${e.id}`} className={`min-w-0 self-start rounded-lg border border-[#e5e7e5] bg-white [.dark_&]:border-white/10 [.dark_&]:bg-white/[0.03] ${o ? "sm:col-span-2 lg:col-span-1" : ""}`}>
-                      <button type="button" aria-expanded={o} aria-controls={`ipo-body-${e.id}`} onClick={() => setIpoOpen((x) => ({ ...x, [e.id]: !x[e.id] }))}
-                        className={`flex min-h-[56px] w-full items-center justify-between gap-2 rounded-lg p-3 text-left ${focusRing}`}>
-                        <span className="min-w-0">
-                          <span className="block text-sm font-bold leading-snug text-[#111827] [.dark_&]:text-white">{e.company}</span>
-                          <span className={`block truncate text-[11px] ${muted}`}>{when}{e.ipo.method ? ` · ${e.ipo.method}` : ""}</span>
-                        </span>
-                        <span className="flex shrink-0 items-center gap-2">
-                          <Pill className={STATUS_STYLE[e.status] || STATUS_STYLE["Date TBA"]}>{e.status === "Date TBA" ? "Dates TBA" : e.status}</Pill>
-                          <Chevron open={o} />
-                        </span>
-                      </button>
-                      {o && (
-                        <div id={`ipo-body-${e.id}`} className="border-t border-[#6b7280]/15 px-3 pb-3 pt-2">
-                          <dl className="grid grid-cols-[84px_1fr] gap-x-2 gap-y-0.5 text-xs">
-                            {ipoLines(e).map(([a, b]) => <React.Fragment key={a}><dt className={muted}>{a}</dt><dd className="tabular-nums">{b}</dd></React.Fragment>)}
-                            <dt className={muted}>Stage</dt><dd>{e.ipo.status || "Draft prospectus"}</dd>
-                          </dl>
-                          {e.ipo.prospectus && <a className="mt-2 inline-flex min-h-[40px] items-center text-xs font-semibold text-[#0b78bd] underline [.dark_&]:text-[#38bdf8]" href={e.ipo.prospectus} target="_blank" rel="noreferrer">Read prospectus (PDF)</a>}
-                        </div>
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
-            </>
-          )}
             </div>
           )}
         </section>
@@ -1128,32 +1129,35 @@ function Calendar({ today, dark, onToggleTheme, data }) {
         )}
 
         {/* Full-screen calendar */}
-        {full && (
-          <div role="dialog" aria-modal="true" aria-label="Full-screen calendar"
-            className="fixed inset-0 z-40 flex flex-col bg-[#f7f8f7] text-[#111827] [.dark_&]:bg-[#0b1220] [.dark_&]:text-[#ffffff]">
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#e5e7e5] px-3 py-2.5 [.dark_&]:border-white/10 sm:px-5">
-              <div className="min-w-0">
-                <div className={`text-[11px] font-bold uppercase tracking-[0.12em] ${muted}`}>AGM · EGM · IPO · Record dates</div>
-                <h2 className="text-lg font-extrabold leading-tight sm:text-xl">{MONTHS_LONG[month.m]} {month.y}</h2>
+        {full && createPortal(
+          <div className={dark ? "dark" : ""} style={{ fontFamily: FONT_STACK }}>
+            <div role="dialog" aria-modal="true" aria-label="Full-screen calendar"
+              className="fixed inset-0 z-[9999] flex flex-col bg-[#f7f8f7] text-[#111827] [.dark_&]:bg-[#0b1220] [.dark_&]:text-[#ffffff]">
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#e5e7e5] px-3 py-2.5 [.dark_&]:border-white/10 sm:px-5">
+                <div className="min-w-0">
+                  <div className={`text-[11px] font-bold uppercase tracking-[0.12em] ${muted}`}>AGM · EGM · IPO · Record dates</div>
+                  <h2 className="text-lg font-extrabold leading-tight sm:text-xl">{MONTHS_LONG[month.m]} {month.y}</h2>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  {monthNav}
+                  {onToggleTheme && <button type="button" onClick={onToggleTheme} className={`h-10 rounded-lg bg-[#111827]/5 px-3 text-xs font-semibold hover:bg-[#111827]/10 [.dark_&]:bg-white/10 sm:h-9 ${focusRing}`}>{dark ? "Light" : "Midnight"}</button>}
+                  <button id="agm-full-close" type="button" onClick={() => setFull(false)} className={`h-10 rounded-lg bg-[#111827] px-3 text-xs font-bold text-white hover:bg-[#4b5563] [.dark_&]:bg-white [.dark_&]:text-[#111827] sm:h-9 ${focusRing}`}>Close ✕</button>
+                </div>
               </div>
-              <div className="flex items-center gap-1.5">
-                {monthNav}
-                {onToggleTheme && <button type="button" onClick={onToggleTheme} className={`h-10 rounded-lg bg-[#111827]/5 px-3 text-xs font-semibold hover:bg-[#111827]/10 [.dark_&]:bg-white/10 sm:h-9 ${focusRing}`}>{dark ? "Light" : "Midnight"}</button>}
-                <button id="agm-full-close" type="button" onClick={() => setFull(false)} className={`h-10 rounded-lg bg-[#111827] px-3 text-xs font-bold text-white hover:bg-[#4b5563] [.dark_&]:bg-white [.dark_&]:text-[#111827] sm:h-9 ${focusRing}`}>Close ✕</button>
+              <div className="grid min-h-0 flex-1 gap-3 overflow-y-auto p-3 sm:p-5 lg:grid-cols-[minmax(0,1fr)_380px] lg:overflow-hidden">
+                <div className="flex min-h-[460px] min-w-0 flex-col lg:min-h-0">
+                  <div className="min-h-0 flex-1">{gridEl(true)}</div>
+                  {legend}{holNote}
+                </div>
+                <aside className={`${glass} min-w-0 p-3 sm:p-4 lg:overflow-y-auto`} aria-label="Selected day">
+                  <div className={`text-[11px] font-bold uppercase tracking-[0.12em] ${muted}`}>{weekday(sel)}</div>
+                  <div className="mb-3 flex items-center justify-between gap-2"><h3 className="text-base font-bold">{fmtD(sel)}</h3><button type="button" onClick={copyLink} className={`h-9 rounded-lg bg-[#111827]/5 px-3 text-xs font-semibold hover:bg-[#111827]/10 [.dark_&]:bg-white/10 ${focusRing}`} aria-live="polite">{copied ? "Link copied" : "Copy link"}</button></div>
+                  {dayPanel(true)}
+                </aside>
               </div>
             </div>
-            <div className="grid min-h-0 flex-1 gap-3 overflow-y-auto p-3 sm:p-5 lg:grid-cols-[minmax(0,1fr)_380px] lg:overflow-hidden">
-              <div className="flex min-h-[460px] min-w-0 flex-col lg:min-h-0">
-                <div className="min-h-0 flex-1">{gridEl(true)}</div>
-                {legend}{holNote}
-              </div>
-              <aside className={`${glass} min-w-0 p-3 sm:p-4 lg:overflow-y-auto`} aria-label="Selected day">
-                <div className={`text-[11px] font-bold uppercase tracking-[0.12em] ${muted}`}>{weekday(sel)}</div>
-                <div className="mb-3 flex items-center justify-between gap-2"><h3 className="text-base font-bold">{fmtD(sel)}</h3><button type="button" onClick={copyLink} className={`h-9 rounded-lg bg-[#111827]/5 px-3 text-xs font-semibold hover:bg-[#111827]/10 [.dark_&]:bg-white/10 ${focusRing}`} aria-live="polite">{copied ? "Link copied" : "Copy link"}</button></div>
-                {dayPanel(true)}
-              </aside>
-            </div>
-          </div>
+          </div>,
+          document.body
         )}
 
         {/* Dividends proposed */}
@@ -1163,7 +1167,7 @@ function Calendar({ today, dark, onToggleTheme, data }) {
           const list = divAhead ? divs.filter(ahead) : [...divs];
           list.sort(divSort === "Yield" ? (a, b) => (b.m?.yield ?? -1) - (a.m?.yield ?? -1)
             : divSort === "Cash %" ? (a, b) => (b.cash ?? -1) - (a.cash ?? -1)
-            : (a, b) => (ahead(b) - ahead(a)) || (ahead(a) ? (a.record || "").localeCompare(b.record || "") : (b.record || "").localeCompare(a.record || "")));
+              : (a, b) => (ahead(b) - ahead(a)) || (ahead(a) ? (a.record || "").localeCompare(b.record || "") : (b.record || "").localeCompare(a.record || "")));
           const nAhead = divs.filter(ahead).length, nStock = divs.filter((e) => e.stock).length, nInterim = divs.filter((e) => /interim/i.test(e.purpose)).length;
           const Flag = ({ c, children }) => <span className={`rounded px-1 py-px text-[11px] font-semibold ${c}`}>{children}</span>;
           return (

@@ -1,94 +1,94 @@
 {
  "source": "Bangladesh Bank, G-Sec YTM Curve (gsom.bb.org.bd/index.php/ytm)",
- "asOf": "2026-11-23",
+ "asOf": "2026-11-24",
  "curve": [
   {
    "years": 1,
-   "yield": 8.3
+   "yield": 8.22
   },
   {
    "years": 2,
-   "yield": 8.88
+   "yield": 8.43
   },
   {
    "years": 3,
-   "yield": 8.46
+   "yield": 8.78
   },
   {
    "years": 4,
-   "yield": 8.65
+   "yield": 8.51
   },
   {
    "years": 5,
-   "yield": 8.67
+   "yield": 8.6
   },
   {
    "years": 6,
-   "yield": 8.66
+   "yield": 8.57
   },
   {
    "years": 7,
-   "yield": 8.65
+   "yield": 8.75
   },
   {
    "years": 8,
-   "yield": 8.86
+   "yield": 8.77
   },
   {
    "years": 9,
-   "yield": 9.03
+   "yield": 8.98
   },
   {
    "years": 10,
-   "yield": 9.31
+   "yield": 9.08
   },
   {
    "years": 11,
-   "yield": 9.37
+   "yield": 9.29
   },
   {
    "years": 12,
-   "yield": 9.11
+   "yield": 9.64
   },
   {
    "years": 13,
-   "yield": 9.07
+   "yield": 9.58
   },
   {
    "years": 14,
-   "yield": 9.05
+   "yield": 9.18
   },
   {
    "years": 15,
-   "yield": 9.07
+   "yield": 9.11
   },
   {
    "years": 16,
-   "yield": 9.12
+   "yield": 9.36
   },
   {
    "years": 17,
-   "yield": 9.39
+   "yield": 9.51
   },
   {
    "years": 18,
-   "yield": 9.42
+   "yield": 9.61
   },
   {
    "years": 19,
-   "yield": 9.15
+   "yield": 9.8
   },
   {
    "years": 20,
-   "yield": 9.15
+   "yield": 10.1
   }
  ],
  "standard": {
-  "2": 8.88,
-  "5": 8.67,
-  "10": 9.31,
-  "15": 9.07,
-  "20": 9.15
+  "2": 8.43,
+  "5": 8.6,
+  "10": 9.08,
+  "15": 9.11,
+  "20": 10.1
  },
  "monthly": [
   {
@@ -140,12 +140,12 @@
    "y20": 9.13
   },
   {
-   "date": "2026-11-23",
-   "y2": 8.88,
-   "y5": 8.67,
-   "y10": 9.31,
-   "y15": 9.07,
-   "y20": 9.15
+   "date": "2026-11-24",
+   "y2": 8.43,
+   "y5": 8.6,
+   "y10": 9.08,
+   "y15": 9.11,
+   "y20": 10.1
   }
  ],
  "history": [
@@ -244,6 +244,14 @@
    "y10": 9.31,
    "y15": 9.07,
    "y20": 9.15
+  },
+  {
+   "date": "2026-11-24",
+   "y2": 8.43,
+   "y5": 8.6,
+   "y10": 9.08,
+   "y15": 9.11,
+   "y20": 10.1
   }
  ]
 }

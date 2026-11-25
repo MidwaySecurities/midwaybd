@@ -21,22 +21,24 @@
     "eyebrow": "Treasury Bonds",
     "headline": "Treasury Bond Auction Calendar",
     "subhead": "This month's Bangladesh Bank auction dates and amounts, plus last month's results, all in one place.",
-    "month": "November 2026",
+    "month": "December 2026",
     "back": "Back to Treasury Bond Center"
   },
   "calendar": {
     "title": "Auction Calendar",
-    "month": "November 2026",
+    "month": "December 2026",
     "unit": "Amounts in ৳ Crore",
     "dates": [
-      "10 Nov",
-      "17 Nov",
-      "24 Nov"
+      "1 Dec",
+      "8 Dec",
+      "15 Dec",
+      "22 Dec"
     ],
     "rows": [
       {
         "tenor": "2-Year",
         "amounts": [
+          "2,500",
           null,
           null,
           null
@@ -45,7 +47,8 @@
       {
         "tenor": "5-Year",
         "amounts": [
-          "5,000",
+          null,
+          "2,000",
           null,
           null
         ]
@@ -54,7 +57,8 @@
         "tenor": "10-Year",
         "amounts": [
           null,
-          "5,000",
+          null,
+          "1,500",
           null
         ]
       },
@@ -63,7 +67,8 @@
         "amounts": [
           null,
           null,
-          "2,750"
+          null,
+          "700"
         ]
       },
       {
@@ -71,14 +76,16 @@
         "amounts": [
           null,
           null,
-          "2,750"
+          null,
+          "700"
         ]
       }
     ],
     "totals": [
-      "5,000",
-      "5,000",
-      "5,500"
+      "2,500",
+      "2,000",
+      "1,500",
+      "1,400"
     ],
     "totalLabel": "Total Amount",
     "howToApply": {
@@ -90,7 +97,7 @@
       ],
       "note": "Charges are shared when you contact us on WhatsApp."
     },
-    "monthKey": "2026-11"
+    "monthKey": "2026-12"
   },
   "lastResults": {
     "title": "Last Auction Results",
@@ -182,7 +189,7 @@
     "title": "Treasury Bill Auction Results",
     "badge": "Information Only",
     "note": "Treasury Bills cannot be bought through brokerage houses. Government Sukuk primary auctions are not available through brokerage houses either. We show bill results so you can see the full market.",
-    "month": "November 2026",
+    "month": "December 2026",
     "columns": [
       "Tenor",
       "Auction Date",
@@ -198,19 +205,19 @@
       },
       {
         "tenor": "91 Days",
-        "auctionDate": "29 Nov 2026",
+        "auctionDate": "6, 13, 20, 27 Dec 2026",
         "issueDate": "23 Nov 2026",
         "cutoff": "8.08%"
       },
       {
         "tenor": "182 Days",
-        "auctionDate": "29 Nov 2026",
+        "auctionDate": "6, 13, 20, 27 Dec 2026",
         "issueDate": "23 Nov 2026",
         "cutoff": "8.44%"
       },
       {
         "tenor": "364 Days",
-        "auctionDate": "29 Nov 2026",
+        "auctionDate": "6, 13, 20, 27 Dec 2026",
         "issueDate": "23 Nov 2026",
         "cutoff": "8.53%"
       }

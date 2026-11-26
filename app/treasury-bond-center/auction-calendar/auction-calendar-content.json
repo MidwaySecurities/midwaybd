@@ -112,24 +112,6 @@
     ],
     "rows": [
       {
-        "tenor": "15-Year",
-        "yearsLeft": "16.17",
-        "auctionDate": "27 Oct",
-        "issueDate": "28 Dec 2022",
-        "reissue": true,
-        "coupon": "8.95%",
-        "cutoff": "9.38%"
-      },
-      {
-        "tenor": "20-Year",
-        "yearsLeft": "18.83",
-        "auctionDate": "27 Oct",
-        "issueDate": "27 Aug 2025",
-        "reissue": true,
-        "coupon": "10.30%",
-        "cutoff": "9.38%"
-      },
-      {
         "tenor": "2-Year",
         "yearsLeft": "2.05",
         "auctionDate": "3 Nov",
@@ -155,6 +137,24 @@
         "reissue": true,
         "coupon": "8.55%",
         "cutoff": "9.33%"
+      },
+      {
+        "tenor": "15-Year",
+        "yearsLeft": "16.09",
+        "auctionDate": "24 Nov",
+        "issueDate": "28 Dec 2022",
+        "reissue": true,
+        "coupon": "8.95%",
+        "cutoff": "9.57%"
+      },
+      {
+        "tenor": "20-Year",
+        "yearsLeft": "18.75",
+        "auctionDate": "24 Nov",
+        "issueDate": "27 Aug 2025",
+        "reissue": true,
+        "coupon": "10.30%",
+        "cutoff": "9.60%"
       }
     ],
     "reissueTag": "Reissue",
